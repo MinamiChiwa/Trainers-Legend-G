@@ -19,7 +19,8 @@ namespace
 
 		char* memory = reinterpret_cast<char*>(pos);
 
-		for (int i = 0; i < 0x20; i++) {
+		for (int i = 0; i < 0x20; i++) 
+		{
 			if (i > 0 && i % 16 == 0)
 				printf("\n");
 
@@ -52,7 +53,7 @@ namespace
 	void* populate_with_errors_orig = nullptr;
 	bool __fastcall populate_with_errors_hook(void* _this, Il2CppString* str, void* settings, void* context)
 	{
-		auto text = L"รþมหรþมห";
+		auto text = L"Test text replacement";
 		auto test = il2cpp_string_new_utf16(text, lstrlenW(text));
 
 		return reinterpret_cast<decltype(populate_with_errors_hook)*>(populate_with_errors_orig)(
