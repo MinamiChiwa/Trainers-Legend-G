@@ -1,8 +1,4 @@
-#include <vector>
-#include <string>
-
-#include <MinHook.h>
-#include "il2cpp_symbols.hpp"
+#include <stdinclude.hpp>
 
 using namespace std;
 
@@ -19,7 +15,7 @@ namespace
 
 		char* memory = reinterpret_cast<char*>(pos);
 
-		for (int i = 0; i < 0x20; i++) 
+		for (int i = 0; i < 0x20; i++)
 		{
 			if (i > 0 && i % 16 == 0)
 				printf("\n");
@@ -50,15 +46,33 @@ namespace
 		return reinterpret_cast<decltype(LoadLibraryW)*>(load_library_w_orig)(path);
 	}
 
-	void* populate_with_errors_orig = nullptr;
-	bool __fastcall populate_with_errors_hook(void* _this, Il2CppString* str, void* settings, void* context)
-	{
-		auto text = L"Test text replacement";
-		auto test = il2cpp_string_new_utf16(text, lstrlenW(text));
+	std::vector<size_t> str_list;
 
-		return reinterpret_cast<decltype(populate_with_errors_hook)*>(populate_with_errors_orig)(
-			_this, test, settings, context
+	void* populate_with_errors_orig = nullptr;
+	bool __fastcall populate_with_errors_hook(void* _this, Il2CppString* str, TextGenerationSettings_t* settings, void* context)
+	{
+		wstring* result;
+
+		if (local::localify_text(str->start_char, &result))
+		{
+			return reinterpret_cast<decltype(populate_with_errors_hook)*>(populate_with_errors_orig) (
+				_this, il2cpp_string_new_utf16(result->data(), result->length()),
+				settings, context
 			);
+		}
+
+		auto hash = std::hash<wstring>{}(str->start_char);
+
+		if (!std::any_of(str_list.begin(), str_list.end(), [hash](size_t hash1) { return hash1 == hash; }))
+		{
+			str_list.push_back(hash);
+
+			logger::write_entry(hash, str->start_char);
+		}
+
+		return reinterpret_cast<decltype(populate_with_errors_hook)*>(populate_with_errors_orig) (
+			_this, str, settings, context
+		);
 	}
 
 	void path_game_assembly()
@@ -77,7 +91,7 @@ namespace
 		// address is +1D9C9C0 for now, maybe call il2cpp function to get that later
 		auto populate_offset = reinterpret_cast<void*>(
 			0x1D9C9C0 + reinterpret_cast<uintptr_t>(il2cpp_module)
-		);
+			);
 
 		printf("UnityEngine.TextGenerator::PopulateWithErrors at %p\n", populate_offset);
 		dump_bytes(populate_offset);

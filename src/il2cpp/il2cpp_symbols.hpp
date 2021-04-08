@@ -1,5 +1,4 @@
 #pragma once
-#include <cinttypes>
 
 // UnityEngine.Color
 struct Color_t

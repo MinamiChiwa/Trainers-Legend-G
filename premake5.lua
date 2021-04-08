@@ -29,6 +29,7 @@ function dependencies.projects()
 end
 
 include "deps/minhook.lua"
+include "deps/yaml-cpp.lua"
 
 workspace "umamusume-localify"
 	location "./build"
@@ -82,7 +83,7 @@ workspace "umamusume-localify"
 		}
 
 		includedirs {
-			"./src/headers",
+			"./src",
 			"%{prj.location}/src",
 		}
 

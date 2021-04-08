@@ -1,6 +1,4 @@
-#include <Windows.h>
-
-#include "il2cpp_symbols.hpp"
+#include <stdinclude.hpp>
 
 il2cpp_string_new_utf16_t il2cpp_string_new_utf16;
 
