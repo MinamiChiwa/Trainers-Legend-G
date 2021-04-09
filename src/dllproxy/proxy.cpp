@@ -59,5 +59,5 @@ namespace
 		};
 	};
 
-	version_init init{};
+	version_init init {};
 }

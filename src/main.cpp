@@ -12,9 +12,13 @@ namespace
 		// open stdout stream
 		auto _ = freopen("CONOUT$", "w+t", stdout);
 
+		SetConsoleTitle("Umamusume - Debug Console");
+
 		// set this to avoid turn japanese texts into question mark
 		SetConsoleOutputCP(65001);
 		std::locale::global(std::locale(""));
+
+		printf("¥¦¥ÞÄï Localify Patch Loaded! - By GEEKiDoS\n");
 	}
 }
 
@@ -37,11 +41,9 @@ int __stdcall DllMain(HINSTANCE, DWORD reason, LPVOID)
 			module_path.parent_path()
 		);
 
-#if _DEBUG
 		create_debug_console();
-#endif
 
-		std::thread init_thread([](){
+		std::thread init_thread([]() {
 			logger::init_logger();
 			local::load_textdb();
 			init_hook();

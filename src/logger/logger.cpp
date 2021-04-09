@@ -6,17 +6,20 @@ namespace logger
 {
 	namespace
 	{
-		fstream stream;
+		fstream log_file;
 
+		bool enabled = false;
 		bool request_exit = false;
 		bool has_change = false;
 
 		// copy-pasted from https://stackoverflow.com/questions/3418231/replace-part-of-a-string-with-another-string
-		void replaceAll(std::string& str, const std::string& from, const std::string& to) {
+		void replaceAll(std::string& str, const std::string& from, const std::string& to)
+		{
 			if (from.empty())
 				return;
 			size_t start_pos = 0;
-			while ((start_pos = str.find(from, start_pos)) != std::string::npos) {
+			while ((start_pos = str.find(from, start_pos)) != std::string::npos)
+			{
 				str.replace(start_pos, from.length(), to);
 				start_pos += to.length(); // In case 'to' contains 'from', like replacing 'x' with 'yx'
 			}
@@ -25,25 +28,29 @@ namespace logger
 
 	void init_logger()
 	{
-		stream.open("texts.yaml", ios::app | ios::out);
+		// only output if file exists so regular user will not see it.
+		if (filesystem::exists("dump.yaml"))
+		{
+			enabled = true;
+			log_file.open("dump.yaml", ios::app | ios::out);
 
-		thread t([]()
-			{
-				while(!request_exit)
+			thread t([]() {
+				while (!request_exit)
 				{
 					this_thread::sleep_for(1s);
 
 					if (has_change)
 					{
-						stream.flush();
+						log_file.flush();
 						has_change = false;
-					}	
+					}
 				}
 
-				stream.close();
+				log_file.close();
 			});
 
-		t.detach();
+			t.detach();
+		}
 	}
 
 	void close_logger()
@@ -53,10 +60,13 @@ namespace logger
 
 	void write_entry(size_t hash, wstring text)
 	{
+		if (!enabled)
+			return;
+
 		auto u8str = local::wide_u8(text);
 		replaceAll(u8str, "\n", "\n  ");
 
-		stream << hash << ": |-\n  " << u8str << "\n";
+		log_file << hash << ": |-\n  " << u8str << "\n";
 
 		has_change = true;
 	}

@@ -4,8 +4,9 @@
 
 #include <cinttypes>
 
-#include <fstream>
 #include <filesystem>
+#include <fstream>
+#include <functional>
 #include <iostream>
 #include <locale>
 #include <string>

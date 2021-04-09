@@ -15,7 +15,7 @@ namespace local
 			result.resize(str.length());
 
 			MultiByteToWideChar(CP_UTF8, 0, reinterpret_cast<char*>(str.data()),
-				str.size(), result.data(), result.length());
+								str.size(), result.data(), result.length());
 
 			return result;
 		}
@@ -56,6 +56,8 @@ namespace local
 
 					text_db.emplace(key, value);
 				}
+
+				printf("loaded %llu localized entries.\n", text_db.size());
 			}
 		}
 	}
@@ -87,21 +89,19 @@ namespace local
 	{
 		wstring* result;
 
-		auto hash = std::hash<wstring>{}(str->start_char);
+		auto hash = std::hash<wstring> {}(str->start_char);
 
 		if (local::localify_text(hash, &result))
 		{
 			return il2cpp_string_new_utf16(result->data(), result->length());
 		}
 
-#if _DEBUG
 		if (!std::any_of(str_list.begin(), str_list.end(), [hash](size_t hash1) { return hash1 == hash; }))
 		{
 			str_list.push_back(hash);
 
 			logger::write_entry(hash, str->start_char);
 		}
-#endif
 
 		return str;
 	}
