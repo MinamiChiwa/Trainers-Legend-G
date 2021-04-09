@@ -46,33 +46,40 @@ namespace
 		return reinterpret_cast<decltype(LoadLibraryW)*>(load_library_w_orig)(path);
 	}
 
-	std::vector<size_t> str_list;
+	std::vector<void*> font_list;
 
 	void* populate_with_errors_orig = nullptr;
 	bool __fastcall populate_with_errors_hook(void* _this, Il2CppString* str, TextGenerationSettings_t* settings, void* context)
 	{
-		wstring* result;
-
-		if (local::localify_text(str->start_char, &result))
+		if (!std::any_of(font_list.begin(), font_list.end(), [settings](void* font) { return font == settings->font; }))
 		{
-			return reinterpret_cast<decltype(populate_with_errors_hook)*>(populate_with_errors_orig) (
-				_this, il2cpp_string_new_utf16(result->data(), result->length()),
-				settings, context
-			);
-		}
-
-		auto hash = std::hash<wstring>{}(str->start_char);
-
-		if (!std::any_of(str_list.begin(), str_list.end(), [hash](size_t hash1) { return hash1 == hash; }))
-		{
-			str_list.push_back(hash);
-
-			logger::write_entry(hash, str->start_char);
+			font_list.push_back(settings->font);
 		}
 
 		return reinterpret_cast<decltype(populate_with_errors_hook)*>(populate_with_errors_orig) (
-			_this, str, settings, context
-		);
+			_this, local::get_localized_string(str), settings, context
+			);
+	}
+
+	void* localize_get_orig = nullptr;
+	Il2CppString* __fastcall localize_get_hook(int id)
+	{
+		auto result = local::get_localized_string(id);
+
+		if (result)
+			return result;
+
+		return reinterpret_cast<decltype(localize_get_hook)*>(localize_get_orig)(id);
+	}
+
+	void dump_all_entries()
+	{
+		// TextId 0 - 0xA55, 0 is None
+		for (int i = 1; i <= 0xA55; ++i)
+		{
+			auto entry = reinterpret_cast<decltype(localize_get_hook)*>(localize_get_orig)(i);
+			logger::write_entry(i, entry->start_char);
+		}
 	}
 
 	void path_game_assembly()
@@ -87,19 +94,30 @@ namespace
 		// load il2cpp exported functions
 		init_il2cpp(il2cpp_module);
 
+#pragma region HOOK_MACRO
+#define ADD_HOOK(_offset_, _name_, _fmt_) \
+	auto _name_##_offset = reinterpret_cast<void*>( \
+		_offset_ + reinterpret_cast<uintptr_t>(il2cpp_module) \
+	); \
+	\
+	printf(_fmt_, _name_##_offset); \
+	dump_bytes(_name_##_offset); \
+	\
+	MH_CreateHook(_name_##_offset, _name_##_hook, &_name_##_orig); \
+	MH_EnableHook(_name_##_offset); \
+	\
+	enabled_hooks.push_back(_name_##_offset)
+#pragma endregion
+
 		// hook UnityEngine.TextGenerator::PopulateWithErrors to modify text
 		// address is +1D9C9C0 for now, maybe call il2cpp function to get that later
-		auto populate_offset = reinterpret_cast<void*>(
-			0x1D9C9C0 + reinterpret_cast<uintptr_t>(il2cpp_module)
-			);
+		ADD_HOOK(0x1D9C9C0, populate_with_errors, "UnityEngine.TextGenerator::PopulateWithErrors at %p\n");
 
-		printf("UnityEngine.TextGenerator::PopulateWithErrors at %p\n", populate_offset);
-		dump_bytes(populate_offset);
+		// Looks like they store all localized texts that used by code in a dict
+		ADD_HOOK(0x86CA60, localize_get, "Gallop.Localize.Get(TextId) at %p\n");
 
-		MH_CreateHook(populate_offset, populate_with_errors_hook, &populate_with_errors_orig);
-		MH_EnableHook(populate_offset);
-
-		enabled_hooks.push_back(populate_offset);
+		if (strstr(GetCommandLine(), "--dump-entries"))
+			dump_all_entries();
 	}
 }
 

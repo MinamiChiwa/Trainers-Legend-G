@@ -7,6 +7,7 @@ namespace local
 	namespace
 	{
 		unordered_map<size_t, wstring> text_db;
+		std::vector<size_t> str_list;
 
 		wstring u8_wide(u8string str)
 		{
@@ -42,26 +43,27 @@ namespace local
 
 	void load_textdb()
 	{
-		auto db = YAML::LoadFile("localized_strings.yaml");
-
-		if (db)
+		if (filesystem::exists("localized_strings.yaml"))
 		{
-			for (const auto& entry : db)
+			auto db = YAML::LoadFile("localized_strings.yaml");
+
+			if (db)
 			{
-				auto key = entry.first.as<size_t>();
-				auto value = u8_wide(entry.second.as<string>());
+				for (const auto& entry : db)
+				{
+					auto key = entry.first.as<size_t>();
+					auto value = u8_wide(entry.second.as<string>());
 
-				wprintf(L"%llu - %s\n", key, value.data());
+					wprintf(L"%llu - %s\n", key, value.data());
 
-				text_db.emplace(key, value);
+					text_db.emplace(key, value);
+				}
 			}
 		}
 	}
 
-	bool localify_text(wstring ref, wstring** result)
+	bool localify_text(size_t hash, wstring** result)
 	{
-		auto hash = std::hash<wstring>{}(ref);
-
 		if (text_db.contains(hash))
 		{
 			*result = &text_db[hash];
@@ -69,5 +71,40 @@ namespace local
 		}
 
 		return false;
+	}
+
+	Il2CppString* get_localized_string(size_t hash_or_id)
+	{
+		wstring* result;
+
+		if (local::localify_text(hash_or_id, &result))
+		{
+			return il2cpp_string_new_utf16(result->data(), result->length());
+		}
+
+		return nullptr;
+	}
+
+	Il2CppString* get_localized_string(Il2CppString* str)
+	{
+		wstring* result;
+
+		auto hash = std::hash<wstring>{}(str->start_char);
+
+		if (local::localify_text(hash, &result))
+		{
+			return il2cpp_string_new_utf16(result->data(), result->length());
+		}
+
+#if _DEBUG
+		if (!std::any_of(str_list.begin(), str_list.end(), [hash](size_t hash1) { return hash1 == hash; }))
+		{
+			str_list.push_back(hash);
+
+			logger::write_entry(hash, str->start_char);
+		}
+#endif
+
+		return str;
 	}
 }
