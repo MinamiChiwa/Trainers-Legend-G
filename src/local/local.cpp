@@ -54,8 +54,6 @@ namespace local
 					auto key = entry.first.as<size_t>();
 					auto value = u8_wide(entry.second.as<string>());
 
-					wprintf(L"%llu - %s\n", key, value.data());
-
 					text_db.emplace(key, value);
 				}
 			}
