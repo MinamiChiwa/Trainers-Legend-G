@@ -14,8 +14,16 @@
 #include <unordered_map>
 
 #include <MinHook.h>
-#include <yaml-cpp/yaml.h>
+
+#include <rapidjson/document.h>
+#include <rapidjson/encodings.h>
+#include <rapidjson/istreamwrapper.h>
+#include <rapidjson/stringbuffer.h>
 
 #include "il2cpp/il2cpp_symbols.hpp"
 #include "local/local.hpp"
 #include "logger/logger.hpp"
+
+extern bool g_dump_entries;
+extern bool g_enable_logger;
+extern bool g_enable_console;

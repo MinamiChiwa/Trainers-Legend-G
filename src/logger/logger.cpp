@@ -29,10 +29,10 @@ namespace logger
 	void init_logger()
 	{
 		// only output if file exists so regular user will not see it.
-		if (filesystem::exists("dump.yaml"))
+		if (g_enable_logger)
 		{
 			enabled = true;
-			log_file.open("dump.yaml", ios::app | ios::out);
+			log_file.open("dump.txt", ios::app | ios::out);
 
 			thread t([]() {
 				while (!request_exit)
@@ -64,9 +64,10 @@ namespace logger
 			return;
 
 		auto u8str = local::wide_u8(text);
-		replaceAll(u8str, "\n", "\n  ");
+		replaceAll(u8str, "\n", "\\n");
+		replaceAll(u8str, "\"", "\\\"");
 
-		log_file << hash << ": |-\n  " << u8str << "\n";
+		log_file << "\"" << hash << "\": \"" << u8str << "\",\n";
 
 		has_change = true;
 	}

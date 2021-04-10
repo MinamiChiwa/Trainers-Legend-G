@@ -126,7 +126,7 @@ namespace
 		// Looks like they store all localized texts that used by code in a dict
 		ADD_HOOK(localize_get_addr, localize_get, "Gallop.Localize.Get(TextId) at %p\n");
 
-		if (strstr(GetCommandLine(), "--dump-entries"))
+		if (g_dump_entries)
 			dump_all_entries();
 	}
 }

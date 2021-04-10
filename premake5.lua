@@ -29,7 +29,7 @@ function dependencies.projects()
 end
 
 include "deps/minhook.lua"
-include "deps/yaml-cpp.lua"
+include "deps/rapidjson.lua"
 
 workspace "umamusume-localify"
 	location "./build"

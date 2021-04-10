@@ -1,0 +1,9 @@
+{
+    "enableConsole": true,
+    "enableLogger": true,
+    "dumpStaticEntries": false,
+    "dicts": [
+        "localized_data/static_entries.json",
+        "localized_data/hash_entries.json"
+    ]
+}

@@ -41,25 +41,38 @@ namespace local
 		return result;
 	}
 
-	void load_textdb()
+	void load_textdb(const vector<string> *dicts)
 	{
-		if (filesystem::exists("localized_strings.yaml"))
+		for (auto dict : *dicts)
 		{
-			auto db = YAML::LoadFile("localized_strings.yaml");
-
-			if (db)
+			if (filesystem::exists(dict))
 			{
-				for (const auto& entry : db)
+				std::ifstream dict_stream {dict};
+
+				if (!dict_stream.is_open())
+					continue;
+
+				printf("Reading %s...\n", dict.data());
+
+				rapidjson::IStreamWrapper wrapper {dict_stream};
+				rapidjson::Document document;
+
+				document.ParseStream(wrapper);
+
+				for (auto iter = document.MemberBegin(); 
+					 iter != document.MemberEnd(); ++iter)
 				{
-					auto key = entry.first.as<size_t>();
-					auto value = u8_wide(entry.second.as<string>());
+					auto key = std::stoull(iter->name.GetString());
+					auto value = u8_wide(iter->value.GetString());
 
 					text_db.emplace(key, value);
 				}
 
-				printf("loaded %llu localized entries.\n", text_db.size());
+				dict_stream.close();
 			}
 		}
+
+		printf("loaded %llu localized entries.\n", text_db.size());
 	}
 
 	bool localify_text(size_t hash, wstring** result)
