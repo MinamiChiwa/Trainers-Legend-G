@@ -1,6 +1,6 @@
 [submodule "deps/minhook"]
 	path = deps/minhook
 	url = https://github.com/TsudaKageyu/minhook.git
-[submodule "deps/yaml-cpp"]
-	path = deps/yaml-cpp
-	url = https://github.com/jbeder/yaml-cpp.git
+[submodule "deps/rapidjson"]
+	path = deps/rapidjson
+	url = https://github.com/Tencent/rapidjson.git

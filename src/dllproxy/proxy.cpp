@@ -23,7 +23,6 @@ extern "C"
 
 using namespace std;
 
-
 namespace
 {
 	class version_init
