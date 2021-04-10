@@ -22,7 +22,7 @@ namespace
 		SetConsoleOutputCP(65001);
 		std::locale::global(std::locale(""));
 
-		printf("¥¦¥ÞÄï Localify Patch Loaded! - By GEEKiDoS\n");
+		printf("ã‚¦ãƒžå¨˜ Localify Patch Loaded! - By GEEKiDoS\n");
 	}
 
 	std::vector<std::string> read_config()
