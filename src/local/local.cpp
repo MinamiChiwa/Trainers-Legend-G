@@ -109,7 +109,7 @@ namespace local
 			return il2cpp_string_new_utf16(result->data(), result->length());
 		}
 
-		if (!std::any_of(str_list.begin(), str_list.end(), [hash](size_t hash1) { return hash1 == hash; }))
+		if (g_enable_logger && !std::any_of(str_list.begin(), str_list.end(), [hash](size_t hash1) { return hash1 == hash; }))
 		{
 			str_list.push_back(hash);
 

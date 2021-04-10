@@ -46,16 +46,9 @@ namespace
 		return reinterpret_cast<decltype(LoadLibraryW)*>(load_library_w_orig)(path);
 	}
 
-	std::vector<void*> font_list;
-
 	void* populate_with_errors_orig = nullptr;
 	bool __fastcall populate_with_errors_hook(void* _this, Il2CppString* str, TextGenerationSettings_t* settings, void* context)
 	{
-		if (!std::any_of(font_list.begin(), font_list.end(), [settings](void* font) { return font == settings->font; }))
-		{
-			font_list.push_back(settings->font);
-		}
-
 		return reinterpret_cast<decltype(populate_with_errors_hook)*>(populate_with_errors_orig) (
 			_this, local::get_localized_string(str), settings, context
 			);
@@ -70,6 +63,44 @@ namespace
 			return result;
 
 		return reinterpret_cast<decltype(localize_get_hook)*>(localize_get_orig)(id);
+	}
+
+	std::unordered_map<void*, bool> text_queries;
+
+	void* query_ctor_orig = nullptr;
+	void* __fastcall query_ctor_hook(void* _this, void* conn, Il2CppString* sql)
+	{
+		auto ssql = std::wstring(sql->start_char);
+
+		if (ssql.find(L"text_data") != std::string::npos ||
+			ssql.find(L"character_system_text") != std::string::npos ||
+			ssql.find(L"race_jikkyo_comment") != std::string::npos ||
+			ssql.find(L"race_jikkyo_message") != std::string::npos ) 
+		{
+			text_queries.emplace(_this, true);
+		}
+
+		return reinterpret_cast<decltype(query_ctor_hook)*>(query_ctor_orig)(_this, conn, sql);
+	}
+
+	void* query_dispose_orig = nullptr;
+	void __fastcall query_dispose_hook(void* _this)
+	{
+		if (text_queries.contains(_this))
+			text_queries.erase(_this);
+
+		return reinterpret_cast<decltype(query_dispose_hook)*>(query_dispose_orig)(_this);
+	}
+
+	void* query_getstr_orig = nullptr;
+	Il2CppString* __fastcall query_getstr_hook(void* _this, int idx)
+	{
+		auto result = reinterpret_cast<decltype(query_getstr_hook)*>(query_getstr_orig)(_this, idx);
+
+		if (text_queries.contains(_this))
+			return local::get_localized_string(result);
+
+		return result;
 	}
 
 	void dump_all_entries()
@@ -120,11 +151,30 @@ namespace
 				method->parameters->parameter_type->type == IL2CPP_TYPE_VALUETYPE;
 		});
 
+		auto query_ctor_addr = il2cpp_symbols::get_method_pointer(
+			"LibNative.Runtime.dll", "LibNative.Sqlite3", 
+			"Query", ".ctor", 2
+		);
+
+		auto query_getstr_addr = il2cpp_symbols::get_method_pointer(
+			"LibNative.Runtime.dll", "LibNative.Sqlite3",
+			"Query", "GetText", 1
+		);
+
+		auto query_dispose_addr = il2cpp_symbols::get_method_pointer(
+			"LibNative.Runtime.dll", "LibNative.Sqlite3",
+			"Query", "Dispose", 0
+		);
+
 		// hook UnityEngine.TextGenerator::PopulateWithErrors to modify text
 		ADD_HOOK(populate_addr, populate_with_errors, "UnityEngine.TextGenerator::PopulateWithErrors at %p\n");
 
 		// Looks like they store all localized texts that used by code in a dict
 		ADD_HOOK(localize_get_addr, localize_get, "Gallop.Localize.Get(TextId) at %p\n");
+
+		ADD_HOOK(query_ctor_addr, query_ctor, "Query::ctor at %p\n");
+		ADD_HOOK(query_getstr_addr, query_getstr, "Query::GetString at %p\n");
+		ADD_HOOK(query_dispose_addr, query_dispose, "Query::Dispose at %p\n");
 
 		if (g_dump_entries)
 			dump_all_entries();
