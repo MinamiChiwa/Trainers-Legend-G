@@ -109,7 +109,7 @@ namespace
 		return reinterpret_cast<decltype(set_fps_hook)*>(set_fps_orig)(0);
 	}
 
-	bool (*is_vert)() = nullptr;
+	bool (*is_virt)() = nullptr;
 	int last_height = 0, last_width = 0;
 
 	void* wndproc_orig = nullptr;
@@ -119,7 +119,7 @@ namespace
 		{
 			RECT* rect = reinterpret_cast<RECT*>(lParam);
 
-			float ratio = is_vert() ? 1.f / g_aspect_ratio : g_aspect_ratio;
+			float ratio = is_virt() ? 1.f / g_aspect_ratio : g_aspect_ratio;
 			float height = rect->bottom - rect->top;
 			float width = rect->right - rect->left;
 
@@ -274,7 +274,7 @@ namespace
 			"StandaloneWindowResize", "getOptimizedWindowSizeHori", 2
 		);
 
-		is_vert = reinterpret_cast<bool(*)()>(
+		is_virt = reinterpret_cast<bool(*)()>(
 			il2cpp_symbols::get_method_pointer(
 				"umamusume.dll", "Gallop",
 				"StandaloneWindowResize", "get_IsVirt", 0
