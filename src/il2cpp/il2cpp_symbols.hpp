@@ -24,6 +24,18 @@ public:
 	float y;
 };
 
+// UnityEngine.Vector3
+struct  Vector3_t
+{
+public:
+	// System.Single UnityEngine.Vector3::x
+	float x;						   
+	// System.Single UnityEngine.Vector3::y
+	float y;						   
+	// System.Single UnityEngine.Vector3::z
+	float z;
+};
+
 // UnityEngine.TextGenerationSettings
 struct TextGenerationSettings_t
 {

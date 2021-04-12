@@ -27,3 +27,6 @@
 extern bool g_dump_entries;
 extern bool g_enable_logger;
 extern bool g_enable_console;
+extern bool g_unlock_fps;
+extern bool g_unlock_size;
+extern float g_aspect_ratio;

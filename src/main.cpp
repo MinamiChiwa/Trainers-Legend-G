@@ -6,6 +6,9 @@ extern void uninit_hook();
 bool g_dump_entries = false;
 bool g_enable_logger = false;
 bool g_enable_console = false;
+bool g_unlock_fps = false;
+bool g_unlock_size = false;
+float g_aspect_ratio = 16.f / 9.f;
 
 namespace
 {
@@ -22,7 +25,7 @@ namespace
 		SetConsoleOutputCP(65001);
 		std::locale::global(std::locale(""));
 
-		printf("ウマ娘 Localify Patch Loaded! - By GEEKiDoS\n");
+		wprintf(L"\u30a6\u30de\u5a18 Localify Patch Loaded! - By GEEKiDoS\n");
 	}
 
 	std::vector<std::string> read_config()
@@ -43,6 +46,11 @@ namespace
 			g_enable_console = document["enableConsole"].GetBool();
 			g_enable_logger = document["enableLogger"].GetBool();
 			g_dump_entries = document["dumpStaticEntries"].GetBool();
+			g_unlock_fps = document["unlockFps"].GetBool();
+			g_unlock_size = document["unlockSize"].GetBool();
+
+			// Looks like not working for now
+			// g_aspect_ratio = document["customAspectRatio"].GetFloat();
 
 			auto& dicts_arr = document["dicts"];
 			auto len = dicts_arr.Size();

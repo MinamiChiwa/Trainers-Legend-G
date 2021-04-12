@@ -103,6 +103,94 @@ namespace
 		return result;
 	}
 
+	void* set_fps_orig = nullptr;
+	void set_fps_hook(int value)
+	{
+		return reinterpret_cast<decltype(set_fps_hook)*>(set_fps_orig)(0);
+	}
+
+	bool (*is_vert)() = nullptr;
+	int last_height = 0, last_width = 0;
+
+	void* wndproc_orig = nullptr;
+	LRESULT wndproc_hook(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+	{
+		if (uMsg == WM_SIZING)
+		{
+			RECT* rect = reinterpret_cast<RECT*>(lParam);
+
+			float ratio = is_vert() ? 1.f / g_aspect_ratio : g_aspect_ratio;
+			float height = rect->bottom - rect->top;
+			float width = rect->right - rect->left;
+
+			float new_ratio = width / height;
+
+			if (new_ratio > ratio && height >= last_height || width < last_width)
+				height = width / ratio;
+			else if (new_ratio < ratio && width >= last_width || height < last_height)
+				width = height * ratio;
+
+			switch (wParam)
+			{
+				case WMSZ_TOP:
+				case WMSZ_TOPLEFT:
+				case WMSZ_TOPRIGHT:
+					rect->top = rect->bottom - height;
+					break;
+				default:
+					rect->bottom = rect->top + height;
+					break;
+			}
+
+			switch (wParam)
+			{
+				case WMSZ_LEFT:
+				case WMSZ_TOPLEFT:
+				case WMSZ_BOTTOMLEFT:
+					rect->left = rect->right - width;
+					break;
+				default:
+					rect->right = rect->left + width;
+					break;
+			}
+
+			last_height = height;
+			last_width = width;
+
+			return TRUE;
+		}
+
+		return reinterpret_cast<decltype(wndproc_hook)*>(wndproc_orig)(hWnd, uMsg, wParam, lParam);
+	}
+
+	void* get_virt_size_orig = nullptr;
+	Vector3_t* get_virt_size_hook(Vector3_t* pVec3, int width, int height)
+	{
+		auto size = reinterpret_cast<decltype(get_virt_size_hook)*>(get_virt_size_orig)(pVec3, width, height);
+
+		height = width * g_aspect_ratio;
+
+		size->x = width;
+		size->y = height;
+		size->z = g_aspect_ratio;
+
+		return size;
+	}
+
+	void* get_hori_size_orig = nullptr;
+	Vector3_t* get_hori_size_hook(Vector3_t* pVec3, int width, int height)
+	{
+		auto size = reinterpret_cast<decltype(get_hori_size_hook)*>(get_hori_size_orig)(pVec3, width, height);
+
+		width = height * g_aspect_ratio;
+
+		size->x = width;
+		size->y = height;
+		size->z = g_aspect_ratio;
+
+		return size;
+	}
+
 	void dump_all_entries()
 	{
 		// TextId 0 - 0xA55, 0 is None
@@ -166,6 +254,32 @@ namespace
 			"Query", "Dispose", 0
 		);
 
+		auto set_fps_addr = il2cpp_symbols::get_method_pointer(
+			"UnityEngine.CoreModule.dll", "UnityEngine",
+			"Application", "set_targetFrameRate", 1
+		);
+
+		auto wndproc_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"StandaloneWindowResize", "WndProc", 4
+		);
+
+		auto get_virt_size_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"StandaloneWindowResize", "getOptimizedWindowSizeVirt", 2
+		);
+
+		auto get_hori_size_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"StandaloneWindowResize", "getOptimizedWindowSizeHori", 2
+		);
+
+		is_vert = reinterpret_cast<bool(*)()>(
+			il2cpp_symbols::get_method_pointer(
+				"umamusume.dll", "Gallop",
+				"StandaloneWindowResize", "get_IsVirt", 0
+		));
+
 		// hook UnityEngine.TextGenerator::PopulateWithErrors to modify text
 		ADD_HOOK(populate_addr, populate_with_errors, "UnityEngine.TextGenerator::PopulateWithErrors at %p\n");
 
@@ -176,6 +290,20 @@ namespace
 		ADD_HOOK(query_getstr_addr, query_getstr, "Query::GetString at %p\n");
 		ADD_HOOK(query_dispose_addr, query_dispose, "Query::Dispose at %p\n");
 
+		if (g_unlock_fps)
+		{
+			// break 30-40fps limit
+			ADD_HOOK(set_fps_addr, set_fps, "UnityEngine.Application.set_targetFrameRate at %p \n");
+		}
+		
+		if (g_unlock_size)
+		{
+			// break 1080p size limit
+			ADD_HOOK(get_virt_size_addr, get_virt_size, "Gallop.StandaloneWindowResize.getOptimizedWindowSizeVirt at %p \n");
+			ADD_HOOK(get_hori_size_addr, get_hori_size, "Gallop.StandaloneWindowResize.getOptimizedWindowSizeHori at %p \n");
+			ADD_HOOK(wndproc_addr, wndproc, "Gallop.StandaloneWindowResize.WndProc at %p \n");
+		}
+		
 		if (g_dump_entries)
 			dump_all_entries();
 	}
