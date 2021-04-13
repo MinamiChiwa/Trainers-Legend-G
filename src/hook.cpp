@@ -191,6 +191,34 @@ namespace
 		return size;
 	}
 
+	Resolution_t* (*get_resolution)(Resolution_t* buffer);
+
+	void* gallop_get_screenheight_orig;
+	int gallop_get_screenheight_hook()
+	{
+		Resolution_t res;
+		res = *get_resolution(&res);
+
+		printf("%d %d\n", res.height, res.width);
+
+		int w = max(res.width, res.height), h = min(res.width, res.height);
+
+		return is_virt() ? w : h;
+	}
+
+	void* gallop_get_screenwidth_orig;
+	int gallop_get_screenwidth_hook()
+	{
+		Resolution_t res;
+		res = *get_resolution(&res);
+
+		printf("%d %d\n", res.height, res.width);
+
+		int w = max(res.width, res.height), h = min(res.width, res.height);
+
+		return is_virt() ? h : w;
+	}
+
 	void dump_all_entries()
 	{
 		// TextId 0 - 0xA55, 0 is None
@@ -214,8 +242,8 @@ namespace
 		il2cpp_symbols::init(il2cpp_module);
 
 #pragma region HOOK_MACRO
-#define ADD_HOOK(_offset_, _name_, _fmt_) \
-	auto _name_##_offset = reinterpret_cast<void*>(_offset_); \
+#define ADD_HOOK(_name_, _fmt_) \
+	auto _name_##_offset = reinterpret_cast<void*>(_name_##_addr); \
 	\
 	printf(_fmt_, _name_##_offset); \
 	dump_bytes(_name_##_offset); \
@@ -226,7 +254,7 @@ namespace
 	enabled_hooks.push_back(_name_##_offset)
 #pragma endregion
 
-		auto populate_addr = il2cpp_symbols::get_method_pointer(
+		auto populate_with_errors_addr = il2cpp_symbols::get_method_pointer(
 			"UnityEngine.TextRenderingModule.dll",
 			"UnityEngine", "TextGenerator",
 			"PopulateWithErrors", 3
@@ -280,28 +308,50 @@ namespace
 				"StandaloneWindowResize", "get_IsVirt", 0
 		));
 
+		get_resolution = reinterpret_cast<Resolution_t * (*)(Resolution_t*)>(
+			il2cpp_symbols::get_method_pointer(
+			"UnityEngine.CoreModule.dll", "UnityEngine",
+			"Screen", "get_currentResolution", 0
+			)
+		);
+
+		auto gallop_get_screenheight_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"Screen", "get_Height", 0
+		);
+
+		auto gallop_get_screenwidth_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"Screen", "get_Width", 0
+		);
+
+
 		// hook UnityEngine.TextGenerator::PopulateWithErrors to modify text
-		ADD_HOOK(populate_addr, populate_with_errors, "UnityEngine.TextGenerator::PopulateWithErrors at %p\n");
+		ADD_HOOK(populate_with_errors, "UnityEngine.TextGenerator::PopulateWithErrors at %p\n");
 
 		// Looks like they store all localized texts that used by code in a dict
-		ADD_HOOK(localize_get_addr, localize_get, "Gallop.Localize.Get(TextId) at %p\n");
+		ADD_HOOK(localize_get, "Gallop.Localize.Get(TextId) at %p\n");
 
-		ADD_HOOK(query_ctor_addr, query_ctor, "Query::ctor at %p\n");
-		ADD_HOOK(query_getstr_addr, query_getstr, "Query::GetString at %p\n");
-		ADD_HOOK(query_dispose_addr, query_dispose, "Query::Dispose at %p\n");
+		ADD_HOOK(query_ctor, "Query::ctor at %p\n");
+		ADD_HOOK(query_getstr, "Query::GetString at %p\n");
+		ADD_HOOK(query_dispose, "Query::Dispose at %p\n");
 
 		if (g_unlock_fps)
 		{
 			// break 30-40fps limit
-			ADD_HOOK(set_fps_addr, set_fps, "UnityEngine.Application.set_targetFrameRate at %p \n");
+			ADD_HOOK(set_fps, "UnityEngine.Application.set_targetFrameRate at %p \n");
 		}
 		
 		if (g_unlock_size)
 		{
 			// break 1080p size limit
-			ADD_HOOK(get_virt_size_addr, get_virt_size, "Gallop.StandaloneWindowResize.getOptimizedWindowSizeVirt at %p \n");
-			ADD_HOOK(get_hori_size_addr, get_hori_size, "Gallop.StandaloneWindowResize.getOptimizedWindowSizeHori at %p \n");
-			ADD_HOOK(wndproc_addr, wndproc, "Gallop.StandaloneWindowResize.WndProc at %p \n");
+			ADD_HOOK(get_virt_size, "Gallop.StandaloneWindowResize.getOptimizedWindowSizeVirt at %p \n");
+			ADD_HOOK(get_hori_size, "Gallop.StandaloneWindowResize.getOptimizedWindowSizeHori at %p \n");
+			ADD_HOOK(wndproc, "Gallop.StandaloneWindowResize.WndProc at %p \n");
+
+			// remove fixed 1080p render resolution
+			ADD_HOOK(gallop_get_screenheight, "Gallop.Screen::get_Height at %p\n");
+			ADD_HOOK(gallop_get_screenwidth, "Gallop.Screen::get_Width at %p\n");
 		}
 		
 		if (g_dump_entries)

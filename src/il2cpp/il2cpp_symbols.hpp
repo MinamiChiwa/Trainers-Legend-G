@@ -15,7 +15,7 @@ public:
 };
 
 // UnityEngine.Vector2
-struct  Vector2_t
+struct Vector2_t
 {
 public:
 	// System.Single UnityEngine.Vector2::x
@@ -25,7 +25,7 @@ public:
 };
 
 // UnityEngine.Vector3
-struct  Vector3_t
+struct Vector3_t
 {
 public:
 	// System.Single UnityEngine.Vector3::x
@@ -34,6 +34,14 @@ public:
 	float y;						   
 	// System.Single UnityEngine.Vector3::z
 	float z;
+};
+
+struct Resolution_t
+{
+public:
+	int width;
+	int height;
+	int herz;
 };
 
 // UnityEngine.TextGenerationSettings
