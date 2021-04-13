@@ -106,7 +106,7 @@ namespace
 	void* set_fps_orig = nullptr;
 	void set_fps_hook(int value)
 	{
-		return reinterpret_cast<decltype(set_fps_hook)*>(set_fps_orig)(0);
+		return reinterpret_cast<decltype(set_fps_hook)*>(set_fps_orig)(g_max_fps);
 	}
 
 	bool (*is_virt)() = nullptr;
@@ -199,8 +199,6 @@ namespace
 		Resolution_t res;
 		res = *get_resolution(&res);
 
-		printf("%d %d\n", res.height, res.width);
-
 		int w = max(res.width, res.height), h = min(res.width, res.height);
 
 		return is_virt() ? w : h;
@@ -212,11 +210,23 @@ namespace
 		Resolution_t res;
 		res = *get_resolution(&res);
 
-		printf("%d %d\n", res.height, res.width);
-
 		int w = max(res.width, res.height), h = min(res.width, res.height);
 
 		return is_virt() ? h : w;
+	}
+
+	void (*set_scale_factor)(void*, float);
+
+	void* canvas_scaler_setres_orig;
+	void canvas_scaler_setres_hook(void* _this, Vector2_t res)
+	{
+		Resolution_t r;
+		r = *get_resolution(&r);
+
+		// set scale factor to make ui bigger on hi-res screen
+		set_scale_factor(_this, max(1.0f, r.width / 1920.f) * g_ui_scale);
+
+		return reinterpret_cast<decltype(canvas_scaler_setres_hook)*>(canvas_scaler_setres_orig)(_this, res);
 	}
 
 	void dump_all_entries()
@@ -325,6 +335,22 @@ namespace
 			"Screen", "get_Width", 0
 		);
 
+		auto change_resize_ui_for_pc_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"UIManager", "ChangeResizeUIForPC", 2
+		);
+
+		auto canvas_scaler_setres_addr = il2cpp_symbols::get_method_pointer(
+			"UnityEngine.UI.dll", "UnityEngine.UI",
+			"CanvasScaler", "set_referenceResolution", 1
+		);
+
+		set_scale_factor = reinterpret_cast<void(*)(void*,float)>(
+			il2cpp_symbols::get_method_pointer(
+				"UnityEngine.UI.dll", "UnityEngine.UI",
+				"CanvasScaler", "set_scaleFactor", 1
+			)
+		);
 
 		// hook UnityEngine.TextGenerator::PopulateWithErrors to modify text
 		ADD_HOOK(populate_with_errors, "UnityEngine.TextGenerator::PopulateWithErrors at %p\n");
@@ -336,7 +362,7 @@ namespace
 		ADD_HOOK(query_getstr, "Query::GetString at %p\n");
 		ADD_HOOK(query_dispose, "Query::Dispose at %p\n");
 
-		if (g_unlock_fps)
+		if (g_max_fps > -1)
 		{
 			// break 30-40fps limit
 			ADD_HOOK(set_fps, "UnityEngine.Application.set_targetFrameRate at %p \n");
@@ -352,6 +378,8 @@ namespace
 			// remove fixed 1080p render resolution
 			ADD_HOOK(gallop_get_screenheight, "Gallop.Screen::get_Height at %p\n");
 			ADD_HOOK(gallop_get_screenwidth, "Gallop.Screen::get_Width at %p\n");
+
+			ADD_HOOK(canvas_scaler_setres, "Gallop.UIManager::CreateRenderTextureFromScreen at %p\n");
 		}
 		
 		if (g_dump_entries)

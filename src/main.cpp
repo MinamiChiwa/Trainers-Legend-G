@@ -6,8 +6,9 @@ extern void uninit_hook();
 bool g_dump_entries = false;
 bool g_enable_logger = false;
 bool g_enable_console = false;
-bool g_unlock_fps = false;
+int g_max_fps = -1;
 bool g_unlock_size = false;
+float g_ui_scale = 1.0f;
 float g_aspect_ratio = 16.f / 9.f;
 
 namespace
@@ -46,8 +47,9 @@ namespace
 			g_enable_console = document["enableConsole"].GetBool();
 			g_enable_logger = document["enableLogger"].GetBool();
 			g_dump_entries = document["dumpStaticEntries"].GetBool();
-			g_unlock_fps = document["unlockFps"].GetBool();
+			g_max_fps = document["maxFps"].GetInt();
 			g_unlock_size = document["unlockSize"].GetBool();
+			g_ui_scale = document["uiScale"].GetFloat();
 
 			// Looks like not working for now
 			// g_aspect_ratio = document["customAspectRatio"].GetFloat();

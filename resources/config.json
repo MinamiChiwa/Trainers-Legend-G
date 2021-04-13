@@ -2,8 +2,9 @@
     "enableConsole": true,
     "enableLogger": true,
     "dumpStaticEntries": false,
-    "unlockFps": true,
+    "maxFps": 0,
     "unlockSize": true,
+    "uiScale": 1.0,
     "dicts": [
         "localized_data/static.json",
         "localized_data/common.json",
