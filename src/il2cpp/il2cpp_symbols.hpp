@@ -29,9 +29,9 @@ struct Vector3_t
 {
 public:
 	// System.Single UnityEngine.Vector3::x
-	float x;						   
+	float x;
 	// System.Single UnityEngine.Vector3::y
-	float y;						   
+	float y;
 	// System.Single UnityEngine.Vector3::z
 	float z;
 };
@@ -176,29 +176,76 @@ struct MethodInfo
 	uint8_t is_marshaled_from_native : 1;
 };
 
+struct Il2CppObject
+{
+	union
+	{
+		void* klass;
+		void* vtable;
+	};
+	void* monitor;
+};
+
+typedef struct Il2CppArraySize
+{
+	Il2CppObject obj;
+	void* bounds;
+	uintptr_t max_length;
+	alignas(8)
+	void* vector[0];
+} Il2CppArraySize;
+
+static const size_t kIl2CppSizeOfArray = (offsetof(Il2CppArraySize, vector));
+
 // function types
-typedef Il2CppString* (__fastcall* il2cpp_string_new_utf16_t)(const wchar_t* str, unsigned int len);
-typedef void* (__fastcall* il2cpp_domain_get_t)();
-typedef void* (__fastcall* il2cpp_domain_assembly_open_t)(void* domain, const char* name);
-typedef void* (__fastcall* il2cpp_assembly_get_image_t)(void* assembly);
-typedef void* (__fastcall* il2cpp_class_from_name_t)(void* image, const char* namespaze, const char* name);
-typedef MethodInfo* (__fastcall* il2cpp_class_get_methods_t)(void* klass, void** iter);
-typedef MethodInfo* (__fastcall* il2cpp_class_get_method_from_name_t)(void* klass, const char* name, int argsCount);
+typedef Il2CppString* (*il2cpp_string_new_utf16_t)(const wchar_t* str, unsigned int len);
+typedef Il2CppString* (*il2cpp_string_new_t)(const char* str);
+typedef void* (*il2cpp_domain_get_t)();
+typedef void* (*il2cpp_domain_assembly_open_t)(void* domain, const char* name);
+typedef void* (*il2cpp_assembly_get_image_t)(void* assembly);
+typedef void* (*il2cpp_class_from_name_t)(void* image, const char* namespaze, const char* name);
+typedef MethodInfo* (*il2cpp_class_get_methods_t)(void* klass, void** iter);
+typedef MethodInfo* (*il2cpp_class_get_method_from_name_t)(void* klass, const char* name, int argsCount);
+typedef void* (*il2cpp_method_get_param_t)(const MethodInfo* method, uint32_t index);
+typedef void* (*il2cpp_object_new_t)(void* klass);
+typedef void* (*il2cpp_resolve_icall_t)(const char* name);
+typedef void* (*il2cpp_array_new_t)(void* klass, uintptr_t count);
 
 // function defines
 extern il2cpp_string_new_utf16_t il2cpp_string_new_utf16;
+extern il2cpp_string_new_t il2cpp_string_new;
 extern il2cpp_domain_get_t il2cpp_domain_get;
 extern il2cpp_domain_assembly_open_t il2cpp_domain_assembly_open;
 extern il2cpp_assembly_get_image_t il2cpp_assembly_get_image;
 extern il2cpp_class_from_name_t il2cpp_class_from_name;
 extern il2cpp_class_get_methods_t il2cpp_class_get_methods;
 extern il2cpp_class_get_method_from_name_t il2cpp_class_get_method_from_name;
+extern il2cpp_method_get_param_t il2cpp_method_get_param;
+extern il2cpp_object_new_t il2cpp_object_new;
+extern il2cpp_resolve_icall_t il2cpp_resolve_icall;
+extern il2cpp_array_new_t il2cpp_array_new;
+
+char* il2cpp_array_addr_with_size(void* arr, int32_t size, uintptr_t idx);
+
+// array macro
+#define il2cpp_array_addr(array, type, index) ((type*)(void*) il2cpp_array_addr_with_size (array, sizeof (type), index))
+
+#define il2cpp_array_setref(array, index, value)  \
+    do {    \
+        void* *__p = (void* *) il2cpp_array_addr ((array), void*, (index)); \
+         *__p = (value);    \
+    } while (0)
 
 namespace il2cpp_symbols
 {
 	void init(HMODULE game_module);
 	uintptr_t get_method_pointer(const char* assemblyName, const char* namespaze,
 								 const char* klassName, const char* name, int argsCount);
+
+	void* get_class(const char* assemblyName, const char* namespaze, const char* klassName);
+
+	MethodInfo* get_method(const char* assemblyName, const char* namespaze,
+						   const char* klassName, const char* name, int argsCount);
 
 	uintptr_t find_method(const char* assemblyName, const char* namespaze,
 						  const char* klassName, std::function<bool(const MethodInfo*)> predict);

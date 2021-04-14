@@ -47,7 +47,7 @@ namespace
 	}
 
 	void* populate_with_errors_orig = nullptr;
-	bool __fastcall populate_with_errors_hook(void* _this, Il2CppString* str, TextGenerationSettings_t* settings, void* context)
+	bool populate_with_errors_hook(void* _this, Il2CppString* str, TextGenerationSettings_t* settings, void* context)
 	{
 		return reinterpret_cast<decltype(populate_with_errors_hook)*>(populate_with_errors_orig) (
 			_this, local::get_localized_string(str), settings, context
@@ -55,20 +55,23 @@ namespace
 	}
 
 	void* localize_get_orig = nullptr;
-	Il2CppString* __fastcall localize_get_hook(int id)
+	Il2CppString* localize_get_hook(int id)
 	{
+		auto origresult = reinterpret_cast<decltype(localize_get_hook)*>(localize_get_orig)(id);
 		auto result = local::get_localized_string(id);
 
 		if (result)
-			return result;
+		{
+			origresult->length = result->length;
+		}
 
-		return reinterpret_cast<decltype(localize_get_hook)*>(localize_get_orig)(id);
+		return origresult;
 	}
 
 	std::unordered_map<void*, bool> text_queries;
 
 	void* query_ctor_orig = nullptr;
-	void* __fastcall query_ctor_hook(void* _this, void* conn, Il2CppString* sql)
+	void* query_ctor_hook(void* _this, void* conn, Il2CppString* sql)
 	{
 		auto ssql = std::wstring(sql->start_char);
 
@@ -84,7 +87,7 @@ namespace
 	}
 
 	void* query_dispose_orig = nullptr;
-	void __fastcall query_dispose_hook(void* _this)
+	void query_dispose_hook(void* _this)
 	{
 		if (text_queries.contains(_this))
 			text_queries.erase(_this);
@@ -93,7 +96,7 @@ namespace
 	}
 
 	void* query_getstr_orig = nullptr;
-	Il2CppString* __fastcall query_getstr_hook(void* _this, int idx)
+	Il2CppString*  query_getstr_hook(void* _this, int idx)
 	{
 		auto result = reinterpret_cast<decltype(query_getstr_hook)*>(query_getstr_orig)(_this, idx);
 
@@ -227,6 +230,16 @@ namespace
 		set_scale_factor(_this, max(1.0f, r.width / 1920.f) * g_ui_scale);
 
 		return reinterpret_cast<decltype(canvas_scaler_setres_hook)*>(canvas_scaler_setres_orig)(_this, res);
+	}
+
+	void (*text_assign_font)(void*);
+
+	void* on_populate_orig = nullptr;
+	void on_populate_hook(void* _this, void* toFill)
+	{
+		text_assign_font(_this);
+
+		return reinterpret_cast<decltype(on_populate_hook)*>(on_populate_orig)(_this, toFill);
 	}
 
 	void dump_all_entries()
@@ -379,7 +392,7 @@ namespace
 			ADD_HOOK(gallop_get_screenheight, "Gallop.Screen::get_Height at %p\n");
 			ADD_HOOK(gallop_get_screenwidth, "Gallop.Screen::get_Width at %p\n");
 
-			ADD_HOOK(canvas_scaler_setres, "Gallop.UIManager::CreateRenderTextureFromScreen at %p\n");
+			ADD_HOOK(canvas_scaler_setres, "UnityEngine.UI.CanvasScaler::set_referenceResolution at %p\n");
 		}
 		
 		if (g_dump_entries)
