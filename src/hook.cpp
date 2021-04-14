@@ -60,12 +60,7 @@ namespace
 		auto origresult = reinterpret_cast<decltype(localize_get_hook)*>(localize_get_orig)(id);
 		auto result = local::get_localized_string(id);
 
-		if (result)
-		{
-			origresult->length = result->length;
-		}
-
-		return origresult;
+		return result;
 	}
 
 	std::unordered_map<void*, bool> text_queries;
