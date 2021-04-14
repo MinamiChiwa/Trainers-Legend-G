@@ -228,12 +228,25 @@ namespace
 	}
 
 	void (*text_assign_font)(void*);
+	int (*text_get_size)(void*);
+	void (*text_set_size)(void*, int);
+	void (*text_set_style)(void*, int);
+	void (*text_set_linespacing)(void*, float);
+
+	unordered_map<void*, bool> text_map;
 
 	void* on_populate_orig = nullptr;
 	void on_populate_hook(void* _this, void* toFill)
 	{
-		text_assign_font(_this);
-
+		if (!text_map.contains(_this))
+		{
+			text_assign_font(_this);
+			text_set_style(_this, 1);
+			text_set_size(_this, text_get_size(_this) - 4);
+			text_set_linespacing(_this, 1.1f);
+			text_map.emplace(_this, true);
+		}
+		
 		return reinterpret_cast<decltype(on_populate_hook)*>(on_populate_orig)(_this, toFill);
 	}
 
@@ -360,6 +373,46 @@ namespace
 			)
 		);
 
+		auto on_populate_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"TextCommon", "OnPopulateMesh", 1
+		);
+
+		text_assign_font = reinterpret_cast<void(*)(void*)>(
+			il2cpp_symbols::get_method_pointer(
+				"UnityEngine.UI.dll", "UnityEngine.UI",
+				"Text", "AssignDefaultFont", 0
+			)
+		);
+
+		text_get_size = reinterpret_cast<int(*)(void*)>(
+			il2cpp_symbols::get_method_pointer(
+				"umamusume.dll", "Gallop",
+				"TextCommon", "get_FontSize", 0
+			)
+		);
+
+		text_set_size = reinterpret_cast<void(*)(void*, int)>(
+			il2cpp_symbols::get_method_pointer(
+				"umamusume.dll", "Gallop",
+				"TextCommon", "set_FontSize", 1
+			)
+		);
+
+		text_set_style = reinterpret_cast<void(*)(void*, int)>(
+			il2cpp_symbols::get_method_pointer(
+				"UnityEngine.UI.dll", "UnityEngine.UI",
+				"Text", "set_fontStyle", 1
+			)
+		);
+
+		text_set_linespacing = reinterpret_cast<void(*)(void*, float)>(
+			il2cpp_symbols::get_method_pointer(
+				"UnityEngine.UI.dll", "UnityEngine.UI",
+				"Text", "set_lineSpacing", 1
+			)
+		);
+
 		// hook UnityEngine.TextGenerator::PopulateWithErrors to modify text
 		ADD_HOOK(populate_with_errors, "UnityEngine.TextGenerator::PopulateWithErrors at %p\n");
 
@@ -370,6 +423,11 @@ namespace
 		ADD_HOOK(query_getstr, "Query::GetString at %p\n");
 		ADD_HOOK(query_dispose, "Query::Dispose at %p\n");
 
+		if (g_replace_font)
+		{
+			ADD_HOOK(on_populate, "Gallop.TextCommon::OnPopulateMesh at %p\n");
+		}
+		
 		if (g_max_fps > -1)
 		{
 			// break 30-40fps limit

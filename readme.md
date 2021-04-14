@@ -5,6 +5,17 @@
 1. 将 `version.dll` 和 `config.json` 以及 `config.json` 中引用的字典放置于 `umamusume.exe` 边上
 2. 启动游戏
 
+### 设置选项:
+- `enableConsole` 启用用来输出调试信息的控制台 (true/false)
+- `enableLogger` 将未覆盖的文本输出到 `dump.txt` (true/false)
+- `dumpStaticEntries` 需要上一条启用, 在游戏启动时将游戏内硬编码的文本条目输出到 `dump.txt`
+- `maxFps` 帧率限制 (-1 = 游戏原版/0 = 无限/>0 = 锁定到特定帧数)
+    - 注: 垂直同步已开启
+- `unlockSize` 允许游戏使用`1080p`以上的分辨率 (true/false)
+- `uiScale` 自定义UI缩放
+- `replaceFont` 将所有字体替换为默认字体, 解决缺字问题 (true/false)
+- `dicts` 将会读取的字典列表 (相对/绝对路径)
+
 ### 已知问题
 - ~~有时候加载 yaml 时会卡住，原因不明~~ 换成了rapidjson, 再见了您内
 
@@ -19,3 +30,21 @@
 
 # English
 ## Uma Musume: Pretty Derby localify patch
+
+### Usage:
+1. Put `version.dll`, `config.json` and the `dicts` referenced by `config.json` near the `umamusume.exe`.
+2. Launch the game
+
+### Config:
+- `enableConsole` Enable the console for printing debug infomations (true/false)
+- `enableLogger` Output uncovered text entries into `dump.txt` (true/false)
+- `dumpStaticEntries` Requires ^, Dump hardcoded text entries into `dump.txt`
+- `maxFps` Max fps limit (-1 = Unmodified/0 = Unlimited/>0 = Lock to #fps)
+    - Note: VSync is enabled
+- `unlockSize` Allow game to use resolutions that bigger than `1080p` (true/false)
+- `uiScale` Custom UI scale
+- `replaceFont` Replace all font to default font, solves missing word issue (true/false)
+- `dicts` A list of dicts that read by this (Path)
+
+### Known issue
+- None

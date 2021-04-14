@@ -10,6 +10,7 @@ int g_max_fps = -1;
 bool g_unlock_size = false;
 float g_ui_scale = 1.0f;
 float g_aspect_ratio = 16.f / 9.f;
+bool g_replace_font = true;
 
 namespace
 {
@@ -50,6 +51,7 @@ namespace
 			g_max_fps = document["maxFps"].GetInt();
 			g_unlock_size = document["unlockSize"].GetBool();
 			g_ui_scale = document["uiScale"].GetFloat();
+			g_replace_font = document["replaceFont"].GetBool();
 
 			// Looks like not working for now
 			// g_aspect_ratio = document["customAspectRatio"].GetFloat();
