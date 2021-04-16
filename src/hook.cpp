@@ -230,21 +230,19 @@ namespace
 	void (*text_assign_font)(void*);
 	int (*text_get_size)(void*);
 	void (*text_set_size)(void*, int);
+	float (*text_get_linespacing)(void*);
 	void (*text_set_style)(void*, int);
 	void (*text_set_linespacing)(void*, float);
-
-	unordered_map<void*, bool> text_map;
 
 	void* on_populate_orig = nullptr;
 	void on_populate_hook(void* _this, void* toFill)
 	{
-		if (!text_map.contains(_this))
+		if (text_get_linespacing(_this) != 1.05f)
 		{
 			text_assign_font(_this);
 			text_set_style(_this, 1);
 			text_set_size(_this, text_get_size(_this) - 4);
-			text_set_linespacing(_this, 1.1f);
-			text_map.emplace(_this, true);
+			text_set_linespacing(_this, 1.05f);
 		}
 		
 		return reinterpret_cast<decltype(on_populate_hook)*>(on_populate_orig)(_this, toFill);
@@ -396,6 +394,13 @@ namespace
 			il2cpp_symbols::get_method_pointer(
 				"umamusume.dll", "Gallop",
 				"TextCommon", "set_FontSize", 1
+			)
+		);
+
+		text_get_linespacing = reinterpret_cast<float(*)(void*)>(
+			il2cpp_symbols::get_method_pointer(
+				"UnityEngine.UI.dll", "UnityEngine.UI",
+				"Text", "get_lineSpacing", 0
 			)
 		);
 
