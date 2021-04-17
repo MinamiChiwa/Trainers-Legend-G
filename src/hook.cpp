@@ -248,6 +248,42 @@ namespace
 		return reinterpret_cast<decltype(on_populate_hook)*>(on_populate_orig)(_this, toFill);
 	}
 
+	void* set_resolution_orig;
+	void set_resolution_hook(int width, int height, bool fullscreen)
+	{
+		Resolution_t r;
+		r = *get_resolution(&r);
+
+		printf("%d %d\n", r.width, r.height);
+
+		bool need_fullscreen = false;
+
+		if (is_virt() && r.width / static_cast<double>(r.height) == (9.0 / 16.0))
+			need_fullscreen = true;
+		else if (!is_virt() && r.width / static_cast<double>(r.height) == (16.0 / 9.0))
+			need_fullscreen = true;
+
+		return reinterpret_cast<decltype(set_resolution_hook)*>(set_resolution_orig)(
+			need_fullscreen ? r.width : width, need_fullscreen ? r.height : height, need_fullscreen
+		);
+	}
+
+	void adjust_size()
+	{
+		thread([]() {
+			auto tr = il2cpp_thread_attach(il2cpp_domain_get());
+
+			Resolution_t r;
+			r = *get_resolution(&r);
+
+			auto target_height = r.height - 100;
+
+			set_resolution_hook(target_height * 0.5625f, target_height, false);
+
+			il2cpp_thread_detach(tr);
+		}).detach();
+	}
+
 	void dump_all_entries()
 	{
 		// TextId 0 - 0xA55, 0 is None
@@ -282,7 +318,7 @@ namespace
 	\
 	enabled_hooks.push_back(_name_##_offset)
 #pragma endregion
-
+#pragma region HOOK_ADDRESSES
 		auto populate_with_errors_addr = il2cpp_symbols::get_method_pointer(
 			"UnityEngine.TextRenderingModule.dll",
 			"UnityEngine", "TextGenerator",
@@ -418,6 +454,12 @@ namespace
 			)
 		);
 
+		auto set_resolution_addr = il2cpp_symbols::get_method_pointer(
+			"UnityEngine.CoreModule.dll", "UnityEngine",
+			"Screen", "SetResolution", 3
+		);
+#pragma endregion
+
 		// hook UnityEngine.TextGenerator::PopulateWithErrors to modify text
 		ADD_HOOK(populate_with_errors, "UnityEngine.TextGenerator::PopulateWithErrors at %p\n");
 
@@ -451,6 +493,12 @@ namespace
 			ADD_HOOK(gallop_get_screenwidth, "Gallop.Screen::get_Width at %p\n");
 
 			ADD_HOOK(canvas_scaler_setres, "UnityEngine.UI.CanvasScaler::set_referenceResolution at %p\n");
+		}
+
+		if (g_auto_fullscreen)
+		{
+			ADD_HOOK(set_resolution, "UnityEngine.Screen.SetResolution(int, int, bool) at %p\n");
+			adjust_size();
 		}
 		
 		if (g_dump_entries)

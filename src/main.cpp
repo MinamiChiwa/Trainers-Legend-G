@@ -11,6 +11,7 @@ bool g_unlock_size = false;
 float g_ui_scale = 1.0f;
 float g_aspect_ratio = 16.f / 9.f;
 bool g_replace_font = true;
+bool g_auto_fullscreen = true;
 
 namespace
 {
@@ -19,7 +20,9 @@ namespace
 		AllocConsole();
 
 		// open stdout stream
-		auto _ = freopen("CONOUT$", "w+t", stdout);
+		auto _ = freopen("CONOUT$", "w", stdout);
+		_ = freopen("CONOUT$", "w", stderr);
+		_ = freopen("CONIN$", "r", stdin);
 
 		SetConsoleTitle("Umamusume - Debug Console");
 
@@ -52,6 +55,7 @@ namespace
 			g_unlock_size = document["unlockSize"].GetBool();
 			g_ui_scale = document["uiScale"].GetFloat();
 			g_replace_font = document["replaceFont"].GetBool();
+			g_auto_fullscreen = document["autoFullscreen"].GetBool();
 
 			// Looks like not working for now
 			// g_aspect_ratio = document["customAspectRatio"].GetFloat();

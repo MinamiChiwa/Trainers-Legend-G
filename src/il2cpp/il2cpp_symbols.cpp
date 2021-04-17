@@ -12,6 +12,8 @@ il2cpp_method_get_param_t il2cpp_method_get_param;
 il2cpp_object_new_t il2cpp_object_new;
 il2cpp_resolve_icall_t il2cpp_resolve_icall;
 il2cpp_array_new_t il2cpp_array_new;
+il2cpp_thread_attach_t il2cpp_thread_attach;
+il2cpp_thread_detach_t il2cpp_thread_detach;
 
 char* il2cpp_array_addr_with_size(void* array, int32_t size, uintptr_t idx)
 {
@@ -38,6 +40,8 @@ namespace il2cpp_symbols
 		RESOLVE_IMPORT(il2cpp_object_new);
 		RESOLVE_IMPORT(il2cpp_resolve_icall);
 		RESOLVE_IMPORT(il2cpp_array_new);
+		RESOLVE_IMPORT(il2cpp_thread_attach);
+		RESOLVE_IMPORT(il2cpp_thread_detach);
 
 		il2cpp_domain = il2cpp_domain_get();
 	}

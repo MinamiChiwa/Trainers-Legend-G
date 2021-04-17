@@ -33,3 +33,4 @@ extern bool g_unlock_size;
 extern float g_ui_scale;
 extern float g_aspect_ratio;
 extern bool g_replace_font;
+extern bool g_auto_fullscreen;

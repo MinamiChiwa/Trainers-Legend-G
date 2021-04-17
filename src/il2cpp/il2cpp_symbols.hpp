@@ -210,6 +210,8 @@ typedef void* (*il2cpp_method_get_param_t)(const MethodInfo* method, uint32_t in
 typedef void* (*il2cpp_object_new_t)(void* klass);
 typedef void* (*il2cpp_resolve_icall_t)(const char* name);
 typedef void* (*il2cpp_array_new_t)(void* klass, uintptr_t count);
+typedef void* (*il2cpp_thread_attach_t)(void* domain);
+typedef void (*il2cpp_thread_detach_t)(void* thread);
 
 // function defines
 extern il2cpp_string_new_utf16_t il2cpp_string_new_utf16;
@@ -224,6 +226,8 @@ extern il2cpp_method_get_param_t il2cpp_method_get_param;
 extern il2cpp_object_new_t il2cpp_object_new;
 extern il2cpp_resolve_icall_t il2cpp_resolve_icall;
 extern il2cpp_array_new_t il2cpp_array_new;
+extern il2cpp_thread_attach_t il2cpp_thread_attach;
+extern il2cpp_thread_detach_t il2cpp_thread_detach;
 
 char* il2cpp_array_addr_with_size(void* arr, int32_t size, uintptr_t idx);
 

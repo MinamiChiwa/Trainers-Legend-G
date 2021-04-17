@@ -6,6 +6,7 @@
     "unlockSize": true,
     "uiScale": 1.0,
     "replaceFont": true,
+    "autoFullscreen": true,
     "dicts": [
         "localized_data/static.json",
         "localized_data/common.json",
