@@ -57,10 +57,10 @@ namespace
 	void* localize_get_orig = nullptr;
 	Il2CppString* localize_get_hook(int id)
 	{
-		auto origresult = reinterpret_cast<decltype(localize_get_hook)*>(localize_get_orig)(id);
+		auto orig_result = reinterpret_cast<decltype(localize_get_hook)*>(localize_get_orig)(id);
 		auto result = local::get_localized_string(id);
 
-		return result;
+		return result ? result : orig_result;
 	}
 
 	std::unordered_map<void*, bool> text_queries;
