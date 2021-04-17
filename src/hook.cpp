@@ -254,8 +254,6 @@ namespace
 		Resolution_t r;
 		r = *get_resolution(&r);
 
-		printf("%d %d\n", r.width, r.height);
-
 		bool need_fullscreen = false;
 
 		if (is_virt() && r.width / static_cast<double>(r.height) == (9.0 / 16.0))
