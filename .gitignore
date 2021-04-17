@@ -148,3 +148,7 @@ user*.bat
 
 # Premake binary
 #premake5.exe
+
+# text_dumper tmp files
+resources/text_dumper/obj
+resources/text_dumper/bin
