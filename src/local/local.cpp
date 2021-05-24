@@ -22,6 +22,12 @@ namespace local
 		return result;
 	}
 
+	void reload_textdb(const vector<string>* dicts)
+	{
+		text_db.clear();
+		load_textdb(dicts);
+	}
+
 	void load_textdb(const vector<string> *dicts)
 	{
 		for (auto dict : *dicts)

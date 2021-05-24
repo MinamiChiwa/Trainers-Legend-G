@@ -2,6 +2,7 @@
 
 extern bool init_hook();
 extern void uninit_hook();
+extern void start_console();
 
 bool g_dump_entries = false;
 bool g_enable_logger = false;
@@ -20,7 +21,7 @@ namespace
 		AllocConsole();
 
 		// open stdout stream
-		auto _ = freopen("CONOUT$", "w", stdout);
+		auto _ = freopen("CONOUT$", "w+t", stdout);
 		_ = freopen("CONOUT$", "w", stderr);
 		_ = freopen("CONIN$", "r", stdin);
 
@@ -104,6 +105,9 @@ int __stdcall DllMain(HINSTANCE, DWORD reason, LPVOID)
 			logger::init_logger();
 			local::load_textdb(&dicts);
 			init_hook();
+
+			if (g_enable_console)
+				start_console();
 		});
 		init_thread.detach();
 	}

@@ -191,11 +191,22 @@ namespace
 
 	Resolution_t* (*get_resolution)(Resolution_t* buffer);
 
+	void get_resolution_stub(Resolution_t* r)
+	{
+		*r = *get_resolution(r);
+
+		int width = min(r->height, r->width) * g_aspect_ratio;
+		if (r->width > r->height)
+			r->width = width;
+		else
+			r->height = width;
+	}
+
 	void* gallop_get_screenheight_orig;
 	int gallop_get_screenheight_hook()
 	{
 		Resolution_t res;
-		res = *get_resolution(&res);
+		get_resolution_stub(&res);
 
 		int w = max(res.width, res.height), h = min(res.width, res.height);
 
@@ -206,7 +217,7 @@ namespace
 	int gallop_get_screenwidth_hook()
 	{
 		Resolution_t res;
-		res = *get_resolution(&res);
+		get_resolution_stub(&res);
 
 		int w = max(res.width, res.height), h = min(res.width, res.height);
 
@@ -219,7 +230,7 @@ namespace
 	void canvas_scaler_setres_hook(void* _this, Vector2_t res)
 	{
 		Resolution_t r;
-		r = *get_resolution(&r);
+		get_resolution_stub(&r);
 
 		// set scale factor to make ui bigger on hi-res screen
 		set_scale_factor(_this, max(1.0f, r.width / 1920.f) * g_ui_scale);
@@ -272,7 +283,7 @@ namespace
 			auto tr = il2cpp_thread_attach(il2cpp_domain_get());
 
 			Resolution_t r;
-			r = *get_resolution(&r);
+			get_resolution_stub(&r);
 
 			auto target_height = r.height - 100;
 
@@ -280,6 +291,13 @@ namespace
 
 			il2cpp_thread_detach(tr);
 		}).detach();
+	}
+
+	void* load_scene_internal_orig = nullptr;
+	void* load_scene_internal_hook(Il2CppString* sceneName, int sceneBuildIndex, void* parameters, bool mustCompleteNextFrame)
+	{
+		wprintf(L"%s\n", sceneName->start_char);
+		return reinterpret_cast<decltype(load_scene_internal_hook)*>(load_scene_internal_orig)(sceneName, sceneBuildIndex, parameters, mustCompleteNextFrame);
 	}
 
 	void dump_all_entries()
@@ -456,6 +474,8 @@ namespace
 			"UnityEngine.CoreModule.dll", "UnityEngine",
 			"Screen", "SetResolution", 3
 		);
+
+		auto load_scene_internal_addr = il2cpp_resolve_icall("UnityEngine.SceneManagement.SceneManager::LoadSceneAsyncNameIndexInternal_Injected(System.String,System.Int32,UnityEngine.SceneManagement.LoadSceneParameters&,System.Boolean)");
 #pragma endregion
 
 		// hook UnityEngine.TextGenerator::PopulateWithErrors to modify text
@@ -467,6 +487,8 @@ namespace
 		ADD_HOOK(query_ctor, "Query::ctor at %p\n");
 		ADD_HOOK(query_getstr, "Query::GetString at %p\n");
 		ADD_HOOK(query_dispose, "Query::Dispose at %p\n");
+
+		// ADD_HOOK(load_scene_internal, "SceneManager::LoadSceneAsyncNameIndexInternal at %p\n");
 
 		if (g_replace_font)
 		{
