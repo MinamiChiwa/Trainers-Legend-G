@@ -7,7 +7,6 @@ namespace
 	void path_game_assembly();
 
 	bool mh_inited = false;
-	vector<void*> enabled_hooks;
 
 	void dump_bytes(void* pos)
 	{
@@ -302,11 +301,22 @@ namespace
 
 	void dump_all_entries()
 	{
-		// TextId 0 - 0xA55, 0 is None
-		for (int i = 1; i <= 0xA55; ++i)
+		// 0 is None
+		for(int i = 1;;i++)
 		{
-			auto entry = reinterpret_cast<decltype(localize_get_hook)*>(localize_get_orig)(i);
-			logger::write_entry(i, entry->start_char);
+			auto* str = reinterpret_cast<decltype(localize_get_hook)*>(localize_get_orig)(i);
+
+			if (str && *str->start_char)
+			{
+				logger::write_entry(i, str->start_char);
+			}
+			else
+			{
+				// check next string, if it's still empty, then we are done!
+				auto* nextStr = reinterpret_cast<decltype(localize_get_hook)*>(localize_get_orig)(i + 1);
+				if (!(nextStr && *nextStr->start_char))
+					break;
+			}
 		}
 	}
 
@@ -330,9 +340,7 @@ namespace
 	dump_bytes(_name_##_offset); \
 	\
 	MH_CreateHook(_name_##_offset, _name_##_hook, &_name_##_orig); \
-	MH_EnableHook(_name_##_offset); \
-	\
-	enabled_hooks.push_back(_name_##_offset)
+	MH_EnableHook(_name_##_offset); 
 #pragma endregion
 #pragma region HOOK_ADDRESSES
 		auto populate_with_errors_addr = il2cpp_symbols::get_method_pointer(
@@ -547,10 +555,6 @@ void uninit_hook()
 	if (!mh_inited)
 		return;
 
-	for (auto hook : enabled_hooks)
-		MH_DisableHook(hook);
-
-	enabled_hooks.clear();
-
+	MH_DisableHook(MH_ALL_HOOKS);
 	MH_Uninitialize();
 }
