@@ -54,3 +54,16 @@
 
 ### Known issue
 - None
+
+# Resources
+- `static.json` upgrade tool - https://github.com/AirJerryWhite/i18upgrade
+
+# Credits
+## Translation
+### schinese
+- @AirJerryWhite
+- @Yaklo
+- @july20026
+- @RikkaTakanaishi
+### tchinese
+- @yotv2000tw
