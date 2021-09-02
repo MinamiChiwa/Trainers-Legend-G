@@ -65,5 +65,6 @@
 - @Yaklo
 - @july20026
 - @RikkaTakanaishi
+- @羲羲
 ### tchinese
 - @yotv2000tw
