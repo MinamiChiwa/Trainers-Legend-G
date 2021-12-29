@@ -66,5 +66,6 @@
 - @july20026
 - @RikkaTakanaishi
 - @羲羲
+- @MinamiChiwa
 ### tchinese
 - @yotv2000tw
