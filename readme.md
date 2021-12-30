@@ -1,13 +1,15 @@
-# 注
+# 注意
 - 此库复刻自github：https://github.com/GEEKiDoS/umamusume-localify
 - 原作者@GEEKiDoS
 - 由于长时间没有更新，现由@Minami_Chiwa自行判断接手
+
+-!由于本插件涉及到更改游戏文件，可能会有封号风险，本项目及其贡献者均与cygames无关并且不对使用该项目造成账号被ban负责，如果账号因使用此项目被ban请发issue!
 
 # 中文
 ## 赛马娘 (DMM版) 本地化补丁
 
 ### 使用方法:
-1. 将 `version.dll` 和 `config.json` 以及 `config.json` 中引用的字典放置于 `umamusume.exe` 边上
+1. 将 `version.dll`（仓库version文件夹内） 和 `config.json`（仓库resources文件夹内） 以及 `config.json` 中引用的字典（仓库resources文件夹内的任意 **localized_data 文件夹**  <目前仅schinese处于更新状态>）放置于游戏根目录 `X:\Pretty Derby\Umamusume` 
 2. 启动游戏
 
 ### 设置选项:
@@ -26,6 +28,8 @@
 
 ### 已知问题
 - ~~有时候加载 yaml 时会卡住，原因不明~~ 换成了rapidjson, 再见了您内
+- maxFPS设为0时可能会在LIVE中出现眼球锁死的BUG
+- maxFPS过大时，部分画面会出现强烈抖动（应该是原本的镜头抖动在高帧率下被加强了）
 
 ### 如何贡献
  - 文本条目: 
@@ -36,8 +40,18 @@
  - 代码
     - 想必各位都是老司机了
 
+### `static.json`更新工具
+- 目前已知游戏在更新时有可能导致`static.json`文本序号改变，需要使用以下地址的软件进行更新
+- github（原作者）：https://github.com/AirJerryWhite/i18upgrade
+- gitee（搬运）：https://gitee.com/Minami_Chiwa/i18upgrade
+
+
 # English
 ## Uma Musume: Pretty Derby localify patch
+
+##Disclaimer: 
+-This project(and its contributors) is not related with Cygames and will not take any responsbility of possible account bans because of using this project. USE IT AT YOUR RISK.
+-If your account is banned because of using this project, please open an issue about that.
 
 ### Usage:
 1. Put `version.dll`, `config.json` and the `dicts` referenced by `config.json` near the `umamusume.exe`.
@@ -61,11 +75,13 @@
 - None
 
 # Resources
-- `static.json` upgrade tool - https://github.com/AirJerryWhite/i18upgrade
+- `static.json` upgrade tool 
+- github（original）：https://github.com/AirJerryWhite/i18upgrade
+- gitee：https://gitee.com/Minami_Chiwa/i18upgrade
 
 # Credits
 ## Translation
-### 原
+### Original
 #### schinese
 - @AirJerryWhite
 - @Yaklo
@@ -75,7 +91,7 @@
 #### tchinese
 - @yotv2000tw
 
-### 目前
+### Now
 #### schinese
 - @MinamiChiwa
 
