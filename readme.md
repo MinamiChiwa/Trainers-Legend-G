@@ -60,12 +60,16 @@
 
 # Credits
 ## Translation
-### schinese
+### 原
+#### schinese
 - @AirJerryWhite
 - @Yaklo
 - @july20026
 - @RikkaTakanaishi
 - @羲羲
-- @MinamiChiwa
-### tchinese
+#### tchinese
 - @yotv2000tw
+
+### 目前
+- 由@MinamiChiwa个人接手
+
