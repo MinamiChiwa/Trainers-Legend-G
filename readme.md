@@ -1,7 +1,7 @@
 # 注
 - 此库复刻自github：https://github.com/GEEKiDoS/umamusume-localify
 - 原作者@GEEKiDoS
-- 由于长时间没有更新，现由@Minami_Chiwa接手
+- 由于长时间没有更新，现由@Minami_Chiwa自行判断接手
 
 # 中文
 ## 赛马娘 (DMM版) 本地化补丁
