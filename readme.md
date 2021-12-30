@@ -71,5 +71,6 @@
 - @yotv2000tw
 
 ### 目前
+#### schinese
 - 由@MinamiChiwa个人接手
 
