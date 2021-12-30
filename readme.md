@@ -3,7 +3,7 @@
 - 原作者@GEEKiDoS
 - 由于长时间没有更新，现由@Minami_Chiwa自行判断接手
 
--!由于本插件涉及到更改游戏文件，可能会有封号风险，本项目及其贡献者均与cygames无关并且不对使用该项目造成账号被ban负责，如果账号因使用此项目被ban请发issue!
+-  **_!由于本插件涉及到更改游戏文件，可能会有封号风险，本项目及其贡献者均与cygames无关并且不对使用该项目造成账号被ban负责，如果账号因使用此项目被ban请发issue!_** 
 
 # 中文
 ## 赛马娘 (DMM版) 本地化补丁
@@ -50,8 +50,8 @@
 ## Uma Musume: Pretty Derby localify patch
 
 ##Disclaimer: 
--This project(and its contributors) is not related with Cygames and will not take any responsbility of possible account bans because of using this project. USE IT AT YOUR RISK.
--If your account is banned because of using this project, please open an issue about that.
+- **_This project(and its contributors) is not related with Cygames and will not take any responsbility of possible account bans because of using this project. USE IT AT YOUR RISK._** 
+- **_If your account is banned because of using this project, please open an issue about that._** 
 
 ### Usage:
 1. Put `version.dll`, `config.json` and the `dicts` referenced by `config.json` near the `umamusume.exe`.
