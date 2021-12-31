@@ -10,7 +10,6 @@
     "dicts": [ 
         "localized_data/static.json",
         "localized_data/chara.json",
-        "localized_data/race_comment.json",
         "localized_data/race_message.json",
         "localized_data/U&Sname.json",
         "localized_data/mainstory.json",
