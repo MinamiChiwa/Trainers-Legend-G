@@ -18,6 +18,7 @@
         "localized_data/extrastory.json",
         "localized_data/himitsu.json",
         "localized_data/item.json",
+        "localized_data/LIVE.json",
         "localized_data/hash_entries.json"
     ]
 }
