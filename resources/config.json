@@ -7,17 +7,23 @@
     "uiScale": 1.0,
     "replaceFont": true,
     "autoFullscreen": false,
-    "dicts": [ 
+    "dicts": [
         "localized_data/static.json",
         "localized_data/chara.json",
+        "localized_data/race_name.json",
         "localized_data/race_message.json",
+        "localized_data/race_comment.json",
         "localized_data/U&Sname.json",
         "localized_data/mainstory.json",
         "localized_data/umastory.json",
         "localized_data/extrastory.json",
-        "localized_data/himitsu.json",
+        "localized_data/himitsumanga.json",
         "localized_data/item.json",
         "localized_data/LIVE.json",
+        "localized_data/scardname.json",
+        "localized_data/event.json",
+        "localized_data/designation.json",
+        "localized_data/common.json",
         "localized_data/hash_entries.json"
     ]
 }
