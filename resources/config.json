@@ -2,7 +2,7 @@
     "enableConsole": true,
     "enableLogger": false,
     "dumpStaticEntries": false,
-    "maxFps": 60,
+    "maxFps": 120,
     "unlockSize": true,
     "uiScale": 1.0,
     "replaceFont": true,
