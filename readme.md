@@ -42,7 +42,7 @@
  - 文本条目: 
     - 如要添加新条目，请先将`config.json` 内的 `enableLogger` 设置为 `true` 之后启动游戏
         - 随后未覆盖的文本会出现在 `dump.txt`
-    - 部分原文本位于 `resources/original_data` 内
+    - 部分原文本位于 `resources/original_data` 内，有需要翻译的原文本代码可以加入到相应的分类文件中。
     - 请在汉化完条目之后将其移动到`localized_data`内并提交 Pull Reqeust
     
  - 代码
@@ -102,4 +102,5 @@
 ### Now
 #### schinese
 - @MinamiChiwa
+- @ManakaAo
 
