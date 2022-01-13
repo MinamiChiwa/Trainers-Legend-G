@@ -9,12 +9,12 @@
 ## 赛马娘 (DMM版) 本地化补丁
 
 ### 使用方法:
-1. 下载发行版`DMMUPD-Schinese`压缩包，将压缩包内的文件解压至游戏根目录`X:\Pretty Derby\Umamusume`
+1. 下载发行版`DMMUPD-Schinese`压缩包，将压缩包内的文件解压至游戏根目录`X:\Umamusume`
 2. 启动游戏
 
 或者
 
-1. 将 `version.dll`（仓库version文件夹内） 和 `config.json`（仓库resources文件夹内） 以及 `config.json` 中引用的字典（仓库resources文件夹内的任意 **localized_data 文件夹**  <目前仅schinese处于更新状态>）放置于游戏根目录 `X:\Pretty Derby\Umamusume` 
+1. 将 `version.dll`（仓库version文件夹内） 和 `config.json`（仓库resources文件夹内） 以及 `config.json` 中引用的字典（仓库resources文件夹内的任意 **localized_data 文件夹**  <目前仅schinese处于更新状态>）放置于游戏根目录 `X:\Umamusume` 
 2. 启动游戏
 
 ### 设置选项:
