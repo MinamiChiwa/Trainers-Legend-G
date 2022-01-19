@@ -108,4 +108,6 @@
 #### schinese
 - @MinamiChiwa
 - @ManakaAo
+- @晖轩
+- @毫毛
 
