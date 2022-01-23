@@ -10,14 +10,15 @@
 ## 赛马娘 (DMM版) 本地化补丁
 
 ### 使用方法:
-1. 下载发行版`DMMUPD-Schinese`压缩包，将压缩包内的文件解压至游戏根目录`X:\Umamusume`
+1. 下载发行版`DMMUPD-Schinese`压缩包和`umamusume_update.exe`自动更新程序，将压缩包内的文件和`umamusume_update.exe`解压至游戏根目录`X:\Umamusume`
 2. 启动游戏
 
 或者
 
 1. 将 `version.dll`（仓库version文件夹内） 和 `config.json`（仓库resources文件夹内） 以及 `config.json` 中引用的字典（仓库resources文件夹内的任意 **localized_data 文件夹**  <目前仅schinese处于更新状态>）放置于游戏根目录 `X:\Umamusume` 
 2. 启动游戏
-
+### 更新方法:
+启动`umamusume_update.exe`（若没有请前往发行版下载此程序），或手动下载发行版最新压缩包。
 ### 设置选项:
 - `enableConsole` 启用用来输出调试信息的控制台 (true/false)
 - `enableLogger` 将未覆盖的文本输出到 `dump.txt` (true/false)
