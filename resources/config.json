@@ -6,7 +6,9 @@
     "unlockSize": true,
     "uiScale": 1.0,
     "replaceFont": true,
-    "autoFullscreen": false,
+    "autoFullscreen": true,
+    "LineBreakHotKey": "u",
+    "autoChangeLineBreakMode": true,
     "dicts": [
         "localized_data/static.json",
         "localized_data/chara.json",
