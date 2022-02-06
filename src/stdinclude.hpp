@@ -13,6 +13,7 @@
 #include <string>
 #include <thread>
 #include <unordered_map>
+#include <thread>
 
 #include <MinHook.h>
 
@@ -34,3 +35,5 @@ extern float g_ui_scale;
 extern float g_aspect_ratio;
 extern bool g_replace_font;
 extern bool g_auto_fullscreen;
+extern bool autoChangeLineBreakMode;
+extern void start_monitor_thread();

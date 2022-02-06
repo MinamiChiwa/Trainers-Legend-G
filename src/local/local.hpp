@@ -1,4 +1,5 @@
 #pragma once
+#include "../../build/mhotkey.hpp"
 
 namespace local
 {

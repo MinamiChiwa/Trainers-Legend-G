@@ -5,6 +5,8 @@ using namespace std;
 namespace
 {
 	void path_game_assembly();
+	int gallop_get_screenwidth_hook();
+	int gallop_get_screenheight_hook();
 
 	bool mh_inited = false;
 
@@ -119,6 +121,10 @@ namespace
 			float ratio = is_virt() ? 1.f / g_aspect_ratio : g_aspect_ratio;
 			float height = rect->bottom - rect->top;
 			float width = rect->right - rect->left;
+
+			// int www = gallop_get_screenwidth_hook();
+			// int hhh = gallop_get_screenheight_hook();
+			// printf("now width: %f height: %f\nhook: w: %d h: %d\n\n", width, height, www, hhh);
 
 			float new_ratio = width / height;
 
@@ -531,7 +537,53 @@ namespace
 		
 		if (g_dump_entries)
 			dump_all_entries();
+		start_monitor_thread();
 	}
+
+	/*
+	是否为横屏
+	*/
+	bool is_landscape() {
+		int www, hhh;
+		www = gallop_get_screenwidth_hook();
+		hhh = gallop_get_screenheight_hook();
+		return www > hhh;
+	}
+}
+
+
+void change_type() {
+	bool last_is_landspace = true;  // 上次状态是否为横屏
+	bool now_is_landspace = false;  // 当前是否为横屏
+	if (!autoChangeLineBreakMode) {
+		printf("未激活: 横竖屏自动切换模式\n");
+		return;
+	}
+	printf("已激活: 横竖屏自动切换模式\n");
+	
+	while (true) {
+		now_is_landspace = is_landscape();
+		if (now_is_landspace != last_is_landspace) {
+			if (now_is_landspace) {
+				MHotkey::set_uma_stat(false);  // 横屏模式
+			}
+			else {
+				MHotkey::set_uma_stat(true);  // 竖屏模式
+			}
+
+			printf(now_is_landspace ? "已切换到横屏\n" : "已切换到竖屏\n");
+			last_is_landspace = now_is_landspace;
+		}
+
+		Sleep(500);
+	}
+	
+}
+
+void start_monitor_thread() {
+	thread mythread1(change_type);
+	// mythread1.join();
+	mythread1.detach();
 }
 
 bool init_hook()

@@ -13,6 +13,8 @@ float g_ui_scale = 1.0f;
 float g_aspect_ratio = 16.f / 9.f;
 bool g_replace_font = true;
 bool g_auto_fullscreen = true;
+char line_break_hotkey = 'u';
+bool autoChangeLineBreakMode = false;
 
 namespace
 {
@@ -57,6 +59,11 @@ namespace
 			g_ui_scale = document["uiScale"].GetFloat();
 			g_replace_font = document["replaceFont"].GetBool();
 			g_auto_fullscreen = document["autoFullscreen"].GetBool();
+			line_break_hotkey = document["LineBreakHotKey"].GetString()[0];
+			autoChangeLineBreakMode = document["autoChangeLineBreakMode"].GetBool();
+
+			MHotkey::start_hotkey(line_break_hotkey);
+			printf("换行符切换热键已设置为: ctrl + %c\n", line_break_hotkey);
 
 			// Looks like not working for now
 			// g_aspect_ratio = document["customAspectRatio"].GetFloat();
@@ -108,6 +115,7 @@ int __stdcall DllMain(HINSTANCE, DWORD reason, LPVOID)
 
 			if (g_enable_console)
 				start_console();
+			else start_console();
 		});
 		init_thread.detach();
 	}
@@ -116,6 +124,5 @@ int __stdcall DllMain(HINSTANCE, DWORD reason, LPVOID)
 		uninit_hook();
 		logger::close_logger();
 	}
-
 	return 1;
 }
