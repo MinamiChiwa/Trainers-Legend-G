@@ -3,10 +3,12 @@
     "enableLogger": false,
     "dumpStaticEntries": false,
     "maxFps": 60,
-    "unlockSize": true,
+    "unlockSize": false,
     "uiScale": 1.0,
     "replaceFont": true,
     "autoFullscreen": false,
+    "LineBreakHotKey": "u",
+    "autoChangeLineBreakMode": true,
     "dicts": [
         "localized_data/static.json",
         "localized_data/chara.json",
