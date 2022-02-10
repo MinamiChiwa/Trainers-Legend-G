@@ -9,6 +9,8 @@
     "autoFullscreen": false,
     "LineBreakHotKey": "u",
     "autoChangeLineBreakMode": true,
+    "resolution_start": [451, 1015],
+    "aspect_ratio": [16.0, 9.0],
     "dicts": [
         "localized_data/static.json",
         "localized_data/chara.json",
