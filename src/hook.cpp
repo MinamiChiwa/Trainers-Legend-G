@@ -114,10 +114,11 @@ namespace
 	void* wndproc_orig = nullptr;
 	LRESULT wndproc_hook(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	{
+		/*  注释掉了屏幕就不错位了, 先暂时这样, 看看有没有BUG(
 		if (uMsg == WM_SIZING)
 		{
 			RECT* rect = reinterpret_cast<RECT*>(lParam);
-
+			
 			float ratio = is_virt() ? 1.f / g_aspect_ratio : g_aspect_ratio;
 			float height = rect->bottom - rect->top;
 			float width = rect->right - rect->left;
@@ -159,9 +160,9 @@ namespace
 
 			last_height = height;
 			last_width = width;
-
 			return TRUE;
 		}
+		*/
 
 		return reinterpret_cast<decltype(wndproc_hook)*>(wndproc_orig)(hWnd, uMsg, wParam, lParam);
 	}
@@ -229,6 +230,11 @@ namespace
 		return is_virt() ? h : w;
 	}
 
+	//void* camera_reset_orig = nullptr;
+	//void camera_reset_hook() {
+	//	return reinterpret_cast<decltype(camera_reset_hook)*>(camera_reset_orig)();
+	//}
+
 	void (*set_scale_factor)(void*, float);
 
 	void* canvas_scaler_setres_orig;
@@ -272,9 +278,9 @@ namespace
 
 		bool need_fullscreen = false;
 
-		if (is_virt() && r.width / static_cast<double>(r.height) == (9.0 / 16.0))
+		if (is_virt() && r.width / static_cast<double>(r.height) == (9.0 / 16.0) && g_auto_fullscreen)
 			need_fullscreen = true;
-		else if (!is_virt() && r.width / static_cast<double>(r.height) == (16.0 / 9.0))
+		else if (!is_virt() && r.width / static_cast<double>(r.height) == (16.0 / 9.0) && g_auto_fullscreen)
 			need_fullscreen = true;
 
 		return reinterpret_cast<decltype(set_resolution_hook)*>(set_resolution_orig)(
@@ -291,8 +297,8 @@ namespace
 			get_resolution_stub(&r);
 
 			auto target_height = r.height - 100;
-
-			set_resolution_hook(target_height * 0.5625f, target_height, false);
+			if (start_width == -1 && start_height == -1)
+				set_resolution_hook(target_height * 0.5625f, target_height, false);
 
 			il2cpp_thread_detach(tr);
 		}).detach();
@@ -410,6 +416,11 @@ namespace
 			)
 		);
 
+		//auto camera_reset_addr = il2cpp_symbols::get_method_pointer(
+		//	"UnityEngine.CoreModule.dll", "UnityEngine",
+		//	"Camera", "Reset", 0
+		//);
+
 		auto gallop_get_screenheight_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"Screen", "get_Height", 0
@@ -501,6 +512,7 @@ namespace
 		ADD_HOOK(query_ctor, "Query::ctor at %p\n");
 		ADD_HOOK(query_getstr, "Query::GetString at %p\n");
 		ADD_HOOK(query_dispose, "Query::Dispose at %p\n");
+		//ADD_HOOK(camera_reset, "UnityEngine.Camera.Reset() at %p\n");
 
 		// ADD_HOOK(load_scene_internal, "SceneManager::LoadSceneAsyncNameIndexInternal at %p\n");
 
@@ -529,15 +541,20 @@ namespace
 			ADD_HOOK(canvas_scaler_setres, "UnityEngine.UI.CanvasScaler::set_referenceResolution at %p\n");
 		}
 
+		ADD_HOOK(set_resolution, "UnityEngine.Screen.SetResolution(int, int, bool) at %p\n");
 		if (g_auto_fullscreen)
 		{
-			ADD_HOOK(set_resolution, "UnityEngine.Screen.SetResolution(int, int, bool) at %p\n");
 			adjust_size();
 		}
 		
 		if (g_dump_entries)
 			dump_all_entries();
 		start_monitor_thread();
+
+		if (start_width != -1 && start_height != -1) {
+			set_resolution_hook(start_width, start_height, false);	
+		}
+
 	}
 
 	/*
@@ -551,24 +568,62 @@ namespace
 	}
 }
 
+void _set_u_stat(bool s) {
+	if (autoChangeLineBreakMode) {
+		MHotkey::set_uma_stat(s);
+	}
+}
+
 
 void change_type() {
 	bool last_is_landspace = true;  // 上次状态是否为横屏
 	bool now_is_landspace = false;  // 当前是否为横屏
+	int now_w, now_h;
+	// int last_land_w = -1, last_land_h = -1;  // 上次横屏分辨率
+	// int last_vert_w = -1, last_vert_h = -1;  // 上次竖屏分辨率
+
+	now_w = gallop_get_screenwidth_hook();
+	now_h = gallop_get_screenheight_hook();
+
 	if (!autoChangeLineBreakMode) {
 		printf("未激活: 横竖屏自动切换模式\n");
-		return;
+		// return;
 	}
-	printf("已激活: 横竖屏自动切换模式\n");
-	
+	else {
+		printf("已激活: 横竖屏自动切换模式\n");
+	}
+
+	Vector3_t vt;
+
 	while (true) {
-		now_is_landspace = is_landscape();
+		now_w = gallop_get_screenwidth_hook();
+		now_h = gallop_get_screenheight_hook();
+		now_is_landspace = now_w > now_h;
+		/*
+		if (now_is_landspace) {
+			last_land_h = now_h;
+			last_land_w = now_w;
+		}
+		else {
+			last_vert_h = now_h;
+			last_vert_w = now_w;
+		}
+		*/
+
 		if (now_is_landspace != last_is_landspace) {
 			if (now_is_landspace) {
-				MHotkey::set_uma_stat(false);  // 横屏模式
+				_set_u_stat(false);  // 横屏模式
+				// if (last_land_w != -1 && last_land_h != -1 && !g_auto_fullscreen) {
+				//	printf("上次横屏分辨率: %d, %d\n", last_land_w, last_land_h);
+				//	//set_resolution_hook(last_land_w, last_land_h, false);
+				//}
 			}
 			else {
-				MHotkey::set_uma_stat(true);  // 竖屏模式
+				_set_u_stat(true);  // 竖屏模式
+				//if (last_vert_w != -1 && last_vert_h != -1) {
+				//	printf("上次竖屏分辨率: %d, %d\n", last_vert_w, last_vert_h);
+				//	//set_resolution_hook(last_vert_w, last_vert_h, false);
+				//}
 			}
 
 			printf(now_is_landspace ? "已切换到横屏\n" : "已切换到竖屏\n");

@@ -37,3 +37,5 @@ extern bool g_replace_font;
 extern bool g_auto_fullscreen;
 extern bool autoChangeLineBreakMode;
 extern void start_monitor_thread();
+extern int start_width;
+extern int start_height;

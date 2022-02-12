@@ -93,10 +93,19 @@ namespace local
 	wstring line_break_replace(Il2CppString* text) {
 		wstring _ret = L"";
 		wstring tmp = text->start_char;
+		bool space_flag = false;  // 后接空格
 		
 		for (int i = 0; i < tmp.length(); i++) {
 			if (tmp[i] != L'\n' && tmp[i] != L'\r') {
 				_ret += tmp[i];
+			}
+			else if (space_flag){
+				_ret += L'　';
+			}
+
+			space_flag = false;
+			if (tmp[i] == L'！' || tmp[i] == L'？') {
+				space_flag = true;  // 标记空格
 			}
 		}
 
