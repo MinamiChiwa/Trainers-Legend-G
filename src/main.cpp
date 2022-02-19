@@ -47,7 +47,7 @@ namespace
 		std::ifstream versionStream("version.txt", std::ios_base::ate);
 		if (!versionStream.is_open())
 		{
-			return "";
+			return "unknown";
 		}
 		const auto length = versionStream.tellg();
 		versionStream.seekg(0);
@@ -138,6 +138,58 @@ namespace
 
 		config_stream.close();
 		local::reload_textdb(&dicts);
+	}
+
+	void merge_config(const std::filesystem::path& newConfig)
+	{
+		constexpr const char* keepList[] = { "enableConsole", "enableLogger", "dumpStaticEntries", "maxFps", "unlockSize", "uiScale", "replaceFont", "autoFullscreen" };
+
+		std::ifstream newConfigFile(newConfig);
+		if (!newConfigFile.is_open())
+		{
+			std::printf("Cannot open new config file, considered as corrupted, try overwriting with old version\n");
+			std::filesystem::copy_file(ConfigJson, newConfig, std::filesystem::copy_options::overwrite_existing);
+			return;
+		}
+
+		rapidjson::IStreamWrapper newConfigWrapper(newConfigFile);
+		rapidjson::Document newConfigDocument;
+
+		newConfigDocument.ParseStream(newConfigWrapper);
+		newConfigFile.close();
+
+		if (newConfigDocument.HasParseError())
+		{
+			std::printf("New config is corrupted, try overwriting with old version\n");
+			std::filesystem::copy_file(ConfigJson, newConfig, std::filesystem::copy_options::overwrite_existing);
+			return;
+		}
+
+		std::ifstream configFile(ConfigJson);
+		if (!configFile.is_open())
+		{
+			std::printf("Cannot open old config, skip merging\n");
+			return;
+		}
+
+		rapidjson::IStreamWrapper configWrapper(configFile);
+		rapidjson::Document configDocument;
+
+		configDocument.ParseStream(configWrapper);
+		configFile.close();
+
+		if (!configDocument.HasParseError())
+		{
+			for (const auto entry : keepList)
+			{
+				newConfigDocument[entry] = configDocument[entry];
+			}
+		}
+
+		std::ofstream newConfigFileOutput(newConfig);
+		rapidjson::OStreamWrapper newConfigOutputWrapper(newConfigFileOutput);
+		rapidjson::Writer<rapidjson::OStreamWrapper> writer(newConfigOutputWrapper);
+		newConfigDocument.Accept(writer);
 	}
 
 	template <typename Callable>
@@ -251,11 +303,11 @@ namespace
 		constexpr const char AutoUpdateTmpPath[] = "UpdateTemp";
 		const std::filesystem::path oldLocalizedDataPath = OldLocalizedDataPath;
 
-		// 不关闭会占用部分 json 文件导致失败
-		killProcessByName("UnityCrashHandler64.exe");
-
 		if (g_auto_update_service)
 		{
+			// 不关闭会占用部分 json 文件导致失败
+			killProcessByName("UnityCrashHandler64.exe");
+
 			const auto currentVersion = get_current_version();
 			printf("Current version is %s\n", currentVersion.c_str());
 			constexpr auto updateTempFile = "update.zip";
@@ -275,9 +327,12 @@ namespace
 						std::filesystem::create_directory(tmpPath);
 						if (decompress_update_file(updateTempFile, tmpPath))
 						{
+							const auto newConfigPath = tmpPath / ConfigJson;
+							merge_config(newConfigPath);
+
 							std::filesystem::rename(LocalizedDataPath, oldLocalizedDataPath);
 							std::filesystem::rename(ConfigJson, oldLocalizedDataPath / ConfigJson);
-							std::filesystem::rename(tmpPath / ConfigJson, ConfigJson);
+							std::filesystem::rename(newConfigPath, ConfigJson);
 							std::filesystem::rename(tmpPath, LocalizedDataPath);
 							std::filesystem::remove_all(oldLocalizedDataPath);
 
