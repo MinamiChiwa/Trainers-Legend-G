@@ -263,67 +263,73 @@ namespace
 		if (g_auto_update_service)
 		{
 			const auto currentVersion = get_current_version();
+			printf("Current version is %s\n", currentVersion.c_str());
 			constexpr auto updateTempFile = "update.zip";
 
-			g_auto_update_service->CheckAndUpdate(currentVersion, updateTempFile).then([=](const std::optional<std::string>& newVersion)
+			try
+			{
+				const auto newVersion = g_auto_update_service->CheckAndUpdate(currentVersion, updateTempFile).get();
+				if (newVersion)
 				{
-					if (newVersion)
+					std::printf("New version %s downloaded! Updating...\n", newVersion->c_str());
+					const std::filesystem::path tmpPath = AutoUpdateTmpPath;
+
+					try
 					{
-						std::printf("New version %s downloaded! Updating...\n", newVersion->c_str());
-						const std::filesystem::path tmpPath = AutoUpdateTmpPath;
+						// 清空并重新生成临时路径
+						std::filesystem::remove_all(tmpPath);
+						std::filesystem::create_directory(tmpPath);
+						if (decompress_update_file(updateTempFile, tmpPath))
+						{
+							std::filesystem::rename(LocalizedDataPath, oldLocalizedDataPath);
+							std::filesystem::rename(ConfigJson, oldLocalizedDataPath / ConfigJson);
+							std::filesystem::rename(tmpPath / ConfigJson, ConfigJson);
+							std::filesystem::rename(tmpPath, LocalizedDataPath);
+							std::filesystem::remove_all(oldLocalizedDataPath);
+
+							reload_config();
+
+							write_current_version(*newVersion);
+							std::filesystem::remove(updateTempFile);
+
+							std::printf("New version updating completed!\n");
+						}
+						else
+						{
+							std::filesystem::remove_all(tmpPath);
+							std::printf("Cannot decompress update file!\n");
+						}
+					}
+					catch (const std::exception& e)
+					{
+						std::printf("Exception %s occurred during updating, try rolling back...\n", e.what());
 
 						try
 						{
-							// 清空并重新生成临时路径
 							std::filesystem::remove_all(tmpPath);
-							std::filesystem::create_directory(tmpPath);
-							if (decompress_update_file(updateTempFile, tmpPath))
+							if (std::filesystem::exists(oldLocalizedDataPath))
 							{
-								std::filesystem::rename(LocalizedDataPath, oldLocalizedDataPath);
-								std::filesystem::rename(ConfigJson, oldLocalizedDataPath / ConfigJson);
-								std::filesystem::rename(tmpPath / ConfigJson, ConfigJson);
-								std::filesystem::rename(tmpPath, LocalizedDataPath);
-								std::filesystem::remove_all(oldLocalizedDataPath);
-
-								reload_config();
-
-								write_current_version(*newVersion);
-								std::filesystem::remove(updateTempFile);
-
-								std::printf("New version updating completed!\n");
-							}
-							else
-							{
-								std::filesystem::remove_all(tmpPath);
-								std::printf("Cannot decompress update file!\n");
+								std::filesystem::remove_all(LocalizedDataPath);
+								std::filesystem::rename(oldLocalizedDataPath / ConfigJson, ConfigJson);
+								std::filesystem::rename(oldLocalizedDataPath, LocalizedDataPath);
 							}
 						}
 						catch (const std::exception& e)
 						{
-							std::printf("Exception %s occurred during updating, try rolling back...\n", e.what());
-
-							try
-							{
-								std::filesystem::remove_all(tmpPath);
-								if (std::filesystem::exists(oldLocalizedDataPath))
-								{
-									std::filesystem::remove_all(LocalizedDataPath);
-									std::filesystem::rename(oldLocalizedDataPath / ConfigJson, ConfigJson);
-									std::filesystem::rename(oldLocalizedDataPath, LocalizedDataPath);
-								}
-							}
-							catch (const std::exception& e)
-							{
-								std::printf("Another exception %s occurred during rolling back, please try reopening program or reinstalling patch\n", e.what());
-								std::exit(1);
-							}
+							std::printf("Another exception %s occurred during rolling back, please try reopening program or reinstalling patch\n", e.what());
+							std::exit(1);
 						}
 					}
-					else
-					{
-						std::printf("You are using the latest version!\n");
-					}
-				});
+				}
+				else
+				{
+					std::printf("You are using the latest version!\n");
+				}
+			}
+			catch (const std::exception& e)
+			{
+				std::printf("Exception %s occurred during checking update, skipping\n", e.what());
+			}
 		}
 	}
 }
