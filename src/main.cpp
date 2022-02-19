@@ -305,9 +305,6 @@ namespace
 
 		if (g_auto_update_service)
 		{
-			// 不关闭会占用部分 json 文件导致失败
-			killProcessByName("UnityCrashHandler64.exe");
-
 			const auto currentVersion = utility::conversions::to_string_t(get_current_version());
 			std::wprintf(L"Current version is %s\n", currentVersion.c_str());
 			constexpr auto updateTempFile = "update.zip";
@@ -339,6 +336,9 @@ namespace
 
 					try
 					{
+						// 不关闭会占用部分 json 文件导致失败
+						killProcessByName("UnityCrashHandler64.exe");
+
 						// 清空并重新生成临时路径
 						std::filesystem::remove_all(tmpPath);
 						std::filesystem::create_directory(tmpPath);
