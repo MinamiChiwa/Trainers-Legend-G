@@ -222,6 +222,7 @@ namespace
 		return true;
 	}
 
+	// https://stackoverflow.com/questions/7956519/how-to-kill-processes-by-name-win32-api
 	void killProcessByName(const char* filename)
 	{
 		const auto snapShot = CreateToolhelp32Snapshot(TH32CS_SNAPALL, NULL);
@@ -250,15 +251,8 @@ namespace
 		constexpr const char AutoUpdateTmpPath[] = "UpdateTemp";
 		const std::filesystem::path oldLocalizedDataPath = OldLocalizedDataPath;
 
+		// 不关闭会占用部分 json 文件导致失败
 		killProcessByName("UnityCrashHandler64.exe");
-
-		if (std::filesystem::exists(oldLocalizedDataPath))
-		{
-			// 上一次升级失败？
-			std::filesystem::remove_all(LocalizedDataPath);
-			std::filesystem::rename(oldLocalizedDataPath / ConfigJson, ConfigJson);
-			std::filesystem::rename(oldLocalizedDataPath, LocalizedDataPath);
-		}
 
 		if (g_auto_update_service)
 		{
@@ -316,7 +310,9 @@ namespace
 						}
 						catch (const std::exception& e)
 						{
-							std::printf("Another exception %s occurred during rolling back, please try reopening program or reinstalling patch\n", e.what());
+							const auto msg = std::format("Another exception {} occurred during rolling back, the program should be unable to continue, please try reopening program or reinstalling patch", e.what());
+							std::printf("%s\n", msg.c_str());
+							MessageBoxA(NULL, msg.c_str(), "Error", MB_OK);
 							std::exit(1);
 						}
 					}
@@ -352,6 +348,16 @@ int __stdcall DllMain(HINSTANCE, DWORD reason, LPVOID)
 		std::filesystem::current_path(
 			module_path.parent_path()
 		);
+
+		const std::filesystem::path oldLocalizedDataPath = OldLocalizedDataPath;
+		if (std::filesystem::exists(oldLocalizedDataPath))
+		{
+			// 上一次升级失败？
+			killProcessByName("UnityCrashHandler64.exe");
+			std::filesystem::remove_all(LocalizedDataPath);
+			std::filesystem::rename(oldLocalizedDataPath / ConfigJson, ConfigJson);
+			std::filesystem::rename(oldLocalizedDataPath, LocalizedDataPath);
+		}
 
 		auto dicts = read_config();
 

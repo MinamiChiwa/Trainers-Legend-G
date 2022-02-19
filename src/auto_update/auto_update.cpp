@@ -39,7 +39,13 @@ namespace AutoUpdate
 				}).then([=](const web::json::value& respValue) -> Concurrency::task<std::optional<std::string>>
 					{
 						const auto& respValueObj = respValue.as_object();
-						const auto& latestVersionTag = respValueObj.at(U("tag_name")).as_string();
+						const auto tagNameIter = respValueObj.find(U("tag_name"));
+						if (tagNameIter == respValueObj.end())
+						{
+							std::printf("No release found\n");
+							return Concurrency::task<std::optional<std::string>>{[] { return std::nullopt; }};
+						}
+						const auto& latestVersionTag = tagNameIter->second.as_string();
 						std::wprintf(L"Latest version is %s\n", latestVersionTag.c_str());
 						if (utility::conversions::to_utf8string(latestVersionTag) == currentVersion)
 						{
