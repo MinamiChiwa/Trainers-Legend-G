@@ -6,6 +6,7 @@ namespace local
 {
 	namespace
 	{
+		std::mutex db_lock;
 		unordered_map<size_t, string> text_db;
 		std::vector<size_t> str_list;
 	}
@@ -22,13 +23,22 @@ namespace local
 		return result;
 	}
 
+	void unlocked_load_textdb(const vector<string>* dicts);
+
 	void reload_textdb(const vector<string>* dicts)
 	{
+		std::unique_lock lock(db_lock);
 		text_db.clear();
-		load_textdb(dicts);
+		unlocked_load_textdb(dicts);
 	}
 
-	void load_textdb(const vector<string> *dicts)
+	void load_textdb(const vector<string>* dicts)
+	{
+		std::unique_lock lock(db_lock);
+		unlocked_load_textdb(dicts);
+	}
+
+	void unlocked_load_textdb(const vector<string> *dicts)
 	{
 		for (auto dict : *dicts)
 		{
@@ -64,6 +74,7 @@ namespace local
 
 	bool localify_text(size_t hash, string** result)
 	{
+		std::unique_lock lock(db_lock);
 		if (text_db.contains(hash))
 		{
 			*result = &text_db[hash];

@@ -30,8 +30,11 @@ end
 
 include "deps/minhook.lua"
 include "deps/rapidjson.lua"
+include "build/conanbuildinfo.premake.lua"
 
 workspace "umamusume-localify"
+	conan_basic_setup()
+
 	location "./build"
 	objdir "%{wks.location}/obj"
 	targetdir "%{wks.location}/bin/%{cfg.platform}/%{cfg.buildcfg}"
@@ -44,7 +47,10 @@ workspace "umamusume-localify"
 		"Release",
 	}
 
-	buildoptions "/std:c++latest"
+	buildoptions {
+		"/std:c++latest",
+		"/utf-8",
+	}
 	systemversion "latest"
 	symbols "On"
 	staticruntime "On"
@@ -88,6 +94,8 @@ workspace "umamusume-localify"
 		}
 
 		dependencies.imports()
+
+		linkoptions { conan_sharedlinkflags }
 
 		configuration "Release"
 			linkoptions "/SAFESEH:NO"

@@ -31,5 +31,9 @@
         "localized_data/designation.json",
         "localized_data/common.json",
         "localized_data/hash_entries.json"
-    ]
+    ],
+    "autoUpdate": {
+        "source": "gitee",
+        "path": "Minami_Chiwa/umamusume-localify"
+    }
 }
