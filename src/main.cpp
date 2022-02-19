@@ -147,7 +147,7 @@ namespace
 		std::ifstream newConfigFile(newConfig);
 		if (!newConfigFile.is_open())
 		{
-			std::printf("Cannot open new config file, considered as corrupted, try overwriting with old version\n");
+			std::wprintf(L"Cannot open new config file, considered as corrupted, try overwriting with old version\n");
 			std::filesystem::copy_file(ConfigJson, newConfig, std::filesystem::copy_options::overwrite_existing);
 			return;
 		}
@@ -160,7 +160,7 @@ namespace
 
 		if (newConfigDocument.HasParseError())
 		{
-			std::printf("New config is corrupted, try overwriting with old version\n");
+			std::wprintf(L"New config is corrupted, try overwriting with old version\n");
 			std::filesystem::copy_file(ConfigJson, newConfig, std::filesystem::copy_options::overwrite_existing);
 			return;
 		}
@@ -168,7 +168,7 @@ namespace
 		std::ifstream configFile(ConfigJson);
 		if (!configFile.is_open())
 		{
-			std::printf("Cannot open old config, skip merging\n");
+			std::wprintf(L"Cannot open old config, skip merging\n");
 			return;
 		}
 
@@ -210,7 +210,7 @@ namespace
 		const auto zipFile = unzOpen(updateFile);
 		if (!zipFile)
 		{
-			std::printf("Cannot open update file, updating interrupted\n");
+			std::wprintf(L"Cannot open update file, updating interrupted\n");
 			return false;
 		}
 		SimpleScope zipFileCleaner{ [&]
@@ -221,7 +221,7 @@ namespace
 		unz_global_info info;
 		if (unzGetGlobalInfo(zipFile, &info) != UNZ_OK)
 		{
-			std::printf("Cannot get update file zip info, updating interrupted\n");
+			std::wprintf(L"Cannot get update file zip info, updating interrupted\n");
 			return false;
 		}
 
@@ -233,7 +233,7 @@ namespace
 			unz_file_info fileInfo;
 			if (unzGetCurrentFileInfo(zipFile, &fileInfo, buffer, BufferSize, nullptr, 0, nullptr, 0) != UNZ_OK)
 			{
-				std::printf("Cannot get update file entry info, updating interrupted\n");
+				std::wprintf(L"Cannot get update file entry info, updating interrupted\n");
 				return false;
 			}
 
@@ -244,7 +244,7 @@ namespace
 			{
 				if (unzOpenCurrentFile(zipFile) != UNZ_OK)
 				{
-					std::printf("Cannot open current update file entry, updating interrupted\n");
+					std::wprintf(L"Cannot open current update file entry, updating interrupted\n");
 					return false;
 				}
 				std::ofstream output(tmpPath / (fileNameView == "config.json" ? fileNameView : fileNameView.substr(std::size(LocalizedDataPrefix) - 1)), std::ios::binary);
@@ -255,7 +255,7 @@ namespace
 					readSizeOrError = unzReadCurrentFile(zipFile, buffer, BufferSize);
 					if (readSizeOrError < 0)
 					{
-						std::printf("Cannot read current update file entry, updating interrupted\n");
+						std::wprintf(L"Cannot read current update file entry, updating interrupted\n");
 						return false;
 					}
 					output.write(buffer, readSizeOrError);
@@ -266,7 +266,7 @@ namespace
 
 			if (i + 1 != info.number_entry && unzGoToNextFile(zipFile) != UNZ_OK)
 			{
-				std::printf("Cannot iterate update file entry, updating interrupted\n");
+				std::wprintf(L"Cannot iterate update file entry, updating interrupted\n");
 				return false;
 			}
 		}
@@ -319,7 +319,7 @@ namespace
 				{
 					if (currentVersion != latestRelease->Version)
 					{
-						const auto userResponse = MessageBoxW(NULL, std::format(L"当前版本是 {}，检测到新版本 {}，是否更新？\n更新信息：\n{}",
+						const auto userResponse = MessageBoxW(NULL, std::format(L"当前版本是 {}，检测到新版本 {}，是否更新？\n需注意在更新完成之前加载的文本可能不会被更新\n更新信息：\n{}",
 							currentVersion,
 							latestRelease->Version,
 							latestRelease->Comment).c_str(), L"自动更新", MB_YESNO);
@@ -329,11 +329,11 @@ namespace
 						}
 					}
 
-					std::printf("New version %s downloading...\n", latestRelease->Version.c_str());
+					std::wprintf(L"New version %s downloading...\n", latestRelease->Version.c_str());
 
 					AutoUpdate::DownloadFile(latestRelease->Uri, updateTempFile).get();
 
-					std::printf("New version %s downloaded! Updating...\n", latestRelease->Version.c_str());
+					std::wprintf(L"New version %s downloaded! Updating...\n", latestRelease->Version.c_str());
 
 					const std::filesystem::path tmpPath = AutoUpdateTmpPath;
 
@@ -358,12 +358,12 @@ namespace
 							write_current_version(utility::conversions::to_utf8string(latestRelease->Version));
 							std::filesystem::remove(updateTempFile);
 
-							std::printf("New version updating completed!\n");
+							std::wprintf(L"New version updating completed!\n");
 						}
 						else
 						{
 							std::filesystem::remove_all(tmpPath);
-							std::printf("Cannot decompress update file!\n");
+							std::wprintf(L"Cannot decompress update file!\n");
 						}
 					}
 					catch (const std::exception& e)
@@ -391,7 +391,7 @@ namespace
 				}
 				else
 				{
-					std::printf("You are using the latest version!\n");
+					std::wprintf(L"You are using the latest version!\n");
 				}
 			}
 			catch (const std::exception& e)

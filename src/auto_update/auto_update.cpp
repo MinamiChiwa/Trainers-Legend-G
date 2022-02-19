@@ -42,11 +42,9 @@ namespace AutoUpdate
 						const auto tagNameIter = respValueObj.find(U("tag_name"));
 						if (tagNameIter == respValueObj.end())
 						{
-							std::printf("No release found\n");
 							return std::nullopt;
 						}
 						const auto& latestVersionTag = tagNameIter->second.as_string();
-						std::wprintf(L"Latest version is %s\n", latestVersionTag.c_str());
 						const auto& assetsArray = respValueObj.at(U("assets")).as_array();
 						for (const auto& asset : assetsArray)
 						{
