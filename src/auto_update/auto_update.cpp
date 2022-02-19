@@ -49,7 +49,8 @@ namespace AutoUpdate
 						for (const auto& asset : assetsArray)
 						{
 							const auto& assetObj = asset.as_object();
-							if (assetObj.at(U("name")).as_string().ends_with(U(".zip")))
+							const auto assetNameIter = assetObj.find(U("name"));
+							if (assetNameIter != assetObj.end() && assetNameIter->second.as_string().ends_with(U(".zip")))
 							{
 								return ReleaseInfo{
 									.Version = latestVersionTag,
