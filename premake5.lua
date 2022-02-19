@@ -47,7 +47,10 @@ workspace "umamusume-localify"
 		"Release",
 	}
 
-	buildoptions "/std:c++latest"
+	buildoptions {
+		"/std:c++latest",
+		"/utf-8",
+	}
 	systemversion "latest"
 	symbols "On"
 	staticruntime "On"

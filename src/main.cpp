@@ -308,16 +308,33 @@ namespace
 			// 不关闭会占用部分 json 文件导致失败
 			killProcessByName("UnityCrashHandler64.exe");
 
-			const auto currentVersion = get_current_version();
-			printf("Current version is %s\n", currentVersion.c_str());
+			const auto currentVersion = utility::conversions::to_string_t(get_current_version());
+			std::wprintf(L"Current version is %s\n", currentVersion.c_str());
 			constexpr auto updateTempFile = "update.zip";
 
 			try
 			{
-				const auto newVersion = g_auto_update_service->CheckAndUpdate(currentVersion, updateTempFile).get();
-				if (newVersion)
+				const auto latestRelease = g_auto_update_service->GetLatestRelease().get();
+				if (latestRelease)
 				{
-					std::printf("New version %s downloaded! Updating...\n", newVersion->c_str());
+					if (currentVersion != latestRelease->Version)
+					{
+						const auto userResponse = MessageBoxW(NULL, std::format(L"当前版本是 {}，检测到新版本 {}，是否更新？\n更新信息：\n{}",
+							currentVersion,
+							latestRelease->Version,
+							latestRelease->Comment).c_str(), L"自动更新", MB_YESNO);
+						if (userResponse != IDYES)
+						{
+							return;
+						}
+					}
+
+					std::printf("New version %s downloading...\n", latestRelease->Version.c_str());
+
+					AutoUpdate::DownloadFile(latestRelease->Uri, updateTempFile).get();
+
+					std::printf("New version %s downloaded! Updating...\n", latestRelease->Version.c_str());
+
 					const std::filesystem::path tmpPath = AutoUpdateTmpPath;
 
 					try
@@ -338,7 +355,7 @@ namespace
 
 							reload_config();
 
-							write_current_version(*newVersion);
+							write_current_version(utility::conversions::to_utf8string(latestRelease->Version));
 							std::filesystem::remove(updateTempFile);
 
 							std::printf("New version updating completed!\n");
