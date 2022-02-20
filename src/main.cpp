@@ -396,7 +396,7 @@ namespace
 
 							if (shouldUpdateVersionDll)
 							{
-								const auto userResponse = MessageBoxW(NULL, L"新版本包含对插件本体的更新，此更新需要重启游戏以应用，若不方便此时重启可以放弃更新，是否重启以更新？", L"翻译插件自动更新", MB_YESNO);
+								const auto userResponse = MessageBoxW(NULL, L"新版本包含对插件本体的更新，此更新需要关闭游戏以应用，若不方便此时重启可以放弃更新，是否重启以更新？\n您需要手动从 DMM 管理程序启动", L"翻译插件自动更新", MB_YESNO);
 								if (userResponse != IDYES)
 								{
 									std::filesystem::remove_all(tmpPath);
@@ -444,7 +444,6 @@ tasklist | find /i "umamusume.exe" >NUL
 if %ERRORLEVEL% == 0 timeout /t 1 /nobreak & goto waitloop
 
 move /y version.dll.tmp version.dll
-start umamusume.exe
 del SelfUpdate.bat
 )";
 								std::ofstream selfUpdateBatchFile("SelfUpdate.bat");
