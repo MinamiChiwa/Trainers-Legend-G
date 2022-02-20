@@ -192,7 +192,7 @@ namespace local
 			
 			/*
 			if (hash == 13202430879488954923) {
-				printf("LOOOOOOOOOOOOOOOOOOOOOOG: 命中id - '%ls'\n", str->start_char);
+				wprintf(L"LOOOOOOOOOOOOOOOOOOOOOOG: 命中id - '%ls'\n", str->start_char);
 
 				string rr = "zhemeniuibi";
 				string* ret = &rr;
@@ -207,7 +207,7 @@ namespace local
 				logger::write_entry(hash_without_lb, result_without_lb);
 			}
 			
-			// printf("未命中: %ls(%zu)\n", str->start_char, hash);
+			// wprintf(L"未命中: %ls(%zu)\n", str->start_char, hash);
 
 		}
 

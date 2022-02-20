@@ -586,11 +586,11 @@ void change_type() {
 	now_h = gallop_get_screenheight_hook();
 
 	if (!autoChangeLineBreakMode) {
-		printf("未激活: 横竖屏自动切换模式\n");
+		std::wprintf(L"未激活: 横竖屏自动切换模式\n");
 		// return;
 	}
 	else {
-		printf("已激活: 横竖屏自动切换模式\n");
+		std::wprintf(L"已激活: 横竖屏自动切换模式\n");
 	}
 
 	Vector3_t vt;
@@ -614,19 +614,19 @@ void change_type() {
 			if (now_is_landspace) {
 				_set_u_stat(false);  // 横屏模式
 				// if (last_land_w != -1 && last_land_h != -1 && !g_auto_fullscreen) {
-				//	printf("上次横屏分辨率: %d, %d\n", last_land_w, last_land_h);
+				//	std::wprintf(L"上次横屏分辨率: %d, %d\n", last_land_w, last_land_h);
 				//	//set_resolution_hook(last_land_w, last_land_h, false);
 				//}
 			}
 			else {
 				_set_u_stat(true);  // 竖屏模式
 				//if (last_vert_w != -1 && last_vert_h != -1) {
-				//	printf("上次竖屏分辨率: %d, %d\n", last_vert_w, last_vert_h);
+				//	std::wprintf(L"上次竖屏分辨率: %d, %d\n", last_vert_w, last_vert_h);
 				//	//set_resolution_hook(last_vert_w, last_vert_h, false);
 				//}
 			}
 
-			printf(now_is_landspace ? "已切换到横屏\n" : "已切换到竖屏\n");
+			std::wprintf(now_is_landspace ? L"已切换到横屏\n" : L"已切换到竖屏\n");
 			last_is_landspace = now_is_landspace;
 		}
 

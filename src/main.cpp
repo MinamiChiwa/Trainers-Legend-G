@@ -115,7 +115,7 @@ namespace
 			}
 
 			MHotkey::start_hotkey(line_break_hotkey);
-			printf("换行符切换热键已设置为: ctrl + %c\n", line_break_hotkey);
+			std::wprintf(L"换行符切换热键已设置为: ctrl + %c\n", static_cast<wchar_t>(line_break_hotkey));
 
 			// Looks like not working for now
 			// g_aspect_ratio = document["customAspectRatio"].GetFloat();
@@ -173,7 +173,19 @@ namespace
 
 	void merge_config(const std::filesystem::path& newConfig)
 	{
-		constexpr const char* keepList[] = { "enableConsole", "enableLogger", "dumpStaticEntries", "maxFps", "unlockSize", "uiScale", "replaceFont", "autoFullscreen" };
+		constexpr const char* keepList[] =
+		{
+			"enableConsole",
+			"enableLogger",
+			"dumpStaticEntries",
+			"maxFps",
+			"unlockSize",
+			"uiScale",
+			"replaceFont",
+			"autoFullscreen",
+			"LineBreakHotKey",
+			"autoChangeLineBreakMode",
+		};
 
 		std::ifstream newConfigFile(newConfig);
 		if (!newConfigFile.is_open())
