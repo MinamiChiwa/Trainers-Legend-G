@@ -24,6 +24,11 @@ constexpr const char ConfigJson[] = "config.json";
 constexpr const char VersionDll[] = "version.dll";
 constexpr const char VersionDllTmp[] = "version.dll.tmp";
 
+char line_break_hotkey = 'u';
+bool autoChangeLineBreakMode = false;
+int start_width = -1;
+int start_height = -1;
+
 namespace
 {
 	void create_debug_console()
@@ -35,7 +40,7 @@ namespace
 		_ = freopen("CONOUT$", "w", stderr);
 		_ = freopen("CONIN$", "r", stdin);
 
-		SetConsoleTitle("Umamusume - Debug Console");
+		SetConsoleTitle("Umamusume - Debug Console - 此插件为免费下载, 若您是付费购买此插件请立刻举报店家! 交流群: 697216935");
 
 		// set this to avoid turn japanese texts into question mark
 		SetConsoleOutputCP(65001);
@@ -87,6 +92,30 @@ namespace
 			g_ui_scale = document["uiScale"].GetFloat();
 			g_replace_font = document["replaceFont"].GetBool();
 			g_auto_fullscreen = document["autoFullscreen"].GetBool();
+			line_break_hotkey = document["LineBreakHotKey"].GetString()[0];
+			autoChangeLineBreakMode = document["autoChangeLineBreakMode"].GetBool();
+
+			if (document.HasMember("resolution_start")) {
+				if (document["resolution_start"].IsArray()) {
+					auto st = document["resolution_start"].GetArray();
+					if (st.Size() == 2) {
+						start_width = st[0].GetInt();
+						start_height = st[1].GetInt();
+					}
+				}
+			}
+
+			if (document.HasMember("aspect_ratio")) {
+				if (document["aspect_ratio"].IsArray()) {
+					auto asp = document["aspect_ratio"].GetArray();
+					if (asp.Size() == 2) {
+						g_aspect_ratio = asp[0].GetFloat() / asp[1].GetFloat();
+					}
+				}
+			}
+
+			MHotkey::start_hotkey(line_break_hotkey);
+			printf("换行符切换热键已设置为: ctrl + %c\n", line_break_hotkey);
 
 			// Looks like not working for now
 			// g_aspect_ratio = document["customAspectRatio"].GetFloat();
@@ -569,6 +598,5 @@ int __stdcall DllMain(HINSTANCE, DWORD reason, LPVOID)
 		uninit_hook();
 		logger::close_logger();
 	}
-
 	return 1;
 }

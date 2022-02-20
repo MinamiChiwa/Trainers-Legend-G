@@ -64,6 +64,10 @@
 - `resolution_start 设置启动时的分辨率（没有需求可以不动）
 - `aspect_ratio 设置UI比例（没有需求可以不动）
 - `dicts` 将会读取的字典列表 (相对/绝对路径)
+- `LineBreakHotKey`设置 "忽略换行符" 模式的热键。按下`Ctrl` + `您设置的键`  即可切换。**(Update)**
+- `autoChangeLineBreakMode`根据横竖屏模式自动切换"忽略换行符"模式
+- `resolution_start` 设置启动时的分辨率, 格式: `array[w, h]`（没有需求可以不填） 
+- `aspect_ratio` 设置UI比例, 格式: `array[w, h]`（没有需求可以不填）
 
 ### 已知问题
 - ~~有时候加载 yaml 时会卡住，原因不明~~ 换成了rapidjson, 再见了您内
