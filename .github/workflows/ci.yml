@@ -1,0 +1,33 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: windows-2019
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: install-dependencies
+        run: |
+          pip3 install --upgrade conan requests
+          conan profile new default --detect
+          conan config init
+      - name: configure-msbuild-env
+        uses: microsoft/setup-msbuild@v1.0.2
+      - name: build
+        run: |
+          ./generate.bat
+          cd build
+          msbuild umamusume-localify.sln -m -p:Configuration=Release
+      - name: prepare-package
+        run: |
+          mkdir package
+          cp build/bin/x64/Release/version.dll package/version.dll
+          cp -r resources/schinese/localized_data package/localized_data
+          cp resources/config.json package/config.json
+      - uses: actions/upload-artifact@v2
+        with:
+          name: umamusume-localify
+          path: package
