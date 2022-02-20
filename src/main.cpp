@@ -24,6 +24,11 @@ constexpr const char ConfigJson[] = "config.json";
 constexpr const char VersionDll[] = "version.dll";
 constexpr const char VersionDllTmp[] = "version.dll.tmp";
 
+char line_break_hotkey = 'u';
+bool autoChangeLineBreakMode = false;
+int start_width = -1;
+int start_height = -1;
+
 namespace
 {
 	void create_debug_console()
@@ -35,7 +40,7 @@ namespace
 		_ = freopen("CONOUT$", "w", stderr);
 		_ = freopen("CONIN$", "r", stdin);
 
-		SetConsoleTitle("Umamusume - Debug Console");
+		SetConsoleTitle("Umamusume - Debug Console - 此插件为免费下载, 若您是付费购买此插件请立刻举报店家! 交流群: 697216935");
 
 		// set this to avoid turn japanese texts into question mark
 		SetConsoleOutputCP(65001);
@@ -87,6 +92,30 @@ namespace
 			g_ui_scale = document["uiScale"].GetFloat();
 			g_replace_font = document["replaceFont"].GetBool();
 			g_auto_fullscreen = document["autoFullscreen"].GetBool();
+			line_break_hotkey = document["LineBreakHotKey"].GetString()[0];
+			autoChangeLineBreakMode = document["autoChangeLineBreakMode"].GetBool();
+
+			if (document.HasMember("resolution_start")) {
+				if (document["resolution_start"].IsArray()) {
+					auto st = document["resolution_start"].GetArray();
+					if (st.Size() == 2) {
+						start_width = st[0].GetInt();
+						start_height = st[1].GetInt();
+					}
+				}
+			}
+
+			if (document.HasMember("aspect_ratio")) {
+				if (document["aspect_ratio"].IsArray()) {
+					auto asp = document["aspect_ratio"].GetArray();
+					if (asp.Size() == 2) {
+						g_aspect_ratio = asp[0].GetFloat() / asp[1].GetFloat();
+					}
+				}
+			}
+
+			MHotkey::start_hotkey(line_break_hotkey);
+			std::wprintf(L"换行符切换热键已设置为: ctrl + %c\n", static_cast<wchar_t>(line_break_hotkey));
 
 			// Looks like not working for now
 			// g_aspect_ratio = document["customAspectRatio"].GetFloat();
@@ -144,7 +173,19 @@ namespace
 
 	void merge_config(const std::filesystem::path& newConfig)
 	{
-		constexpr const char* keepList[] = { "enableConsole", "enableLogger", "dumpStaticEntries", "maxFps", "unlockSize", "uiScale", "replaceFont", "autoFullscreen" };
+		constexpr const char* keepList[] =
+		{
+			"enableConsole",
+			"enableLogger",
+			"dumpStaticEntries",
+			"maxFps",
+			"unlockSize",
+			"uiScale",
+			"replaceFont",
+			"autoFullscreen",
+			"LineBreakHotKey",
+			"autoChangeLineBreakMode",
+		};
 
 		std::ifstream newConfigFile(newConfig);
 		if (!newConfigFile.is_open())
@@ -396,7 +437,7 @@ namespace
 
 							if (shouldUpdateVersionDll)
 							{
-								const auto userResponse = MessageBoxW(NULL, L"新版本包含对插件本体的更新，此更新需要重启游戏以应用，若不方便此时重启可以放弃更新，是否重启以更新？", L"翻译插件自动更新", MB_YESNO);
+								const auto userResponse = MessageBoxW(NULL, L"新版本包含对插件本体的更新，此更新需要关闭游戏以应用，若不方便此时重启可以放弃更新，是否重启以更新？\n您需要手动从 DMM 管理程序启动", L"翻译插件自动更新", MB_YESNO);
 								if (userResponse != IDYES)
 								{
 									std::filesystem::remove_all(tmpPath);
@@ -444,7 +485,6 @@ tasklist | find /i "umamusume.exe" >NUL
 if %ERRORLEVEL% == 0 timeout /t 1 /nobreak & goto waitloop
 
 move /y version.dll.tmp version.dll
-start umamusume.exe
 del SelfUpdate.bat
 )";
 								std::ofstream selfUpdateBatchFile("SelfUpdate.bat");
@@ -570,6 +610,5 @@ int __stdcall DllMain(HINSTANCE, DWORD reason, LPVOID)
 		uninit_hook();
 		logger::close_logger();
 	}
-
 	return 1;
 }
