@@ -25,6 +25,7 @@
 - @晖轩
 - @毫毛
 - @uss-enterprise1071
+- @八意永恩
 ## 技术协力
 - @chinosk114514
 - @akemimadoka
