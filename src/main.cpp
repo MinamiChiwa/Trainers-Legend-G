@@ -62,7 +62,7 @@ namespace
 
 	std::string get_current_version()
 	{
-		std::ifstream versionStream("version.txt", std::ios_base::ate);
+		std::ifstream versionStream("version.txt", std::ios_base::ate | std::ios_base::binary);
 		if (!versionStream.is_open())
 		{
 			return "unknown";
@@ -76,7 +76,7 @@ namespace
 
 	void write_current_version(const std::string_view& version)
 	{
-		std::ofstream versionStream("version.txt");
+		std::ofstream versionStream("version.txt", std::ios_base::binary);
 		versionStream.write(version.data(), version.size());
 	}
 
@@ -89,7 +89,7 @@ namespace
 
 	std::string get_static_cache_stamp()
 	{
-		std::ifstream staticCacheStamp(StaticDictStampPath, std::ios_base::ate);
+		std::ifstream staticCacheStamp(StaticDictStampPath, std::ios_base::ate | std::ios_base::binary);
 		if (!staticCacheStamp.is_open())
 		{
 			return "";
@@ -539,8 +539,8 @@ namespace
 
 	bool is_file_content_equal(const std::filesystem::path& a, const std::filesystem::path& b)
 	{
-		std::ifstream fileA(a, std::ios_base::ate);
-		std::ifstream fileB(b, std::ios_base::ate);
+		std::ifstream fileA(a, std::ios_base::ate | std::ios_base::binary);
+		std::ifstream fileB(b, std::ios_base::ate | std::ios_base::binary);
 
 		if (!fileA.is_open() || !fileB.is_open())
 		{
@@ -642,10 +642,14 @@ namespace
 							}
 
 							const auto newConfigPath = tmpPath / ConfigJson;
-							const auto newStaticDictPath = merge_config(newConfigPath);
+							std::filesystem::path newStaticDictPath = merge_config(newConfigPath);
+							constexpr const wchar_t LocalizedDataPrefix[] = L"localized_data/";
+							if (newStaticDictPath.native().starts_with(LocalizedDataPrefix))
+							{
+								newStaticDictPath = tmpPath / std::basic_string_view<std::filesystem::path::value_type>(newStaticDictPath.native()).substr(std::size(LocalizedDataPrefix) - 1);
+							}
 
 							const auto forceInvalidateStaticCache = std::filesystem::exists(newStaticDictPath) && !is_file_content_equal(g_static_dict_path, newStaticDictPath);
-
 							// 若不需要更新，则不复制已有的 cache，将会自动被删除
 							if (!forceInvalidateStaticCache && get_static_cache_status() == StaticCacheStatus::UpToDate)
 							{
