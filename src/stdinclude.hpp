@@ -15,6 +15,7 @@
 #include <string>
 #include <thread>
 #include <unordered_map>
+#include <map>
 #include <thread>
 
 #include <MinHook.h>
@@ -41,6 +42,7 @@ extern float g_aspect_ratio;
 extern bool g_replace_font;
 extern bool g_auto_fullscreen;
 extern std::unique_ptr<AutoUpdate::IAutoUpdateService> g_auto_update_service;
+extern std::string g_static_dict_path;
 extern bool autoChangeLineBreakMode;
 extern void start_monitor_thread();
 extern int start_width;
