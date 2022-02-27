@@ -313,7 +313,7 @@ namespace
 	void* load_scene_internal_orig = nullptr;
 	void* load_scene_internal_hook(Il2CppString* sceneName, int sceneBuildIndex, void* parameters, bool mustCompleteNextFrame)
 	{
-		wprintf(L"%s\n", sceneName->start_char);
+		wprintf(L"%ls\n", sceneName->start_char);
 		return reinterpret_cast<decltype(load_scene_internal_hook)*>(load_scene_internal_orig)(sceneName, sceneBuildIndex, parameters, mustCompleteNextFrame);
 	}
 

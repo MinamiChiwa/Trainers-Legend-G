@@ -585,7 +585,7 @@ namespace
 		if (g_auto_update_service)
 		{
 			const auto currentVersion = utility::conversions::to_string_t(get_current_version());
-			std::wprintf(L"Current version is %s\n", currentVersion.c_str());
+			std::wprintf(L"Current version is %ls\n", currentVersion.c_str());
 			constexpr auto updateTempFile = "update.zip";
 
 			try
@@ -609,11 +609,11 @@ namespace
 						return;
 					}
 
-					std::wprintf(L"New version %s downloading...\n", latestRelease->Version.c_str());
+					std::wprintf(L"New version %ls downloading...\n", latestRelease->Version.c_str());
 
 					AutoUpdate::DownloadFile(latestRelease->Uri, updateTempFile).get();
 
-					std::wprintf(L"New version %s downloaded! Updating...\n", latestRelease->Version.c_str());
+					std::wprintf(L"New version %ls downloaded! Updating...\n", latestRelease->Version.c_str());
 
 					const std::filesystem::path tmpPath = AutoUpdateTmpPath;
 
