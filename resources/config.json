@@ -12,7 +12,6 @@
     "resolution_start": [-1, -1],
     "aspect_ratio": [16.0, 9.0],
     "dicts": [
-        "localized_data/static.json",
         "localized_data/chara.json",
         "localized_data/race_name.json",
         "localized_data/race_message.json",
@@ -32,6 +31,7 @@
         "localized_data/common.json",
         "localized_data/hash_entries.json"
     ],
+    "static_dict": "localized_data/static.json",
     "autoUpdate": {
         "source": "gitee",
         "path": "Minami_Chiwa/umamusume-localify"
