@@ -3,6 +3,7 @@
 #include <minizip/unzip.h>
 #include <TlHelp32.h>
 
+#include <unordered_set>
 #include <charconv>
 #include <cassert>
 
@@ -159,7 +160,7 @@ namespace
 			lastIsEmpty = false;
 
 			const auto utf8OriginText = utility::conversions::to_utf8string(*originText);
-			if (const auto iter = doc.FindMember(utf8OriginText.c_str()); iter != doc.MemberEnd())
+			if (const auto iter = doc.FindMember(utf8OriginText.c_str()); iter != doc.MemberEnd() && iter->value.IsString())
 			{
 				dict.emplace(id, iter->value.GetString());
 			}
@@ -206,12 +207,16 @@ namespace
 		return staticCache;
 	}
 
-	void write_static_cache(const std::map<std::size_t, std::string>& staticCache)
+	bool write_static_cache(const std::map<std::size_t, std::string>& staticCache)
 	{
 		std::ofstream staticCacheFile(StaticDictCachePath);
+		if (!staticCacheFile.is_open())
+		{
+			return false;
+		}
 
 		rapidjson::OStreamWrapper wrapper(staticCacheFile);
-		rapidjson::Writer<rapidjson::OStreamWrapper> writer(wrapper);
+		rapidjson::Writer writer(wrapper);
 
 		writer.StartObject();
 
@@ -226,6 +231,61 @@ namespace
 
 			writer.Key(idBuffer);
 			writer.String(content.c_str());
+		}
+
+		writer.EndObject();
+
+		return true;
+	}
+
+	void dump_static_dict(const std::filesystem::path& outputPath, const std::map<std::size_t, std::string>& currentStaticCache)
+	{
+		std::ofstream output(outputPath);
+		if (!output.is_open())
+		{
+			return;
+		}
+
+		rapidjson::OStreamWrapper wrapper(output);
+		rapidjson::Writer writer(wrapper);
+
+		std::unordered_set<std::wstring> set;
+
+		writer.StartObject();
+
+		bool lastIsEmpty = false;
+		for (std::size_t id = 1;; ++id)
+		{
+			const auto originText = localize_get(id);
+			if (!originText)
+			{
+				if (lastIsEmpty)
+				{
+					break;
+				}
+
+				lastIsEmpty = true;
+				continue;
+			}
+
+			lastIsEmpty = false;
+
+			if (const auto [iter, succeed] = set.emplace(*originText); !succeed)
+			{
+				// 重复文本，跳过
+				continue;
+			}
+
+			const auto origin = utility::conversions::to_utf8string(*originText);
+			writer.Key(origin.c_str());
+			if (const auto iter = currentStaticCache.find(id); iter != currentStaticCache.end())
+			{
+				writer.String(iter->second.c_str());
+			}
+			else
+			{
+				writer.Null();
+			}
 		}
 
 		writer.EndObject();
@@ -827,6 +887,10 @@ int __stdcall DllMain(HINSTANCE, DWORD reason, LPVOID)
 				return hookIsReady.load(std::memory_order_acquire);
 			});
 			auto staticDictCache = ensure_latest_static_cache(g_static_dict_path);
+			if (g_dump_entries)
+			{
+				dump_static_dict("static_dump.json", staticDictCache);
+			}
 			local::load_textdb(&dicts, std::move(staticDictCache));
 			auto_update();
 		});
