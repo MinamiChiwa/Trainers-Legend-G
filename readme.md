@@ -35,7 +35,7 @@
 - @秋裤SE7EN（Bilibili）
 - @凉月crella（Bilibili）
 
-# 中文
+# 介绍
 ## 赛马娘 (DMM版) 本地化补丁
 
 ### 使用方法:
@@ -82,7 +82,7 @@
 - ~~文本错位问题请看下方`static.json`更新工具，或者等待仓库更新。~~已解决
 - 可能会出现内存报错无法启动游戏的情况，请尝试下载安装微软常用运行库。
 
-### 如何贡献
+### 如何贡献【建议加群，群内可以提供更多汉化相关的工具】
  - 文本条目: 
     - 如要添加新条目，请先将`config.json` 内的 `enableLogger` 设置为 `true` 之后启动游戏
         - 随后未覆盖的文本会出现在 `dump.txt`
@@ -97,37 +97,4 @@
 - github（原作者）：https://github.com/AirJerryWhite/i18upgrade
 - gitee（搬运）：https://gitee.com/Minami_Chiwa/i18upgrade
 
-
-# English
-## Uma Musume: Pretty Derby localify patch
-
-##Disclaimer: 
-- **_This project(and its contributors) is not related with Cygames and will not take any responsbility of possible account bans because of using this project. USE IT AT YOUR RISK._** 
-- **_If your account is banned because of using this project, please open an issue about that._** 
-
-### Usage:
-1. Put `version.dll`, `config.json` and the `dicts` referenced by `config.json` near the `umamusume.exe`.
-2. Launch the game
-
-### Config:
-- `enableConsole` Enable the console for printing debug infomations (true/false)
-- `enableLogger` Output uncovered text entries into `dump.txt` (true/false)
-- `dumpStaticEntries` Requires ^, Dump hardcoded text entries into `dump.txt`
-- `maxFps` Max fps limit (-1 = Unmodified/0 = Unlimited/>0 = Lock to #fps)
-    - Note: VSync is enabled
-- `unlockSize` Allow game to use resolutions that bigger than `1080p` (true/false)
-- `uiScale` Custom UI scale
-- `replaceFont` Replace all font to default font, solves missing word issue (true/false)
-- `autoFullscreen` The game will be fullscreen if screen aspect ratio is correct (true/false)
-    - If screen aspect ratio is 16:9, the game will be fullscreen when playing story/live with landscape.
-    - If screen aspect ratio is 9:16, the game will be fullscreen in most case.
-- `dicts` A list of dicts that read by this (Path)
-
-### Known issue
-- None
-
-# Resources
-- `static.json` upgrade tool 
-- github（original）：https://github.com/AirJerryWhite/i18upgrade
-- gitee：https://gitee.com/Minami_Chiwa/i18upgrade
 
