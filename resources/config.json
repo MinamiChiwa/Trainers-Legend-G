@@ -3,7 +3,7 @@
     "enableLogger": false,
     "dumpStaticEntries": false,
     "maxFps": 60,
-    "unlockSize": false,
+    "unlockSize": true,
     "uiScale": 1.0,
     "replaceFont": true,
     "autoFullscreen": false,
