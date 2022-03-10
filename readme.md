@@ -50,7 +50,7 @@
 2. 启动游戏
 ### 更新方法:
 可自动更新，当插件本体需要更新时需手动下载发行版最新压缩包。
-### 设置选项:
+### 设置选项（`config.json`）:
 - `enableConsole` 启用用来输出调试信息的控制台 (true/false)
 - `enableLogger` 将未覆盖的文本输出到 `dump.txt` (true/false)
 - `dumpStaticEntries` 需要上一条启用, 在游戏启动时将游戏内硬编码的文本条目输出到 `dump.txt`
@@ -62,11 +62,11 @@
 - `autoFullscreen` 在屏幕比例对应时自动设置为全屏 (true/false)
     - 如屏幕是16:9 并且横屏，将会在横屏播放剧情/live时全屏
     - 如屏幕是9:16，将会在绝大多数情况下全屏
-- `LineBreakHotKey 文本读取模式切换键（Ctrl+设定键），可在游戏中实时更改读取文本换行符模式和忽略文本换行符模式。【非烤肉man可无视】
-- `autoChangeLineBreakMode 自动识别横竖屏并切换文本读取模式(true/false)【建议true】
-- `resolution_start 设置启动时的分辨率（没有需求可以不动）
-- `aspect_ratio 设置UI比例（没有需求可以不动）
-- `dicts` 将会读取的字典列表 (相对/绝对路径)
+- `LineBreakHotKey` 文本读取模式切换键（Ctrl+设定键），可在游戏中实时更改读取文本换行符模式和忽略文本换行符模式。【非烤肉man可无视】
+- `autoChangeLineBreakMode` 自动识别横竖屏并切换文本读取模式(true/false)【建议true】
+- `resolution_start` 设置启动时的分辨率（没有需求可以不动）
+- `aspect_ratio` 设置UI比例（没有需求可以不动）
+- `dicts` 将会读取的字典列表` (相对/绝对路径)
 - `LineBreakHotKey`设置 "忽略换行符" 模式的热键。按下`Ctrl` + `您设置的键`  即可切换。**(Update)**
 - `autoChangeLineBreakMode`根据横竖屏模式自动切换"忽略换行符"模式
 - `resolution_start` 设置启动时的分辨率, 格式: `array[w, h]`（没有需求可以不填） 
