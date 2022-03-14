@@ -4,6 +4,12 @@ using namespace std;
 
 std::function<void()> g_on_hook_ready;
 
+void _set_u_stat(bool s) {
+	if (autoChangeLineBreakMode) {
+		MHotkey::set_uma_stat(s);
+	}
+}
+
 namespace
 {
 	void path_game_assembly();
@@ -324,11 +330,6 @@ namespace
 		return is_virt() ? h : w;
 	}
 
-	//void* camera_reset_orig = nullptr;
-	//void camera_reset_hook() {
-	//	return reinterpret_cast<decltype(camera_reset_hook)*>(camera_reset_orig)();
-	//}
-
 	void (*set_scale_factor)(void*, float);
 
 	void* canvas_scaler_setres_orig;
@@ -369,6 +370,16 @@ namespace
 	{
 		Resolution_t r;
 		r = *get_resolution(&r);
+		// MessageBoxA(NULL, std::format("window: {}, {}", width, height).c_str(), "TEST", MB_OK);
+
+		if (width > height) {
+			_set_u_stat(false);  // false-横屏
+			std::wprintf(L"已切换到横屏\n");
+		}
+		else {
+			_set_u_stat(true);
+			std::wprintf(L"已切换到竖屏\n");
+		}
 
 		bool need_fullscreen = false;
 
@@ -519,11 +530,6 @@ namespace
 			)
 		);
 
-		//auto camera_reset_addr = il2cpp_symbols::get_method_pointer(
-		//	"UnityEngine.CoreModule.dll", "UnityEngine",
-		//	"Camera", "Reset", 0
-		//);
-
 		auto gallop_get_screenheight_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"Screen", "get_Height", 0
@@ -662,7 +668,8 @@ namespace
 		
 		if (g_dump_entries)
 			dump_all_entries();
-		start_monitor_thread();
+		// start_monitor_thread();
+		_set_u_stat(true);
 
 		if (start_width != -1 && start_height != -1) {
 			set_resolution_hook(start_width, start_height, false);	
@@ -672,22 +679,17 @@ namespace
 
 	/*
 	是否为横屏
-	*/
+	
 	bool is_landscape() {
 		int www, hhh;
 		www = gallop_get_screenwidth_hook();
 		hhh = gallop_get_screenheight_hook();
 		return www > hhh;
 	}
+	*/
 }
 
-void _set_u_stat(bool s) {
-	if (autoChangeLineBreakMode) {
-		MHotkey::set_uma_stat(s);
-	}
-}
-
-
+/*
 void change_type() {
 	bool last_is_landspace = true;  // 上次状态是否为横屏
 	bool now_is_landspace = false;  // 当前是否为横屏
@@ -712,31 +714,16 @@ void change_type() {
 		now_w = gallop_get_screenwidth_hook();
 		now_h = gallop_get_screenheight_hook();
 		now_is_landspace = now_w > now_h;
-		/*
-		if (now_is_landspace) {
-			last_land_h = now_h;
-			last_land_w = now_w;
-		}
-		else {
-			last_vert_h = now_h;
-			last_vert_w = now_w;
-		}
-		*/
+
 
 		if (now_is_landspace != last_is_landspace) {
 			if (now_is_landspace) {
 				_set_u_stat(false);  // 横屏模式
-				// if (last_land_w != -1 && last_land_h != -1 && !g_auto_fullscreen) {
-				//	std::wprintf(L"上次横屏分辨率: %d, %d\n", last_land_w, last_land_h);
-				//	//set_resolution_hook(last_land_w, last_land_h, false);
-				//}
+
 			}
 			else {
 				_set_u_stat(true);  // 竖屏模式
-				//if (last_vert_w != -1 && last_vert_h != -1) {
-				//	std::wprintf(L"上次竖屏分辨率: %d, %d\n", last_vert_w, last_vert_h);
-				//	//set_resolution_hook(last_vert_w, last_vert_h, false);
-				//}
+
 			}
 
 			std::wprintf(now_is_landspace ? L"已切换到横屏\n" : L"已切换到竖屏\n");
@@ -748,11 +735,13 @@ void change_type() {
 	
 }
 
+
 void start_monitor_thread() {
 	thread mythread1(change_type);
 	// mythread1.join();
 	mythread1.detach();
 }
+*/
 
 bool init_hook()
 {
