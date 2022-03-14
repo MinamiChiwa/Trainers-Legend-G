@@ -2,6 +2,8 @@
 - 此库复刻自github：https://github.com/GEEKiDoS/umamusume-localify
 - 原作者@GEEKiDoS
 - 由于长时间没有更新，现由@Minami_Chiwa自行判断接手
+- 此插件目前为 **部分汉化**
+[翻译进度及比赛译名对照表](http://docs.qq.com/sheet/DYkFFZVJudWxTa1Vq)
 
 -  **_!由于本插件涉及到更改游戏文件，可能会有封号风险，本项目及其贡献者均与cygames无关并且不对使用该项目造成账号被ban负责，如果账号因使用此项目被ban请发issue!_** 
 -  **本汉化插件完全免费，若您发现有倒卖此插件的店家请立刻举报。
@@ -41,13 +43,9 @@
 ## 赛马娘 (DMM版) 本地化补丁
 
 ### 使用方法:
-1. 下载发行版`DMMUPD-Schinese`压缩包和`umamusume_update.exe`自动更新程序，将压缩包内的文件和`umamusume_update.exe`解压至游戏根目录`X:\Umamusume`
-2. 启动游戏
+1. 下载发行版`DMMUPD-Schinese`压缩包和`umamusume_update.exe`自动更新程序，将压缩包内的文件和`umamusume_update.exe`解压至游戏根目录`X:\Umamusume`( **请注意是包含`umamusume.exe`的文件夹** ）
+2. 从DMM启动游戏
 
-或者
-
-1. 将 `version.dll`（仓库version文件夹内） 和 `config.json`（仓库resources文件夹内） 以及 `config.json` 中引用的字典（仓库resources文件夹内的任意 **localized_data 文件夹**  <目前仅schinese处于更新状态>）放置于游戏根目录 `X:\Umamusume` 
-2. 启动游戏
 ### 更新方法:
 可自动更新，当插件本体需要更新时需手动下载发行版最新压缩包。
 ### 设置选项（`config.json`）:
@@ -84,9 +82,6 @@
 - `autoFullscreen`设为true时，部分用户会出现汉化失效的问题，此时请将汉化文件重新覆盖一遍即可。
 - ~~文本错位问题请看下方`static.json`更新工具，或者等待仓库更新。~~
 - 可能会出现内存报错无法启动游戏的情况，请尝试下载安装微软常用运行库。
-
-### 翻译进度
-https://docs.qq.com/sheet/DYkFFZVJudWxTa1Vq
 
 ### 如何贡献【建议加群，群内可以提供更多汉化相关的工具】
  - 文本条目: 
