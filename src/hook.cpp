@@ -2,6 +2,8 @@
 
 using namespace std;
 
+std::function<void()> g_on_hook_ready;
+
 namespace
 {
 	void path_game_assembly();
@@ -36,6 +38,10 @@ namespace
 		if (path == L"cri_ware_unity.dll"s)
 		{
 			path_game_assembly();
+			if (g_on_hook_ready)
+			{
+				g_on_hook_ready();
+			}
 
 			MH_DisableHook(LoadLibraryW);
 			MH_RemoveHook(LoadLibraryW);
@@ -307,7 +313,7 @@ namespace
 	void* load_scene_internal_orig = nullptr;
 	void* load_scene_internal_hook(Il2CppString* sceneName, int sceneBuildIndex, void* parameters, bool mustCompleteNextFrame)
 	{
-		wprintf(L"%s\n", sceneName->start_char);
+		wprintf(L"%ls\n", sceneName->start_char);
 		return reinterpret_cast<decltype(load_scene_internal_hook)*>(load_scene_internal_orig)(sceneName, sceneBuildIndex, parameters, mustCompleteNextFrame);
 	}
 
@@ -331,6 +337,8 @@ namespace
 			}
 		}
 	}
+
+	Il2CppString* (*get_app_version_name)();
 
 	void path_game_assembly()
 	{
@@ -471,6 +479,13 @@ namespace
 			il2cpp_symbols::get_method_pointer(
 				"umamusume.dll", "Gallop",
 				"TextCommon", "set_FontSize", 1
+			)
+		);
+
+		get_app_version_name = reinterpret_cast<Il2CppString*(*)()>(
+			il2cpp_symbols::get_method_pointer(
+				"umamusume.dll", "Gallop",
+				"DeviceHelper", "GetAppVersionName", 0
 			)
 		);
 
@@ -664,4 +679,36 @@ void uninit_hook()
 
 	MH_DisableHook(MH_ALL_HOOKS);
 	MH_Uninitialize();
+}
+
+std::optional<std::wstring> localize_get(int id)
+{
+	if (!localize_get_orig)
+	{
+		return {};
+	}
+
+	const auto str = reinterpret_cast<decltype(localize_get_hook)*>(localize_get_orig)(id);
+	if (!str || !str->start_char[0])
+	{
+		return {};
+	}
+
+	return str->start_char;
+}
+
+std::optional<std::wstring> get_game_version_name()
+{
+	if (!get_app_version_name)
+	{
+		return {};
+	}
+
+	const auto versionString = get_app_version_name();
+	if (!versionString || !versionString->start_char[0])
+	{
+		return {};
+	}
+
+	return versionString->start_char;
 }

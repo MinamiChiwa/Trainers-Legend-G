@@ -3,9 +3,16 @@
 #include <minizip/unzip.h>
 #include <TlHelp32.h>
 
+#include <unordered_set>
+#include <charconv>
+#include <cassert>
+
 extern bool init_hook();
 extern void uninit_hook();
 extern void start_console();
+
+std::optional<std::wstring> localize_get(int id);
+std::optional<std::wstring> get_game_version_name();
 
 bool g_dump_entries = false;
 bool g_enable_logger = false;
@@ -17,12 +24,17 @@ float g_aspect_ratio = 16.f / 9.f;
 bool g_replace_font = true;
 bool g_auto_fullscreen = true;
 std::unique_ptr<AutoUpdate::IAutoUpdateService> g_auto_update_service{};
+std::string g_static_dict_path;
 
 constexpr const char LocalizedDataPath[] = "localized_data";
 constexpr const char OldLocalizedDataPath[] = "old_localized_data";
 constexpr const char ConfigJson[] = "config.json";
 constexpr const char VersionDll[] = "version.dll";
 constexpr const char VersionDllTmp[] = "version.dll.tmp";
+constexpr const char StaticDictCache[] = "static_cache.json";
+constexpr const char StaticDictCachePath[] = "localized_data/static_cache.json";
+constexpr const char StaticDictStamp[] = "static_cache.stamp";
+constexpr const char StaticDictStampPath[] = "localized_data/static_cache.stamp";
 
 char line_break_hotkey = 'u';
 bool autoChangeLineBreakMode = false;
@@ -40,7 +52,7 @@ namespace
 		_ = freopen("CONOUT$", "w", stderr);
 		_ = freopen("CONIN$", "r", stdin);
 
-		SetConsoleTitle("Umamusume - Debug Console - 此插件为免费下载, 若您是付费购买此插件请立刻举报店家! 交流群: 697216935");
+		SetConsoleTitleW(L"Umamusume - Debug Console - 此插件为免费下载, 若您是付费购买此插件请立刻举报店家! 交流群: 697216935");
 
 		// set this to avoid turn japanese texts into question mark
 		SetConsoleOutputCP(65001);
@@ -51,7 +63,7 @@ namespace
 
 	std::string get_current_version()
 	{
-		std::ifstream versionStream("version.txt", std::ios_base::ate);
+		std::ifstream versionStream("version.txt", std::ios_base::ate | std::ios_base::binary);
 		if (!versionStream.is_open())
 		{
 			return "unknown";
@@ -65,10 +77,245 @@ namespace
 
 	void write_current_version(const std::string_view& version)
 	{
-		std::ofstream versionStream("version.txt");
+		std::ofstream versionStream("version.txt", std::ios_base::binary);
 		versionStream.write(version.data(), version.size());
 	}
 
+	enum class StaticCacheStatus
+	{
+		UpToDate,
+		Outdated,
+		Indeterminate,
+	};
+
+	std::string get_static_cache_stamp()
+	{
+		std::ifstream staticCacheStamp(StaticDictStampPath, std::ios_base::ate | std::ios_base::binary);
+		if (!staticCacheStamp.is_open())
+		{
+			return "";
+		}
+		const auto length = staticCacheStamp.tellg();
+		staticCacheStamp.seekg(0);
+		std::string stamp(length, 0);
+		staticCacheStamp.read(stamp.data(), length);
+		return stamp;
+	}
+
+	void write_static_cache_stamp(const std::string_view& stamp)
+	{
+		std::ofstream staticCacheStamp(StaticDictStampPath);
+		staticCacheStamp.write(stamp.data(), stamp.size());
+	}
+
+	StaticCacheStatus get_static_cache_status()
+	{
+		const auto currentGameVersion = get_game_version_name();
+		if (!currentGameVersion)
+		{
+			// 无法获取游戏版本，可能获取版本的方式已变化
+			return StaticCacheStatus::Indeterminate;
+		}
+
+		return get_static_cache_stamp() == utility::conversions::to_utf8string(*currentGameVersion) ? StaticCacheStatus::UpToDate : StaticCacheStatus::Outdated;
+	}
+
+	std::map<std::size_t, std::string> build_static_cache(const std::string& staticDictPath)
+	{
+		std::printf("Building static cache from %s\n", staticDictPath.c_str());
+
+		std::ifstream staticDictFile(staticDictPath);
+		std::map<std::size_t, std::string> dict;
+
+		if (!staticDictFile.is_open())
+		{
+			return dict;
+		}
+
+		rapidjson::IStreamWrapper wrapper(staticDictFile);
+		rapidjson::Document doc;
+
+		doc.ParseStream(wrapper);
+
+		if (doc.HasParseError())
+		{
+			return dict;
+		}
+
+		bool lastIsEmpty = false;
+		for (int id = 1;; ++id)
+		{
+			const auto originText = localize_get(id);
+			if (!originText)
+			{
+				if (lastIsEmpty)
+				{
+					break;
+				}
+
+				lastIsEmpty = true;
+				continue;
+			}
+
+			lastIsEmpty = false;
+
+			const auto utf8OriginText = utility::conversions::to_utf8string(*originText);
+			if (const auto iter = doc.FindMember(utf8OriginText.c_str()); iter != doc.MemberEnd() && iter->value.IsString())
+			{
+				dict.emplace(id, iter->value.GetString());
+			}
+		}
+
+		return dict;
+	}
+
+	std::optional<std::map<std::size_t, std::string>> read_static_cache()
+	{
+		std::map<std::size_t, std::string> staticCache;
+		std::ifstream staticCacheFile(StaticDictCachePath);
+
+		if (!staticCacheFile.is_open())
+		{
+			return {};
+		}
+
+		rapidjson::IStreamWrapper wrapper(staticCacheFile);
+		rapidjson::Document staticCacheDocument;
+
+		staticCacheDocument.ParseStream(wrapper);
+		staticCacheFile.close();
+		if (staticCacheDocument.HasParseError())
+		{
+			return {};
+		}
+
+		for (auto iter = staticCacheDocument.MemberBegin(), end = staticCacheDocument.MemberEnd(); iter != end; ++iter)
+		{
+			const auto name = iter->name.GetString();
+			const auto nameEnd = name + std::strlen(name);
+			const auto value = iter->value.GetString();
+
+			int id;
+			if (const auto [end, ec] = std::from_chars(name, nameEnd, id); ec != std::errc{})
+			{
+				return {};
+			}
+
+			staticCache.emplace(id, value);
+		}
+
+		return staticCache;
+	}
+
+	bool write_static_cache(const std::map<std::size_t, std::string>& staticCache)
+	{
+		std::ofstream staticCacheFile(StaticDictCachePath);
+		if (!staticCacheFile.is_open())
+		{
+			return false;
+		}
+
+		rapidjson::OStreamWrapper wrapper(staticCacheFile);
+		rapidjson::Writer writer(wrapper);
+
+		writer.StartObject();
+
+		// 足够容纳 std::uint64_t 的最大值
+		char idBuffer[21];
+		for (const auto& [id, content] : staticCache)
+		{
+			const auto [end, ec] = std::to_chars(std::begin(idBuffer), std::end(idBuffer), id);
+			// 不应当出错
+			assert(ec == std::errc{});
+			*end = 0;
+
+			writer.Key(idBuffer);
+			writer.String(content.c_str());
+		}
+
+		writer.EndObject();
+
+		return true;
+	}
+
+	void dump_static_dict(const std::filesystem::path& outputPath, const std::map<std::size_t, std::string>& currentStaticCache)
+	{
+		std::ofstream output(outputPath);
+		if (!output.is_open())
+		{
+			return;
+		}
+
+		rapidjson::OStreamWrapper wrapper(output);
+		rapidjson::Writer writer(wrapper);
+
+		std::unordered_set<std::wstring> set;
+
+		writer.StartObject();
+
+		bool lastIsEmpty = false;
+		for (std::size_t id = 1;; ++id)
+		{
+			const auto originText = localize_get(id);
+			if (!originText)
+			{
+				if (lastIsEmpty)
+				{
+					break;
+				}
+
+				lastIsEmpty = true;
+				continue;
+			}
+
+			lastIsEmpty = false;
+
+			if (const auto [iter, succeed] = set.emplace(*originText); !succeed)
+			{
+				// 重复文本，跳过
+				continue;
+			}
+
+			const auto origin = utility::conversions::to_utf8string(*originText);
+			writer.Key(origin.c_str());
+			if (const auto iter = currentStaticCache.find(id); iter != currentStaticCache.end())
+			{
+				writer.String(iter->second.c_str());
+			}
+			else
+			{
+				writer.Null();
+			}
+		}
+
+		writer.EndObject();
+	}
+}
+
+std::map<std::size_t, std::string> ensure_latest_static_cache(const std::string& staticDictPath)
+{
+	if (get_static_cache_status() == StaticCacheStatus::UpToDate)
+	{
+		auto staticCache = read_static_cache();
+		if (staticCache)
+		{
+			std::wprintf(L"Static dict cache is up-to-date, load from cache\n");
+			return std::move(*staticCache);
+		}
+	}
+
+	std::wprintf(L"Static dict cache is outdated or corrupted, building new cache\n");
+	auto newStaticCache = build_static_cache(staticDictPath);
+	write_static_cache(newStaticCache);
+	if (const auto gameVersion = get_game_version_name())
+	{
+		write_static_cache_stamp(utility::conversions::to_utf8string(*gameVersion));
+	}
+	return newStaticCache;
+}
+
+namespace
+{
 	std::vector<std::string> read_config()
 	{
 		std::ifstream config_stream { ConfigJson };
@@ -130,6 +377,8 @@ namespace
 				dicts.push_back(dict);
 			}
 
+			g_static_dict_path = document["static_dict"].GetString();
+
 			if (document.HasMember("autoUpdate"))
 			{
 				const auto& autoUpdate = document["autoUpdate"];
@@ -147,7 +396,6 @@ namespace
 	void reload_config()
 	{
 		std::ifstream config_stream{ "config.json" };
-		std::vector<std::string> dicts{};
 
 		rapidjson::IStreamWrapper wrapper{ config_stream };
 		rapidjson::Document document;
@@ -156,6 +404,12 @@ namespace
 
 		if (!document.HasParseError())
 		{
+			std::vector<std::string> dicts{};
+
+			const std::string staticDictPath = document["static_dict"].GetString();
+			g_static_dict_path = staticDictPath;
+			auto staticDictCache = ensure_latest_static_cache(staticDictPath);
+
 			auto& dicts_arr = document["dicts"];
 			auto len = dicts_arr.Size();
 
@@ -165,13 +419,13 @@ namespace
 
 				dicts.push_back(dict);
 			}
-		}
 
-		config_stream.close();
-		local::reload_textdb(&dicts);
+			local::reload_textdb(&dicts, std::move(staticDictCache));
+		}
 	}
 
-	void merge_config(const std::filesystem::path& newConfig)
+	// 返回新的 static dict 路径
+	std::string merge_config(const std::filesystem::path& newConfig)
 	{
 		constexpr const char* keepList[] =
 		{
@@ -192,7 +446,7 @@ namespace
 		{
 			std::wprintf(L"Cannot open new config file, considered as corrupted, try overwriting with old version\n");
 			std::filesystem::copy_file(ConfigJson, newConfig, std::filesystem::copy_options::overwrite_existing);
-			return;
+			return g_static_dict_path;
 		}
 
 		rapidjson::IStreamWrapper newConfigWrapper(newConfigFile);
@@ -205,14 +459,14 @@ namespace
 		{
 			std::wprintf(L"New config is corrupted, try overwriting with old version\n");
 			std::filesystem::copy_file(ConfigJson, newConfig, std::filesystem::copy_options::overwrite_existing);
-			return;
+			return g_static_dict_path;
 		}
 
 		std::ifstream configFile(ConfigJson);
 		if (!configFile.is_open())
 		{
 			std::wprintf(L"Cannot open old config, skip merging\n");
-			return;
+			return g_static_dict_path;
 		}
 
 		rapidjson::IStreamWrapper configWrapper(configFile);
@@ -233,6 +487,8 @@ namespace
 		rapidjson::OStreamWrapper newConfigOutputWrapper(newConfigFileOutput);
 		rapidjson::Writer<rapidjson::OStreamWrapper> writer(newConfigOutputWrapper);
 		newConfigDocument.Accept(writer);
+
+		return newConfigDocument["static_dict"].GetString();
 	}
 
 	template <typename Callable>
@@ -343,8 +599,8 @@ namespace
 
 	bool is_file_content_equal(const std::filesystem::path& a, const std::filesystem::path& b)
 	{
-		std::ifstream fileA(a, std::ios_base::ate);
-		std::ifstream fileB(b, std::ios_base::ate);
+		std::ifstream fileA(a, std::ios_base::ate | std::ios_base::binary);
+		std::ifstream fileB(b, std::ios_base::ate | std::ios_base::binary);
 
 		if (!fileA.is_open() || !fileB.is_open())
 		{
@@ -389,7 +645,7 @@ namespace
 		if (g_auto_update_service)
 		{
 			const auto currentVersion = utility::conversions::to_string_t(get_current_version());
-			std::wprintf(L"Current version is %s\n", currentVersion.c_str());
+			std::wprintf(L"Current version is %ls\n", currentVersion.c_str());
 			constexpr auto updateTempFile = "update.zip";
 
 			try
@@ -413,11 +669,11 @@ namespace
 						return;
 					}
 
-					std::wprintf(L"New version %s downloading...\n", latestRelease->Version.c_str());
+					std::wprintf(L"New version %ls downloading...\n", latestRelease->Version.c_str());
 
 					AutoUpdate::DownloadFile(latestRelease->Uri, updateTempFile).get();
 
-					std::wprintf(L"New version %s downloaded! Updating...\n", latestRelease->Version.c_str());
+					std::wprintf(L"New version %ls downloaded! Updating...\n", latestRelease->Version.c_str());
 
 					const std::filesystem::path tmpPath = AutoUpdateTmpPath;
 
@@ -446,9 +702,22 @@ namespace
 							}
 
 							const auto newConfigPath = tmpPath / ConfigJson;
-							merge_config(newConfigPath);
+							std::filesystem::path newStaticDictPath = merge_config(newConfigPath);
+							constexpr const wchar_t LocalizedDataPrefix[] = L"localized_data/";
+							if (newStaticDictPath.native().starts_with(LocalizedDataPrefix))
+							{
+								newStaticDictPath = tmpPath / std::basic_string_view<std::filesystem::path::value_type>(newStaticDictPath.native()).substr(std::size(LocalizedDataPrefix) - 1);
+							}
 
-							// 备份旧文件
+							const auto forceInvalidateStaticCache = std::filesystem::exists(newStaticDictPath) && !is_file_content_equal(g_static_dict_path, newStaticDictPath);
+							// 若不需要更新，则不复制已有的 cache，将会自动被删除
+							if (!forceInvalidateStaticCache && get_static_cache_status() == StaticCacheStatus::UpToDate)
+							{
+								std::filesystem::copy_file(StaticDictCachePath, tmpPath / StaticDictCache);
+								std::filesystem::copy_file(StaticDictStampPath, tmpPath / StaticDictStamp);
+							}
+
+							// 备份旧文件，此处理之后旧的 localized_data 应使用 old_localized_data 引用
 							std::filesystem::rename(LocalizedDataPath, oldLocalizedDataPath);
 							std::filesystem::rename(ConfigJson, oldLocalizedDataPath / ConfigJson);
 							std::filesystem::copy_file(VersionDll, oldLocalizedDataPath / VersionDll, std::filesystem::copy_options::overwrite_existing);
@@ -559,6 +828,8 @@ del SelfUpdate.bat
 	}
 }
 
+extern std::function<void()> g_on_hook_ready;
+
 int __stdcall DllMain(HINSTANCE, DWORD reason, LPVOID)
 {
 	if (reason == DLL_PROCESS_ATTACH)
@@ -593,14 +864,34 @@ int __stdcall DllMain(HINSTANCE, DWORD reason, LPVOID)
 		if(g_enable_console)
 		 	create_debug_console();
 
-		std::thread init_thread([dicts]() {
+		std::thread init_thread([dicts = std::move(dicts)] {
 			logger::init_logger();
-			local::load_textdb(&dicts);
+
 			init_hook();
 
 			if (g_enable_console)
 				start_console();
 
+			std::mutex mutex;
+			std::condition_variable cond;
+			std::atomic<bool> hookIsReady(false);
+			g_on_hook_ready = [&]
+			{
+				hookIsReady.store(true, std::memory_order_release);
+				cond.notify_one();
+			};
+
+			// 依赖检查游戏版本的指针加载，因此在 hook 完成后再加载翻译数据
+			std::unique_lock lock(mutex);
+			cond.wait(lock, [&] {
+				return hookIsReady.load(std::memory_order_acquire);
+			});
+			auto staticDictCache = ensure_latest_static_cache(g_static_dict_path);
+			if (g_dump_entries)
+			{
+				dump_static_dict("static_dump.json", staticDictCache);
+			}
+			local::load_textdb(&dicts, std::move(staticDictCache));
 			auto_update();
 		});
 		init_thread.detach();
