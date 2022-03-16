@@ -886,6 +886,9 @@ int __stdcall DllMain(HINSTANCE, DWORD reason, LPVOID)
 			cond.wait(lock, [&] {
 				return hookIsReady.load(std::memory_order_acquire);
 			});
+			auto _ = freopen("CONOUT$", "w+t", stdout);
+			_ = freopen("CONOUT$", "w", stderr);
+			_ = freopen("CONIN$", "r", stdin);
 			auto staticDictCache = ensure_latest_static_cache(g_static_dict_path);
 			if (g_dump_entries)
 			{

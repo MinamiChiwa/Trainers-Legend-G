@@ -14,6 +14,8 @@ il2cpp_resolve_icall_t il2cpp_resolve_icall;
 il2cpp_array_new_t il2cpp_array_new;
 il2cpp_thread_attach_t il2cpp_thread_attach;
 il2cpp_thread_detach_t il2cpp_thread_detach;
+il2cpp_class_get_field_from_name_t il2cpp_class_get_field_from_name;
+il2cpp_class_is_assignable_from_t il2cpp_class_is_assignable_from;
 
 char* il2cpp_array_addr_with_size(void* array, int32_t size, uintptr_t idx)
 {
@@ -42,6 +44,8 @@ namespace il2cpp_symbols
 		RESOLVE_IMPORT(il2cpp_array_new);
 		RESOLVE_IMPORT(il2cpp_thread_attach);
 		RESOLVE_IMPORT(il2cpp_thread_detach);
+		RESOLVE_IMPORT(il2cpp_class_get_field_from_name);
+		RESOLVE_IMPORT(il2cpp_class_is_assignable_from);
 
 		il2cpp_domain = il2cpp_domain_get();
 	}
@@ -88,5 +92,20 @@ namespace il2cpp_symbols
 		}
 
 		return 0;
+	}
+
+	FieldInfo* get_field(const char* assemblyName, const char* namespaze,
+						 const char* klassName, const char* name)
+	{
+		const auto assembly = il2cpp_domain_assembly_open(il2cpp_domain, assemblyName);
+		const auto image = il2cpp_assembly_get_image(assembly);
+		const auto klass = il2cpp_class_from_name(image, namespaze, klassName);
+
+		return il2cpp_class_get_field_from_name(klass, name);
+	}
+
+	void* get_class_from_instance(const void* instance)
+	{
+		return *static_cast<void* const*>(std::assume_aligned<alignof(void*)>(instance));
 	}
 }

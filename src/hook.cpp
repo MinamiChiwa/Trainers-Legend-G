@@ -35,7 +35,7 @@ namespace
 	HMODULE __stdcall load_library_w_hook(const wchar_t* path)
 	{
 		// GameAssembly.dll code must be loaded and decrypted while loading criware library
-		if (path == L"cri_ware_unity.dll"s)
+		if (path == L"cri_ware_unity.dll"sv)
 		{
 			path_game_assembly();
 			if (g_on_hook_ready)
@@ -72,15 +72,17 @@ namespace
 
 	std::unordered_map<void*, bool> text_queries;
 
+	Il2CppString* (*environment_get_stacktrace)();
+
 	void* query_ctor_orig = nullptr;
 	void* query_ctor_hook(void* _this, void* conn, Il2CppString* sql)
 	{
-		auto ssql = std::wstring(sql->start_char);
+		auto ssql = std::wstring_view(sql->start_char);
 
-		if (ssql.find(L"text_data") != std::string::npos ||
-			ssql.find(L"character_system_text") != std::string::npos ||
-			ssql.find(L"race_jikkyo_comment") != std::string::npos ||
-			ssql.find(L"race_jikkyo_message") != std::string::npos ) 
+		if (ssql.find(L"text_data") != std::wstring_view::npos ||
+			ssql.find(L"character_system_text") != std::wstring_view::npos ||
+			ssql.find(L"race_jikkyo_comment") != std::wstring_view::npos ||
+			ssql.find(L"race_jikkyo_message") != std::wstring_view::npos )
 		{
 			text_queries.emplace(_this, true);
 		}
@@ -106,6 +108,94 @@ namespace
 			return local::get_localized_string(result);
 
 		return result;
+	}
+
+	void* StoryTimelineControllerClass;
+	FieldInfo* StoryTimelineControllerClass_timelineDataField;
+	void* StoryTimelineDataClass;
+	FieldInfo* StoryTimelineDataClass_BlockListField;
+	void* StoryTimelineTextClipDataClass;
+	FieldInfo* StoryTimelineTextClipDataClass_NameField;
+	FieldInfo* StoryTimelineTextClipDataClass_TextField;
+	FieldInfo* StoryTimelineTextClipDataClass_ChoiceDataList;
+	void* StoryTimelineTextClipDataClass_ChoiceDataClass;
+	FieldInfo* StoryTimelineTextClipDataClass_ChoiceDataClass_TextField;
+	void* StoryTimelineBlockDataClass;
+	FieldInfo* StoryTimelineBlockDataClass_trackListField;
+	void* StoryTimelineTrackDataClass;
+	FieldInfo* StoryTimelineTrackDataClass_ClipListField;
+	void* StoryTimelineClipDataClass;
+
+	void* StoryTimelineController_Play_orig;
+	void* StoryTimelineController_Play_hook(void* _this)
+	{
+		if (!StoryTimelineControllerClass)
+		{
+			StoryTimelineControllerClass = il2cpp_symbols::get_class_from_instance(_this);
+			StoryTimelineControllerClass_timelineDataField = il2cpp_class_get_field_from_name(StoryTimelineControllerClass, "_timelineData");
+		}
+
+		const auto timelineData = il2cpp_symbols::read_field(_this, StoryTimelineControllerClass_timelineDataField);
+		if (!StoryTimelineDataClass)
+		{
+			StoryTimelineDataClass = il2cpp_symbols::get_class_from_instance(timelineData);
+			StoryTimelineDataClass_BlockListField = il2cpp_class_get_field_from_name(StoryTimelineDataClass, "BlockList");
+		}
+
+		if (!StoryTimelineTextClipDataClass)
+		{
+			StoryTimelineTextClipDataClass = il2cpp_symbols::get_class("umamusume.dll", "Gallop", "StoryTimelineTextClipData");
+			StoryTimelineTextClipDataClass_NameField = il2cpp_class_get_field_from_name(StoryTimelineTextClipDataClass, "Name");
+			StoryTimelineTextClipDataClass_TextField = il2cpp_class_get_field_from_name(StoryTimelineTextClipDataClass, "Text");
+			StoryTimelineTextClipDataClass_ChoiceDataList = il2cpp_class_get_field_from_name(StoryTimelineTextClipDataClass, "ChoiceDataList");
+		}
+
+		const auto blockList = il2cpp_symbols::read_field(timelineData, StoryTimelineDataClass_BlockListField);
+		il2cpp_symbols::iterate_list(blockList, [&](int32_t, void* blockData) {
+			if (!StoryTimelineBlockDataClass)
+			{
+				StoryTimelineBlockDataClass = il2cpp_symbols::get_class_from_instance(blockData);
+				StoryTimelineBlockDataClass_trackListField = il2cpp_class_get_field_from_name(StoryTimelineBlockDataClass, "_trackList");
+			}
+
+			const auto trackList = il2cpp_symbols::read_field(blockData, StoryTimelineBlockDataClass_trackListField);
+			il2cpp_symbols::iterate_list(trackList, [&](int32_t, void* trackData) {
+				if (!StoryTimelineTrackDataClass)
+				{
+					StoryTimelineTrackDataClass = il2cpp_symbols::get_class_from_instance(trackData);
+					StoryTimelineTrackDataClass_ClipListField = il2cpp_class_get_field_from_name(StoryTimelineTrackDataClass, "ClipList");
+				}
+
+				const auto clipList = il2cpp_symbols::read_field(trackData, StoryTimelineTrackDataClass_ClipListField);
+				il2cpp_symbols::iterate_list(clipList, [&](int32_t, void* clipData) {
+					StoryTimelineClipDataClass = il2cpp_symbols::get_class_from_instance(clipData);
+					if (StoryTimelineTextClipDataClass == StoryTimelineClipDataClass)
+					{
+						const auto name = il2cpp_symbols::read_field<Il2CppString*>(clipData, StoryTimelineTextClipDataClass_NameField);
+						il2cpp_symbols::write_field(clipData, StoryTimelineTextClipDataClass_NameField, local::get_localized_string(name));
+						const auto text = il2cpp_symbols::read_field<Il2CppString*>(clipData, StoryTimelineTextClipDataClass_TextField);
+						il2cpp_symbols::write_field(clipData, StoryTimelineTextClipDataClass_TextField, local::get_localized_string(text));
+						const auto choiceDataList = il2cpp_symbols::read_field(clipData, StoryTimelineTextClipDataClass_ChoiceDataList);
+						if (choiceDataList != nullptr)
+						{
+							il2cpp_symbols::iterate_list(choiceDataList, [&](int32_t i, void* choiceData) {
+								if (!StoryTimelineTextClipDataClass_ChoiceDataClass)
+								{
+									StoryTimelineTextClipDataClass_ChoiceDataClass = il2cpp_symbols::get_class_from_instance(choiceData);
+									StoryTimelineTextClipDataClass_ChoiceDataClass_TextField = il2cpp_class_get_field_from_name(StoryTimelineTextClipDataClass_ChoiceDataClass, "Text");
+								}
+
+								const auto text = il2cpp_symbols::read_field<Il2CppString*>(choiceData, StoryTimelineTextClipDataClass_ChoiceDataClass_TextField);
+								const auto hash = std::hash<std::wstring_view>{}(text->start_char);
+								il2cpp_symbols::write_field(choiceData, StoryTimelineTextClipDataClass_ChoiceDataClass_TextField, local::get_localized_string(text));
+							});
+						}
+					}
+				});
+			});
+		});
+
+		return reinterpret_cast<decltype(StoryTimelineController_Play_hook)*>(StoryTimelineController_Play_orig)(_this);
 	}
 
 	void* set_fps_orig = nullptr;
@@ -340,6 +430,11 @@ namespace
 
 	Il2CppString* (*get_app_version_name)();
 
+	BOOL WINAPI is_debugger_present_hook()
+	{
+		return FALSE;
+	}
+
 	void path_game_assembly()
 	{
 		if (!mh_inited)
@@ -372,9 +467,11 @@ namespace
 		// have to do this way because there's Get(TextId id) and Get(string id)
 		// the string one looks like will not be called by elsewhere
 		auto localize_get_addr = il2cpp_symbols::find_method("umamusume.dll", "Gallop", "Localize", [](const MethodInfo* method) {
-			return method->name == "Get"s && 
+			return method->name == "Get"sv && 
 				method->parameters->parameter_type->type == IL2CPP_TYPE_VALUETYPE;
 		});
+
+		environment_get_stacktrace = reinterpret_cast<decltype(environment_get_stacktrace)>(il2cpp_symbols::get_method_pointer("mscorlib.dll", "System", "Environment", "get_StackTrace", 0));
 
 		auto query_ctor_addr = il2cpp_symbols::get_method_pointer(
 			"LibNative.Runtime.dll", "LibNative.Sqlite3", 
@@ -516,6 +613,8 @@ namespace
 		);
 
 		auto load_scene_internal_addr = il2cpp_resolve_icall("UnityEngine.SceneManagement.SceneManager::LoadSceneAsyncNameIndexInternal_Injected(System.String,System.Int32,UnityEngine.SceneManagement.LoadSceneParameters&,System.Boolean)");
+
+		const auto StoryTimelineController_Play_addr = il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "StoryTimelineController", "Play", 0);
 #pragma endregion
 
 		// hook UnityEngine.TextGenerator::PopulateWithErrors to modify text
@@ -540,6 +639,7 @@ namespace
 		{
 			// break 30-40fps limit
 			ADD_HOOK(set_fps, "UnityEngine.Application.set_targetFrameRate at %p \n");
+			ADD_HOOK(StoryTimelineController_Play, "StoryTimelineController::Play at %p\n");
 		}
 		
 		if (g_unlock_size)
