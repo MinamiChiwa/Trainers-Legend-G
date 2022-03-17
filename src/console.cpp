@@ -1,5 +1,7 @@
 #include "stdinclude.hpp"
 
+std::map<std::size_t, std::string> ensure_latest_static_cache(const std::string& staticDictPath);
+
 namespace
 {
 	void console_thread()
@@ -36,7 +38,7 @@ namespace
 				}
 
 				config_stream.close();
-				local::reload_textdb(&dicts);
+				local::reload_textdb(&dicts, ensure_latest_static_cache(g_static_dict_path));
 			}
 		}
 	}

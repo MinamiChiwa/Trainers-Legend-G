@@ -14,14 +14,14 @@ namespace MHotkey{
     
     /*
     void showmessagebox() {
-        MSGBOXPARAMS msgBox;
+        MSGBOXPARAMSW msgBox;
         msgBox.cbSize = sizeof(MSGBOXPARAMS);
         msgBox.dwStyle = MB_USERICON | MB_OK | MB_SYSTEMMODAL;
         msgBox.hInstance = NULL;
         msgBox.hwndOwner = NULL;
-        msgBox.lpszCaption = "测试标题";
+        msgBox.lpszCaption = L"测试标题";
         msgBox.lpszIcon = MAKEINTRESOURCE(JI_BITMAP0);
-        msgBox.lpszText = "测试内容";
+        msgBox.lpszText = L"测试内容";
 
         MessageBoxIndirect(&msgBox);
     }
@@ -60,11 +60,11 @@ namespace MHotkey{
                 if (CTRL_key != 0 && key == hotk)
                 {
                     MHotkey::is_uma = !MHotkey::is_uma;
-                    auto pt = MHotkey::is_uma ? "已切换为: 无视换行符优先(竖屏推荐)" : "已切换为: 使用原换行配置优先(横屏推荐)";
+                    auto pt = MHotkey::is_uma ? L"已切换为: 无视换行符优先(竖屏推荐)" : L"已切换为: 使用原换行配置优先(横屏推荐)";
                     // showmessagebox();
-                    MessageBox(NULL, 
+                    MessageBoxW(NULL, 
                         pt,
-                        "文本显示配置 Modified by 'sunset",
+                        L"文本显示配置 Modified by 'sunset",
                         MB_OK|MB_SYSTEMMODAL);
                 }
 

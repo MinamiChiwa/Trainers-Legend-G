@@ -26,41 +26,31 @@ namespace local
 		return result;
 	}
 
-	void unlocked_load_textdb(const vector<string>* dicts);
-
-	void reload_textdb(const vector<string>* dicts)
+	void unlocked_load_textdb(const vector<string>* dicts, map<size_t, string>&& staticDict)
 	{
-		std::unique_lock lock(db_lock);
-		text_db.clear();
-		unlocked_load_textdb(dicts);
-	}
+		for (auto&& [id, content] : staticDict)
+		{
+			text_db.emplace(id, std::move(content));
+		}
 
-	void load_textdb(const vector<string>* dicts)
-	{
-		std::unique_lock lock(db_lock);
-		unlocked_load_textdb(dicts);
-	}
-
-	void unlocked_load_textdb(const vector<string> *dicts)
-	{
-		for (auto dict : *dicts)
+		for (const auto& dict : *dicts)
 		{
 			if (filesystem::exists(dict))
 			{
-				std::ifstream dict_stream {dict};
+				std::ifstream dict_stream{ dict };
 
 				if (!dict_stream.is_open())
 					continue;
 
 				printf("Reading %s...\n", dict.data());
 
-				rapidjson::IStreamWrapper wrapper {dict_stream};
+				rapidjson::IStreamWrapper wrapper{ dict_stream };
 				rapidjson::Document document;
 
 				document.ParseStream(wrapper);
 
-				for (auto iter = document.MemberBegin(); 
-					 iter != document.MemberEnd(); ++iter)
+				for (auto iter = document.MemberBegin();
+					iter != document.MemberEnd(); ++iter)
 				{
 					auto key = std::stoull(iter->name.GetString());
 					auto value = iter->value.GetString();
@@ -74,6 +64,19 @@ namespace local
 
 		printf("loaded %llu localized entries.\n", text_db.size());
 		// read_str_config();
+	}
+
+	void reload_textdb(const vector<string>* dicts, map<size_t, string>&& staticDict)
+	{
+		std::unique_lock lock(db_lock);
+		text_db.clear();
+		unlocked_load_textdb(dicts, std::move(staticDict));
+	}
+
+	void load_textdb(const vector<string>* dicts, map<size_t, string>&& staticDict)
+	{
+		std::unique_lock lock(db_lock);
+		unlocked_load_textdb(dicts, std::move(staticDict));
 	}
 
 	bool localify_text(size_t hash, string** result)
@@ -151,7 +154,7 @@ namespace local
 		}
 		
 		/*
-		string nb = "わわわっ、どいてどいてぇー！！";
+		wstring nb = L"わわわっ、どいてどいてぇー！！";
 		// nb.c_str(); // char*
 
 		size_t len = strlen(nb.c_str()) + 1;

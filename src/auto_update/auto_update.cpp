@@ -30,7 +30,7 @@ namespace AutoUpdate
 		Concurrency::task<std::optional<ReleaseInfo>> GiteeAutoUpdateService::GetLatestRelease()
 		{
 			const auto uri = std::format(U("https://gitee.com/api/v5/repos/{}/releases/latest"), m_Path);
-			std::wprintf(L"Getting %s...\n", uri.c_str());
+			std::wprintf(L"Getting %ls...\n", uri.c_str());
 			web::http::client::http_client client(uri);
 
 			return client.request(web::http::methods::GET).then([](const web::http::http_response& resp)
