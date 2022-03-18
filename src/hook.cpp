@@ -185,7 +185,6 @@ namespace
 								}
 
 								const auto text = il2cpp_symbols::read_field<Il2CppString*>(choiceData, StoryTimelineTextClipDataClass_ChoiceDataClass_TextField);
-								const auto hash = std::hash<std::wstring_view>{}(text->start_char);
 								il2cpp_symbols::write_field(choiceData, StoryTimelineTextClipDataClass_ChoiceDataClass_TextField, local::get_localized_string(text));
 							});
 						}
