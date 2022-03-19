@@ -16,6 +16,8 @@ il2cpp_thread_attach_t il2cpp_thread_attach;
 il2cpp_thread_detach_t il2cpp_thread_detach;
 il2cpp_class_get_field_from_name_t il2cpp_class_get_field_from_name;
 il2cpp_class_is_assignable_from_t il2cpp_class_is_assignable_from;
+il2cpp_class_for_each_t il2cpp_class_for_each;
+il2cpp_class_get_nested_types_t il2cpp_class_get_nested_types;
 
 char* il2cpp_array_addr_with_size(void* array, int32_t size, uintptr_t idx)
 {
@@ -46,6 +48,8 @@ namespace il2cpp_symbols
 		RESOLVE_IMPORT(il2cpp_thread_detach);
 		RESOLVE_IMPORT(il2cpp_class_get_field_from_name);
 		RESOLVE_IMPORT(il2cpp_class_is_assignable_from);
+		RESOLVE_IMPORT(il2cpp_class_for_each);
+		RESOLVE_IMPORT(il2cpp_class_get_nested_types);
 
 		il2cpp_domain = il2cpp_domain_get();
 	}
@@ -65,6 +69,13 @@ namespace il2cpp_symbols
 		auto klass = il2cpp_class_from_name(image, namespaze, klassName);
 
 		return il2cpp_class_get_method_from_name(klass, name, argsCount)->methodPointer;
+	}
+
+	void* find_nested_class_from_name(void* klass, const char* name)
+	{
+		return find_nested_class(klass, [name = std::string_view(name)](void* nestedClass) {
+			return static_cast<Il2CppClassHead*>(nestedClass)->name == name;
+		});
 	}
 
 	MethodInfo* get_method(const char* assemblyName, const char* namespaze,

@@ -233,6 +233,8 @@ typedef void* (*il2cpp_thread_attach_t)(void* domain);
 typedef void (*il2cpp_thread_detach_t)(void* thread);
 typedef FieldInfo* (*il2cpp_class_get_field_from_name_t)(void* klass, const char* name);
 typedef bool (*il2cpp_class_is_assignable_from_t)(void* klass, void* oklass);
+typedef void (*il2cpp_class_for_each_t)(void(*klassReportFunc)(void* klass, void* userData), void* userData);
+typedef void* (*il2cpp_class_get_nested_types_t)(void* klass, void** iter);
 
 // function defines
 extern il2cpp_string_new_utf16_t il2cpp_string_new_utf16;
@@ -251,6 +253,8 @@ extern il2cpp_thread_attach_t il2cpp_thread_attach;
 extern il2cpp_thread_detach_t il2cpp_thread_detach;
 extern il2cpp_class_get_field_from_name_t il2cpp_class_get_field_from_name;
 extern il2cpp_class_is_assignable_from_t il2cpp_class_is_assignable_from;
+extern il2cpp_class_for_each_t il2cpp_class_for_each;
+extern il2cpp_class_get_nested_types_t il2cpp_class_get_nested_types;
 
 char* il2cpp_array_addr_with_size(void* arr, int32_t size, uintptr_t idx);
 
@@ -270,6 +274,22 @@ namespace il2cpp_symbols
 								 const char* klassName, const char* name, int argsCount);
 
 	void* get_class(const char* assemblyName, const char* namespaze, const char* klassName);
+
+	void* find_nested_class(void* klass, std::predicate<void*> auto&& predicate)
+	{
+		void* iter{};
+		while (const auto curNestedClass = il2cpp_class_get_nested_types(klass, &iter))
+		{
+			if (static_cast<decltype(predicate)>(predicate)(curNestedClass))
+			{
+				return curNestedClass;
+			}
+		}
+
+		return nullptr;
+	}
+
+	void* find_nested_class_from_name(void* klass, const char* name);
 
 	MethodInfo* get_method(const char* assemblyName, const char* namespaze,
 						   const char* klassName, const char* name, int argsCount);

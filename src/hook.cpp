@@ -61,18 +61,17 @@ namespace
 			);
 	}
 
-	void* localize_get_orig = nullptr;
-	Il2CppString* localize_get_hook(int id)
-	{
-		auto orig_result = reinterpret_cast<decltype(localize_get_hook)*>(localize_get_orig)(id);
-		auto result = local::get_localized_string(id);
+	Il2CppString* (*environment_get_stacktrace)();
 
+	void* localize_jp_get_orig = nullptr;
+	Il2CppString* localize_jp_get_hook(int id)
+	{
+		auto orig_result = reinterpret_cast<decltype(localize_jp_get_hook)*>(localize_jp_get_orig)(id);
+		auto result = local::get_localized_string(id);
 		return result ? result : orig_result;
 	}
 
 	std::unordered_map<void*, bool> text_queries;
-
-	Il2CppString* (*environment_get_stacktrace)();
 
 	void* query_ctor_orig = nullptr;
 	void* query_ctor_hook(void* _this, void* conn, Il2CppString* sql)
@@ -186,7 +185,6 @@ namespace
 								}
 
 								const auto text = il2cpp_symbols::read_field<Il2CppString*>(choiceData, StoryTimelineTextClipDataClass_ChoiceDataClass_TextField);
-								const auto hash = std::hash<std::wstring_view>{}(text->start_char);
 								il2cpp_symbols::write_field(choiceData, StoryTimelineTextClipDataClass_ChoiceDataClass_TextField, local::get_localized_string(text));
 							});
 						}
@@ -412,7 +410,7 @@ namespace
 		// 0 is None
 		for(int i = 1;;i++)
 		{
-			auto* str = reinterpret_cast<decltype(localize_get_hook)*>(localize_get_orig)(i);
+			auto* str = reinterpret_cast<decltype(localize_jp_get_hook)*>(localize_jp_get_orig)(i);
 
 			if (str && *str->start_char)
 			{
@@ -421,7 +419,7 @@ namespace
 			else
 			{
 				// check next string, if it's still empty, then we are done!
-				auto* nextStr = reinterpret_cast<decltype(localize_get_hook)*>(localize_get_orig)(i + 1);
+				auto* nextStr = reinterpret_cast<decltype(localize_jp_get_hook)*>(localize_jp_get_orig)(i + 1);
 				if (!(nextStr && *nextStr->start_char))
 					break;
 			}
@@ -466,10 +464,10 @@ namespace
 
 		// have to do this way because there's Get(TextId id) and Get(string id)
 		// the string one looks like will not be called by elsewhere
-		auto localize_get_addr = il2cpp_symbols::find_method("umamusume.dll", "Gallop", "Localize", [](const MethodInfo* method) {
-			return method->name == "Get"sv && 
-				method->parameters->parameter_type->type == IL2CPP_TYPE_VALUETYPE;
-		});
+		// 现在已经移除了额外的版本，因此可直接 il2cpp_class_get_method_from_name 获取
+		const auto localize_class = il2cpp_symbols::get_class("umamusume.dll", "Gallop", "Localize");
+		const auto localize_jp_class = il2cpp_symbols::find_nested_class_from_name(localize_class, "JP");
+		auto localize_jp_get_addr = il2cpp_class_get_method_from_name(localize_jp_class, "Get", 1)->methodPointer;
 
 		environment_get_stacktrace = reinterpret_cast<decltype(environment_get_stacktrace)>(il2cpp_symbols::get_method_pointer("mscorlib.dll", "System", "Environment", "get_StackTrace", 0));
 
@@ -621,7 +619,7 @@ namespace
 		ADD_HOOK(populate_with_errors, "UnityEngine.TextGenerator::PopulateWithErrors at %p\n");
 
 		// Looks like they store all localized texts that used by code in a dict
-		ADD_HOOK(localize_get, "Gallop.Localize.Get(TextId) at %p\n");
+		ADD_HOOK(localize_jp_get, "Gallop.Localize.JP.Get(TextId) at %p\n");
 
 		ADD_HOOK(query_ctor, "Query::ctor at %p\n");
 		ADD_HOOK(query_getstr, "Query::GetString at %p\n");
@@ -783,12 +781,12 @@ void uninit_hook()
 
 std::optional<std::wstring> localize_get(int id)
 {
-	if (!localize_get_orig)
+	if (!localize_jp_get_orig)
 	{
 		return {};
 	}
 
-	const auto str = reinterpret_cast<decltype(localize_get_hook)*>(localize_get_orig)(id);
+	const auto str = reinterpret_cast<decltype(localize_jp_get_hook)*>(localize_jp_get_orig)(id);
 	if (!str || !str->start_char[0])
 	{
 		return {};
