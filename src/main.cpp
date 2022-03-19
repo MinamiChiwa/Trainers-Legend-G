@@ -867,10 +867,12 @@ int __stdcall DllMain(HINSTANCE, DWORD reason, LPVOID)
 		std::thread init_thread([dicts = std::move(dicts)] {
 			logger::init_logger();
 
-			init_hook();
-
 			if (g_enable_console)
+			{
 				start_console();
+			}
+
+			init_hook();
 
 			std::mutex mutex;
 			std::condition_variable cond;
@@ -886,9 +888,13 @@ int __stdcall DllMain(HINSTANCE, DWORD reason, LPVOID)
 			cond.wait(lock, [&] {
 				return hookIsReady.load(std::memory_order_acquire);
 			});
-			auto _ = freopen("CONOUT$", "w+t", stdout);
-			_ = freopen("CONOUT$", "w", stderr);
-			_ = freopen("CONIN$", "r", stdin);
+			if (g_enable_console)
+			{
+				auto _ = freopen("CONOUT$", "w+t", stdout);
+				_ = freopen("CONOUT$", "w", stderr);
+				_ = freopen("CONIN$", "r", stdin);
+			}
+
 			auto staticDictCache = ensure_latest_static_cache(g_static_dict_path);
 			if (g_dump_entries)
 			{
