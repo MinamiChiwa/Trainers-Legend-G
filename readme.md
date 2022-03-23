@@ -5,6 +5,8 @@
 - 此插件目前为 **部分汉化**
 [翻译进度及比赛译名对照表](http://docs.qq.com/sheet/DYkFFZVJudWxTa1Vq)
 
+交流群：697216935 
+qq频道：[目前请用手机加](https://qun.qq.com/qqweb/qunpro/share?_wv=3&_wwv=128&inviteCode=1olqdK&from=246610&biz=ka)，密码：cygames 若无资格请挂梯子
 -  **_!由于本插件涉及到更改游戏文件，可能会有封号风险，本项目及其贡献者均与cygames无关并且不对使用该项目造成账号被ban负责，如果账号因使用此项目被ban请发issue!_** 
 -  **本汉化插件完全免费，若您发现有倒卖此插件的店家请立刻举报。
 根据我国《计算机软件保护条例》第十七条规定：“为了学习和研究软件内含的设计思想和原理，通过安装、显示、传输或者存储软件等方式使用软件的，可以不经软件著作权人许可，不向其支付报酬。”您需知晓本插件仅供用户交流学习与研究使用，用户本人下载后不能用作商业或非法用途，需在24小时之内删除，否则后果均由用户承担责任。** 
@@ -61,15 +63,12 @@
 - `autoFullscreen` 在屏幕比例对应时自动设置为全屏 (true/false)
     - 如屏幕是16:9 并且横屏，将会在横屏播放剧情/live时全屏
     - 如屏幕是9:16，将会在绝大多数情况下全屏
-- `LineBreakHotKey` 文本读取模式切换键（Ctrl+设定键），可在游戏中实时更改读取文本换行符模式和忽略文本换行符模式。【非烤肉man可无视】
-- `autoChangeLineBreakMode` 自动识别横竖屏并切换文本读取模式(true/false)【建议true】
-- `resolution_start` 设置启动时的分辨率（没有需求可以不动）
-- `aspect_ratio` 设置UI比例（没有需求可以不动）
-- `dicts` 将会读取的字典列表` (相对/绝对路径)
-- `LineBreakHotKey`设置 "忽略换行符" 模式的热键。按下`Ctrl` + `您设置的键`  即可切换。**(Update)**
+- `LineBreakHotKey`设置 "忽略换行符" 模式的热键。按下`Ctrl` + `您设置的键`  即可切换。
 - `autoChangeLineBreakMode`根据横竖屏模式自动切换"忽略换行符"模式
 - `resolution_start` 设置启动时的分辨率, 格式: `array[w, h]`（没有需求可以不填） 
 - `aspect_ratio` 设置UI比例, 格式: `array[w, h]`（没有需求可以不填）
+- `dicts` 将会读取的字典列表` (相对/绝对路径)
+
 
 ### 已知问题
 出现崩溃后`C:\Users\（用户名）\AppData\LocalLow\Cygames\umamusume` 文件夹下会产生 `Player.log` 文件，，里面包含崩溃的具体信息，如果有崩溃的用户能够在崩溃发生后立即上传此文件到仓库的`crash`文件夹内并注明报告使用的插件版本将会对调试有巨大帮助。
