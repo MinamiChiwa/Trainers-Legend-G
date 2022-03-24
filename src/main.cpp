@@ -72,6 +72,7 @@ namespace
 		versionStream.seekg(0);
 		std::string version(length, 0);
 		versionStream.read(version.data(), length);
+		std::erase_if(version, [locale = std::locale("")](char ch) { return std::isblank(ch, locale); });
 		return version;
 	}
 
@@ -671,11 +672,15 @@ namespace
 
 					std::wprintf(L"New version %ls downloading...\n", latestRelease->Version.c_str());
 
+				RetryDownload:
 					AutoUpdate::DownloadFile(latestRelease->Uri, updateTempFile).get();
 
 					std::wprintf(L"New version %ls downloaded! Updating...\n", latestRelease->Version.c_str());
 
 					const std::filesystem::path tmpPath = AutoUpdateTmpPath;
+
+					// 已完成下载解压
+					bool prepareUpdateFilesCompleted = false;
 
 					try
 					{
@@ -717,6 +722,8 @@ namespace
 								std::filesystem::copy_file(StaticDictStampPath, tmpPath / StaticDictStamp);
 							}
 
+							prepareUpdateFilesCompleted = true;
+
 							// 备份旧文件，此处理之后旧的 localized_data 应使用 old_localized_data 引用
 							std::filesystem::rename(LocalizedDataPath, oldLocalizedDataPath);
 							std::filesystem::rename(ConfigJson, oldLocalizedDataPath / ConfigJson);
@@ -754,8 +761,7 @@ tasklist | find /i "umamusume.exe" >NUL
 if %ERRORLEVEL% == 0 timeout /t 1 /nobreak & goto waitloop
 
 move /y version.dll.tmp version.dll
-del SelfUpdate.bat
-)";
+del SelfUpdate.bat)";
 								std::ofstream selfUpdateBatchFile("SelfUpdate.bat");
 								if (selfUpdateBatchFile.is_open())
 								{
@@ -769,11 +775,12 @@ del SelfUpdate.bat
 									if (CreateProcessW(NULL, commandLine, NULL, NULL, FALSE, 0, NULL, NULL, &startupInfo, &processInfo))
 									{
 										CloseHandle(processInfo.hThread);
-										CloseHandle(processInfo.hProcess);
 
-										std::wprintf(L"Exiting process for self-updating...\n");
-										TerminateProcess(GetCurrentProcess(), 0);
+										std::wprintf(L"Waiting for terminating...\n");
+										WaitForSingleObject(processInfo.hProcess, INFINITE);
 										// 应不可达
+										CloseHandle(processInfo.hProcess);
+										std::exit(0);
 									}
 									else
 									{
@@ -794,7 +801,90 @@ del SelfUpdate.bat
 					}
 					catch (const std::exception& e)
 					{
-						std::printf("Exception %s occurred during updating, try rolling back...\n", e.what());
+						std::printf("Exception %s occurred during updating, try force update...\n", e.what());
+
+						if (!prepareUpdateFilesCompleted)
+						{
+							const auto userResponse = MessageBoxW(NULL, L"无法解压更新文件，更新文件可能已损坏，要重新尝试下载吗？\n也可以尝试从官网直接下载最新安装包覆盖", L"翻译插件自动更新", MB_YESNO);
+							if (userResponse == IDYES)
+							{
+								goto RetryDownload;
+							}
+							return;
+						}
+						else
+						{
+							const auto userResponse = MessageBoxW(NULL, L"无法更新文件，可能文件当前被占用，要强制关闭程序覆盖更新吗？也可取消自动更新", L"翻译插件自动更新", MB_YESNOCANCEL);
+							if (userResponse == IDCANCEL)
+							{
+								return;
+							}
+
+							if (userResponse == IDYES)
+							{
+								constexpr char forceSelfUpdateBatchContent[] = R"(
+@echo off
+setlocal
+
+taskkill /im "umamusume.exe" >NUL
+
+:waitloop
+
+tasklist | find /i "umamusume.exe" >NUL
+if %ERRORLEVEL% == 0 timeout /t 1 /nobreak & goto waitloop
+
+cd .
+
+if not exist old_localized_data (
+	move /y localized_data old_localized_data
+	if not %ERRORLEVEL% == 0 (
+		start cmd /c "echo 文件被占用，无法替换，请手动解压覆盖游戏根目录的 update.zip 文件 && pause && start %cd%"
+		exit
+	)
+	move /y config.json old_localized_data\config.json
+	copy /y version.dll old_localized_data\version.dll
+)
+
+if exist UpdateTemp (
+	move /y UpdateTemp\version.dll version.dll.tmp
+	move /y UpdateTemp\config.json config.json
+	move /y UpdateTemp localized_data
+)
+move /y version.dll.tmp version.dll
+if not %ERRORLEVEL% == 0 (
+	start cmd /c "echo version.dll 文件被占用，无法替换，请手动覆盖 version.dll.tmp 到 version.dll && pause && start %cd%"
+	exit
+)
+rd /s /q old_localized_data
+del update.zip
+echo %1> version.txt
+del SelfUpdate.bat)";
+
+								std::ofstream selfUpdateBatchFile("SelfUpdate.bat");
+								if (selfUpdateBatchFile.is_open())
+								{
+									// 不写出结尾 0
+									selfUpdateBatchFile.write(forceSelfUpdateBatchContent, std::size(forceSelfUpdateBatchContent) - 1);
+									selfUpdateBatchFile.close();
+
+									std::wstring commandLine = std::format(L"cmd.exe /c SelfUpdate.bat {}", latestRelease->Version);
+									STARTUPINFOW startupInfo{ .cb = sizeof(STARTUPINFOW) };
+									PROCESS_INFORMATION processInfo{};
+									if (CreateProcessW(NULL, commandLine.data(), NULL, NULL, FALSE, 0, NULL, NULL, &startupInfo, &processInfo))
+									{
+										CloseHandle(processInfo.hThread);
+
+										std::wprintf(L"Waiting for terminating...\n");
+										WaitForSingleObject(processInfo.hProcess, INFINITE);
+										// 应不可达
+										CloseHandle(processInfo.hProcess);
+										std::exit(0);
+									}
+								}
+
+								std::wprintf(L"Cannot write or execute self update script, rolling back...\n");
+							}
+						}
 
 						try
 						{
