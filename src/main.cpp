@@ -823,6 +823,7 @@ del SelfUpdate.bat)";
 							if (userResponse == IDYES)
 							{
 								constexpr char forceSelfUpdateBatchContent[] = R"(
+@echo off
 setlocal
 
 taskkill /im "umamusume.exe" >NUL
