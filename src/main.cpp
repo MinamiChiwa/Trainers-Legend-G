@@ -718,8 +718,8 @@ namespace
 							// 若不需要更新，则不复制已有的 cache，将会自动被删除
 							if (!forceInvalidateStaticCache && get_static_cache_status() == StaticCacheStatus::UpToDate)
 							{
-								std::filesystem::copy_file(StaticDictCachePath, tmpPath / StaticDictCache);
-								std::filesystem::copy_file(StaticDictStampPath, tmpPath / StaticDictStamp);
+								std::filesystem::copy_file(StaticDictCachePath, tmpPath / StaticDictCache, std::filesystem::copy_options::overwrite_existing);
+								std::filesystem::copy_file(StaticDictStampPath, tmpPath / StaticDictStamp, std::filesystem::copy_options::overwrite_existing);
 							}
 
 							prepareUpdateFilesCompleted = true;
@@ -732,7 +732,7 @@ namespace
 							// 更新文件
 							if (shouldUpdateVersionDll)
 							{
-								std::filesystem::copy_file(newVersionDllPath, VersionDllTmp);
+								std::filesystem::copy_file(newVersionDllPath, VersionDllTmp, std::filesystem::copy_options::overwrite_existing);
 							}
 							std::filesystem::rename(newConfigPath, ConfigJson);
 							std::filesystem::rename(tmpPath, LocalizedDataPath);
