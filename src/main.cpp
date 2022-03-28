@@ -21,7 +21,9 @@ int g_max_fps = -1;
 bool g_unlock_size = false;
 float g_ui_scale = 1.0f;
 float g_aspect_ratio = 16.f / 9.f;
-bool g_replace_font = true;
+std::string g_extra_assetbundle_path;
+std::variant<UseOriginalFont, UseDefaultFont, UseCustomFont> g_replace_font;
+bool g_replace_assets;
 bool g_auto_fullscreen = true;
 std::unique_ptr<AutoUpdate::IAutoUpdateService> g_auto_update_service{};
 std::string g_static_dict_path;
@@ -338,7 +340,34 @@ namespace
 			g_max_fps = document["maxFps"].GetInt();
 			g_unlock_size = document["unlockSize"].GetBool();
 			g_ui_scale = document["uiScale"].GetFloat();
-			g_replace_font = document["replaceFont"].GetBool();
+
+			const auto& extraAssetBundlePath = document["extraAssetBundlePath"];
+			if (extraAssetBundlePath.IsString())
+			{
+				g_extra_assetbundle_path = extraAssetBundlePath.GetString();
+			}
+
+			const auto& replaceFont = document["replaceFont"];
+			if (replaceFont.IsBool())
+			{
+				if (replaceFont.GetBool())
+				{
+					g_replace_font = UseDefaultFont{};
+				}
+				else
+				{
+					g_replace_font = UseOriginalFont{};
+				}
+			}
+			else
+			{
+				assert(replaceFont.IsString() && "replaceFont should be true/false or string");
+				assert(!g_extra_assetbundle_path.empty() && "extraAssetBundlePath should be specified to use custom font");
+				g_replace_font = UseCustomFont{ .FontPath = replaceFont.GetString() };
+			}
+
+			g_replace_assets = document["replaceAssets"].GetBool();
+
 			g_auto_fullscreen = document["autoFullscreen"].GetBool();
 			line_break_hotkey = document["LineBreakHotKey"].GetString()[0];
 			autoChangeLineBreakMode = document["autoChangeLineBreakMode"].GetBool();
@@ -920,7 +949,7 @@ del SelfUpdate.bat)";
 
 extern std::function<void()> g_on_hook_ready;
 
-int __stdcall DllMain(HINSTANCE, DWORD reason, LPVOID)
+int __stdcall DllMain(HINSTANCE dllModule, DWORD reason, LPVOID)
 {
 	if (reason == DLL_PROCESS_ATTACH)
 	{
