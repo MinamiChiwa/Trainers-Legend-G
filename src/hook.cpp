@@ -1,4 +1,5 @@
 #include <stdinclude.hpp>
+#include <unordered_set>
 
 using namespace std;
 
@@ -10,6 +11,8 @@ void _set_u_stat(bool s) {
 	}
 }
 
+void LoadExtraAssetBundle();
+
 namespace
 {
 	void path_game_assembly();
@@ -18,13 +21,13 @@ namespace
 
 	bool mh_inited = false;
 
-	void dump_bytes(void* pos)
+	void dump_bytes(void* pos, std::size_t dumpSize = 0x20)
 	{
 		printf("Hex dump of %p\n", pos);
 
 		char* memory = reinterpret_cast<char*>(pos);
 
-		for (int i = 0; i < 0x20; i++)
+		for (std::size_t i = 0; i < dumpSize; i++)
 		{
 			if (i > 0 && i % 16 == 0)
 				printf("\n");
@@ -118,6 +121,7 @@ namespace
 	void* StoryTimelineControllerClass;
 	FieldInfo* StoryTimelineControllerClass_timelineDataField;
 	void* StoryTimelineDataClass;
+	FieldInfo* StoryTimelineDataClass_TitleField;
 	FieldInfo* StoryTimelineDataClass_BlockListField;
 	void* StoryTimelineTextClipDataClass;
 	FieldInfo* StoryTimelineTextClipDataClass_NameField;
@@ -125,6 +129,9 @@ namespace
 	FieldInfo* StoryTimelineTextClipDataClass_ChoiceDataList;
 	void* StoryTimelineTextClipDataClass_ChoiceDataClass;
 	FieldInfo* StoryTimelineTextClipDataClass_ChoiceDataClass_TextField;
+	FieldInfo* StoryTimelineTextClipDataClass_ColorTextInfoListField;
+	void* StoryTimelineTextClipDataClass_ColorTextInfoClass;
+	FieldInfo* StoryTimelineTextClipDataClass_ColorTextInfoClass_TextField;
 	void* StoryTimelineBlockDataClass;
 	FieldInfo* StoryTimelineBlockDataClass_trackListField;
 	void* StoryTimelineTrackDataClass;
@@ -144,6 +151,7 @@ namespace
 		if (!StoryTimelineDataClass)
 		{
 			StoryTimelineDataClass = il2cpp_symbols::get_class_from_instance(timelineData);
+			StoryTimelineDataClass_TitleField = il2cpp_class_get_field_from_name(StoryTimelineDataClass, "Title");
 			StoryTimelineDataClass_BlockListField = il2cpp_class_get_field_from_name(StoryTimelineDataClass, "BlockList");
 		}
 
@@ -153,7 +161,11 @@ namespace
 			StoryTimelineTextClipDataClass_NameField = il2cpp_class_get_field_from_name(StoryTimelineTextClipDataClass, "Name");
 			StoryTimelineTextClipDataClass_TextField = il2cpp_class_get_field_from_name(StoryTimelineTextClipDataClass, "Text");
 			StoryTimelineTextClipDataClass_ChoiceDataList = il2cpp_class_get_field_from_name(StoryTimelineTextClipDataClass, "ChoiceDataList");
+			StoryTimelineTextClipDataClass_ColorTextInfoListField = il2cpp_class_get_field_from_name(StoryTimelineTextClipDataClass, "ColorTextInfoList");
 		}
+
+		const auto title = il2cpp_symbols::read_field<Il2CppString*>(timelineData, StoryTimelineDataClass_TitleField);
+		il2cpp_symbols::write_field(timelineData, StoryTimelineDataClass_TitleField, local::get_localized_string(title));
 
 		const auto blockList = il2cpp_symbols::read_field(timelineData, StoryTimelineDataClass_BlockListField);
 		il2cpp_symbols::iterate_list(blockList, [&](int32_t, void* blockData) {
@@ -181,9 +193,9 @@ namespace
 						const auto text = il2cpp_symbols::read_field<Il2CppString*>(clipData, StoryTimelineTextClipDataClass_TextField);
 						il2cpp_symbols::write_field(clipData, StoryTimelineTextClipDataClass_TextField, local::get_localized_string(text));
 						const auto choiceDataList = il2cpp_symbols::read_field(clipData, StoryTimelineTextClipDataClass_ChoiceDataList);
-						if (choiceDataList != nullptr)
+						if (choiceDataList)
 						{
-							il2cpp_symbols::iterate_list(choiceDataList, [&](int32_t i, void* choiceData) {
+							il2cpp_symbols::iterate_list(choiceDataList, [&](int32_t, void* choiceData) {
 								if (!StoryTimelineTextClipDataClass_ChoiceDataClass)
 								{
 									StoryTimelineTextClipDataClass_ChoiceDataClass = il2cpp_symbols::get_class_from_instance(choiceData);
@@ -194,12 +206,54 @@ namespace
 								il2cpp_symbols::write_field(choiceData, StoryTimelineTextClipDataClass_ChoiceDataClass_TextField, local::get_localized_string(text));
 							});
 						}
+						const auto colorTextInfoList = il2cpp_symbols::read_field(clipData, StoryTimelineTextClipDataClass_ColorTextInfoListField);
+						if (colorTextInfoList)
+						{
+							il2cpp_symbols::iterate_list(colorTextInfoList, [&](int32_t, void* colorTextInfo) {
+								if (!StoryTimelineTextClipDataClass_ColorTextInfoClass)
+								{
+									StoryTimelineTextClipDataClass_ColorTextInfoClass = il2cpp_symbols::get_class_from_instance(colorTextInfo);
+									StoryTimelineTextClipDataClass_ColorTextInfoClass_TextField = il2cpp_class_get_field_from_name(StoryTimelineTextClipDataClass_ColorTextInfoClass, "Text");
+								}
+
+								const auto text = il2cpp_symbols::read_field<Il2CppString*>(colorTextInfo, StoryTimelineTextClipDataClass_ColorTextInfoClass_TextField);
+								il2cpp_symbols::write_field(colorTextInfo, StoryTimelineTextClipDataClass_ColorTextInfoClass_TextField, local::get_localized_string(text));
+							});
+						}
 					}
 				});
 			});
 		});
 
 		return reinterpret_cast<decltype(StoryTimelineController_Play_hook)*>(StoryTimelineController_Play_orig)(_this);
+	}
+
+	void* StoryRaceTextAssetClass;
+	TypedField<void*> StoryRaceTextAssetClass_textDataField;
+	void* StoryRaceTextAssetKeyClass;
+	TypedField<Il2CppString*> StoryRaceTextAssetKeyClass_textField;
+
+	void* StoryRaceTextAsset_Load_orig;
+	void StoryRaceTextAsset_Load_hook(void* _this)
+	{
+		if (!StoryRaceTextAssetClass)
+		{
+			StoryRaceTextAssetClass = il2cpp_symbols::get_class_from_instance(_this);
+			StoryRaceTextAssetClass_textDataField = { il2cpp_class_get_field_from_name(StoryRaceTextAssetClass, "textData") };
+		}
+		const auto textData = il2cpp_symbols::read_field(_this, StoryRaceTextAssetClass_textDataField);
+		il2cpp_symbols::iterate_IEnumerable(textData, [](void* key)
+		{
+			if (!StoryRaceTextAssetKeyClass)
+			{
+				StoryRaceTextAssetKeyClass = il2cpp_symbols::get_class_from_instance(key);
+				StoryRaceTextAssetKeyClass_textField = { il2cpp_class_get_field_from_name(StoryRaceTextAssetKeyClass, "text") };
+			}
+			const auto text = il2cpp_symbols::read_field(key, StoryRaceTextAssetKeyClass_textField);
+			il2cpp_symbols::write_field(key, StoryRaceTextAssetKeyClass_textField, local::get_localized_string(text));
+		});
+
+		reinterpret_cast<decltype(StoryRaceTextAsset_Load_hook)*>(StoryRaceTextAsset_Load_orig)(_this);
 	}
 
 	void* set_fps_orig = nullptr;
@@ -344,25 +398,101 @@ namespace
 		return reinterpret_cast<decltype(canvas_scaler_setres_hook)*>(canvas_scaler_setres_orig)(_this, res);
 	}
 
+	struct TransparentStringHash : std::hash<std::wstring>, std::hash<std::wstring_view>
+	{
+		using is_transparent = void;
+	};
+
+	std::unordered_set<std::wstring, TransparentStringHash, std::equal_to<void>> ExtraAssetBundleAssetPaths;
+	void* (*AssetBundle_LoadFromFile)(Il2CppString* path);
+	void (*AssetBundle_Unload)(void* _this, bool unloadAllLoadedObjects);
+
+	uint32_t ExtraAssetBundleHandle;
+
+	void* AssetBundle_LoadAsset_orig;
+	void* AssetBundle_LoadAsset_hook(void* _this, Il2CppString* name, Il2CppReflectionType* type)
+	{
+		//const auto stackTrace = environment_get_stacktrace();
+		if (ExtraAssetBundleHandle)
+		{
+			const auto extraAssetBundle = il2cpp_gchandle_get_target(ExtraAssetBundleHandle);
+			if (ExtraAssetBundleAssetPaths.contains(std::wstring_view(name->start_char)))
+			{
+				return reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(extraAssetBundle, name, type);
+			}
+		}
+		//const auto assetCls = static_cast<Il2CppClassHead*>(il2cpp_class_from_type(type->type));
+		//std::wprintf(L"AssetBundle.LoadAsset(this = %p, name = %ls, type = %ls)\n", _this, name->start_char, utility::conversions::to_string_t(assetCls->name).c_str());
+		return reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(_this, name, type);
+	}
+
+	Il2CppReflectionType* Font_Type;
+
 	void (*text_assign_font)(void*);
+	void* (*Text_get_font)(void*);
+	void (*Text_set_font)(void*, void*);
 	int (*text_get_size)(void*);
 	void (*text_set_size)(void*, int);
 	float (*text_get_linespacing)(void*);
 	void (*text_set_style)(void*, int);
 	void (*text_set_linespacing)(void*, float);
+	Il2CppString* (*TextCommon_get_text)(void*);
 
-	void* on_populate_orig = nullptr;
-	void on_populate_hook(void* _this, void* toFill)
+	uint32_t ReplaceFontHandle;
+
+	bool (*Object_IsNativeObjectAlive)(void*);
+
+	void* TextCommon_Awake_orig;
+	void TextCommon_Awake_hook(void* _this)
 	{
+		reinterpret_cast<decltype(TextCommon_Awake_hook)*>(TextCommon_Awake_orig)(_this);
+
+		void* replaceFont{};
+		if (std::holds_alternative<UseCustomFont>(g_replace_font) && ExtraAssetBundleHandle)
+		{
+			if (ReplaceFontHandle)
+			{
+				replaceFont = il2cpp_gchandle_get_target(ReplaceFontHandle);
+				// 加载场景时会被 Resources.UnloadUnusedAssets 干掉，且不受 DontDestroyOnLoad 影响，暂且判断是否存活，并在必要的时候重新加载
+				// TODO: 考虑挂载到 GameObject 上
+				// AssetBundle 不会被干掉
+				if (Object_IsNativeObjectAlive(replaceFont))
+				{
+					goto FontAlive;
+				}
+				else
+				{
+					il2cpp_gchandle_free(std::exchange(ReplaceFontHandle, 0));
+				}
+			}
+			const auto extraAssetBundle = il2cpp_gchandle_get_target(ExtraAssetBundleHandle);
+			replaceFont = reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(extraAssetBundle, il2cpp_string_new(std::get<UseCustomFont>(g_replace_font).FontPath.c_str()), Font_Type);
+			if (replaceFont)
+			{
+				ReplaceFontHandle = il2cpp_gchandle_new(replaceFont, false);
+			}
+			else
+			{
+				std::wprintf(L"Cannot load asset font\n");
+			}
+		}
+
+	FontAlive:
 		if (text_get_linespacing(_this) != 1.05f)
 		{
-			text_assign_font(_this);
+			if (replaceFont)
+			{
+				Text_set_font(_this, replaceFont);
+			}
+			else
+			{
+				text_assign_font(_this);
+			}
+
 			text_set_style(_this, 1);
 			text_set_size(_this, text_get_size(_this) - 4);
 			text_set_linespacing(_this, 1.05f);
 		}
-		
-		return reinterpret_cast<decltype(on_populate_hook)*>(on_populate_orig)(_this, toFill);
 	}
 
 	void* set_resolution_orig;
@@ -562,10 +692,56 @@ namespace
 			"TextCommon", "OnPopulateMesh", 1
 		);
 
+		const auto TextCommon_Awake_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"TextCommon", "Awake", 0
+		);
+
+		AssetBundle_LoadFromFile = reinterpret_cast<void* (*)(Il2CppString*)>(
+			il2cpp_symbols::get_method_pointer(
+				"UnityEngine.AssetBundleModule.dll", "UnityEngine",
+				"AssetBundle", "LoadFromFile", 1
+			)
+		);
+
+		AssetBundle_Unload = reinterpret_cast<void(*)(void*, bool)>(
+			il2cpp_symbols::get_method_pointer(
+				"UnityEngine.AssetBundleModule.dll", "UnityEngine",
+				"AssetBundle", "Unload", -1
+			)
+		);
+
+		const auto AssetBundle_LoadAsset_addr =
+			il2cpp_symbols::get_method_pointer(
+				"UnityEngine.AssetBundleModule.dll", "UnityEngine",
+				"AssetBundle", "LoadAsset", 2
+			);
+
+		Object_IsNativeObjectAlive = reinterpret_cast<bool(*)(void*)>(il2cpp_symbols::get_method_pointer("UnityEngine.CoreModule.dll", "UnityEngine", "Object", "IsNativeObjectAlive", 1));
+
+		const auto FontClass = il2cpp_symbols::get_class("UnityEngine.TextRenderingModule.dll", "UnityEngine", "Font");
+		Font_Type = il2cpp_type_get_object(il2cpp_class_get_type(FontClass));
+
+		LoadExtraAssetBundle();
+
 		text_assign_font = reinterpret_cast<void(*)(void*)>(
 			il2cpp_symbols::get_method_pointer(
 				"UnityEngine.UI.dll", "UnityEngine.UI",
 				"Text", "AssignDefaultFont", 0
+			)
+		);
+
+		Text_get_font = reinterpret_cast<void* (*)(void*)>(
+			il2cpp_symbols::get_method_pointer(
+				"UnityEngine.UI.dll", "UnityEngine.UI",
+				"Text", "get_font", 0
+			)
+		);
+
+		Text_set_font = reinterpret_cast<void(*)(void*, void*)>(
+			il2cpp_symbols::get_method_pointer(
+				"UnityEngine.UI.dll", "UnityEngine.UI",
+				"Text", "set_font", 1
 			)
 		);
 
@@ -580,6 +756,13 @@ namespace
 			il2cpp_symbols::get_method_pointer(
 				"umamusume.dll", "Gallop",
 				"TextCommon", "set_FontSize", 1
+			)
+		);
+
+		TextCommon_get_text = reinterpret_cast<Il2CppString* (*)(void*)>(
+			il2cpp_symbols::get_method_pointer(
+				"umamusume.dll", "Gallop",
+				"TextCommon", "get_text", 0
 			)
 		);
 
@@ -619,13 +802,19 @@ namespace
 		auto load_scene_internal_addr = il2cpp_resolve_icall("UnityEngine.SceneManagement.SceneManager::LoadSceneAsyncNameIndexInternal_Injected(System.String,System.Int32,UnityEngine.SceneManagement.LoadSceneParameters&,System.Boolean)");
 
 		const auto StoryTimelineController_Play_addr = il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "StoryTimelineController", "Play", 0);
+
+		const auto StoryRaceTextAsset_Load_addr = il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "StoryRaceTextAsset", "Load", -1);
 #pragma endregion
 
 		// hook UnityEngine.TextGenerator::PopulateWithErrors to modify text
 		ADD_HOOK(populate_with_errors, "UnityEngine.TextGenerator::PopulateWithErrors at %p\n");
 
+		ADD_HOOK(StoryTimelineController_Play, "StoryTimelineController::Play at %p\n");
+
 		// Looks like they store all localized texts that used by code in a dict
 		ADD_HOOK(localize_jp_get, "Gallop.Localize.JP.Get(TextId) at %p\n");
+
+		ADD_HOOK(StoryRaceTextAsset_Load, "StoryRaceTextAsset.Load at %p\n");
 
 		ADD_HOOK(query_ctor, "Query::ctor at %p\n");
 		ADD_HOOK(query_getstr, "Query::GetString at %p\n");
@@ -634,18 +823,26 @@ namespace
 
 		// ADD_HOOK(load_scene_internal, "SceneManager::LoadSceneAsyncNameIndexInternal at %p\n");
 
-		if (g_replace_font)
+		if (!std::holds_alternative<UseOriginalFont>(g_replace_font))
 		{
-			ADD_HOOK(on_populate, "Gallop.TextCommon::OnPopulateMesh at %p\n");
+			ADD_HOOK(TextCommon_Awake, "Gallop.TextCommon::Awake at %p\n");
+			if (!g_replace_assets)
+			{
+				AssetBundle_LoadAsset_orig = reinterpret_cast<void*>(AssetBundle_LoadAsset_addr);
+			}
 		}
-		
+
+		if (g_replace_assets)
+		{
+			ADD_HOOK(AssetBundle_LoadAsset, "AssetBundle.LoadAsset at %p\n");
+		}
+
 		if (g_max_fps > -1)
 		{
 			// break 30-40fps limit
 			ADD_HOOK(set_fps, "UnityEngine.Application.set_targetFrameRate at %p \n");
-			ADD_HOOK(StoryTimelineController_Play, "StoryTimelineController::Play at %p\n");
 		}
-		
+
 		if (g_unlock_size)
 		{
 			// break 1080p size limit
@@ -665,7 +862,7 @@ namespace
 		{
 			adjust_size();
 		}
-		
+
 		if (g_dump_entries)
 			dump_all_entries();
 		// start_monitor_thread();
@@ -759,10 +956,55 @@ bool init_hook()
 	return true;
 }
 
+void LoadExtraAssetBundle()
+{
+	if (g_extra_assetbundle_path.empty())
+	{
+		return;
+	}
+
+	assert(!ExtraAssetBundleHandle && ExtraAssetBundleAssetPaths.empty());
+
+	const auto AssetBundle_GetAllAssetNames = reinterpret_cast<void* (*)(void*)>(
+		il2cpp_symbols::get_method_pointer(
+			"UnityEngine.AssetBundleModule.dll", "UnityEngine",
+			"AssetBundle", "GetAllAssetNames", 0
+		)
+	);
+
+	const auto extraAssetBundle = AssetBundle_LoadFromFile(il2cpp_string_new(g_extra_assetbundle_path.c_str()));
+	if (extraAssetBundle)
+	{
+		const auto allAssetPaths = AssetBundle_GetAllAssetNames(extraAssetBundle);
+		il2cpp_symbols::iterate_IEnumerable<Il2CppString*>(allAssetPaths, [](Il2CppString* path)
+		{
+			ExtraAssetBundleAssetPaths.emplace(path->start_char);
+		});
+		ExtraAssetBundleHandle = il2cpp_gchandle_new(extraAssetBundle, false);
+	}
+	else
+	{
+		std::wprintf(L"Cannot load asset bundle\n");
+	}
+}
+
+void UnloadExtraAssetBundle()
+{
+	if (ExtraAssetBundleHandle)
+	{
+		ExtraAssetBundleAssetPaths.clear();
+		AssetBundle_Unload(il2cpp_gchandle_get_target(ExtraAssetBundleHandle), true);
+		il2cpp_gchandle_free(ExtraAssetBundleHandle);
+		ExtraAssetBundleHandle = 0;
+	}
+}
+
 void uninit_hook()
 {
 	if (!mh_inited)
 		return;
+
+	UnloadExtraAssetBundle();
 
 	MH_DisableHook(MH_ALL_HOOKS);
 	MH_Uninitialize();

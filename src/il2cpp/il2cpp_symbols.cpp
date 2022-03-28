@@ -18,6 +18,12 @@ il2cpp_class_get_field_from_name_t il2cpp_class_get_field_from_name;
 il2cpp_class_is_assignable_from_t il2cpp_class_is_assignable_from;
 il2cpp_class_for_each_t il2cpp_class_for_each;
 il2cpp_class_get_nested_types_t il2cpp_class_get_nested_types;
+il2cpp_class_get_type_t il2cpp_class_get_type;
+il2cpp_type_get_object_t il2cpp_type_get_object;
+il2cpp_gchandle_new_t il2cpp_gchandle_new;
+il2cpp_gchandle_free_t il2cpp_gchandle_free;
+il2cpp_gchandle_get_target_t il2cpp_gchandle_get_target;
+il2cpp_class_from_type_t il2cpp_class_from_type;
 
 char* il2cpp_array_addr_with_size(void* array, int32_t size, uintptr_t idx)
 {
@@ -50,6 +56,12 @@ namespace il2cpp_symbols
 		RESOLVE_IMPORT(il2cpp_class_is_assignable_from);
 		RESOLVE_IMPORT(il2cpp_class_for_each);
 		RESOLVE_IMPORT(il2cpp_class_get_nested_types);
+		RESOLVE_IMPORT(il2cpp_class_get_type);
+		RESOLVE_IMPORT(il2cpp_type_get_object);
+		RESOLVE_IMPORT(il2cpp_gchandle_new);
+		RESOLVE_IMPORT(il2cpp_gchandle_free);
+		RESOLVE_IMPORT(il2cpp_gchandle_get_target);
+		RESOLVE_IMPORT(il2cpp_class_from_type);
 
 		il2cpp_domain = il2cpp_domain_get();
 	}
