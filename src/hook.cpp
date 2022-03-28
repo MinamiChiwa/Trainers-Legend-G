@@ -523,6 +523,12 @@ namespace
 		);
 	}
 
+	void* GallopUtil_GetModifiedString_orig;
+	Il2CppString* GallopUtil_GetModifiedString_hook(Il2CppString* text, void* input, bool allowNewLine)
+	{
+		return text;
+	}
+
 	void adjust_size()
 	{
 		thread([]() {
@@ -804,6 +810,8 @@ namespace
 		const auto StoryTimelineController_Play_addr = il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "StoryTimelineController", "Play", 0);
 
 		const auto StoryRaceTextAsset_Load_addr = il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "StoryRaceTextAsset", "Load", -1);
+
+		const auto GallopUtil_GetModifiedString_addr = il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "GallopUtil", "GetModifiedString", -1);
 #pragma endregion
 
 		// hook UnityEngine.TextGenerator::PopulateWithErrors to modify text
@@ -858,6 +866,7 @@ namespace
 		}
 
 		ADD_HOOK(set_resolution, "UnityEngine.Screen.SetResolution(int, int, bool) at %p\n");
+		ADD_HOOK(GallopUtil_GetModifiedString, "GallopUtil_GetModifiedString at %p\n");
 		if (g_auto_fullscreen)
 		{
 			adjust_size();
