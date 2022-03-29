@@ -8,6 +8,7 @@
     "extraAssetBundlePath": null,
     "replaceFont": true,
     "replaceAssets": false,
+    "assetLoadLog": false,
     "autoFullscreen": false,
     "LineBreakHotKey": "u",
     "autoChangeLineBreakMode": true,
