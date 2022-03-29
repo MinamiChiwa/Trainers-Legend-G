@@ -84,11 +84,7 @@
 - 可能会出现内存报错（`内存不能为read`）无法启动游戏的情况，请尝试下载安装微软常用运行库。
 - `Assertion failed`报错：请将`config.json`文件也一同更新，或检查插件内的所有json文件内是否出现语法错误。
 ### 如何贡献【建议加群，群内可以提供更多汉化相关的工具】
- - 文本条目: 
-    - 如要添加新条目，请先将`config.json` 内的 `enableLogger` 设置为 `true` 之后启动游戏
-        - 随后未覆盖的文本会出现在 `dump.txt`
-    - 部分原文本位于 `resources/original_data` 内，有需要翻译的原文本代码可以加入到相应的分类文件中。
-    - 请在汉化完条目之后将其移动到`localized_data`内并提交 Pull Reqeust
+ - [烤肉教程](https://docs.qq.com/doc/DYk1Ia3h4UHRocGVJ)
     
  - 代码
     - 想必各位都是老司机了
