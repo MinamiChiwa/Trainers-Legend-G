@@ -421,8 +421,11 @@ namespace
 				return reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(extraAssetBundle, name, type);
 			}
 		}
-		//const auto assetCls = static_cast<Il2CppClassHead*>(il2cpp_class_from_type(type->type));
-		//std::wprintf(L"AssetBundle.LoadAsset(this = %p, name = %ls, type = %ls)\n", _this, name->start_char, utility::conversions::to_string_t(assetCls->name).c_str());
+		if (g_asset_load_log)
+		{
+			const auto assetCls = static_cast<Il2CppClassHead*>(il2cpp_class_from_type(type->type));
+			std::wprintf(L"AssetBundle.LoadAsset(this = %p, name = %ls, type = %ls)\n", _this, name->start_char, utility::conversions::to_string_t(assetCls->name).c_str());
+		}
 		return reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(_this, name, type);
 	}
 

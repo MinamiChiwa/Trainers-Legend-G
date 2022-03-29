@@ -24,6 +24,7 @@ float g_aspect_ratio = 16.f / 9.f;
 std::string g_extra_assetbundle_path;
 std::variant<UseOriginalFont, UseDefaultFont, UseCustomFont> g_replace_font;
 bool g_replace_assets;
+bool g_asset_load_log;
 bool g_auto_fullscreen = true;
 std::unique_ptr<AutoUpdate::IAutoUpdateService> g_auto_update_service{};
 std::string g_static_dict_path;
@@ -367,6 +368,7 @@ namespace
 			}
 
 			g_replace_assets = document["replaceAssets"].GetBool();
+			g_asset_load_log = document["assetLoadLog"].GetBool();
 
 			g_auto_fullscreen = document["autoFullscreen"].GetBool();
 			line_break_hotkey = document["LineBreakHotKey"].GetString()[0];
