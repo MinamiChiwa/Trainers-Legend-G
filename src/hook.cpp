@@ -435,7 +435,11 @@ namespace
 	void* (*Text_get_font)(void*);
 	void (*Text_set_font)(void*, void*);
 	int (*text_get_size)(void*);
-	void (*text_set_size)(void*, int);
+	void* text_set_size_orig;
+	void text_set_size_hook(void* _this, int size)
+	{
+		return reinterpret_cast<decltype(text_set_size_hook)*>(text_set_size_orig)(_this, size + g_custom_font_size_offset);
+	}
 	float (*text_get_linespacing)(void*);
 	void (*text_set_style)(void*, int);
 	void (*text_set_linespacing)(void*, float);
@@ -481,21 +485,18 @@ namespace
 		}
 
 	FontAlive:
-		if (text_get_linespacing(_this) != 1.05f)
+		if (replaceFont)
 		{
-			if (replaceFont)
-			{
-				Text_set_font(_this, replaceFont);
-			}
-			else
-			{
-				text_assign_font(_this);
-			}
-
-			text_set_style(_this, 1);
-			text_set_size(_this, text_get_size(_this) - 4);
-			text_set_linespacing(_this, 1.05f);
+			Text_set_font(_this, replaceFont);
 		}
+		else
+		{
+			text_assign_font(_this);
+		}
+
+		text_set_style(_this, 1);
+		reinterpret_cast<decltype(text_set_size_hook)*>(text_set_size_orig)(_this, text_get_size(_this) + g_custom_font_size_offset);
+		text_set_linespacing(_this, 1.05f);
 	}
 
 	void* set_resolution_orig;
@@ -577,11 +578,6 @@ namespace
 	}
 
 	Il2CppString* (*get_app_version_name)();
-
-	BOOL WINAPI is_debugger_present_hook()
-	{
-		return FALSE;
-	}
 
 	void path_game_assembly()
 	{
@@ -761,7 +757,7 @@ namespace
 			)
 		);
 
-		text_set_size = reinterpret_cast<void(*)(void*, int)>(
+		const auto text_set_size_addr = reinterpret_cast<void(*)(void*, int)>(
 			il2cpp_symbols::get_method_pointer(
 				"umamusume.dll", "Gallop",
 				"TextCommon", "set_FontSize", 1
@@ -837,6 +833,7 @@ namespace
 		if (!std::holds_alternative<UseOriginalFont>(g_replace_font))
 		{
 			ADD_HOOK(TextCommon_Awake, "Gallop.TextCommon::Awake at %p\n");
+			ADD_HOOK(text_set_size, "Text.set_size at %p\n");
 			if (!g_replace_assets)
 			{
 				AssetBundle_LoadAsset_orig = reinterpret_cast<void*>(AssetBundle_LoadAsset_addr);
@@ -859,7 +856,7 @@ namespace
 			// break 1080p size limit
 			ADD_HOOK(get_virt_size, "Gallop.StandaloneWindowResize.getOptimizedWindowSizeVirt at %p \n");
 			ADD_HOOK(get_hori_size, "Gallop.StandaloneWindowResize.getOptimizedWindowSizeHori at %p \n");
-			ADD_HOOK(wndproc, "Gallop.StandaloneWindowResize.WndProc at %p \n");
+			//ADD_HOOK(wndproc, "Gallop.StandaloneWindowResize.WndProc at %p \n");
 
 			// remove fixed 1080p render resolution
 			ADD_HOOK(gallop_get_screenheight, "Gallop.Screen::get_Height at %p\n");

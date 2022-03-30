@@ -7,6 +7,8 @@
     "uiScale": 1.0,
     "extraAssetBundlePath": null,
     "replaceFont": true,
+    "customFontPath": null,
+    "customFontSizeOffset": -4,
     "replaceAssets": false,
     "assetLoadLog": false,
     "autoFullscreen": false,
