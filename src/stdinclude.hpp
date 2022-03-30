@@ -57,6 +57,7 @@ struct UseCustomFont
 };
 
 extern std::variant<UseOriginalFont, UseDefaultFont, UseCustomFont> g_replace_font;
+extern int g_custom_font_size_offset;
 extern bool g_replace_assets;
 extern bool g_asset_load_log;
 

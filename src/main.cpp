@@ -23,6 +23,7 @@ float g_ui_scale = 1.0f;
 float g_aspect_ratio = 16.f / 9.f;
 std::string g_extra_assetbundle_path;
 std::variant<UseOriginalFont, UseDefaultFont, UseCustomFont> g_replace_font;
+int g_custom_font_size_offset;
 bool g_replace_assets;
 bool g_asset_load_log;
 bool g_auto_fullscreen = true;
@@ -349,22 +350,24 @@ namespace
 			}
 
 			const auto& replaceFont = document["replaceFont"];
-			if (replaceFont.IsBool())
+			if (replaceFont.GetBool())
 			{
-				if (replaceFont.GetBool())
+				const auto& customFontPath = document["customFontPath"];
+				if (customFontPath.IsString())
 				{
-					g_replace_font = UseDefaultFont{};
+					assert(!g_extra_assetbundle_path.empty() && "extraAssetBundlePath should be specified to use custom font");
+					g_replace_font = UseCustomFont{ .FontPath = customFontPath.GetString() };
 				}
 				else
 				{
-					g_replace_font = UseOriginalFont{};
+					g_replace_font = UseDefaultFont{};
 				}
+
+				g_custom_font_size_offset = document["customFontSizeOffset"].GetInt();
 			}
 			else
 			{
-				assert(replaceFont.IsString() && "replaceFont should be true/false or string");
-				assert(!g_extra_assetbundle_path.empty() && "extraAssetBundlePath should be specified to use custom font");
-				g_replace_font = UseCustomFont{ .FontPath = replaceFont.GetString() };
+				g_replace_font = UseOriginalFont{};
 			}
 
 			g_replace_assets = document["replaceAssets"].GetBool();
