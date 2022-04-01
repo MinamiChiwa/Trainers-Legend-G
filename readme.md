@@ -41,6 +41,8 @@
 ### 主线剧情
 - @秋裤SE7EN（Bilibili）
 - @凉月crella（Bilibili）
+### 角色语音
+- @Linxesu（萌娘百科）
 
 # 介绍
 ## 赛马娘 (DMM版) 本地化补丁
