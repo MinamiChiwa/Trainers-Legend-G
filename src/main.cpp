@@ -24,6 +24,8 @@ float g_aspect_ratio = 16.f / 9.f;
 std::string g_extra_assetbundle_path;
 std::variant<UseOriginalFont, UseDefaultFont, UseCustomFont> g_replace_font;
 int g_custom_font_size_offset;
+int g_custom_font_style;
+float g_custom_font_linespacing;
 bool g_replace_assets;
 bool g_asset_load_log;
 bool g_auto_fullscreen = true;
@@ -364,6 +366,8 @@ namespace
 				}
 
 				g_custom_font_size_offset = document["customFontSizeOffset"].GetInt();
+				g_custom_font_style = document["customFontStyle"].GetInt();
+				g_custom_font_linespacing = document["customFontLinespacing"].GetFloat();
 			}
 			else
 			{

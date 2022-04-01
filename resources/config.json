@@ -9,6 +9,8 @@
     "replaceFont": true,
     "customFontPath": null,
     "customFontSizeOffset": -4,
+    "customFontStyle": 1,
+    "customFontLinespacing": 1.05,
     "replaceAssets": false,
     "assetLoadLog": false,
     "autoFullscreen": false,
