@@ -67,6 +67,8 @@
     "replaceFont": true, /*替换字体，true:用系统默认字体或自定义字体替换；false：使用游戏原字体*/
     "customFontPath": null, /*extraAssetBundlePath项设置的资源包内的字体路径：自定义字体*/
     "customFontSizeOffset": -4, /*字体大小，-4即为减少4*/
+    "customFontStyle": 1, /*字体风格，0为正常，1为粗体，2为斜体，3为粗斜体*/
+    "customFontLinespacing": 1.05, /*文字行间距，基准值为1.0*/
     "replaceAssets": false, /*是否开启图片等资源替换(true/false)*/
     "assetLoadLog": false, /*是否在debug输出游戏资源调用情况(true/false)*/
     "autoFullscreen": false, /*在屏幕比例对应时自动设置为全屏 (true/false)
