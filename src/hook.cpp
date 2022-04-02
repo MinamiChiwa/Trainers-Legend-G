@@ -432,6 +432,7 @@ namespace
 	Il2CppReflectionType* Font_Type;
 
 	void (*text_assign_font)(void*);
+	void (*Text_set_horizontalOverflow)(void* _this, int value);
 	void (*Text_set_verticalOverflow)(void* _this, int value);
 	void* (*Text_get_font)(void*);
 	void (*Text_set_font)(void*, void*);
@@ -495,6 +496,7 @@ namespace
 			text_assign_font(_this);
 		}
 
+		Text_set_horizontalOverflow(_this, 1);
 		Text_set_verticalOverflow(_this, 1);
 		text_set_style(_this, g_custom_font_style);
 		reinterpret_cast<decltype(text_set_size_hook)*>(text_set_size_orig)(_this, text_get_size(_this) + g_custom_font_size_offset);
@@ -749,6 +751,13 @@ namespace
 			il2cpp_symbols::get_method_pointer(
 				"UnityEngine.UI.dll", "UnityEngine.UI",
 				"Text", "set_font", 1
+			)
+		);
+
+		Text_set_horizontalOverflow = reinterpret_cast<void(*)(void*, int)>(
+			il2cpp_symbols::get_method_pointer(
+				"UnityEngine.UI.dll", "UnityEngine.UI",
+				"Text", "set_horizontalOverflow", -1
 			)
 		);
 
