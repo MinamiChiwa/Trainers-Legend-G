@@ -3,14 +3,22 @@
     "enableLogger": false,
     "dumpStaticEntries": false,
     "maxFps": 60,
-    "unlockSize": false,
+    "unlockSize": true,
     "uiScale": 1.0,
+    "extraAssetBundlePath": "localized_data/umamusumelocalify",
     "replaceFont": true,
+    "customFontPath": "assets/bundledassets/umamusumelocalify/fonts/MSYH.TTC",
+    "customFontSizeOffset": -4,
+    "customFontStyle": 1,
+    "customFontLinespacing": 0.9,
+    "replaceAssets": true,
+    "assetLoadLog": false,
     "autoFullscreen": false,
     "LineBreakHotKey": "u",
     "autoChangeLineBreakMode": true,
+    "resolution_start": [-1, -1],
+    "aspect_ratio": [16.0, 9.0],
     "dicts": [
-        "localized_data/static.json",
         "localized_data/chara.json",
         "localized_data/race_name.json",
         "localized_data/race_message.json",
@@ -29,5 +37,10 @@
         "localized_data/designation.json",
         "localized_data/common.json",
         "localized_data/hash_entries.json"
-    ]
+    ],
+    "static_dict": "localized_data/static.json",
+    "autoUpdate": {
+        "source": "gitee",
+        "path": "Minami_Chiwa/umamusume-localify"
+    }
 }

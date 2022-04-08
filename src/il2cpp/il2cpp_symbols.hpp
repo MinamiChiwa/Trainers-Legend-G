@@ -1,5 +1,7 @@
 #pragma once
 
+#include <concepts>
+
 // UnityEngine.Color
 struct Color_t
 {
@@ -161,7 +163,7 @@ struct MethodInfo
 	uintptr_t invoker_method;
 	const char* name;
 	uintptr_t klass;
-	uintptr_t return_type;
+	const Il2CppType* return_type;
 	const ParameterInfo* parameters;
 	uintptr_t methodDefinition;
 	uintptr_t genericContainer;
@@ -174,6 +176,26 @@ struct MethodInfo
 	uint8_t is_inflated : 1;
 	uint8_t wrapper_type : 1;
 	uint8_t is_marshaled_from_native : 1;
+};
+
+struct FieldInfo
+{
+	const char* name;
+	const Il2CppType* type;
+	uintptr_t parent;
+	int32_t offset;
+	uint32_t token;
+};
+
+template <typename T>
+struct TypedField
+{
+	FieldInfo* Field;
+
+	constexpr FieldInfo* operator->() const noexcept
+	{
+		return Field;
+	}
 };
 
 struct Il2CppObject
@@ -195,6 +217,20 @@ typedef struct Il2CppArraySize
 	void* vector[0];
 } Il2CppArraySize;
 
+struct Il2CppClassHead
+{
+	const void* image;
+	void* gc_desc;
+	const char* name;
+	const char* namespaze;
+};
+
+struct Il2CppReflectionType
+{
+	Il2CppObject object;
+	const Il2CppType* type;
+};
+
 static const size_t kIl2CppSizeOfArray = (offsetof(Il2CppArraySize, vector));
 
 // function types
@@ -212,6 +248,16 @@ typedef void* (*il2cpp_resolve_icall_t)(const char* name);
 typedef void* (*il2cpp_array_new_t)(void* klass, uintptr_t count);
 typedef void* (*il2cpp_thread_attach_t)(void* domain);
 typedef void (*il2cpp_thread_detach_t)(void* thread);
+typedef FieldInfo* (*il2cpp_class_get_field_from_name_t)(void* klass, const char* name);
+typedef bool (*il2cpp_class_is_assignable_from_t)(void* klass, void* oklass);
+typedef void (*il2cpp_class_for_each_t)(void(*klassReportFunc)(void* klass, void* userData), void* userData);
+typedef void* (*il2cpp_class_get_nested_types_t)(void* klass, void** iter);
+typedef void* (*il2cpp_class_get_type_t)(void* klass);
+typedef Il2CppReflectionType* (*il2cpp_type_get_object_t)(const void* type);
+typedef uint32_t (*il2cpp_gchandle_new_t)(void* obj, bool pinned);
+typedef void (*il2cpp_gchandle_free_t)(uint32_t gchandle);
+typedef void* (*il2cpp_gchandle_get_target_t)(uint32_t gchandle);
+typedef void* (*il2cpp_class_from_type_t)(const Il2CppType* type);
 
 // function defines
 extern il2cpp_string_new_utf16_t il2cpp_string_new_utf16;
@@ -228,6 +274,16 @@ extern il2cpp_resolve_icall_t il2cpp_resolve_icall;
 extern il2cpp_array_new_t il2cpp_array_new;
 extern il2cpp_thread_attach_t il2cpp_thread_attach;
 extern il2cpp_thread_detach_t il2cpp_thread_detach;
+extern il2cpp_class_get_field_from_name_t il2cpp_class_get_field_from_name;
+extern il2cpp_class_is_assignable_from_t il2cpp_class_is_assignable_from;
+extern il2cpp_class_for_each_t il2cpp_class_for_each;
+extern il2cpp_class_get_nested_types_t il2cpp_class_get_nested_types;
+extern il2cpp_class_get_type_t il2cpp_class_get_type;
+extern il2cpp_type_get_object_t il2cpp_type_get_object;
+extern il2cpp_gchandle_new_t il2cpp_gchandle_new;
+extern il2cpp_gchandle_free_t il2cpp_gchandle_free;
+extern il2cpp_gchandle_get_target_t il2cpp_gchandle_get_target;
+extern il2cpp_class_from_type_t il2cpp_class_from_type;
 
 char* il2cpp_array_addr_with_size(void* arr, int32_t size, uintptr_t idx);
 
@@ -235,10 +291,10 @@ char* il2cpp_array_addr_with_size(void* arr, int32_t size, uintptr_t idx);
 #define il2cpp_array_addr(array, type, index) ((type*)(void*) il2cpp_array_addr_with_size (array, sizeof (type), index))
 
 #define il2cpp_array_setref(array, index, value)  \
-    do {    \
-        void* *__p = (void* *) il2cpp_array_addr ((array), void*, (index)); \
-         *__p = (value);    \
-    } while (0)
+	do {    \
+		void* *__p = (void* *) il2cpp_array_addr ((array), void*, (index)); \
+		 *__p = (value);    \
+	} while (0)
 
 namespace il2cpp_symbols
 {
@@ -248,9 +304,95 @@ namespace il2cpp_symbols
 
 	void* get_class(const char* assemblyName, const char* namespaze, const char* klassName);
 
+	void* find_nested_class(void* klass, std::predicate<void*> auto&& predicate)
+	{
+		void* iter{};
+		while (const auto curNestedClass = il2cpp_class_get_nested_types(klass, &iter))
+		{
+			if (static_cast<decltype(predicate)>(predicate)(curNestedClass))
+			{
+				return curNestedClass;
+			}
+		}
+
+		return nullptr;
+	}
+
+	void* find_nested_class_from_name(void* klass, const char* name);
+
 	MethodInfo* get_method(const char* assemblyName, const char* namespaze,
 						   const char* klassName, const char* name, int argsCount);
 
 	uintptr_t find_method(const char* assemblyName, const char* namespaze,
 						  const char* klassName, std::function<bool(const MethodInfo*)> predict);
+
+	FieldInfo* get_field(const char* assemblyName, const char* namespaze,
+						 const char* klassName, const char* name);
+
+	template <typename T>
+	TypedField<T> get_field(const char* assemblyName, const char* namespaze,
+							const char* klassName, const char* name)
+	{
+		return { get_field(assemblyName, namespaze, klassName, name) };
+	}
+
+	void* get_class_from_instance(const void* instance);
+
+	template <typename T = void*> requires std::is_trivial_v<T>
+	T read_field(const void* ptr, const FieldInfo* field)
+	{
+		T result;
+		const auto fieldPtr = static_cast<const std::byte*>(ptr) + field->offset;
+		std::memcpy(std::addressof(result), fieldPtr, sizeof(T));
+		return result;
+	}
+
+	template <typename T>
+	T read_field(const void* ptr, TypedField<T> field)
+	{
+		return read_field<T>(ptr, field.Field);
+	}
+
+	template <typename T> requires std::is_trivial_v<T>
+	void write_field(void* ptr, const FieldInfo* field, const T& value)
+	{
+		const auto fieldPtr = static_cast<std::byte*>(ptr) + field->offset;
+		std::memcpy(fieldPtr, std::addressof(value), sizeof(T));
+	}
+
+	template <typename T, typename U>
+	void write_field(void* ptr, TypedField<T> field, U&& value)
+	{
+		write_field<T>(ptr, field.Field, static_cast<T>(std::forward<U>(value)));
+	}
+
+	template <typename T = void*>
+	void iterate_list(const void* list, std::invocable<int32_t, T> auto&& receiver)
+	{
+		const auto listClass = get_class_from_instance(list);
+		const auto getItemMethod = reinterpret_cast<T(*)(const void*, int32_t)>(il2cpp_class_get_method_from_name(listClass, "get_Item", 1)->methodPointer);
+		const auto getCountMethod = reinterpret_cast<int32_t(*)(const void*)>(il2cpp_class_get_method_from_name(listClass, "get_Count", 0)->methodPointer);
+
+		const auto count = getCountMethod(list);
+		for (int32_t i = 0; i < count; ++i)
+		{
+			static_cast<decltype(receiver)>(receiver)(i, getItemMethod(list, i));
+		}
+	}
+
+	template <typename T = void*>
+	void iterate_IEnumerable(const void* obj, std::invocable<T> auto&& receiver)
+	{
+		const auto klass = get_class_from_instance(obj);
+		const auto getEnumeratorMethod = reinterpret_cast<void* (*)(const void*)>(il2cpp_class_get_method_from_name(klass, "GetEnumerator", 0)->methodPointer);
+		const auto enumerator = getEnumeratorMethod(obj);
+		const auto enumeratorClass = get_class_from_instance(enumerator);
+		const auto getCurrentMethod = reinterpret_cast<T (*)(void*)>(il2cpp_class_get_method_from_name(enumeratorClass, "get_Current", 0)->methodPointer);
+		const auto moveNextMethod = reinterpret_cast<bool(*)(void*)>(il2cpp_class_get_method_from_name(enumeratorClass, "MoveNext", 0)->methodPointer);
+
+		while (moveNextMethod(enumerator))
+		{
+			static_cast<decltype(receiver)>(receiver)(getCurrentMethod(enumerator));
+		}
+	}
 }
