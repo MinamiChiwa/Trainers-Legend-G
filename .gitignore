@@ -152,3 +152,6 @@ user*.bat
 # text_dumper tmp files
 resources/text_dumper/obj
 resources/text_dumper/bin
+
+.cache/
+.vscode/
