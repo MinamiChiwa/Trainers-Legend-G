@@ -1,0 +1,144 @@
+{
+    "title": "Umamusume Localify Config",
+    "description": "赛马娘本地化插件配置",
+    "type": "object",
+    "properties": {
+        "enableConsole": {
+            "description": "启用用来输出调试信息的控制台",
+            "type": "boolean"
+        },
+        "enableLogger": {
+            "description": "将未覆盖的文本输出到 `dump.txt`",
+            "type": "boolean"
+        },
+        "dumpStaticEntries": {
+            "description": "需要上一条启用, 在游戏启动时将游戏内硬编码的文本条目输出到 `dump.txt`",
+            "type": "boolean"
+        },
+        "maxFps": {
+            "description": "帧率限制 (-1 = 游戏原版/0 = 无限/>0 = 锁定到特定帧数)——注: 垂直同步已开启",
+            "type": "integer"
+        },
+        "unlockSize": {
+            "description": "允许游戏使用`1080p`以上的分辨率",
+            "type": "boolean"
+        },
+        "uiScale": {
+            "description": "自定义UI缩放",
+            "type": "number"
+        },
+        "extraAssetBundlePath": {
+            "description": "图片等资源替换包的路径（需要用unity打包，一般情况下请不要改动此项）",
+            "type": "string"
+        },
+        "replaceFont": {
+            "description": "替换字体，true:用系统默认字体或自定义字体替换；false：使用游戏原字体",
+            "type": "boolean"
+        },
+        "customFontPath": {
+            "description": "extraAssetBundlePath项设置的资源包内的字体路径：自定义字体",
+            "type": "string"
+        },
+        "customFontSizeOffset": {
+            "description": "字体大小，-4即为减少4",
+            "type": "integer"
+        },
+        "customFontStyle": {
+            "description": "字体风格，0为正常，1为粗体，2为斜体，3为粗斜体",
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 3
+        },
+        "customFontLinespacing": {
+            "description": "文字行间距，基准值为1.0",
+            "type": "number"
+        },
+        "replaceAssets": {
+            "description": "是否开启图片等资源替换",
+            "type": "boolean"
+        },
+        "assetLoadLog": {
+            "description": "是否在debug输出游戏资源调用情况",
+            "type": "boolean"
+        },
+        "autoFullscreen": {
+            "description": "在屏幕比例对应时自动设置为全屏 (true/false)\n- 如屏幕是16:9 并且横屏，将会在横屏播放剧情/live时全屏\n- 如屏幕是9:16，将会在绝大多数情况下全屏",
+            "type": "boolean"
+        },
+        "LineBreakHotKey": {
+            "description": "设置 \"忽略换行符\" 模式的热键。按下`Ctrl` + `设置的键`  即可切换。（若不需要可以直接删除此条命令）",
+            "type": "string"
+        },
+        "autoChangeLineBreakMode": {
+            "description": "根据横竖屏模式自动切换\"忽略换行符\"模式",
+            "type": "boolean"
+        },
+        "resolution_start": {
+            "description": "设置启动时的分辨率",
+            "type": "array",
+            "items": {
+                "type": "integer"
+            },
+            "minItems": 2,
+            "maxItems": 2
+        },
+        "aspect_ratio": {
+            "description": "设置UI比例",
+            "type": "array",
+            "items": {
+                "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+        },
+        "dicts": {
+            "description": "将会读取的字典列表` (相对/绝对路径)，可删除相应字典提取命令。例如删除\"localized_data/Umaname.json\",即可在游戏内显示角色名日文，不影响其他翻译",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "static_dict": {
+            "description": "static字典文件的路径",
+            "type": "string"
+        },
+        "autoUpdate": {
+            "description": "自动更新",
+            "type": "object",
+            "properties": {
+                "source": {
+                    "description": "自动更新的仓库源",
+                    "type": "string"
+                },
+                "path": {
+                    "description": "自动更新的抓取地址",
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "enableConsole",
+        "enableLogger",
+        "dumpStaticEntries",
+        "maxFps",
+        "unlockSize",
+        "uiScale",
+        "extraAssetBundlePath",
+        "replaceFont",
+        "customFontPath",
+        "customFontSizeOffset",
+        "customFontStyle",
+        "customFontLinespacing",
+        "replaceAssets",
+        "assetLoadLog",
+        "autoFullscreen",
+        "autoChangeLineBreakMode",
+        "resolution_start",
+        "aspect_ratio",
+        "dicts",
+        "static_dict"
+    ]
+}
