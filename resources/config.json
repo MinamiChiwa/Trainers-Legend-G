@@ -40,7 +40,7 @@
     ],
     "static_dict": "localized_data/static.json",
     "autoUpdate": {
-        "source": "gitee",
-        "path": "Minami_Chiwa/umamusume-localify"
+        "source": "github",
+        "path": "http://uma.chinosk6.cn/api/get_localify_latest_releases"
     }
 }
