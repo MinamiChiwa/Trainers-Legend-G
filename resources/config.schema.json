@@ -29,7 +29,7 @@
         },
         "extraAssetBundlePath": {
             "description": "图片等资源替换包的路径（需要用unity打包，一般情况下请不要改动此项）",
-            "type": "string"
+            "type": ["string", "null"]
         },
         "replaceFont": {
             "description": "替换字体，true:用系统默认字体或自定义字体替换；false：使用游戏原字体",
@@ -37,7 +37,7 @@
         },
         "customFontPath": {
             "description": "extraAssetBundlePath项设置的资源包内的字体路径：自定义字体",
-            "type": "string"
+            "type": ["string", "null"]
         },
         "customFontSizeOffset": {
             "description": "字体大小，-4即为减少4",
