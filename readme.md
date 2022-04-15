@@ -120,8 +120,8 @@
     ],
     "static_dict": "localized_data/static.json", /*static字典文件的路径*/
     "autoUpdate": {
-        "source": "gitee", /*自动更新的仓库源（gitee或github）*/
-        "path": "Minami_Chiwa/umamusume-localify" /*自动更新的抓取地址*/
+        "source": "github", /*自动更新的仓库源（gitee或github）*/
+        "path": "http://uma.chinosk6.cn/api/get_localify_latest_releases" /*自动更新的抓取地址*/
     }
 }
 ```
