@@ -47,6 +47,10 @@
 - @chinosk114514
 - @akemimadoka
 
+## 修图嵌字
+
+- @KiraPoi
+
 ## 译文搬运授权
 
 ### 主线剧情
