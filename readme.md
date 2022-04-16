@@ -21,12 +21,12 @@
 #### 简体中文
 
 - @MinamiChiwa（南千和）
-- @ManakaAo
 - @晖轩
 - @毫毛
-- @uss-enterprise1071
-- @八意永恩
 - @Chihyuen
+- @八意永恩
+- @uss-enterprise1071
+- @ManakaAo
 
 ### 原贡献者
 
