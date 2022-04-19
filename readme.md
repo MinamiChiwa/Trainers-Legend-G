@@ -44,7 +44,7 @@
 ### 主线剧情
 
 - @秋裤SE7EN（Bilibili）
-- @凉月crella（Bilibili）
+- @凉月crella（Bilibili）@水银h2oag @ASD一ZERO @monsterwatari @シキ
 
 ### 角色语音
 
