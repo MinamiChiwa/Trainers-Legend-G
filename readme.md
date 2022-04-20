@@ -5,9 +5,9 @@
 - 由于长时间没有更新，现由@Minami_Chiwa自行判断接手
 - 此插件目前为 **部分汉化**
 [翻译进度及比赛译名对照表](http://docs.qq.com/sheet/DYkFFZVJudWxTa1Vq)
-
-- 交流群：697216935 （满了）
-- qq频道：[目前请用手机加](https://qun.qq.com/qqweb/qunpro/share?_wv=3&_wwv=128&inviteCode=1olqdK&from=246610&biz=ka)，密码：cygames 若无资格请挂梯子
+- [![Download](https://img.shields.io/github/v/release/Minami_Chiwa/umamusume-localify-zh-CN?color=orange&logoColor=orange&label=Download&logo=DocuSign)](https://github.com/Minami_Chiwa/umamusume-localify-zh-CN/releases/latest)
+- [![Chat](https://img.shields.io/badge/Join-QQ%E9%A2%91%E9%81%93-red?logo=tencent-qq&logoColor=red)](https://qun.qq.com/qqweb/qunpro/share?_wv=3&_wwv=128&inviteCode=1olqdK&from=246610&biz=ka)
+[目前请用手机加] 密码：cygames 若无资格请挂梯子
 - **_!由于本插件涉及到更改游戏文件，可能会有封号风险，本项目及其贡献者均与cygames无关并且不对使用该项目造成账号被ban负责，如果账号因使用此项目被ban请发issue!_**
 - **此插件完全免费，若您发现有倒卖此插件的店家请立刻举报。
 根据我国《计算机软件保护条例》第十七条规定：“为了学习和研究软件内含的设计思想和原理，通过安装、显示、传输或者存储软件等方式使用软件的，可以不经软件著作权人许可，不向其支付报酬。”您需知晓本插件仅供用户交流学习与研究使用，用户本人下载后不能用作商业或非法用途，需在24小时之内删除，否则后果均由用户承担责任。**
