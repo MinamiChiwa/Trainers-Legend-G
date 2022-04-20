@@ -5,7 +5,7 @@
 - 由于长时间没有更新，现由@Minami_Chiwa自行判断接手
 - 此插件目前为 **部分汉化**
 [翻译进度及比赛译名对照表](http://docs.qq.com/sheet/DYkFFZVJudWxTa1Vq)
-- [![Download](https://img.shields.io/github/v/release/Minami_Chiwa/umamusume-localify-zh-CN?color=orange&logoColor=orange&label=Download&logo=DocuSign)](https://github.com/Minami_Chiwa/umamusume-localify-zh-CN/releases/latest)
+- [![Download](https://img.shields.io/github/v/release/MinamiChiwa/umamusume-localify-zh-CN?color=orange&logoColor=orange&label=Download&logo=DocuSign)](https://github.com/MinamiChiwa/umamusume-localify-zh-CN/releases/latest)
 - [![Chat](https://img.shields.io/badge/Join-QQ%E9%A2%91%E9%81%93-red?logo=tencent-qq&logoColor=red)](https://qun.qq.com/qqweb/qunpro/share?_wv=3&_wwv=128&inviteCode=1olqdK&from=246610&biz=ka)
 [目前请用手机加] 密码：cygames 若无资格请挂梯子
 - **_!由于本插件涉及到更改游戏文件，可能会有封号风险，本项目及其贡献者均与cygames无关并且不对使用该项目造成账号被ban负责，如果账号因使用此项目被ban请发issue!_**
