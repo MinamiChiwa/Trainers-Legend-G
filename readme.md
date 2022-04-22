@@ -1,9 +1,9 @@
 # 注意
 
-- 此库复刻自github：<https://github.com/GEEKiDoS/umamusume-localify>
-- 原作者@GEEKiDoS
-- 由于长时间没有更新，现由@Minami_Chiwa自行判断接手
-- 此插件目前为 **部分汉化**
+- 此插件在[`umamusume-localify`](https://github.com/GEEKiDoS/umamusume-localify)基础上改善、扩展而成。
+- 插件原作者@GEEKiDoS
+- 原插件已实现的功能：帧数解锁、分辨率解锁、更换游戏内的文本、自动全屏、将游戏内字体更换为默认字体等。
+- 此插件的汉化进度目前为 **部分汉化**
 [翻译进度及比赛译名对照表](http://docs.qq.com/sheet/DYkFFZVJudWxTa1Vq)
 - [![Download](https://img.shields.io/github/v/release/MinamiChiwa/umamusume-localify-zh-CN?color=orange&logoColor=orange&label=Download&logo=DocuSign)](https://github.com/MinamiChiwa/umamusume-localify-zh-CN/releases/latest)
 - [![Chat](https://img.shields.io/badge/Join-QQ%E9%A2%91%E9%81%93-red?logo=tencent-qq&logoColor=red)](https://qun.qq.com/qqweb/qunpro/share?_wv=3&_wwv=128&inviteCode=1olqdK&from=246610&biz=ka)
