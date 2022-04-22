@@ -72,7 +72,7 @@
 
 ### 使用方法
 
-1. 下载发行版`DMMUPD-Schinese`压缩包和`umamusume_update.exe`自动更新程序，将压缩包内的文件和`umamusume_update.exe`解压至游戏根目录`X:\Umamusume`( **请注意是包含`umamusume.exe`的文件夹** ）
+1. 下载发行版`DMMUPD-Schinese`压缩包，将压缩包内的文件解压至游戏根目录`X:\Umamusume`( **请注意是包含`umamusume.exe`的文件夹** ）
 2. 从DMM启动游戏
 
 ### 更新方法
