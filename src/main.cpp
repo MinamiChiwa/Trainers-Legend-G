@@ -31,6 +31,8 @@ bool g_asset_load_log;
 bool g_auto_fullscreen = true;
 std::unique_ptr<AutoUpdate::IAutoUpdateService> g_auto_update_service{};
 std::string g_static_dict_path;
+bool g_no_static_dict_cache;
+std::string g_stories_path;
 
 constexpr const char LocalizedDataPath[] = "localized_data";
 constexpr const char OldLocalizedDataPath[] = "old_localized_data";
@@ -301,6 +303,14 @@ namespace
 
 std::map<std::size_t, std::string> ensure_latest_static_cache(const std::string& staticDictPath)
 {
+	if (g_no_static_dict_cache)
+	{
+		std::wprintf(L"Static dict cache is disabled, always rebuild\n");
+		auto newStaticCache = build_static_cache(staticDictPath);
+		write_static_cache(newStaticCache);
+		return newStaticCache;
+	}
+
 	if (get_static_cache_status() == StaticCacheStatus::UpToDate)
 	{
 		auto staticCache = read_static_cache();
@@ -325,13 +335,13 @@ namespace
 {
 	std::vector<std::string> read_config()
 	{
-		std::ifstream config_stream { ConfigJson };
-		std::vector<std::string> dicts {};
+		std::ifstream config_stream{ ConfigJson };
+		std::vector<std::string> dicts{};
 
 		if (!config_stream.is_open())
 			return dicts;
 
-		rapidjson::IStreamWrapper wrapper {config_stream};
+		rapidjson::IStreamWrapper wrapper{ config_stream };
 		rapidjson::Document document;
 
 		document.ParseStream(wrapper);
@@ -417,6 +427,9 @@ namespace
 			}
 
 			g_static_dict_path = document["static_dict"].GetString();
+			g_no_static_dict_cache = document["no_static_dict_cache"].GetBool();
+
+			g_stories_path = document["stories_path"].GetString();
 
 			if (document.HasMember("autoUpdate"))
 			{
@@ -431,7 +444,93 @@ namespace
 		config_stream.close();
 		return dicts;
 	}
+}
 
+std::pair<std::unordered_map<std::size_t, local::StoryTextData>, std::unordered_map<std::size_t, local::RaceTextData>> LoadStories()
+{
+	std::pair<std::unordered_map<std::size_t, local::StoryTextData>, std::unordered_map<std::size_t, local::RaceTextData>> result;
+
+	for (auto&& file : std::filesystem::recursive_directory_iterator(g_stories_path, std::filesystem::directory_options::follow_directory_symlink))
+	{
+		if (std::filesystem::is_regular_file(file) && file.path().extension() == ".json")
+		{
+			constexpr const wchar_t StoryTimelinePrefix[] = L"storytimeline_";
+			constexpr const wchar_t StoryRacePrefix[] = L"storyrace_";
+
+			const auto& path = file.path();
+			const auto stem = path.stem();
+			if (stem.native().starts_with(StoryTimelinePrefix))
+			{
+				std::ifstream storyTimeline(path);
+				rapidjson::IStreamWrapper wrapper(storyTimeline);
+				rapidjson::Document doc;
+				doc.ParseStream(wrapper);
+				if (doc.HasParseError())
+				{
+					std::wcout << L"Error parsing story timeline file: " << path.native() << std::endl;
+					continue;
+				}
+
+				local::StoryTextData data;
+					
+				data.Title = utility::conversions::to_string_t(doc["Title"].GetString());
+				const auto textBlockList = doc["TextBlockList"].GetArray();
+				for (const auto& block : textBlockList)
+				{
+					if (block.IsNull())
+					{
+						data.TextBlockList.emplace_back(std::nullopt);
+					}
+					else
+					{
+						local::StoryTextBlock textBlock;
+						textBlock.Name = utility::conversions::to_string_t(block["Name"].GetString());
+						textBlock.Text = utility::conversions::to_string_t(block["Text"].GetString());
+						const auto& choiceDataList = block["ChoiceDataList"].GetArray();
+						for (const auto& choiceData : choiceDataList)
+						{
+							textBlock.ChoiceDataList.emplace_back(utility::conversions::to_string_t(choiceData.GetString()));
+						}
+						const auto& colorTextInfoList = block["ColorTextInfoList"].GetArray();
+						for (const auto& colorTextInfo : colorTextInfoList)
+						{
+							textBlock.ColorTextInfoList.emplace_back(utility::conversions::to_string_t(colorTextInfo.GetString()));
+						}
+						data.TextBlockList.emplace_back(std::move(textBlock));
+					}
+				}
+
+				const auto storyId = static_cast<std::size_t>(_wtoll(stem.c_str() + std::size(StoryTimelinePrefix) - 1));
+				result.first.emplace(storyId, std::move(data));
+			}
+			else if (stem.native().starts_with(StoryRacePrefix))
+			{
+				std::ifstream storyTimeline(path);
+				rapidjson::IStreamWrapper wrapper(storyTimeline);
+				rapidjson::Document doc;
+				doc.ParseStream(wrapper);
+				if (doc.HasParseError())
+				{
+					std::wcout << L"Error parsing story race file: " << path.native() << std::endl;
+					continue;
+				}
+
+				local::RaceTextData data;
+				for (const auto& text : doc.GetArray())
+				{
+					data.textData.emplace_back(utility::conversions::to_string_t(text.GetString()));
+				}
+
+				const auto raceId = static_cast<std::size_t>(_wtoll(stem.c_str() + std::size(StoryRacePrefix) - 1));
+				result.second.emplace(raceId, std::move(data));
+			}
+		}
+	}
+
+	return result;
+}
+
+namespace {
 	void reload_config()
 	{
 		std::ifstream config_stream{ "config.json" };
@@ -459,7 +558,8 @@ namespace
 				dicts.push_back(dict);
 			}
 
-			local::reload_textdb(&dicts, std::move(staticDictCache));
+			auto&& [storyDict, raceDict] = LoadStories();
+			local::reload_textdb(&dicts, std::move(staticDictCache), std::move(storyDict), std::move(raceDict));
 		}
 	}
 
@@ -1028,7 +1128,8 @@ int __stdcall DllMain(HINSTANCE dllModule, DWORD reason, LPVOID)
 			{
 				dump_static_dict("static_dump.json", staticDictCache);
 			}
-			local::load_textdb(&dicts, std::move(staticDictCache));
+			auto&& [storyDict, raceDict] = LoadStories();
+			local::load_textdb(&dicts, std::move(staticDictCache), std::move(storyDict), std::move(raceDict));
 			auto_update();
 		});
 		init_thread.detach();

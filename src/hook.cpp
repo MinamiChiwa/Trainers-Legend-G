@@ -271,9 +271,8 @@ namespace
 
 	uint32_t ExtraAssetBundleHandle;
 
-	void* StoryTimelineControllerClass;
-	FieldInfo* StoryTimelineControllerClass_timelineDataField;
 	void* StoryTimelineDataClass;
+	FieldInfo* StoryTimelineDataClass_StoryIdField;
 	FieldInfo* StoryTimelineDataClass_TitleField;
 	FieldInfo* StoryTimelineDataClass_BlockListField;
 	void* StoryTimelineTextClipDataClass;
@@ -293,17 +292,29 @@ namespace
 
 	void LocalizeStoryTimelineData(void* timelineData)
 	{
-		const auto title = il2cpp_symbols::read_field<Il2CppString*>(timelineData, StoryTimelineDataClass_TitleField);
-		il2cpp_symbols::write_field(timelineData, StoryTimelineDataClass_TitleField, local::get_localized_string(title));
+		const auto storyIdStr = il2cpp_symbols::read_field<Il2CppString*>(timelineData, StoryTimelineDataClass_StoryIdField);
+		const auto storyId = static_cast<std::size_t>(_wtoll(storyIdStr->start_char));
+		const auto localizedStoryData = local::GetStoryTextData(storyId);
+		if (!localizedStoryData)
+		{
+			return;
+		}
+
+		il2cpp_symbols::write_field(timelineData, StoryTimelineDataClass_TitleField, il2cpp_symbols::NewWStr(localizedStoryData->Title));
 
 		const auto blockList = il2cpp_symbols::read_field(timelineData, StoryTimelineDataClass_BlockListField);
-		il2cpp_symbols::iterate_list(blockList, [&](int32_t, void* blockData) {
+		il2cpp_symbols::iterate_list(blockList, [&](int32_t i, void* blockData) {
 			if (!StoryTimelineBlockDataClass)
 			{
 				StoryTimelineBlockDataClass = il2cpp_symbols::get_class_from_instance(blockData);
 				StoryTimelineBlockDataClass_TextTrackField = il2cpp_class_get_field_from_name(StoryTimelineBlockDataClass, "TextTrack");
 			}
 
+			const auto& clip = localizedStoryData->TextBlockList[i];
+			if (!clip)
+			{
+				return;
+			}
 			const auto textTrack = il2cpp_symbols::read_field(blockData, StoryTimelineBlockDataClass_TextTrackField);
 			if (!textTrack)
 			{
@@ -316,47 +327,42 @@ namespace
 			}
 
 			const auto clipList = il2cpp_symbols::read_field(textTrack, StoryTimelineTrackDataClass_ClipListField);
-			il2cpp_symbols::iterate_list(clipList, [&](int32_t, void* clipData) {
+			il2cpp_symbols::iterate_list(clipList, [&](int32_t dummy, void* clipData) {
+				assert(dummy == 0);
 				StoryTimelineClipDataClass = il2cpp_symbols::get_class_from_instance(clipData);
 				if (StoryTimelineTextClipDataClass == StoryTimelineClipDataClass)
 				{
-					const auto name = il2cpp_symbols::read_field<Il2CppString*>(clipData, StoryTimelineTextClipDataClass_NameField);
-					il2cpp_symbols::write_field(clipData, StoryTimelineTextClipDataClass_NameField, local::get_localized_string(name));
-					const auto text = il2cpp_symbols::read_field<Il2CppString*>(clipData, StoryTimelineTextClipDataClass_TextField);
-					il2cpp_symbols::write_field(clipData, StoryTimelineTextClipDataClass_TextField, local::get_localized_string(text));
+					il2cpp_symbols::write_field(clipData, StoryTimelineTextClipDataClass_NameField, il2cpp_symbols::NewWStr(clip->Name));
+					il2cpp_symbols::write_field(clipData, StoryTimelineTextClipDataClass_TextField, il2cpp_symbols::NewWStr(clip->Text));
 					const auto choiceDataList = il2cpp_symbols::read_field(clipData, StoryTimelineTextClipDataClass_ChoiceDataList);
 					if (choiceDataList)
 					{
-						il2cpp_symbols::iterate_list(choiceDataList, [&](int32_t, void* choiceData) {
+						il2cpp_symbols::iterate_list(choiceDataList, [&](int32_t j, void* choiceData) {
 							if (!StoryTimelineTextClipDataClass_ChoiceDataClass)
 							{
 								StoryTimelineTextClipDataClass_ChoiceDataClass = il2cpp_symbols::get_class_from_instance(choiceData);
 								StoryTimelineTextClipDataClass_ChoiceDataClass_TextField = il2cpp_class_get_field_from_name(StoryTimelineTextClipDataClass_ChoiceDataClass, "Text");
 							}
 
-							const auto text = il2cpp_symbols::read_field<Il2CppString*>(choiceData, StoryTimelineTextClipDataClass_ChoiceDataClass_TextField);
-							il2cpp_symbols::write_field(choiceData, StoryTimelineTextClipDataClass_ChoiceDataClass_TextField, local::get_localized_string(text));
-							});
+							il2cpp_symbols::write_field(choiceData, StoryTimelineTextClipDataClass_ChoiceDataClass_TextField, il2cpp_symbols::NewWStr(clip->ChoiceDataList[j]));
+						});
 					}
 					const auto colorTextInfoList = il2cpp_symbols::read_field(clipData, StoryTimelineTextClipDataClass_ColorTextInfoListField);
 					if (colorTextInfoList)
 					{
-						il2cpp_symbols::iterate_list(colorTextInfoList, [&](int32_t, void* colorTextInfo) {
+						il2cpp_symbols::iterate_list(colorTextInfoList, [&](int32_t j, void* colorTextInfo) {
 							if (!StoryTimelineTextClipDataClass_ColorTextInfoClass)
 							{
 								StoryTimelineTextClipDataClass_ColorTextInfoClass = il2cpp_symbols::get_class_from_instance(colorTextInfo);
 								StoryTimelineTextClipDataClass_ColorTextInfoClass_TextField = il2cpp_class_get_field_from_name(StoryTimelineTextClipDataClass_ColorTextInfoClass, "Text");
 							}
 
-							const auto text = il2cpp_symbols::read_field<Il2CppString*>(colorTextInfo, StoryTimelineTextClipDataClass_ColorTextInfoClass_TextField);
-							const auto replacementText = local::get_localized_string(text);
-							std::wprintf(L"Color text \"%ls\" replaced to \"%ls\"\n", text->start_char, replacementText->start_char);
-							il2cpp_symbols::write_field(colorTextInfo, StoryTimelineTextClipDataClass_ColorTextInfoClass_TextField, replacementText);
-							});
+							il2cpp_symbols::write_field(colorTextInfo, StoryTimelineTextClipDataClass_ColorTextInfoClass_TextField, il2cpp_symbols::NewWStr(clip->ColorTextInfoList[j]));
+						});
 					}
 				}
-				});
 			});
+		});
 	}
 
 	void* StoryRaceTextAssetClass;
@@ -364,10 +370,16 @@ namespace
 	void* StoryRaceTextAssetKeyClass;
 	TypedField<Il2CppString*> StoryRaceTextAssetKeyClass_textField;
 
-	void LocalizeStoryRaceTextAsset(void* raceTextAsset)
+	void LocalizeStoryRaceTextAsset(void* raceTextAsset, std::size_t raceId)
 	{
+		const auto localizedRaceData = local::GetRaceTextData(raceId);
+		if (!localizedRaceData)
+		{
+			return;
+		}
+
 		const auto textData = il2cpp_symbols::read_field(raceTextAsset, StoryRaceTextAssetClass_textDataField);
-		il2cpp_symbols::iterate_IEnumerable(textData, [](void* key)
+		il2cpp_symbols::iterate_IEnumerable(textData, [&, i = 0](void* key) mutable
 			{
 				if (!StoryRaceTextAssetKeyClass)
 				{
@@ -375,7 +387,7 @@ namespace
 					StoryRaceTextAssetKeyClass_textField = { il2cpp_class_get_field_from_name(StoryRaceTextAssetKeyClass, "text") };
 				}
 				const auto text = il2cpp_symbols::read_field(key, StoryRaceTextAssetKeyClass_textField);
-				il2cpp_symbols::write_field(key, StoryRaceTextAssetKeyClass_textField, local::get_localized_string(text));
+				il2cpp_symbols::write_field(key, StoryRaceTextAssetKeyClass_textField, il2cpp_symbols::NewWStr(localizedRaceData->textData[i++]));
 			});
 	}
 
@@ -406,7 +418,11 @@ namespace
 			}
 			else if (cls == StoryRaceTextAssetClass)
 			{
-				LocalizeStoryRaceTextAsset(result);
+				const auto assetPath = std::filesystem::path(name->start_char).stem();
+				const std::wstring_view assetName = assetPath.native();
+				constexpr const wchar_t RacePrefix[] = L"storyrace_";
+				assert(assetName.starts_with(RacePrefix));
+				LocalizeStoryRaceTextAsset(result, static_cast<std::size_t>(_wtoll(assetName.substr(std::size(RacePrefix) - 1).data())));
 			}
 		}
 		return result;
@@ -690,6 +706,7 @@ namespace
 		);
 
 		StoryTimelineDataClass = il2cpp_symbols::get_class("umamusume.dll", "Gallop", "StoryTimelineData");
+		StoryTimelineDataClass_StoryIdField = il2cpp_class_get_field_from_name(StoryTimelineDataClass, "StoryId");
 		StoryTimelineDataClass_TitleField = il2cpp_class_get_field_from_name(StoryTimelineDataClass, "Title");
 		StoryTimelineDataClass_BlockListField = il2cpp_class_get_field_from_name(StoryTimelineDataClass, "BlockList");
 

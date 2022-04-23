@@ -39,6 +39,8 @@
         "localized_data/hash_entries.json"
     ],
     "static_dict": "localized_data/static.json",
+    "no_static_dict_cache": false,
+    "stories_path": "localized_data/stories",
     "autoUpdate": {
         "source": "github",
         "path": "http://uma.chinosk6.cn/api/get_localify_latest_releases"

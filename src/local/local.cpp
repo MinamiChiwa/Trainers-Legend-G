@@ -12,6 +12,9 @@ namespace local
 		std::mutex db_lock;
 		unordered_map<size_t, string> text_db;
 		std::vector<size_t> str_list;
+		
+		std::unordered_map<std::size_t, StoryTextData> StoryDict;
+		std::unordered_map<std::size_t, RaceTextData> RaceDict;
 	}
 
 	string wide_u8(wstring str)
@@ -26,7 +29,7 @@ namespace local
 		return result;
 	}
 
-	void unlocked_load_textdb(const vector<string>* dicts, map<size_t, string>&& staticDict)
+	void unlocked_load_textdb(const vector<string>* dicts, map<size_t, string>&& staticDict, std::unordered_map<std::size_t, StoryTextData>&& storyDict, std::unordered_map<std::size_t, RaceTextData>&& raceDict)
 	{
 		for (auto&& [id, content] : staticDict)
 		{
@@ -62,21 +65,24 @@ namespace local
 			}
 		}
 
+		StoryDict = std::move(storyDict);
+		RaceDict = std::move(raceDict);
+
 		printf("loaded %llu localized entries.\n", text_db.size());
 		// read_str_config();
 	}
 
-	void reload_textdb(const vector<string>* dicts, map<size_t, string>&& staticDict)
+	void reload_textdb(const vector<string>* dicts, map<size_t, string>&& staticDict, std::unordered_map<std::size_t, StoryTextData>&& storyDict, std::unordered_map<std::size_t, RaceTextData>&& raceDict)
 	{
 		std::unique_lock lock(db_lock);
 		text_db.clear();
-		unlocked_load_textdb(dicts, std::move(staticDict));
+		unlocked_load_textdb(dicts, std::move(staticDict), std::move(storyDict), std::move(raceDict));
 	}
 
-	void load_textdb(const vector<string>* dicts, map<size_t, string>&& staticDict)
+	void load_textdb(const vector<string>* dicts, map<size_t, string>&& staticDict, std::unordered_map<std::size_t, StoryTextData>&& storyDict, std::unordered_map<std::size_t, RaceTextData>&& raceDict)
 	{
 		std::unique_lock lock(db_lock);
-		unlocked_load_textdb(dicts, std::move(staticDict));
+		unlocked_load_textdb(dicts, std::move(staticDict), std::move(storyDict), std::move(raceDict));
 	}
 
 	bool localify_text(size_t hash, string** result)
@@ -215,5 +221,25 @@ namespace local
 		}
 
 		return str;
+	}
+
+	StoryTextData const* GetStoryTextData(std::size_t storyId)
+	{
+		if (const auto iter = StoryDict.find(storyId); iter != StoryDict.end())
+		{
+			return &iter->second;
+		}
+
+		return nullptr;
+	}
+
+	RaceTextData const* GetRaceTextData(std::size_t raceId)
+	{
+		if (const auto iter = RaceDict.find(raceId); iter != RaceDict.end())
+		{
+			return &iter->second;
+		}
+
+		return nullptr;
 	}
 }
