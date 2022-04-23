@@ -450,6 +450,11 @@ std::pair<std::unordered_map<std::size_t, local::StoryTextData>, std::unordered_
 {
 	std::pair<std::unordered_map<std::size_t, local::StoryTextData>, std::unordered_map<std::size_t, local::RaceTextData>> result;
 
+	if (!std::filesystem::is_directory(g_stories_path))
+	{
+		return result;
+	}
+
 	for (auto&& file : std::filesystem::recursive_directory_iterator(g_stories_path, std::filesystem::directory_options::follow_directory_symlink))
 	{
 		if (std::filesystem::is_regular_file(file) && file.path().extension() == ".json")
