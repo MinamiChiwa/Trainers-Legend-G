@@ -131,4 +131,9 @@ namespace il2cpp_symbols
 	{
 		return *static_cast<void* const*>(std::assume_aligned<alignof(void*)>(instance));
 	}
+
+	Il2CppString* NewWStr(std::wstring_view str)
+	{
+		return il2cpp_string_new_utf16(str.data(), str.size());
+	}
 }

@@ -395,4 +395,6 @@ namespace il2cpp_symbols
 			static_cast<decltype(receiver)>(receiver)(getCurrentMethod(enumerator));
 		}
 	}
+
+	Il2CppString* NewWStr(std::wstring_view str);
 }

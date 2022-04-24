@@ -102,6 +102,14 @@
             "description": "static字典文件的路径",
             "type": "string"
         },
+        "no_static_dict_cache": {
+            "description": "是否禁用static字典缓存",
+            "type": "boolean"
+        },
+        "stories_path": {
+            "description": "剧情文件路径",
+            "type": "string"
+        },
         "autoUpdate": {
             "description": "自动更新",
             "type": "object",

@@ -1,6 +1,7 @@
 #include "stdinclude.hpp"
 
 std::map<std::size_t, std::string> ensure_latest_static_cache(const std::string& staticDictPath);
+std::pair<std::unordered_map<std::size_t, local::StoryTextData>, std::unordered_map<std::size_t, local::RaceTextData>> LoadStories();
 
 namespace
 {
@@ -38,7 +39,9 @@ namespace
 				}
 
 				config_stream.close();
-				local::reload_textdb(&dicts, ensure_latest_static_cache(g_static_dict_path));
+
+				auto&& [storyDict, raceDict] = LoadStories();
+				local::reload_textdb(&dicts, ensure_latest_static_cache(g_static_dict_path), std::move(storyDict), std::move(raceDict));
 			}
 		}
 	}
