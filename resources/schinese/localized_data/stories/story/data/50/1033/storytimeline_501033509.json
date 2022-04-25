@@ -1,0 +1,49 @@
+{
+  "Title": "連続出走で……",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "今天的训练内容比往常轻松一些，\n结束得也比平时更早。",
+      "ChoiceDataList": [
+        "要再跑一会吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………\n今天就算了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "我不想让人看见我现在这幅不成体统、\n被疲劳拖垮的模样……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……我先回宿舍了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "换做平日的爱慕织姬的话，\n一定会坚持训练到看见星空为止。\n今天居然这么早就结束了训练——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "大概是因为太过疲劳了吧。\n重新审视一下今后的赛程计划比较好……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

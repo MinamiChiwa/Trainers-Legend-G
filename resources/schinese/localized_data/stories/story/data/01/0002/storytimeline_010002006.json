@@ -1,0 +1,23 @@
+{
+  "Title": "选择育成赛马娘",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "接下来，请选择要育成的赛马娘！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "由于本次是实习，所以请先试着选择\n刚才获得的育成赛马娘。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

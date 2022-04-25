@@ -1,0 +1,49 @@
+{
+  "Title": "『我相信你』",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『菊花賞』後――学校やトレーニングに出ず、\n無気力な日々を過ごすナリタタイシンは\nあるバスケットボールの試合を見て驚く。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "テレビの中で活躍するのは『皐月賞』前、\nナリタタイシンに厳しい言葉を\n投げかけてきた小さな赤髪の少女だった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ひねくれているが誰よりも強く、\n絶対に諦めない誰かから\n『諦めない勇気』をもらったという少女。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "逆境に負けぬ強さを持つナリタタイシンに\n励まされ、奮い立たせられてきたと話す\nウイニングチケット。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そして、ナリタタイシンを信じ、\n復帰を毎日待ち続けたトレーナーからの\n真摯な励ましを受け――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "諦めたくないという気持ちを取り戻した\r\nナリタタイシンは、\n『日経賞』でのリベンジを決心するのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "日经赏"
+      ]
+    }
+  ]
+}

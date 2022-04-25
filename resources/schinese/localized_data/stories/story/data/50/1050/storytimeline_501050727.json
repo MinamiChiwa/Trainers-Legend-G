@@ -1,0 +1,64 @@
+{
+  "Title": "抓娃娃大成功！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……へぇ、案外やるんだ。\r\nアームの調子が良かったとか？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "にしても……\r\nこんなに取ってどうすんの？",
+      "ChoiceDataList": [
+        "你拿回去吧？",
+        "持って帰れそう？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哈？不要。我又不需要这个。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "トレーナー室にでも飾んなよ。\r\nアンタが自分で取ったんだから。",
+      "ChoiceDataList": [
+        "明明很难得，你拿回去嘛！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……哈啊。好吧。\n我就拿一个吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……哼。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "仔细看看，还挺可爱的啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "——留下了大满足的结果呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

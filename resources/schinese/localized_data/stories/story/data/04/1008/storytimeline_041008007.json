@@ -1,0 +1,327 @@
+{
+  "Title": "由我继承的两轮",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "――ついに夏合宿に突入！\u3000目の前に広がるビーチで\r\nウオッカは鼻息を荒くしている。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "勝負だ、先輩！\u3000砂浜ダッシュ、2ハロンの電撃戦。\r\n俺のスピード、見せてやるぜ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "前辈马娘",
+      "Text": "フン、誰に物を言っているの？\u3000私はすでにＧⅠ級と言われている\r\n逸材。あなたごときが勝てると思って？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "――勝てる。俺が編み出した『エクスプロード走法』なら！\r\nよっしゃ！\u3000行ってくるぜ、トレーナー！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "うおおおおおっ！\u3000見ろ、砂を後ろに蹴り飛ばす、超カッコいい\r\nこの走法！\u3000いけるぞ。先輩の背中が目の前に……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "って、うおおおっ？\u3000また差がついた！？\r\nダメだ、届かねえ。ＧⅠ級って……こんなにパねえのか！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "くっそおおおおお、なんでだ！？\r\n勢いは、俺の方が数段上だったのに……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "前辈马娘",
+      "Text": "フフッ、あなたなんて、しょせん\r\nこの程度だったということ♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "チッキショー！\u3000今に見てろよっ。\r\n合宿が終わる頃には、浜辺の王者は……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "って、あー、ダメだダメだ。またこのパターン！\r\nやっぱカッコだけのヤツは、カッコ悪さ全開だっての！",
+      "ChoiceDataList": [
+        "伏特加，我有话想说……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "ん、なんだ？\u3000トレーナー？\r\n慰めの言葉なんて……。",
+      "ChoiceDataList": [
+        "别把沙子往后踢了吧"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "えっ、砂を後ろに……？\u3000あ『エクスプロード走法』のことか？\r\nでも強く蹴らないとパワーが……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "！！\u3000そうか！！\u3000ここは砂浜。後ろに蹴ると力が逃げる。\r\nなら……どうすれば……。考えろ。考えるんだ……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "なんか走り方があるはず。母ちゃんはたとえダートでも速かった。\r\nカッコだけじゃなく速度も出る走り方が、俺にもできるはず。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "！！\u3000そうか、もしかしてコレなら……。あのっ！\u3000先輩！\r\nもう1回だけ勝負してくれませんか？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "前辈马娘",
+      "Text": "な、なに？\u3000この速さは――！？\r\n先ほどとは、まるで別の……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "そうだ、この走りだ！\r\n重心を低く、脚を砂に突き刺すように！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "名付けて『スラッシュ走法』！\u3000力を逃がすな。蹄鉄を全面で\r\nグリップさせて、前へ！\u3000とりゃあああ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "前辈马娘",
+      "Text": "ま、負けた……。\r\n私がこんな青二才に……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "よっしゃあああ！\u3000……先輩、胸貸してくれて、\r\nサンキューっした！\u3000先輩の力は本物っすよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "勝負の続きはトゥインクル・シリーズで。先輩なら\r\n上でも楽勝っしょ。輝きゃ、いい目印になるんで。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "前辈马娘",
+      "Text": "伏特加，你……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "そして合宿も終わり間近。\r\n祭りの後――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "いやー、たまにゃ祭りもいいもんだなっ。\r\nあー、売った売った！",
+      "ChoiceDataList": [
+        "不是吃够了？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "ああ、売った方が多かったかな。じつは焼きそば屋のおっちゃんに\r\n夜店の手伝い頼まれちまってさ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "俺、焼きそば作るの超得意なんだよ。\r\n昔、父ちゃんのダチの露店、手伝ってたから。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "って、そんな話はどうでもいっか。\r\nトレーナー、合宿中は色々ありがとな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "あのビーチレースの時、わかった気がするんだ。\r\n俺の目指すカッコよさ。つまり、両方ありゃいいんだよな？",
+      "ChoiceDataList": [
+        "两者？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "そ！\u3000父ちゃんの“カッコよさ”と母ちゃんの“強さ”。\r\nダブルで持ってりゃいいんだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "カッコいい走りで絶対勝つ！\u3000そんで、カッコいいことを\r\n言う！\u3000そうすれば、いつだって負け惜しみにならないから。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "もちろん口で言うほど簡単じゃないさ。\r\nけど大丈夫。俺ならできる！",
+      "ChoiceDataList": [
+        "自信满满啊",
+        "自信满满啊"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "ああ。この根拠のない自信も父ちゃん譲りだから。\r\nそういえば……母ちゃん言ってたな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "父ちゃんの、ワケわかんない自信の話。\r\nあれは付き合いはじめた時らしいけど……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "父ちゃんが母ちゃんにコクったのって、\r\n夏祭りの時だったんだって。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "当時、母ちゃんは現役バリバリのオープンウマ娘。\r\nで、父ちゃんは、ただの冴えない兄ちゃん。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "それでも母ちゃんが告白okした理由って、\r\nなんだと思う？",
+      "ChoiceDataList": [
+        "迷上了他的内在？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "ちょっと違うかな。父ちゃん、色々吹かしまくったんだって。\r\n『絶対ビッグになる！』とか『世界一幸せにする！』とか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "『こんな根拠のないこと堂々言うなんて、おもしろいヒトだな』\r\nって。それで付き合ったんだって。勢いだけで押し切ったわけさ。",
+      "ChoiceDataList": [
+        "有这样的父母，才有了这样的孩子啊",
+        "有这样的父母，才有了这样的孩子啊"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "だな。俺の心は父ちゃん譲り。\r\nで、この体は母ちゃん譲りさ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "この両方で……俺は絶対になる！\u3000どんな無謀なことにも\r\n挑戦して、成し遂げるウマ娘に。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "跟在与你搭档之前相比，我已经变得强多了！",
+      "ChoiceDataList": [
+        "弱点也克服了吗？",
+        "弱点也克服了吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "もちろん！\u3000前は恋バナとか聞いただけでゾワゾワしたけど、\r\n今じゃヘッチャラだぜ、多分……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "（そういえば父ちゃんと母ちゃん、付き合うことになった後、\r\n『2人乗りで帰った』って言ってたな）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "（2人乗りか……。合宿の帰り道、もしトレーナーと\r\nそんな風になったら……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "え、トレーナーが運転すんのか？\u3000俺が後ろに？\r\nそか……。じゃあ失礼して……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "なっ……腰のところにギュッと手を！？\r\nそれじゃあ……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "噗哈ー！！",
+      "ChoiceDataList": [
+        "怎么了？没事吧！？",
+        "怎么了？没事吧！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "いや、ちち、違うんだっ。\r\nこれは、その――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "チョコバナナ！\u3000夜店でチョコバナナ食べすぎただけだっ！\r\nホントだからな、チキショー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

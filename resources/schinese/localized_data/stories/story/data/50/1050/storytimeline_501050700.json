@@ -1,0 +1,53 @@
+{
+  "Title": "睡眠不足……",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "呼啊……",
+      "ChoiceDataList": [
+        "没睡好吗？",
+        "眠れてないの？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "差不多吧……睡眠状况有点糟糕。",
+      "ChoiceDataList": [
+        "那没事吧！？你没逞强吧！？",
+        "大丈夫！？無理しないようにね！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "いや、大げさ……！\r\nんな血相変えないでよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "こんなのよくあるし……気分悪かったり、\r\nムカムカしてると、眠れないことがあるだけ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……あーもう、なんでこんなこと話して……。\r\n調子狂うな、ホント……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ナリタタイシンは寝不足なようだ……。\r\nあまり無理をさせないようにしよう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

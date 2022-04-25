@@ -1,0 +1,53 @@
+{
+  "Title": "改不过来的习惯",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "嗯嗯，真是美味的炸鸡块呢♪\n而且是直接用手，豪快地抓着吃――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊，那边那位！这个水可不能喝哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "客人",
+      "Text": "诶！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "そのグラスの水は、\r\n指先の汚れを落とすためのもの。\n衛生面を考えると――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "SP队长",
+      "Text": "殿下……！\u3000あのグラスはフィンガーボール\r\nではなく飲み水用のものかと。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "！\u3000なんと…………失礼いたしました。\r\n不勉強なばかりに、ご迷惑を……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "勘違いをしてしまい、反省をする\r\nファインモーションであった……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

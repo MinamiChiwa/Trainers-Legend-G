@@ -1,0 +1,625 @@
+{
+  "Title": "直至拂晓来临",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "在爱慕织姬昏迷在森林里的数日后。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "以防万一，我带她做了更加精密的检查。\n不仅是左脚、其他地方也没有任何异常的样子。\n我们办理了退院手续，但是……",
+      "ChoiceDataList": [
+        "织姬，准备好了吗？",
+        "アヤベ、準備はできた？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "………………嗯。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "听见她微不可闻的回答声，我感到一阵心痛。\n她现在的样子——",
+      "ChoiceDataList": [
+        "（简直……就是失去灵魂的空壳……）",
+        "（まるで、抜け殻……）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "她一言不发，而我也怎么都开不了口。\n令人不安的沉默笼罩着我们，\n我们就这样离开了医院。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "——果然。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "哈哈哈哈哈哈哈哈！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "无论场合、无论时间、无论气氛。\n就像往常任何时候一样——\n霸王的大笑声，响彻耳畔。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "恭喜出院，织姬同学。\n然后——收下这个吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "——这是『邀请函』。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "邀请……函……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "哦！届时，也请训练员也务必一起到场！\n不管怎么说——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "『如果没有监护人的话我可不会同意哦』，\n富士前辈这么说的时候，\n露出了恶鬼也要忌惮三分的笑容！哈哈哈哈！",
+      "ChoiceDataList": [
+        "监护人……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "你们到底在做什么啊……\n正当我心怀疑惑的时候，不知不觉间——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "已经跟着好歌剧走了好久。\n夜晚已然降临，我们来到了深夜的海滨。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "这里就是……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "啊……啊哈哈……\n这么突然真是抱歉……训练员……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "其、其实……我们也一样……\n突然从歌剧王同学那儿收到邀请函……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "这个……那个……就是……\n我们也不是很清楚她想做什么……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "不过不过，既然是歌剧王同学，\n那一定是有什么重要的事情吧……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "我可没睡哦……\n我可……唔喵……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "哈哇哇！歌剧王同学的作息一直都很规律，\n现在看来有些熬不住了……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………搞什么啊，真是的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "我不奉陪了。\n先回——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "……可别急着回去。\n待在这里吧，织姬同学。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "直到深沉的黑暗也开始褪去为止。\n直到闪烁的星光也变得黯淡为止。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "且留在此处，陪伴吾等吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "………………\n…………为什……么——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "织姬张开嘴，似乎想说什么——\n但她最终什么都没说出口，\n只是沉默地坐在了沙滩上。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "不断反复的潮汐声、早已入睡的歌剧王的鼻息、\n时不时聊聊天的名将怒涛与成田路的声音。\n万物都处于寂静之中，只有这些声音在回响。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "这段时间仿若永恒，但却宛如须臾。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "直到缀满夜空的群星也开始变得黯淡、\n一个接一个地隐去踪影——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "天空慢慢地，泛起白光。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "看见了吗？\n——这便是破晓。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "属于你、也属于吾等的——破晓之时。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "…………唔喵。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（群星黯淡的……破晓……\n好耀眼……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（对我而言……甚至有些刺眼的破晓——）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "嗯嗯~……哈！\n感觉身体都坐得有些僵硬了呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "那，织姬同学。\n你看，小歌剧还没睡醒，\n小怒涛也睡着了——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "もし走れそうでしたら、ランニング！\r\nちょっとだけ付き合ってくださいっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "欸？等、等下……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "难得地，成田路没有等织姬回答她，\n便自顾自地在沙滩上跑起步来。\n犹豫片刻之后，织姬也跟了上去。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "在这个即便是海浪声也会显得聒噪的清晨，\n两人在沙滩上奔跑的脚步声不断回响。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "哈、哈、哈……\n织姬同学，怎么啦？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "现在慢得像之前的比赛都是假的一样哦！\n……你的话，我觉得应该可以更快的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……我已经没法……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "你说什么？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "离得太远啦~~~\n我~~听~~不~~见~~~",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "………唔…………\n～～～～啊啊！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "我说！！我已经没法像之前那样跑了！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "我是为了那个为我身死的妹妹！！\n为了偿还我的罪恶！为她献上胜利！！\n我是为此才奔跑的！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "但是她已经不在了！她已经彻底离开我了！！\n甚至连从星星上注视着我也做不到了！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "她已经……彻底消失了！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "又一次……为了帮助我……\n为了我，又一次消失了……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……反正对你来说，这些话毫无意义吧！\n别管我了！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "我已经……只是一具空壳了……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "……我明白了。\n织姬同学失去了奔跑的意义、\n变成了一具空壳——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "一切都已经重回原点了。\n那么……\n现在，织姬同学打算怎么办呢？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………哈……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "没有奔跑的意义的一具空壳，\n被莫名其妙地带到海滨来熬了一个晚上，\n现在还莫名其妙地在跑步。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "——对此，织姬同学自己是怎么想的呢？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "……是不是觉得……\n果然和大家一起跑步还是很开心……呢？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "……哈哈，我这么说会不会有点太自大了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………唔。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "嗯……织姬同学还是想不明白吗？\n那我们再跑一会吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "直到破晓后的白昼为止、一直跑下去吧！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "之后，爱慕织姬一直和成田路一起奔跑着。\n不断地奔跑着、奔跑着、奔跑着——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "终于，与成田路一起耗尽体力，\n倒在地上沉沉睡去。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……4人ともをタクシーに乗せ、\r\n学園まで帰り着いた頃には、\nすっかり昼になっていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "阳光相当刺眼。\n尽管如此，她依旧眯着眼睛、望向天空，\n然后轻轻开口——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………其实……我很开心。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……跑步也是……与朋友相互竞争也是……\n其实我觉得……都很让人开心。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "明明我已经失去了奔跑的意义、奔跑的理由……\n明明我已经失去了一切，但是——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "我……还是想继续奔跑……！",
+      "ChoiceDataList": [
+        "那就继续跑下去吧。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "但是……——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "——多么温柔的姐姐啊。\n看着无法踏出这一步的她，我这样想到。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我听说，连接这个世界与死者的世界的，\n是生者们的思念。\n恐怕她也想到这一点，所以害怕了吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "如果她忘了妹妹的事情，\n仅仅为了自己而奔跑的话……\n那么，总有一天——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "总有一天，她会彻底忘却自己的妹妹，\n而她妹妹的存在也会被彻底抹去。\n她所害怕的，就是这个吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "不过，既然如此的话——",
+      "ChoiceDataList": [
+        "要不要为了让妹妹引以为豪而奔跑？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "诶…………？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "きっと誇らしいに違いない、と話す。\nクラシック三冠を、グランプリレースを、\nシニアの数々のレースを見事駆け抜けた――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "グランプリ"
+      ]
+    },
+    {
+      "Name": "独白",
+      "Text": "如果她有这样优秀的姐姐的话……",
+      "ChoiceDataList": [
+        "一定会自豪的吧？",
+        "絶対、自慢になるよね？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………哈哈。\n这算什么啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（令她骄傲……吗……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（能让她自豪的――姐姐。）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "你觉得……她会夸我吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "不断奔跑、参加各种比赛、拿下无数胜利……\n然后……终有一日，我与她再会的时候……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "那个时候……等到那个时候……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "那个时候……她……会夸我吗——？",
+      "ChoiceDataList": [
+        "当然……！！",
+        "うん……！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我以用力的点头作为回应。\n不经意间，眼角竟有泪水流下。\n我慌忙地擦拭，但视界依旧一片模糊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "看着这样的我，\n爱慕织姬终于笑了起来。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "——在白昼的阳光中，露出了笑容。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

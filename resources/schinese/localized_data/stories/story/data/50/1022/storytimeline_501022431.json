@@ -1,0 +1,31 @@
+{
+  "Title": "宝塚記念の後に・Weave a Story",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ファインモーションは『宝塚記念』を\r\n全力で楽しんだ。彼女の走りは観客たちの\n心に届き、感動を呼び起こす……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "物語の主人公のようだと言うゼンノロブロイ。\r\nファインモーションは、みなの心の中で\n物語が続くのなら、寂しくはないと気づく。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ファインモーションは、次の目標を\r\n『札幌記念』に決める。このレースには、\n実は“ある実力者”も出走予定だ――！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "札幌纪念"
+      ]
+    }
+  ]
+}

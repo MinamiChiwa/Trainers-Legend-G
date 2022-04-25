@@ -1,0 +1,376 @@
+{
+  "Title": "爆进！\u3000购物！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "トレーニング後、サクラバクシンオーが珍しく\r\n携帯の画面を見ながら唸っていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "唔唔唔……！！\u3000唔唔唔唔……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "これは、試練……試練でしょうか！？\r\nならば立ち向かうのが学級委員長として正しい姿！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "但是，但ーーーーー是！！！！！",
+      "ChoiceDataList": [
+        "怎么了？",
+        "怎么啦？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "哦哦，训练员！\u3000其实是在排队！！",
+      "ChoiceDataList": [
+        "能先冷静下来解释一下吗？",
+        "能先冷静下来解释一下吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "実はですね、買いたいケーキがあるのですが、\r\nかなりの人気で長時間並ばなければならないらしく――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "行列に並ぶのがどぉーーしても苦手な私は、\r\nどうしたものかと頭を悩ませておりました……ッ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "くぅッ……自分を押し殺してでも並ぶべきか、\r\n自分の意思を尊重して並ばざるべきか……ッ！！\u3000ぐぬぬぬ～ッ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "確かに、せっかちな彼女が大人しく待っていられるとは思えない。\r\n話し相手になってあげれば、少しは時間が潰せるだろうか。",
+      "ChoiceDataList": [
+        "我们一起去吧",
+        "我们一起去吧"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "おや、トレーナーさんもケーキを食べたいのですか？\r\nであれば、並ぶこともやぶさかではありません！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "『旅は道づれ世は情け』と両親が言っていましたし！\r\n意味はよくわかりませんが！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "トレーナーさんもご一緒にということであれば、\r\n次の休日に行ってみましょうか！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "休日、サクラバクシンオーと共に\r\n例のケーキが売っているという店までやって来た。が――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "呼……呼……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "スズメが1匹、スズメが2匹……！！\r\nハトが3匹に、善良な学級委員長が1人……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "ハッ！！\u3000一緒に来ていたはずのトレーナーさんは！？\r\nトレーナーさんは今いずこに……！？",
+      "ChoiceDataList": [
+        "我在这里，冷静一点",
+        "我在这里，冷静一点"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "ややややッ！？\u3000すぐお隣にいらしたのですね！\r\nそれを聞いて安心しました！！\u3000ふゥ～ッ……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "――開始1分。行列が辛いのか、サクラバクシンオーは\r\n明らかに挙動不審だ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "……我得找个话题，转移一下她的注意力。",
+      "ChoiceDataList": [
+        "你想买的蛋糕是什么样的？",
+        "你想买的蛋糕是什么样的？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "おおっ！\r\nよくぞ聞いてくれましたトレーナーさん！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "このお店では『史上最速の人気チーズケーキ』\r\nなるものが売っているらしいのです！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "『史上最速』という名前が付いているということは、\r\n食べれば私も『史上最速』になれるはず！\u3000ですよね！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "ならば是非とも食べなければ！\u3000なぜなら私は学級委員長！\r\nみなさんの模範として誰よりも速いウマ娘になるべき存在ですから！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "彼女はどうやら、そのチーズケーキを\r\n食べれば足が速くなる代物だと勘違いしているようだが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "行列の先頭――店前にあるボードを見ると、\r\n史上最速の前に『完売記録』の文字がある……これはつまり。",
+      "ChoiceDataList": [
+        "是指史上最快售罄的意思吧……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "フフッ、ご冗談を！\r\nトレーナーさんのお言葉といえど、騙されませんよ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "しかし『史上最速の人気チーズケーキ』とは\r\nどんな形なんでしょうね？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "やはり新幹線の形？\u3000それとも飛行機でしょうか？\r\nそれとも……ハッ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "私の噂を聞きつけ、この身を模している可能性も……フフフッ！\r\n困りますね、許可はとっていただかないと！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "我们聊着些无关紧要的话题，时间一点一点地过去了――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "……というわけで、学園に迷い込んだ子犬は\r\n無事に私が飼い主のもとまで届けてあげたというわけです！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "フフッ、何事も迅速に対応、解決してこそ学級委員長！\r\nトレーナーさんも困ったことがあれば、すぐに――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "蛋糕店的店员",
+      "Text": "はーい、列いったん切りますね。\r\nお次のお客様、もう少々お待ちくださーい！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "ややッ！？\u3000入口がもう目の前に！？\r\nなっ、なんということでしょう……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "これはもしや奇跡……！？\r\n選ばれし学級委員長に与えられた、天からの贈り物……ッ！？",
+      "ChoiceDataList": [
+        "聊得起劲，排队就成了一眨眼的工夫了呢",
+        "聊得起劲，排队就成了一眨眼的工夫了呢"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "た、確かに、話すことに夢中で\r\n行列のことなどすっかり忘れていました！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "トレーナーさん、貴方はこうなることを予想して\r\n会話を続けていたのですか！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "なんということでしょう……私に気づかせず、ここまで……！\r\nトレーナーさん、貴方は天才ですッ！！",
+      "ChoiceDataList": [
+        "这就是我的力量……！",
+        "这就是我的力量……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "ハイッ！\r\n計算し尽くされた素晴らしい戦略でした！！\u3000実に頼もしい！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "私が天に選ばれし学級委員長であるなら、\r\n貴方は神に選ばれしトレーナーさんなのでしょうッ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "選ばれし学級委員長と選ばれしトレーナーさんが出会う……。\r\nこれを運命と言わずして、なんと言えばいいのでしょうか……！？",
+      "ChoiceDataList": [
+        "已经轮到我们了",
+        "已经轮到我们了"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "等等！？\u3000时间再一次飞逝了……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "とにもかくにも、\r\nチーズケーキを買ってまいります！！\u3000……いざ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "無事にチーズケーキを買った後、学園へ戻り、\r\n一緒に食べてみることにした。そして――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "ごちそうさまです！\u3000さっそくタイムを計ってみましょうッ！！\r\n私が『史上最速』になれたか否か、確認するのです！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "准备――爆―――进―――！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "哈啊……哈啊……哈啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "トレーナーさん……！\r\n私は今……確信しました……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "結果を口にするまでもありません！\r\n私はいま確実に『史上最速』となりました……ッ！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "手元のストップウォッチを見ると、\r\n普段のタイムと全く変わっていない……。",
+      "ChoiceDataList": [
+        "起跑很好！虽然时间是一样的",
+        "起跑很好！虽然时间是一样的"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "等等！？\u3000怎么会这样……啊啊，原来如此！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "食べた直後に走ったからかも知れませんね！\r\nまた後で測りなおしましょう！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "ふゥ～……それにしても、今日は良き日です。\r\n史上最速ケーキを手に入れ、苦手だった行列も克服したのですから！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "とは言え、行列はトレーナーさんあってこその克服！\r\nええ、委員長たるもの自分ひとりでなどと驕ったりはしません！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "ですので、今後また行列に立ち向かわなければならなくなった際は、\r\nトレーナーさん！！\u3000どうぞよろしくお願いしますッ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "満足そうなサクラバクシンオーだったが、\r\n結局、測りなおしたタイムに変化は起きないままなのだった……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

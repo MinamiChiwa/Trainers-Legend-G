@@ -1,0 +1,313 @@
+{
+  "Title": "侦测毛茸茸程度的观察眼",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "小羊羔们",
+      "Text": "咩~~~~~",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………哈啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "被小羊羔们团团包围，\n爱慕织姬的表情逐渐松弛下来。\n要问为何事情会发展到此种地步的话——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "就得从我们一起搭乘电车返回学园说起……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "………………",
+      "ChoiceDataList": [
+        "看见什么好东西了吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………没这回事。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "只是卡莲同学又发了些小动物的视频给我，\n看得有点出神了而已……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "车载广播",
+      "Text": "『下一站是：牧场前站，牧场前站～』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "虽说她说自己只是看得出神了……\n但实际上，刚刚的她笑得异常温柔。\n牧场呢……也许正好能带她去一起放松一下。",
+      "ChoiceDataList": [
+        "要去亲眼看看小动物吗？",
+        "要去亲眼看看小动物吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "哈？等——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "牧场里正在举办能和小羊羔们互动的活动——\n来得正好呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "小羊羔们",
+      "Text": "咩~~~~~",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "等……等下。\n为什么要跟着我啊……！",
+      "ChoiceDataList": [
+        "是不是想要你摸摸它们呢？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "不不，我怎么会——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "小羊羔们",
+      "Text": "咩~~~~~~~~~咩~~~~~~~",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "就……就算你们来蹭我……呜……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……哈啊。\n那就只摸一小会哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（啊……好温暖……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "小羊羔们",
+      "Text": "咩~~~~~~~~~咩~~~~~~~",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "什、什么啊……你也想被摸吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（？……这孩子的手感，好像不大一样……\n而且总感觉——……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……这孩子，太瘦了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "是营养有些不足吗……还是说压力太大了吗……\n总之，这孩子的毛不如别的小羊蓬松……",
+      "ChoiceDataList": [
+        "去告诉牧场的工作人员吧。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "之后，爱慕织姬将这个情况告诉了工作人员——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "牧场的工作人员",
+      "Text": "……真的呢。这孩子最近才刚到我们牧场，\n大概是在陌生的环境里感到不安，\n所以一直没睡好吧……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "牧场的工作人员",
+      "Text": "谢谢你发现这件事哦！\n还好发现得早，来得及采取补救措施！",
+      "ChoiceDataList": [
+        "真亏你能注意到呢。",
+        "真亏你能注意到呢。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……只是偶然而已。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "倒也不是什么大不了的事——",
+      "ChoiceDataList": [
+        "但你确实帮到了这些小羊羔呢。",
+        "但你确实帮到了这些小羊羔呢。",
+        "这份观察眼，必可活用于其他事！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "倒也不是什么大不了的事——",
+      "ChoiceDataList": [
+        "但你确实帮到了这些小羊羔呢。",
+        "但你确实帮到了这些小羊羔呢。",
+        "这份观察眼，必可活用于其他事！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "小羊羔们",
+      "Text": "咩~~~~~",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……那……感觉还挺不错的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "小羊羔们",
+      "Text": "咩～！\u3000咩～～～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（那孩子，一直在冲着这边叫呢……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……是在道谢嘛？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "哈哈……不可能的吧……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "不可能的吧……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "几天后，在食堂里——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（砰！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "……不好意思，你没事吧？\n抱歉，刚绊了下……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "没事…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（刚才……晨光同学头发的触感……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……晨光同学，\n你最近是不是有些睡眠不足？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "！ 这、这个……\n的确，昨晚是有些没睡好……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "没想到，明显到光从脸色都能看出来吗……\n谢谢你的提醒。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……与其说是脸色，不如说……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……算了，没事。\n请多保重身体……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

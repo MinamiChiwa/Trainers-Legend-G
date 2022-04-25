@@ -1,0 +1,31 @@
+{
+  "Title": "支援卡卡池①",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "遇到了很棒的赛马娘呢！\n那么赶紧前往育成……不过在那之前！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "也要说明一下支援卡\n卡池呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "支援卡"
+      ]
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "试着切换一下卡池吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

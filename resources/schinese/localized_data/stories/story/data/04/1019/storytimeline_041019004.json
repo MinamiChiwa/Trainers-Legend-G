@@ -1,0 +1,378 @@
+{
+  "Title": "全能跑者闪亮登场！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "故事要追溯到几天前――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "诶，你刚才说什么……？\n――不选跑道？\u3000两边都跑？",
+      "ChoiceDataList": [
+        "嗯。",
+        "嗯。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "那个ー，不只是新马级……\n经典级和古马级也一样，是吗……？",
+      "ChoiceDataList": [
+        "是啊",
+        "是啊"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "那，那那，真的是不分场地\n哪儿都去跑的意思吗……！？",
+      "ChoiceDataList": [
+        "就是这样！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "――不不不不！！\u3000不可能的！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "我就像事故发生前的东方快车！\u3000或是将要沉没的\n泰坦尼克号！两边都不选的结果，就是碎成两半啦！",
+      "ChoiceDataList": [
+        "不，才不是！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "为什么！？",
+      "ChoiceDataList": [
+        "因为你积累了许多努力！",
+        "因为你积累了许多努力！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "积累了努力……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "――哈。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "……确实，我一直有在努力。\n每天孜孜不倦地膜拜、供奉着女神们，积累信仰――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "那份努力……能够开花结果吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "是我的信仰终于达到高度了……？\n达到了做一名马娘当之无愧的水平……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "现在的我，什么跑道都能跑……！？不能和我的推们\n相提并论，但至少也算有最低限度的觉悟了……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "虽然爱丽数码的表达方式很独特，\n但她想到的一定和我一样。也就是说――",
+      "ChoiceDataList": [
+        "以『全能跑者』为目标吧！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "嗑到啦啦啦啦啦啦啦啦啦啦！！！！！！！！！！\n（And I，出自歌曲『I Will Always Love You』）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "不……但确实！！\n你这么一说，我确实有十分的努力啊！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "而且，『全能跑者』什么的……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "哈啊……！\u3000听起来超赞……！\n也就是说，我什么都可以做了吧……！？",
+      "ChoiceDataList": [
+        "只是在比赛的选择方面啊！",
+        "只是在比赛的选择方面啊！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "好，当然！\u3000这一点我很清楚！\n推们可远观，\u3000而不可亵玩焉！\u3000吸溜……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "但是……祈祷的成果终于……！\n乐园里结出的禁断果实，全都在眼前了……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "――呜～～～～～～！！！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "好――觉悟，已经做好了！！\u3000数码碳要成为全能\n跑者！！\u3000为了能近距离感受我所有的推们！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "之后――\n选拔赛终于拉开了帷幕。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "……好，差不多该我出场了呢。\n那我走了！\u3000抱着轮回转世、六道轮回的觉悟！",
+      "ChoiceDataList": [
+        "加油吧！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "虽说有『选拔赛只能做1次出场登记』的规定，\n但其适用范围是『都是草地跑道』。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "草地和沙土两边都做出场登记并不违反规定……应该说，\n史无前例。但如果是她――不，正因为是她才……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "（……这里是众多马娘酱们跑过的圣地。\n我可不能给玷污了。倒不如说――）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "（――要抱着由我来擦亮这里的心情！\n我要去跑了！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "所有选手已进入闸门――现在，比赛开始了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "（浑身是土，汗水闪闪发光的马娘酱……！！\n正因那强劲的力量――尊死，美极……！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "爱丽数码在这里冲上来了！\n怎会有这种末脚ー！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "（奔跑在草地上，急促地呼吸着的马娘酱……！\n正因那种柔韧――尊死，让人着迷……！\u3000也就是说――）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "大家都不同，大家都超棒啊啊啊啊啊啊ーーーー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "天呐！？\u3000爱丽数码，没想到在草地上也快步跑着ー！！\n怎么会有这种事ー！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "什么……！？\u3000不挑拣战场的，吗……！？\n她……说不定有一天会成为最强的！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "她跑得比我预想中还要棒！\n我跑到爱丽数码跟前，想赞赏一下她的努力。",
+      "ChoiceDataList": [
+        "辛苦了！跑得很好哦！",
+        "辛苦了！跑得很好哦！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "诶嘿嘿，谢谢……！\n能近距离看到我的推们我也超级感谢哦……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "这一切，\n都多亏了积累了丰富信仰的训练员――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "你，刚才跑得太棒了！\u3000没想到草地\n和沙土都跑得那么好……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "――咻哇！？\u3000诶，诶……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "可以的话请务必成为我的担当！\u3000首先在\n新马级积累沙土的经验，之后再以草地为中心――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "诶，啊，抱歉！\u3000那个我办不到……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "我，是那种追求多样性的类型！\u3000没法决定\n跑哪边！\u3000而且要当全能跑者！\u3000而且――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "其实啊……数码碳我，已经\n和这边这位训练员预约签订担当契约了！",
+      "ChoiceDataList": [
+        "……是吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "好，好啦，配合一下我讲话……！\n那种精神饱满的人很可怕啦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "呼，太好了，好像莫名其妙引起关注了……\n给你添麻烦了。",
+      "ChoiceDataList": [
+        "对了，继续刚才的话题吧"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "啊，诶嘿嘿……不小心就脱口而出了。\n抱歉。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "但是那个，我是真心的。我和别人在一起的时候，\n气氛经常会变得很奇怪――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "可能是因为同样喜欢马娘酱吧，\n我和训练员就能保持非常好的距离……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "更重要的是，我觉得恐怕再没有别人，\n能这样尊重我的想法。所以说……！\u3000你意下如何？",
+      "ChoiceDataList": [
+        "当然，请多指教！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "太好了……！\n那么那么，今后也务必请多关照！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "马娘们奔跑的理由各不相同。但无论是何种形式，\n追逐梦想的身姿都是美好的。所以我自己要支持她――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "――啊，对了。训练员。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "应援棒，哪种颜色比较好？",
+      "ChoiceDataList": [
+        "诶？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "选拔赛还在继续啊！\n今天也好好积累信仰吧！？\u3000――好吗！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

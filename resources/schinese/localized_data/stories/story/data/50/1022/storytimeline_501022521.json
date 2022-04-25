@@ -1,0 +1,44 @@
+{
+  "Title": "又熬夜了……",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "あ……トレーナー……。",
+      "ChoiceDataList": [
+        "眠そうだな",
+        "眠そうだね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "うん……。クラスの子に教えてもらった\n小説がとても面白くて。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "少しずつ読み進めようと思ったのに、\r\n気づいたら朝に……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "大国の姫に転生してしまったウマ娘……\n続きはどうなってしまうんだろう……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "ぼんやりとした様子で、\nファインモーションは去って行くのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

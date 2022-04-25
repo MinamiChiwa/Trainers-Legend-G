@@ -1,0 +1,53 @@
+{
+  "Title": "即便是将记忆留在心底……",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "料理好きのウマ娘",
+      "Text": "大家ー！\u3000厨房推出了新菜品了哦！\n比预想中要做得更好，来吃吃看吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哇～看上去真香！\n我可以拍一张吗？\n我想把料理和正在吃的人一起拍下来！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（啪嚓！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……诶，『无法保存』？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊，手机内存不足了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "どれか消さないとダメかなぁ……。\r\nえー、選べないよ～……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "因为没法保存珍贵的回忆，\n美妙姿势有些失落……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,350 @@
+{
+  "Title": "迎接皋月赏",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（明明『皋月赏』已经近在眼前了……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………唔。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "よっるごっはん♪\u3000よっるごっは――\r\nあ、こんばんは、アヤベさん！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "请问，我可以坐你旁边吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……请便。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "谢谢！\n好，今天吃个尽兴、明天再继续努力吧~！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……あの、スペシャルウィークさん。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "特别周"
+      ]
+    },
+    {
+      "Name": "特别周",
+      "Text": "啊、在！！\n抱歉抱歉、我太吵了吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "不是。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……你愿意的话，把我的这份也吃了吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（经典三冠……\n一生仅有一次机会夺得的桂冠……\n只有它才足以成为我献给我妹妹的荣誉……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（如果不赢下来的话……如果没获胜的话……！\n必须要赢下来才行――）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "喝啊啊啊啊啊！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……唔……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……居然输给了会在比赛里相遇的对手……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（……我在……焦躁吗？\n我是为了这件事情在焦躁吗……？）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（就连东西都吃不下――）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "あっ！\u3000もーアヤベさんってば、\r\nいるなら電気ぐらいつけましょうよ～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（唰——）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "唔……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "这是……什么……\n好甜……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "啊哈哈，这是卡莲很喜欢的牛奶糖哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "特别甜，吃下去就能打起精神来哦～♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……你要这么喜欢的话，自己吃不就行了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "美味的东西就是要大家一起分享才好吃嘛～\nUmasta上这种Tag很多的哦♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "いっぱい食べて元気にがんばってくださいね、\r\nアヤベさんっ。もうすぐ『皐月賞』ですよね？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "ホープフルSの時にはいなかったお2人――\r\nトップロードさんにオペラオーさんっていう、\n負けられないライバルも出てくるんですし！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（…………『不愿认输的劲敌』？）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "『皐月賞』、当日。\r\nテイエムオペラオーにナリタトップロード、\n同世代の俊英が集うなか――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "不过，在『赛前人气调查』中获得首位的，\n依旧是爱慕织姬。",
+      "ChoiceDataList": [
+        "（不过，这次好像也不怎么在意呢――）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "………………",
+      "ChoiceDataList": [
+        "（……哎？好像她有点在意？）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………………………",
+      "ChoiceDataList": [
+        "……有什么在意的报道吗？",
+        "……気になる記事でもあった？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "！\u3000……没有。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "到时间了。\n……我去赛前体检了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "在她留在桌上的杂志之上——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "有着反复阅读痕迹的那一页上，\n记载的是成田路与好歌剧的报道。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "众人忘我、疾声高呼。\n欢声与呐喊交织，唤起热情的风暴——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "此乃勇气之庆典！\n此乃勇者之狂欢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "哈哈哈哈哈哈！\n序曲终于走向尾声——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "从今往后、\n便是由吾等三勇士、奏响这曲足以创造时代\n的伟大交响曲！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "其中最为闪耀的，自是我！\n是我、“霸王”好歌剧！！\n诸君、注目于我吧！然后为我欢呼吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "哈哈哈哈哈哈哈哈！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "噢噢噢噢！好强……！\n虽然完全不知道她在说什么，\n但这魄力好强！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路的粉丝A",
+      "Text": "不过、我也不会输的哦……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路的粉丝们",
+      "Text": "成田路小姐！！！\n加油哦！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "好的！\n感谢各位的支持！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "请尽情期待吧——\n我必将回应这份期待！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路的粉丝们",
+      "Text": "噫呀~~~~~~~！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……不愿认输的对手——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（那不是……理所当然吗。）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（我必须要获胜。\n为了给她献上独一无二的荣光……\n无论怎样的对手，我都不可能认输。）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……我不会输的。\n不管对手是她们，还是任何人都好。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……仅此而已。\n……………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

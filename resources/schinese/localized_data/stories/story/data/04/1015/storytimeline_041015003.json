@@ -1,0 +1,339 @@
+{
+  "Title": "霧を晴らすダイアローグ",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "選抜レースの日が訪れたのだが――\r\nやはりテイエムオペラオーの言っていたことが気にかかる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "彼女が何を思っているのか、それを少しでも知れればと\r\nレースを見に行ってみることにした。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "おや……君も来ていたのかい？",
+      "ChoiceDataList": [
+        "もう少し君のことを知りたいと思って",
+        "もう少し貴方のことを知りたいと思って"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "ふふっ、そういうことならもちろん大歓迎さ！\r\nじっくりレースを見ていってくれたまえ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "……っと、話しているうちに\r\n今日のライバルたちが来たようだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "やっほー、オペちゃん！\r\n今日のレース、すっごくたのしみだね♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "え、えっと……自信はないですが、\r\n私も精一杯がんばりますっ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "はっはっは！\u30002人ともいい意気込みだね！\r\n熱い勝負を期待しているよ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ウマ娘の命運を決める選抜レースが今、始まった――！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "栄光は……このボクの手にっ……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "レースは終始混戦状態だったが、ゴール直前で\r\nテイエムオペラオーがなんとか抜け出し、そして――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "ふっ……ふっ……はぁ……っ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "危うくはあったものの、\r\nテイエムオペラオーは1着で勝ち切った。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "ふぅ……あと少しだったのに、追いつけませんでした……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "ぜぇ……ぜぇ……。\r\nオペちゃんもドトウちゃんも速かったね～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ライバルとのレースを制したテイエムオペラオー。\r\nだがその表情は沈んでいる。",
+      "ChoiceDataList": [
+        "1着だし、いい走りだったぞ？",
+        "1着だし、いい走りだったよ？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "そうだね、そういう見方もできるだろう。\r\nでも……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "あれっ？\r\nオペちゃん、どうしちゃったのかなぁ……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "……もしかして、勝ち方に納得していないんでしょうか。",
+      "ChoiceDataList": [
+        "勝ち方？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "あの……これはあくまで私の考えで、\r\nぜんぜん違うかもしれないし、きっとぜんぜん違うんですけど……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "オペラオーさんは、私も見習わないといけないくらい\r\n常に目標が高いんです。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "『“覇王”としての貫録を示さなくては』って\r\n心がけてるみたいで……。だから今日みたいな僅差での決着は……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『“覇王”としての貫録』――\r\nそして、これまでに見せたこともないあの様子。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "どうやら彼女は、走ることにおいても\r\n本気で“覇王”を貫こうと考えているらしい。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "彼女のことが気になり追いかける。\r\n――ようやく見つけた時には、空はどんよりと曇っていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "おや、君か……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "君は、晴れた空と曇った空、どちらの方がいいと思う？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "ボクは晴れた空が好きだ。\r\nなぜなら太陽の輝きは、みなに勇気を与えてくれるから。",
+      "ChoiceDataList": [
+        "な、何の話だ……？",
+        "な、何の話……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "ボクが目指すものの話さ。\r\n……そうだな、少し昔話をしようか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "子どもの頃、ボクは森の中で迷ってしまったことがあったんだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "暗い森の中、自分がどこにいるかもわからず……\r\nまるでこの世に1人、取り残されたような感覚を覚えたよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "けれど……嗚呼、ボクは幸運だった。\r\nなぜならそこで出会うことができたのだから。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "――運命を変える、1人のウマ娘にね。",
+      "ChoiceDataList": [
+        "運命を変えるウマ娘？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "そう……ボクが彷徨い、\r\nそしてたどり着いた森の奥、その泉の中にいた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "彼女は澄み切った水面からボクに微笑み、\r\n『大丈夫だ』と言い聞かせてくれたんだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "その姿はこの世のどんなものより強く……美しく……。\r\nボクは激しく心を揺さぶられた……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "この世には、こんなにも輝きに満ちた存在がいるのかと……！",
+      "ChoiceDataList": [
+        "ちょっと待った。泉の中ってことは……",
+        "ちょっと待って。泉の中ってことは……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "そう――その通り！\r\nそのウマ娘こそ、泉に映ったボク自身だったんだ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "まるでカミナリに打たれたような衝撃だったよ！\r\nボクという存在がこうも輝かしく、希望に満ち溢れているとは！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "もしボクが絶対的な王者……“世紀末覇王”となれば、\r\nその輝きはどれほどのものとなるだろう！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "太陽のように世界を照らす存在にすら\r\nなれてしまうのではないだろうか！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "ならばボクは目指そう！\r\nみなを幸福にする、太陽のようなウマ娘にっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "言葉の意味はよくわからない。\r\nでも――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "テイエムオペラオーが本気で“覇王”を目指している\r\nその想いは強く伝わってくる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "――おや？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "おおっ、見たまえ！\u3000空が晴れてきた！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "そう、あの輝き……。\r\nボクが目指すのはあの絶対的な輝きだ……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "ふふっ、ボクもこうしてはいられないな。\r\n次の勝利のため、“覇王”のトレーニングに励まなければ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "太陽よ、ボクに標を示してくれてありがとう！\r\nはっはっはっは！\u3000はーっはっはっはっはっはっは！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "空を見上げるテイエムオペラオーの瞳は、\r\nきらきらとした希望の光に満ちていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,387 @@
+{
+  "Title": "那双眼，请别移开",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "種目別競技大会の翌日。ウオッカは初めて、\r\n時間になってもトレーニングに現れなかった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "あれ、ウオッカのトレーナーさん。\r\n……もしかしてアイツ、来てないんですか？",
+      "ChoiceDataList": [
+        "你知道她在哪里吗？",
+        "你知道她在哪里吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "あー……河川敷だと思います、多分。\r\n漫画で読んだからってアイツ、黄昏るなら絶対あそこなんですよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "『こういうのってカッコいいだろ』なんて。\r\n……バカですよねー、本当。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "ぶつくさ言うかもですけど、絶対引っ張ってきてあげてくださいね。\r\nアイツに萎まれてたら……こっちも、張り合いがないので。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我向大和赤骥道过谢后，决定前往河岸边。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "哎……训练员。",
+      "ChoiceDataList": [
+        "已经到训练时间了",
+        "已经到训练时间了"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "るせー、そんなのわかってるっつーの。\r\n……今日はサボりだ、サボり！",
+      "ChoiceDataList": [
+        "这样做不是『很逊』的吗？",
+        "这样做不是『很逊』的吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "～～～～ッ、うるせぇっつってんだろ！？\r\nほっといてくれよ、俺のことなんかっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "像我这种……这么逊的家伙……！",
+      "ChoiceDataList": [
+        "你为什么这么想？",
+        "你为什么这么想？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "……やってやるって思ってたよ。マジで勝ってやるつもりだった！\r\nブライアン先輩のことだって、この俺が抜かしてやるって！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "けどっ……実際走ってみたら、スゲェ差つけられて……。\r\n終盤なんか俺、ヘロヘロで……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "…………『已经不行了』，我不禁想着。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "俺が見たレースのヤツらは！\u3000ダービーに出てたヤツらは、\r\nただの1人も……途中であきらめてなんか、なかったのに……！",
+      "ChoiceDataList": [
+        "伏特加……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "训练员……我，是不是不行啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "デビュー前からこんなんじゃ、俺……\r\nカッコよくなんか、一生なれないのかなぁ……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ウオッカはすっかり自信を失ってしまっているようだ。\r\nなんとか励ましてあげたいところだが……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "ぶつくさ言うかもですけど、絶対引っ張ってきてあげてくださいね。\r\nアイツに萎まれてたら……こっちも、張り合いがないので。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そういえば、ダイワスカーレットは何故ああ言ってくれたのだろう？\r\n彼女も何かウオッカに伝えたい思いがあるのではないだろうか……。",
+      "ChoiceDataList": [
+        "总之去跑道上吧，伏特加"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "哈？\u3000不，都说了我……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "呃，等会等会等会！\u3000别推我，喂……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "哈ー……啊啦，伏特加。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "……赤骥。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "お前……確か今日はオフにするとか言ってなかったか？\r\n競技大会の翌日だから、体を休めることに専念するって……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "哼。……我改变计划了，不行吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "どっかのバカが、実力差のある相手にも真っ向から喰らいついて……\r\n序盤からハイペースなレースだったのに、遅れずついて行って。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "そのくせ、直線で加速までしてみせたんだから……\r\n負けてられないって、思ったのよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "……！\u3000赤骥，你……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "就这样。我还有训练要做。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "なんだよアイツ……負けてられない、って……。\r\nだって、俺なんか……こんな、ダサいのに……！！",
+      "ChoiceDataList": [
+        "勇敢挑战的你，真的很帅气",
+        "勇敢挑战的你，真的很帅气"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "但是！\u3000我最终，都放弃了……！",
+      "ChoiceDataList": [
+        "但重要的是今后该怎么做？",
+        "但重要的是今后该怎么做？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "今后……？",
+      "ChoiceDataList": [
+        "会不会一直逊下去，就看你自己了",
+        "会不会一直逊下去，就看你自己了"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "俺、次第……。\r\n俺は……俺は、っ…………！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "――训练员！\u3000有事拜托你！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "给我……一个复仇的机会吧！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "――那之后，伏特加比平时更加投入于训练之中。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "いたいた、スカーレット！\r\nなあ、俺と併走しようぜ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "哈？\u3000别突然来说啊，我这边也有安排――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "いーからいーから、1本だけ！\u3000な、行こうぜっ！！\r\nほらいくぜ、よーいスタートっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "等！？\u3000……给我等一下啦，喂ーーー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "然后，几天后――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "请多指教，白仁前辈！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "哼。……来吧，把你撂倒。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ウオッカは、ナリタブライアンとのリベンジ――\r\n1対1の併走に挑んだ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "呼……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "呜呜……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "（ちっ……きしょおおお！\u3000速ぇ！\u3000ヤベェ！\r\nこんなのついていけるわけねぇって、考えそうになるっ……！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "（但是――！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "啊啊啊啊啊啊啊啊！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "（我绝不会让步了！\u3000绝不会放弃了! !）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "（我……要将我所认为的『帅气』，贯彻到底！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "哒啊啊啊啊啊啊啊ーーーー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "――获胜的，是成田白仁。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "だがウオッカは最後の直線まで、\r\n見事“怪物”に喰らいつき続けたのだった……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "面白いヤツだな、オマエ。\r\n……また走ろう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "啊……！\u3000谢，谢谢您，前辈！！",
+      "ChoiceDataList": [
+        "很帅气哦，伏特加！！",
+        "很帅气哦，伏特加！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "训练员……嘿嘿，谢谢！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "……俺さ、もっともっとカッコよくなるから。\r\n見逃さねぇでくれよな！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

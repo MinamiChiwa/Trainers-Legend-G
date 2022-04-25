@@ -1,0 +1,31 @@
+{
+  "Title": "迎接出道战",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "いよいよ、ナリタタイシンの\n『メイクデビュー』出走の時がやってきた！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "出道战"
+      ]
+    },
+    {
+      "Name": "独白",
+      "Text": "落ち着かない様子の\nナリタタイシンだったが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "トレーナーの熱い励ましにより\nその緊張はほぐれたのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

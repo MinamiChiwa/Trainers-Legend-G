@@ -1,0 +1,41 @@
+{
+  "Title": "关于团队竞技场③",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "每位赛马娘都有各自\n擅长的『距离』和『马场』。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "距离",
+        "马场"
+      ]
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "根据赛马娘们的适性\n组成队伍是诀窍哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "适性",
+        "组成队伍"
+      ]
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "另外，编入更优秀的\n殿堂赛马娘，\n团队等级将会上升。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "培养强大的赛马娘，\n不断提高团队等级吧！\n这是展现训练员本领的好机会哦♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

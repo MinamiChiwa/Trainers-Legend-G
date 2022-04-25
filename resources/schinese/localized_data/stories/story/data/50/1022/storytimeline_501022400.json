@@ -1,0 +1,31 @@
+{
+  "Title": "美妙姿势登场！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "アイルランドから来た高貴なウマ娘、\r\nファインモーション。走りを楽しむ\n彼女との挑戦の日々が幕を開けた……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "美妙姿势"
+      ]
+    },
+    {
+      "Name": "独白",
+      "Text": "ファインモーションの競技生活は3年間のみ。\r\n彼女はいずれ国へ帰り、\n使命を果たさなければならない身だ……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "だが、彼女は今を全力で楽しんでいる。\r\nトレーナーは、限られた時間を充実させ、\n彼女の夢を叶えると誓うのだった……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "Title": "名指导",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "哈啊啊啊啊啊！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "哈、哈……\n……时间怎么样？",
+      "ChoiceDataList": [
+        "更新了最佳时间记录哦！",
+        "更新了最佳时间记录哦！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……这样吗。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（训练菜单安排得比较宽松……\n现在的状态也很好……这样的话——）",
+      "ChoiceDataList": [
+        "要再跑一圈吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "！……好。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……其实，我也正打算这么说。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "——那一天，我做了个梦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "梦中的我，化身为拖着青色光晕的彗星。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "在一片漆黑的宇宙中，\n全无束缚、毫无阻碍、掠过无数星尘——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "仅仅在银河中尽情驰骋着，\n直到迎来彻底燃尽的时刻为止……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

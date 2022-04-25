@@ -1,0 +1,302 @@
+{
+  "Title": "秋華賞の後に・Beautiful Sky",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众们",
+      "Text": "……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哈啊……哈啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "真开心啊～♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众们",
+      "Text": "唔哦哦哦哦哦哦！！\n美妙姿势～～～～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哎？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "不好，鸡皮疙瘩都起来了！\n连我都想跟着跑几圈了……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众B",
+      "Text": "她一定很喜欢比赛，所以才能这样享受其中吧。\n真好啊，我也想变成赛马娘～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哇～……呵呵♪\n大家都露出了很棒的笑容呢。而且――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――啊啊，多美的秋色啊。\n比赛，真的太美妙了……♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "电视的声音",
+      "Text": "『――那么，盛大非凡的秋华赏\n就此结束～！\n我们下次再会吧！』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "……果然，\n你和其他家伙不一样。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "……要完全了解你，\n还得去看你的比赛啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『秋华赏』结束后，为了回应众人对她的期待，\n美妙姿势决定召开记者招待会。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "记者",
+      "Text": "『秋华赏』辛苦您了。\n跑得非常棒呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "感激不尽。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "记者",
+      "Text": "首先想请问您，现在心情如何呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "现在心情非常清爽哦。\n正因为大家如此期待我的表现，\n我才能跑得这么尽兴。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "记者",
+      "Text": "这种心情，也传达给看了比赛的大家，\n这一件非常美妙的事情呢！\n接下来是……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "记者",
+      "Text": "啊，我想这个问题的话，\n大家都会很感兴趣。\n美妙姿势小姐接下来准备参加哪场比赛呢？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……下一场比赛吗。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "向着投来询问视线的她点点头。\n大目标的那场比赛，早就决定好了嘛！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "我准备，\n以『伊丽莎白二世女皇杯』为目标。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "记者们",
+      "Text": "噢噢～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "记者A",
+      "Text": "果然啊，根据战绩来看选这场比赛也不奇怪！\n但是，很有趣啊……\n是以“女王”这个称号为目标的吗！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "路人A",
+      "Text": "喂，看直播了吗？\n美妙姿势，决定要挑战伊丽莎白二世女皇杯！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "路人B",
+      "Text": "看了看了！\u3000呜哇～，\n要是能成为“女王”的话那可不得了啦！\n一定要去现场观看比赛～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……哼哼，招待会很成功呢。\n大家看上去都很期待呀！",
+      "ChoiceDataList": [
+        "不加把劲的话可不行哦",
+        "気を引き締めていかないとね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "エリ女はクラシックレースとは違い、\nシニア級の実力者も出てくる。\nしっかり仕上げていこうと話していると……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "シニア級"
+      ]
+    },
+    {
+      "Name": "川上公主",
+      "Text": "稍等片刻～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "現れたのは……名前に“姫”を冠する、\n猛ウマ娘、カワカミプリンセスだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "川上公主"
+      ]
+    },
+    {
+      "Name": "川上公主",
+      "Text": "方才的招待会，我已经看过了哦！\n美妙小姐，准备参加女王杯对吧！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "嗯，是这样没错……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "既然如此！\u3000我也下定决心了！\n――来与我一战罢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "我也参加了『伊丽莎白二世女皇杯』哦～～！",
+      "ChoiceDataList": [
+        "？！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "因为，因为……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "作为“公主”，\n我才不会将“女王”的宝座拱手相让！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "美妙小姐！\n这就是我的宣战布告～～～～！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "路人们",
+      "Text": "噢噢噢噢～……！\n美妙姿势的劲敌登场了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "也就是说，就像足球的……\n“凯撒”与“超级巨星”那样吗！？\n(原意成谜，我进行了直译orz)",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "虽然不大明白你在说什么，大概就如你所说吧！\n要来一场激烈的比赛了哦～～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……！真棒啊！\n这时候应该怎样回应呢！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "……唔！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "看来不用特地告诉你也行。\n毕竟，你的眼神――\n已经在说『我接受挑战』了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "路人们",
+      "Text": "哦哦哦哦哦～～！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "第二天的赛事新闻头条是……\n『伊丽莎白二世女皇杯之上，公主对决！』\n……看来能变成空前热闹的比赛呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

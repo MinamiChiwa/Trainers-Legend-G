@@ -1,0 +1,347 @@
+{
+  "Title": "爆进！\u3000班长！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "今日もいい天気だ。晴れやかな気分で\r\nトレーナー室へ向かっていると――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "让开让开请让开ー！！",
+      "ChoiceDataList": [
+        "？！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（哒哒哒哒哒哒哒哒哒哒！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（沙ーーーーーーー！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "凄まじい勢いで走ってきたウマ娘――\r\nサクラバクシンオーは、急ブレーキして目の前で止まってみせた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "ふぅ、緊急停止大成功！！\r\n即断即決即行動、さすがは私ッ！！",
+      "ChoiceDataList": [
+        "吓，吓了我一跳……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "真的很抱歉，因为我在赶时间！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "しかし、ここはトレセン学園。廊下は走るモノ、校門前は\r\nラスト3ハロン！\u3000貴方も日頃から注意することをお勧めします！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "おっと。学園で過ごすにあたっての心得を\r\nもっと説いて差し上げたいところですが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "クラスメイトたちが私の登校を\r\n今か今かと待っているに違いありませんので、これにてッ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "さぁ、頼れる学級委員長サクラバクシンオーが今参りますよ～！\r\nバクシンバクシーーーーンッ！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "サクラバクシンオーは再び、\r\n目を見張るような速さで駆け抜けていった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "言っていることのわからなさはともかく、\r\nその加速力と勢いはとても印象に残った……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "喂ーー！\u3000那边的学生，给我停ー下！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "学級委員長の目が黒いうちは！\u3000いえ、たとえ白くなったとしても！\r\n掃除当番のおサボりは許しませんよッ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "学級委員長ダーッシュ！！\r\nとぉぉぉぉーーーうッ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "学級委員長から朗報！\u3000朗報でーす！\r\nなんと今日の……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "今日の学食デザートは、桜餅！\r\nあの桜餅だそうですッ！！\u3000私も大好きな桜餅ッ！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "これは走って食べに行かざるを得ませんね！\r\nさぁさぁ私についてきてください！\u3000いざ、バクシィイイイン！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "その後も、学校中を忙しく駆け回る彼女を\r\n何度も見かけた。すると――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（咚咚咚咚！\u3000咔啦！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "失礼しまーーーーす！\u3000初めまして！！\r\n学級委員長のサクラバクシンオーです！",
+      "ChoiceDataList": [
+        "不是『初次见面』了吧……？",
+        "不是『初次见面』了吧……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "ちょわっ！？\u3000な、なんと……！？\r\nということはもしや……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "私の麗しくも素晴らしき学級委員長ぶりを\r\n既に聞き及び、惚れ込んでいらっしゃる方！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "あぁそんな！\u3000もはや学級委員長を超越した学級委員神にすら\r\n近い存在だなんて！！\u3000照れますね！！\u3000もっと言ってください！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "……1人でだいぶ暴走し始めた彼女に、\r\n朝会ったトレーナーだと伝えた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "这么一说还真是张眼熟的脸！？",
+      "ChoiceDataList": [
+        "你能想起来真是太好了"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "ハイッ！\u3000貴方は私からの誤解が解けて私も貴方のことを認識する\r\nことができました！\u3000お互いウィンウィンな出来事でしたね！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "ということで、るんるんいい気分で\r\n今日は失礼いたします！\u3000それではッ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "搞\u3000错\u3000了\u3000！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "私、頼れる学級委員長として先生に頼まれ、\r\n資料をお届けに来たのでした！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "サクラバクシンオーから資料を手渡された。ざっと目を通すと、\r\n今週末に開催される選抜レースについての要項が記されていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "顺带一提，参赛者名单上也有『樱花进王』的名字……",
+      "ChoiceDataList": [
+        "ありがとう\n非常感谢"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "ハイッ！\u3000どういたしまして！\r\nこの委員長にお任せあれです！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "さてと次は……先生に報告して、花瓶の水替えをして、\r\n学級新聞も貼り替えて、トレーニングコースの自主点検をして――",
+      "ChoiceDataList": [
+        "你很忙啊",
+        "你很忙啊"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "ハイッ、学級委員長ですから！！\u3000みんなの模範に、\r\nそして助けになれるよう全力で日々活動していますよ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "我，从小时候就实在实在很优秀。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "りんごとみかんの計算問題では『神童』と、\r\nかけっこでは『神速』と呼ばれたものですッ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "両親は私の産声を聞き、『世界を善へと導く者の誕生を確信した』\r\nと、よく話したものですが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "そんな私に転機がやって来たのが、\r\n小学校1年生の時ですッ！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "ハイッ、なんだと思いますか？\u3000ヒントは『が』で始まり、\r\n真ん中が『い』で最後が『う』のものに選ばれたことですよ！",
+      "ChoiceDataList": [
+        "被选上当班长了……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "答！！\u3000对！！\u3000了！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "立候補を募られ、恥ずかしさからか静まり返るクラス……。\r\n針が時を刻む音……。窓辺のチョウチョ観察に勤しんでいた私……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "不久，老师对坐在最前排的我这样说道。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "『みんなのお手本になれる、\r\nえらい子にしかできないお仕事よ。どう？』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "在那个时刻――我确信了！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "私こそは学級委員長！！\r\n学級委員長こそは私！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "優秀さ溢れる神童にして神速なこの私は、全員の模範たる\r\n学級委員長としてみなさんを導くため、この世に生を受けたのだと！",
+      "ChoiceDataList": [
+        "（诶诶……）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "おっと、少々おしゃべりが過ぎました！\r\n今度こそ私はこれで失礼いたします！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "爆进爆进ーーーー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "そしてサクラバクシンオーは、\r\n朝にも見た凄まじい速さで駆け去って行った。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "言っていることの意味はよくわからないが、\r\n彼女が選抜レースで見せる走りには、ちょっとだけ興味が持てた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "……只是稍微而已。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

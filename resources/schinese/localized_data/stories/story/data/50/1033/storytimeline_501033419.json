@@ -1,0 +1,39 @@
+{
+  "Title": "希望锦标后・绘出大三角",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "覚悟をもってホープフルSを見事駆け抜けた\r\nアドマイヤベガ。さらなる栄光を求め、\n大目標にクラシック三冠路線を掲げる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "クラシック"
+      ]
+    },
+    {
+      "Name": "独白",
+      "Text": "そんな姿に励まされ、ナリタトップロードも\r\n翌日のレースで、覚悟を胸に見事な走りをし、\n無事に1着を手にした。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "同期たちも次々と開花の時を迎え、\r\nにわかに世代全体が盛り上がり出す。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そんな強き同期たちを相手取って――\r\nクラシック三冠路線の初戦、\n『皐月賞』に向けてのトレーニングが始まる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "皋月赏"
+      ]
+    }
+  ]
+}

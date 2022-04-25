@@ -1,0 +1,140 @@
+{
+  "Title": "追加的自主锻炼",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "ふー、今日もお疲れさまでした。\r\nさてと、帰る前に道具を片づけて――あっ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（咯噔！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "？？？",
+      "Text": "うわああぁぁっ！！\r\nで、出たなあぁ～～～～っ！！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "微光飞驹",
+      "Text": "って、あれ！\u3000ファイン先輩……！？\r\nな、なんだ、噂のおばけじゃなかったか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "あらあら驚かせてごめんなさい。\r\nところで、噂のおばけ……とは？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "微光飞驹",
+      "Text": "知らないのか！？\r\nここ最近ジムに出るって噂なんだ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "微光飞驹",
+      "Text": "だから先輩たち、気をつけて帰るんだぞ！\r\nアタシはもう少しやっていくけど……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "微光飞驹",
+      "Text": "ヒ、ヒーローはおばけなんか恐れないんだっ！\r\n今日のノルマは絶対やりきる……！\nこここ、怖がってなんかいられない……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "なるほど……トレーナー、\r\n私ももう少し練習していってもいいかな？",
+      "ChoiceDataList": [
+        "没问题哦！",
+        "还是别逞强比较好哦……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "ありがとう！\r\nねぇビコーちゃん、ご一緒しても？\nその噂、詳しく聞かせてくださらない？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "微光飞驹",
+      "Text": "あ、ああ！\u3000最近夜になると\r\nレッグプレスする骨格標本が出るって……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "まぁ！\u3000骨なのに鍛えているの……！？\r\n何か事情があるのかしら……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "微光飞驹",
+      "Text": "はっ！\u3000そうなのかも……。\r\nも……もし出たら2人で訊いてみよう！\nヒーローは戦う前にまず説得！\u3000だからなっ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "こうして、ファインモーションは\r\n怖がりつつも頑張るビコーペガサスと\n一緒に追加練習をするのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "むむ、確かにオーバーワークだね。\r\nでも……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "微光飞驹",
+      "Text": "先輩……アタシを心配してくれてるのか？\r\n……それなら大丈夫だ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "微光飞驹",
+      "Text": "おばけが出ても、アタシが倒す！\r\n怖くても……いや、怖いからがんばるんだ！\nみんなに怖い思いをさせないように！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……！\u3000キミは、勇敢なんだね。\r\n私が思っているより、ずっと……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "お見それいたしました。\r\n貴方のその勇気を称え、\n聖なるお守りクローバーを授けます。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "微光飞驹",
+      "Text": "す……すげーっ！\u3000ハチミープリンセスが\r\nくれる『新芽タリスマン』みたいだ！\nなんか勇気湧いてきたぞ！\u3000ありがとな！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "ふふふ、キミにご加護がありますように。\r\nおやすみなさい。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

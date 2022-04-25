@@ -1,0 +1,66 @@
+{
+  "Title": "因头痛而忧郁",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "这是在和爱慕织姬一起商讨训练方案时发生的事。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………",
+      "ChoiceDataList": [
+        "怎么了？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……没什么。\n我去呼吸下新鲜空气——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "呜呜……！",
+      "ChoiceDataList": [
+        "头疼吗？",
+        "头疼吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……不必在意。\n只要喝了药，马上就能治——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "呜呜…………！",
+      "ChoiceDataList": [
+        "……要是严重的话，可别逞强啊。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……是呢。\n毕竟这也是她与我共有的身体……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "看来爱慕织姬深受偏头痛所扰……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,305 @@
+{
+  "Title": "逐渐改变的期待",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "能令人忘却将近冬日之寒的两分钟激战——『天皇赏（秋）』！\n在这个舞台上，她回来了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "在『天皇赏（春）』之前因负伤而遗憾缺席的\n“三冠赛马娘”成田白仁已做好充足准备参与此次比赛！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "今天会给我们展现一场怎样的比赛呢，\n她现在已经得到压倒性支持成为人气第一！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "春季那时太遗憾了～！\n好想赶快看到白仁的比赛啊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众B",
+      "Text": "或许她还能破纪录呢！\n等不及了～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "你的伤势我一直看在眼里，虽然训练时间\n达不到以往的程度，但状态还是很不错的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "而更重要的是，你对奔跑的渴望未曾改变。\n让我们见识一下你那压倒性的奔跑吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "而更重要的是，你对奔跑的渴望未曾改变。\n让我们见识一下你那压倒性的奔跑吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……啊啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……我会尽自己所能的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "转过最终弯道来到最终直线！\n各赛马娘同时开始冲刺了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "哦！？\u3000成田白仁，速度是不是没跟上！？\n后方马娘趁此机会超过她了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "这个秋天——成田白仁的复出赛为第12名\n以谁也没能预料到的方式结束了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "哈……呼……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "嗯，状态看起来还不错。\n双腿也没什么问题。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "是不是伤还没养好呢——我虽然有过这种猜想，\n但成田白仁却没有类似的表现，努力进行着训练。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "好，那接下来模拟一下最终直线吧。\n下次比赛是『日本杯』，东京竞马场的直线可是很长的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "最后冲刺……吗。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "是啊，怎么了吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "是啊，怎么了吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "抱歉可以换成别的训练项目吗？\n冲刺的话我之后会自己训练的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "虽然没啥问题……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "『日本杯』比『天皇赏（秋）』距离要长，\n我想调整一下节奏的分配。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "明白了，那么就进行节奏分配的训练吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "啊，那我去了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "……她还是头一次要求改变训练项目呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "摩耶重炮",
+      "Text": "明明听说她伤已经好了来着，为什么呢……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "摩耶！\u3000训练已经开始了哦ー！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "摩耶重炮",
+      "Text": "啊，嗯！\u3000我这就过去ー！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "摩耶重炮",
+      "Text": "……看白仁同学现在的跑步总感觉很奇怪。\n不像那时能令人心跳不止……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "摩耶重炮",
+      "Text": "……白仁同学。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "节目主持人",
+      "Text": "『关于成田白仁，我们采访了\n当时在现场观看比赛的粉丝』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "节目观众A",
+      "Text": "『仔细想想的话，这种表现很正常啊。\n毕竟她休养了整整半年之久』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "节目观众B",
+      "Text": "『对啊！\u3000白仁下次比赛就能完全复活了！』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "电视节目和新闻都在说这次白仁的表现是\n“没从休养中调整回来”呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "估计也有没找回比赛状态的原因，刚刚复出就\n想要马上回到巅峰状态是非常难的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "因为见过太多次白仁的压倒性胜利，\n才不小心忘记了常识——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "刚养好伤的复出赛可不会那么轻松就能获胜。\n所以『日本杯』之前必须要把状态调整过来。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "嗯……是这样呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我的心中并非没有不安。\n她的奔跑总是能超越我们的常识。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "因此“没从休养中调整回来”这种普通的理由，\n我自己一时都没能接受。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "哈……哈……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……抱歉训练员，就算这样我也……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "我也要以现在的自己奔跑下去……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "还剩200m！！\u3000“女杰”菱亚马逊朝着领先位置猛追不舍！\n但成田白仁却难以提速了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "菱亚马逊，以毫厘之差仅获第2名！\n成田白仁在更后方，以第6名冲线！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "与『天皇赏（秋）』相同，这场『日本杯』\n也没有发生意料之外的情况ー！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "Title": "先慢慢说吧……♪",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "怪しげな占い師",
+      "Text": "――おお、そこのお嬢さん！\r\nよくないオーラが見えますぞ……。\nこのままでは貴方の師に災いが……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "我的老师……是说训练员吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "SP队长",
+      "Text": "殿下，没必要听信那般戏言……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "いいえ、決めつけはよくありません。\r\nまずは最後まで聞いてみませんと。\nまだトレーニングまで時間もありますし……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "失礼了。请继续说吧♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――なるほど。貴方が心から私を案じる\r\nお気持ち、大変よくわかりました……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "占卜师",
+      "Text": "いやはや、人の不幸はどうしても\r\n見過ごせなくてね……。\nお代はいらないから安心してお聞き！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "まぁ、お優しいこと。\r\nお客でもない見ず知らずの私を相手に……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "SP队长",
+      "Text": "殿下，训练的时间已经……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "ごめんなさい……。もう少しだけ\r\nこの方とお話をさせてくださる？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "彼女の真心は本物……。\r\nそれに、もし占いが当たっていたら\nトレーナーが心配ですから。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "ファインモーションは詳しく話を聞き、\r\nトレーニングをサボってしまったのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

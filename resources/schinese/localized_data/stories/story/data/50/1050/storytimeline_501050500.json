@@ -1,0 +1,121 @@
+{
+  "Title": "名指导",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……あ、スタミナ回復アイテム落ちた。\r\nまだ時間あるし、使っちゃおっかな……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "大————进————！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……あーもう、アンタは。\r\nいちいちデカい声で呼ぶなっての。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "えへへ、ごめんごめーん！！\u3000でもさでもさ、\r\nさっきすっごく面白いことがあってー！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "好好好，你等下啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "好了。什么事?",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "………………哎哎哎？？？？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "た……たた、た……タイシィィィィン！！\r\nうぉおおおおーーーーーーんっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "唔哇？！\n你又怎么了啊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "因、因为……\n你看嘛！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "ゲーム中のキミが、スマホをしまって\r\nアタシの話を聞こうとしてくれるなんてっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "がんどうじだぁあああ！！！\u3000おしゃべり、\r\n少し好きになってくれたんだねぇぇぇーー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "や、違っ、これは……！！\r\nあぁクソっ……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "最近、ナリタタイシンと上手に\r\nコミュニケーションが取れている気がする。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ということで、今日もトレーニングについて\r\n話そうと思っていたのだが……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……今日はこのまま聞くから。\r\nアンタ、勝手に喋ってて。",
+      "ChoiceDataList": [
+        "诶！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "不该只说一句“诶？”吧！\n不就是说今天我会好好听你说话吗？！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……なんだかやけに照れくさそうな\r\nナリタタイシンなのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,284 @@
+{
+  "Title": "エリザベス女王杯にむけて",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "『伊丽莎白二世女皇杯』当天。\n开赛前，通过入口的时候……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "――女王杯，就要开始了呢～！\n我，很期待这场比赛的～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众B",
+      "Text": "我也是我也是！\u3000不管怎么说……\n大家都很期待『公主对决』呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "啊啊，美妙姿势大人！\n一定会展现出不同寻常的水平吧。\n不愧是王室～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众B",
+      "Text": "这样的话川上公主小姐也是，\n能展现出符合公主之称的水平吧！\u3000……大概！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A&B",
+      "Text": "哈啊～……会变成一场华丽的比赛呢……",
+      "ChoiceDataList": [
+        "（是这样吗……）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "……\n会变得华丽，才有鬼了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "你丫，快点给那家伙说吧。\n说不想看见她那种只想着玩乐的跑法。",
+      "ChoiceDataList": [
+        "你也来看比赛啦",
+        "観にきてくれたんだね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "……那家伙啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "那家伙肯定像平时一样一边呵呵傻笑一边跑吧。\n就这么跑居然也能跑出成绩来。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "但就算如此……她也有“结束”。\n我就为了确认此事而来的。",
+      "ChoiceDataList": [
+        "……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "……新干线的费用报销，\n就不劳你费心了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "エアシャカールも注目する、\r\n今年の『エリザベス女王杯』は――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "Let's・大毅力～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "大毅力～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（zuwa……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "在骚动之中，开幕了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "呵呵！\u3000美妙小姐，请看看吧？\n大家都已经沸腾了哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "さすがカワカミちゃん。\nこれが日本式プリンセスの流儀なんだね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "カワカミ"
+      ]
+    },
+    {
+      "Name": "川上公主",
+      "Text": "那是当然！\n我呢，等这一天好久啦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "毕竟，能和你比赛什么的，\n就好像梦一样……该说是，梦幻对决呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "梦幻对决！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "正是如此！\u3000堂堂正正地，\n一决胜负吧吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "美妙小姐！！\n我要打倒你！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……唔！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……这……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "えっ！\u3000ど、どうしましたの！？\r\n本当にブッ倒れちゃ嫌ですわ～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "唔嗯，不是啦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "因为刚刚我的心也躁动起来了，\n有点汗毛倒竖的感觉呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "好像自从你的宣战布告之后……\n就一直有种心悸的感觉。这是为什么呢？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "嚯。什么呀，就这种事情啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "这很简单啦！\u3000美妙小姐，你啊――\n也想打倒我！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "这就是你的斗争心正在熊熊燃烧的象征！\n作为劲敌而言，我非常光荣呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "我的，斗争心……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势的姐姐",
+      "Text": "『――对不起呀，美妙。\n不过我呀，必须要去赛场。』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势的姐姐",
+      "Text": "『我的挚友们，正在更远的舞台上等着我。\n更何况――我的心正叫喊着，\n要让我和她们互相竞争，紧抓胜利。』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势的姐姐",
+      "Text": "『所以说，美妙，对不起――』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "这……可不行啊。\n因为，一旦知晓了这种感觉……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――我是，为了成为“支柱”才…！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "？\u3000虽然还不大明白，\n总之，是你也会全力应战的意思对吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "美妙小姐！\n你尽管放马过来吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "嗯……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

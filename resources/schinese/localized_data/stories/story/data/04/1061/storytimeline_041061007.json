@@ -1,0 +1,368 @@
+{
+  "Title": "特训大混乱！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "今週から夏合宿が始まり、ビーチでのトレーニングに\r\n励んでいたキングヘイローだったのだが……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "训练员，沙滩上的训练已经足够了。",
+      "ChoiceDataList": [
+        "突然这是怎么了？",
+        "突然这是怎么了？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "うふふっ……♪\r\nそうね、トレーナーにも教えてあげるわ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "私、秘密のトレーニングの情報を聞いたの！\r\n数々のＧＩウマ娘もこなしたという、一流のトレーニングよ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "なんでも合宿所の裏の森に、超上級者用コースがあるんですって！\r\nあなたも知らなかったでしょう？",
+      "ChoiceDataList": [
+        "没听说过……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "おーっほっほっほ！\u3000当然よね。\r\nだって私も最近ネットで見つけたんだもの！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "まあ、『素人は痛い目を見る』とか書かれてたけど？\r\nこのキングが、失敗するわけないじゃない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "あなたは何も心配することはないわ♪\r\n私に全部任せておきなさいっ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "虽然圣王光环这么说――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "妹妹头马娘",
+      "Text": "诶～～！？\u3000圣王，明天真的要去森林里跑步～！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "嗯，是啊？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "猫眼马娘",
+      "Text": "で、でもそのコースって大丈夫なの？\r\nコース自体怪しいって聞いたけど……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "ふふん、大丈夫よ！\u3000キングは一流のウマ娘なんだから！\r\nどんなコースでも走り切ってみせるわ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "……姑且，为了明天我得多做点准备了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "――之后第二天。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "おーっほっほっほっほ！\u3000来たわね、トレーナー。\r\n今日は、私考案の完っ璧なトレーニングに付き合う権利をあげるわ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "我已经做好充分的准备了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "昨晩、ウワサの超上級コースを全部調べたの！\r\n携帯の地図にもマークはバッチリよ！",
+      "ChoiceDataList": [
+        "没带手机地图以外的地图吗？",
+        "没带手机地图以外的地图吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "いらないわ。今はデジタルの時代だもの。\r\n携帯に全て収めて、スマートに生きないと。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "それに比べて、あなたはまだまだね。\r\nそんな重装備でどこに行くというのよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "ま、私のお荷物にならないなら、構わないけど。\r\nさあ、しっかりキングについてきなさいっ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "然后她开始了山间的训练――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "はあはあ……やっぱり山道は走りにくいわね。\r\n自然の障害物やら凹凸が多すぎるのよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "しかも全然道も舗装されてないし、やけに湿気が凄いし……。\r\nはあ、いま何度かしら……けいたい……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "呃，呀！？\u3000虫，虫虫虫子！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "训，训训训练员快想想办法啊～～！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "哎……哎……哈……",
+      "ChoiceDataList": [
+        "没事吧？",
+        "没关系吧？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "だ、大丈夫よ。これくらいでへこたれるキングじゃないわ……。\r\nさあ、次の目的地に……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "……啊啦？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "喂，训练员。你看到我的手机了吗？",
+      "ChoiceDataList": [
+        "弄丢了吗……？",
+        "弄丢了吗……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "そ、そーんなわけないでしょう！\r\nただ聞いてみただけ！\u3000一流のウマ娘が携帯を失くすだなんて……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "……快想起来啊，快想起来啊……我……哈！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "そっ、そうよ。トレーナーっ！\r\nさっき虫が出た所あったじゃない！？\u3000あそこまで戻りましょう！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "ええっと、第2休憩地点のところよね。大丈夫、大丈夫よ。\r\n携帯の地図にはちゃんとマークを入れておいたんだから……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "……手，手机！！",
+      "ChoiceDataList": [
+        "真的没事吗……？",
+        "真的没事吗……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "だ、大丈夫にきまってるじゃない……。\r\n別にこの程度のハンデで、私が諦めるわけがないんだからぁ～……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "ちゃんと携帯も見つけて、ちゃんと森も抜けて、\r\n合宿所に帰るわよぉ～……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "……このままだと遭難まっしぐらだ。\r\n地図を開きながら、これまでの道を思い出していると――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "真是的～，这种时候了你还在干什么啊～……",
+      "ChoiceDataList": [
+        "我猜到会发生这种事了"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "えっ、それ地図じゃない！\u3000しかもコンパスまで！\r\nそれにこの赤線は……もしかして、今まで走ってきた道？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "你做的好啊，训练员！\n有了这个的话我的手机也能……",
+      "ChoiceDataList": [
+        "我们去找回来吧"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "呜…………拜托，你了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "总算是平安回来了啊……",
+      "ChoiceDataList": [
+        "没受伤吧？",
+        "没受伤吧？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "ええ、何も問題はないわ。\r\nこの通り私の携帯も無事だったし……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "それにしても……随分と準備が良かったのね。\r\nコースを決めたのは、昨日、突然だったのに。",
+      "ChoiceDataList": [
+        "因为我的目标是一流的训练员嘛",
+        "因为我的目标是一流的训练员嘛"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "……生意気ね。でも……ええ、認めるわ。\r\n今回は私のミス……準備不足が招いたことよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "あなたが地図やコンパスを用意していなかったら、\r\nもっと大変な目に遭ってたと思う。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "所以……对不起啊，给你添麻烦了。",
+      "ChoiceDataList": [
+        "你没事就好",
+        "你没事就好"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "……哼。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "今日だけは褒めてあげる。\r\n一流のウマ娘を敬う、あなたの姿勢は一流だったんじゃない？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "じゃ、これから反省会といきましょうか。\r\n明日こそは森でのトレーニングをパーフェクトにするわよ。",
+      "ChoiceDataList": [
+        "明天也要去吗！？",
+        "明天也要去吗！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "当然でしょ！！\u3000私は一流のウマ娘キングヘイローなの。\r\n『不可能』とか『諦め』とかそんな言葉は私の辞書に存在しないわ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "早く合宿所へ戻りましょう！\r\n一流のトレーナーなら、私を待たせないはずでしょっ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "そして、キングヘイローに振り回されながらも、\r\n夜通し2人で反省会をすることになったのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

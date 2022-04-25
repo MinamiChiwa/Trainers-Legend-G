@@ -1,0 +1,332 @@
+{
+  "Title": "迎接皋月赏",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『皋月赏』开始的前一天――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "呼、呼、呼―……呼。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……嗯。脚也很轻盈。感觉不错。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（……总觉得，那家伙的训练方案很适合我……\n是为了我调整过吗？……大概吧。）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（倒希望他改下那热血过头成天唠叨的模样……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "好。就按照这个步调――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……啊。\n久违地去那里看看吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哼……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（やっぱりここは、静かでいい。\r\n……1人は、落ち着く）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（――反正，大家都把我当做笨蛋。）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（チビで卑屈な痩せっぽち。愛嬌だって\r\nカケラもないし、『バカにしていい』理由は\n山ほどあった）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（日常でもそう。レースでもそう。\r\nどいつもこいつも、\nアタシの居場所を認めない）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（……でも、別にいい。\r\n勝手に言ってろ。好きなだけ）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（バカにしてきた分だけ、\r\n観客席でバカ面させてやる……！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……回去休息吧。\n明天……一定要赢下来。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（不……我是……不得不赢下来啊……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（只有在比赛里获胜……\n想要被认同，只有这样做……！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "？？？",
+      "Text": "――您好。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "呀！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "一个声音突然响起。\n大进吓了一跳，飞快地转身看去――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "红发的少女",
+      "Text": "对不起，吓到您了。……您是成田大进小姐对吧？\n那位参加比赛的赛马娘。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "一位与成田大进一样，\n身材娇小的红发少女正站在那里。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "是我。怎么了？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "红发的少女",
+      "Text": "『皐月賞』、でしたっけ。\r\n明日のGⅠレース、出るんですよね？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "红发的少女",
+      "Text": "『二强』……她们跟您比起来，体格更占优势；\n而且比赛里也有其他比您更强的赛马娘……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哈？\u3000……你到底想说什么？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "红发的少女",
+      "Text": "其实没什么……只是很普通的事情。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "红发的少女",
+      "Text": "明明谁都没有在期待你……！\n明明谁都不觉得你能赢……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "红发的少女",
+      "Text": "为什么不放弃呢？\n……这种时候……就算放弃了，也很正常吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "倒也没什么普通不普通。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "期待背負って真っ直ぐ走ったことなんか、\r\n1度もないし。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "アタシは全員見返してやりたいだけ。\r\n夢だなんて呼べないくらい……歪んでる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "けど、だからって何？\u3000歪んでるからって、\r\n何で諦めてやらなきゃなんないわけ？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "アタシはやり抜く。\r\nアタシの力を認めさせる。……それだけ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "红发的少女",
+      "Text": "呜……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "红发的少女紧咬着嘴唇，转身跑走了。\n她的双脚上，正装着运动用的辅助器材……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "――第二天。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……要赢。绝对要赢。",
+      "ChoiceDataList": [
+        "（比平时更厉害的气势……！）",
+        "（いつも以上にすごい気迫……！）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "目に見えるかのような燃え盛る闘志を纏い、\r\nナリタタイシンは準備を整えた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "――要上了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（唔哦哦哦哦哦哦！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "奖券！！\n今天也让我们看看你那华丽的居中战术哦！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众B",
+      "Text": "琵琶晨光！！\n我来见证你的胜利了哦！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "记者",
+      "Text": "――请各位听听看！\n这就是各位观众在见到两位夺冠热门后的欢呼！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "记者",
+      "Text": "果然，『皋月赏』之上最受瞩目的就是『二强』，\n胜利奖券和琵琶晨光的直接对决！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……真是随着自己的性子瞎闹。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "那你们就给我看好了啊……你们所有人……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "2人",
+      "Text": "嘶……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "……你也感觉到了吗，奖券？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "嗯……！\n又有点害怕……但却很期待……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "『二强』……虽然我们是被这样称呼的……\n但我们也都比谁都更清楚，\n这场比赛可不止二强。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "大进……！！\n我也不会输的！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『皋月赏』，开幕……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

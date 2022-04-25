@@ -1,0 +1,373 @@
+{
+  "Title": "新年参拜",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――哇好多人啊！\n日本的新年真的很热闹呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "SP队长",
+      "Text": "殿下。今天出门之前和我们约好的事情，\n您还记得吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "はい、わかっています。\r\n『護衛の方々から決して離れません』！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "不过，不用这么担心也可以哦。\n训练员也和我在一起――啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "言い忘れていた！\r\nあけましておめでとうございます♪",
+      "ChoiceDataList": [
+        "可喜可贺！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "今年もよろしくお願いします！\r\n最高の1年にしようね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "毕竟是我生涯仅剩的一年……\n如果不尽情享受的话，\n就太浪费了嘛♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "――1個も残ンねェってことだ。\r\n全部お前の大好きな“思い出”になるンだよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "『エリザベス女王杯』の後、エアシャカール\r\nから“期限”について突きつけられ……\nその時の彼女の表情は硬かった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……没事吧？",
+      "ChoiceDataList": [
+        "欸……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "私は何も忘れていない。\r\n終わりは最初から、決まっていたじゃない！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "SP队长",
+      "Text": "……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "毕竟祖国的使命对我而言是绝对的。\n这是我理应做到，也是想要做到的事情。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "本当は今もその使命に従事すべき私が、\r\nこうして自由に走って、初詣もしている！\n充分……充分以上だよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "我在这三年里，\n也从大家那里得到了不可取代的礼物。",
+      "ChoiceDataList": [
+        "礼物？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "嗯。和我成为朋友的大家那里得到了\n因大家的好意而诞生的，\n梦一般的时间……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "真的非常棒，我也非常开心！\n对我而言是最喜欢，也是最重要的……\n最幸福的时间。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "实在是非常感谢。\n有了这般幸福的回忆，\n我才能安心地回去履行自己的使命。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "现在想想的话，她一开始就是这样。\n她从来没把这当作是义务或者说牺牲。\n她打从心底里就渴求着为他人做点什么。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "所以说呢！\u3000为了不留下后悔，\n直到最后为止我都要好好享受哦♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "这毫无疑问是真心话。\n但是――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "好，这些困难的话题到此为止！\n好不容易才说服了队长，\n真想找找看有什么有趣的东西呀……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "训练员！\n新年的『护送』，就能麻烦你吗？",
+      "ChoiceDataList": [
+        "新 年 料 理 修 行",
+        "成 长 祈 愿！巡礼参拜！",
+        "飞 行 道 具！瀑布修行！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊，感觉能度过很快乐的时间呢！\n快点出发吧♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "就这样，在队长已经调查过的名单中\n去了获得许可的高级料理亭……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊！\u3000这个筷子，\n是所谓『祝筷』吧？",
+      "ChoiceDataList": [
+        "你知道吗？",
+        "知ってるの？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "嗯。是出于『神人共食』……这样的想法吧。\n这一侧是神明大人用的，这一侧是人用的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "筷子的长度也有特别的意义呢，\n是与日本象征着吉祥的八个字有关联吧。\n还有其他很有趣的东西――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "美妙姿势她，\n大概早已学过各国有关的礼仪知识了吧。\n拥有这样丰富的知识，学到新东西的反而是我啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――はぁ～、楽しゅうございました♪\r\n素敵なエスコートをどうもありがとう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哈哈，好像很有意思！\n那就快点开始吧♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "就这样\n朝着事先调查过的神社开始巡礼……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "好，结束！\n训练员，下一个是――",
+      "ChoiceDataList": [
+        "ぜえっ……ぜえっ……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哈哈哈，没事吧？\n走了好久呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "好啦站好啦，调整一下呼吸！\n还有两个神社没去呢。要加油哦♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "没想到美妙姿势她\n还挺斯巴达的……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――はぁ～、楽しゅうございました♪\r\n素敵なエスコートをどうもありがとう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "诶诶！？\u3000我想玩玩看！\n务必带我一起去玩！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "SP队长",
+      "Text": "请稍等片刻。\n是说在瀑布之下冲洗自己的那种事情？\n我认为这是比较危险的行为，尚需商议。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "的确。如果不做好准备就去挑战的话\n的确可能会遇上危险。\n于是――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "训练员……真的没问题吗？\n说是要先自己试试看……\n这不跟试毒一样吗。",
+      "ChoiceDataList": [
+        "任せろ！",
+        "交给我吧！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……我很担心呀～！\n可不要逞强呀？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（唰啦啦ーーーーーーー……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "训，训练员……？\n嘴唇都发紫了哦！？\u3000没事吧！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "因为瀑布修行实在是很冷很难受，\n我代替她进行了祓禊……\n就是这样了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――哈～，尽情享受了一番呢♪\n这样美妙的『护送』也万分感谢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "那么，接下来是是对今天的回礼……\n由我『护送』训练员去我推荐的拉面店吧！",
+      "ChoiceDataList": [
+        "我就知道"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哼哼，当然啦！\n从新年开始就开始开张的店家，\n也必须要回应他们的这份心意呢――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "路人A",
+      "Text": "啊……是美妙姿势……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "SP队长",
+      "Text": "！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "路人A",
+      "Text": "噫……啊，对，对不起，\n我，我只是个粉丝……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "谢谢您愿意和我打招呼。\n对您一直以来的支持表示万分感激！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "路人A",
+      "Text": "啊……！\u3000那个，女王杯上很厉害呢！\n我一定不会忘记那天的……！\u3000\n那，再见……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……不会忘记……吗。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "我也，\n不想被忘记啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "ファインモーションは目を伏せたが、\r\nそれは一瞬のことで……すぐにいつもの\n明るい笑顔で、ラーメン屋に向かった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

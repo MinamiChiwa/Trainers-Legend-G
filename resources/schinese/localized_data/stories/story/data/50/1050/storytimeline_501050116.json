@@ -1,0 +1,576 @@
+{
+  "Title": "『我相信你』",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "大进今天也没来训练。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "聞いたところによると、\r\nしばらく学園にも顔を出していないそうだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "心配だが……『走り続けるか否か』、\r\nそれを決めることができるのは本人だけだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "所以说――",
+      "ChoiceDataList": [
+        "（我就在这里等着你——）",
+        "（私はここで、貴方を待ってるよ）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "――我决定，继续相信她。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（我……这之后怎么做才好啊。）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "あら……タイシンちゃ～ん。\r\nお客さまがいらしてますよ？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "诶？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "大进！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "奖券……突然跑来干嘛――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "跟我来！！\u3000现在立刻马上！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……哈啊？\u3000篮球比赛？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "是的！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "アタシが最近注目してる女バスの選手が、\r\n今日の試合でひっさびさにスタメンなんだ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "いや、アンタのスポーツ好きは知ってるけど、\r\nなんでわざわざアタシまで……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "……アタシはさっ、スポーツ観ると\r\n元気出るんだ！\u3000うぉぉって、アツくなれる！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "だから、だからさっ……その。\r\nタイシンも――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "让大进也呜呜呜呜呜呜……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "啊……知道了知道了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "陪你看比赛就好了吧。\n我陪你看陪你看。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "タイシン……！！\r\nへへっ、じゃあテレビつけるね！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……啊？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（……哎？\n那个红头发的家伙，好像是――）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "『――決まりましたっ、ブザービーター！！\r\nなんとこの試合11本目の3ポイントで、\nチームの勝利を飾りました！！』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "うぉおおおおっ！！\u3000すごいすごいすごいっ、\r\nすごぉおおおおおい！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "タイシン観た観たっ！？\u3000すごいよねぇ！！\r\nこの赤い髪の子！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "去年あたりまで調子悪そうだったんだけど、\r\n今年の春頃から急に伸びてきてさぁぁぁ～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（今年春天……好像是……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "红发的少女",
+      "Text": "誰もあなたに期待してない！\r\n勝てるだなんて思ってない！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "红发的少女",
+      "Text": "为什么不放弃呢？\n……这种时候……就算放弃了，也很正常吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "あっ！\u3000試合後インタビューだ！！\r\nねえねえっ、その子が答えるみたいだよ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "记者",
+      "Text": "『――您在赛场上大大活跃了一番呢！！』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "红发的少女",
+      "Text": "『ありがとうございます！！\r\n練習の成果を発揮できて、嬉しいです』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "记者",
+      "Text": "『長い不調に悩まされていたと伺いましたが、\r\n転機となる出来事があったのでしょうか？』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "红发的少女",
+      "Text": "『……あたし、見ての通り、バスケ選手\r\nなのに身長に恵まれなかったんです』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "红发的少女",
+      "Text": "『それで周りに差ばかりつけられて……\r\n今年の春頃は、かなり腐ってて』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "红发的少女",
+      "Text": "『どうせ誰もあたしになんか期待してない、\r\nだったらもうやめちゃいたいって、\n思ってたんですけど――』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "红发的少女",
+      "Text": "『“諦めない勇気”を、もらったんです。\r\nちょっとひねくれてるけど、誰よりも強くて、\n絶対に諦めない……そんな方から』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（那家伙……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "红发的少女",
+      "Text": "『競技は違うけど、その方はあたしにとって\r\n1番の憧れの選手です』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "红发的少女",
+      "Text": "『……だからあたしも、見せつけてやります！\r\nいびつでも、みっともなくても、歪んでても』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "红发的少女",
+      "Text": "『みんな見ろ、これがあたしの形だぞって――\r\n誇ってやるつもりでいます！』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "うぉおおおおおおんっ！！\r\nがんどうじだぁあああ～……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "『小さいのに頑張ってるね』、ってワケ？\r\nなんかそれも、バカにされてるみたい――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "才不蠢！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "呀！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "逆境に負けない！！\r\n辛くても諦めないっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "絶対やってやる、って覚悟がカッコいいんだ！\r\n励まされて、奮い立たせられるんだよっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "少なくともっ……アタシにとってのキミは、\r\nずっとそうだったよ、タイシンっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "我不是因为你个子小才把你当作劲敌的！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "因为是大进，所以才能做我的劲敌！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "…………唔。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "もう帰るべきだ、いやもう少しだけ……\r\nそんな問答を、何度頭の中で\n繰り返したことだろう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "そうして日が傾き始めた頃、\r\n――彼女は現れた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……你，一直在这里吗？",
+      "ChoiceDataList": [
+        "……是啊。",
+        "……嗯。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……每天都在等我？",
+      "ChoiceDataList": [
+        "嗯。",
+        "嗯。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……为什么要相信我到这种程度啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "スカウトしてくれたときから、ずっとそう。\r\n……アタシはアタシのことなんか、\nちっとも信じられないのにさ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……わかんないよ、もう。\r\nアタシ、どうしたら――",
+      "ChoiceDataList": [
+        "打算放弃了吗？",
+        "もう、諦めたい？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "咦――",
+      "ChoiceDataList": [
+        "放弃跑步，也是很棒的选择哦。",
+        "走らないことだって、立派な1つの選択だよ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……………………不要。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "いやだっ……諦めたくない！！\r\n諦められるもんか、こんなところで！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "けどっ、わかんないんだよ！！\r\nアタシはアタシの形を誇れない！\n歪んでてみっともないとしか思えない！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "この形でいい、これで走り続ける、なんて……\r\n信じることなんか、できないよ……！",
+      "ChoiceDataList": [
+        "那我就连着你的份一起相信你！！",
+        "なら私が、貴方の分まで信じる！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "…………哈？",
+      "ChoiceDataList": [
+        "管他不安还是别的什么想法，全部都由我来承受！",
+        "不安は全部、私にぶつけて！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "全……全部……",
+      "ChoiceDataList": [
+        "我会一直相信你，\n直到你说出『没事了』的那一天为止！",
+        "貴方が信じられるまで『大丈夫』って言う！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "いや……いやいや。\r\n何を言い切っちゃってんの、アンタ……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "あのさ……アタシ、ここにきてまだ\r\n変われてないんだよ？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "アタシの分まで、とか、そんな……\r\n背負っちゃったらさ、いつ解放されるかも\nわかんないのに……。",
+      "ChoiceDataList": [
+        "等到什么时候都可以！",
+        "いつまでかかってもいいよ！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "～～～～啊啊啊！\n陪我承担一辈子也可以吗，笨蛋！！",
+      "ChoiceDataList": [
+        "那就陪你承担一辈子！！！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "诶…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……噗。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "――哈哈哈哈哈哈！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "『一辈子』什么的……\n说得太过啦，笨蛋。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "我的训练员……真是个笨蛋呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "『那我就稍微再跑跑看。』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "そう言ってくれたナリタタイシンと共に、\r\n次の目標レースについて話すことにした。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "ナリタタイシンが再び前を向けるように――\r\nそう考えた時、1つ提案したい\nレースがあった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……『日経賞』？",
+      "ChoiceDataList": [
+        "和『皋月赏』一样，\n是在中山体育场举行的比赛",
+        "『皐月賞』と同じ中山レース場での開催だよ"
+      ],
+      "ColorTextInfoList": [
+        "日经赏"
+      ]
+    },
+    {
+      "Name": "",
+      "Text": "世間がナリタタイシンの力を認めるに至った\r\n『皐月賞』。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "大きな転機を迎えた中山の地で、\r\nもう1度走ってみるのはどうだろうか。\nそう提案すると――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "我明白了。试试看吧。",
+      "ChoiceDataList": [
+        "这样就好吗？",
+        "いいの？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "嗯。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "我就……再试试看吧。和你一起。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

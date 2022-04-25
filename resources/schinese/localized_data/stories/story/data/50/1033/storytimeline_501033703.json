@@ -1,0 +1,315 @@
+{
+  "Title": "语言＋……",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "少年宫的监护人",
+      "Text": "二位请尽情享用吧，\n不用再劳烦你们帮忙了哦~！",
+      "ChoiceDataList": [
+        "非常感谢。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……我还是更喜欢活动一下身体。\n请让我也来帮帮忙吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "在出门后的归途上，\n我们被似曾相识的孩子们搭话了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "很有精神的女孩子",
+      "Text": "果然！\n我就说是那个帮了怒涛姐姐的英雄姐姐嘛！",
+      "ChoiceDataList": [
+        "啊、取材那把传说中的刀那时候的……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "少年宫的监护人A",
+      "Text": "哎呀久仰久仰！我听孩子们说过你们的事哦！\n托二位的福，好歌剧小姐的新剧已经完成了呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "少年宫的监护人B",
+      "Text": "孩子们一直都很想早点看新剧，所以特别高兴！\n要是不嫌弃的话，要来和我们一起BBQ吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "不必，我也没做什么大不了的——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "自来熟的少年",
+      "Text": "没事没事！多少来吃一点嘛，吃一点！\n来，这边这边！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "等、等下！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "就这样，我们莫名其妙就参加了这场BBQ。\n但爱慕织姬还是一如既往地特别客气……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "少年宫的监护人B",
+      "Text": "——咦？奇怪？食材不够了呀。\n请稍等一会，我再去买点回来。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "！……那，我去买吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "少年宫的监护人B",
+      "Text": "不用不用！\n你是客人，而且要买的东西可不少呀！",
+      "ChoiceDataList": [
+        "那我陪她一起去吧。",
+        "那我陪她一起去吧。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……好，走吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……应该就是这些了吧。\n…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "眼前的纸箱已经堆成小山。\n虽然凭借马娘的力量完全可以把它们举起来，\n但要一次性全部带走还是比较困难吧……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……虽然不大容易，但言出必行——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "？？？",
+      "Text": "咦？织姬同……\n等等，这堆箱子是怎么回事啊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "——嘿！就是这里对吗？\n那咱们一起把它们从手推车上卸下来吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……谢谢你。那个……帮大忙了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "小事一桩！\n正好我今天要买的东西也比较多，\n所以推了手推车出门！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（明明她自己也有事情要做，\n却还麻烦她绕了这么长的远路……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（……浪费的这些事件和体力，\n真的一句『谢谢你』就能表达谢意了吗……？）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "那我就先告辞了！\n大家，玩得开心哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "呃……等、等下！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "少年宫的监护人A",
+      "Text": "嗯嗯，请稍等一下哦！\n麻烦你帮了这么大忙，只说句谢谢也不太好啦。\n请收下……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "哎？不用啦不用！\n有你们一句谢谢就足够啦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "哎嘿嘿……\n其实能体会到你们的谢意，我就很开心了哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……能体会到谢意就够了吗……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "不用。\n你硬要道谢的话，说句谢谢就行了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "但、但是但是，只说句谢谢就太……啊！\n那饮料之外的谢礼怎么样呢~？\n雪糕、或者是烤胡萝卜串之类的！还有——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（……原来如此。）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……成田路同学。\n我给你烤点东西吃，你坐下稍等一会，",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………",
+      "ChoiceDataList": [
+        "我来帮忙。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……好。\n………………",
+      "ChoiceDataList": [
+        "怎么啦？看你一副心事重重的样子。",
+        "怎么啦？看你一副心事重重的样子。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……现在的我，\n大概能理解那时候怒涛的心情了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "这种……除了语言以外，\n想用别的方式表达谢意的心情。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……有些感情光用语言来表达的话，果然不够。",
+      "ChoiceDataList": [
+        "既然如此，可要烤得美味些哦！",
+        "既然如此，可要烤得美味些哦！",
+        "……今天领会到不少东西呢。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……有些感情光用语言来表达的话，果然不够。",
+      "ChoiceDataList": [
+        "既然如此，可要烤得美味些哦！",
+        "既然如此，可要烤得美味些哦！",
+        "……今天领会到不少东西呢。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……你才是。可别烤焦了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "少年宫的监护人",
+      "Text": "呵呵！今天真的非常感谢二位哦。\n那么，二位也请用吧，烤得上好的肉串！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……谢谢，我开动了 。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……是呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……不过听你亲口说出来，还挺丢人的。",
+      "ChoiceDataList": [
+        "……别浇我冷水啦。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……怪你自己开口就是这些丢死人的话。\n拿些吃的把嘴巴塞上吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "爱慕织姬接连不断地把烤好的串放上盘子，\n让我压根没有插嘴说话的时间……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

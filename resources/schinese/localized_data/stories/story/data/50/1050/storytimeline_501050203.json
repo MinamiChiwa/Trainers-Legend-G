@@ -1,0 +1,140 @@
+{
+  "Title": "迎接日本德比",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "『日本德比』当天。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "“BNW”の三強対決に色めき立つ\r\n会場の雰囲気は、控室にも伝わってきていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "『二強』『二強』って騒いだかと思ったら、\r\n今度は“BNW”ね……。",
+      "ChoiceDataList": [
+        "这是大家认同了你的实力地证明啊。",
+        "貴方の実力が認められた証拠だよ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "認められた、って……あのね、\r\nまだ『皐月賞』しか終わってないんだけど？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "今は多少持ち上げられてても、\r\n他人の評価なんか一瞬で覆るんだから。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……っていうか、調子乗ってて\r\n勝てるような相手じゃないし。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "ぼそりとこぼすナリタタイシンが\r\n思い浮かべているのは、間違いなく――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "『ダービーウマ娘』の座に執念を燃やす、\r\nウイニングチケットのことなのだろう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "やることは変わらない。\r\n勝って、アタシの走りを全員に刻みつける。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "在那之前――我绝不会松懈。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……好了。该我上场了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "——你来了啊，大进。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "ハヤヒデ。\r\n……アイツは？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "まだ来ていないよ。\r\n多分、直前まで控室にいるつもりなのだろう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "気づいていたか？\r\n彼女はここ数日の間――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "アタシたちと話さないようにしてた。\r\n……アイツなりに、集中力高めてるんでしょ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "フ……さすがはタイシン。\r\nよく見ている。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "あんだけ騒がしいヤツが\r\n急に大人しくなったら、目立つってだけ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……けど、関係ない。\r\n勝つのはアタシだから。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "……这句话，我原封不动地还给你。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "クラシック三冠路線2戦目『日本ダービー』。\r\nいよいよ『三強対決』の幕が上がる……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

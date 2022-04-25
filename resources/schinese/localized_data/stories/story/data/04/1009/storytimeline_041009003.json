@@ -1,0 +1,341 @@
+{
+  "Title": "比谁都怪的家伙",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "选拔赛过后的一段时间，\n大和赤骥本该被来发掘的训练员包围。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "然而，现在却是――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "哎呀？\u3000怎么，没有人要去跟\n大和赤骥搭下话吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "新人训练员A",
+      "Text": "我们专注于伏特加一个人了。她再怎么有实力，\n以那种脾气也很难往上走了吧……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "……嘛，这倒也是。\n我也去找伏特加吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "……哼，这下痛快多了！\u3000没有了多余的观众，\n这下可以集中精力训练了――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "…本想这么说。\n等等！\u3000为什么还剩下了一个人！？",
+      "ChoiceDataList": [
+        "我想和你聊聊",
+        "我想和你聊聊"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "哈啊？\u3000……啊啊，难道说你，还觉得我是个\n会老实听话的优等生吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "事到如今了我可告诉你，\n那，是『装出来』的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "这才是真正的我！\n……就像刚才那帮人说的那样，顽固又任性的坏脾气哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "怎样？\u3000感到幻灭了吗？\n那，快点从这儿消失吧。",
+      "ChoiceDataList": [
+        "我哪儿也不去"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "……等等。\n你，有在听我说话吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "我不是你所想的那种孩子啊！\n差不多该听懂了吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "特雷森学园净是些跑得快的孩子！\u3000在那种情况下还\n虚张声势，态度傲慢，输得不像样的就是现在的我！",
+      "ChoiceDataList": [
+        "没有输得不像样！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "你好烦啊！！\n我可不需要安慰！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "我自己……也明白。\n“第一”“第一”地空谈着，徒劳无功！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "只不过输给了伏特加一次，就自暴自弃闹脾气，\n胡乱地跑…………我自己也觉得自己在做傻事！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "但是……没有办法啊！！\n不是“第一”的话，我就不能接受！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "第一快，第一强！\u3000第一受大家认可，\n不是第一受关注的我不要！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "不是那样的话绝对不能满足……\n我就是那个样，没有办法……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "我，为了我自己，\n必须坚持拿下“第一”啊！",
+      "ChoiceDataList": [
+        "我正是为了支持这样的你，才来到这儿的",
+        "我正是为了支持这样的你，才来到这儿的"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "………………哈，哈？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "不，等等。都听到这儿了还……\n你，难道真的是个傻瓜吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "差不多该察觉到了吧！\u3000我是个只执着于“第一”的，\n顽固的家伙！！",
+      "ChoiceDataList": [
+        "那就一起以“第一”为目标吧"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "所以说！！\n为什么跟在做发掘一样呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "那个啊，我可不会那么\n轻易地听你的话的哦！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "我不接受的话，对你给出的训练项目也会\n提各种质疑的哦！\u3000已经做好，这种觉悟了吗！？",
+      "ChoiceDataList": [
+        "会一直讨论到你满意为止！",
+        "会一直讨论到你满意为止！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "…………怎，怎么回事啊，这个人。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "支持，什么的……一起什么的……\n你，是认真的吗……？",
+      "ChoiceDataList": [
+        "我会成为于你而言“第一”的训练员",
+        "我会成为于你而言“第一”的训练员"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "…………！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "……哼。\n别人的口头禅，可以请你不要挪用吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "真是的……被个奇怪的家伙，抓住不放……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "一直以来压抑着的东西仿佛\n决堤了一般，大和赤骥落下眼泪。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "就这样，过了一会儿――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "……不知道有多久，没在人前哭了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "哈啊……总感觉，已经没劲了。\n……我，差不多该回去了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "说实话，最近身体一直很沉重。\n今天……就难得的早睡吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "大和赤骥远去的背影，没有了以前那股霸气。\n看来选拔赛上的第二名对她相当有打击。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我一边想着能不能帮她找回自信，\n一边来到了食堂――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "呀吼～，伏特加！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "啊啊？\u3000……什么嘛，是帝王啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "什么叫什么嘛！！\n……总感觉伏特加，最近看上去很无聊啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "才没……那种事哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "但是……那家伙，这段时间\n一直一副很无趣的样子……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "那家伙？\u3000呃……难道说是赤骥吗？\n宿舍里是同房还又是竞争对手，很担心吧～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "才，才没有，不是那样的ー……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "但是确实，她消沉了很多呢～。在选拔赛上\n输给了伏特加，对她打击很大吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "……我还觉得，\n她不是那种会一直消沉下去的家伙啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "伏特加……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "啧……没什么。只是，我不想输给现在的\n那家伙。……仅此而已。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "啊，等等伏特加！\n等等啊～！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "――我或许想到了一个好主意。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

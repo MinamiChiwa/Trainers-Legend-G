@@ -1,0 +1,272 @@
+{
+  "Title": "蹄鉄、キラリ",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "在那一天的训练中――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "啊啊～，果然啊。\n跟我想的一样呢～。",
+      "ChoiceDataList": [
+        "怎么了？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "啊ー，是蹄铁的话题。跑起来有违和感啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "看了一下，已经磨坏了。\n这样的话，不重新买个不行啊～。",
+      "ChoiceDataList": [
+        "是努力的证明呢",
+        "是努力的证明呢"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "是的，很荣幸得到您的夸奖。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "あ、そーだ！\u3000今度の休みって空いてる？\r\n良かったら蹄鉄選びに付き合って欲しいんだけど。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "ほら、蹄鉄って色んな種類があるじゃん？\r\nでも結局は使い慣れてるのをいつも買っちゃうんだよね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "けどトレーナーさんが一緒に探してくれれば、\r\nアタシにぴったりの蹄鉄が見つかるかもって思ってさ。",
+      "ChoiceDataList": [
+        "可以哦"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "哦，太好了。\n那么一起去街上吧ー。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "几天后――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "平时都是在学校里买东西，\n一旦到了专卖店里就感觉紧张起来了啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "にしても、相変わらず色んな種類の蹄鉄があるもんだね。\r\nまったくもって、どれを選べばいいのかわからん！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "如果要分辨哪个西瓜好吃的话，\n我都是问了蔬菜店的阿姨才知道的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "所以，轮到训练员出场啦。\n请找到适合我的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "こうして、さまざまな蹄鉄のメリットやデメリットを説明しつつ、\r\nナイスネイチャに合う蹄鉄を探し続けた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "えへへ、トレーナーさんに決めてもらった蹄鉄はどんなもんだろ。\r\n試すのが楽しみですな～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "それにしても、アタシのことよく見てるもんだね～。\r\n走り方のクセとか、力の出しやすいフォームとか。",
+      "ChoiceDataList": [
+        "因为我是训练员嘛",
+        "因为我是训练员嘛"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "プロの目は違いますな～。\r\nそんなとこまで見てたんだ～って感心したよ、ホント。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "さーて、そんじゃ学園に戻りますか。\r\n……って、あ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "なにかに気が付いた様子のナイスネイチャが、\r\n1軒の店の前へと駆け寄った。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "这件衣服不是杂志上介绍过的吗？\n诶～，看见实物的话跟印象里的果然不同啊～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "だけどちょっと幼すぎるかな～。\r\nんー、でも色は好きなんだよね～……う～ん。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "诶，抱歉抱歉！把训练员你放一边。\n我发现了一件很在意的衣服。",
+      "ChoiceDataList": [
+        "继续看也没事哦"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "ううん、へーき。\r\n別に買おうと思ってたワケでもないから。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "でもさ～、雑誌で見てカワイイ服だなって思っても、\r\nいざ買おうとすると躊躇しちゃうことあるんだよね～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "この服も、モデルがカワイイから服もカワイく\r\n見えるんじゃね？\u3000って思っちゃうワケですよ。",
+      "ChoiceDataList": [
+        "穿上也许会很合适"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "あははは、ないない。\r\nしっくりじゃなくて、がっくりするだけだって。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "店员",
+      "Text": "いらっしゃいませー！\r\nこちらの服、試着してみますか？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "へっ？\u3000い、いや～\r\nアタシには似合いませんから～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "店员",
+      "Text": "そんなことありませんよ～、この服の場合、髪の結う場所を\r\n少し上げれば、シルエットが変わってよりマッチしますよ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "おお、なるほど……って、違う違う！\r\n店員さんも、乗せるのうまいなぁ～。",
+      "ChoiceDataList": [
+        "我也这样觉得"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "うっわ！\u3000トレーナーさんまでそっちサイド！？\r\n……だからアタシは～その～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "ああ、そうだ！\u3000今日は蹄鉄も買っちゃったし、\r\nこれ以上の出費は避けたいんだった～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "就是这样，失礼了～！\n快走啦训练员！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "哈啊……差点就试穿了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "でもまさか、店員さんとトレーナーさんの2人がかりで\r\nくるとは思いもよりませんでしたわ。",
+      "ChoiceDataList": [
+        "明明真的很适合你"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "ま、まだ言うか！？\r\nおだてたってなんにも出ないっての！",
+      "ChoiceDataList": [
+        "因为我很了解你！",
+        "因为我很了解你！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "それはトレーニングの話だろっての！\r\nコーデは全然別だから！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "んも～……蹄鉄を買いに行っただけなのに、\r\nこの疲労感はなんなのさ……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "蹄鉄選びは素直に受け入れるも、\r\nカワイイ服は受け入れられないナイスネイチャだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

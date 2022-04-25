@@ -1,0 +1,32 @@
+{
+  "Title": "成田大进登场！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "いよいよ今日から、ナリタタイシンと\nトゥインクル・シリーズへの\n本格的な挑戦が始まる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "成田大进",
+        "トゥインクル・シリーズ"
+      ]
+    },
+    {
+      "Name": "独白",
+      "Text": "末脚のキレを見せつけ、\n彼女を軽んじてきた周囲の鼻を明かすため――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "まずはデビュー戦へ向けて\n二人三脚で走り出したのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

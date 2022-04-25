@@ -1,0 +1,350 @@
+{
+  "Title": "第3話",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "――夏合宿。シンボリルドルフを含むトレセン学園のウマ娘たちは、\r\n海辺の施設に泊まり込み、トレーニングへと打ち込んでいた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "ふぅ……今日のノルマはこれで終わりか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "しかしまだ初日、無理は禁物だ。\r\n足慣らしは十分にしていこう。",
+      "ChoiceDataList": [
+        "なら休憩がてら、少しだけ遊ぼうか"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "ははっ、君は随分と楽しそうな事を提案してくる。\r\nそうだな、ひと息入れるとするか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "何事も詰めすぎはよくないからな。\r\nちょうど付近に海の家があるようだし、昼食にしよう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "そしてシンボリルドルフと共に昼食を食べ、\r\nトレーニングを一通り終えた後のことだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "おや、トレーナー君か。\r\n休み時間も仕事とは、君も勤勉だな。",
+      "ChoiceDataList": [
+        "君はどうしてここに？",
+        "貴方はどうしてここに？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "散歩がてら見回りを。まあ、要するに暇なんだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "とはいえ、何事もなく暇である方が\r\n喜ばしくはあるが……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "？？？",
+      "Text": "キャ～～～～～～～～～～～～～ッ！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "なっ……なんだ、今の叫び声は……！？",
+      "ChoiceDataList": [
+        "何か事件に巻き込まれたのかも！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "すぐ行こう！\u3000事件でない事を祈る！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "？？？",
+      "Text": "キャ～～～～～～～～～～～～～ッ！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "くっ、あちこちから声が聞こえてくる！\r\n一体どうなっているんだ……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "はぁ……はぁ……、最後に声が聞こえたのはこの辺りか……。",
+      "ChoiceDataList": [
+        "……でも、誰もいないな",
+        "……でも、誰もいないね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "そうなんだ。確かに先ほどまで聞こえたはずなのに。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "頼む。皆、無事でいてくれ――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘们",
+      "Text": "ばぁぁ～～～～っ！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "んんっ！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "え……わあぁっ！？\u3000か、会長……っ！？\r\nすみませんっ！\u3000てっきりクラスの子が来たとばっかり……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘B",
+      "Text": "ご、ごごごごめんなさい！\u3000まさか肝試しに会長が来る\r\nと思ってなくて！\u3000なんとお詫びしていいか……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "肝試し……？\r\nでは、君たちの身に危険が及んだわけではなかった、と？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘们",
+      "Text": "嗯……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "……あっはは！\u3000なんという事だ！\r\n私は、すっかり肝を冷やされてしまった訳か！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "あ、あの……ルドルフ会長？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "はははっ……いや、君たちが充実した時間を過ごせているならば、\r\n私としても嬉しい限りだよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "邪魔をしてしまい、申し訳なかった。\r\nどうかそのまま続けてくれ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘们",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "ん？\u3000皆、どうしたんだ？\r\n何やら呆然としているようだが……。",
+      "ChoiceDataList": [
+        "怒られると思ってたんじゃないか？",
+        "怒られると思ってたんじゃないかな？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "何故だ？\u3000彼女らの行為に不当性は全くない。\r\nそもそも今は自由時間だ、何を咎める事がある？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "我々は学生だ。レースやトレーニングだけではない、\r\n仲間と共に過ごす日々は、将来において重要な糧となる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "それに――2度同じ日は来ない。貴重な夏合宿の夜だ、\r\n折角なら楽しい思い出を作りたいと考えるのは、自然な事だろう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "私とて……ふふっ、普段より些かも心が躍っていない、\r\nなどと言えば、大嘘吐きになってしまうからな。",
+      "ChoiceDataList": [
+        "ならせっかくだし、混ぜてもらったら？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘们",
+      "Text": "诶！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "ははっ、こらトレーナー君。\r\nそれは彼女たちが困るだろう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "君たちも気にしないでくれ。\r\n合宿は長い。今夜は存分に楽しみ、英気を養って――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "……あ、あのっ、ルドルフ会長！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘B",
+      "Text": "もし、よろしければ……\r\nその、私たちと一緒に、肝試し……しませんか……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "……いいのか？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "は、はい！\u3000もしもご迷惑でなければですが！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "迷惑などと、思うものか。\r\nふふっ――では、皆の言葉に甘えるとしよう！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "――それではA班、報告を頼む。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "はいっ！\u3000全員配置につき、準備完了です！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "うむ、ありがとう。\r\nでは次にB班、危険地帯がないか確認の上、現場に急行せよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "死角になる場所を見つけ次第、身を隠せ。\r\nその後は……わかっているな？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘B",
+      "Text": "はいっ！\u3000タイミングを計って驚かせに行きます！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "素晴らしい。それでは両班、健闘を祈る。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘们",
+      "Text": "了解です、会長っ！",
+      "ChoiceDataList": [
+        "すごい気合いの入りようだな",
+        "すごい気合いの入りようだね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "おや、何を言う。\r\nこれも最高の催しにするためだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "半端なものを見せては、参加者に申し訳ないだろう？\r\n皆と統制が取れた仕掛けで、この上ない恐怖を演出してみせるさ。",
+      "ChoiceDataList": [
+        "なんだか楽しそうだな",
+        "なんだか楽しそうだね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "ふふっ、そうだな……こんなにも心が躍る合宿は初めてだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "翌日、生徒たちの間では、\r\n『例年よりも怖く……楽しい肝試し』の話で持ち切りだったという。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "Title": "Such Sweet Sorrow...",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ついにファインモーションの帰国の日が来た。\r\n彼女はいつも通りの笑顔で明るく振舞う。\n空港には大勢のファンが見送りに押しかけた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "それはファインモーションが残した衝撃と、\r\n人々に見せた夢の大きさを物語っていた。\n彼女は目に涙を浮かべ、帰国した――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "――しかし！\u3000彼女は『日本親善大使』\r\nとして学園に舞い戻ってきた……！\nこれまでの実績が認められたおかげだという。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『日本とアイルランドの架け橋となる』\r\nという、新たな使命を胸に彼女は\n再びトレーナーと共に走り出す。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "おかえり、ファインモーション――！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

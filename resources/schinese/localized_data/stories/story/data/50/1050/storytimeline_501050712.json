@@ -1,0 +1,67 @@
+{
+  "Title": "不在の理由は……",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "トレーニングの時間になっても\r\nナリタタイシンが顔を出さないので\n探しに行くと――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……今回も楽勝っ！\u3000アーケード版も\r\nアプリとそんなに変わんないじゃん。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "っし！\r\nこのまま連勝記録、伸ばしてやる！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "ああっ！\u3000また負けた！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "何この『ワガハイちゃん』ってヤツ！\r\nさっきからちょこまかと……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "プレイスキルは互角っぽいのに……\r\nくそっ、次は絶対負かしてやる！",
+      "ChoiceDataList": [
+        "えっと、タイシン……トレーニングは？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "は？\u3000……って、もうそんな時間！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "…………ごめん。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "謝罪する彼女に対し、\r\n今後は気をつけるよう注意したのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

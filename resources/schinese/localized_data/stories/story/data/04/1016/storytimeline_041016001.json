@@ -1,0 +1,334 @@
+{
+  "Title": "嵐",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "少女",
+      "Text": "『――おいで、ブライアン！』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……また夢を見た。あの人の背を追う夢。\n大地を踏みしめる度に心が満たされる、そんな甘美で――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "――脆い夢を見た。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "熱気に包まれる、トレーニングコース。\nその中心に1人のウマ娘がいた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "新人训练员",
+      "Text": "……あれが、ナリタブライアン。\nデビュー前なのに、なんて風格なんだ……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "あのウワサは本当だったんですね。\n重賞を勝ったウマ娘に野良レースを挑んでるって……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "前辈马娘",
+      "Text": "レースは貴方の得意な距離に合わせましょう。\nそうね、2000mがいいかしら？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "それはアンタが本気を出せる距離なのか？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "前辈马娘",
+      "Text": "ええ、貴方相手なら。私は先輩だもの、ハンデをあげて当然だわ。\nこれは譲れない条件よ。このレースを引き受けるうえでのね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……ならそれでいい。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "うぉおお～～！\u3000ハヤヒデ、こっちこっちこっちーー！！\nブライアンのレース、始まっちゃってるよーーー！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "……ありがとう、チケット。君の声は十二分に聞こえている。\nだから、落ち着いてくれたまえ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "いやいやいや、落ち着けないよ！？\n今日はすっっっっごい強いウマ娘が相手なんだよ！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "あのブライアンでもさすがに大負けしたら、ガガーンって――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "ならないさ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "彼女の強さは私が1番知っている。\n……それ故に抱えざるを得なかったものも。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "（…………前を走る彼女の髪が、尾が。揺れる）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "（彼女はGⅠ級のウマ娘と聞いた。\nその場限りの実力ではない。躊躇う必要など……ない！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "……来るか、ブライアン。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "あわわわわわ……ハ、ハヤヒデぇぇ～～！！\nもう第4コーナー過ぎたのに差がっ、差がぁ～……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "ああ、広がっているな。\n普通のウマ娘ならば届かずに終わる距離かもしれない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "……普通のウマ娘だったならば。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（ドドドドドッ！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "な、なんなんですか！？\u3000あの速さ……！\n差がどんどん縮まって……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "新人训练员",
+      "Text": "3バ身……2バ身…………いや、もう射程圏内じゃないか！\nすごい、これはすごいぞ！\u3000ブライアン！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "前辈马娘",
+      "Text": "……っ！\u3000……うそ……完全に私のペース、だったのに……！\n未デビューの子に……そんな……追いつかれる、わけ……っ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "（…………そう、アンタは強い）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "（だから、どうかこのまま追わせてくれ。\nどうかまだ私に追い抜かれないでくれ）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（ザッ……！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "（最後までアンタの闘志を見せてくれ。\nそして、どうか――！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "前辈马娘",
+      "Text": "……あっ……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "（……またここまで、なのか？）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（ドッ、ドッ、トッ……トッ……ト……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "（目の前で灯が消えるのを見たのはこれで何度目だろう。\n暗闇に飲み込まれていく様を見るのは……何度目だろう）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "新人训练员",
+      "Text": "……ナリタブライアンがゴール手前で失速。\n最後の最後でスタミナ切れか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "じゃ、じゃあ勝ったのは――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "前辈马娘",
+      "Text": "ぜぇ……はぁ……。\n……ひゅっ……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员",
+      "Text": "あっ、いた～！\u3000も～、勝手にレースを\n引き受けるなんてダメでしょー！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "前辈马娘",
+      "Text": "……すみま……せん、トレーナー。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员",
+      "Text": "ま、後輩相手だったけど、2000mで勝利するなんて\n流石じゃない！\u3000やっぱり、あなたは――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "前辈马娘",
+      "Text": "やめてくださいっ。あんな才能を見た後で、\nそんな気休めなんて聞きたくは……ありません……っ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "前辈马娘",
+      "Text": "私、全然勝ててなんかいない……っ！\u3000あんな怪物……っ、\n私なんかが競っていい相手じゃなかったんです……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "……え。この空気、どういうこと……？\nなんで勝ったあの子も全然喜んでないの？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "圧倒的な力の差。手の届く範囲から外れたそれを間近に\n見た時、心に生まれるのは熱ではなく恐怖だ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "競う相手に、等しく絶望を与える存在。\nそれがナリタブライアン……私の妹だよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "あれほど盛り上がっていたレースにもかかわらず、\n不気味な静けさと共にナリタブライアンのレースは終わった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "…………",
+      "ChoiceDataList": [
+        "……ナリタブライアン"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "トレーナー間でも“底知れない何かがある”と噂されているウマ娘。\n今回、ぜひその姿をひと目見たいとここまで来たのだが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "どうも引っかかる走りだった。終盤の素晴らしい加速から一変、\r\n突然失速した姿も、その時の苦しそうな表情も。",
+      "ChoiceDataList": [
+        "……直接、話を聞けばわかるのだろうか",
+        "……直接、話を聞けばわかるのかな"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ナリタブライアンとの出会いは、\nそんな奇妙な違和感から始まったのだった――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

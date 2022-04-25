@@ -1,0 +1,112 @@
+{
+  "Title": "比赛胜利！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……っし！\r\nこの結果なら……！",
+      "ChoiceDataList": [
+        "みんな、すごいって思うな！！",
+        "大家都觉得你很厉害哦！！",
+        "（沉默地看着大进）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……っし！\r\nこの結果なら……！",
+      "ChoiceDataList": [
+        "みんな、すごいって思うな！！",
+        "大家都觉得你很厉害哦！！",
+        "（沉默地看着大进）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "このまま勝ち続け、周囲をアッと言わせよう。\r\nナリタタイシンなら出来ると力説したが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "………………都怪你。\n我一下子就高兴不起来了。",
+      "ChoiceDataList": [
+        "诶！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "アンタの浮かれっぷり見てたら、\r\n恥ずかしくなってきたし。",
+      "ChoiceDataList": [
+        "但你赢了哦！尽情地开心一会也没问题的！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "はぁ……。\r\nそれならアンタ1人でやってて。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……等我换了衣服就回去吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そっけない言葉で去って行ってしまった\r\nナリタタイシンだが、\nその後ろ姿はどこか嬉しそうにも見えた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "アタシは弱くなんかない……\r\nあの中の誰よりも速かった……！",
+      "ChoiceDataList": [
+        "（太好了，大进）",
+        "（よかったね、タイシン）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "さっきから何、そのニヤけ面。\r\nやめてくんない？",
+      "ChoiceDataList": [
+        "我是觉得很开心啦……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "あ、そ。\r\nアンタが喜ぼうがどうでもいいし。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……アタシはアタシのために\r\n勝つだけだから。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そう告げたナリタタイシンから、\r\n勝利への強い意志を感じたのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

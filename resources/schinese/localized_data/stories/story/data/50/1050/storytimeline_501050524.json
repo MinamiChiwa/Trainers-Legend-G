@@ -1,0 +1,324 @@
+{
+  "Title": "凭着一腔怒火的自主训练",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "その日のナリタタイシンは\r\nいつになく不機嫌そうだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "ああ、もう！\r\nムカツク……！",
+      "ChoiceDataList": [
+        "发生了什么？",
+        "发生什么了吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "あったも何も……くそッ！\r\n思い出したら余計腹立ってきた……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "気が立っているナリタタイシンから\r\nなんとか話を聞いたところ――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "この前の模擬レースで負かしたウマ娘に\r\n体格の小ささについて嫌味を言われたらしい。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "『今回はまぐれだ』とか\r\n『チビのままじゃ今後は勝てない』とか――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "はあ……負け惜しみにしても\r\nタチ悪すぎだっての。",
+      "ChoiceDataList": [
+        "是场灾难啊……",
+        "災難だったね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "ホント、勘弁してほしい……。\r\nずっとモヤモヤしてるし――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "決めた……！\r\n今日はとことん走り込む！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "先、グラウンド行ってるから。\r\n……じゃ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ナリタタイシンはそう言って\r\n走り去っていった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "その後、ナリタタイシンと合流し\r\nトレーニングを行ったが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哈……哈……",
+      "ChoiceDataList": [
+        "心情畅快了吗？",
+        "スッキリした？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "全然。\r\nまだ胸がムカムカする。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……やっぱトレーニングじゃ足りない。\r\n自主トレするから、先帰ってて。",
+      "ChoiceDataList": [
+        "过去的事情酒让它过去吧。",
+        "むしろもう切り上げた方がいいよ",
+        "你要训练也可以，但要注意度哦。",
+        "やってもいいけどほどほどにね",
+        "尽情去做吧！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……やっぱトレーニングじゃ足りない。\r\n自主トレするから、先帰ってて。",
+      "ChoiceDataList": [
+        "过去的事情酒让它过去吧。",
+        "むしろもう切り上げた方がいいよ",
+        "你要训练也可以，但要注意度哦。",
+        "やってもいいけどほどほどにね",
+        "尽情去做吧！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "は！？\r\nなんでそうなんの！",
+      "ChoiceDataList": [
+        "勉强自己乱来的话，\n身体撑不住可就不好了。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "但是……！",
+      "ChoiceDataList": [
+        "这不就遂了那家伙的愿了吗。",
+        "そしたら相手の思うつぼだよ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ゆっくり休息をとって\r\nいつも通りのナリタタイシンを見せる方が\n相手は悔しいはずだと話すと――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "确实如此……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……わかった。\r\n今日はこのまま帰って寝る。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "アンタの言いなりになるのはシャクだけど\r\nアイツを喜ばせるのはもっとシャクだし……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "那我就先回去了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "次の日――十分に休息をとったおかげか、\r\nナリタタイシンの怒りはおさまった\nようだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "ほどほどって……\r\n中途半端にやってもスカッとしなくない？",
+      "ChoiceDataList": [
+        "把今天的怒火留在比赛里吧。",
+        "今の気持ちはレースにぶつけるといいよ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "怒りに身をまかせて体を酷使するよりも、\r\n調整を完璧に仕上げて\nレースで勝利した方が気持ちいいはずだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そう伝えるとナリタタイシンは\r\nとても『イイ』笑顔を浮かべた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……つまり、模擬レースでまたアイツを\r\nボコボコに負かせばいいってこと？",
+      "ChoiceDataList": [
+        "不，倒也不至于——"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "する。そこまでしないと\r\nアタシのイライラはおさまらないし。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……いいじゃん。\r\nやってやろうじゃん。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "見てろ……！\r\n2度とナメたこと言えないようにしてやる！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "于是――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "闘志を燃やすナリタタイシンは、\r\nバカにしてきたウマ娘を見返すべく\n作戦を練るのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "不用你说！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "ちょっとやそっとじゃ\r\nこのイライラはおさまんないし。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "走りまくって\r\nアイツのことなんか忘れてやる……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "于是――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "喝啊啊啊啊啊……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "っし！\r\nいい感じになってきた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "就按这个不掉，再跑一圈……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "怒りに燃えたナリタタイシンの\r\n自主トレーニングは、\nその後もしばらく続いたのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "该死……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "まだ足りない。\r\n全然気、晴れないのに――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "但已经跑不动了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "呜呜……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "無理をし過ぎたナリタタイシンは\r\nしばらくその場に座り込んで\n立ち上がれなかった……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

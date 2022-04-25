@@ -1,0 +1,238 @@
+{
+  "Title": "No regret",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "トゥインクル・シリーズにおける\r\n『最初の3年間』で見事、\n結果を残したナリタタイシン。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "小さい体ながらも強豪を打ち負かす姿は\r\n見ている者たちに勇気を与え――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "如今的她，已经成为了相当受欢迎的人。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "记者A",
+      "Text": "ナリタタイシンさん！\r\nぜひとも取材をお願いしたいのですが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "记者B",
+      "Text": "我也是，拜托了！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "诶……这个……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大进的粉丝",
+      "Text": "タイシンさん！\r\nサインお願いしてもいいですか！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……也可以啦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大进的粉丝",
+      "Text": "やったぁ～！\r\n一生の宝物にしますっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "玩家A",
+      "Text": "おっ？\r\nあそこで遊んでんの、タイシンじゃね？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "玩家B",
+      "Text": "マジで！？\r\n対戦誘っちゃってもいいかな！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……哈啊。总觉得好累。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "取材の依頼、来過ぎだし、\r\n道歩いてるだけで声かけられるし……。",
+      "ChoiceDataList": [
+        "说明大家都很喜欢你啊。",
+        "みんなタイシンが好きなんだよ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "就算你这么说……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "果然我还是不大喜欢这种热闹过头的感觉。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "静かに過ごせる時間、\r\nちょっとはほしいんだよね……。",
+      "ChoiceDataList": [
+        "要不我也回去吧？",
+        "じゃあ私も帰った方がいいかな？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "好――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "あ、じゃなくて……\r\nその、帰らなくて、いい。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……训练员的话……留下也可以啦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "その後――ナリタタイシンと\r\n出会ってから今までの思い出を\n静かに語り合った。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "初めて出会ったあの日、\r\nその末脚に惚れ込んだこと――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "転機となった『皐月賞』に\r\nBNWの2人との『三強』対決――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "そして――\r\n執念で掴んだ『有馬記念』の勝利。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "互いに言葉少なではあるが\r\n会話は穏やかに続き、\n気がつけば辺りはすっかり暗くなっていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……啊。已经晚上了啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "遅くなるとクリークさんがうるさい……\r\nっていうか、心配し過ぎるから、\nそろそろ行かないと……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "………………",
+      "ChoiceDataList": [
+        "大进？不回去吗？",
+        "タイシン？帰らないの？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……我啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "認めてもらうためだけに走ってた。\r\nレースに出るのだって同じ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "走って、勝って、その結果で\r\n認めてもらうことにしか興味がなかったんだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "不过――",
+      "ChoiceDataList": [
+        "不过？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……现在……我还挺喜欢的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "走るのも、レースも。\r\nアタシ……割と、好きだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "大进这么说着，笑了起来。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "――这是，真正发自真心的笑容。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

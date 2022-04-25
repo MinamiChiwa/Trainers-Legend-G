@@ -1,0 +1,31 @@
+{
+  "Title": "日经赏之后・这里就好",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "『日経賞』で優勝し、\n見事、返り咲いたナリタタイシン。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "レースしかないからではない。\nレースがいい。レースで勝ちたい――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "思いを新たに、ナリタタイシンと\r\nトレーナーは『天皇賞（春）』を\n目指すことになったのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "天皇赏（春）"
+      ]
+    }
+  ]
+}

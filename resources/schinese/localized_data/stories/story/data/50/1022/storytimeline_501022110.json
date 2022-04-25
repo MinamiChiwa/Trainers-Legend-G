@@ -1,0 +1,203 @@
+{
+  "Title": "Ending（Normal）",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ファインモーションは見事、\nトゥインクル・シリーズで\n結果を残すことができた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "とても大事な、大事な『最初の3年間』を、\n共に乗り切ることができたのだ――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "――が！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "オイ！\u3000アイツはいつ来る。",
+      "ChoiceDataList": [
+        "もうすぐ来ると思うけど……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "とか言って、\r\n20分以上無駄にしてるじゃねェか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "今日はエアシャカールが併走してくれる\nということで、ファインモーションも\n楽しみにしていたはずだが……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "……限界だ。\n帰る――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "お待たせ～♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "いつ見ても、シャカールと\nトレーナーの並びって楽しいねぇ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "……オイ、悠長なこと\nほざく前に言うことがあンじゃねェのか？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "あ、そうだね！\nじゃあ2人に――はいこれ♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "ア？\u3000四つ葉のクローバー……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "そう！\u3000来る途中にね、シロツメクサが\n群生しているところを見つけたの。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "もしかしたら……って思って、\n探してみたら四つ葉があったんだよ～！",
+      "ChoiceDataList": [
+        "遅刻の理由はそれ？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "あらっ、そんなに大きな遅刻だった？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "……やっぱ帰っていいか？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "ごめんね～？\n閃いちゃったんだもの。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "2人へのプレゼントは、\r\nずっと探していたから！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "ア？\u3000なンで。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "もちろん、\nたくさん心配かけちゃったからだよ？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "それぞれ、絶対に喜んでくれるものは\nわかっているけれど……ちょっと違うなって。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "だからいっそ、私の想いを……\n私の大切にしているものをあげたくなったの。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "ごめんね？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "許してくれないの～？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "うるせェ！\nさっさとスタートラインに来い！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "うんっ、すぐ行く！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "トレーナー！",
+      "ChoiceDataList": [
+        "玩得开心哦"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "はぁい！\n行ってきまーす♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,277 @@
+{
+  "Title": "上ー门ー，踢馆来了哦☆",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "竞技大会结束几天后――\n我在训练场上看到一处角落很热闹。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "哈……哈……冲ー线！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "我仔细一看，好像是马娘们在以比赛形式一决高下。\n位于先冲线的马娘后方的是……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "呼……呼……嗯嗯嗯～冲ーーー～线！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "哈啊……哈啊～……是我输了～……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "小乌拉拉，辛苦了。\n我很开心哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "我也要谢谢你和我一起比赛！\n下次我不会输的！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "好ー，接下来和谁一起跑呢～！\n……咦？\u3000是训练员啊！",
+      "ChoiceDataList": [
+        "在进行模拟赛吗？",
+        "在进行模拟赛吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "这个啊～不是模拟赛，而是“上门踢馆”！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "昨天在漫画上看的！\u3000一边大喊『请指教ー！』一边\n发起挑战，然后把强手们都打倒！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "因为漫画上说『这是变强的必经之路』，\n所以我也决定要试一试！",
+      "ChoiceDataList": [
+        "但反而像被打倒的那个……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "但是我觉得下次一定能赢哦！\n我总是会有这种感觉！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "好了，继续“上门踢馆”吧！\n下一个对手是～……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "啊！\u3000是小特啊！\n小特～！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "啊啊，是小乌拉拉！\n小乌拉拉也在训练吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "嗯！\u3000我想出了一种新的训练方法～！\n小特，请指教ー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "诶？\u3000请指教……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "是比赛啦，比赛！\u3000开跑吧，小特！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "诶，诶？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "就这样，春丽的“上门踢馆”\n又开始了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "呼……呼……冲ー线！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "特别周冲线之后，没过多久……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "哈……哈……冲～线～……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "我，我不行了～……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "啊啊！？\u3000小乌拉拉！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "虽然被拉开了很大距离，但春丽一直拼尽全力跑到了\n最后，然后当场就倒了下去。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "呼～，差点就要倒下去了啊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "不是差点，而是已经倒下去了啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "不过已经没事了，我休息足够了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "话说回来，小特还真行呢～。\n不愧是被我看上了的对手！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "那，就谢谢你的夸奖……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "但是，下次我一定不会输的！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "看着不停奔跑着的小特，\n我感觉自己也能办得到！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "好，下次再一起跑吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "诶嘿嘿，约好了哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "好，接下来找谁去“上门踢馆”呢～。\n请指教ー！\u3000请指教ー！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "啊……跑掉了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "……小乌拉拉，果然很厉害啊。\n无论什么时候，她都既有精神又开朗。",
+      "ChoiceDataList": [
+        "总是很积极向上啊",
+        "总是很积极向上啊"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "是这样！\u3000像我要是输掉了比赛，就会很沮丧\n然后想着些“我不行啊~”之类的……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "看着那么积极向上的小乌拉拉，\n我感觉自己也有了必须得努力的劲头。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "好ー，要向小乌拉拉学习，继续加油训练了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "竞技大会也好，“上门踢馆”也好，\n春丽即使输了也积极地继续奔跑着。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "她那一心一意的样子，似乎也在影响着周围的人。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

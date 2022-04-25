@@ -1,0 +1,328 @@
+{
+  "Title": "那是……当然。",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "呜欸欸……呜呜呜……呜……\n我真的做得到吗……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "别哭了。\n马上就能见到那把传说中的刀了……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "首先，将时间调转到几个小时之前——\n当时的我正和织姬一起在车站前散着步。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "想要帮上歌剧王的忙，但是没有自信……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "啊……因为歌剧王同学在准备新的剧目，\n所以需要进行大量的取材……\n我也想帮上她的忙，所以主动说要帮她——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "不过，我一拿到地图……\n就开始担心我能不能独自前往这个地方了……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "所以……你就一直在这里一个人哭鼻子吗。\n………………哈……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "虽然我是说了要陪你一起来……\n但我可实在没想到会来这种地方。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "而且说到底……对『传说中的刀』进行取材……\n这到底什么跟什么啊……！",
+      "ChoiceDataList": [
+        "但你还是一直陪着她走到现在了啊。",
+        "但你还是一直陪着她走到现在了呢。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "呜呜、对不起、对不起……！\n不过不过……也有不少期待着新剧目的小孩子，\n所以我一定要找到那把刀~……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "好好好，我知道你不打算在此时退却了……\n真是的，快点把这种苦差搞定吧……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "就这样，我们以『传说中的刀』为目标前进。\n但是……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "啊啊、啊啊……啊啊啊啊啊啊啊啊啊……！\n这桥在摇啊……在摇欸……！\n噫噫噫噫……好高……好可怕……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "别忘下看。\n笔直地往前走就好。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "居然能走得这么快……好厉害……！\n欸欸欸……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "呜诶诶诶诶……！\n鞋子都湿透了~！\n屁股也是、背后也一样……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "振作一点。\n你不是已经下定决心要做好这件事了吗！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "呜呜……欸，哎！\n那个是……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "难道说，那就是传说中的——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "托织姬同学的福，平安地完成取材了呢！\n非常谢谢你！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……那张地图，根本没起到地图该有的作用吧。\n歌剧王那家伙……真是的。",
+      "ChoiceDataList": [
+        "好像绕了特别夸张的远路啊……",
+        "好像绕了特别夸张的远路呢……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "那、那个那个那个……真的肥肠爆芊！\n让两位陪着我一起受苦受难……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "是我擅自要陪你，没必要道歉。\n……那，再见。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "但、但是——……啊，对了！\n请稍等一下……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "一……『一杯蜂蜜，横扫饥饿，做回自己~♪』\n广告词是这么说的，所以请一定要收下――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "不用。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "诶？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "不用。\n你硬要道谢的话，说句谢谢就行了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "但、但是但是，只说句谢谢就太……啊！\n那饮料之外的谢礼怎么样呢~？\n雪糕、或者是烤胡萝卜串之类的！还有——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……真的不用。\n努力的是你自己，不是我。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "那个那个、但是……\n织姬同学也帮了我很多~……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "孩子们",
+      "Text": "啊！果然是怒涛姐姐啊！！\n今天也在准备新剧吗？！",
+      "ChoiceDataList": [
+        "这些孩子是？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "啊、是少年宫的孩子们。\n歌剧王同学常招待他们来看自己的表演……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "那个……大家好呀。\n多亏有这位姐姐帮忙，新剧已经准备好了哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "我只是陪着她一起取材而已，\n别的什么都没做。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "看上去很热血的男孩子",
+      "Text": "好……好酷啊啊啊啊～～！！？\n简直就和英雄一样啊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "看上去很精神的女孩子",
+      "Text": "这个姐姐，明明帮了怒涛姐姐的忙，\n但一点都不骄傲！超帅啊！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "等、等等……",
+      "ChoiceDataList": [
+        "你们很懂啊！『超帅的』对吧！",
+        "你们很懂啊！『超帅的』对吧！",
+        "这里就交给我吧。",
+        "这里就交给我吧。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "等、等等……",
+      "ChoiceDataList": [
+        "你们很懂啊！『超帅的』对吧！",
+        "你们很懂啊！『超帅的』对吧！",
+        "这里就交给我吧。",
+        "这里就交给我吧。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "那个……我只是做了理所应当的事情而已。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "孩子们",
+      "Text": "好帅————！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "啊啊，真是的……\n都怪你说了些多余的话……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "子どもたちに囲まれ、\n恨めしそうな目でこちらを見てくる\nアドマイヤベガであった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "什么交给你……",
+      "ChoiceDataList": [
+        "好了，织姬队员！去往下一个事发现场吧！",
+        "好了，织姬队员！去往下一个事发现场吧！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "哈？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "孩子们",
+      "Text": "！！！\n姐姐，加油哦——！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……你还挺习惯这种氛围的啊？",
+      "ChoiceDataList": [
+        "……只是跟着气氛走而已……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……你也受了某人那些胡来的歌剧的影响吗……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "面对织姬这样略带惊讶和嗔怒的询问，\n我也只能报以苦笑而已。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

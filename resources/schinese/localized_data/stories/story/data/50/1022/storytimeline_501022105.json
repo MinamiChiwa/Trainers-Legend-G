@@ -1,0 +1,169 @@
+{
+  "Title": "夏季合宿（第3年）开始！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "美妙姿势终于迎来了第二次夏季合宿――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "美妙，加油～～！\n噢噢っ！",
+      "ChoiceDataList": [
+        "相当有气势呢 ！",
+        "気合い入ってるね！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "那是当然的啦！\n毕竟――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "今年，打算要达成\n海之家拉面的全制霸！",
+      "ChoiceDataList": [
+        "这样吗！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "一直吃拉面的话\n从营养学的角度而言，对身体不太好吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "所以去年没能达成全制霸……\n不过今年的话，\n合宿期间也要参加比赛的吧？",
+      "ChoiceDataList": [
+        "是『札幌纪念』吧",
+        "『札幌記念』だね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "虽说如此，要达成全制霸还是有些困难呢。\n不过还好，我有准备秘策呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "那就是……\n『请让我尝一口♪』！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "是我在特雷森里学到的东西啊！\n如果和大家一起分享的话，\n就能吃到各种各样的口味呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "就是这样，\n麻烦你助我一臂之力啦♪",
+      "ChoiceDataList": [
+        "训练也得加油啊……",
+        "トレーニングを頑張ったらね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "当然啦！\u3000毕竟训练才是大前提嘛！\n……啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……神宫。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "哈～……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "一如既往地，毫不动摇啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "你还真是忠实地扮演着自己在剧本里的角色。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "嗯。真对不起呢，\n我没办法成为神明大人嘛。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "けれど、とびっきりの役を演じるよ。\r\nキミの心も躍る走りをする。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "这个不就是……\n啊对，应该被称作天使吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "……白痴啊你丫。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "这世上哪来的神和天使啊。\n但你要是不愿意反抗命运的话……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "……那就由我来反抗她。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "空中神宫似乎对美妙姿势抱有某种执念……\n而其中原因尚不明朗。不过――",
+      "ChoiceDataList": [
+        "看上去好像做好觉悟了呢",
+        "覚悟を決めたみたいだね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "嗯。虽然一定会被困难阻挠，\n但我们也得跨过它继续前进。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "为此，我也必须变得更强才行！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

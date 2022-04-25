@@ -1,0 +1,45 @@
+{
+  "Title": "自我介绍",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "これから、トゥインクル・シリーズを\n担当ウマ娘と駆け抜ける日々が始まる。\nともに歩む彼女の名前は――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "トゥインクル・シリーズ"
+      ]
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……ナリタタイシン。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "成田大进"
+      ]
+    },
+    {
+      "Name": "成田大进",
+      "Text": "アタシはアタシをバカにしてたヤツら、\nみんなを見返したい。\nこの脚で、実力で、黙らせてやる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……トレーナーだからって、\nアタシの邪魔したら、蹴っ飛ばすから。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "こうして、<chrname>との\nトゥインクル・シリーズへの挑戦が\n始まったのだった！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

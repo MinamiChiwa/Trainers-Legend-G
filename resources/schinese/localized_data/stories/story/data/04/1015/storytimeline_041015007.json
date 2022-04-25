@@ -1,0 +1,351 @@
+{
+  "Title": "君と語るソワレ",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "郊外での合宿所で行われる夏合宿。\r\n様々なウマ娘たちが己の課題に取り組む中――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "はっ！\u3000美しく！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（バシャバシャバシャ！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "ふっ！\u3000華やかに！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（バッシャァアアン！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "テイエムオペラオーは1人、波と戯れ続けていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "はぁ……はぁ……トレーナー君。\r\nどうだったかな、ボクの華麗なステップは？",
+      "ChoiceDataList": [
+        "凄い勢いだったな",
+        "凄い勢いだったね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "はーっはっはっは！\u3000いい視点だよ、トレーナー君。\r\n今回のテーマは『内なる自分の解放』だからね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "海で鍛えられるのは筋力だけじゃない。\r\n己を表現し、自己を解き放つことで得られる強さもあるのさ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "時に優雅に、時に激しく水面を震わせる。\r\nマーメイドすら嫉妬する、水辺の滑走を見ていたまえ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "ウワサには聞いていたけど……彼女、その……すごいわね。\r\n海ではしゃぐ気持ちはわかるけど……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "あ、あはは……なんかこう、“オペラオーさん”って感じですよね。\r\nレースの時もいつも余裕っていうか……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "という声も、ちらほら聞こえては来るが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "さあ、ここでターンだ！\r\n脚で砂をかき上げ、蝶が羽ばたくように飛びたつっ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "白い雲、青い海、潮騒に交じる美しいボク！\r\nこの夏は1度しかない！\u3000ならば全力を出し切るまでさっ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……どのような行動であれ、\r\nテイエムオペラオーは本気で取り組んでいる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "確固たる意志で努力し、目標に突き進む担当ウマ娘がいるならば、\r\nその背を押すのがトレーナーの役目だろう。",
+      "ChoiceDataList": [
+        "一緒に最高のトレーニングにしよう！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "勿論だ！\u3000手は一切抜かないとも！！\r\n大海原とボクのハーモニーを、このビーチ中に響かせよう！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "その日のトレーニング終了後――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "ここにいたんだね、トレーナー君。",
+      "ChoiceDataList": [
+        "怎么了？",
+        "怎么啦？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "なに、いくつか相談したいことがあってね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "まずは明日のメニューの確認だが、\r\n集合時間は4時にして――",
+      "ChoiceDataList": [
+        "早い早い！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "そうかな？\u3000……ああ、なるほど！\r\n夏とはいえど、まだ朝日も昇る途中だ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "太陽を背にさっそうと現れるボクの演出をするならば、\r\nもう少し後の時間の方が適しているね、了解だよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "ふむ……それで集合した後は、\r\nボクは髪をかき上げながら、ゆっくりと海の中に入る。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "イソギンチャクと触れ合う魚のように、\r\n波に揺れ、美しく舞い、シンクロを開始して――",
+      "ChoiceDataList": [
+        "毒があるイソギンチャクには気を付けような",
+        "毒があるイソギンチャクには気を付けようね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "おや、そうなのかい。ではこの白魚のような手足が\r\nイソギンチャクに触れないよう十分に注意しよう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "そしてしばらくしてボクは海から上がり、水しぶきと共に歌いだす！\r\n真夏のセイレーンたちも惚れ込んでしまう歌声でね！",
+      "ChoiceDataList": [
+        "歌も歌うのか！？",
+        "歌も歌うの！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "レース後のライブと同じさ。\r\nフィニッシュを飾るなら、人の心を揺さぶる歌でないと。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "ビーチにいる人々は感涙し、万雷の拍手をボクに送るだろう。\r\n嗚呼、完っ璧だ……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "はーっはっはっは！\u3000明日が楽しみだよトレーナー君！\r\nそれでは、またトレーニングで会おう！",
+      "ChoiceDataList": [
+        "相談したいことがあったんじゃ……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "ああ、それなら解決したよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "トレーニングで不安な点がいくつかあってね。\r\n本当にこのまま進めていいか、迷っていたんだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "だから君に話した。そして君は率直な指摘をくれた。\r\nいつものように、ボクのことを思う言葉と共にね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "アイディア自体を否定することもなく、\r\n瞳を曇らせることもなく、君らしい真っすぐな意見でさ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "もう確認するまでもなかったよ。\r\nボクの判断に間違いはない、恐れることなく進もうってね。",
+      "ChoiceDataList": [
+        "そんなことを考えていたのか",
+        "そんなことを考えてたんだ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "――ふふっ、なんだい。ボクにだって、\r\n自分の行動が正しいのか迷う時くらいあるさ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "けどこんな顔、誰にだって見せられるわけじゃない。\r\nボクは“世紀末覇王”となるウマ娘だからね。",
+      "ChoiceDataList": [
+        "君は強いな",
+        "貴方は強いね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "ふっ、それでこそ王だろう？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "さて、そろそろ明日に備えるとしようか。\r\n明日のボクを待つ観衆のためにもね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "ああ、そうだ。トレーナー君、もうひとつだけ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "もし再び、ほんの少し誰かと未来を語りたくなったら……\r\n君に声をかけていいかな？",
+      "ChoiceDataList": [
+        "那当然！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "はーっはっはっはっは！\r\n本当にいいトレーナーを見つけたものだよ、流石ボクだね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そして今日もテイエムオペラオーは、\r\n独自のトレーニングに取り組んでいる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "朝日がボクの訪れを祝福しているね。\r\nさあ、今日もトレーニングを始めようじゃないか！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "まずは海風で髪を揺らすところからスタートだ。\r\nボクは髪をかき上げ、みんなにウインクを飛ばす……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "はーっはっはっはっは！\u3000今日のボクも美しい！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "……今日もすごいわね、オペラオー。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "あっはは、そうですね。でもあれだけ自信があるのは、\r\nちょっとうらやましいかもです。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "ふふっ、今のビーチでボク以上に輝いているウマ娘はいない！\r\nそうだろう、トレーナー君！",
+      "ChoiceDataList": [
+        "流石テイエムオペラオー！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "その通り！ボクはいずれ世界を照らす\r\n“世紀末覇王”になるのだからね！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "テイエムオペラオーは今日も自信満々で、\r\nトレーニングを開始するのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

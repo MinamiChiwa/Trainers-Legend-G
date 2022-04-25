@@ -1,0 +1,377 @@
+{
+  "Title": "能战胜我的“对手”",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "闪耀系列赛的前半期，以琵琶晨光在\n『宝冢纪念』的压倒性胜利而告终。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "接着迎来了夏季的重点——\n天狼星队为了准备夏季合宿，前来采购物品。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "烟花、西瓜，还有胡萝卜……\n啊～想买的东西太多了～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "虽然准备起来很辛苦，但到那之后就好好放松吧。\n虽说是合宿，但毕竟也兼顾着休假的目的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "顾客A",
+      "Text": "啊！？\u3000是成田白仁！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "顾客B",
+      "Text": "哇～是本人！！\n德比伤害的5马身差，当时让我热血沸腾了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "是吗……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "顾客B",
+      "Text": "接下来终于是三冠最后的『菊花赏』了呢！！\n那之后你会参加『有马纪念』的吧！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "啊，我也有点好奇！\n要怎么安排呢，训练员！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "虽然还没确定，估计就是那样安排吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "虽然还没确定，估计就是那样安排吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "顾客A",
+      "Text": "哦哦！\u3000请一定要拿下“三冠赛马娘”的称号，\n再赢下『有马纪念』啊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "这不必说，参加的比赛我会全部取胜的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "顾客B",
+      "Text": "哇～！\u3000我们全家都很去看的！\n请让我们看到你压倒性胜利的那一刻哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "大家都是以获胜为前提在说话呢。\n不愧是白仁同学啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "『菊花赏』也好，『有马纪念』也罢。\n说实话我完全无法想象现在的白仁能怎么输。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "当然也得看对手是谁，说不定也会有变数。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "能战胜白仁的“对手”啊～……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "？？？",
+      "Text": "哦呀？\u3000这不是白仁吗。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "我记得她是……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "美浦寮的宿舍长菱亚马逊。\n……亚马同学也来买东西吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "菱亚马逊",
+      "Text": "是啊，为了暑假还留在这里努力的后辈们，\n我想给她们做点好吃的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "你这简直就是老妈了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "菱亚马逊",
+      "Text": "嘿嘿，要照顾的地方可不止做吃的哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "菱亚马逊",
+      "Text": "我也给她们示范了跑步方法。\n告诉她们不管对手是谁，只要有毅力就能正面较量！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "这位名叫菱亚马逊的赛马娘，也似乎有着不输于成田白仁的\n好胜而又执着的性格。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "菱亚马逊",
+      "Text": "……哦！？\u3000危险！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（吱ー！！！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "菱亚马逊",
+      "Text": "呼～好险。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "顾客的孩子",
+      "Text": "呜……呜啊～～！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "菱亚马逊",
+      "Text": "喂！！\u3000过马路的时候\n要好好观察啊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "菱亚马逊",
+      "Text": "菱姐姐会看着你的，\n下次好好注意车子再过马路哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "顾客的孩子",
+      "Text": "呜呜～……姐姐，谢谢……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "很精彩嘛，亚马同学。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "菱亚马逊",
+      "Text": "这算啥，照顾大家才是菱姐姐该做的。\n……然后，刚才话才说到一半吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "菱亚马逊",
+      "Text": "白仁，我很想跟你比上一场。要是被称为最强马娘的你\n来当我对手的话，那我可就热血沸腾了……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "菱亚马逊",
+      "Text": "总有一天我会和你站在同一个舞台上！\n到时候你可不许逃哦？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……我不会逃跑，但也不会等着你。\n想和我一起跑的话，那就追上我吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "菱亚马逊",
+      "Text": "嘿嘿，正合我意！！\n那么，还有限时特价鸡蛋卖，我就先走一步了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……真是老妈啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "哎呀～刚才那千钧一发的情况真是吓到我了，\n她救小孩子时的爆发力也同样吓了我一跳啊～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "你没听说过那位的比赛表现吗？\n她有着能从后方一口气冲到领先的，惊人的脚力——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "甚至也有人说，看她的比赛\n比看白仁同学的比赛还有冲击力哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "那种强者都盯上白仁了，\n你还真是不缺“对手”啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "那种强者都盯上白仁了，\n你还真是不缺“对手”呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……哼。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "于是乎~我们决定在目白家别墅举办夏季合宿\n你们两个要不要一起来？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "我就免了。\n『宝冢纪念』之前受了伤，得去医院看看。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "嗯～……那就没办法了。\n那么，晨光会去的吧！？\u3000会去的吧！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "……不，我也免了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "诶诶～！？\u3000有烟花、西瓜还有胡萝卜哦？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "抱歉了，我还有必须要做的事。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "难道是暑假作业？\n我看你从刚才就一直在笔记上写东西。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "…………诶？\u3000这，这啥……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "肌肉训练和体格训练……沙土冲刺和坡路冲刺，\n出闸训练和游泳训练和……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "难道这密密麻麻的项目你都要做吗！？\n就这个暑假！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "啊，现在必须得开始准备秋季的比赛了。\n从『产经赏』开始，再跑完『天皇赏（秋）』之后——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "……目标是『有马纪念』。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "晨光的目标也是『有马纪念』吗！？\n那么，晨光和白仁就会在那……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "能战胜我的“对手”吗……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

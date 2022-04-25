@@ -1,0 +1,169 @@
+{
+  "Title": "夏季合宿（第2年）结束",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（已经是夏季合宿的最后一天了吗……\n总觉得今年的夏季合宿过得好快啊。）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（不过……成果还不错）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……去找别人说来和我这个豆芽菜训练，\n被拒绝了我可不管哦？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "『现在已经没人会这么说你了』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "『もう貴方にそんなこと言う子はいないよ』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "『菊花赏』……看来也不是不能赢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……嗯？\n那是――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "电视声",
+      "Text": "『――残り50m、先頭はナリタブライアン！\nナリタブライアン……\nそのまま逃げ切ってゴールイン！』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "成田白仁"
+      ]
+    },
+    {
+      "Name": "电视声",
+      "Text": "『与第二名的差距是令人惊叹的9马身！\n成田白仁，漂亮地在出道战拿下胜利！！』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……ブライアン、\nこの間デビューしたんだっけ？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "ブライアン"
+      ]
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "む、タイシン。\n……ああ、今年から彼女もジュニア級だ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "ジュニア級"
+      ]
+    },
+    {
+      "Name": "",
+      "Text": "（ナリタブライアン――“怪物”との\r\n呼び声も高い、破壊的な身体能力を持つ\nウマ娘で、ビワハヤヒデの妹だ）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "怪物"
+      ]
+    },
+    {
+      "Name": "成田大进",
+      "Text": "妹の活躍が誇らしくて、何度も観返してる……\r\nってワケじゃ、ないか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "哈哈。……真的如你所说的话可能还好点吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "“怪物”は、既に檻より放たれた。\r\n後は……凄まじい勢いで勝利を積み重ね、\n栄光の道を駆け上がってくることだろう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "――换句话说，\n距离她咬住我喉咙的那一天也不远了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "晨光……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "不过，我没打算就这样让她咬断我的喉咙。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "――“胜利的方程式”，已经几近完成了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "…………！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（什……什么？\u3000她这……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（这可不只是『经过锻炼』的水平而已――）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "夏季合宿已然结束……\n可能会变得波折不断的『菊花赏』已经近在眼前。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……咳、咳咳咳！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "该死……最近是不是咳太多了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,399 @@
+{
+  "Title": "游乐园的誓言\u3000我想战胜对手！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "美浦波旁，领先后方4马身！\n这恐怕必胜无疑了吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "波旁领先！！\u3000即便2400m也一放到底！\n6战6胜！\u3000保持无败达成了两冠！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "『日本德比』，米浴拿到了第2名。\n虽然没能追上美浦波旁，但已经是很大的进步了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "几天后，千叶县的某个游乐园——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "哇～！\u3000这就是那个“有名的游乐园”啊！\n有公主住的城堡和巨雷山的那个吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "为了给努力的米浴奖励，\n带她来了貌似是她一直憧憬的游乐园，然而……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "诶？\u3000只有我们在好像包场了一样呢。\n哎嘿嘿，总感觉好开心呀♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "训练员……米浴好像真的相信这里是\n“有名的游乐园”了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "侧目看着眼睛闪闪发亮的米浴，\n目白麦昆悄悄地在我耳边说话。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "就算这个月工资很紧张，\n到“这种游乐园”来是怎么回事啊？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "这，这个嘛……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "这，这个嘛……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "喂，该走咯麦昆！\u3000据说这里有神秘的地下游乐设施，\n咱们去查明真相吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "等等！\u3000那边是工作人员出入口啊！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "我们也去吧，训练员♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "啊，嗯……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "就这样，快乐的（？）游乐园时光\n很快就过去了——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "基本上把游乐设施都坐了一遍呢。\n今天客人少真是太好了～",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "每当米浴纯粹地感到开心时，\n我的愧疚之情就会涌上心头……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "……那，那个，训练员。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "我最后想去坐一下摩天轮。\n所以……可以和我一起坐吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "良心的谴责……倒也不是这么回事\n米浴能开心就好——",
+      "ChoiceDataList": [
+        "当然可以哦"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "诶嘿嘿……太好啦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "两人从摩天轮看到的景色——\n被夕阳染红的街道逐渐在视野中展开。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "……但米浴从坐上摩天轮就一直\n扭扭捏捏的。",
+      "ChoiceDataList": [
+        "怎么了？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "啊……嗯，那个……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "……训练员，一直以来都很感谢你。\n我从来没想过自己能跑得这么好。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "到现在我都不敢相信，自己竟然在德比跑了第2名。",
+      "ChoiceDataList": [
+        "这是米浴努力的结果哦",
+        "这是米浴努力的结果哦"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "诶嘿嘿……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "……还有，我也想过。\n虽然拿到第2也很开心，但如果能拿到第1的话……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "所以……我想赢过美浦波旁同学。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "『想赢』——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "她藏在心中的这份对胜利的执念，\n不断缩小着与无败赛马娘的差距，已然膨胀到如此程度。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "能像这样想去赢过某个人，\n都多亏了训练员，这一点我无论如何都想告诉你……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "呃……总感觉这样直接说出来，\n稍微有点害羞呢……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "一定是因为你有了那样的自信。\n下次一定要拿到第1名，我们两个人一起战胜波旁。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "一定是因为你有了那样的自信。\n下次一定要拿到第1名，我们两个人一起战胜波旁。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "我们两个一起……嗯，以后也请多指教了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "呀～玩了个爽～！\n米浴，玩得开心吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "嗯，就像是乌托邦一样很开心哦♪\n（PS：米浴出生的牧场名为乌托邦）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "训练员，今天谢谢你的奖励。\n米浴下次也会加油的！",
+      "ChoiceDataList": [
+        "我才是，会全力支持你的",
+        "我才是，会全力支持你的"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "看到米浴同学的表情就能感觉到，\n这次的奖励很正确呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "……不过，下次请准备些正经的奖励哦？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "啊，是……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "第二天，决心更加坚定的米浴\n开始了训练。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "哈，哈，哈，哈，哈……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "跟上去……跟上去……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "哦ー，追得很紧呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "齐刘海的赛马娘",
+      "Text": "就算麦昆加快了步伐，\n米浴也贴的很近呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "学习也好跑步也罢，\n定下目标后才能发挥得更好哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "学习也好跑步也罢，\n定下目标后才能发挥得更好哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "特别是米浴，这种方法效果就更加显著了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "特别是米浴，这种方法效果就更加显著了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "目标是指，麦昆？\n还是美浦波旁？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "都有哦。米浴有能够坚持不懈地追逐\n自己所决定的目标的执念。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "都有哦。米浴有能够坚持不懈地追逐\n自己所决定的目标的执念。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "哦～这样啊～",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "像这样继续下去的话，下次与美浦波旁的再战中就能\n期待一场前所未有的精彩比赛了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "而且，对于正在准备『宝冢纪念』的目白麦昆来说，\n这也将成为很不错的锻炼吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "以米浴为起点，队伍的士气正在上涨。\n才刚这么想——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "麦昆同学！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "米浴的悲鸣响彻了整个训练场……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

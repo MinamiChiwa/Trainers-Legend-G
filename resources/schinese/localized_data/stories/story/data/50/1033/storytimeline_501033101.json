@@ -1,0 +1,356 @@
+{
+  "Title": "新年的抱负",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "――新年。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "冬休みに入ってから三が日あたりまでは、\r\n実家に帰省する者も多い。いつも\n賑やかな学園内も今は火が消えたかのようだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "とはいえ自分は、今年からクラシック級\r\nという大事な時期のウマ娘を預かる身。\nのんびり寝正月などしていられない。",
+      "ChoiceDataList": [
+        "好了，工作工作！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我一边确认着去年的比赛结果与训练日志，\n一边慢慢计划着今年的训练。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "不管怎么说，爱慕织姬要挑战的，\n是最为王道最为困难的经典三冠路线，\n我这边也必须好好准备才行。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我带着这种心情，\n努力地工作着——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（咕～）",
+      "ChoiceDataList": [
+        "啊，还没吃饭！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "一直忙着工作，居然完全忘了吃饭的事儿。\n看了看储物柜，我甚至连方便食品也没剩下来。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我只能抱着一丝希望，到商店街瞎逛。\n果然在新年期间，没什么店家会开门。",
+      "ChoiceDataList": [
+        "（嗯……那就只能……）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "啊……",
+      "ChoiceDataList": [
+        "哎，织姬！新年快乐！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……新年快乐。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "爱慕织姬认真地给了我回礼。\n她还穿着运动服，脸颊也微微泛红。\n看来是从新年开始就在自主训练。",
+      "ChoiceDataList": [
+        "织姬也来买东西吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……运动饮料的冲剂用光了。",
+      "ChoiceDataList": [
+        "便利店在新年也开门真是帮大忙了。",
+        "コンビニは元日も開いてて助かるよね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……是呢。\n的确……一直都受它们照顾了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "听到这个『一直』，我突然注意到一件事。\n……恐怕她一年四季都没有回过老家，\n一直留在学校里。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "但想到爱慕织姬自己的身世、\n大概这也无可厚非——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……那我先走了。\n我还有要买的东西。",
+      "ChoiceDataList": [
+        "啊、等等！",
+        "あ、待って！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "欸……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "既然难得和织姬碰了面，\n那不如我陪她一起去买东西。\n反正我也得买便当。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "割と食い下がられたが、そこは\r\n大人に任せてほしい、と押し通して――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "顺便，在购物袋中附上了一份礼物。",
+      "ChoiceDataList": [
+        "能让人打起精神的热小吃",
+        "能让人放松的速食汤。",
+        "能让头脑变灵光的甜点"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……这是？",
+      "ChoiceDataList": [
+        "正好看见就买了。今天也挺冷的嘛。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……嘛，那就多谢了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "爱慕织姬默默地吃起了我买的热小吃。\n见状，我也开始慢慢吃起我的肉包——",
+      "ChoiceDataList": [
+        "烫烫烫！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "怎么了？你没事吧？\n……你是猫舌吗？\n（日本用语，猫舌意为舌头怕烫）",
+      "ChoiceDataList": [
+        "大、大概是……织姬没事吗？",
+        "か、かも……アヤベは平気なの？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "我倒是……\n没这么怕烫。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……吃东西的时候，别用舌尖先碰食物比较好。\n……我也不是很清楚就是了。",
+      "ChoiceDataList": [
+        "原来这样啊……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "就这样，我好好享受了这美味的肉包。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "你……是不是放了些多余的东西进来？",
+      "ChoiceDataList": [
+        "……就当作是新年的祝福……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……那算什么啊……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……嘛，那就多谢了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……好冷。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（大概是因为其他人都没在吧……\n感觉……好冷……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "啊、说起来……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "哼……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………好温暖。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "呃……甜点……？",
+      "ChoiceDataList": [
+        "这可是『软绵绵香草蛋奶酥』哦"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……味道这种东西怎么样都好吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "哈、哈、哈……呼。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（……软绵绵……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（嗡……嗡……嗡……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "好，接下来等着干了就好……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（软绵绵……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（咬）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（软绵绵……！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "Title": "比赛入围",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……入着。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "只差一点……明明只差一点了。",
+      "ChoiceDataList": [
+        "但还是跑得很漂亮哦！",
+        "但还是跑得很漂亮哦！",
+        "下次一定能获胜了！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "只差一点……明明只差一点了。",
+      "ChoiceDataList": [
+        "但还是跑得很漂亮哦！",
+        "但还是跑得很漂亮哦！",
+        "下次一定能获胜了！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……我明白你是想安慰我。\n但我现在不需要同情。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "我所需要的不是跑得有多漂亮，而是胜利。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "下一次，我一定要比谁都更快——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……一定要赢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "找到自己的弱点、然后克服它。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "为了达成那崇高的目标——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

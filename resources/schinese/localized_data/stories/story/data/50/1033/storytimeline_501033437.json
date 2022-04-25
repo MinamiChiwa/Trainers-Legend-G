@@ -1,0 +1,49 @@
+{
+  "Title": "喧闹的轩辕十四",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『宝塚記念』に向けたある日、\r\nアドマイヤベガはメイショウドトウと共に\n『天皇賞（春）』を観に来ていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "天皇赏（春）"
+      ]
+    },
+    {
+      "Name": "独白",
+      "Text": "強豪集うその舞台で、\r\n異質な圧を纏ったテイエムオペラオーは\n高らかに『新章の開幕』を宣言する。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "実際に、レースで見せた走りは\r\n凄まじかった。そしてレース後、客席の\nメイショウドトウに向かって彼女は語る。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『君だけを待っていた』――その宣言は、\r\nメイショウドトウが長い長い準備期間を経て、\n殻を破る最後のきっかけにもなった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "トレーニングに駆けだすメイショウドトウ。\r\nそんな彼女を見て、アドマイヤベガもまた\n刺激を受け、走り出したいと語る。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ついに4人がそろい踏み。\r\nシニア級の盛り上がりは、まだまだこれから。\nそんな予兆を感じさせるのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "Title": "减肥成功！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "はっ……ふっ……！\r\nまだまだ……！",
+      "ChoiceDataList": [
+        "你没在勉强自己吧？",
+        "無理しすぎじゃない？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "何言ってんの？\r\nむしろ足りないくらいだし！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "強いヤツらが食べてる料理！\r\n強いヤツらがやってる運動！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "両方取り入れて、\r\n同じような体になってやるんだから……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（っていうか、ウマ娘ってなんで\r\nどいつもこいつも大食らいなワケ！？）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（おかげで思った以上に\r\n体重増えちゃったし……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（くそっ！\u3000ちゃんと痩せるまでは！\r\n絶対にトレーニングを！\u3000やめないっ！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "その後もひたすら筋力トレーニングを続けた\r\nナリタタイシンは、\nなんとかダイエットに成功したのであった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

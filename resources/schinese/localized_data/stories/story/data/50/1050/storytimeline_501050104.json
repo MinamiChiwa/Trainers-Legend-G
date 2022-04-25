@@ -1,0 +1,507 @@
+{
+  "Title": "夏季合宿（第2年）中",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "呼……呼――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "咳咳！！",
+      "ChoiceDataList": [
+        "大进！？没事吧！？",
+        "タイシン！？大丈夫！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "あーもう、いちいち騒ぐなっつの。\r\nちょっと咳込んだだけだから。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "比起这个，说到训练――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……ちょっとマンネリ化してる気がする。\r\n体が慣れてきちゃってるっていうか。",
+      "ChoiceDataList": [
+        "确实呢……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『菊花賞』で勝利を目指すなら、ここで\r\n大幅なレベルアップをしておきたいところだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……啊？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "スぺちゃぁあああああんっ！！\r\n一緒に砂浜ダッシュトレーニング、やろうっ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "わ、チケゾーさん！\r\nえっと、私でいいんですか！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "チケゾー"
+      ]
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "当然可以！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "2人でやれば、全力×全力の超全力で\r\nアタシももーーーっと力が出せるから……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "一起来训练吧！\u3000唔哦哦哦哦！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "チケゾーさん……！\r\nわかりました、やりましょう！\u3000うぉおおー！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哇啊……热血到不能接受了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "不过……\n………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "口ごもるナリタタイシンだが、言わんと\r\nしていることはわかったような気がする。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "誰かと一緒にトレーニングするのは、\r\nマンネリ打破にもきっとよい。",
+      "ChoiceDataList": [
+        "我帮你找下练习的搭档吧"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……有言在先，我可不保证能找到啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "チケットはあの通りだし、ハヤヒデも\r\n『夏は1人で鍛えたい』って言ってたし――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "奖券",
+        "ハヤヒデ"
+      ]
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……チビと練習したって意味ないって、\r\n断られまくっても知らないよ？",
+      "ChoiceDataList": [
+        "现在已经没人会这么说你了",
+        "もう貴方にそんなこと言う子はいないよ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "皐月賞、日本ダービーで立派に結果を残し、\r\n今やクラシック戦線を騒がす『三強』に\n数えられているのだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "少なくともトレセン学園内に、\r\nナリタタイシンの実力を疑っている子は\nいないだろう。そう話すと――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "トレセン学園"
+      ]
+    },
+    {
+      "Name": "成田大进",
+      "Text": "………………随你的便吧。",
+      "ChoiceDataList": [
+        "好，去找找看咯！",
+        "よし、探してくるね！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そんなこんなで、浜辺を駆け回り、\r\n見つけた練習相手候補はというと――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "……え、スイカ割りでパワー鍛える？\r\nもしかして素手でいく気？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "あはは、まっさか～！\r\n普通にバット使うよ～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "そりゃもう見栄えが完全に\r\nトレーニングじゃなくて夏満喫ガールだねぇ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "わわわ、ライスちゃんすごいすごーい！！\r\nタイヤ、いっぱい持ってきたねぇ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "う、うんっ……！\u3000たくさん引っ張って……\r\n根性、鍛えたくて……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "那，要去问问哪边呢……？",
+      "ChoiceDataList": [
+        "切西瓜的力量训练！",
+        "拖轮胎的毅力训练"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "は、スイカ割り？\r\nそれのどこがトレーニング――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "タイシンさん、ようこそです～！\r\nじゃあ最初は私がやるので、\n指示出しお願いしますね！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "指示出しって……！？\r\nきゅ、急に言われても……。",
+      "ChoiceDataList": [
+        "就当是在操控游戏角色！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哈！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "ほい、目隠し完了～。\r\nんじゃ、始めちゃいましょーか！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "唔……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……右に2歩！\u3000で、前に3歩……\r\n行き過ぎ、後ろに1.5歩！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "――就在那里！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "ありがとうございます～タイシンさん！\r\nすっごいわかりやすい指示でした～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……是、是吗。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "あ、ネイチャが向こうでスイカ食べる準備\r\nしてくれたので、行きましょ～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（うわっ、バットで割ったからボロボロ……\r\n普通に切って食べた方がいいんじゃないの？）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（咬……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "…………咦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "あはは、不思議ですよね～！\r\n変な形してるスイカなのに、\nなぜかいつもより美味しく感じちゃうなんて。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "嗯――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "…………的确。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ちょっといい夏が過ごせた\r\nナリタタイシンなのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "た、タイシンさんっ……ほんとに、\r\n一緒にやってもらっていいんですか？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "ライスといたら……\r\n不幸になっちゃうかもしれないのに……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "それどういう理屈……っていうか、\r\nお願いしたの、こっちの方だし。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "だから……その。\r\n……ヨロシクオネガイシマス。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "……！\u3000う、うんっ！\r\nよろしくお願いします……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哈啊……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "こうして、トレーニングは順調に進み、\r\nしっかり鍛えられたのだった……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "あっ！\u3000ねえねえ、かき氷あるよー！！\r\nがんばったごほうびに、食べたいな～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "わぁ、かき氷……！\r\nりんご味もあるかなぁ……？",
+      "ChoiceDataList": [
+        "好，就买三人份的吧！",
+        "よし、3人分買ってくるよ！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "店员",
+      "Text": "おっと悪い！\u3000今日はバカ売れで氷がもう\r\nなくてな、今追加のトラックを\n待ってるとこなんだが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "店员",
+      "Text": "――ん、もしもし？\u3000……なにぃ！？\r\nすぐそこまで来たのに事故っただって！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "えーっ！！\u3000大変！！\r\nみんな困っちゃってるよ、助けに行こ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "呃……诶，我也要去吗！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "卡车司机",
+      "Text": "伤脑筋，居然卡在路肩上了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "はわわ……ど、どうしよう……ライスが\r\nかき氷食べたいなんて思ったから……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "はいはーいっ！\u3000トラック、\r\n持ち上げたらいいんじゃないかな？\nわたしたち、やるよー！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "……！\u3000う、うん……！\r\nあのっ、私たち、やります……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "卡车司机",
+      "Text": "ええ！？\u3000荷物満載のトラックだぞ！？\r\nいくらウマ娘っつったって……なぁ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "卡车司机",
+      "Text": "お嬢ちゃんたちみたいな\r\nチビっ子に頼むのは、ちょっと……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "嘁……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……どいてて。\r\nウララ、ライス、やるよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "卡车司机",
+      "Text": "诶诶！？等下，姑娘们……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "喝……啊啊啊啊！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "卡车司机",
+      "Text": "唔哇！？\u3000好、好厉害～……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……こうして、無事\r\nかき氷にありつけたのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "さっきのタイシンさん、\r\nカッコよかったねぇ～！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……哈？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "う、うんっ……！\u3000堂々としてて……\r\nかっこよかった、です……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "什、什么啊你们……\n怎么突然说这种话啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

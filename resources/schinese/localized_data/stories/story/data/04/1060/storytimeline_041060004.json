@@ -1,0 +1,375 @@
+{
+  "Title": "『それでも』と、言う",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "啊ー……麻烦了ー，看到了啊ー……",
+      "ChoiceDataList": [
+        "看见了什么？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "地元の商店街のみんな……。学校行事だってのに、\r\nどーやらわざわざ来てくださったみたいなんですよねー。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "しかもね、客席で相席になったこっちの商店街の人たちと、\r\nまー仲よくなっちゃってんの。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "しかもアタシのことで盛り上がっちゃっててさ。\r\nもうね、雰囲気が親戚の集まり。",
+      "ChoiceDataList": [
+        "优秀素质应援团组成了呢",
+        "优秀素质应援团组成了呢"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "喂，别说了，连训练员都!?",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "啊—真是的，拜托了不要对我期待太高啊—! !",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "虽然是这么喊着的优秀素质，\n但在走向大门的时候表情变了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "终于，竞技大会正式开始了!",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（――哒哒哒！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "2人",
+      "Text": "哈，哈，哈，哈……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "各ウマ娘、第1コーナーを曲がりまして、4番手にナイスネイチャ！\r\n1バ身半空いて、大注目のトウカイテイオーが5番手！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "（くぅ～、嫌ぁ～なプレッシャー……！\u3000いや、向こうは\r\nそんなんかけてる気すらないんだろうけどさぁ～……！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "(但是……现在的情况很好……!)",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "哼哼ー……\n差不多该冲刺了! !",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "向正面を通過！\u3000トウカイテイオー上がってきました！！\r\n一気に順位を上げていくっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "呜……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "（不好，帝王冲刺了……！\n就这样下去不管的话……！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "嘿……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "ナイスネイチャも団に加わり、トウカイテイオーを追います！\r\nさぁ、第4コーナー……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "トウカイテイオー！\u3000トウカイテイオー先頭！\r\nナイスネイチャは3番手！ ピッチを上げ、猛然と前を追います！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "はっ、はっ、はっ……！\r\nうぅ……ぁああああああっ！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "トウカイテイオー、2バ身のリード！\r\nいや、2バ身半……3バ身！\u30002着に差をつけ、ゴールインッ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "东海帝王，华丽的胜利！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "哈，哈，哈………………啊ー。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "哎呀，今天真可惜啊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "但是嘛，第三也不是什么不好的结果吧？\n没什么好失落的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "アタシにはちょーどいいサイズの幸福っていうかさ。\r\nうんうん、アタシにはこれぐらいがちょうどいいよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "真的……果然我也只是，这样的极限――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "老师A",
+      "Text": "――对不起打扰你们谈话了。\n内恰在这里吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "诶？啊，在？\n找我有什么事吗……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "老师A",
+      "Text": "有东西要送给你。\n这个就放在这里吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "欸……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "教師が持ってきてくれたのは、箱だった。\r\nその中には、ぎっしりとナイスネイチャ宛の手紙が詰まっていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "『小内恰』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "『今日のレースもよく頑張っていましたね。結果は惜しかったけど、\r\nあなたが走る姿は、私たちにとって1番の励みです』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "『あなたのいないところでも、あなたの話になると、\r\n私たちはみんな笑顔になれます』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "『あなたというウマ娘に出会えたことが、\r\n私たちにとってかけがえのない宝物です』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "『我们会一直支持你的，要注意身体哦。』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "这是，什么…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "なに……なんなの、みんなして。\r\n励み？\u3000アタシの姿が？\u3000アタシ、なんかの――",
+      "ChoiceDataList": [
+        "大家都看着呢，你身上的光辉",
+        "大家都看着呢，你身上的光辉"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "…………！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "……っ、ぁああああああー！！！\r\nあー！\u3000あーーあぁーっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "可……恶恶恶恶！！\n可恶，可恶，可恶ー！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "什么啊，第三名！！\n一直！一直一直一直！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "善戦はした？\u3000惜しかった？\u3000悪くはない？\r\nここがアタシの限界だって、そんなん、納得できるわけないじゃん！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "なのに、みっともないとか似合わないとか勝手に自分をさげすんで、\r\n予防線張って！！\u3000小さいプライド守るために冷めたこと言って！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "因为不想绝望，所以就不想改变……\n因为害怕受伤，所以就不抱期待!",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "但是……但是，但是啊！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "…………我不想，就这样结束啊。",
+      "ChoiceDataList": [
+        "是的呢"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "応援してもらってるんだよ。\r\n励みにしてくれてるんだよ、こんなアタシを。だったらさぁ……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "想好好的……让他们见证。\n最闪闪发光的我……！！",
+      "ChoiceDataList": [
+        "就等着你这句话呢"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "……啊，训练员。",
+      "ChoiceDataList": [
+        "从现在开始一起直指胜利吧"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "嗯……啊ー，不是，那个……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "啊ー……不行啊。总想着保险起见，\n这已经变成习惯了啊ー……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "抱歉，我还不能直截了当地说出『嗯』。\n直面梦想的勇气，我好像还不足够。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "でも……その、さ。\r\nもし、こんなアタシでもいいって言ってくれるんなら――",
+      "ChoiceDataList": [
+        "今后也一起加油吧！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "嗯……请多关照，训练员！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

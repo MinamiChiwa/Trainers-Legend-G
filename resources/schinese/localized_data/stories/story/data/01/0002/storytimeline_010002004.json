@@ -1,0 +1,23 @@
+{
+  "Title": "抽卡结果",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "育成赛马娘和支援卡都\n集齐了呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "那么接下来，开始您与赛马娘\n的日常吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

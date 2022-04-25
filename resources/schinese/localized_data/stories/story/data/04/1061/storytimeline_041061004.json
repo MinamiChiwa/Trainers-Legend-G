@@ -1,0 +1,370 @@
+{
+  "Title": "觉悟与宣言",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "前日から降り続いていた雨も午後には上がり、いよいよ、\r\nキングヘイローの出走する模擬レースが始まろうとしていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "おおっ、賑わってますね～！\u3000そりゃそうか。\r\nあのグラスワンダーが出走するんですし！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "雨のせいでコースの状態はよくないが……\r\nまあ、グラスならものともしないだろうな。……おっ、来たぞ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "下午好～，小圣王。\n今天请你多多关照了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "赋予你向我讨教的权利吧，草上飞同学！\n让你见识下一流的跑姿！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "……你，又来了啊。",
+      "ChoiceDataList": [
+        "因为听说你会参赛",
+        "因为听说你会参赛"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "哼ー……你，比我想象中的还要顽固呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "……まあ、いいわ！\u3000そんなにキングの走りが見たいなら、\r\n何度でも魅了してあげる。おーっほっほっほっほ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "青云天空",
+      "Text": "哎呀ー，大小姐还是老样子呢~。",
+      "ChoiceDataList": [
+        "你也是来为圣王光环来加油的吗？",
+        "你也是来为圣王光环来加油的吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "青云天空",
+      "Text": "にゃはは、そんなんじゃないよー。\r\nちょっと空き時間が出来たから、暇つぶしに来ただけー。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "青云天空",
+      "Text": "それより、始まるみたいだよ～。よそ見してたってバレたら\r\n拗ねられそうだし、しっかり見てあげたほうがいいんじゃない？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "让开道来！\u3000圣王要通过了！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "哦，圣王光环，冲到前面来了呢！\n和她母亲一样，更擅长需要力量的赛道吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "さて、どうだろうな……そうと決めつけるのは早計だろう。\r\nもう少し様子を見ないとな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "哈……哈……！\n我，要以一流的身份……拿出成绩来……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "青云天空",
+      "Text": "お～、キングにしては珍しい展開だね。選抜レースの時\r\n集団に埋もれちゃったのが、なんだかんだでこたえたのかな～？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "青云天空",
+      "Text": "けど、ちょ～っとフォームが崩れてるなぁ。力みすぎってやつだね。\r\nやる気がありすぎてがんじがらめなのは、いつものことだけどさ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "青云天空",
+      "Text": "もったいないな……。\r\n少しは自由に走ればいいのに。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "直线赛段……！\u3000来了，是草上飞！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "唔ーーーーーーーー！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "なんて力強い……！！\u3000足元の悪さを感じさせない走りだな！！\r\nキングとの差がどんどん開いていくぞ……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "青云天空",
+      "Text": "呃ー……主角变成小草了啊ー。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "接着，比赛结束后……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "不愧是草上飞啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "今はスカウトを受けていないらしいが……\r\n次回の選抜レース後は是非、彼女と話したいものだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "ですね！\u3000キングヘイローの方は……まあ、これでそろそろ\r\n現実的な視点を持てるようになったんじゃないでしょうか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "哈……哈……\n…………唔！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "おーっほっほっほ！\u3000次こそはトップを譲らないわ！\r\n覚悟しておきなさい、キングの走りはこの程度じゃないんだから！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "面对一如既往的宣言，训练员们呆若木鸡地望向她。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "そうよ、私に注目なさい！\u3000そして、しっかり覚えておくといいわ！\r\n私はキングヘイロー、一流のウマ娘よ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "負けても、悔しくても、呆れられても、彼女は“一流”を\r\n名乗り続ける事をやめない。それが、己に強いた覚悟だから。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "那么，与她相配的训练员，也应该有觉悟――！",
+      "ChoiceDataList": [
+        "而我则是，一流的训练员！",
+        "而我则是，一流的训练员！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "训练员们",
+      "Text": "……哈？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "诶？",
+      "ChoiceDataList": [
+        "所以我要发掘一流的马娘！",
+        "所以我要发掘一流的马娘！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "那个……你，没事吧？\n草上飞可不在这里哦？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "不如说，在你的面前，\n只有圣王光环啊……？",
+      "ChoiceDataList": [
+        "没关系！就是她！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "训练员们",
+      "Text": "（一阵嘈杂……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "……喂，我说你。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "あなたには、このキングが生まれ持った圧倒的な才能をより高め、\r\nこの世界に示すという固い決意はあるかしら。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "そしてキングと共に無数の勝利を重ね、一流のウマ娘\r\n“キングヘイロー”の名を轟かせる覚悟はあるのかしら！？",
+      "ChoiceDataList": [
+        "我有！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "……那就这样决定了。\n在场所有人，给我听好了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "现在，“一流的圣王光环”，\n决定和这个“一流的训练员”联手了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "私たちはトゥインクル・シリーズに出て、あらゆるレースに\r\n勝利する。あなたたちはその栄光の旅路をぼけっと見てらっしゃい！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "……来，签下契约吧。\n跟我来，训练员！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "……你，为什么要那样做？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "みんなが見ている前で『一流』だなんて。\r\nそうすることで何を背負うことになるか、本当にわかってるの？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "『大口をたたいたおバカ』だって、後ろ指さされて、笑われて。\r\nでも、1度口にしたことは取り消せないのよ？",
+      "ChoiceDataList": [
+        "所以，只能成为真正的一流了",
+        "所以，只能成为真正的一流了"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "……ふんっ、ばっかじゃないの！\u3000あなたってば思った以上に\r\n頑固だし、思った以上に不器用だったのね！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "……嘛，我倒是不讨厌啦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（嗡ー、嗡ー）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "……又是、母亲大人呢。\n…………………………",
+      "ChoiceDataList": [
+        "一起向她宣布吧"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "诶……宣布？\u3000什么？",
+      "ChoiceDataList": [
+        "说『好好看着一流的我们吧』"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "……呵呵。\n这么做，我倒也不讨厌呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "じゃあ……電話、取るわよ。\r\n準備はいいわね？\u3000せー、のっ……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "就这样，我与圣王光环开始了\n以证明一流为目标的日子。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "もしもしお母さま？\u3000私、帰らないから。それより紹介して\r\nあげるわ、よく聞きなさい。この人が――私のトレーナーよ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "Title": "请保重！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "トレーニング中にケガをした\r\nナリタタイシンを保健室に連れてきた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……だから、大げさすぎ。\r\nこのくらいのケガ、放っといても治る。",
+      "ChoiceDataList": [
+        "但要是恶化了可就麻烦了。",
+        "それで悪化したら大変だよ",
+        "好！那就训练再开吧！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……だから、大げさすぎ。\r\nこのくらいのケガ、放っといても治る。",
+      "ChoiceDataList": [
+        "但要是恶化了可就麻烦了。",
+        "それで悪化したら大変だよ",
+        "好！那就训练再开吧！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "吵・死・了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "アンタ、\r\nそんなにアタシが貧弱に見えるワケ？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "他のヤツより小さいから？\r\n細くてなよっちい体だから！？",
+      "ChoiceDataList": [
+        "是因为我担心你……",
+        "タイシンが心配なんだよ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "你太爱管闲事了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "心配する暇があるなら、\r\nトレーニングメニューの1つでも考えたら？",
+      "ChoiceDataList": [
+        "要是我准备新的菜单，你就会乖乖养伤吗？",
+        "考えたら治療してくれる？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "それならば、\r\nいくらでも考えると意気込むと――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "いや、そういう意味じゃないし！\r\nちゃんと話聞いてた？",
+      "ChoiceDataList": [
+        "那当然！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……はぁ。\r\n何かもうバカバカしくなってきた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "気抜けした様子のナリタタイシンは\r\nその後、ケガの治療を受けてくれたのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "自分の体を1番理解しているのは、\r\n自分自身だろう――そう思い、\nナリタタイシンの言葉を信じることにした。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "ふん。\r\n最初からそう言えっての。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哈……哈……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "——咕！！",
+      "ChoiceDataList": [
+        "果然，刚才的伤……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "うるさい……！\r\nまだ続けられる！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "アタシはまだ走れる！\r\n走らなきゃ……ダメなんだ……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ナリタタイシンの焦りも理解できるが、\r\nこのまま走らせ続けるのは危険だ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "彼女をなんとかなだめ、\r\nトレーニングを早めに切り上げたのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哈啊、哈啊……怎么样啊！",
+      "ChoiceDataList": [
+        "ケガは本当に平気みたいだな",
+        "ケガは本当に平気みたいだね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "当たり前。\r\nあんなので立ち止まってらんないし。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "他のヤツらに勝つためには、誰よりも多く\r\nトレーニングするしかないんだから。",
+      "ChoiceDataList": [
+        "でも自分の体は大事にしてほしい"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "はぁ……。\r\nアンタってホントおせっかい。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "いいから、\r\n四の五の言わずにトレーニングさせて。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……強くなれば、\r\n余計な心配もしなくて済むでしょ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "その後、ナリタタイシンに文句を言われつつ、\r\nトレーニングを最後まで行ったのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

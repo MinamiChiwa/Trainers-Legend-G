@@ -1,0 +1,198 @@
+{
+  "Title": "結",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "昼休み、クラスメイトから声をかけられている\r\nナリタブライアンを見かけた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "ウマ娘I",
+      "Text": "でね、ブライアンさんに憧れている子もいるし、\r\nよかったら一緒にカラオケとか――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "忙しいんだ。\r\n他をあたってくれ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "ウマ娘I",
+      "Text": "啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "その様子に、ナリタブライアンと\r\n出会ったばかりの頃を思い出した。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "話すことはない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "しつこい。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "今でもトレーニング以外の話をすることは少ない。\r\nしかし、お互いの理解を深めるためにも、もっと会話を――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "必要ない。アンタはトレーナーだ。\r\nそれ以上でも以下でもない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "話は終わりだ。\r\nトレーニングを始めるぞ。",
+      "ChoiceDataList": [
+        "君をもっと知りたいんだ",
+        "貴方をもっと知りたいの"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "…………。\r\nそれになんの意味がある。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "よく考えるんだな。\r\n他人に踏み込むことが、どういうことなのか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "私は私を理解してほしいとは思わない。\r\nこんな渇きを知って、何になる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "ただ『走りたい』というこの熱を、\r\n発散できさえすれば、それでいい。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……それだけで、十分だ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そう口にするナリタブライアンの目は、\r\n遥か遠くを見つめていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "もう目の前で灯が消えるのは見たくない。\r\n自ら消すのも……ごめんだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "――ナリタブライアンの『渇き』は、\r\n生涯、癒されるものではないのかもしれない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……どこへ行っても、誰に挑んでも\r\n満たされない。渇きだけが増していく。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "誰も知らないところで、\r\n1人抱え込んでいた苦しみもあっただろう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "足りない、足りないんだ……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "立ち向かってくる多くのウマ娘たちと\r\n出会ってもなお、癒されない闘志は――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "きっとこれからも際限なく、\r\nナリタブライアンの心に渇きを与えるのだろう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "もういいだろ、これ以上は不毛だ。\r\n無駄話はさっさとやめて――",
+      "ChoiceDataList": [
+        "無駄じゃない"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "…………",
+      "ChoiceDataList": [
+        "きっと無駄にはならない"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "アンタ……は……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "…………。\r\n……はぁ。好きにしろ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "ただ期待もするな。\r\n私は私のやりたいようにやる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……就这样。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……焦る必要はないだろう。\r\n今は慌てずゆっくりと、関係を構築していこう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

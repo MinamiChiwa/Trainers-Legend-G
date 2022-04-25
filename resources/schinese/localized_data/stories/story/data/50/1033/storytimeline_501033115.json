@@ -1,0 +1,620 @@
+{
+  "Title": "命运的双子座",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "哈、哈、哈――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（……左……脚……？）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹？",
+      "Text": "<color=#FF0000>——要是你做不到的话……</color>",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹？",
+      "Text": "<color=#FF0000>至少，也堕落至我身处的地狱吧。\n姐姐。</color>",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（如果那个梦是真的……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（……那么……\n距离我的双脚被彻底摧毁的那天，也不远了。）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "如果你真的这么想的话……也无妨。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（作为对我做犯下的罪过……这样正好。）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（我没能将荣光献给她，\n没能偿清我的罪愆……\n作为惩罚，这样正好。）",
+      "ChoiceDataList": [
+        "织姬！终于找到你了……！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "急いで駆け寄る。\r\n……『菊花賞』前からずっと、\n話をしようとするたび拒絶されてきた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "毫无疑问，情况已经恶化到了不可接受的程度。\n……因为过度的训练，\n爱慕织姬的身体与精神都已经濒临崩溃。",
+      "ChoiceDataList": [
+        "你做过头了，织姬……！",
+        "やりすぎだよ、アヤベ……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……现在是训练员的管辖时间之外。\n在自由时间里要做什么是我的事情，与你无关。",
+      "ChoiceDataList": [
+        "没有这种事情……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "たとえ自由時間内のことであっても、\r\n体調管理が関わってくるなら話は別だ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "生来の歪みから負担がかかりやすかったうえ、\r\n過剰なトレーニングで悲鳴を上げ始めている。\n……彼女の左脚は、もう限界のはずだ。",
+      "ChoiceDataList": [
+        "总之，回去之后我马上帮你护理——"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……别说了。\n不要妨碍我训练。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "你以前说过『随你喜欢』对吧。",
+      "ChoiceDataList": [
+        "……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "你不是说无论我去向何方，都与我同在吗。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "那就别来阻止我。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "我只是，必须迎来我应得的结局……！",
+      "ChoiceDataList": [
+        "我最重要的事情，永远都是帮助你完成梦想。",
+        "……貴方の目標を果たすことは大事だよ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "支持赛马娘的梦想，这是训练员的职责之一。\n我也想与织姬一起完成她的梦想。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "但是——",
+      "ChoiceDataList": [
+        "但相应的，你也应该更珍惜自己的身体。",
+        "それと同じくらい、貴方自身の事も大切だよ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……别说了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "别对我的事情指手画脚……！！",
+      "ChoiceDataList": [
+        "织姬……！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "我不可能放着她不管。\n崎岖的山道。如墨的黑夜。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "眼前的一切，都与我们相遇的那天如出一辙，\n仿佛是那一天的再现。\n——但是。",
+      "ChoiceDataList": [
+        "这次我绝对不会丢下你不管！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "哈、哈、哈……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "咕唔……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（好痛……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（但是……不过是这点疼痛――）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……唔唔唔！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "唔――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "解说？",
+      "Text": "<color=#FF0000>获得甡利的是『×××××××』!\n『×××××××』!\n祝福的欢声嚮彻于京都賽场！！</color>",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（……第三十九回。啊啊。又来了。）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众们？",
+      "Text": "<color=#FF0000>唔哦哦哦哦哦哦哦！！\n『×××××××』！『×××××××』！\n『×××××××』！『×××××××』！</color>",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（又是、这个梦——）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹？",
+      "Text": "啊哈哈哈哈哈——\n哈哈哈哈哈哈哈！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹？",
+      "Text": "<color=#FF0000>真是享受……真是愉悦！！\n这种感觉最棒了！\n啊啊——</color>",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "？？？",
+      "Text": "……其实，我很开心哦，姐姐。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………欸？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "欸……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "？？？",
+      "Text": "对不起哦，在参加小马杯的时候哭了起来……\n我还以为那就是我和你最后一次一起奔跑，\n一想到以后就会变得寂寞了，就……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "？？？",
+      "Text": "不过，姐姐还是在继续奔跑呢……\n为了我，在继续奔跑。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（姐……姐？）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（怎么会……怎么会。怎么会这样……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "你是……\n你是我的……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹",
+      "Text": "多亏姐姐，我也和你一起在闪耀・系列出道了哦！\n而且，还一起跑了GⅠ比赛，\n连经典三冠也一起跑了呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹",
+      "Text": "我很开心哦。\n……其实，我一直都很开心哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹",
+      "Text": "但是，为什么——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹",
+      "Text": "……为什么，那个时候……\n姐姐要道歉呢？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……那、那是因为……\n……我完全忘记了你的事情……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹",
+      "Text": "就算这样，姐姐也不用道歉的。\n我刚刚已经说过啦，我一直都很开心。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹",
+      "Text": "不仅如此，在姐姐步入经典级后，\n我也比以前更开心了。因为——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹",
+      "Text": "因为，我也『在和姐姐一起享受比赛』嘛！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "唔……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹",
+      "Text": "我特别高兴哦。\n姐姐终于可以为了你自己而参加比赛，\n可以为了你自己而享受比赛了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹",
+      "Text": "能和成田路小姐、歌剧王小姐这些劲敌一起，\n在比赛里驰骋……\n一想到这里我就心跳不已呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹",
+      "Text": "并非是为了向我赎罪，\n而是凭着你自己的愿望在赛场上奔跑——\n看见这一幕的时候，我比任何时候都要高兴。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹",
+      "Text": "……姐姐，其实……\n我从来没有想过，要让姐姐向我赎罪。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹",
+      "Text": "因为从一开始，姐姐就没有任何罪过。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹",
+      "Text": "所以过去的一切——\n都不该叫赎罪，应该是姐姐送我的礼物才对哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹",
+      "Text": "在草地上奔跑的满足感、互相竞争的乐趣、\n与劲敌们以热情相互碰撞的时间……\n还有一起参加比赛的快乐的回忆，都是礼物哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹",
+      "Text": "所以……所以说……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹",
+      "Text": "我也有一个要送给姐姐的礼物。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹",
+      "Text": "——『命运』，由我来改变。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "欸？\n——命运……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹",
+      "Text": "我与姐姐的灵魂，是二位一体的。\n迄今为止一直都是如此的哦，\n所以……我们的命运，也是一样的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹",
+      "Text": "所以，我会改变这份命运。\n我会与这份命运——\n与这份悲剧一起，化为虚无。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "等……等下。\n你在说什么……？！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "不要消失……求你了……\n求你了！不要说这种话！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "你不用再迎接一次这样的事情……！\n这次要死去的……应该是我才对！\n这次该轮到我帮助你了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹",
+      "Text": "……哈哈哈哈哈！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹",
+      "Text": "抱歉，已经做不到了哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹",
+      "Text": "因为——\n你看看你的手吧，姐姐。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "手……？\n啊——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（这是……光芒？……我的手？）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（为什么……我的手会缠绕着光——）",
+      "ChoiceDataList": [
+        "……织姬……！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹",
+      "Text": "你听。\n有人在拼命地呼唤你哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹",
+      "Text": "迄今为止的每一天每一刻，我都很开心哦！\n谢谢你，姐姐！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "啊……等下……等等！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹",
+      "Text": "从今以后，姐姐一定要随心所欲地生活！\n然后尽可能地幸福起来！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "织姬的妹妹",
+      "Text": "我最喜欢你了——姐姐。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "等等！！\n等——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "白色。我的意识变得一片空白。\n在这片无限延伸的空白之中——\n我察觉到，我失去了两个东西。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "我的一半灵魂。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "——以及，左脚的疼痛。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "在森林里找到失去意识的织姬后，\n我急忙叫了救护车，把她送来了医院。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "在那期间，她一直呻吟着。\n我则一直、一直呼唤着她。",
+      "ChoiceDataList": [
+        "织姬……！太好了……！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "她终于恢复了意识。\n但是，她只是迷茫地看着我——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "训练……员。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "………………消失了。",
+      "ChoiceDataList": [
+        "欸……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "那孩子。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "我的妹妹……彻底……消失了……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "爱慕织姬紧紧抱住我，痛哭了起来。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "她的手指深深陷进我的皮肤、\n被她抱住的地方传来微微的疼痛——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "但是，这比起她自己感受到的那般痛楚，\n我所承受的也许还不足万分之一吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

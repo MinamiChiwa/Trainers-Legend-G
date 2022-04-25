@@ -1,0 +1,29 @@
+{
+  "Title": "迎接天皇赏（秋）",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ついに『天皇賞（秋）』が始まる。\r\nファインモーションは最高の終わりに向けて、\nみなの心に残る走りをしようと心に誓う。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ゼンノロブロイはまた彼女と走れることを\r\n喜ぶ。そして、物語の終わりは寂しいけれど、\n新たな物語の始まりでもある……と語った。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "この物語に勝者として名を刻むのはどちらか？\r\n今、戦いの幕が上がる――！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

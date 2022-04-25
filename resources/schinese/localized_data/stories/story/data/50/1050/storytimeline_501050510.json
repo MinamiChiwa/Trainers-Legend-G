@@ -1,0 +1,265 @@
+{
+  "Title": "提交日后报告",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "昼食に賑わうカフェテリアで、\r\n今日も今日とてナリタタイシンは\n険しい顔をしていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "肉系もう1品……や、厳しいか？\r\nサラダならいけそう……でもタンパク質……。",
+      "ChoiceDataList": [
+        "……不用勉强自己吃太多哦？",
+        "……無理して食べない方がいいよ？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『ウマ娘みな健啖』というけれど、\r\nナリタタイシンは食が細いほうだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "いつも無理をして食べては青い顔をするので、\r\nこちらとしては心配になってしまうのだが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……っさいな。もともとチビなんだから、\r\nせめて他の連中より食べるべきでしょ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "不然的话……我只能永远都是这么个小个子。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "アッハッハッハッハァ！\r\nいや素晴らしいねぇ、その意志その執着！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "やあやあ突然すまない、まぁ突然でない方が\r\n珍しいだなんてよく言われる私だけれどね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "速子……那，有什么事吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "大方の予想通りというやつだろうが、私の\r\n声かけそれすなわち――実験への協力要請さ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "不干。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "ククッ、速い速い！\u3000さすがの鬼脚！！\r\nけれどもねタイシン君――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "サンプルとして手渡す薬品の効果が\r\n君の食事を助けるものだとしたら、どうかな？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "まぁ聞きたまえ、肉体改造において\r\n食事の改善は当然欠かせないファクターだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "であるからして私は！\r\n『消化速度を著しく上げる』薬品Aと、\n『栄養摂取効率を上げる』薬品Bを開発した！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "さてさてある種の肉体改造を望むタイシン君。\r\n君の素直な気持ちは……どうかな？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "………………哼。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "言っとくけど、モルモットにはならないから。\r\nアタシがアンタを利用させてもらうって話。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "要するに――交渉成立だね！\r\nでは実験開始といこう……！",
+      "ChoiceDataList": [
+        "等、等下！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "頑固なナリタタイシンのことだ、\r\n止めても聞いてもらえなさそうなので……\nせめて安全そうな薬を勧めよう！",
+      "ChoiceDataList": [
+        "就选用改进消化速度的药物吧",
+        "选改善营养摄取效率的药吧"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "何、急に割り込んできて……\r\nまあ、もともとどっちでもよかったけどさ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "こうして薬を受け取ったナリタタイシンは、\r\n眉根を寄せながらも一気に飲み干していた！\nそして――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……すご。何これ。お腹、空いてきてる……！\r\nまだ食べられそうじゃん……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "アッハッハッハッハ！！\r\nよしよし――成果は上々、何よりだ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……ははっ。\r\nいける、これなら……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "と、効果自体はしっかり出て、\r\n最初は喜んでいたようだったのだが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（咕～～～～）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "～～～啊啊！！\n怎么又饿了……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "あらあらまぁ、タイシンちゃん……！\r\nまだお腹がぺこぺこなのね、わかりました！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "すぐお夜食の追加、準備しますからね。\r\nうふふ、たくさんたくさん食べてください～♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "喂，不用了……\n溪流同学！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……いろいろあって、\r\n服用を続けるのはやめたそうだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "何、急に割り込んできて……\r\nまあ、もともとどっちでもよかったけどさ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "こうして薬を受け取ったナリタタイシンは、\r\n眉根を寄せながらも一気に飲み干していた！\nそして――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哈……哈……呼。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……ん、まだ走れそう。\r\nエネルギー、有り余ってる感じ……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……看上去对这个效果很满意呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……アンクルウェイト、\r\nちょっと重いのに変えてみるかな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "筋肉、ついてきたし……！\r\nふふっ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

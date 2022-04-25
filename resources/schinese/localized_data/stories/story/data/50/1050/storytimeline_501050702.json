@@ -1,0 +1,316 @@
+{
+  "Title": "『bg』",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "某天出门后——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "那，我就先走了。",
+      "ChoiceDataList": [
+        "诶！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……你什么表情啦。\n还有什么事吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "何かあるわけではないが……。\r\n出かけた後だというのに、\n随分とドライな反応なのが気にかかる。",
+      "ChoiceDataList": [
+        "今天……你玩得不开心吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……なんで？\r\n別にどうでもいいじゃん。",
+      "ChoiceDataList": [
+        "难得出门玩，我还是希望你能玩得尽兴呢。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "は、ウザ。\r\nそんなのアタシの勝手でしょ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "楽しもうがそうじゃなかろうが、\r\nアンタには関係ないから。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "話はそれだけ？\r\nもう帰りたいんだけど。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……今日は新武器のリリース日なのに。\r\n早くチェックしたい……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "確かに楽しむことを強制はできない。だが、\r\n今日は出かけてよかったと1日の終わりに\n思ってほしいし、その努力をしたい。",
+      "ChoiceDataList": [
+        "那就让我“擅自”来让你开心起来吧",
+        "じゃあ私も勝手に貴方を楽しませる"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……はぁ？\r\n何それ、ぜんっぜん意味わかんない。",
+      "ChoiceDataList": [
+        "我想看见你的笑容！",
+        "貴方の笑顔を見たいの"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……你果然是笨蛋啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……などと悪態をつきながらも、\r\n彼女は帰らない。こちらの出方を\n待ってくれているようだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "楽しませる方法だが、彼女の趣味はゲーム。\r\nということは、ゲーム性のある遊びなら\nのってくれるかもしれない。ここは――",
+      "ChoiceDataList": [
+        "词语接龙！",
+        "来比赛跑步吧！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "小鬼吗。绝对不干。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哈啊……会乖乖等你的我也是个笨蛋啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "咄嗟の案すぎて、呆れさせてしまった……。\r\nだが、せっかく掴んだチャンス。\nここで引くわけにはいかない……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……",
+      "ChoiceDataList": [
+        "苹果！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "…………",
+      "ChoiceDataList": [
+        "果酱！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "…………あのさぁ。\r\n恥ずかしくないの？",
+      "ChoiceDataList": [
+        "的……德行！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哈啊～……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "その後も無視されながら、\r\nなんとか言葉をかけ続け――",
+      "ChoiceDataList": [
+        "意面！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "——我说，你差不多得了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "面包店店员员",
+      "Text": "いらっしゃいませー！\r\n焼き立てのパンはいかがですか！\nふわふわで美味しいですよ♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "啊，面包……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……っ！！\r\nい、今の違うから！！",
+      "ChoiceDataList": [
+        "诶？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "しりとりに乗ったとかじゃない！\r\nパン買おうかなって思っただけ……！",
+      "ChoiceDataList": [
+        "……啊啊！『意面』和『面包』！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "は、何？\r\n全然気づいてなかったわけ……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "啊……啊啊！\n都怪我说出口了……！",
+      "ChoiceDataList": [
+        "是大进输了哦！\n（日语里说出词语发音末尾为ん的词语算败，\n面包パン的ン和ん同音）",
+        "タイシンの負けだね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "だ、だから違うっての！\r\nもうっ……ヘラヘラすんなっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "………………\n………………\n…………哈啊？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "あのさ……まず、アンタとアタシで\r\n勝負になると思ってんの？",
+      "ChoiceDataList": [
+        "……好像是呢。",
+        "……だいぶ厳しいね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "ならなんで、負ける勝負挑んでくるわけ。\r\n他にもっとあるだろうに。",
+      "ChoiceDataList": [
+        "因为我想陪大进玩你喜欢的东西……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……。\r\n人をすぐ走り回るガキみたいに……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "まあいいや。\r\nアンタが言い出したんだからね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "再见。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……！\r\n追いかけなくては……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "しかしウマ娘は本気で走らずとも速い。\r\n当然、どんなに一生懸命足を動かしても\n追いつけるわけなどなく――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……那家伙，还没跑到啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "ったく、フツーの人間とウマ娘じゃ、\r\nどう考えても勝負にならないでしょ。\nトレーナーのクセにバカすぎ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "っていうかそもそも、\r\nアタシの笑顔を見たいとか……\n意味、わかんないし。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "早知道的话，停下来等下他就好了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……いやバカか。\r\nもう……バカ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,360 @@
+{
+  "Title": "我才不孤高呢！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "夏天啊，大海啊，合宿啊ー！\n前进ー，巴士ー！\u3000向着合宿宿舍，GOーGOGOー♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "夏季强化合宿的出发日到了。\n巴士不断前进。一路朝着海边开。",
+      "ChoiceDataList": [
+        "情绪很高涨啊，帝王",
+        "情绪很高涨啊，帝王"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "那是理所当然。因为，这个夏天是个天大的机会♪\n我啊，打算在这次合宿中一口气追上会长！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "变强了之后让会长吃惊，让她夸奖我，让她抚摸我，\n然后呢！\u3000顺便也让训练员高兴一下。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "所以到了之后不要客气，尽管来\n严格训练吧！\u3000但，在那之前～♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "先来唱一首吧。导游姐姐，把麦克风借给我。\n1号东海帝王，现在来唱一首，最擅长的歌ー♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "伴着唱卡拉OK的气势――\n东海帝王进入到了夏季的高强度训练中。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "冲啊冲啊冲啊冲啊ー！\u3000沙滩冲刺真是小菜一碟ー！\n来几圈都没问题！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "训练员，我的姿势，怎么样？\u3000得好好看着啊。\n毕竟我可只能依赖训练员。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "是坡道啊ー！\u3000跑山路凹凸不平很有趣吧。\n来跳着过去吧，一蹦一跳地跑ー！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "训练员也会去吧？\u3000毕竟ー1个人太无聊了。\n等到了山顶，我们一起吃饭吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "来，跑完之后放烟花吧，烟花！\u3000看啊训练员，\n是转炮哦，转啊转啊转啊～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "啊哈哈哈，不再跳一跳可不行啊！\n就像这样，哟ー，哈ー，落地♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我一直陪着全力以赴地去享受合宿的东海帝王。\n然后……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "早上啦ー！\u3000今天也要元气满满地干ー，喔ー！\n两个人一起跑步，然后去海里游泳，然后……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "哎呀？\u3000训练员！？\u3000训练员～～～！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我慢慢睁开眼睛。然后……\n发现自己躺在冰冷的木地板上。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "啊，训练员好了吗？\u3000真是的，一下子就晕倒了。\n吓了我一跳啊。",
+      "ChoiceDataList": [
+        "我，睡了多久……？",
+        "我，睡了多久……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "30分钟左右吧。所以说训练还来得及！\n现在开干的话就还能赶回来。很期待今天哦♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "但是，为什么会晕倒呢？\u3000难道是睡眠不足？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "啊，我知道了！\u3000是兴奋地睡不着，然后不知不觉玩到了\n深夜吗？\u3000嘿嘿，其实我也一直在玩游戏……",
+      "ChoiceDataList": [
+        "…………"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "……为什么不说话呢？\u3000啊，果然是猜中了？\u3000啊哈哈，\n在外面留宿的时候，总是会很兴奋吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "……诶，奇怪？\u3000训练员，是那种会HIGH起来的性格吗？\n总感觉ー，很奇怪……啊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "难道说晕倒了，是我的错？\n是我拉着你到处跑……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "果然，是这样啊……也是啊，训练员又不是马娘。\n要你全程都陪着的话……",
+      "ChoiceDataList": [
+        "没关系的。那么今天的训练……",
+        "没关系的。那么今天的训练……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "训练员……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我不能让东海帝王休息。何况，\n自我意识极强的她也不可能接受计划外的休息。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "所以，这时无论如何都要忍耐……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "训练员……我，今天要休息。",
+      "ChoiceDataList": [
+        "欸……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "诶？\u3000什么啊，休息！\u3000休息啊休息！\n绝ー对要休息。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "我不想让脸色不好的训练员勉强自己。\n所以我决定了，今天不训练了！",
+      "ChoiceDataList": [
+        "但是为了追上会长……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "呜～……虽然可能会迟一些，\n但是，没什么的ー，那种事！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "没有训练员的话，就没有能教我的人了！\n而且……总感觉那也不像我啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "虽然说不清楚，但我不喜欢那样。\n会长的话应该会一个人干净利落地前进吧……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "但我啊，想和很多很多人一起前进。\n毕竟……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "蝉鸣声中，东海帝王开始诉说。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "我啊，想要快乐一些。不仅要取胜，\n还要帅气地取胜，神气又威风地，赢得夸奖。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "就像之前玩跳舞游戏拿顶点得分时一样……想像那样\n和大家一起高兴。和伙伴们还有训练员。而且……",
+      "ChoiceDataList": [
+        "而且 ……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "说不好，今后还会遇到各种各样的事情呢？\n虽说我是无敌的，但也不是做什么都有办法。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "你看，还记得吗？\u3000之前我胡乱做肌肉训练时，\n训练员帮了我很多对吧？\u3000就像那时一样。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "如果是会长的话，或许一个人就能搞定。\n但我啊，是因为有谁同我一起，所以才叫我吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "所以说，训练员不在的话我会困扰的。\n换做我倒下的话。所以说……",
+      "ChoiceDataList": [
+        "帝王ー……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "今天就休息吧？\u3000诶嘿，有时考虑一下节奏\n也很重要哦，训练员君。",
+      "ChoiceDataList": [
+        "那个，是我之前……",
+        "那个，是我之前……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "啊哈哈，懂了吗？\u3000是回报哦回报♪\u3000多亏有你\n我即使乱来也不会倒下了，这次换我来给出建议吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "对了！\u3000顺便给你按摩一下吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "上咯，格叽格叽格叽格叽格叽格叽！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我们两个人嬉闹了一阵，哈哈大笑。\n然后――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "那个，训练员。训练休息了也没关系，\n但作为交换～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "今晚去夏日祭典吧？\u3000绝对会很开心吧。\n好吗？\u3000好吗？",
+      "ChoiceDataList": [
+        "那么，就去吧",
+        "那么，就去吧"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "太好了ー。约好了哦！\n好，我要大玩特玩，一边逛一边大吃特吃ー！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "哇啊，金闪闪亮晶晶的♪\u3000喂喂，训练员！\n去买那个面具，然后戴上吧？\u3000哪个更好？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "大叔，请给我来2个ー！\n我要那个！\u3000那个粉红色的大外圈面具♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "快乐的声音回响着。――不论是跑、玩还是笑。\n东海帝王她，以全速跑完了整个夏季合宿。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

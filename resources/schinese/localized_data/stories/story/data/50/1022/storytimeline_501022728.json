@@ -1,0 +1,35 @@
+{
+  "Title": "抓娃娃成功！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "ありがとうトレーナー……ううん、師匠！\r\nすごく勉強になったよ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "クレーンを動かす間……呼吸……。\r\nもしかして、あれが“ワビサビ”の精神？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……よーし、もっと勉強して\r\n師匠に近づいてみせるよ……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "——留下了不错的结果呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

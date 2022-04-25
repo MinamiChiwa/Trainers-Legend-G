@@ -1,0 +1,29 @@
+{
+  "Title": "夏季合宿（第3年）开始！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "2度目の夏合宿が始まる。\r\n迷いの吹っ切れたファインモーションは\n合宿も全力で楽しもうとする。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そんな彼女の様子を受けて、\r\nエアシャカールも先へ進む決意をしたようだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "合宿中には『札幌記念』も控えている。\r\nファインモーションは新たな覚悟を\n胸に励むのだった！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

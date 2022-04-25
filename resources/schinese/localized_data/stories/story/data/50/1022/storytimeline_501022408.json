@@ -1,0 +1,29 @@
+{
+  "Title": "夏季合宿（第2年）开始！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "今日から夏合宿が始まる！\r\nファインモーションはこの日を\n心待ちにしていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "彼女は、思うような結果を出せず\r\n苛立つエアシャカールすら巻き込んで、\n全力で夏合宿を楽しもうとする。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "護衛隊も見守るなか、ファインモーションは\r\n『秋華賞』を目指し実力向上を図るのだった！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

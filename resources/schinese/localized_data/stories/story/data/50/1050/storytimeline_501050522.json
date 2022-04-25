@@ -1,0 +1,50 @@
+{
+  "Title": "皮肤的状态很差……",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "用事があったので、ナリタタイシンを探しに\r\n屋上へやって来ると……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "って、また広告？\u3000ウザ……。\r\nゲーム全然進まないじゃん……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……ん？\u3000『たった3日で効果実感』\r\n『古い皮質がボロボロ落ちる！』\n『キラめき美肌に大変身』？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哼……",
+      "ChoiceDataList": [
+        "危ないモノは買っちゃダメだぞ！？",
+        "危ないモノは買っちゃダメだよ！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "うわっ！\u3000驚かせないでよ……！\r\n広告なんかに釣られるワケないでしょ！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そうは言うが、どうやら内心\r\n肌荒れに悩んでいるらしかった……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

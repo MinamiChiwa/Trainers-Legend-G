@@ -1,0 +1,23 @@
+{
+  "Title": "关于团队竞技场②",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "在『团队竞技场』中，\n可与其他训练员培养的赛马娘队伍\n进行对战！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "那么训练员也赶快\n将刚才育成的殿堂赛马娘\n编入队伍吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

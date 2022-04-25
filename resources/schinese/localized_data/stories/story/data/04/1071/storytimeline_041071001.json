@@ -1,0 +1,293 @@
+{
+  "Title": "水晶般的她",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "在成为特雷森学园所属的训练员之后的某一天——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（咕噜咕噜咕噜噜噜……！！）",
+      "ChoiceDataList": [
+        "肚子……肚子好痛……！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……看来是得了什么病吧。我立马赶去了医院。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "医院的检查结果，是食物中毒。还好没酿成什么大事……\n我开了药之后，准备回去时——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "医生",
+      "Text": "首先，恭喜您出院，目白阿尔丹小姐。\n不过，之后也务必请您注意自己的身体，不要逞强。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "护士",
+      "Text": "虽然我已经对您说过很多次了，但是绝对！不可以再过度运动了！\n请您千万要做好伸展运动，一旦有不适的话也请做好冰敷！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "医生",
+      "Text": "如果多次遭遇骨折或者扭伤的话，作为运动员的职业寿命可就会变得很短哦。\n请您务必判明自己的身体状况，切忌逞强，好吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "我已了然于心。\n这次也给诸位添麻烦了，感激不尽。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "管家婆婆",
+      "Text": "阿尔丹大小姐，接您的车到了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "啊啦……谢谢你哦，婆婆。\n那么，诸位，我就告辞了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "护士",
+      "Text": "一定要注意身体啊！\n……千万要记得，不许逞强啊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……不经意间，听见了医生们与穿着特雷森学园制服的马娘——\n目白阿尔丹之间，略显沉重的对话。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "但我没想到的是，我搭乘公交车回到学校之后，\n我又一次见到了她。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花千代王",
+      "Text": "嗯嗯嗯~………………啊！！\n阿尔丹同学——！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "你好呀，千代王同学。\n今天你也一直在等我回来吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花千代王",
+      "Text": "是的，毕竟今天是你出院的日子嘛！\n能平安无事地返回学校真是太好啦……恭喜你哦，阿尔丹同学！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "呵呵呵，谢谢你愿意一直陪我哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "不过，你一直站在这寒风中等我吗？\n身体没有着凉吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "那么，请让我回宿舍之后为你沏一壶茶。\n你之前也来看望过我，就以此作为谢——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "哎呀……那个前辈，『又』住院了吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘B",
+      "Text": "啊——真的呢。之前选拔赛开始前就又是受伤又是身体不佳什么的，\n直接退出了比赛呢……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "赛马娘C",
+      "Text": "明明已经本格化了，却取消了比赛？而且还取消了好几次？\n……诶、这不是很不妙吗？一般来说，应该不会像她那样平静吧……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花千代王",
+      "Text": "唔……喂！那边那几位……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "千代王同学。\n……谢谢你愿意为我生气。但是，我不在意的哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花千代王",
+      "Text": "但是，阿尔丹同学——！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "她们所说的一切，都是铁铮铮的事实。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花千代王",
+      "Text": "呜……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "好啦，千代王同学。\n着凉之前，我们先回宿舍吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "啊啊……目白阿尔丹同学吗……\n是呢……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "总觉得有点放心不下她，于是我便去问了问手纲小姐关于她的事情——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "……其实，正如您所听见的，她正深受身体状况与伤病的困扰。\n自她入学以来，就不断因伤住院。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "而且正因如此，她明明已经迎来本格化，但却迟迟没能参加选拔赛，\n训练也是以休息居多——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "最终，她没有收到任何发掘的请求，直至今日都还未出道。\n训练员们对她的评价……也称不上好，",
+      "ChoiceDataList": [
+        "是这样吗……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "……我认为，她是拥有奔跑的才能的。\n身为名门目白家的赛马娘，她的身体素质自然出类拔萃。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "不过，她的身体实在太过脆弱，\n再加上她的姐姐所带来的压力……",
+      "ChoiceDataList": [
+        "『姐姐』？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "我想，即便是作为新人训练员的您也或多或少听说过她的故事。\n目白家引以为豪的至宝——目白高峰，就是她的姐姐。",
+      "ChoiceDataList": [
+        "……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "在出道战便以20马身的距离获得压倒性胜利，新马级便取得了堪比\n『超级跑车』丸善斯基的成绩——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "而且，还是史上首个达成『牝马三冠』的马娘。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "她的姐姐实在太过伟大、太过耀眼……\n也许，阿尔丹同学正徒劳地追赶着她姐姐的背影也说不定……",
+      "ChoiceDataList": [
+        "原来如此……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "虽然阿尔丹同学本人也付出了十足的努力，但是……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "这样下去的话，也许她只会——",
+      "ChoiceDataList": [
+        "呃？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "啊，不是！非常抱歉，我说了些仅仅是臆想的话。\n那个——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "如果您对她感兴趣的话，\n请务必要去亲自拜访一下她，训练员！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "身体异常脆弱、却不断追赶着那位伟大姐姐的背影。\n即便如此，还是能时刻露出温柔笑容的马娘，目白阿尔丹——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……我决定，明天去见见她本人。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

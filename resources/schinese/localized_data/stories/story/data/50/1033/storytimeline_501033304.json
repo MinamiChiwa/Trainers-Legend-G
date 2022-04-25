@@ -1,0 +1,298 @@
+{
+  "Title": "希望锦标后・绘出大三角",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（唔哦哦哦哦哦哦！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "好、好强……！爱慕织姬……\n这简直是和其他人截然不同的强大！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "织、织姬同学……好厉害……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "好厉害……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "在中山赛场的暮色之中，\n名为爱慕织姬的新星冉冉升起。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "比赛一结束，\n无数采访申请蜂拥而至——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "乙名史记者",
+      "Text": "『月刊トゥインクル』乙名史です！\nアドマイヤベガさん、\n本日は素晴らしいご活躍でしたね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "乙名史"
+      ]
+    },
+    {
+      "Name": "乙名史记者",
+      "Text": "今后有更远大的目标吗？\n如果可以的话，请务必告诉我！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "目線がかち合う。『ホープフルS』を目標に\r\n定めた時と同様、トレーナーとしての意見も\n一応、確認しようとしてくれているのだろう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "话虽如此，但其实织姬的目标一目了然。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "必须要带着妹妹的份，奔跑、取胜……\n为了明明想要奔跑，却无法奔跑的她……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "即便留在我心中的，仅仅是她的些许残影……\n我也要为她献上她所追求的一切。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "若是为了她所背负的、她的妹妹的话……\n那么，必须选择那份最为崇高、\n最为荣耀的目标。",
+      "ChoiceDataList": [
+        "尽管前行吧，织姬。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "クラシック三冠路線へ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "クラシック"
+      ]
+    },
+    {
+      "Name": "乙名史记者",
+      "Text": "……！这么说的话，下一个目标是——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "『皐月賞』。……以上です。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "皋月赏"
+      ]
+    },
+    {
+      "Name": "记者们",
+      "Text": "噢噢噢噢……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "那就是……觉悟。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "只背负决定要背负的事物……\n将决心要达成的夙愿坚持到底……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "毫不动摇的——觉悟……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "次日、万里无云——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "成田路！成田路！\n冲在头排的是人气第一的成田路！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "一定要赢！一定要回报大家的期待！！\n就这样冲到最后！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "这就是……我的觉悟……！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "哈啊啊啊啊啊啊——！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "最前方是成田路！最前方是成田路！！\n拉开一马身的距离——冲线！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "第一名是——成田路！！！\n在曾遭败北的阪神之地、以胜利宣告自己的再起！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路的粉丝A",
+      "Text": "做到了……做到了……！！！\n太好啦~！成田路小姐！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路的粉丝B",
+      "Text": "恭喜你——！！\n太棒了……太棒了……\n真是场难以忘怀的比赛——！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（哇啊啊啊！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "～～～～～……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "好！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "电视的声音",
+      "Text": "『唔哦哦哦哦哦哦哦……！！』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "呜哇啊啊啊啊！！\n成、成田路同学……！！\n呜呜呜……恭……恭喜……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "BRAVO！BRAVO！\n实在是完美的胜仗，成田路同学！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "这样一来，奏响的便是――『三重奏』。\n实在是愈发有趣了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "在名为“时代”的命运的引导之下、\n众星终于聚首、开始绽放出无与伦比的光辉——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "下一个目标是『皋月赏』。\n新年一过，便是经典级的开幕。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "？？？",
+      "Text": "――――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "？？？",
+      "Text": "――……GⅠレース。クラシック三冠。\n皐月賞、日本ダービー、菊花賞。\nお姉ちゃんと、一緒に……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "日本德比",
+        "菊花赏"
+      ]
+    },
+    {
+      "Name": "？？？",
+      "Text": "……会很开心呢。\n一定、一定会很开心……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "？？？",
+      "Text": "会开心……的吧——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

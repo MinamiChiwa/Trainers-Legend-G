@@ -1,0 +1,121 @@
+{
+  "Title": "大阪杯にむけて",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "你看你看！\n衣服，穿得很完美吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "1人で着るのも\r\n随分上手になったでしょう？\nふふっ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『大阪杯』当天，\n美妙姿势也一如既往地欢闹着。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "失礼了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哇，是大和呀♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "レース前に、ご挨拶に来ました！\r\n今日はよろしくお願いします！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "アタシ、ファインさんと走るの、\r\nすごく楽しみにしてたんです！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……っ。\r\nそっか、ありがとう♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "私も、楽しみに……していたよ。\r\nお互いの全力を、出し切りましょう！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "スカーレットちゃん、\r\n本当にいい子だねぇ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "それに、また最近メキメキと\r\n強くなったみたいで……気が抜けないっ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "うん、気を抜かずに\r\n“楽しんで”いこう♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "虽说是和往常一样的话语……\n但这口气，就像是在劝说她自己一样。",
+      "ChoiceDataList": [
+        "到了比赛，就把其他事情都忘掉吧"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……哼哼，的确该这样呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "不过，我做不到。\n毕竟我必须是“美妙姿势”才行。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "这一点……\n我绝不能忘记。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "更何况，\n我也绝不能允许再出现那些，\n想要忘记的愿望。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "さぁ！\u3000張り切って行きましょうか♪\r\n――最後の1歩まで、笑顔で！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "Title": "挑战抓娃娃游戏！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "某天，我和爱慕织姬一起出门的时候——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我顺着爱慕织姬的视线看过去，在游戏厅内\n看见了装满以赛马娘为原型的娃娃的娃娃机。",
+      "ChoiceDataList": [
+        "你想要个娃娃吗？",
+        "你想要个娃娃吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……倒也不是特别想……\n让我考虑一下吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………\n算了。训练更重要。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "好了，走吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "说是这么说，但织姬却一步三回头。\n……这不还是想要吗。\n好，那么就由我——",
+      "ChoiceDataList": [
+        "我来帮你抓几个！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "诶……？\n我都说了，我不是很……",
+      "ChoiceDataList": [
+        "说不定到时候你就想要了呢？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………随你便吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "——这个游戏，绝不能输！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

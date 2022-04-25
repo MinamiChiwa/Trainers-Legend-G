@@ -1,0 +1,29 @@
+{
+  "Title": "エリザベス女王杯の後に・Respect",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "見事、『エリザベス女王杯』を制した\r\nファインモーション！\nエアグルーヴは彼女の勝利を祝福する。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "客席からは万雷の拍手と歓声が響く。\r\nファインモーションの鮮やかな走りは、\n人々の記憶に深く刻まれただろう……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "最高のレースを終えたファインモーションは、\r\nトレーナーと明日は何をしようかと笑い合う。\n帰国まで残り数か月。まだ時間はある……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

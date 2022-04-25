@@ -1,0 +1,376 @@
+{
+  "Title": "夜空に開くは大輪の",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "夏合宿にて。\r\nエアグルーヴは、ここ数日ビーチランニングに取り組んでいた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "ふぅ……気付けば20kmも走っていたか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "これだけ続けても疲れなくなったな。\r\n砂浜は不安定だからこそ、体力と体幹を同時に鍛えられる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "ダートの練習としてもこの上ないな。\r\n調子は上々だ、今なら誰と走っても負ける気がしない――ん？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "……いかんな、もう夏祭りが始まる時間か。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "そういえば彼女は、生徒会活動の一環として\r\n夏祭りの見回りをすることになっていたはずだ……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "学園を離れ、大きく環境が変わるせいか羽目を外し過ぎる子も多い。\r\n生徒の安全のためだ、そろそろ行かねば。",
+      "ChoiceDataList": [
+        "俺も行くよ",
+        "私も行くよ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "構わんが……あくまで仕事をしに行くのだからな？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "それが理解出来ているのならば、来い。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "わたがし、たこ焼き、にんじん飴……か。\r\n全く、トレーニング中の生徒らには誘惑が強過ぎるな。",
+      "ChoiceDataList": [
+        "何か奢ろうか！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "あくまで仕事だと言っただろうが、たわけがっ！\r\n貴様の記憶力はどうなっているんだ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "全く、そんな事では……む？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "ひゃっ！\u3000あのっ、困ります……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "雑誌記者",
+      "Text": "ほんのちょっとでいいから、撮らせてほしい！\r\nキミたち、トレセン学園の子でしょ？\u3000未来のスターじゃないか！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "雑誌記者風の男が、嫌がるウマ娘に\r\n連続フラッシュを焚いている……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "……不躾な。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "エアグルーヴの神経を逆なでするようなシチュエーションに\r\n心配が勝り、思わず一歩前に出た。",
+      "ChoiceDataList": [
+        "ここは俺が……！",
+        "ここは私が……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "……ふぅ。\r\nいい、私が行く。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "トレーナーは、そこで見ていてくれ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "そう言うなり、エアグルーヴは雑誌記者風の男に歩み寄った。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "――失礼。そちらの記者の方。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "雑誌記者",
+      "Text": "えっ？\u3000あ……あなたはもしかして……“女帝”エアグルーヴっ！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "何処の所属かは存じませんが、本校の取材には\r\n許可を取って頂く決まりとなっております。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "これは、未来を担うウマ娘たちを保護するための措置。\r\nご理解頂けますでしょうか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "雑誌記者",
+      "Text": "やあ、とんだ失礼を……\r\nわたくし、ウマ娘専門誌の記者をやっておりまして。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "雑誌記者",
+      "Text": "趣味が高じて記者になったようなものですから、\r\n名門のウマ娘さん方を見かけて、つい……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "応援して頂けることは、我々にとっても大いなる励みです。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "であればこそ、どうか正規ルートでの申請を。\r\n正式な取材でしたら、喜んでお受けいたしますので。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "雑誌記者は、エアグルーヴの穏やかさを保った忠告に\r\n深く納得したようで、謝罪し立ち去って行った。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "エアグルーヴの穏やかな対応ぶりは、\r\n苛烈な印象の強かった以前とは見違えるようだった……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "よし、見回り交代の時間だな。\r\n引き継ぎも済んだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "このまま宿に戻ってもいいが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "ふむ……花火、か。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "……よし、来い。\r\nいい場所を知っている。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "少し高台にある境内からは、街の夜景が一望できた。\r\n夏祭りの喧騒から離れて、花火の音だけが響く。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "あの花も、人が手をかけた末にようやく咲き誇る。\r\n成熟したものには一見の価値があるな。",
+      "ChoiceDataList": [
+        "君なら、花火だって咲かせられそうだ",
+        "貴方なら、花火だって咲かせられそう"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "空に花を……か。容易なことではないな。\r\nだが、いずれは必ず――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "ああ、それにしても――綺麗だ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "そう言って目を細めるエアグルーヴ。\r\nその瞳には、花火の色が映りこんでいる。",
+      "ChoiceDataList": [
+        "也不赖呢。",
+        "是的呢"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "ふっ、どこを見て言っている？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "おい貴様、そこで赤面するのはやめろ。\r\nこちらが……その、気まずくなるだろうが。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "……花火も終わったようだな。今度こそ、宿へ戻るぞ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "そう言って、彼女はやけに急いで歩き出そうとしたのだが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "っ、と……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "石段に脚を取られたのか、エアグルーヴが転んでしまった。",
+      "ChoiceDataList": [
+        "没关系吧？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "ふん。この程度、どうということは――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "いや――そうだな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "……履かせてくれるか。",
+      "ChoiceDataList": [
+        "那当然！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "転がったヒールを拾い上げ、彼女の前に跪いた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "…………おい。",
+      "ChoiceDataList": [
+        "嗯？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "そのままでいい、質問にだけ答えろ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "貴様の瞳に――私の姿は、どう映る。",
+      "ChoiceDataList": [
+        "君は理想の“女帝”だ",
+        "貴方は理想の“女帝”だよ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "……そうか。ならば、これからも正しく咲き誇るのみだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "貴様の頼り甲斐は、まだまだ三分咲きくらいだがな。\r\n……まあ、今後の成長には期待してやらんでもない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "これからも精一杯励め。並び立つ努力を怠りさえしなければ――\r\n私が“女帝”として、貴様を栄冠に導いてやる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "……あと、早く靴を履かせるように。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "強気に微笑む彼女は、出会った時と比べて\r\nさらに美しく、輝きを増したように見えたのだった……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,496 @@
+{
+  "Title": "抽签机会！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "与美妙姿势一起借着『视察』的名义，\n在商店街闲逛的时候――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊啦？好热闹呢……\n是有什么祭典吗！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "商店街的人",
+      "Text": "さあさ、新春・大福引祭り開催中だよ～！\n特賞はなんと『温泉旅行券』！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "温泉旅行券"
+      ]
+    },
+    {
+      "Name": "商店街的人",
+      "Text": "一等奖是『上等胡萝卜肉排』\n二等奖『一筐胡萝卜』\n三等奖是『一根胡萝卜』！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "商店街的人",
+      "Text": "别错过别错过啊，这可是祈福抽签！\n不管什么人都可以抽，大家都来试试吧～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哇……！\n是抽签啊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "而且说，谁都可以来抽呢！！\n训练员！",
+      "ChoiceDataList": [
+        "那就请拿上这个"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "这么说着，\n递出刚刚买可乐饼得到的抽奖券。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "谢谢♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "そちらの方、\r\n私も参加してよろしいかしら？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "商店街的人",
+      "Text": "啊……可以！\n请，请您自便……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "美妙姿势看上去干劲满满，\n旋转了抽签器的握把！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "那么结果是――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "商店街的人",
+      "Text": "没想到啊！可喜可贺，恭喜你！！\n是特等奖，『温泉旅行券』～～～～！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "获得了『<itemname>』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "<itemname>"
+      ]
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "おお～……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "温泉か～！\n嬉しいっ♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "いいよね、日本の温泉！",
+      "ChoiceDataList": [
+        "好きなんだ？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "うん！\u3000銭湯というものがあるでしょう？\r\nたま～に友だちと行くの！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "お城でもバスタブはあったけれど……\r\nのんびり浸かるよさを知ったのは\nこちらに来てからなんだよね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "それはきっと……寮でも街でも、\nたくさんの方とおしゃべりできるから。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "ふふっ、温泉もきっと\n素敵な体験になるんだろうなぁ。\nいつ――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――あ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……このチケットは、\nキミに渡しておくべきだね。",
+      "ChoiceDataList": [
+        "怎么啦？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "無期限のチケット、\nというわけではないでしょう？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "であれば、私は間に合わないかもしれない。\r\n……無駄にするより、キミに使ってほしいよ。",
+      "ChoiceDataList": [
+        "……わかった"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "うん、\n楽しんできてね♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "～～♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ファインモーションはすっきりと\r\n温泉旅行を手放した気でいるようだ。\nだが――",
+      "ChoiceDataList": [
+        "また福引をやろう"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "嗯？",
+      "ChoiceDataList": [
+        "次は俺が特賞を当ててプレゼントする",
+        "次は私が特賞を当ててプレゼントする"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……うん、ありがとう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "もしそんな日が来たら、\n連れて行ってもらうね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "どちらも確約はできない約束。それでも、\n果たされる日は必ず来ると信じて――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "商店街的人",
+      "Text": "可喜可贺，一等奖哦～！\n奖品是『上等胡萝卜肉排』！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "获得了『<itemname>』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "<itemname>"
+      ]
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "あら～♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "特上ということは、\nきっと素晴らしいお味なのね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "トレーナー、早速いただきましょう♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――んん～っ！？\nDelicious！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "このハンバーグ、\nとっても美味しい～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "軽く温め直しただけなのに、\nすっごくジューシー！\nきっと伝統の技術が使われているのね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "トレーナー、\nこちらを作ったシェフを呼んでくださる？",
+      "ChoiceDataList": [
+        "？！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "色々とお話をしてみたいの。\nうちのシェフにも得るものがあるだろうし、\n迷惑でなければ通話も繋げたいな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "そうだね、\n会食の場をセッティングしましょう。\n隊長？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……なんだか大事になったが、\nファインモーションは\nとても喜んだようだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "商店街的人",
+      "Text": "二等奖！奖品是『一大筐胡萝卜』！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "获得了『<itemname>』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "<itemname>"
+      ]
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "すご～い！\n畑1枚分はあるんじゃないかな！？",
+      "ChoiceDataList": [
+        "すぐには食べきれなそうだな",
+        "すぐには食べきれなそうだね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "うん～……けれど、\r\n美味しくいただけるうちにいただきたいよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――そうだ！\nみんなで持ち寄りパーティーをしましょう！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そして後日。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙的朋友A",
+      "Text": "ファイン！\nキャロットケーキ仕上がったよー。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "ありがとう！\n……ん～、いい香り♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙的朋友B",
+      "Text": "ウチのにんじんサラダもできたぞ～。\n料理ってけっこう楽しいな！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "ふふ、そうでしょう♪\n私も挑戦してみたんです！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――名付けて、\nにんじんラーメン！\n出来立てをご用意しますね♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "商店街的人",
+      "Text": "三等奖！\n奖品是『一根胡萝卜』！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "获得了『<itemname>』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "<itemname>"
+      ]
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "好棒～！\n看上去闪闪发光的胡萝卜呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "商店街的人",
+      "Text": "那个，实在是万分抱歉……\n只有一根胡萝卜。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哎，没问题的哦？\n比起数量，质量更重要嘛。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "这跟胡萝卜，也是经过精心培育，\n万里挑一的胡萝卜……对吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "实在是不胜感激♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "商店街的人",
+      "Text": "不，不愧是王室……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――说起来，这根胡萝卜……\n也算是训练员买给我吃的东西吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "那就也分给你半根♪\n来比比看谁先吃完吧ー！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "商店街的人",
+      "Text": "非常遗憾！\n只抽到安慰奖『纸巾』呢～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "获得了『<itemname>』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "<itemname>"
+      ]
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "ん～っ、残念っ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "けれど、はずれも1つの経験だよね♪\r\nティッシュも大切に使わせていただきます。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――じゃあ、次はトレーナーね。",
+      "ChoiceDataList": [
+        "？！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "その後に護衛の方々……\r\nああ、お友だちも呼ぼうかな？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "せっかくだもの、\n当たりが出るところを見たいの！",
+      "ChoiceDataList": [
+        "やめておこうな！？",
+        "やめておこうね！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "やっぱり？\nダメかぁ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

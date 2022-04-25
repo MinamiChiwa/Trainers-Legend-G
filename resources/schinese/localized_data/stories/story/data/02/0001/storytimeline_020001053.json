@@ -1,0 +1,104 @@
+{
+  "Title": "梦想的大舞台\u3000春季天皇赏",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "麦昆，恭喜！\n真厉害啊！\u3000很精彩的比赛！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "麦昆……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "我做到了呢！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "哇！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "我成功制霸『天皇赏』了！！\n这样目白家也能装饰上我拿到的盾了！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "没想到目白麦昆竟然会将\n自己的喜悦展露至此。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "但是，这应该也证明了这场胜利的价值，\n也证明了她之前有多大压力。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "抱歉，有点失态了。\n但是，这就是值得如此喜悦的结果",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "而且，能拿到这样的结果，\n得多亏训练员。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "那时您为了仅有我一个人的队伍而尽心尽力，\n我真的很感激。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "该说感谢的是我才对。能跟着我这种新人，\n还送给我这么棒的结果。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "……但是，如果我这么说的话感觉她一定会生气地说\n『再自信一点啊』——",
+      "ChoiceDataList": [
+        "这是新生＜天狼星＞取得的胜利！",
+        "这是新生＜天狼星＞取得的胜利！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "呵呵，今后我还会\n拿下更多胜利的！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "好了，接下来就是胜者舞台了。\n要用歌声来向支持我的大家表示感谢呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

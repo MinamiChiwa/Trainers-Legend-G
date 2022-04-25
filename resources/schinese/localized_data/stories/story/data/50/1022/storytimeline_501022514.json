@@ -1,0 +1,282 @@
+{
+  "Title": "乖哦乖哦殿下",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "某一天，路过中央广场时――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "呵呵。\n好孩子好孩子～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊哈哈哈，好痒哦♪\n这就是『好孩子好孩子』吗～！",
+      "ChoiceDataList": [
+        "美妙被摸头了……！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "啊啦，您是……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊，是训练员！\n哈哈哈，贵安～♪",
+      "ChoiceDataList": [
+        "……你们这是？",
+        "えっと……何をやってるの？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "如你所见，\n在让小美妙对我撒娇哦～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "又要用功读书，又要参加比赛，还要处理公务……\n这么努力的孩子，不好好疼爱亿下的话～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "谢谢您的关心，溪流同学♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "为了向您的慈爱至上敬意……\n我也得疼爱你一下～♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "哎呀哎呀～？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "现在是让小美妙尽情撒娇的时间，\n不用想太多，交给我就好了哦～？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "直到刚才为止都一直在写文件，很累了吧？\n把手给我，我给你按摩一下哦～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哼哼，\n就连这种事情您都有注意到呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "不过，这些都是我为了在这个国家自由奔跑\n而必须要做的事，一点都不辛苦哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "那么，作为同窗，也要请您多多关照了，\n溪流同学。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "美妙姿势一把抓住了超级溪流的手，\n将手部按摩变作了握手。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "哎……我才是要请您多多关照～？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "这之后的超级溪流，\n也千方百计地想让美妙姿势向她撒娇――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "小美妙虽然还挺享受校园生活的样子……\n但总觉得，还不够『好孩子』啊～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "这可是难得的校园生活哦～。\n偶尔也卸下『殿下』的重担，休息一下如何。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "不去在意周围的目光，\n尽情休息一下也很重要哦？",
+      "ChoiceDataList": [
+        "的确，休息非常重要呢",
+        "確かに息抜きは大事だね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "嘿嘿，谢谢二位啦！\n不过呢――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "我已经足够任性了哦。\n在『现在』允许的范围内，足够任性啦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "不仅能参加比赛，\n还知道了各种让人心情激动的事情――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "你看，就连过去从未吃过的，\n美味的方便面我也尽情享受了一番哦♪",
+      "ChoiceDataList": [
+        "那就更应该享受『现在』了哦！",
+        "那就更应该尽情撒娇了呀！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "对呢～\n看来要让小美妙尽情撒娇，这才是最好的方法呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "就来创造出小美妙和我们一起度过的美妙回忆吧♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "いま、したいことはありませんか？\r\n気になっているものや行きたいところ、\n私たちにお話ししてください～♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "そうだなぁ……\r\n結構いっぱいあるけれど――",
+      "ChoiceDataList": [
+        "好，那就全部做一遍好了！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "本当に？\u3000じゃあ、まずはデパ地下巡りかな！\r\n季節のスイーツフェアをやっているんだって♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "那就一起去吧～。等玩尽兴之后，\n记得要告诉我们下一件想做的事情哦？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "嗯！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "就这样，在今天，\n和美妙姿势度过了能让她尽情享受的『现在』。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "今天真的很开心～！\n创造出了此生难忘的回忆呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "大家……感谢大家，\n陪我一起感受只有在这里才有的快乐♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "美妙姿势的视线，投向了她遥远的祖国。\n哪怕是多一点也好，想留下更多回忆。\n――看着这样的她，我这么想着。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "嗯嗯，就是这样！\u3000\n可以尽情向我们提要求的哦～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "トレーナーもクリークさんも優しいなぁ。\r\nその心遣いだけでもう甘やかされているよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "真是的～\n既然这么说的话？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "我可要拿出全力疼爱你了哦～？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "好耶ー！\n感觉能成为难忘的回忆呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "这一定是……\n只有在这里才能体会到的东西♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "美妙姿势的视线，投向了她遥远的祖国。\n哪怕是多一点也好，想留下更多回忆。\n――看着这样的她，我这么想着。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

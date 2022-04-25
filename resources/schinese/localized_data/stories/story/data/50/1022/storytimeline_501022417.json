@@ -1,0 +1,35 @@
+{
+  "Title": "札幌記念にむけて",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『札幌記念』の開催日。\r\n空港には出走予定の“ある実力者”――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "“女帝”エアグルーヴの姿もあった。\r\n彼女は『楽しませてくれるんだろう？』と、\n熱い想いを滲ませる……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ファインモーションはエアグルーヴに\r\n何かサプライズができないかと考える。\nたとえば“追い込み”で走るなど……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "全ては仕上がり次第だが、彼女は笑う。\r\n『普通に走っても、私、びっくりする\nくらい強いはずだもの』。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

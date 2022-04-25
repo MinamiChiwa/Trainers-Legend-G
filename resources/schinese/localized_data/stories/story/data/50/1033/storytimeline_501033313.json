@@ -1,0 +1,349 @@
+{
+  "Title": "菊花赏之后・坠落至此吧",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "经典三冠路线的最终战！\n漂亮地将菊之荣冠紧握于手中的是――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "爱慕织姬！是爱慕织姬！！\n她在奔跑中展现出鬼神一般的迫力，\n会场因她而充满欢呼！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（唔哦哦哦哦哦哦哦！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（……无论如何都不够……！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（仅仅这样的话还不行。\n和我的罪孽相比，这样的胜利根本微不足道！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "………无论如何……我的奉献都还不够。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "织姬同学……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "…………唔。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "回到房间后，\n我开始准备织姬下一次的比赛。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "アドマイヤベガの様子は――\r\n結局、『菊花賞』で勝利してからも\n変わらないままだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "……一如先前那样，总是会一个人陷入沉思。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "『亡き妹に至上の栄光を捧げ続ける』という\r\n本人の目標を考えれば、次に見据えるべきは\n例えば年末の『有馬記念』――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "有马纪念"
+      ]
+    },
+    {
+      "Name": "",
+      "Text": "あるいは春シニア三冠路線かと思い、\nそのための用意も進めていたのだが。",
+      "ChoiceDataList": [
+        "……还是暂时放一放吧。"
+      ],
+      "ColorTextInfoList": [
+        "シニア"
+      ]
+    },
+    {
+      "Name": "",
+      "Text": "也许现在她需要先整理好自己的心情。\n为了她的『使命』，这样的休息也是必要的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "次の目標は少し期間を置いた来年の夏前、\r\n『宝塚記念』に据えよう。\n本人ともそう話すため、用意を進めた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "宝冢纪念"
+      ]
+    },
+    {
+      "Name": "",
+      "Text": "——在『菊花赏』次日的夜晚。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（必须得追上去才行。\n必须得克制我自己的欲望才行。\n必须坚持下去，直到极限为止……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（直到……我达成使命为止……！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "？？？",
+      "Text": "织姬同学！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "……晚上好。\n已经快要到门禁时间了噢，你打算去哪儿？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "夜间训练。我已经交过申请了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "训练……吗。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "……你有告诉你的训练员吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "……果然没有吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "织姬同学。\n……请不要勉强自己。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "昨天可刚刚参加比赛，\n再怎么说，也需要让身体休息一段时间吧……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "我要怎么做是我的自由。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……跟你没关系吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "当然有关系！\n你在说什么啊……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "皋月赏也是，日本德比也是，菊花赏也是！\n甚至比比赛更早之前，\n我们不一直都是一起奔跑竞争的同伴吗！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "一起奔跑、互相竞争、共同进步……\n难得……我们不是同伴吗……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "………………别说了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "再这样勉强自己，你可能会受伤的！\n请你珍惜下自己的身体吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………别说了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "求你了，今天就先回宿舍去好好休息……\n好吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "好好休息、打起精神之后再开始训练，\n然后……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "我们再一起，在比赛里一决胜负——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "别说了！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "成田路伸出的手被爱慕织姬猛地扇开。\n二人一时陷入沉默，\n只有清脆的回响声在深不见底的黑暗中回荡。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "织姬同学……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……够了。别说了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "以后……别再来接近我……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "啊——……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……你……实在太过耀眼了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "所以，不要过来。不要接近我。\n……不要再来照亮我。\n不要再来掩盖星星的光辉。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "若是看不见星光的话……\n我就再也没法和她说话了。\n我就再也见不到我的妹妹了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "星光所能照耀的，只有没有光芒的夜晚。\n……我也只能待在黑暗之中才行。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "所以……求你了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "不要让光芒侵染我的灵魂。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "ひたすらに色濃い、全てを暗く暗く\r\n塗り潰してしまいそうな夜闇の中――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "『宝塚記念』に向け用意しておいた資料が、\r\n薄らと星明りを浴びていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,349 @@
+{
+  "Title": "第2話",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "哈，哈――好，间歇跑完成！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "トレーナー、次は何やるんだ？\r\nほらほら、早く指示くれよ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "想像以上に素直な子だったウオッカとのトレーニングは、\r\nとても順調に進められていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "大きく伸びやかなストライドに、柔軟性をいたく感じさせる体――\r\n素質も十分で、将来は大いに期待が持てそうだ。",
+      "ChoiceDataList": [
+        "稍微提高一下训练菜单的难度吧",
+        "稍微提高一下训练菜单的难度吧"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "おっ！\u3000いいぜ、どんと来いよ。\r\nクールにこなしてやっからさ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "有一天――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "あ、ヤベ。『種目別競技大会』の申込書、出してねぇや。\r\n早く記入して提出しねぇと……。",
+      "ChoiceDataList": [
+        "『分项目竞技大会』？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "え、知らねぇの？\r\nあーそっか、まだアンタが学園に来てから開催されたことねぇのか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "年に2回開催される、トレセン学園内の一大行事だよ。\r\n学園生徒の全員が、好きな種目に登録してレースするんだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "从学园外面来的客人也很多，当天会特别热闹哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "あと、俺たちデビュー前のウマ娘にとっちゃ、\r\nデビュー済みの強いヤツらとガチでやりあえる貴重な機会だな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "同じ種目に申し込んで、同じグループに振り分けられてりゃ、\r\nデビュー前も後も関係なく走れんのがあの大会の特徴だからさ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "く～、楽しみになってきやがった！！\r\nぜってぇカッコいいとこ見せてやんなきゃな……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "……あっ、そーだトレーナー！\r\n景気づけに今日は、外でなんかうまいもんでも食いに行こうぜ！",
+      "ChoiceDataList": [
+        "好，奖励你一直以来的努力！",
+        "好，奖励你一直以来的努力！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "おっ、話わかんじゃん！\r\nじゃーすぐ行こうぜ、着替えてくるからちょっと待ってろ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "就这样，我和伏特加一起出去吃饭了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "ぷは～、食った食った！！\r\n体重には気をつけなきゃだけどさ、たまにはこういうのもいいよな！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "……哦？\u3000哦哦！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "怎，怎么回事，那张超帅的海报……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "ウオッカが釘付けになっていた視線の先を辿ると、\r\n大型バイクをウマ娘が乗りこなしているポスターがあった。",
+      "ChoiceDataList": [
+        "好像是电影的海报",
+        "好像是电影的海报"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "へー、映画かぁ……。\r\nあんなカッコいいバイクが出てくんのかぁ……へぇぇぇ……！！",
+      "ChoiceDataList": [
+        "机会难得，去看吗？",
+        "机会难得，去看吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "诶，真的！？\u3000可以吗！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "………………ヤッ、ベェ。\r\nカッッッッッコよかったぁぁぁ～……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "クライマックスのバイクチェイス、見たか！？\r\nカーブんときとか、地面に体がスレッスレでさぁ！！",
+      "ChoiceDataList": [
+        "你那么喜欢摩托车啊",
+        "你那么喜欢摩托车啊"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "え、だってカッケェじゃん！！\r\nあの重てぇエンジン音とか、ギラッギラのボディとかさ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "俺の父ちゃんも、ああいうデケェバイク持ってんだよ。\r\nちっちぇー頃は、よく後ろに乗っけてもらったなー。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "いいよな～、バイク！！\r\nなんつーかこ～……そうっ、ロマンがあんだよ、ロマンが！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "……そーいやぁ、初めてダービー観に行った時も、\r\n父ちゃんのバイクに乗っけてもらったっけな。",
+      "ChoiceDataList": [
+        "是父亲让你邂逅了赛跑啊",
+        "是父亲让你邂逅了赛跑啊"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "あぁ、父ちゃんはレースが大好きなんだ！\r\n『ウオッカ、あそこにゃカッコいい連中しかいねぇんだぜ』ってな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "最初聞いた時は、よくわかんねーって思ったんだけどさ。\r\n実際にレースを見たら――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "……闸门打开的一瞬间，我心头一震。\n那气魄实在太惊人了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "そっから勝負がつくまで、まばたきしたかも覚えてねぇよ。\r\nマジ、スゲェなんてもんじゃなかったぜ……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "『勝ちは譲らねぇ』『前を開けろ』『1着は自分のモンだ！』って、\r\n出てたヤツら全員が、そういうオーラ出しまくっててさぁ……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "帰り道なんか後ろでずーっと『カッケェー！』って騒いでたけど、\r\n父ちゃんはバイク運転しながら、なんか嬉しそうにしてたなぁ。",
+      "ChoiceDataList": [
+        "所以自己也想来参加比赛了",
+        "所以自己也想来参加比赛了"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "是啊。\n我也要和那时看到的那些家伙一样，帅气地奔跑！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "へへっ、いい気合いが入ったぜ。映画、観といてよかったな！\r\n誘ってくれてサンキュー、トレーナー。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "啊，不过，高潮部分前的……\n爱，爱情戏，是这么说的吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "うん、そのー、なんつーか、ああいうのは……\r\nま、参っちまうよな～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "俺はもっと硬派な方が好みだぜ。\r\nあんな軟派な……キ、キ、……シーンとかは……。",
+      "ChoiceDataList": [
+        "是说吻戏吗？",
+        "是说吻戏吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "ばっ、はっきり言うんじゃねぇよっ！！\r\nあぁぁぁ、思い出してきちまった～……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "……嗯嘎！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "流，流鼻血了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "……这样愉快的外出过后第二天。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "我像往常一样同伏特加一起训练——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "あ……ウオッカさん！\u3000『種目別競技大会』なんだけど……\r\n確かあなたも芝2000mの第10グループだったわよね？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "诶，我？\u3000是ー这样……怎么了？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "いえ、申込み先、変更しなくて大丈夫かなぁと思って……\r\n今ならまだ受け付けてもらえるみたいだから。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "はぁ？\u3000変更？\r\nなんでんなことしなきゃいけねーんだよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "要问为什么……难道说参赛者名单，你还没看过吗！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "你和那个成田白仁同学，分在同一个组里哦……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "诶……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "我……要和白仁前辈参加同一场比赛……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

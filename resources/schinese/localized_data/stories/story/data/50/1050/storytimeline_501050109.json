@@ -1,0 +1,332 @@
+{
+  "Title": "圣诞节",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "啊，下雪了……好、好冷……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "马上要到圣诞节了呢！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "あ、そういえばタイシンは\r\nトレーナーさんに何あげるのっ？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "诶？……什么送什么？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "哎！？\u3000你什么都不打算送吗！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "いや、だって……クリスマスとか。\r\nアタシ、そんなガラじゃないし……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "嗯姆。不过，也可以换一种思路吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "君、逆にこういう機会でもなければ\r\n感謝の気持ちを伝えるタイミングを\n計りかねるのではないか？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……唔。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "今日はクリスマス。とはいえ、行事などが\r\n特に好きではないナリタタイシンと祝うなど\n夢のまた夢と思っていたが――",
+      "ChoiceDataList": [
+        "（没想到她会约我出来……！）",
+        "（まさか呼び出されるなんて……！）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……啊。你在这儿啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "我看看啊――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……圣诞节快乐。",
+      "ChoiceDataList": [
+        "……！！！！！！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "まさかクリスマスプレゼントまで\r\nもらえるとは！\u3000喜びを噛み締めながら\n包みを開けると――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "里面是BNW三人的人偶娃娃。",
+      "ChoiceDataList": [
+        "（只有大进自己是大头娃娃……！）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……さっきゲーセンで取れたけど、\r\nアタシそういうの部屋に置く趣味ないし。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "所以就顺手送你了。\n……就是这样。",
+      "ChoiceDataList": [
+        "（只有大进自己是大头娃娃……！）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "～～～っ、ちょっと！！\r\n何ニヤついてんの！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "小心我踹你哦！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "叱られながらも、\r\n人形は大事に仕舞いこんだのだった……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "どことなくよい香りのする\r\nボトルが入っていた。",
+      "ChoiceDataList": [
+        "这是……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……你拆开看了不就知道了。是护发素。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "急にプレゼント選ぼうとしたって、\r\n選び方わかんないしっ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "そしたら店員が話しかけてきて、\r\nプレゼントにはこれが1番だって言うから――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "確かに誕生日とかでクラスの連中が\r\n贈り合ってるの見たし、いくつあっても\nまあ困るもんじゃないし。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "毕竟是养护尾巴用的护发素――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……………………啊。",
+      "ChoiceDataList": [
+        "尾巴……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "～～～啊、还、还给我吧！\n忘了这件事！！",
+      "ChoiceDataList": [
+        "不，我会好好珍惜的！",
+        "ううん、大事にする！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "はぁ！？\r\nだってアンタ、使い道もないのに……。",
+      "ChoiceDataList": [
+        "所以我会好好地把它装饰起来珍惜的！",
+        "だから、大事に飾っておくの"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……笨蛋。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "そんなこんなで、街を歩いていると、\r\nストリートビジョンを見上げて\nナリタタイシンがふと足を止めた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "记者",
+      "Text": "『――さて、今年注目を浴びた選手といえば\r\nこの方！\u3000正確無比な3ポイントシューター、\nと言えばみなさんおわかりでしょう！』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "ビジョンには、はにかんで笑う\r\n赤い髪のバスケット選手が映し出されていた。",
+      "ChoiceDataList": [
+        "……你认识她吗？",
+        "……知ってる子なの？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "与其说是认识吧――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "红发的少女",
+      "Text": "『――はい、あたしの憧れのウマ娘さん、\r\n秋の天皇賞で1着だったんです！！』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "红发的少女",
+      "Text": "『あたしもますます頑張らなきゃって、\r\n励まされました』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "红发的少女",
+      "Text": "『ホントに、すごいんです……\r\nナリタタイシンさん！！』",
+      "ChoiceDataList": [
+        "诶！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "嘛……就是这样。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "照れたようにそっぽを向いたナリタタイシン。\r\nしかし、しばしの沈黙の後、\n彼女はふと言った――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……我啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "別に誰かを励ましたいだなんて思ってないし、\r\n勇気をあげたいとも思ってない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "アタシ自身のために走ってるだけ。\r\nだけど――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "…………现在这样……好像也不赖。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "バカにされて、縋りついて、\r\n向いてもないのにみっともなくしがみついて。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "但最后，却留下了这样的故事――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "嗯。我觉得……也不赖吧。",
+      "ChoiceDataList": [
+        "也不赖呢。",
+        "是的呢"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "赤い髪の少女に向かって笑い返すかのように、\r\nナリタタイシンは目を細めていたのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

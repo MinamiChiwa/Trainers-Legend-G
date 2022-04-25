@@ -1,0 +1,37 @@
+{
+  "Title": "皋月赏之后・你们活该",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "クラシック三冠初戦、『皐月賞』を\n見事制したのは、ナリタタイシンだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "会場中が注目する中、彼女は\n自らの居場所はここだと高らかに宣言する。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "観客席にはその走りに心打たれ、涙する\n小さな赤髪の少女の姿があったという。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "一方、敗れたウイニングチケットは、\n次の舞台である『日本ダービー』では\n負けないと固く誓うのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "日本德比"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "Title": "追加的自主锻炼",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "哈……哈……哈……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "那是……白仁吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（圧倒的に強くて、孤高で、\r\n決してバカにされない存在――）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（あんなに恵まれてるヤツでも、\r\n遅くまで残って練習して……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "トレーナー、\r\n追加のメニューちょうだい。",
+      "ChoiceDataList": [
+        "你准备要自主训练吗？",
+        "これから自主トレするつもり？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "そ。もっと練習しなきゃ、\r\n強いヤツには追いつけないでしょ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "いつまでも後ろから追いかけてる腑抜けには\r\nなりたくないし。",
+      "ChoiceDataList": [
+        "明白了，我陪你吧！",
+        "タイシンにはタイシンのペースがある"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "無理をしない程度にと条件をつけ、\r\n追加トレーニングを行うことにした。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（アタシもいつかアイツみたいになって――\r\nううん、アイツのことも負かしてやる……！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "那是……大进。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……ふーん。\r\n面白い走りをするんだな、アイツ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "決意に燃えるナリタタイシンは、\r\n門限近くまで\n追加トレーニングに励んだのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "じゃあそのペース変えてよ。\r\nアタシじゃなくてブライアンのペースにして！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "強いヤツのペースに合わせなきゃ、\r\n強くなれないままじゃんか！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "お前たち、揉めごとは……\r\nって、タイシンか。一体、何があった？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "ふむ、ブライアンか。\r\nアイツは――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "『誰かに合わせて窮屈な走りをするよりは、\r\nやりたいように走ってブッちぎる。\nそれが1番気持ちいいし、強くなれる』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "――と言うだろうな。私としても、\r\n自分のペースを守って走ることを推奨するよ。",
+      "ChoiceDataList": [
+        "是你会说的话呢。",
+        "らしいよ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "唔咕……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "しばらくは納得できないといった様子の\r\nナリタタイシンだったが、\n最後には渋々頷き、休息をとったのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

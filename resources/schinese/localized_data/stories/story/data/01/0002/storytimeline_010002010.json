@@ -1,0 +1,25 @@
+{
+  "Title": "继承自动编制",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "选择第二位继承赛马娘吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "在您熟悉游戏前，也可以试着用\n『自动』编制哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "自动"
+      ]
+    }
+  ]
+}

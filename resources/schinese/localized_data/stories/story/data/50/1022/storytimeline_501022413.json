@@ -1,0 +1,29 @@
+{
+  "Title": "秋華賞にむけて",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『秋華賞』当日。ファインモーションは\r\n圧倒的な人気で注目を集める。だが観客の\n期待を前に彼女はどこかへ駆けだしてしまう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "彼女は、自らが楽しく走ることで\r\nみなが期待する高貴さを崩してしまうのでは\nと、気にしていたのだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "トレーナーは、むしろ楽しく走る姿を期待\r\nされてると伝える。ファインモーションは\n思い切り楽しく駆けると決意するのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

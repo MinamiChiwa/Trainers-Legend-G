@@ -1,0 +1,344 @@
+{
+  "Title": "温泉旅行",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ナリタタイシンとたくさんのレースを\r\n勝ち抜いてきた、ある日のこと――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……我说……要不要去温泉？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "チケットとハヤヒデも忙しいって言うし、\r\n他に誘う相手もいないし。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "所以……要是你有空的话……",
+      "ChoiceDataList": [
+        "我有空！！一起去吧！！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "商店街の福引で当てた温泉旅行券。\r\nそれをとうとう使う日が来たということだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そのためには……\r\nトゥインクル・シリーズの裏で\n溜まりに溜まった書類仕事を片づけなければ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "決意を胸に秘め、その後の数日間は\r\n仕事三昧の日々を送ったのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "確かに全て受け取りました！\r\nありがとうございます。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "あの……随分とお疲れのようですし、\r\nゆっくり休んでくださいね？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "こうして全ての仕事を片づけた\r\n次の日――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……わかった。\r\n日程はそれでいいけど――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "你真打算就这样筋疲力尽地去旅行？",
+      "ChoiceDataList": [
+        "泡一下温泉就能赶走疲劳啦！",
+        "温泉に入れば疲れも取れるよ！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……哼……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "于是，就这样――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "好厉害……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "商店街の景品に、\r\nここまで立派なとこ用意する……？",
+      "ChoiceDataList": [
+        "看来能好好享受温泉了呢！",
+        "温泉、楽しみだね！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……算是吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "入浴中……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "入浴後――\r\n温泉に浸かったおかげで疲れが取れたようだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "若干、頭がぼんやりしている気もするが、\r\nじきにスッキリするだろう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……呼。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "啊。你也刚好泡完啊？",
+      "ChoiceDataList": [
+        "是不错的温泉呢！",
+        "いい湯だったね！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "嘛……确实不赖啦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "ってか、アンタ顔赤くない？\r\nもしかしてのぼせた？",
+      "ChoiceDataList": [
+        "应该……没有吧……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "啊、喂……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "喂！你没事吧！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "喂……训练员……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……やっと起きた。\r\nのぼせて倒れたの、覚えてる？",
+      "ChoiceDataList": [
+        "抱歉……",
+        "ごめんね……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……你啊。你真的知道该为什么而道歉吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "『せっかくの旅行台無しにしてごめん』とか、\r\n『倒れて迷惑かけてごめん』とか――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "思ってんだったら、\r\nマジで蹴っ飛ばすからね。",
+      "ChoiceDataList": [
+        "大进……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……さっき、たづなさんに確かめた。\r\n旅行行くために仕事、無理してたんだって？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "现在倒下不更添麻烦吗，笨蛋。",
+      "ChoiceDataList": [
+        "我觉得得给一直胜出的你一些奖励才行……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……アンタってさぁ。\r\nホント、どこまでバカなわけ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そう言うと、急に彼女は\r\nこちらへと手を伸ばしてきて――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（咯嚓嚓嚓嚓！！）",
+      "ChoiceDataList": [
+        "いたたたたたっ！？なんだ！？",
+        "いたたたたたっ！？なに！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "給仕さんにのぼせに効くツボ、\r\n教えてもらったから。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "好了，给我老实点……！",
+      "ChoiceDataList": [
+        "痛、痛痛痛痛痛痛痛！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "あまりの痛みに、思わず後ずさりをして\r\nナリタタイシンの手から逃れたのだが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "好了别闹脾气。快过来。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "涙目で見ても無駄。\r\n情けはかけないし。",
+      "ChoiceDataList": [
+        "请、请您高抬贵手……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "废・话・少・说！",
+      "ChoiceDataList": [
+        "好痛痛痛痛痛痛――怎么了啊！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "これに懲りたら、\r\nアタシのために無理なんかすんな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "アタシのトレーナーしてくれる変わり者、\r\nアンタくらいしかいないんだし――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "要是你不在的话……我会很困扰的。",
+      "ChoiceDataList": [
+        "如果是现在的大进的话，会有很多人来挖角的吧"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "～～～ッ！！\r\nそういう話じゃないっての……！",
+      "ChoiceDataList": [
+        "好痛啊啊啊啊啊啊！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……わかれ。\r\nアンタじゃなきゃダメなんだって。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……差不多……\n也该给我明白了吧——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "在和成田大进这痛并快乐着的旅行中，\n感受到彼此深刻的牵绊——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

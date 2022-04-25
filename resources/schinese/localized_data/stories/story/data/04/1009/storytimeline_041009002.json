@@ -1,0 +1,329 @@
+{
+  "Title": "我和那家伙可不一样",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "选拔赛过几天后。我还是很在意大和赤骥。\n想再和她好好聊一次――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "我怀着这样的心情，找到大和赤骥时，\n发现已经有很多训练员围着她了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "选拔赛的结果确实很可惜……\n但你也有能瞄准ＧⅠ比赛的机会哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "……『也』？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "新人训练员A",
+      "Text": "我有一个计划！\u3000不要一开始就拼命跑，\n先积攒脚力吧。这样的话，就可以像伏特加一样获胜了――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "『像她一样』……是吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "训练员们",
+      "Text": "那，那个……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "对不起，请允许我先失陪了？\n……就这样。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "大和赤骥她，面带可怕的笑容，\n就这样离开了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "嗯ー……明明听说是『彬彬有礼的优等生』……\n难道说，实际上脾气相当差吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "新人训练员A",
+      "Text": "那个态度是有点……\n就算能力再高也很难办啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "……总之，\n先去追上大和赤骥吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "哈啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "……？\n好吵啊，这是怎么了――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "啊啊ー！\u3000别从早到晚缠着我啊！\n都说了让我想一想！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "别老是这么说完就跑了！\u3000快来我的队伍吧，\n伏特加！\u3000海外远征都给你安排好了哦！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "我知道，我知道了啊！\n暂时让我一个人待着啊ー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "啊……等等，伏特加！\u3000我不会放弃的……\n我一定，要让你成为第一快的马娘！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "“第一”……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "…………唔。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "……原来你在这儿啊，大和赤骥。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "诶？\u3000啊……气槽前辈！？\n那个，找我有什么事吗……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "严重警告。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "诶……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "作为学生会副会长，我来对你进行严重警告。\n……大和赤骥，你最近每天晚上都有溜出宿舍吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "呜……那，那个是……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "在没事先申请的情况下，违反关门时间\n夜间外出，荒谬至极。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "……是优等生的话理所当然该牢记这些规则吧，\n大和赤骥。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "……是。\n真的，非常抱歉……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "真是的……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "――你，是去跑步了吧？\n而且每晚，都跑相当长时间。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "诶……为，为什么连这都。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "从你的脸色和走路姿势，\n这点程度很容易看得出来。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "……你应该自己觉察到，超负荷了。\n在事情变得无可挽回之前，别再乱来了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "但是，我……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "我……只获得了第二名。目标明明是“第一”……\n明明是非“第一”不可的！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "『所有马娘都会迎来，跪在草地上的瞬间』\n――这是我母亲说的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "重要的是，如何从那里站起来吧。\n不要过于害怕挫折本身了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "但是，这与之前的都不一样！\u3000我一直都是\n“第一”！！\u3000为了保持这样，我竭尽全力了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "……前辈。\n我，难道是……很滑稽吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "我像个傻瓜吧？\u3000只因为在老家跑得快，就自命不凡、\n虚张声势……拼命装出一副优等生的样子。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "但是，一来到特雷森学园……\n就轻易输给了像伏特加那种，『真的』跑得快的孩子。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "实际上……成为“第一”这种事，\n对于我来说――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "赤骥！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "别说了。\n……下面的话，不能说出口。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "你就回不去了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "……对不，起。我……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "我……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "……到底该怎么办才好。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "我……到底该怎么办才好啊……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "咬紧了牙关，\n一遍又一遍地念叨着的大和赤骥――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "她那悲痛的样子，深深印在我的脑海里……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,359 @@
+{
+  "Title": "第2話",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "天気予報によると、今日は夜にかけて大雨が降るらしい。\r\n用事を済ませて学園に戻ろうとしたところ――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "さあ、この地上から最高の光を君に届けよう！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "……どこからか聞いたことのある声が聞こえてきた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "共に世界を照らす資格を持った君よ、ボクの輝きを見るといい！\r\nこのボク、“世紀末覇王”となるウマ娘の光を！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "……河川敷にいたのは、いつも以上に気合いの入った様子の\r\nテイエムオペラオーだった。",
+      "ChoiceDataList": [
+        "你在做什么？",
+        "你在做什么？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "おや、トレーナー君じゃないか。\r\n見てわかるだろう？\u3000一番星と美しさを競い合っているのさ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "美というものは併走と同じく、\r\n競争相手がいることでより磨かれるものだからね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "こうして日々時間や相手を見つけて、\r\n地道に努力を重ねているというわけだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "さて勝負に戻ろうか、一番星よ。ボクはここにいる！\r\n今の君における、ベストな輝きを見せたまえ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "そしてテイエムオペラオーが再びポーズを決めると――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（キラ……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "……一番星は雨雲に隠れてしまった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "ふぅ、歴史に残る名勝負だったよ。\r\nトレーナー君、拍手を一番星に送ってくれ。",
+      "ChoiceDataList": [
+        "勝負は終わったのか……？",
+        "勝負は終わったの……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "ああ、ボクの勝利でね。君も見ただろう？\r\n麗しいこのボクに、星が照れて隠れてしまう瞬間を！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "つまり、ボクの美しさは星が恥じらうほどにまで成長していたんだ。\r\n次に美を競うなら、相手は月……いや太陽とすべきか！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "――だが空には月は出ておらず、むしろこれから雨が降る予報だ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "嗚呼、ボクに相応しいライバルはいないのか。\r\nトレーナー君、誰かいい相手を知らないかい？",
+      "ChoiceDataList": [
+        "えーっと……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "ふっ、難しい質問であることはわかるよ。\r\nボクに並べるのはボクくらいのものだからね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "仕方ない。夜風に孤独を慰められながら、\r\n次のライバルを探すとするよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "……テイエムオペラオーはどこか寂しそうだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "トレーナーとして、彼女にできることはないのだろうか？\r\n彼女が言うには『ボクと並べるのはボクくらい』らしいのだが――",
+      "ChoiceDataList": [
+        "いっそ『自分自身と戦う』、とか……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "ええっ！？\u3000ボクとボクを戦わせるだって！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "――君はなんて大胆な発想をするんだ！\r\nまさに灯台下暗しだ。輝く光自身にその光の明るさはわからない！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "素晴らしいアイディアだよ！\r\nやってみようじゃないか！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "――そして次の休日。\r\nテイエムオペラオーからダンススタジオに呼び出された。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "はーっはっはっはっは！\u3000トレーナー君、\r\nボクはたとえ自分自身が相手だろうと、余裕で勝利してみせるよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "君はその特等席で、華麗なる勝ち様を見ていたまえ。\r\nでは開始しよう、まずは……“ポーズ対決”だ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "そしてテイエムオペラオーと、鏡の中のテイエムオペラオーの\r\n“美しさ”をかけた対決が行われることになり――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "……はぁ……はぁ。なんてことだ。\r\nこんなにもタフで美しいウマ娘がいたなんて。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "ボクと同じペースで、同じタイミングで、\r\n全く同じポーズをなぜ取ることができるんだ！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "答えてくれ、鏡の中のボク！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "…………",
+      "ChoiceDataList": [
+        "……何も答えないな",
+        "……何も答えないね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "……おそらく彼女もボクと同じ考えなのだろうね。\r\nいいだろう、1回で勝負がつくとは思ってなかったさ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "次の勝負に進もう！\r\nそう、“にらめっこ対決”に！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "……ふふふっ、はーっはっはっは！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "なんてことだ！\u3000こんなにも美しい顔を前にして、\r\n笑顔をこらえるだなんて、難しすぎるよ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "いやはや、またボクと引き分けるとは……。\r\nやるじゃないか、鏡の中のボク！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "しかし、もう敗北のプレリュードは始まっている！\r\n次の“だるまさんが転んだ対決”で決着をつけようじゃないか！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "だーるーまーさーんーが、転んだ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "んなっ！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "なんって、美しいウマ娘が目の前にいるんだ！？\r\n一体、君の名は……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "しまった！\u3000鬼はタッチされたら負けだというのに！！\r\nなぜボクは、自ら彼女の手を！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "……完敗だよ、トレーナー君。\r\n鏡のボクはボクをも魅了してしまった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "ああ、憎い……憎いよ！\r\n鏡に映るボクが美しすぎて憎い！\u3000こんな感情は初めてだ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "だが泣き言ばかりは言わないさ。いつかボクはボク自身を超える。\r\nそれこそ“覇王”として――！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "はぁっ！\u3000美しすぎる！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "……くっ、鏡の中のボクがここまで華麗な存在だったとは。\r\n嗚呼、これを超えるにはどれほどの修練を積めば……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "テイエムオペラオーは倒れこんだまま動かない。\r\nどうやら本気で自分自身に負けたことが悔しいようだ。",
+      "ChoiceDataList": [
+        "……頑張れ、オペラオー",
+        "……頑張って、オペラオー"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "ああ。ボクの辞書に『負けっぱなし』という文字はない。\r\n次こそは必ず、栄光を手にしてみせる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "しかし――トレーナー君はすごいな。\r\n今ボクは、猛烈に君のことを尊敬しているよ。",
+      "ChoiceDataList": [
+        "なぜ……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "だって君はこんなにも美しいボクを、\r\nずっと見つめ続けていたのだろう？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "まさに尊敬に値する精神力だ。\r\n全くもって、信じられないよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "ボクがボクを超えるためには、\r\nその鋼のような意志を得なければならないのか……だが。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "なんて美しすぎるんだ…………。\r\n……君こそが我が終生のライバルだよ、鏡の中のボク……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "テイエムオペラオーは彼女の人生史上、\r\nもっとも強いライバルに出会えたのかも……しれない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

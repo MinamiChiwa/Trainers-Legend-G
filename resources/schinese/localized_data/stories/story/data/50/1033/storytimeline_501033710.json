@@ -1,0 +1,100 @@
+{
+  "Title": "比赛失败",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "甚至没有入着啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……这就是我现在的实力……\n我应得的下场吗……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………",
+      "ChoiceDataList": [
+        "那就从这里开始，再次努力吧！",
+        "你打算止步于此吗？",
+        "你打算止步于此吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………",
+      "ChoiceDataList": [
+        "那就从这里开始，再次努力吧！",
+        "你打算止步于此吗？",
+        "你打算止步于此吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "是呢。如今的我还存在无数欠缺之处……\n就算只知道这一点，也是相当的收获了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "既然如此，直到我达成目的的那一天为止，\n一直奔跑下去就好了。\n为此，现在应该先做好能做的事情。",
+      "ChoiceDataList": [
+        "就是这气势！",
+        "就是这气势哦！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "下一次比赛已经迫在眉睫。\n回去就立刻开始训练吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "どうやらアドマイヤベガが\r\n気持ちを切り替えるために、\n少し役に立てたようだ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………\n止步于此？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "我从未拥有过这样的选择。\n自我下定决心那天起，\n这个抉择的答案永远都只有一个。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "既然没能赢下比赛，\n那只能说明我还不够快。\n下次比赛之前，变得更快就好了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "我，绝对不会放弃——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "爱慕织姬的双眼中再度燃起沉静的斗志。\n看来激将法起效了呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

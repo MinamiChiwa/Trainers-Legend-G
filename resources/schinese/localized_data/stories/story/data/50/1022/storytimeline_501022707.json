@@ -1,0 +1,189 @@
+{
+  "Title": "在神社祈愿！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "最近調子の悪いファインモーションと共に、\r\n神社へやってきた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "むむむ……日本のパワースポット……！\r\nこれは期待しちゃうねっ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "だって神社って、\r\n不思議なことが起こるんでしょう？\n妖怪や神さまのお遣いが現れたり……。",
+      "ChoiceDataList": [
+        "ずいぶんワクワクしてるんだな",
+        "ずいぶんワクワクしてるんだね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "それはもう！\u3000祖国でも旧い教会なんかで\r\nよく妖精が目撃されていて……\n『私も見てみたい』ってずっと思っていたの！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "それにね、そういう不思議な存在は\r\n見た人に祝福を授けることもあるんだよ♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "ひょっとしたら、\r\n私の不調も治してくれるかも――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（――ズル……ズルズル…………）",
+      "ChoiceDataList": [
+        "な……なんの音だ？",
+        "な……なんの音？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "あっちから聞こえた！\u3000行ってみよう！",
+      "ChoiceDataList": [
+        "あ、待っ――"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "慌ててファインモーションを追いかけ、\r\n不気味な音のほうへ走った……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（ズルズル……ズル……\r\nギュギュッ！\u3000ギュ～～～っ！\u3000ミシッ！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "？？？",
+      "Text": "ふんぬ～～～～～っ！！\r\nプリンセス縄縛り～～～っ！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "ふう……あら、お2人とも\r\nごきげんようですわ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "カワカミちゃん！\u3000ええっと、それは\r\nもしかしてご神木……の、注連縄……かな？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "ええ♪\u3000緩んじまったようでして、\r\n締め直してくれないかと\n神主さんに頼まれたんですの！",
+      "ChoiceDataList": [
+        "なんの音かと思いきや！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "なぁんだ～♪\r\n妖精はカワカミちゃんだったかぁ～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "でもそれ……すごく気合いが入りそうだね！\r\nねぇ、私も手伝っていい？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "もちろんですわ！\r\nそれじゃあ、いっちょふん縛りますわよ～っ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "2人",
+      "Text": "そぉりゃあぁぁ～っ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "神主",
+      "Text": "いやはや、3人ともどうもありがとう。\r\nふぉふぉふぉ、神も喜んでおられるだろう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "まぁ、神さまが……？\r\nお役に立てて光栄です。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "神さまのお礼だろうか、その日以降、\r\nファインモーションは目に見えて\n調子がよくなったのだった！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "ファインモーションに付き添い、\r\n慌てて不気味な音を追い続けたが……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（ズル……ぴたっ……シーン――）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――はぁっ、はぁっ……あら、急に音が……？\r\n確かにさっきまで聞こえていたのに。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "う～ん……なんだか嫌な予感がする。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "妖精や妖怪は、たまに冗談ではすまない\r\nいたずらをするものなのよね……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "トレーナーの身に何かあったら困るね。\r\n戻りましょう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "気をつけながら神社の方へ戻った。\r\nファインモーションの調子はよくならない\nままだった……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

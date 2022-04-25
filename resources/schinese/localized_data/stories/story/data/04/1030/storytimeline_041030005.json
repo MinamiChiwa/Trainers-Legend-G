@@ -1,0 +1,278 @@
+{
+  "Title": "至少在任务完成之前",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "因为还有时间，所以想提前做好训练的准备、\n就早早地来到了操场……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "起，起，起立ー！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "呜呜，完全不行……\n再来一次……！",
+      "ChoiceDataList": [
+        "米浴，你已经来了啊",
+        "米浴，你已经来了啊"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "呀啊啊！？\u3000哥，哥哥……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "呀啊啊！？\u3000姐，姐姐……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "那个，对，对不起。\n我以为你还没来，就打算稍微练习一下……！",
+      "ChoiceDataList": [
+        "什么练习？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "啊呜，那个……喊口令的练习。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "明天，要值日了。所以就……哈啊。",
+      "ChoiceDataList": [
+        "你讨厌值日吗？",
+        "你讨厌值日吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "诶……不是的！\u3000没那回事哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "虽然是这样的米浴……但如果能稍微帮到班上一点忙的话，\n我也想努力一下的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "班级日志也是，我会一直写大家的事情直到写满……\n擦黑板时也会很努力地跳起来，把上面也擦干净。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "但是，喊口令这事……我非常非常不擅长……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "很难发出响亮的声音……\n米浴一紧张声音就会变得很奇怪……",
+      "ChoiceDataList": [
+        "那么，我也来协助你练习吧",
+        "那么，我也来协助你练习吧"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "诶，哥哥也来……？\n可以吗……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "诶，姐姐也来……？\n可以吗……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "为了练习喊口令，我和米浴一起来到空教室。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "好……那我试试看……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "起！\u3000起起起立ー！\u3000行、行礼！\n芹唑……啊！？",
+      "ChoiceDataList": [
+        "怎、怎么了！？",
+        "怎、怎么了！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "呜呜……对噗起。\n咬到舌头惹～……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "呜呜……完全做不好，对不起。\n难得哥哥都来帮我了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "呜呜……完全做不好，对不起。\n难得姐姐都来帮我了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "米浴，真是个没用的孩子……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "但是………………",
+      "ChoiceDataList": [
+        "不想放弃对吧？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "……！\n嗯……嗯。不想放弃……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "米浴……虽然现在还是个没用的孩子，\n但不想一直没用下去……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "再……再来一次。\n看好吧，哥哥！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "再……再来一次。\n看好吧，姐姐！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "要加油咯ー……哦ー……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "然后，第二天――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "起立ー！\u3000行礼！\n哥哥，昨天非常感谢！",
+      "ChoiceDataList": [
+        "口令下得很好啊！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "起立ー！\u3000行礼！\n姐姐，昨天非常感谢！",
+      "ChoiceDataList": [
+        "口令下得很好啊！",
+        "口令下得很好啊！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "嗯！\u3000……真厉害呢。和哥哥一起的话，\n米浴身上没用的地方好像渐渐变少了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "嗯！\u3000……真厉害呢。和姐姐一起的话，\n米浴身上没用的地方好像渐渐变少了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "呵呵，诶嘿嘿嘿！\n总感觉今天的训练能比平时更加努力――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（滴答……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "咿呀！？\u3000好凉……是什么？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（哗ーーーーー！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "哇啊啊啊！？\u3000骗人的吧，刚刚还是大晴天的……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "呜呜……都怪米浴。\n这么不幸的雨，一定是米浴的错……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "呜呜，对不起～～～～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "结果最后还得拼命安慰哭泣的米浴。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "Title": "菊花赏之后・溢出",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『菊花賞』にてビワハヤヒデの圧倒的な力に\n敗れ去ってしまったナリタタイシン。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "調整失敗の結果、敗北したことを気に病み、\n心身共に疲れ切った彼女は弱音を吐き――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "レースもトレーニングも\n少し休ませてほしいと口にするのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

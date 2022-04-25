@@ -1,0 +1,29 @@
+{
+  "Title": "夏季合宿（第3年）开始！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "共に迎えた3年目の夏合宿。\r\n『天皇賞（秋）』に向け、ここでしっかり\n鍛えていきたい！\u3000と意気込むも――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "アドマイヤベガに体調不良を指摘され、\r\nしばらく休むよう告げられてしまった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "常に姉であろうとする彼女の持つ、\r\n本質的な面倒見のよさを実感したのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

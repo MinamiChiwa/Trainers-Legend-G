@@ -1,0 +1,35 @@
+{
+  "Title": "关于训练",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "秋川理事长",
+      "Text": "漂亮！！\n看来训练进行得很顺利嘛！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "啊，理事长！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "秋川理事长",
+      "Text": "虽然我只是来看看情况……\n佩服！\u3000你在很好地支持着自己的赛马娘呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "是的♪\u3000以这种状态，\n让赛马娘不断成长吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

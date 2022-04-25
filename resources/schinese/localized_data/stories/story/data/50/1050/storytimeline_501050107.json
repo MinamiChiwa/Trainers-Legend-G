@@ -1,0 +1,287 @@
+{
+  "Title": "情人节",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "明天就是情人节。\n机会难得，我想给大进送点什么。",
+      "ChoiceDataList": [
+        "但说回来，大进好像不喜欢吃甜的东西――"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "所以，最后买了黑巧克力味的饼干。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……诶？\u3000这是什么？",
+      "ChoiceDataList": [
+        "情人节快乐，大进！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "诶…………啊，是今天啊。",
+      "ChoiceDataList": [
+        "忘掉了吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "倒也没忘，就是……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "以前……也没和朋友互换过巧克力来着。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……呃。这个真的要给我？",
+      "ChoiceDataList": [
+        "那当然！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……啊，这样啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "那个……呃……谢谢啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "当晚。\n我正在自己的房间里无所事事的时候――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……在吗？",
+      "ChoiceDataList": [
+        "大进！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "你还没吃晚饭吧。\n……现在吃吗？",
+      "ChoiceDataList": [
+        "嗯……嗯！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ナリタタイシンは、どういうわけか\r\nドライカレーの詰まった容器を\n持ってきてくれていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "夕飯前でお腹も空いていたので、\r\n有難くいただくことにしたのだが――",
+      "ChoiceDataList": [
+        "（为什么突然拿来咖喱炒饭……！？）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "而且――",
+      "ChoiceDataList": [
+        "好好吃！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……为什么听起来你这么意外啊？",
+      "ChoiceDataList": [
+        "你很会做饭啊……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "倒也没有很会……\n我家里是开店的，双亲都很忙。\n所以我也得学会照顾自己才行。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "就是这样。\n你也没必要这么夸张，不过就是咖喱炒饭而已……",
+      "ChoiceDataList": [
+        "没有夸张，真的很好吃！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我没有撒谎也没有夸张。\n这道炒饭有着醇厚的甜味……\n而且愈是回味，就愈是觉得加入了什么特别材料――",
+      "ChoiceDataList": [
+        "（……嗯？）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "也行吧。\n这评价至少比起沉默不语要来得好。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "那……差不多到宿舍的门限了。\n再见。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "大进宛如逃跑般地飞快离开了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "咖喱的余味还残留在口腔。\n那一丝若有若无的甜味仍在回荡……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "お腹が減っていたのと、美味しかったのとで\r\n気づいたらすっかり平らげていた。",
+      "ChoiceDataList": [
+        "感谢款待！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "好好好，粗茶淡饭不成敬意。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "在二人突然沉默下来之后――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……那个，你之前……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "说了那个吧……『一辈子』什么的。",
+      "ChoiceDataList": [
+        "嗯？……啊啊，是的。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "直到无法相信自己的大进，\n能够真正相信她自己为止……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "一生かかってもいいから、\r\n自分が彼女を信じる――\nそういえば、そう伝えた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……那，假如说……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "要是我现在告诉你，\n『好，我已经能相信我自己了』的话――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "你打算怎么做？",
+      "ChoiceDataList": [
+        "……哎？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "就是说你已经履行诺言了……\n我也能相信自己了的话。\n这样的话，你打算怎么做？",
+      "ChoiceDataList": [
+        "那就是――"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "不过，要是她真的能对自己抱有信心的话，\n不也挺好的吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……我正打算这么说的时候，\n大进先开口打断了我。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "算了。不用告诉我。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……我不想听。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "抱歉，我先回去了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "大进宛如逃跑般地飞快离开了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "咖喱的味道还萦绕在舌尖。\n不知为何，我尝到一丝淡淡的苦味……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

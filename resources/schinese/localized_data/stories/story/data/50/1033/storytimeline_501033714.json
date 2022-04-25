@@ -1,0 +1,130 @@
+{
+  "Title": "严禁乱来！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "トレーニング中、アドマイヤベガがケガを\r\n負ってしまったため、保健室へ連れてきた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………。ケガが治るまでは\r\n動いちゃダメだって。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……違和感はあったけど、無視してた。\r\nそれが災いしたみたい。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……でも、だからって\r\n立ち止まっていられない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "申し訳ないけど、私は走るわ。\r\nトレーニングの続きをする。",
+      "ChoiceDataList": [
+        "今は治療に専念しよう",
+        "トレーニングできる方法を考えよう"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………。\r\n勝ちたいの。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "そのために、誰よりも\r\nトレーニングするしかない。\nそれしかできないの、私には。",
+      "ChoiceDataList": [
+        "悪化したらレースにも出られなくなるぞ",
+        "悪化したらレースにも出られなくなるよ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……………。\r\nあなたの、言うとおり。\n言うとおりだけど、でも……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "その後、納得のいかない様子ではあったが\r\n安静にするアドマイヤベガだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "痛めた部分以外のトレーニングなら\r\nできるかもしれないと\nジムにやってきたが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "つっ……。",
+      "ChoiceDataList": [
+        "大丈夫か……！？",
+        "大丈夫……！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……ケガしたところに少し響くみたい。\r\nでも、気にしては……つっ……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "結局、トレーニングを止めはしたが\r\n完治までそれなりの時間がかかったのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "とりあえずケガをした箇所を\r\nテーピングで固めてみたが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………",
+      "ChoiceDataList": [
+        "大丈夫そう？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……ええ、痛みはなさそう。\r\nいける気がする。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "ひとまず助かったわ。\r\n……ありがとう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "その後、患部に負担がかからないよう\r\n工夫しながら、無事にトレーニングを\n終えることができたのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

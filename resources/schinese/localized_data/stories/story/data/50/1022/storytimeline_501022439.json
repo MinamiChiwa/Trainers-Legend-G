@@ -1,0 +1,41 @@
+{
+  "Title": "有馬記念の後に・Still with You",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『有馬記念』を終えたファインモーション。\r\n彼女は寂しそうなダイワスカーレットに\n見送られ、晴れやかな気持ちで声援に応える。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "一方、エアシャカールは自嘲気味に語る。\r\n彼女はデータに定められた結末に足掻くなか、\nファインモーションに希望を見ていた……と。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "帰国を阻止できれば、己の結末も変わる\r\n可能性があるはずだったのだ。だが、\n結果は変わらなかった。それでも――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ファインモーションは彼女が諦めていない\r\nことを見抜いた。そしてその証明は君自身が\nすべきと発破をかけ、別れを告げるのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "レース後、ファインモーションは\r\n会見で帰国を発表する。\nその瞳には涙がきらめいていた……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "Title": "有马纪念之后・我很强",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "クラシック、シニアの強豪を打ち倒し、\nナリタタイシンは\n『有馬記念』の頂点に輝いた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ライバルが、観客が、トレーナーが。\n誰もが彼女を祝福する。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "小さな体でコースを駆け、\n誰よりも大きい存在となった彼女は――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ウイナーズ・サークルの上で\n晴れやかに笑うのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

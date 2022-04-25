@@ -1,0 +1,478 @@
+{
+  "Title": "那日所见的德比",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "旁白",
+      "Text": "『日本德比』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "旁白",
+      "Text": "这最具历史性、传统性和荣誉的比赛\n一生却只能参加一次。\n这是多么残酷的事。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "旁白",
+      "Text": "事实上，众多赛马娘也在这梦想面前败下阵来。\n它是所有赛马娘的梦想。能够立于其顶点的，就是德比赛马娘。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "旁白",
+      "Text": "那一天，在20多万名观众的注视下，闸门打开了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "旁白",
+      "Text": "以领放跑赢德比是极其困难的。\n但是，身着粉红色决胜服的你并没有改变自己作风的想法。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "旁白",
+      "Text": "若需要超越别人，那还算什么领放。\n你所面对的是一场快节奏的消耗战。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "旁白",
+      "Text": "甩开紧追着的对手，冲过终点时，\n你已然筋疲力竭，连再迈出一步的力气也没有了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "旁白",
+      "Text": "那就是你取胜的，唯一有效的方法。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "旁白",
+      "Text": "胜者名为，艾尼斯风神。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "旁白",
+      "Text": "那一天，响彻府中赛场的欢呼声\n至今仍在所有粉丝的脑海中回荡——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（噢噢噢噢噢噢噢噢！！！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "来到最终直线！\n能够领先的究竟会是哪位赛马娘呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "年幼马娘",
+      "Text": "赛马娘姐姐加油ー！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "年幼马娘",
+      "Text": "好厉害好厉害！\u3000姐姐们跑得都好快！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "领先赛马娘冲得好快！\n那其后的赛马娘会从内外道冲上来吗！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "年幼马娘",
+      "Text": "啊啊，前面的姐姐被超过了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "超过了超过了！\u3000后方赛马娘一口气冲刺！\n差距越来越大了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "年幼马娘",
+      "Text": "那个姐姐好可怜啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "年幼马娘的母亲",
+      "Text": "那个姐姐还没放弃对吧？\n那奖券也别放弃给她加油吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "年幼马娘",
+      "Text": "呜呜……加油！！\u3000加油啊！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "领先赛马娘压倒后方冲ーーーー线！\n击败对手成功夺冠！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "年幼马娘",
+      "Text": "那个姐姐输了……\n她哭起来了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "年幼马娘的母亲",
+      "Text": "嗯，明明都尽力了，很遗憾呢。\n……不过你看，获胜的姐姐也在哭哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "年幼马娘",
+      "Text": "真的……为什么……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "年幼马娘的母亲",
+      "Text": "德比呢，是赛马娘姐姐们的梦想哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "年幼马娘的母亲",
+      "Text": "不论胜利还是失败都会落泪，那是因为她们都为\n梦想而努力过、拼搏过哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "年幼马娘",
+      "Text": "梦想……德比……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "炎热的日子渐渐减少——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "特雷森学园每年例行的学园活动\n『圣蹄祭』快到了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "好嘞！\u3000卷心菜的采购地址搞定！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "卷心菜？\u3000在说什么呢？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "圣蹄祭啊。要在那里卖阿船炒面，\n可是从我懂事起就决定好了的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "到时候也会喊麦昆和训练员来帮忙的，\n所以趁现在赶紧练练铁板的用法吧～",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "我只有不好的预感啊……\n训练员，炒面的试毒就交给你了。",
+      "ChoiceDataList": [
+        "不是试吃而是试毒……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "别担心啦，我也没打算放不能吃的东西。\n只打算放卷心菜和萝卜，还有青芥末山葵酱粗芥末。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "你想放多少芥末！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "就这样，学院到处都在为圣蹄祭做着准备。\n而这时——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "训练员，你在这里啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "特雷森学园理事长的秘书手纲小姐，\n兴高采烈地来了。",
+      "ChoiceDataList": [
+        "有什么事吗，手纲小姐"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "有大新闻哦♪\u3000其实URA决定要\n表彰前代训练员。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "表彰？\u3000他是找到了迷路的小猫之类的吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "你不知道吗？\u3000这可是给留下了辉煌功绩的\n赛马娘或训练员的荣誉啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "有很多人以此为目标，受到表彰后，照片和战绩\n就能展出在东京竞马场里的『赛马娘博物馆』里哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "毕竟他是很适合得到这份表彰的人。\n特别是小栗帽的最后一战，直到现在也受到很大支持。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "支持的人也不只是粉丝。\n我和目白麦昆也把那场有马纪念当作一场难以忘怀的比赛。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "支持的人也不只是粉丝。\n我和目白麦昆也把那场有马纪念当作一场难以忘怀的比赛。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "该说不愧是他吗，还是说不愧是顶尖之人吗，\n老师果然好厉害啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "表彰式好像也有直播，\n请务必看看哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "另外还有一件事\n想拜托训练员……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "说是希望我能帮一个在准备圣蹄祭的赛马娘——\n于是我来到了学园的图书室。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "？？？",
+      "Text": "呜啊啊啊啊～～～～！！\n太感动了～～！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "？？？",
+      "Text": "无论输多少次，受多少伤，也不放弃继续奔跑……\n这个赛马娘也是一路努力拼搏下来的呢……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "响彻在本应肃静的图书室里的喊叫声。\n这里也没别人了，想要圣蹄祭帮忙的大概就是她吧。",
+      "ChoiceDataList": [
+        "你就是圣蹄祭需要帮忙的那个孩子？",
+        "你就是圣蹄祭需要帮忙的那个孩子？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "？？？",
+      "Text": "啊！\u3000难道是手纲小姐\n提到的训练员？呜哇哇哇～～\n你来帮我了呢～～谢谢呜～～～～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "不对……还没打招呼呢！\n初次见面，我叫胜利奖券！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "哎呀～、我有想在圣蹄祭弄的节目就去竞选了\n但一开始准备就完全忙不过来了～",
+      "ChoiceDataList": [
+        "所以，我该帮忙做什么呢？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "一句话说！\u3000就是制作『历代德比展览会』\n中要展示的资料！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "把从初次德比开始，挑战德比的前辈们的热情和兴奋！\n毫无保留地展示出来！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "比如这位赛马娘，从外道一口气冲上来拿到第1名！\n她那终于实现德比梦想的心情传达过来了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "还有这位，从起跑开始一路领放拿到第1名！\n明明领放获胜很难，但她如此相信自己……呜呜……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "说到德比，在闪耀系列赛中也被称为\n最高峰，被定位为荣誉之战。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "也有业内人士认为『1年从德比开始，也从德比结束』，\n毫无疑问那是一项重要的比赛。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "果然德比最棒了～！！\n喔噢噢噢～～～！\u3000目标就是德比赛马娘了！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "喊着德比的她，眼眶被泪水润湿。\n看来是相当喜欢德比啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "训练员，真抱歉让你忙到这么晚！\n一做和德比有关的事情，我不知怎的都会热血沸腾呢～",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "我也很感兴趣哦。\n对胜利奖券来说，德比很特别呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "我也很感兴趣哦。\n对胜利奖券来说，德比很特别呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "嗯！\u3000德比是我的梦想啊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "我要参加德比，并且要获胜！\n谱写出不亚于前辈们的故事就是我的梦想。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "这样说着的胜利奖券的侧脸，是从她感动得哭哭啼啼时\n所无法想象的凛然，与率直。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "不过，在那之前得先拿到训练员的入队邀请才行。\n拿到能让我赢下德比的那种训练员的邀请！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "啊，不过现在该做的还是德比展览会！\n咱们俩一定要让它成功举办哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "还有，叫我奖券藏就行了哦。\n那样比较顺口吧？",
+      "ChoiceDataList": [
+        "明白了，奖券藏"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "诶嘿嘿，请多指教啦！\u3000训练员！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "我并不知道她能否参加德比，\n参加的话又能否获胜——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "但是，她如此纯粹的追梦故事，\n确实让人想看一看。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

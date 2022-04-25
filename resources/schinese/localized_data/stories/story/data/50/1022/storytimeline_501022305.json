@@ -1,0 +1,203 @@
+{
+  "Title": "桜花賞の後に・Touched",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "――……\n喂。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众B",
+      "Text": "嗯？\u3000怎么了？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "那个叫美妙姿势的姑娘，\n该怎么说……很棒啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "奔跑的时候起来完全乐在其中……这很厉害啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "美妙姿势漂亮地拿下了好结果。\n应该会一如既往的，带着兴奋的笑容跑回来吧。\n正当我这么想的时候……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……",
+      "ChoiceDataList": [
+        "……美妙？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……啊。",
+      "ChoiceDataList": [
+        "没事吧！？",
+        "没事吧！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "…………――啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "好～～～～厉害！\n太享受啦～～～～～～♪",
+      "ChoiceDataList": [
+        "……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "经典级的比赛，\n真的很棒呢……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "该说是感受到其他选手的魄力了吗！\n我都觉得浑身发麻了呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "如果这样的比赛永远都不结束就好了――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "嗯？怎么了吗？\n你看上去表情很僵硬呢。",
+      "ChoiceDataList": [
+        "你刚刚看起来很难受的样子……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "是吗？看起来我兴奋得有些过头了！\n还没回过神来呢♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "我的身体状况很好的，不用担心♪",
+      "ChoiceDataList": [
+        "太好啦……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "是误以为我受伤了吗？\n真的只是我太开心了而已……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "我会反省的。\n以后不会再做些让你担心的举动了。",
+      "ChoiceDataList": [
+        "你就尽情做你喜欢的事情就好啦"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "看来以后也还会像这次这样瞎担心吧。\n不过，我希望她能不用太过于在意我的想法，\n只要用尽全力享受当下就好。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……哼哼。\n真敢这么说呢～？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "那以后在训练开始前，\n让我随心所欲地吃拉面，这样也行吧？",
+      "ChoiceDataList": [
+        "这不对劲吧？",
+        "違うね？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "虽然我的本意是，\n让她忘了所谓立场与周围的事情，\n好好思考一下自己真正想要的东西是什么……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……好吧，我知道啦。\n谢谢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "那，就随我喜欢地去享受跑步吧！\n――向着『橡树大赛』而努力！",
+      "ChoiceDataList": [
+        "属下领命，殿下"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "训练员不许这么叫我啦！\n只能叫我『美妙』哦。哼哼♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "发抖的马娘",
+      "Text": "――可恶……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "发抖的马娘",
+      "Text": "这真好啊。\n能享受比赛，真好啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "发抖的马娘",
+      "Text": "……这样啊。毕竟美妙她……\n毕竟她可是『殿下』啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

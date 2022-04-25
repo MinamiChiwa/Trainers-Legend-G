@@ -1,0 +1,318 @@
+{
+  "Title": "理想たる“女帝”",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "いずれ頂点に君臨するウマ娘は、覇気にも似た、\r\n誰をも惹きつけてやまないオーラを放つという。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "――『彼女』には、そのオーラがあった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "哈，哈，哈，哈……！",
+      "ChoiceDataList": [
+        "（あれが“女帝”エアグルーヴ……！）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "躍動し風を切る端正な肉体と、軽やかに地を蹴る長い両脚。\r\n一切の迷いなく前を見据える、麗しくも力強い眼差し。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "そして何より、全身から溢れ出る気品と剛毅さを孕んだオーラが、\r\n皆に“女帝”と畏れられる彼女の異質ぶりを物語っていた――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "呼……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "……気づけば随分と時間が経っていた。\r\nいつの間にか、空が茜色に染まっている。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "すると、トレーニングが一段落したらしいエアグルーヴの元に、\r\n1人のウマ娘が歩み寄ってきて――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "エアグルーヴ！\u3000待たせてごめんなさい。\r\n外を走っていたら、ちょっと夢中になっちゃって……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "ふ……お前は相変わらずだな、スズカ。\r\nまあ、そんなところだろうと思っていたから構わんさ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "それより、併走をする余力は残っているのか？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "ええ、それは大丈夫。始めましょうか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "菱亚马逊",
+      "Text": "おっ、エアグルーヴとスズカ、いまから併走すんのか？\r\nへぇ～、面白いモノが見られそうだねぇ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "富士奇石",
+      "Text": "言わずと知れた、実力者2人のトレーニングか！\r\nこれは、学ぶものが多そうだね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "コース周辺には瞬く間に人だかりができ、\r\n観衆に見守られつつ、エアグルーヴたちは併走をスタートした。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "哈、哈、哈……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "富士奇石",
+      "Text": "おおっ……！\r\nスズカの逃げ、いつ見ても見事だね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "菱亚马逊",
+      "Text": "だがエアグルーヴも、このままで終わらす気は全くなさそうだね。\r\n見ろよ……離された分だけ、逆に戦意が漲ってるみたいだ……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "……哼。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "そして、サイレンススズカが大きく逃げる形のまま\r\n最終コーナーを回った、その時――！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "――はぁっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "菱亚马逊",
+      "Text": "うぉおっ！？\r\nおいおい、あの距離を一気に詰めやがったぞ……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "富士奇石",
+      "Text": "なんて瞬発力……！\u3000それに仕掛けの判断も見事だ。\r\nスズカが絶対に追い返せないタイミングで……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "くっ……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "この勝負……もらった！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "燃え盛る戦意、それとは裏腹に冷静な判断。\r\nそして、凄まじいまでの走力……どれをとっても彼女は見事だった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "サイレンススズカとの差を開いたまま、\r\nエアグルーヴはゴールラインを越えて行った……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "圧倒され、思わずその場に立ち尽くしていると、\r\nレースを見ていた子たちの興奮気味な感想が聞こえてきた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "菱亚马逊",
+      "Text": "いやー、いいモン見させてもらったぜ！\r\n次はアタシもタイマンしたいね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "富士奇石",
+      "Text": "そうだね。あれほどのレースセンスを持ち、\r\nまさに理想と呼べる走りを私たちに見せてくれる……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "富士奇石",
+      "Text": "その上、生徒会副会長として、\r\n私たちの学園生活を様々な形でサポートしてくれてもいる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "菱亚马逊",
+      "Text": "サポートっつうにはド厳しい気もするが……\r\nまあ、みーんな助けられてるのは事実だよな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "富士奇石",
+      "Text": "ポニーちゃんたちが慕うのもわかる気がするよね。\r\n私もああ在りたいものだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "菱亚马逊",
+      "Text": "……ところで、そこのアンタ。\r\nさっきからずーっとエアグルーヴを見てるみたいだけど。",
+      "ChoiceDataList": [
+        "お、俺？",
+        "わ、私？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "菱亚马逊",
+      "Text": "そーだよ、他に誰がいるってんだい。\r\nアンタ、あまり見慣れない顔だね。新人トレーナーかい？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "菱亚马逊",
+      "Text": "もしかして、エアグルーヴをスカウトしようってハラか？",
+      "ChoiceDataList": [
+        "出来ることならぜひ……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "菱亚马逊",
+      "Text": "あちゃー、そりゃあ……ひと足遅かったってやつだね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "グルーヴの担当",
+      "Text": "エアグルーヴ！\u3000ここにいたのね。\r\nもしかして、今日も自主トレーニングを……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "ああ、そうだが……何か問題でも？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "グルーヴの担当",
+      "Text": "……いえ。明日なんだけど、ちょっと予定を変更していい？\r\n少し用事があって、30分ほどトレーニングの開始を遅らせたいの。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "ふむ。だがトレーニングコースの予約は済んでいるのだろう？\r\nであれば、私1人が先に向かってメニューを進めておこう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "グルーヴの担当",
+      "Text": "えっ？\u3000でもせっかくだし、少し休んでおいた方が――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "デビュー戦も近いんだ、1分たりとも無駄に出来るものか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "それに、休息は言われずとも必要に応じて取っている。\r\nこれまでに1度でも、体調を理由に予定を変更させた事があったか？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "グルーヴの担当",
+      "Text": "そ、それは……ない、わね。\r\n……わかったわ、じゃあ先にトレーニングしててちょうだい。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "菱亚马逊",
+      "Text": "ははっ、相変わらずトレーナー相手にビシバシいってんな！\r\n……ま、でも見ての通りだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "富士奇石",
+      "Text": "君にとっては残念な話だろうけど……\r\nエアグルーヴには、既に担当トレーナーがついているんだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "菱亚马逊",
+      "Text": "スカウトの機会とされてる『選抜レース』にも出てないのにねぇ。\r\nまーでも、その前に声をかけちゃいけないってルールはないからな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "エアグルーヴは、それだけ他のトレーナーにとっても\r\n特別な存在に見えたということなのだろう……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "名残惜しい気持ちを抱えながら、その日はコースを後にした。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

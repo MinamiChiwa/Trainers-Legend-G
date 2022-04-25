@@ -1,0 +1,596 @@
+{
+  "Title": "粉丝感谢祭",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "今天就是春季粉丝感谢祭。\n将平日里支持这赛马娘的粉丝招待至学园、\n并且让赛马娘们参加各种各样活动的日子。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "比起秋季的圣蹄祭，\n春季的活动更偏重各种各样体育系的活动。\n这次爱慕织姬参加的是——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "感谢祭执行委员A",
+      "Text": "『世代对抗赛・大拔河』，\n即将开始！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "感谢祭执行委员B",
+      "Text": "观众席已经座无虚席！\n想要观看比赛的各位，请尽快过来哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "神鹰",
+      "Text": "那么——————现在即将开始的是！！\n『世代对抗赛・大拔河』！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "神鹰",
+      "Text": "齐聚一堂的各位！！\n就拜托诸位的\n声援☆喝彩☆大狂热Death——！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（唔哦哦哦哦哦哦！！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "小~鹰~差不多闹够了哦~\n我们可是参赛选手，\n玩够了就把面具还给解说员回去吧~",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "神鹰",
+      "Text": "欸——怎么这样！\n面具可是面具摔跤手力量的来源Death！\n而且，真正的比赛可是从现在才——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "神鹰",
+      "Text": "啊！好的！小的明白desu！\n我在开玩笑哦！只是个Joke哦！\n我现在就回去desu！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "……啊，你终于回来了！！\n真是的，作战会议已经耽搁好久了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "青云天空",
+      "Text": "好啦好啦，别那样瞪着我啦。\n只要大家好好配合，根本不需要作战会议吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "青云天空",
+      "Text": "而且之前的会议里不是光顾着讨论队名了嘛。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "青云天空",
+      "Text": "像什么，圣王的『超☆一流五人众』，\n小鹰的『魂☆Amigo！』，\n当时还争得很厉害呢～",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "不过，最后抽签抽中的，\n是我提议的『加油吧Kira☆Kira团』！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "小青云、小圣王、小鹰、小草！\n——我们一定要胜利哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "うおー！\u3000トゥインクルを騒がせまくってる\n『黄金世代』そろい踏みじゃんか……！\nこりゃ熱いっ、熱いぜ～！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "黄金世代"
+      ]
+    },
+    {
+      "Name": "观众B",
+      "Text": "練習の時からすごく息合ってたって\nウマッターでも見たよ！\u3000強そ～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "ウマッター"
+      ]
+    },
+    {
+      "Name": "观众C",
+      "Text": "那……呃，对面的队伍——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "哈哈哈哈！\nālea jacta est（骰子已然掷下）！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "那么『霸王五重奏』队！\n是否准备好出阵？！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "做好啦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "オペラオーちゃん、ドトウちゃん、\r\nウララちゃん、アヤベさん！\n――みんなで、黄金世代に勝ちましょうっ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "怒涛与春丽",
+      "Text": "哦——！！\n哦~…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "包在我们身上吧——！\n我们也已经练习好久了哦！\n哎嘿嘿……不过拽尾巴还是会有点痛呢……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "不要摔倒，最重要的是不要摔倒……！\n就算摔倒了也不要松开绳子……！\n至少能当作绳子上挂的重物……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "开始了。\n……各就各位吧。",
+      "ChoiceDataList": [
+        "（加油，织姬……！）",
+        "（頑張って、アヤベ……！）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "哦、哦哦……？\n这支队伍，好像各自的个性都很强，\n整支队伍看上去简直一盘散沙啊……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众B",
+      "Text": "算啦算啦，不看比赛就不知道她们有多厉害。\n看吧，开始了！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "解说马娘",
+      "Text": "『世代对抗・大拔河』现在开始！！\n第一轮比赛的是，\n『加油吧Kira☆Kira团』VS『霸王五重奏』！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "解说马娘",
+      "Text": "本局比赛采取三局两胜制！\n那么——第一轮，开始！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "大家，要上了哦！\n一、二——！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "加油吧Kira☆Kira团",
+      "Text": "拉————！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "呜……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "唔哇，好厉害！\n不愧是五人一心的黄金世代！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "唔唔唔……！\n喝、喝……啊啊……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "霸王五重奏",
+      "Text": "唔哇啊啊啊！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "解说马娘",
+      "Text": "——霸王五重奏队全面崩溃！\n第一回合是加油吧Kira☆Kira团的胜利！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "即便那个歌剧王也咬紧了牙关，全力对抗……\n但是，她们依然在第一回合中惜败。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "呜呜！！输掉了！！\n小特她们果然好厉害！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "呜呜，要是我们也能好好配合的话……\n每次她们喊口号的时候，\n绳子就会被猛拽一下……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "虽然我们姑且也是决定了口号的……\n但比赛一开始，根本就没有开口的余裕了啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "唔……要是我们能好好配合起来的话……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……别想着模仿对手。没意义。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "跟他们比起来，我们甚至年级都不一样。\n换在平时，我们这伙人根本聚不起来。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "要在『配合』一事上胜过黄金世代，\n我想可能性几近于零。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "唔……！\n确、确实是呢……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……但是，\n我们也有只有我们才能做到的战术。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "——歌剧王。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "在！\n……何事，织姬同学？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "且不提对手的事情。\n在我看来，你今天在气势上就比平时弱了不少。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "明明就连队伍名都要装作一副霸王的模样，\n却不将我们全员『吞噬其中』的话，\n也太不像话了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "擅自开始演唱歌剧的，是你。\n擅自抓住我们的手，\n将我们指引向同一个舞台的也是你。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……你一向都是这样做的。\n这次也赶紧，开始演奏吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "那么，第二回合——！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "哈哈哈哈哈哈！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "啊啊、屹立在吾等面前的、黄金之浪潮啊！\n翻滚的、怒吼的、飞卷而上的浪潮啊！\n莫非是要阻碍我们通往胜利吗！（啦啦～♪）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "哈……！！\n拉、啦啦啦~！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "但吾等从不言败、亦不受挫！\n——呜呼，若问缘由~\n（若问缘由——！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "啊哈哈哈！\n若问缘由——！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "不必多言！\n只因本人——\n只因吾等——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "正是！\n霸王五重奏♪！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……重奏……♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（嗞啦啦啦啦啦！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "神鹰",
+      "Text": "这、这是什么口号Death？！\n……歌声？！\n而且为什么突然变强——唔哇！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "解说马娘",
+      "Text": "没想到没想到，第二轮是霸王五重奏的胜利！！\n她们采取了第一轮不同的战法……呃……\n展现了……嗯……独特的团队合作！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（唔哦哦哦哦哦哦？！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "这、这真的很独特呢！\n而且那是什么啊……歌剧吗？！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "虽然不是很明白这是什么原理，\n但总之趁热打铁，开始下一轮的比赛吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "遗憾，还是输掉了——！\n呜呜，我还以为大家齐心协力一定能赢的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……真是可惜啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "非常遗憾，我们在第三回合中败北，\n输掉了比赛。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "不过看见了爱慕织姬罕见地关爱同伴的一面，\n我想这个结局也不算坏吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "还想再听织姬同学唱一次歌剧呢——！\n织姬同学的歌声，我觉得非常动听哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "咦――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………你听见了……吗……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "哈哈哈哈哈哈哈哈哈！！\n大☆胜☆利！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "啊啊、给予我贤者般耳语的，\n我亲爱的群星之信徒啊！\n现在请接受我感激的拥抱——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……恕我拒绝。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "あはは！\u3000でも、\r\nアヤベさんとオペラオーちゃん\n実は結構、息合ってますよね？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "オペラオー"
+      ]
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……诶？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "其实，我从以前开始就一直在想一件事哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "你看，织姬同学你的说话风格还挺浪漫的，\n这一点和小歌剧很像哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "………………哎？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……那个，我的用词遣句——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……算了。没事。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "……织姬同学？\n我要关灯了哦~？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……那个，我——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "怎么啦？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……抱歉。没事。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "——不管怎么说，\n总之度过了相当有趣的粉丝感谢祭呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

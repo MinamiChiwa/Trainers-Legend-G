@@ -1,0 +1,368 @@
+{
+  "Title": "誇れるものひとつ",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "夏合宿も中盤に入り、ビーチでのトレーニングにも慣れてきた\r\nそんなある日――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "ふい～……。\r\nどう？\u3000だいぶタイムも縮まってきたんじゃない？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "正如优秀素质所说，她集训时努力的结果\n就这样表现出来了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "既然能在踩踏困难的沙滩上跑这么快，\n在跑道上跑会怎么样呢～。",
+      "ChoiceDataList": [
+        "能获得第一了呢",
+        "能获得第一了呢"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "いやいや、そんな簡単に取れるもんじゃないって。\r\n第一、みんなも同じようにトレーニングしてるわけだし。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "……啊，对从早到晚都陪着我练习的训练员，\n不能说这种消极的话啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "あはは、まあこれはアタシの性格の問題だから、\r\n諦めてくださいな～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "和优秀素质接着聊的时候……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "お祭りがあるって知ってたら\r\n浴衣持ってきたのにな～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘B",
+      "Text": "好了好了，不管穿什么衣服，\n祭典都是一样快乐的啦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "……诶～在搞祭典什么的呢。",
+      "ChoiceDataList": [
+        "要去看看吗",
+        "要去看看吗"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "哦，不错呢～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "お祭りってなんか好きなんだよね～。\r\nおっきいのじゃなくて、地元の公園とかでやるやつがさ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "昔はよく友だちと行って、はしゃいだなぁ～。\r\nいやはや、懐かしい思い出ですよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "アタシ、こう見えても仲間内で\r\n『イチバン盆踊りが上手い』って言われてたんだ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "まあ、だからなんだって話ですけど。\r\n数少ない特技の1つが“盆踊り”ってのも、アタシっぽいっしょ？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "っと、昔話はこんくらいにしておいて、\r\nお祭りでたっぷり羽を伸ばしますか！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "哎呀～，说到夏天果然还得是祭典啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "さーて、次はどこ回ろうかな～。\r\n焼きそばに、焼きとうもろこし……お、イカの丸焼きもいいじゃん！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "えへへへ、トレーニングを頑張ってるご褒美に、\r\n遠慮なく食べまくってやる！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "训练员也要呼哇～地好好享受哦。\n只有我在享受也挺不好意思的啦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "和优秀素质一起在祭典上逛来逛去――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "主持人大叔",
+      "Text": "『孟兰盆舞大赏』的接待处在这里。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "『孟兰盆舞大赏』……？",
+      "ChoiceDataList": [
+        "我想看你跳孟兰盆会舞",
+        "我想看你跳孟兰盆会舞"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "诶！？不不不不，再怎么说也有点。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "上手いっつっても友だちの中でって話だし、\r\n大会とかで披露するようなもんじゃないから。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "ちっちゃな公園で、町内の人たちと楽しむくらいが\r\nアタシにはちょーどいいんですって。",
+      "ChoiceDataList": [
+        "但被朋友们认可了对吧？",
+        "但被朋友们认可了对吧？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "是，是这样没错啦～……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "真是的～，训练员真的很喜欢拍我马屁呢～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "それよりもさ、もっとお店を見て回ろうよ！\r\nまだじゃがバターも食べてないし！\u3000はい、行くよ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "そそくさと立ち去るナイスネイチャを追いかけ、\r\n『盆踊りグランプリ』の会場をあとにした。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "ふぅ～……まんぷくまんぷく。\r\n調子に乗ってがっつり食べちゃったわ～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "さあて、それじゃあそろそろ帰ろっか。\r\n明日もトレーニングが控えてるし。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "就在我和优秀素质一起准备回宿舍的时候——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "主持人大叔",
+      "Text": "『盆踊りグランプリ』の参加受付、\r\nまもなく締め切りまーす。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "……那，那个。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "真的想看？那个……盂兰盆舞……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "友だちに上手いって言われただけの、\r\nふっつ～の盆踊りだけど……。",
+      "ChoiceDataList": [
+        "想看！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "哈哈……知道了。那，我上了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "だけど期待しないでよ？\r\n盆踊りをするなんて、ほんっとに久しぶりなんだから。",
+      "ChoiceDataList": [
+        "要以获胜为目标！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "所以说，别这么期待啦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "就这样，优秀素质参加了『孟兰盆舞大赏』――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "主持人大叔",
+      "Text": "『孟兰盆舞大赏』今年的获胜者为……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "主持人大叔",
+      "Text": "番号12番、トレセン学園からはるばる来てくれた、\r\nウマ娘のナイスネーチャン！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "“ネイチャ”だっての。\r\n……って、ウソ？\u3000あ、アタシ！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "主持人大叔",
+      "Text": "必死な姿に心を打たれてね。\r\n満場一致でお嬢ちゃんに決まったんだ。おめでとう！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "谢……谢谢……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "主持人大叔",
+      "Text": "向获胜的优秀内酱送上热烈的掌声!",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（啪啪啪啪啪啪！！！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "所以说不是“内酱”啦……啊，多谢多谢……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "哎呀……居然能夺冠，真让人吃惊啊。",
+      "ChoiceDataList": [
+        "可喜可贺！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "うん、ありがと。\r\nわれながら、よくもまあ出走する気になったなって思うよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "あれですかね……トレーナーさんと一緒にやってきて\r\n乗せられ易くなっちゃってるのかな、アタシ。",
+      "ChoiceDataList": [
+        "是不是变得率直了点？",
+        "是不是变得率直了点？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "是是，反正我就是个别扭的人。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "优秀素质",
+      "Text": "好了，明天也要努力训练啊! \n这次比赛也要……之类的！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "Title": "这次绝对不会输！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "ごめんなさい。また負けてしまった……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "せっかく日本で走るお許しをもらったのに\r\nこんな結果じゃ、情けないな……。",
+      "ChoiceDataList": [
+        "……美妙。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "私、甘かったんだ。\r\n走ることがどれだけ楽しくても、\nそれだけじゃダメなのに……。",
+      "ChoiceDataList": [
+        "楽しむ気持ちは君の長所だ",
+        "楽しむ気持ちは貴方の長所だよ",
+        "そうだな……甘かった",
+        "そうだね……甘かった"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "私、甘かったんだ。\r\n走ることがどれだけ楽しくても、\nそれだけじゃダメなのに……。",
+      "ChoiceDataList": [
+        "楽しむ気持ちは君の長所だ",
+        "楽しむ気持ちは貴方の長所だよ",
+        "そうだな……甘かった",
+        "そうだね……甘かった"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "私の、長所……？",
+      "ChoiceDataList": [
+        "それに、努力も熱意もあった"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……そっか、いいところもたくさん\r\nあったことは忘れてはダメだった……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "そのうえで、敗因を見極めて\r\nきちんと反省をしないと前に進めないものね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "次こそ勝とう、いや、勝つんだ……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "みなに素敵な笑顔を見せられるよう。\r\nそしてもっとレースを楽しむために、ね♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……っ。厳しい言葉こそ、\r\n今の私に必要なものですね……。",
+      "ChoiceDataList": [
+        "だけど、1人で背負うことはない"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "今回の負けは指導した自分にも責任がある。\r\n彼女の力を引き出せなかったのだから……\nということを伝えた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "トレーナー……。\r\n本当に、ありがとうございます。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "へこたれてはいられないね……！\r\nキミの想いにも報いたいもの。",
+      "ChoiceDataList": [
+        "一緒に巻き返そう！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "ええ、もう負けません……！\r\n共に高みを目指しましょう！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

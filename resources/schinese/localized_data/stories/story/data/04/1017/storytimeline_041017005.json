@@ -1,0 +1,195 @@
+{
+  "Title": "精励恪勤",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ある日の夕方、シンボリルドルフが\r\n何やら感慨深そうにコースを眺めているのを見かけた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "ああ、トレーナー君か。\r\nいい所に来た、少し時間をもらえないか？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "なに、他愛もない事だ。ここからの眺めを君と共有したくてね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "例えばそうだな……あそこにナリタブライアンがいるだろう。\r\n彼女は生徒会の仲間なんだが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "先日、『私には負けん』と強く主張されてね。\r\n『全ての壁は越えられるものだ』とまで言われてしまったよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "そしてその言葉通り、彼女は日に日に目覚ましい成長を遂げている。\r\n敢為邁往、ただひたすらに前だけを見据えて。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "――この学園に来た子たちは、速さを求め、\r\n目標のために自らを律し、気力の一滴までターフに注ぎ続けている。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "彼女たちの姿を見るたびに、気が引き締まるんだ。\r\nトレセン学園の生徒会長として、彼女たちの幸せを願うものとして。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "私も為すべき事を為さねば……と。",
+      "ChoiceDataList": [
+        "だからこそ、今は誰にも負けられない"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "その通りだ、トレーナー君。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "上に立ち導くと決めた以上、\r\nその責を負うに値する存在にならねば。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "私たちの使命は明確だ、故に助力しあう必要がある。\r\n皆のため、共に頂を目指す同志として――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "ひゃあっ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "むっ……？\u3000なんだ！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "――なんて事だ、生徒たちが倒れこんでいる！\r\nトレーナー君、すぐ向かおう！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "はぁ……はぁ……君たち、大丈夫か！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "えっ！？\u3000ル、ルドルフ会長！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "無理に動かなくともいい。先ほど倒れたばかりだろう。\r\n状況を説明できる子はいないか？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘B",
+      "Text": "あ、あの、えーっと……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "ちっ違うんです！\u3000ごめんなさいっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "……啊？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "実はその……わ、私たち、お互いにくすぐりあって、\r\n倒れこんじゃっただけで……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘B",
+      "Text": "ごっ、ご迷惑をおかけしてしまってすみません！\r\nどうかお気づかいなくっ……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "いや、君たち。そんな慌てずとも――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘们",
+      "Text": "すみませんでしたぁ～～～～！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "彼女たちは、ひどく慌てた様子で駆け去って行った……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "……ひとまずは大事無くて良かった、と言うべきか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "しかし、早合点した挙句、彼女たちを怖がらせてしまうとは。\r\n未熟さここに極まれり、だな……恥じ入るばかりだよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "生徒たちとの距離を縮めねばと思ってはいるのだが、\r\nやはり一朝一夕には出来んものだな。",
+      "ChoiceDataList": [
+        "一緒に少しずつ改善していこう"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "ああ、そうしてもらえると非常に助かるよ。\r\nどうか今後とも、指導鞭撻の程よろしく頼む。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

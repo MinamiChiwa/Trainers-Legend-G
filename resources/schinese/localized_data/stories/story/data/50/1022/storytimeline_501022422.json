@@ -1,0 +1,29 @@
+{
+  "Title": "迎接有马纪念",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『有馬記念』に出走するファインモーション。\r\n今日の出走者は友人のダイワスカーレット。\nそして――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "エアシャカールだ……！\r\n彼女はこのままお前を帰らせはしないと宣言。\n2人は熱い火花を散らす。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ファインモーションにとって\r\n最後のレースが、今始まる――！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

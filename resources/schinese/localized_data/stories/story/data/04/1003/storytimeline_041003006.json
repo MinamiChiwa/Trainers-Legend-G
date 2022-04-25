@@ -1,0 +1,372 @@
+{
+  "Title": "跳出我的风格！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "Lotta ta ta…… Lovin！\u3000Lovin！\nLotta ta ta……呜哇哇哇！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "啊呀～，还是不行吗～！\n怎么也跟不上这块的节奏啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "东海帝王正在公园里跳舞。",
+      "ChoiceDataList": [
+        "在做胜者舞台的练习吗？",
+        "在做胜者舞台的练习吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "啊，训练员。\n不是不是，这不是在做LIVE的练习ー。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "是在做我最大的爱好，跳舞游戏的练习！\n很棒的哦，跳舞游戏！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "比赛的话不是一定得要跑得快吗？\n但跳舞游戏可就有点不一样了呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "跳完全程固然重要，但同样重要的是要节奏感\n满满的跳！\u3000帅气又可爱，唰一下着地，恰恰☆\u3000嘣！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "超棒的～。心情好又开心，像这样无敌又超赞\n的游戏，没别的了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "……本来是这么想的啊。\n唉……",
+      "ChoiceDataList": [
+        "发生了什么？",
+        "发生什么了吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "嗯，出现了个刷新我最近玩出来的\n高分的对手。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "我的得分是62万分。但是，那人玩出来的得分是\n99万9999分！\u3000没想到顶点得分，就这样被玩出来了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "我感到特别特别不甘心。我的力量才不止这点哦！\n所以，才这样在练习的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "但是，我把能做的都做了！\n训练员，咱们一起进游戏厅吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "一决胜负！\u3000我能做到，我的话能做到，\n我们的话一定能做到！\u3000好，游戏开始！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "――780,500",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "啊啊啊，自我最高纪录～！\u3000即使这样也完全达不到……\n训练员～……",
+      "ChoiceDataList": [
+        "你还能做得到！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "谢，谢谢……是啊，\n我才不会失败一次就放弃。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "我要成为不败的帝王。得更轻盈地去弹跳！\n再次挑战，上了哟ー！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "――850,600",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "自我纪录大更新～！\u3000但是还没达到～！\n呜呜呜，这下该怎么办好……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "女孩子",
+      "Text": "姐姐ー，加油ー！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "诶，你是……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "母亲",
+      "Text": "这孩子，从刚才开始就一直在看你跳哦。\n说着『好棒好棒～♪』，可开心了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "是，是这样啊。\n那个，你看着我跳舞，开心吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "女孩子",
+      "Text": "嗯，很开心！\u3000但是啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "女孩子",
+      "Text": "姐姐只要一露出痛苦的表情，我也就跟着难受……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "痛苦的表情？\u3000是啊，我一面临危机就会\n露出那种表情……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "玩跳舞游戏应该是种享受。中途面露那样的表情的话，\n就不可能达到顶点得分了吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "痛苦不能改变。但是……痛苦的时候也可以笑出来！\n这样的话省了力气，动作也能变顺！\u3000是吧，训练员？",
+      "ChoiceDataList": [
+        "嗯，再开心一点吧！",
+        "嗯，再开心一点吧！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "嗯！\u3000我试试，无论无论多少次。\n能笑到最后的话，一定能抵达终点！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "好，要上咯ー！\u3000请大家为我应援哦ー！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "――就这样，观众们也参与其中，\n东海帝王无止境的挑战开始了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "――891,500",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "唉，哈啊……笑容……中断了……\n但是，还没结束！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "――924,100",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "突破90万分ー！\u3000照这样下去的话！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "――956,000",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众们",
+      "Text": "帝王！\u3000帝王！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "谢谢。差不多到了，极限……身体要动不了了……\n但即便如此……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众们",
+      "Text": "帝王！\u3000帝王！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "听到这些声音……腿的力量就！\n上了咯，集中精神……最后一场！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "――999,999",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "诶，声音……停下了……\n成，成功了……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "太好了ーーー，顶点得分ー！！\n训练员，大家，我做到了哦！",
+      "ChoiceDataList": [
+        "恭喜你，帝王！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "嗯，本来中途就气馁了。感觉可能不行了。\n但是……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "是大家给了我力量。\n大家让无敌的帝王，变得比无敌更上一层！",
+      "ChoiceDataList": [
+        "是团队的胜利啊",
+        "是团队的胜利啊"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "嗯，而且不光是分数，我还笑着跳到了最后！\n所以大家，也才会变得这么热情呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "诶嘿嘿嘿，虽然分数一样，但是艺术分上赢过对手了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "游戏厅店员",
+      "Text": "嗯……？\u3000啊！\u3000那台机器……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "诶……店员？\u3000怎么了吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "游戏厅店员",
+      "Text": "抱歉抱歉。那台机箱，忘记重置了。\n前几天在做维护呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "游戏厅店员",
+      "Text": "最高分数，一直是顶点得分。\n我现在就修好。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "诶诶诶诶诶，那么这个分数，不是谁打出来的而是\n维护出的错～～～！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "啊哈哈，笑死了呢。\n没想到竟然对着个不存在的对手热血沸腾了。",
+      "ChoiceDataList": [
+        "扫兴了吗？",
+        "扫兴了吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "嗯。但我也因此注意到了重要的事情。\n那就是――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "应援，会是一种非常强大的力量。让最强无敌的我\n都变强了好几倍甚至几十倍。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "今天只是练习！\u3000下次就在赛场上试试吧。\n要戏剧性地赢下来。在大家的应援声中！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

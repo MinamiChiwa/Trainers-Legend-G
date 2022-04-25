@@ -1,0 +1,308 @@
+{
+  "Title": "水清无鱼",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "トレーナー君。\r\n3日後に、私は再び同じ事を君たちに問う。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "その時は君の答えを、\r\n何らかの形にして私の前に示して欲しい。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "シンボリルドルフからそんな課題を出された、翌日のこと。\r\nどうしたものかと考え込んでいると――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "おや、君は……奇遇だね。\n向かいの席は、空いているかな？",
+      "ChoiceDataList": [
+        "どうぞ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "ありがとう。そろそろ混雑し始める時間帯だからね、\r\n他の子たちのために一席でも空けておきたい。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "ところで……\n何やら難しい顔をしていたようだが？",
+      "ChoiceDataList": [
+        "君に言われたことを考えていて……",
+        "貴方に言われたことを考えていて……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "ああ、やはりその話か。\n悩みの種を与えてしまって、済まないね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "私が言う事でもないかも知れないが、あまり根を詰めすぎるのも\r\n良くないよ。頭を休めるのも、時には大切だ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "そうだな、丁度カフェテリアに居るのだし、\r\n甘味のひとつでも摂取してはどうだ？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "糖質は脳へ活力を与える。特に果物や野菜、全粒穀物などは\r\n精神的な集中を促す効果が高い。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "本日のメニューから選ぶのであれば……\n季節のフルーツサラダがお勧めだな。",
+      "ChoiceDataList": [
+        "詳しいな……！",
+        "詳しいね……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "おっと……プロのトレーナー相手には、\n釈迦に説法というやつだったかな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "こういった事は、常に頭の中を巡っているものでね……。\r\nつい長々と語ってしまった。",
+      "ChoiceDataList": [
+        "いつもそんなに気を配っているのか？",
+        "いつもそんなに気を配っているの？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "ああ。体を作り、心を満たす……。ウマ娘にとって食事は、\r\n非常に大きな意味を持つものだからね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "『現在の自分にとって、最適な食事とは』\n……考え出すときりが無い、重要なテーマだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "無論、食事だけでなく、日々のあらゆる場面において、\r\n意味を追求する事を心がけているよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "常に大局的な視点を持ち、万事万端を己が糧とする。\r\n高みに至るには、必要不可欠な姿勢だ。",
+      "ChoiceDataList": [
+        "すごいな……",
+        "すごいね……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "はは、そう真っ向から感心されると、\n少しむず痒いな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "私にとっては、幼少期から当然の如く染み付かせてきた\r\n思考様式だからね……。最早、治らぬ癖のようなものなんだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "……ただ、まあ。\n治らぬ、というのも中々問題でね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そう言ってふと目を上げたシンボリルドルフに合わせ、\r\n周囲を見渡してみると――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "わわ……か、会長、\nトレーナーとなんか難しそうな話してる……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘B",
+      "Text": "私たちがうるさくして、邪魔なんかしたら申し訳ないし……\r\n向こうで食べよっか……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "……見ての通りだ。折角、君に断ってまで詰めて座ったつもりが、\r\n周囲に空席を作るばかりになってしまった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "生徒が気軽に相談出来てこそ、会長として相応しい。\r\nひいては、皆を導くに相応しいウマ娘となれるはずなのだが……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "どうにも私は、威圧感が有るというか、\n四角四面な印象ばかりを与えているようでね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "皆を楽しませられる、軽妙洒脱な会話のひとつでも\r\n浮かぶようであれば良かったのだが――",
+      "ChoiceDataList": [
+        "そういう会話の練習、してみるか？",
+        "そういう会話の練習、してみる？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "えっ？\u3000……君と、か？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "――はははっ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "あ、いや、悪い。君、何というか……付き合いがいいんだな。\r\nまさかそんな提案が来るとは、意外だった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "よし、ものは試しだ！\u3000やってみるとしよう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "良ければ、話題を提示してもらえないか？\r\n何でもいい。君が肩肘張らずに居られるものを振ってみてくれ。",
+      "ChoiceDataList": [
+        "走ること以外で何か趣味はあるか？",
+        "走ること以外で何か趣味はある？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "趣味か！\u3000うん、いい切り口だな。\r\nこれなら気軽に話せそうだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "特に好んでいるのは、チェスだな。自ら卓を囲むのは勿論、\r\nスコア……棋譜を読むのも楽しいものだよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "常に戦局を見つつ、相手の思考を読み、来たるべき未来に向け\r\n一手一手を積み重ねる。それは正しく、人生の縮図とも言える――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "……いや、待ってくれ。\nもしや、またしても固い話になっていないか？",
+      "ChoiceDataList": [
+        "そうかも……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "うーん、やはり一朝一夕にはいかないな。\n難しいものだ……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "……あ、そうだ！\u3000実は、気軽な雑談の一助になればと、\r\nかねてより研究しているものがあるんだ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "即ち――ジョークだよ。\n固い空気を打ち壊す、粋な冗談というやつだ！",
+      "ChoiceDataList": [
+        "なるほど！ぜひ聞かせてほしい",
+        "なるほど！ぜひ聞かせて"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "よし、では早速！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "先日、通りを歩いていたら犬を見かけてね。あまりに見事な\r\n毛並みだったために、私は思わずこう呟いてしまったんだ……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "『わんだふる！』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "――どうだ、トレーナー君！？",
+      "ChoiceDataList": [
+        "…………"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "だいぶ意外な一面を見つけてしまったが……\r\nシンボリルドルフのことが、少しだけわかったような気がした。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "うーん、『わんだふる』……。\n自信作だったのだが……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

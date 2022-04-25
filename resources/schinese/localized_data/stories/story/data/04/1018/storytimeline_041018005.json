@@ -1,0 +1,240 @@
+{
+  "Title": "第1話",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "放課後、エアグルーヴが後輩たちのダンスレッスンを\r\n見ていると聞き、こっそり足を運んでみた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "隊列を乱すな！\u3000ボックスからの、ターン！\r\nしっかりと首を切れ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "はい、先輩っ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "ワンテンポの遅れが命取りになるぞ！\u3000次、ヒールステップ！\r\n前列、――構え！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "はい、先輩っ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "口調は厳しいが、的確な指示が飛ぶ。\r\nこれがエアグルーヴ式のダンスレッスンのようだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "よーし、次はユニゾンの訓練だ！\r\n速やかに二人一組になり、ルーティンを開始せよ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘们",
+      "Text": "はぁ～い！",
+      "ChoiceDataList": [
+        "ずいぶんハイレベルなプログラムだな",
+        "ずいぶんハイレベルなプログラムだね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "む、貴様……いたのか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "ウイニングライブも完璧にこなしてこそ、ウマ娘だ。\r\n特にダンスは、体に染み込ませることで――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘B",
+      "Text": "エアグルーヴ先輩から手ほどきいただけるなんて！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "赛马娘C",
+      "Text": "みっともない姿はみせられないわ！\r\n気合いれて回っちゃう！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "はりきった後輩は、大きく体勢を崩し――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "そこっ、目を逸らしたら――危ないっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘B",
+      "Text": "きゃあっ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "嘁……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "エアグルーヴは、とっさに身をていして後輩を庇った……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "赛马娘C",
+      "Text": "いったたたた……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘B",
+      "Text": "きゃああッ！？\r\nエアグルーヴ先輩！\u3000先輩、しっかりしてください！",
+      "ChoiceDataList": [
+        "エアグルーヴ！大丈夫か！？",
+        "エアグルーヴ！大丈夫！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "……大丈夫だ。騒ぐようなことじゃない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "接触による転倒事故……。『問題ない』と言い張る\r\nエアグルーヴを説得し、保健室へ連れていった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "医者によると、軽い捻挫とのことだった。\r\n少し腫れてはいるが、幸い靭帯や骨には影響ないようだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "その程度なら、なんら問題はないな。\r\n私は指導に戻るぞ。失礼。",
+      "ChoiceDataList": [
+        "待った！",
+        "待って！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "……なぜ止める。後輩を待たせているんだぞ。\r\n私には、彼女らを指導する責任がある。",
+      "ChoiceDataList": [
+        "もっと自分のことを大切にしてほしい"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "自分のこと？\u3000自己管理ならば徹底している。\r\n貴様に指図される筋合いはない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "“女帝”たるもの、後進の指導を放り出すなど言語道断。\r\nこれしきのケガなど――",
+      "ChoiceDataList": [
+        "君が大事なんだ！",
+        "貴方が大事なの！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "ッ！？\u3000ち……近い近いっ！\r\n適正な距離で話さんかっ！！",
+      "ChoiceDataList": [
+        "……抱歉。",
+        "ご、ごめんなさい"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "……おい。その情けない顔をやめんか。\r\nまったく、貴様という奴は。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "だが……。\r\n…………はぁ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "わかった、本日はこれより休養とする。\r\n後輩たちには謝罪と、後日の埋め合わせを伝えよう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "私が至るべき境地は、あらゆるウマ娘の理想となる“女帝”――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "……トレーナーに気苦労をかけるような体たらくでは、\r\n理想などと呼べんからな。",
+      "ChoiceDataList": [
+        "エアグルーヴ……！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "ええい、話は終わりだ！\r\n決定した以上、万全な休息を取るぞ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "……ひと眠りすると言っている。いつまで見ている気だ？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "保健室から追い出される羽目にはなったものの、\r\nエアグルーヴは体を休めることを選んでくれたのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "Title": "デビュー戦の後に・First Step",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "デビュー戦を終えたファインモーション。\r\n彼女はあまりの感動に言葉を失う。\nそして、もっとレースに出たいと強く望んだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "しかし今の彼女に必要なのは、\r\n激しいレースにも耐えられるよう\nトレーニングを積み重ねることだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "トレーナーは、彼女に目標にしたいレースを\r\n考えてもらいつつ経験を積ませようと決めた。\nまずは、実績とファンを増やしていこう……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}
