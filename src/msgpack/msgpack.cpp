@@ -51,7 +51,7 @@ namespace msgFunc
 	{
 		if (not isDMMTokenLoaded)
 		{
-			printf("Error: Unable to reboot, can't read DMM Token. Did you enable `inspectMsgPack`?\n");
+			printf("Error: Unable to reboot, can't read DMM Token. Did you enable `readRequestPack`?\n");
 			return;
 		}
 		std::string rebootCMD = R"(
