@@ -559,23 +559,6 @@ namespace
 		return reinterpret_cast<decltype(load_scene_internal_hook)*>(load_scene_internal_orig)(sceneName, sceneBuildIndex, parameters, mustCompleteNextFrame);
 	}
 
-	void* request_pack_orig = nullptr;
-	int request_pack_hook(
-		char* src, char* dst, int srcSize, int dstCapacity)
-	{
-		// Hook LZ4_compress_default_ext
-		int ret = reinterpret_cast<decltype(request_pack_hook)*>(request_pack_orig)(
-			src, dst, srcSize, dstCapacity);
-
-		if (!msgFunc::isDMMTokenLoaded)
-		{
-			string buffer(src, srcSize);
-			msgFunc::initDMMToken(msgPrase::praseRequestPack(buffer));
-		}
-
-		return ret;
-	}
-
 	void dump_all_entries()
 	{
 		// 0 is None
@@ -855,15 +838,6 @@ namespace
 		auto load_scene_internal_addr = il2cpp_resolve_icall("UnityEngine.SceneManagement.SceneManager::LoadSceneAsyncNameIndexInternal_Injected(System.String,System.Int32,UnityEngine.SceneManagement.LoadSceneParameters&,System.Boolean)");
 
 		const auto GallopUtil_GetModifiedString_addr = il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "GallopUtil", "GetModifiedString", -1);
-
-		if (g_read_request_pack)
-		{
-			auto libnative_module = GetModuleHandle("libnative.dll");
-			auto request_pack_ptr = GetProcAddress(libnative_module, "LZ4_compress_default_ext");
-			printf("request pack at %p\n", request_pack_ptr);
-			MH_CreateHook(request_pack_ptr, request_pack_hook, &request_pack_orig);
-			MH_EnableHook(request_pack_ptr);
-		}
 #pragma endregion
 
 		// hook UnityEngine.TextGenerator::PopulateWithErrors to modify text
