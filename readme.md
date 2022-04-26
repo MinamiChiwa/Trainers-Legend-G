@@ -51,7 +51,8 @@
 ### LIVE歌词
 
 - @凉月crella（Bilibili）【transforming】
-- @雪村あおいaoi(Bilibili)【Grow up Shine! 】
+- @雪村あおいaoi(Bilibili) 【Grow up Shine! 】
+- @Rajiformes软骨鱼(Bilibili) 【UNLIMITED IMPACT】←暂未获得授权
 
 ### 角色语音
 
