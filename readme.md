@@ -51,6 +51,7 @@
 ### LIVE歌词
 
 - @凉月crella（Bilibili）【transforming】
+- @雪村あおいaoi(Bilibili)【Grow up Shine! 】
 
 ### 角色语音
 
