@@ -1,9 +1,20 @@
 #include "msgpack.hpp"
 
+
 namespace msgPrase
 {
 	const std::vector<int> header_regions = { 4, 56, 72, 88, 104, 120 };
-	nlohmann::json praseRequestPack(const std::string& data)
+
+	std::string convert_pack(const std::string_view data) {
+		msgpack::unpacked msg;
+		msgpack::unpack(msg, std::string{ data }.c_str(), data.size());
+		msgpack::object obj = msg.get();
+		std::stringstream ss;
+		ss << obj;
+		return ss.str();
+	}
+
+	rapidjson::Document praseRequestPack(const std::string& data)
 	{
 		try
 		{
@@ -14,8 +25,18 @@ namespace msgPrase
 			}
 
 			const auto v = std::string_view(data);
+			rapidjson::Document document;
+			const auto pack_data = convert_pack(v.substr(4 + offset));
 
-			return nlohmann::json::from_msgpack(v.substr(4 + offset));
+			std::regex re("\"viewer_id\":(.*?),\"");
+			const auto rep_result = std::regex_replace(pack_data, re, "\"");
+
+			// std::cout << "pack_data:" << pack_data << std::endl;
+			// std::cout << "pack_replaced_data:" << rep_result << std::endl;
+
+			document.Parse(rep_result.c_str());
+			return document;
+
 		}
 		catch (std::exception e)
 		{
@@ -29,16 +50,28 @@ namespace msgFunc
 {
 	std::string DMMViewerID, DMMOnetimeToken;
 	bool isDMMTokenLoaded = false;
-	void initDMMToken(nlohmann::json pack)
+	void initDMMToken(rapidjson::Document pack)
 	{
+
+		if ((pack == NULL) || pack.HasParseError()) {
+			printf("Pack failed. Fast Reboot is not available.\n");
+			return;
+		}
+
 		if (not isDMMTokenLoaded)
 		{
 			try
 			{
-				DMMViewerID = pack["dmm_viewer_id"];
-				DMMOnetimeToken = pack["dmm_onetime_token"];
-				printf("Successfully read DMM Token. Fast Reboot is available.\n");
-				isDMMTokenLoaded = true;
+				if (pack.HasMember("dmm_viewer_id") & pack.HasMember("dmm_onetime_token")) {
+					DMMViewerID = pack["dmm_viewer_id"].GetString();
+					DMMOnetimeToken = pack["dmm_onetime_token"].GetString();
+					printf("Successfully read DMM Token. Fast Reboot is available.\n");
+					isDMMTokenLoaded = true;
+				}
+				else {
+					printf("Read DMM Token failed. Fast Reboot is not available.\n");
+				}
+
 			}
 			catch (const char* msg)
 			{
