@@ -1,0 +1,219 @@
+{
+  "Title": "STOP？春丽的大作战",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "休息日，我一出了车站前，\n就听到一个熟悉的声音。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "春丽的秘密大作战，要开始ー了ー哦！",
+      "ChoiceDataList": [
+        "开始做什么？",
+        "开始做什么？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "那个啊～……诶，训练员！？\n为什么会在这里？",
+      "ChoiceDataList": [
+        "我是来买东西的"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "是这样啊！\u3000我也是哦！\n但至于买什么，因为是秘密大作战所以是秘密哟！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "好ー，立刻出发ー！\n再见了哦ー！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "春丽一转眼就跑掉了。\n我很在意她的样子，就追了上去。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "那个ー，杂志上好像确实说是在这附近……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "看到春丽在找些什么的样子，\n摆路边摊的男人上前去搭话……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "可疑的路边摊贩",
+      "Text": "呀，这位小姐。在找什么呢？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "嗯！\u3000我在找一家鞋店！\n叔叔你知道吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "可疑的路边摊贩",
+      "Text": "那正巧了！\n这儿就有适合马娘小姐的鞋子哦。你看ー。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "诶ー？\u3000我不需要普通的鞋子哦～！\n我要找的是，能够跑特别快的鞋子！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "可疑的路边摊贩",
+      "Text": "这就是“能够跑特别快的鞋子”哦！\n现在买的话给你便宜点哦？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "呜～……勉勉强强能买下来……！\n真的真的会变快吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "可疑的路边摊贩",
+      "Text": "那当然了！\u3000只要穿这个准能拿第一名！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "真的真的真的！？\n嗯ー，虽说是很贵……但是，好吧ー！",
+      "ChoiceDataList": [
+        "STOP！！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "诶？\u3000训练员！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "诶ー！？\u3000那双能跑特别快的鞋是骗人的！？\n明明说了『准能拿第一名』来着～！",
+      "ChoiceDataList": [
+        "我在看着真是太好了……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "秘密大作战，失败了啊～！\n我本想今天一口气变得能跑特别快的！",
+      "ChoiceDataList": [
+        "要怎么做？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "比如穿上能跑特别快的鞋子之类的！",
+      "ChoiceDataList": [
+        "除了踏实练习外别无他法哦",
+        "除了踏实练习外别无他法哦"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "呜ー。我当然也会多多练习的哦？\n但是，我想马上变得能跑特别快啊！",
+      "ChoiceDataList": [
+        "我可以问一下理由吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "之前，训练员不是被记者表扬了吗？\n怎么说呢，我真的特别开心！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "我能因为跑得很有精神而受夸奖，\n所以如果我能拿第一名，就会得到更多的夸奖吧!",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "所以，为了能尽快拿第一名，\n我要努力，并让你大吃一惊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "我要是能拿第一名就会很开心！\n要是训练员也能被表扬，我会更开心的！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "虽然努力的方向错了，但春丽是认真的。\n作为训练员，我被她的态度深深打动了。",
+      "ChoiceDataList": [
+        "有干劲很了不起！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "真的！？\u3000诶嘿嘿♪\u3000被表扬了！\n那么，下周一定要买到能跑特别快的鞋……",
+      "ChoiceDataList": [
+        "但是，我想和你一起努力"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "一起？",
+      "ChoiceDataList": [
+        "让我们一起，想出能拿第一的方法吧"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "……这样。嗯，说得对呢！\n一开始就找训练员商量就好了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "好ー！\u3000明天开始又要和训练员一起，\n做很多训练了哦ー！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "春丽意气风发地向特雷森学园跑去。\n这一天我为了回应她的想法，重新下定决心要同她一起拿下第一。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

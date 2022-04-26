@@ -1,0 +1,176 @@
+{
+  "Title": "第13話前半",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "哈……哈……\n不、不要丢下我~……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "慢死了小特，你干啥去了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "对不起！明明是铃鹿同学比赛的日子，\n可我昨晚怎么都睡不着……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "你比上场比赛的人还紧张啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "要是为了等你，铃鹿迟到被取消参赛资格可就遭了哦",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "呵呵呵……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "好，那我们去赛场吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "嗯。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "『宝冢纪念』几个月后，今天——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "于东京竞马场举办的『天皇赏（秋）』，\n无声铃鹿以人气第一参赛。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "铃鹿！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "气槽，还有福来。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼福来",
+      "Text": "我们来给你加油了哦，铃鹿同学！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "毕竟『宝冢纪念』上被你摆了一道啊，\n今天让我好好研究一下怎么对付你。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼福来",
+      "Text": "咦……？\u3000是为了研究吗？记得你邀请我的时候说的是\n『陪我一起去给铃鹿加油』来着……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "研究对手也算是一种加油！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "能打败铃鹿的只有我，所以今天必须要获胜啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "嗯，我会第一个冲线的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼福来",
+      "Text": "我也会一边祈祷一边支持你的！\u3000加油啊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "呵呵呵……那就靠你的保佑了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "好了，前面就是赛场，就送你到这里了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "好了，前面就是赛场，就送你到这里了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "但是我的“思念”与你同在，\n我们两个一起见证那片“景色”吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "但是我的“思念”与你同在，\n我们两个一起见证那片“景色”吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "尽情地跑，去欣赏那片“景色”，\n并且让训练员也看到那片“景色”，最后——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "我一定会再回到训练员身边的。",
+      "ChoiceDataList": [
+        "我相信你！",
+        "我相信你！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "是……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

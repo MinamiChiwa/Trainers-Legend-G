@@ -1,0 +1,216 @@
+{
+  "Title": "寂静的夜里响彻的话语",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "诶，一个人要搬那么多的？\n是理科教室对吧？\u3000交给我吧，我来帮你！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "谢谢你一直以来做打扫！\n这儿的垃圾，我去扔掉了哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "呼ー！\u3000辛苦了！\n今天我也跑得很舒服，也很开心。",
+      "ChoiceDataList": [
+        "辛苦了！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "像往常一样，北部玄驹理所当然地到处帮助别人。\n而且，训练的进行也没有什么问题。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "啊，对了！\u3000我有件事想要问训练员……\n踏步的时候啊，那个――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "这样啊！\u3000果然轴心很重要呢。\n得注意轴心脚和上半身的平衡，重心就……嗯嗯。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "那个，我能再稍跑一会儿吗？\n训练员教给我的东西，我想快点去实践一下。",
+      "ChoiceDataList": [
+        "那么，就再稍跑一下"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "谢谢！\n好～！\u3000要缩短时间咯～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "北部玄驹起跑时的侧脸，美丽而精巧，\n令我目不转睛。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "北部玄驹总是积极向上，充满了上进心。\n她的样子似乎也带动起了周围的士气――",
+      "ChoiceDataList": [
+        "（我也得回应小北的那份努力！）",
+        "（我也得回应小北的那份努力！）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我揉了揉睡眼，轻轻拍了拍自己的脸。这已经超越了\n我的职责和义务，我只是单纯地想为了她而努力。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "然后呢，爸爸！\n训练员很厉害哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "训练虽然很辛苦，但我真切地感受到了\n自己正在成长――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "烦恼会马上为我解决，\n训练项目也会根据每天的情况做调整！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "嗯，是啊。我总是会很苦恼很苦恼，\n但却得不到答案……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "唔唔～，不行啊！\u3000我越是要自己别去在意，\n就越是会在意后方。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "这样，只在意前方的话又会感到不安……",
+      "ChoiceDataList": [
+        "对什么不安？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "啊，那个……果然，害怕中途被人超过吧。\n还有是否有人追到我后方了吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "要是这样的话，果然我也该和她们一决胜负吧？\n但是，过于在意的话自己就不能好好跑了……",
+      "ChoiceDataList": [
+        "小北的跑法是什么呢"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "我的跑法？\u3000……啊，是“领放”。\n领放再领放，比任何人都跑在最前方。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "直到最后都是强有力，速度快到无论谁想追上来，\n都无法跑到我的前方。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "甩开后方所有人，第一个冲线……\n这就是我的跑法！",
+      "ChoiceDataList": [
+        "即便如此，你还要在意后方吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "……――啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "训练员，能够解答我的烦恼，\n而且不仅如此。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "当我说要一起思考一下的时候，训练员会\n给予我建议，让我能得出各种各样的答案。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "我也想变得像那样帅气啊。\n什么事都能够轻松搞定，那种――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "小北的父亲",
+      "Text": "『――――』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "……诶？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "…………\n那是……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "是，是啊。\n……明明都是些理所应当的事。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "听了父亲的话，北部玄驹似乎想到了什么。\n在她握紧的拳头中，显露出一丝觉悟。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "Title": "出道战之后・狼烟四起",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……呼。",
+      "ChoiceDataList": [
+        "辛苦了，大进！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……疲れてない。\r\nていうか、労ってる場合じゃないでしょ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "――这只是一个起点而已。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "要继续前进了哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "クールな態度は崩さないが、出走前と比べて\r\nナリタタイシンの足元は、\nとてもしっかりしていたのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "那么，来商讨下下一次比赛的事情。",
+      "ChoiceDataList": [
+        "已经在说下一次比赛的事情了！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "他に何の話するんだっつの。\r\nまだ蹴飛ばされ足りないわけ？",
+      "ChoiceDataList": [
+        "不不不不不……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "出走前のことで叱られる際に食らった1発が\r\n今なお効いているため、慌てて首を振った。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "もちろん、本気で蹴飛ばされたら\r\n間違いなく病院送りなので、\nかなり手加減してくれたとは思うのだが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "いいから、次のレースの話。\r\n……っていうか、今後の話。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "アタシは『クラシック三冠』を狙う。",
+      "ChoiceDataList": [
+        "……！"
+      ],
+      "ColorTextInfoList": [
+        "クラシック"
+      ]
+    },
+    {
+      "Name": "成田大进",
+      "Text": "バカにしてきた連中、全員にわからせるなら、\r\n生半可なレースじゃ意味ないし。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "『皐月賞』『日本ダービー』『菊花賞』……\r\n最強どもが集う舞台で、勝つしかないでしょ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "皋月赏",
+        "日本德比",
+        "菊花赏"
+      ]
+    },
+    {
+      "Name": "成田大进",
+      "Text": "我要赢下来，让所有人认可我。\n……绝对。",
+      "ChoiceDataList": [
+        "好，那就这样办！",
+        "うん、そうしよう！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "とはいえ『皐月賞』はまだまだ先。\r\nまずはジュニア級のレースに出て、\n経験を積んでおきたいところだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "ジュニア級"
+      ]
+    },
+    {
+      "Name": "",
+      "Text": "那么――",
+      "ChoiceDataList": [
+        "先参加『希望锦标』怎么样？",
+        "まず『ホープフルステークス』に出ない？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……ジュニア級ＧⅠの？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "ＧⅠ"
+      ]
+    },
+    {
+      "Name": "",
+      "Text": "『ホープフルS』は、『皐月賞』と同じ\r\n中山芝2000mのレースだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "希望锦标"
+      ]
+    },
+    {
+      "Name": "",
+      "Text": "ここで感覚を掴んでおくことが\r\nきっとよい経験になるはずだ、と話すと――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "ん、わかった。\r\nじゃあ、次は『ホープフルS』。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……既然参加了，就必须要取胜啊。",
+      "ChoiceDataList": [
+        "嗯！",
+        "嗯！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "こうして『ホープフルS』出走に向けて\r\n調整をしていくことになった！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

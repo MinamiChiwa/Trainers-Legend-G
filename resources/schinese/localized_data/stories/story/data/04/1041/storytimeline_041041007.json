@@ -1,0 +1,325 @@
+{
+  "Title": "爆进！\u3000夏日祭典！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "在海边的合宿场所里进行的夏季合宿，来到了最后一天。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "おおーっ、今日もいいお天気です！\r\n素晴らしい！\u3000これは気合いが入りますね！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "那么，马上开始训练吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "模範となるべき私は、時間の使い方も完璧！！\r\n1秒たりともムダにはしませんのでッ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "――それにしてもホント、夜が楽しみだな～♪\r\nお祭りなんて久しぶり。りんご飴とか売ってるかな？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘B",
+      "Text": "あるんじゃない？\u3000でもアタシはあんず飴派だな。\r\nあのひと口サイズが可愛いんだよねー。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "……んん、お祭り？\r\nなんと、今日はそんなものがあるのですか？",
+      "ChoiceDataList": [
+        "训练完之后去看看吧"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "私も今まさにそう言おうとしていたところです！\r\nフフッ、トレーナーさんとは気が合うようですね！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "では本日のトレーニング後はお祭りということで！\r\nトレーニングにもより一層身が入りそうです！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "ビーチでのトレーニングを終え、\r\n約束通り、お祭りへ行く時間になったのだが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（嘈杂声……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "等等……这些都是要去祭典的人吗？\u3000……太多了吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘B",
+      "Text": "だね……これじゃ祭り会場も混んでそう。\r\nはぐれないようにしなきゃ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "祭り会場はもっと混んでいるだろう。\r\nサクラバクシンオーとはぐれないか、とても心配だ……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "お待たせしましたトレーナーさん！\u3000私の準備はバッチリです！\r\nさあ、お祭りへと向かいましょう！！",
+      "ChoiceDataList": [
+        "有件事你要答应我"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "好，是什么呢？",
+      "ChoiceDataList": [
+        "注意不要在祭典会场走散了",
+        "注意不要在祭典会场走散了"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "ええ、もちろんです！\r\n学級委員長たるもの、当然の心構えですよ！",
+      "ChoiceDataList": [
+        "如果走散了一定要联系我",
+        "如果走散了一定要联系我"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "おおっ、『ホウレンソウ』というやつですね！！\r\nいいでしょう、この学級委員長にお任せください！！",
+      "ChoiceDataList": [
+        "……你有带手机吗？",
+        "………你有带手机吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "ハイッ、もちろん！！\r\nしっかりとバッグに入れてあります！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "……ああああッッ！？\u3000そうです、バッグの中！\r\nすッッッッかり忘れていました！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "但是请放心！\u3000我马上回房间里拿！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "对于会不会走散这件事，我已经开始不安了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "哦哦哦ーー！！\u3000好多的摊位！\u3000美食！\u3000盂兰盆会舞！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "小さい頃、両親と一緒に来たことを思い出します……。\r\n射的に金魚すくい、どれも上手だと両親が褒めてくれたものです。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "我，变得非常ーー非常开心了！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "せっかくですから全部の屋台を見て回りましょうか！\r\nということで、いざ――",
+      "ChoiceDataList": [
+        "等等……！！",
+        "等等……！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "――爆进ーーーーーー！！！！",
+      "ChoiceDataList": [
+        "不要在这种地方跑啊ー！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "すぐに手を伸ばしたが間に合わず、\r\nサクラバクシンオーは全力で人混みの中へと消えてしまった……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "祭り会場は混み合っており、\r\nサクラバクシンオーの姿は見つからない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "携帯に連絡しても、『電波が繋がらない』と言われる。\r\nもう迷子のアナウンスをしてもらうしか――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "训练员ーーーーーーーーーーー！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "聞こえますか、トレーナーさぁぁん！！\r\n私はここです、サクラバクシンオーはここにいますよーっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "人群中，传来了樱花进王的声音――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "もしもし聞こえますか！？\r\nトレーナーさ……画面が真っ黒に！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "トレーナーさぁぁぁぁぁんッ！！！\u3000どこですかぁぁぁぁぁッ！！\r\nケイタイの画面が真っ黒になってしまいましたーーッ！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "サクラバクシンオーの携帯は真っ黒な画面になってしまったようだ。\r\nそして、こちらの携帯は1度も鳴っていない……つまり。",
+      "ChoiceDataList": [
+        "把你的手机开机啊！！",
+        "把你的手机开机啊！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "ちょわ！？\u3000言われてみれば、電源が入って……ややややッ！？\r\nトレーナーさんではないですか！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "迎えに来てくださったとは、感謝感激！！\r\nもう2度と会えないのではないかと思いました！",
+      "ChoiceDataList": [
+        "至少，你还试着要联系我……",
+        "至少，你还试着要联系我……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "那当然了！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "私はサクラバクシンオー、頼れる学級委員長ですから！\r\n約束は絶対に守ります！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "それに、トレーナーさんの言うことは、\r\n常に正しく善良であると確信しておりますので！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "是的，和我一样ーーー！！",
+      "ChoiceDataList": [
+        "能再会真是太好了"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "正是如此！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "これだけの人ごみ、事件に巻き込まれているのではと\r\n心配しておりました！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "但是！\u3000我们彼此都平安无事！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "トレーナーさんは私を見つけ、\r\n私はトレーナーさんに見つけてもらうことが出来た！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "まさにウィンウィンの関係！！\r\nこれからも一緒に頑張っていきましょう！\u3000バクシン！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "どの辺がウィンウィンなのか――とは問いかけず、祭り囃子が響く\r\n星空の下、サクラバクシンオーと熱い握手を交わした。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

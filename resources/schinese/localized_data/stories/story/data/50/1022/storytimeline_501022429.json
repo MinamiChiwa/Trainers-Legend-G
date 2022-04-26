@@ -1,0 +1,37 @@
+{
+  "Title": "エリザベス女王杯の後に・Lost...",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "勝ちたいと強く願うも『エリザベス女王杯』\r\nで敗れたファインモーション。\n彼女は感情をむき出しに悔しがる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『勝ちたい』という想いが彼女に\r\nレースの本当の楽しさを感じさせる。\nだが、それは知るべきではない感情だった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "さらに、エアシャカールは彼女に突きつける。\r\nレースができるのはあと1年しかないと……。\nせっかく知った楽しさもすべて思い出になる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "その後も彼女はいつも通りに明るく振舞う。\r\nだがその横顔には複雑な想いが見えた。\n終わりの時は近い……次は『大阪杯』だ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "大阪杯"
+      ]
+    }
+  ]
+}

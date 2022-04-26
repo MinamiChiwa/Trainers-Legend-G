@@ -1,0 +1,229 @@
+{
+  "Title": "秋華賞にむけて",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『秋华赏』当天。\n聚集在京都竞技场的观众们\n他们多半都在注视着――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众们",
+      "Text": "美妙姿势～～～～！！\n我很看好你哦ー！\u3000加油啊～～！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "这么多人，都对我抱有期待……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "――这么多人期待着美妙姿势的表现。\n这种分量的期待足以让一般人崩溃了吧。\n但是，她曾经说过――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "正因为被众人所注视，所期待，\n才有了如今的“美妙姿势”嘛。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "她的精神强韧，足以把期待完全转变为力量。\n正当我以为这次也没问题的时候――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……失，失礼了！",
+      "ChoiceDataList": [
+        "美妙！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我连忙追了出去。\n美妙姿势独自一人伫立在外，\n那表情看上去就像是在忍耐着什么似的――",
+      "ChoiceDataList": [
+        "……很不安吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……嗯，好像是这样呢。\n毕竟，毕竟――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "唔哼哼哼……！\n因为，有些装不下去了～！！",
+      "ChoiceDataList": [
+        "……啊？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊啊真实的！\u3000好了，美妙！\n在大家面前要保持微笑！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "这样一来，\n不就和神宫说的 『蠢货似的伪装』一样了吗！",
+      "ChoiceDataList": [
+        "等下，我还是没搞明白你为啥不安……",
+        "ええと、何が不安なの……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "もちろん、観客のみんなを、\r\nガッカリさせること！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "光顾着享受比赛，只要跑起来就很开心，\n这样一来，\n不就和阿蛮(wild)一个德行了嘛！",
+      "ChoiceDataList": [
+        "阿蛮？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "一緒に住んでいた犬の名前！\r\nとってもやんちゃだったからワイルド！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "我觉得，观众们一定，\n是期待着看见我优雅地奔跑地模样的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "ワイルドみたいにわふわふ走らないよう、\r\n気持ちを抑えて……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……咦？我是不是，\n和之前有些不一样了？",
+      "ChoiceDataList": [
+        "原来你不是因为比赛本身感到不安啊？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "没有那种事！\n我还是很期待比赛的哦。",
+      "ChoiceDataList": [
+        "其实你想怎么跑都可以的"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "但是，如果让观众们看见的是，\n和他们期待之中完全不一样的模样……",
+      "ChoiceDataList": [
+        "もう見せているから大丈夫"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哎～！？",
+      "ChoiceDataList": [
+        "大家，只是想看见在享受跑步的你",
+        "みんな、楽しそうな貴方を見たいんだよ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……这样的吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "那个叫美妙姿势的姑娘，\n该怎么说……很棒啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众们",
+      "Text": "美妙姿势～～～～！\n跑得很不错哦ーー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "美妙姿势参加过的所有比赛，\n都让观众迷上了她，\n也给更多人带去了梦想。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "梦……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "曾怕到发抖的马娘",
+      "Text": "不过，带着你说的那种想法跑的话……\n稍微……看开一些了。\n为了能和你一样享受比赛，我会努力的……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……这样啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "虽然感觉一直以来都是我在接受帮助……\n但看来，我也有帮到过别人啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "我知道了！\n今天，我也要全力享受比赛！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "要随心所欲地驰骋在赛场上，\n美丽的景色――我会和大家一起见证的！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,316 @@
+{
+  "Title": "拿同室的妹妹没办法",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "训练就这样结束了呢。\n再见——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "啊！找到了找到了！训练员！\n请把织姬同学带过来一下——！",
+      "ChoiceDataList": [
+        "诶？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "来了啊，卡莲。\n突然打电话过来，吓了我一跳。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "菱亚马逊",
+      "Text": "哦？下一个客人就是织姬了吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "雪之美人",
+      "Text": "我这边已经弄完了哦！\n织姬同学也是来找阿城同学理发的吗？",
+      "ChoiceDataList": [
+        "欸，理发……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "欢迎来到阿城同学的美发沙龙 ♪\n虽然是不定期开放，但很受欢迎哦~！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "你听我说呀，训练员。\n织姬同学她昨天居然——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "头发最近有些碍事……剪掉吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……啊，剪刀坏掉了。\n得重新买一把了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "你敢相信吗，训练员？\n织姬同学居然打算自己把自己的头发剪掉哦~！\n明明她的头发这么漂亮！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……你们别管我了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "嘛，每个人护理自己头发的方法各不相同。\n不过既然拜托我了，那我也必须要拿出成果来。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "织姬同学！头发和脚也一样，\n为了不伤到它们，也需要特别的护理方法的！\n一~定要牢记在心哦？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "我能自己护理我的脚。\n但是头发的事情根本和比赛没有关系吧。\n我不奉陪了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "……啊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "那个那个，小雪！\n好好打理头发的话，对比赛也是有益的对吧？\n就是……能跑得更快之类的？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "雪之美人",
+      "Text": "是的呐。阿城同学剪过的头发呀，特别柔顺哦！\n就算被风吹散了，也能一小会就恢复原貌！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "！\u3000……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（……的确。要是改变头发的形状，\n也可以减少空气带来的的阻力……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "来这儿剪头发的，\n也有蛮多像菱亚马逊那样的强大赛马娘哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "所以说……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "反正只是试试看，又没什么损失嘛！\n对吧，训练员？",
+      "ChoiceDataList": [
+        "我觉得不错！试试看吧！",
+        "我觉得不错！试试看吧！",
+        "我也来帮忙吧。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "まずはやってみて損はないんですよ！\r\nねっ、トレーナーさん！",
+      "ChoiceDataList": [
+        "我觉得不错！试试看吧！",
+        "我觉得不错！试试看吧！",
+        "我也来帮忙吧。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "好的~织姬同学，请往这边走~ ♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "好好。那么，\n有什么中意的发型吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……能跑得更快就好。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "就是说，不改变原本的长度，\n以不伤到头发为前提，整体减少发量对吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "哈哈，多谢解说啦。\n好，来试试看吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "呼……训练员，时间怎么样？",
+      "ChoiceDataList": [
+        "稍微缩短了一些哦！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "真是的……\n刚把头发剪得那么漂亮了，马上就去跑步……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "因为你说对比赛有益，我才去剪的头发。\n既然如此，试验一下真伪也很正常吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "……真是一如既往呢~",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "之后，爱慕织姬也开始着手保养自己的毛发。\n她的头发与尾巴，一天比一天柔亮顺滑了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……我明白了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "太好啦~ ♪ 既然如此，\n那就让我们火力全开地关照织姬同学的头发吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "火力全开……哎？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "洗发、剪发、吹发、然后好好护理一下……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "也能做做头部按摩。\n要是头皮太过僵硬的话可就不好了哦，\n我来帮你放松一下吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "你要是喜欢的话，\n我还能把这方面比较优秀的美容院介绍给你。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "不，不至于……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "那就拜托你啦~ ♪\n我们快点去洗头吧，织姬同学~！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "等、等下……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "数十分钟后——\n经过护理，头发与尾巴都变得异常柔顺的\n爱慕织姬晃晃悠悠地走了回来。但是……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………",
+      "ChoiceDataList": [
+        "……看上去好像很困啊？",
+        "……看上去好像很呢？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "看来是头部按摩起作用了呢~",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "因为织姬同学一直都很努力，\n所以偶尔也该像这样放松一下才对哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（……摇晃、摇晃……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "爱慕织姬的身躯摇晃得仿佛是遭遇风浪的小舟。\n看来她平日里积累了相当的疲劳……\n日后我也得多加注意才行啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

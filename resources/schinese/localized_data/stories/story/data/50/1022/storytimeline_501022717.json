@@ -1,0 +1,167 @@
+{
+  "Title": "在保健室",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "因为美妙姿势的状态好像不大好，\n决定让她先去保健室休息一下。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "唔……真是抱歉呢。\n我稍微休息一会……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……？\n这里是……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "魔王",
+      "Text": "桀桀桀……公主，你终于醒了……\n我乃是魔王……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "魔王？\u3000原来如此……\n您找我有何贵干？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "魔王",
+      "Text": "貴様は人質だ。ウマ娘・トレーナー連合軍は\r\nこれで下手には動けん……。\nこのまま特等席で、世界が滅びるのを見よ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――既然身负王者之名，\n你却为何对身边的一切不管不顾！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "魔族的小孩",
+      "Text": "妈妈、庄稼根本长不出来……\n为什么呀……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "魔族的母亲",
+      "Text": "这片大陆已经荒芜了……\n什么庄稼都养不活了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "自己的国民深陷水深火热，\n你却放任不管，一心挑起新的战争，\n甚至还想毁灭一切――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "实在有辱王族之名！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "魔王",
+      "Text": "啥、你说什么！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……但是，若您有心改正自己的错误，\n我也会把我学的知识倾囊相授。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "魔王",
+      "Text": "ち、知識……？\r\nそれは……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……日本的，农耕技术！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "魔王",
+      "Text": "噢噢噢噢……？\n这一片绿色，多么耀眼……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "炊いたあとは、焼いてもよし、煮てもよし。\r\n種類は変わりますが、おもちも美味しい。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "秋まで育てれば、ここは何ものにも代え\r\nがたい黄金色の宝物になるのです！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……なんかお腹が空いてきちゃった。\r\nしっかり食べて戻ろっと♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "好好休息之后，\n美妙姿势恢复了元气！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……日本的，拉面！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "魔王",
+      "Text": "拉……面？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "あら、ご存じありません？\r\nそれなら私が一からお教えしましょう♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "ラーメンというのは原材料に\r\n小麦粉を使っていますが、そこに\nかん水というものを混ぜることによって……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……说明太长啦～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "因为在梦里太过热情地解说拉面的话题，\n美妙姿势好像也没怎么休息好……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

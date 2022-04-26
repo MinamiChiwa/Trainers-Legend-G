@@ -1,0 +1,31 @@
+{
+  "Title": "秋華賞の後に・Beautiful Sky",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『秋華賞』を駆け抜けたファインモーション！\r\n楽しげな彼女の走りに客席は沸き立つ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "彼女はレース後の会見で、\r\n次は『エリザベス女王杯』へ進むと発表する。\nそれにより世間の注目はますます高まった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "しかし――名前に“姫”を冠する猛ウマ娘、\r\nカワカミプリンセスが宣戦布告をしてくる！\n『プリンセス対決』は波乱の予感だ……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "川上公主"
+      ]
+    }
+  ]
+}

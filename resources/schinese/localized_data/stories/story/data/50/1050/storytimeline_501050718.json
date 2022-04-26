@@ -1,0 +1,37 @@
+{
+  "Title": "恢复完毕",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "休日後、ナリタタイシンが\r\nトレーナー室にやって来た。",
+      "ChoiceDataList": [
+        "休息日过得怎么样？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "は？\r\nアンタに関係……は、あるか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "別に、いつも通り。\r\n普通に休んで、ゆっくりできた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "看来大进休息得不错。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

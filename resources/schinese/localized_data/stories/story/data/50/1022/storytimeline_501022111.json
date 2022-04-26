@@ -1,0 +1,353 @@
+{
+  "Title": "Rain or Shine, I'm Fine!",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――那一定是梦吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "但即便是此般虚幻飘渺的存在、\n却丝毫不会褪色，我也不会放开怀抱这梦境的双手。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "我的思念，正确实地存在于这个世界――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "这是在美妙姿势再度回归，\n我们开始度过那美妙的三年之后的时间时，\n某一天的故事――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊，训练员！\n喂！这里这里！",
+      "ChoiceDataList": [
+        "美妙……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哼哼，吓到了吗？\n我一直在这儿等你呢♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "训练员，现在有时间吗？\n有一场轻松愉快（确信）的聚会，\n能陪我一起去吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――向大家介绍一下。\n这位便是我在学院的训练员。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "某国的大使",
+      "Text": "初次见面。",
+      "ChoiceDataList": [
+        "初、初次见面……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "这位大使，是我父亲在大学时的友人。\n不仅如此，\n也是从小便一直关心着我的人……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "某国的大使",
+      "Text": "但是没想到呀，\n那个我造访之际总是到处跑来跑去的小殿下，\n也已经成长为这等出色的人才了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "あら、今でも走り回っていますわ♪\r\n大使はじめ、みなさまのおかげです。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "我突然意识到了。恐怕正是眼前这人，\n为了让美妙姿势回到日本担任亲善大使，\n付出了不少努力。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "某国的大使",
+      "Text": "没有的事。\n我只是做了一些微不足道的小事。\n之后，都是全凭你父亲的一片心意",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "！\n您和我父亲聊过了吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "某国的大使",
+      "Text": "正是。\n在日本，有不少人希望能由殿下来担任这个职务。\n我们这才知晓此事",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "某国的大使",
+      "Text": "因为我也身处这个国家，\n因此也听说过不少关于殿下的评价\n您的父亲便希望能得到我的建议。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "某国的大使",
+      "Text": "後は簡単でした。あちらの公使や、\r\n参事官……他にも様々な方が\n我こそはと協力してくださいまして。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……实在是感激不尽。\n实在是――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――哼哼。",
+      "ChoiceDataList": [
+        "怎么啦？",
+        "怎么啦？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "想起来就想笑嘛！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "パーティーの最初、トレーナーってば\r\nずっとキョロキョロしていたなぁと思って。",
+      "ChoiceDataList": [
+        "因为太紧张了……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "诶？\n氛围还挺轻松的哦？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "因为想介绍给你的人实在太多，\n之前又一直没有时间，\n我还觉得这次会是个好机会呢。",
+      "ChoiceDataList": [
+        "再次深切地感到你被众人爱着呢",
+        "貴方が愛されてることが伝わった"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哎嘿嘿～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "そうだね。私って、\r\n愛されているみたい。",
+      "ChoiceDataList": [
+        "好像？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "之前我一直以为……\n大家都更在意我的立场。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "“ファインモーション”のことだな～って、\r\nぼんやり思っていたの。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "でも、そうじゃなかったんだね。\r\nみんな、私のためを考えてくれていたんだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "所以我才会这么欣慰。\n我，真的是个幸福的人啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……说不定，\n我与幸运的四叶草相遇了哦？",
+      "ChoiceDataList": [
+        "四叶草？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "就是你哦，训练员。\n就是因为和你相遇，\n所以各种各样的事情都改变了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "是你……是你和我一起，\n找到了那个渴望这奔跑的真正的我。\n我真的非常幸运呢。",
+      "ChoiceDataList": [
+        "不胜感激，但你说错了哦"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "诶？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "――终于回来了！\n太慢了，美妙！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "我已经等候多时了哦～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "みんな……\r\nあれ、私なにか約束していたっけ？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "ええ！？\u3000みんなで走ろうって\r\nお話ししてたじゃないですか！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "荒漠英雄",
+      "Text": "『好不容易回来了，大家一起比赛吧』……\n美妙小姐明明这样说过……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "ありゃ、それって今日だったっけ！？\r\nうっかりしてた～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "――这也太不小心了吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "不愧是醉心于公务的大忙人啊，\n殿下大人？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "连神宫也……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "まァ、こンな大量のデータが集まる機会、\r\nわざわざ逃すこともねェ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "其他人也在赛道上聚起来了。\n……真是的，你到底约了多少人啊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "就这样。\n赶紧去做准备吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "事到如今，也已经看见不同的道路了吧。\n……要尽情享受一番哦，美妙？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……吓到我了～。\n虽然确实和大家约过，\n但我根本没想到会来这么多人！",
+      "ChoiceDataList": [
+        "大家，都是为了你才来的",
+        "全部、貴方だからだよ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "如今聚集起来的孩子们，无一例外――\n都被美妙姿势的奔跑，被她的力量所吸引了。",
+      "ChoiceDataList": [
+        "你才是“幸运的四叶草”哦",
+        "貴方が“幸運のクローバー”なんだよ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "这可真是我听过的，最棒的赞誉♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "それじゃあ、参りましょう！\r\n――私の居場所へ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,413 @@
+{
+  "Title": "装满梦想的笔记本",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "『皋月赏』越来越近，胜利奖券的训练内容也\n更加注重比赛。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "为了拿下重要的经典赛初战，我正在考虑训练内容时，\n胜利奖券来了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "打扰啦。\n啊，不用在意我，你专心工作就好。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "我记得大概是和展览会的资料混在一起来着～……",
+      "ChoiceDataList": [
+        "在找什么吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "嗯～是一本很有年头的笔记～",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "我正看着在找东西的胜利奖券时——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（叮铃铃铃铃、叮铃铃铃铃）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "诶，是老师打的电话。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "老师……？\n啊，是在URA得到表彰的那个人！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "自从那次祝贺表彰的联络以来是第一次打电话呢。\n有什么事呢……喂？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "前代训练员",
+      "Text": "『哦，过得怎么样。你和那个新人好像引起了\n不小的骚动啊，所以我打个电话问问』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "啊，是指奖券藏……胜利奖券呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "前代训练员",
+      "Text": "『怎么样，有获胜的自信吗？德比可是\n比赛中的顶点，强者云集啊』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "当然会获胜。老师对于德比的想法，\n＜天狼星＞队会继承下去的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "前代训练员",
+      "Text": "『哈哈哈！\u3000是我在颁奖式说的话呢』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "她对德比的执念可不会输给任何人。\n毕竟她从小就心心念念着德比了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "前代训练员",
+      "Text": "『没错，积累起来的心情对于德比来说是很重要的』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "前代训练员",
+      "Text": "『也不是在说什么唯心论的话，我认为\n德比就是实力与心情相互碰撞的比赛』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "是……看老师讲德比的时候，我就已经\n充分体会到了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "前代训练员",
+      "Text": "『嘛，虽然最后没取得胜利，但我们\n至今积累的东西应该不会白费』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "前代训练员",
+      "Text": "『你们的德比可得让我这白活这么大的人\n好好期待一下啊』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "再聊了一下队伍和其他队员的事情后\n跟老师的电话就结束了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "啊～吓了一跳。\n提到我的名字，还以为出了什么事呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "老师说『帮我跟奖券藏问好』呢。\n还说了『让你带我成为“德比训练员”』。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "老师说『帮我跟奖券藏问好』呢。\n还说了『让你带我成为“德比训练员”』。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "诶嘿嘿～交给我吧！\n训练员才是，要让我当上“德比赛马娘”哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "……诶？\u3000是我要赢，\n还是让我赢，有点搞不清啦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "对了，那些先放一边，现在得找东西！\n在展览会的时候用过了，所以大概是在这附近～……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "啊！\u3000找到啦！\u3000『德比笔记』！",
+      "ChoiceDataList": [
+        "德比笔记？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "嗯！\n看来是跟展览会的资料混在一起了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "我让她给我看了一下笔记，只见笔记上用略显\n幼稚的平假名密密麻麻地写着德比相关的事。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "这里记录着至今为止的德比\n和我自己的心情，还有——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "还写着我到德比这一路上发生的事情。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "这样说着，胜利奖券开始\n往笔记上贴大头贴。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "……嗯，这样就好啦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "胜利奖券，琵琶晨光，成田大进——\n她将互相切磋的朋友们的回忆，贴到了笔记上。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "这张大头贴后面，\n要贴上我德比获胜的照片……诶嘿嘿～",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "……我小的时候很瘦弱。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "母亲很担心我，让我尝试了各种运动，\n还带我去观看比赛。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "她说『运动能让身心都变得结实！』\n……很有力量的妈妈吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "然后，我第一次现场看的比赛就是德比。\n虽然之前也说过，总之就是非常有冲击力。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "因获胜而喜悦的人、无论发生什么都没放弃奔跑的人、\n还有众多观众的声援——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "回家的时候，我满脑子就只剩下跑步了。\n当时参加了很多运动班，我跟妈妈说要\n全部退掉。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "现在回想一下当时说得真是很任性，\n不过母亲对我说『那就得买蹄铁咯』。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "虽然我相～当不擅长学习，但跑步还是一直坚持了下来。\n而且多亏了德比，我还认识了朋友和训练员！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "所以……我一定要参加德比拿下胜利！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "要一直坚持朝着小时候的梦想努力\n绝不是什么简单的事。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "但胜利奖券，直到现在也以那时的梦想为目标而努力。\n那天的德比，在她心中没有丝毫褪色。",
+      "ChoiceDataList": [
+        "把胜利写到笔记上吧！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "嗯！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "抱歉弄到这么晚，训练员。\n一提起德比我就上头了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "奖券藏真的很喜欢德比呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "奖券藏真的很喜欢德比呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "诶嘿嘿，那当然了！\n对德比的这份心情，我有自信绝不输给任何人！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "……啊，对了。\n本来想把这个带回去的，还是给训练员吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "胜利奖券这样说着，递给我的是\n『德比笔记』。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "这上面满满地记着德比的东西，读一下看看！\n训练员的想法一定也会更加强烈的！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "那就再见啦！\u3000要加油训练咯！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "目送胜利奖券离开后，我看了看她给我的笔记。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "封面上用稚嫩的字写着『德比笔记』。\n与那稚嫩相反，我能感受到她的强烈心情。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哈……哈……哈……哈……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "嗯……？\u3000那是……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "天色已经完全暗了下来。\n但还是有向训练场跑去的赛马娘。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "呼……\n好，先从10次冲刺开始。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "大进……这么晚了还在训练。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "想获胜的不只是胜利奖券。\n对赛马娘来说，德比既是梦想也是荣誉。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "看着在黑暗中奔跑的成田大进，\n我这样想着。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

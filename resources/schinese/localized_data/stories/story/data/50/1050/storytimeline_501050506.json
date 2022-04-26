@@ -1,0 +1,210 @@
+{
+  "Title": "舞蹈课",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "今日は、ウイニングライブのための\r\nダンスレッスンをする予定なのだが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "胜者舞台啊……",
+      "ChoiceDataList": [
+        "你不喜欢吗？",
+        "あんまり乗り気じゃない？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……没事。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "ただアタシは、他の子たちみたいに\r\n『ファンに感謝』とか『応援ありがとう』\nとかってガラでもないし。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "アタシは、アタシ個人の気持ちのためにしか\r\n走ってないから。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "所以，Live这种东西就……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……まあ、やるにはやるけど。\r\nで、どの曲？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "そんなこんなで、複雑そうな顔の\r\nナリタタイシンとレッスンを始めたのだが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……——♪",
+      "ChoiceDataList": [
+        "（好、好厉害？！）",
+        "（す、すごい！？）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "微妙な態度を見せていたのがウソのように、\r\nナリタタイシンの歌とダンスは\nレベルが高かった！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……呼。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……ちょっと。ボケッとしてないで、\r\nなんか言いなよ。曲、終わったんだけど。",
+      "ChoiceDataList": [
+        "感动了！！！！！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……………………哈？",
+      "ChoiceDataList": [
+        "表现得很棒啊！！！！",
+        "素晴らしいパフォーマンスだったよ！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "诶……不是……\n你怎么了啊，怎么兴致这么高……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "別に『走って勝ったクセにこれか』とか\r\n言われたらムカつくってだけで……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "所以也没什么了不起的——",
+      "ChoiceDataList": [
+        "いや、本当にすごいよ！",
+        "俺も踊りたくなってきた！",
+        "私も踊りたくなってきた！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "所以也没什么了不起的——",
+      "ChoiceDataList": [
+        "いや、本当にすごいよ！",
+        "俺も踊りたくなってきた！",
+        "私も踊りたくなってきた！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "啊啊够了！你别说了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "とっとと改善点の指摘！！\r\nトレーナーでしょ、仕事しろ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "看来是害羞过头了啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "タイシンタイシーン！\u3000なに見てるの？\r\n……新作ゲームのニュース！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "跟你没关系吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "へー、ダンスゲーム！\u3000体動かすやつだ！\r\nスマホゲーム派なのに珍しいねー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……………………跟你没关系吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哈？你说什么蠢话——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "呆れ顔をされてしまったが、\r\nもはやいてもたってもいられない！\n体が勝手にビートを刻みだす……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "ちょっ……ストップストップ！！\r\n本当に何やってんの！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "而且……你根本没跟上节奏吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "再听一遍刚才的曲子吧――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "……いつの間にか立場が逆転していたが、\r\nこれはこれで楽しい1日になったのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

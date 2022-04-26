@@ -1,0 +1,389 @@
+{
+  "Title": "Nobody goes in.",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哈……哈……哈……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "——好，今天的训练完成了……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "成田大进的训练进行得相当顺利，\n她自己也感觉到了自己的进步。但是——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "新人训练员",
+      "Text": "——今天也好好努力了呢！\n为了下次比赛，继续加油训练吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "活泼的赛马娘",
+      "Text": "真的吗？！诶嘿嘿嘿，那我就好好期待一下比赛后的奖励吧~\n哈哈，开玩笑的♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "新人训练员",
+      "Text": "啊，你说这个啊！好，那么……\n那就预定那家店的特级甜品作为奖励吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "看着其他训练员与担当马娘的关系，\n我突然想起一件事。",
+      "ChoiceDataList": [
+        "（我是不是也该多了解一下大进……？）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "基本上，我和她只在训练时才会见面。\n因此，我对她的私生活一概不知。",
+      "ChoiceDataList": [
+        "大进，现在有空吗？",
+        "大进，现在有空吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……怎么了？\n今天的训练不是已经结束了吗，还有什么事？",
+      "ChoiceDataList": [
+        "你有什么想去的地方吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……哈？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……没有。现在可不是该和你一块出去玩的时候。\n那我去做下伸展运动就回去了，再见。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……走掉了。如果我和她关系再好点的话，\n也许能有更多了解她的机会吧……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "不久后，我收到一封『送给各位教职工』的信。\n似乎是学园的慰劳品，里面还装着一张水族馆的票。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我本想和成田大进一起去……不过她断然拒绝了我的邀请。\n没办法，我只能休息日自己一个人去。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "这是一个建在郊外的水族馆，人不多，里面也很安静。\n我时不时会与一两个人错身而过。而此时——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我突然见到了一个熟悉的身影。",
+      "ChoiceDataList": [
+        "（……大进？）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我正想着要跟她打招呼时——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……去看看别的吧。",
+      "ChoiceDataList": [
+        "（好柔和的表情……）",
+        "（好柔和的表情……）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "与平日里截然不同。我犹豫着要不要去和这样的她打招呼，\n最后只是沉默地注视着她的背影远去。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……但是，我早该想到，这个水族馆相当小。\n才刚走开那个地方没多久，我就又看见了她。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "她正呆在『心跳触碰区』。\n那地方看起来能够直接把手伸进水池，亲手摸摸裂唇鱼。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……好。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "她慎重地确认过周围没有其他人之后，\n满脸凝重地将手伸进了水槽……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……～～～唔！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "她勇敢地挑战了这个项目――\n但看上去，水相当凉呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "然后，在黄昏时刻……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "客人已经寥寥无几。\n水族馆内，已经如同海底一般安静。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……呵呵。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "但是，\n她还是兴致高昂地拍着鱼群的照片。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "一向讨厌与其他人扎堆的她，居然看着鱼群的模样会笑起来。\n一想到她平时的模样，就觉得现在的景象实在罕见——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……啊？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "——！你也来了啊……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "不妙，被发现了。应该躲好的。\n我一边担心着她会不会冲我发火，一边慌慌张张地回应——",
+      "ChoiceDataList": [
+        "啊、啊啊……真是奇遇呢……",
+        "嗯、嗯……真是奇遇呢……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "大概会被她发火说『你就一直悄悄看着我吗？』吧。\n我这样想着，小心翼翼地窥探着她的表情——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……这里，一直以来都没什么变化啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我看见的，是非常柔和的笑容。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "身处这一片蔚蓝的世界之中，心境也变得柔和了吗。\n……成田大进平静地继续说着。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "最近学校附近，不是有那种又大又豪华的水族馆吗。\n那些扎堆的客人，一般都会跑去那边。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "所以，我还是更喜欢安静的这边。独行的客人很多，\n而且大家都是真正喜欢海洋的同伴，大家一起静静地看着水槽——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……谁都不会注意到我的事情。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "安静的水族馆。柔和的音乐。熟悉的少女——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "但是，她脸上的表情……毫无疑问，我是第一次看见。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "啊，不对，鱼应该能注意到我吧……\n这些家伙，到底能不能注意到我啊？……哈哈。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "算啦，怎么样都好啦。\n它们应该只是觉得『这里有人』吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "这样想的话……我也能更喜欢这些家伙。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……嗯？你在笑什么啊。",
+      "ChoiceDataList": [
+        "没……没什么。",
+        "嗯……没什么。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "这样吗……奇怪的家伙。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "那，我就先走了。\n……这里，闭馆时间还挺早的，你注意下时间哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我静静地目送着大进的身影逐渐远去。这时——",
+      "ChoiceDataList": [
+        "（……总觉得，今天是不错的一天呢。）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我突然这样想到。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "活泼的赛马娘",
+      "Text": "——太好了！我刷新了最快时间记录哦！训练员小姐，\n说好的特级甜品，现在就给我怎么样呀~！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "新人训练员",
+      "Text": "不行不行！虽然刷新纪录是很棒啦，\n但是甜品是比赛获胜的奖励才对吧……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "看着一起嬉闹得特别开心的训练员与赛马娘，\n心里果然还是觉得那样不错。但是——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "——哈、哈、哈……呼。",
+      "ChoiceDataList": [
+        "辛苦了，大进。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "嗯。不用寒暄了，开始下一项训练吧。",
+      "ChoiceDataList": [
+        "わかった！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……你今天，是不是有些莫名兴奋？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我和成田大进，保持这样的关系就好。\n不知不觉间，我已经开始这样想了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,283 @@
+{
+  "Title": "凛然而清澈",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "1、2、3、……1……1、2、3、4……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "呼……哈……哈……\n好，做完三组了……那么，现在的负荷——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "为了见见目白阿尔丹，我来到了体育馆。\n她以较轻的负荷、慢慢地进行着训练。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "不过……\n我有些在意她训练的间隙中不断确认的那个平板……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "好——力量训练力量训练！——啊，唔哇……今天人好多啊~\n嗯……在哪里有空着的器材呢……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "不好意思，打扰了。若是不嫌弃的话，可以使用这边的器材哦？\n我的训练已经完成了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "诶，可以吗前辈！ Lucky~！！\n那我就不客气啦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "嗯嗯，请吧。那么，我就先告辞了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "赛马娘C",
+      "Text": "哎，这就走了？ 不妙呀~\n这不是才刚刚来吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘B",
+      "Text": "嗯~应该是身体原因吧？\n果然，她不能勉强自己做负荷太大的训练呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "新人训练员A",
+      "Text": "……果然，因为『那个目白』，\n目白阿尔丹也承担了过大的压力呢……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "是呢。这样冒着危险强行出赛，对她自己也没什么好处吧……\n明明就是不适合参加比赛的体质……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "果然，就如手纲小姐所说的一样，\n现在四处都充斥着“她不适合参加比赛”的评价……",
+      "ChoiceDataList": [
+        "（阿尔丹自己又是怎么想的呢……）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……和她聊聊吧。\n这样想着，我追上了刚刚走出体育馆的目白阿尔丹。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "……………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "……呜——",
+      "ChoiceDataList": [
+        "怎么了？！",
+        "怎么了呀？！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "但阿尔丹却脚步不稳，接着就蹲在了地上。\n我连忙跑上前去扶起她。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "啊，非常抱歉，给您添麻烦了……\n方才我有些头晕，但现在已经没事了。",
+      "ChoiceDataList": [
+        "那就好……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "呵呵，果然还是不行呢，大病初愈就进行高强度训练……\n嗯……哎呀？平板在——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "她这么一说，我也跟着转身一起寻找。\n平板电脑就掉在我的脚边。",
+      "ChoiceDataList": [
+        "在这里哦……嗯……？！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "在捡起平板电脑的瞬间——\n不经意瞟到的画面，让我不禁屏住呼吸。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "仅仅一套训练方案，就记载了无数信息。\n『方法』『次数』『组数』『负荷』『节奏』――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "这是异常明了的——\n她正不断拼命『反复试验』的证据。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "……非常感谢您为我捡起来。\n能把它递给我吗……？",
+      "ChoiceDataList": [
+        "啊、啊啊，抱歉！",
+        "嗯、嗯，抱歉！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "目白阿尔丹接过平板、再度道谢之后便转身离开。\n……而我甚至连自己想对她说什么都忘了，只是呆呆地站着。",
+      "ChoiceDataList": [
+        "『以最小的效率，达到最大的效果』——"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "她的身体，即便如水晶般脆弱，再寻常不过的比赛对她也伴有危险——\n但是她依旧坚持战斗着。我此时才真切地触碰到她那坚定觉悟的冰山一角……\n此时的我大脑一片空白，只能徒然站立而已。",
+      "ChoiceDataList": [
+        "目白阿尔丹……吗……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "这样……这样真的好吗，阿尔丹同学？！",
+      "ChoiceDataList": [
+        "？！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "在那之后数日。\n再见到目白阿尔丹时，她正站在满脸错愕的手纲小姐面前。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "参赛名额还剩一个，对吧？\n若是可以的话……请将我登记上。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "目白阿尔丹，下次选拔赛中，\n准备参加『沙土1200米比赛』。",
+      "ChoiceDataList": [
+        "（沙土……而且是短距离！？）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我不禁怀疑起自己的耳朵。根据前几日我所调查的基本情报，\n目白阿尔丹的适性应该是——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "你的适性应当是『草地中距离』才对哦！\n虽说并不是毫无获胜的希望，但在这比赛中你很难发挥出全部实力啊……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "阿尔丹同学……再静候几个月吧。到时候选拔赛会再举办的。\n等到那个时候，再选择你真正能发挥实力的比赛——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "这『几个月』的差距，对我而言相当重要。\n……手纲小姐，您也心知肚明吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "马娘们能够发挥全部实力，尽情在舞台上闪耀的时间是有限的。\n在『本格化』之后最为充实的奔跑能力，终有一日也会衰退。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "不断因伤病住院、错过无数多的选拔比赛……\n在我迎来『本格化』之后，已经浪费了过多时间。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "如果连出道也姗姗来迟的话，\n那么在闪耀・系列赛事中完成夙愿之前，我的全盛期会先一步结束。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "只有此事……唯有此事，我绝不容许。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "唔、但是……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "您的关切，我心领了，手纲小姐。\n但是，我意已决。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "那么——参赛所需的各种手续，就拜托您了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

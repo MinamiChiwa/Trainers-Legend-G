@@ -1,0 +1,327 @@
+{
+  "Title": "黄昏下的一幕",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "……差不多快开场了吧？\n呵呵呵……这样等候歌剧开幕的时间，真是开心呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "稍微回溯一下时间——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "？？？",
+      "Text": "那么，我就出门了。\n等我回家的时候我再联系您。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "哎呀，训练员？\n贵安。真是奇遇呢。",
+      "ChoiceDataList": [
+        "要到哪里去玩吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "是的，我打算去剧院看一场歌剧。\n实际上，我从主办方那儿拿到了一张双人票。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "原本是决定要和姐姐一起去的。\n不过，她有一场非常重要的比赛要参——……啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "那个，虽然有些唐突，\n但您要是不嫌弃的话，您能和我一起去吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "这场歌剧，实际上我已经期待许久了。\n若是训练员愿意陪我一起去的话，一定会更开心吧。",
+      "ChoiceDataList": [
+        "讲了什么内容？",
+        "どんな話？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "讲述了两位关系特别好的骑士，\n为了扬名立万而去古堡惩戒恶灵的故事——\n也就是所谓的喜剧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "虽说是基于古典剧目改编，\n但是，也加入了许多现代剧的元素，非常值得一看……\n啊啊，开始了呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骑士A",
+      "Text": "快看啊，吾友！那便是仅在逢魔之刻才现形的受诅城堡啊！\n真是不得了的威容……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骑士B",
+      "Text": "但是，那咒诅的恶灵依旧不足为惧！啊啊、神明啊，\n请您见证我们的战斗吧！如今正是我等以英雄身份为世人称颂之时——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "两位骑士",
+      "Text": "怪怪怪怪怪物啊啊啊？！……啥？那是你吗？！\n……喂，别装成怪物的模样啊！！你这家伙~~~~！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "哎呀！……呵呵呵。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "作为话题性的演出剧目，这场剧的确非常有趣。\n然而，让我印象更深的是目白阿尔丹罕见地开怀大笑的模样——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "的确是如评价那般有趣的剧目呢。\n被突然的巨响吓得跳起来的二人，真的非常可爱呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "不过……直到结局为止都没能见到幽灵的真容，实在有些遗憾。\n若是换作我的话，我一定会再度返回城堡，寻找幽灵的踪迹。",
+      "ChoiceDataList": [
+        "你特别想见见那位幽灵吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "是的。我想要和它一起享用红茶、一起谈天说地。\n它一直住在城堡里，一定对城堡这悠长的历史了如指掌——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "若是这样的话……即便是已然被历史遗忘的某人，\n也能在瞬间重新绽放光辉吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "…………啊，真是令人舒畅的风啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "那个，训练员？可以的话，能陪我散散步吗？\n今天的夕阳实在是非常美丽，总觉得——",
+      "ChoiceDataList": [
+        "现在的话，说不定能看见那座城堡哦？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "呵呵呵……若是真的能见到的话就太棒了呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "其实，在小的时候，\n我会把自己想象成白天所观看的剧目的角色哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "有时候，我会化身为男孩子；有时候则会化身为老婆婆。\n有时候会进行妙趣横生的冒险，有时候则会因为恶作剧而被责骂。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "无论是谁，都会在想象中改变自己原本仅有一次的人生吧。\n就像是某种秘密的小游戏，我觉得非常有趣哦……",
+      "ChoiceDataList": [
+        "那现在的话，会把自己想象成那位骑士吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "会怎么样呢……？也许会想象自己是要惩戒幽灵的骑士大人，\n不过也有可能将自己想象成兴致勃勃地观察这一切的幽灵哦？",
+      "ChoiceDataList": [
+        "仅仅观察而已吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "……的确呢。如果骑士大人能注意到的话，\n那位幽灵实际上一定很想要和骑士大人聊聊天吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "如果我是那位幽灵的话，\n也许会想要了解更多关于骑士大人的事情吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "比如说，\n骑士大人是怎样度过童年时光的呢？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "——啊，说到这个的话！\n呵呵呵……年幼的训练员，一定是个相当可爱的孩子吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "总觉得无论说多久都说不完呢！\n训练员，您还有别的什么想去的地方吗？",
+      "ChoiceDataList": [
+        "确实呢。既然已经到这个季节了——"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "……诶？啊……唔。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "实、实在是失礼了。我居然发出这样不体面的声音……",
+      "ChoiceDataList": [
+        "也走了好一会儿了，感觉肚子有些饿了啊。",
+        "也走了好一会儿了，感觉肚子有些饿了呢。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "哎呀……什么时候走到这种地方来了？\n一直沉溺于对话，不知不觉就……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "没想到会走这么远……\n为了不让大家担心，我明明应该控制自己的运动量的。",
+      "ChoiceDataList": [
+        "这种程度，对于“现在的”你已经没问题了吧？",
+        "这种程度，对于“现在的”你已经没问题了吧？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "那么……可以继续采用这套训练方案吗？\n从明天开始，就以这份训练菜单为基准进行调整。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『我也想说相同的话呢。』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "……呵呵呵。真是得感谢“当下”呢。\n现在的我状态非常良好，也不会因为身体发热而动弹不得。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "（原来如此……那个时候也好，现在也好。\n训练员，不论什么时候都……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "（真是不可思议……胸口……好温暖……\n训练员，是真的——）",
+      "ChoiceDataList": [
+        "怎么了？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "啊……抱歉，没什么事。\n只是觉得……今天真是开心呢。",
+      "ChoiceDataList": [
+        "现在这么开心，感觉晚饭也会变得美味起来呢。",
+        "现在这么开心，感觉晚饭也会变得美味起来呢。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "真是的，请不要捉弄我了。\n不过——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "嗯……今天真的是非常充实的一天呢。\n没想到居然能见识到自己全新的一面。",
+      "ChoiceDataList": [
+        "……是怎样的一面呢？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "……呵呵，请容我保密。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "太阳已经落山了呢。在遇见真正的幽灵之前，\n我们也差不多该踏上归途了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "训练员，今天您能够接受我如此唐突的邀请，\n实在是非常感谢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "虽然感觉有些关键的部分被她用玩笑话蒙混过关了……\n不过今天，也切实地感觉到与目白阿尔丹的距离拉近了不少。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

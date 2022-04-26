@@ -1,0 +1,218 @@
+{
+  "Title": "迎接出道战",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "――いよいよ、ナリタタイシンの\r\n『メイクデビュー』出走の時だ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "出道战"
+      ]
+    },
+    {
+      "Name": "成田大进",
+      "Text": "………………哈。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "しかし、ナリタタイシンは\r\nどこか落ち着かない様子だ……。",
+      "ChoiceDataList": [
+        "深呼吸一下吧，大进"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "うるさい。\r\n別に……ビビってなんかないし。",
+      "ChoiceDataList": [
+        "但是――"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "工作人员",
+      "Text": "ナリタタイシンさん！\r\nそろそろパドックへご移動お願いします！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "啊……好的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……那，我出发了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そう言い残して去って行った、\r\n彼女の足元は微かに震えていた。",
+      "ChoiceDataList": [
+        "（就没什么方法能鼓励下她吗……！？）",
+        "（なんとか励ませないかな……！？）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "パドックには今日も、いずれ伝説を作るやも\r\nしれないウマ娘たちをひと目見ようと、\n多くの観客が詰めかけていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "接着，成田大进的身姿自那儿出现――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "――んんっ、なんだ？\r\nあのウマ娘、ずいぶん小柄なんだな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众B",
+      "Text": "あんな体で周りと競り合えるのか？\r\n下手したら吹っ飛ばされちゃうだろ……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众C",
+      "Text": "だ、大丈夫かな？\r\nケガしないといいけど……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "期待の歓声は上がらない。\r\n渦巻く懸念の声に包まれて、\nナリタタイシンがかすかに俯く。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……確かに、彼女の体格が\r\nレースにおいて不利であることは事実だ。",
+      "ChoiceDataList": [
+        "（但是……！！）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "『你个子太小了』！『你手脚太纤细了』！\n『你不是应该参加比赛的赛马娘』！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "这种话，我已经听厌了……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "けど、いい！？\u3000何を言われようが、\r\nアタシはターフに立つから！\nバカにして、見下してきた連中全員に――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "『ざまあみろ、\r\nアタシのいるべき場所はここだ』って！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "ウイナーズ・サークルで、\r\n笑って見せつけてやるんだっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "誰よりも強い、勝利にかける執念。\r\nそして、それを可能にするだけの実力を、\nナリタタイシンは持っている。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そのことは、担当トレーナーの自分が\r\n一番よくわかっている……！",
+      "ChoiceDataList": [
+        "大进ーーーーー！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哇啊！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我意识到的时候，已经大喊出声了。",
+      "ChoiceDataList": [
+        "大进，加油ーーーー！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "ちょ……だ、黙れって！！\r\n何してんの、アンタ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "お、おお……そうか、そうだよな。\r\nデビューするんだ、応援してやるべきか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众B",
+      "Text": "对啊……加油啊，大进！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众C",
+      "Text": "我会为你喝彩的哦！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "～～～～～呜！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "那个笨蛋……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……等我赢了回来之后，一定要踹飞他！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,363 @@
+{
+  "Title": "カーネーションは鮮やかに",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "とある休日、エアグルーヴに呼びだされ、\r\n指定された場所に向かうと――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "私を待たせるとはいい度胸だな、トレーナー。",
+      "ChoiceDataList": [
+        "ごめんな……こんなところに畑？",
+        "ごめんね……こんなところに畑？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "知らんのか？\u3000この畑もトレセン学園の私有地だ。\r\n授業の一環で使われることもある。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "さて……貴様を呼び出したのは、それを運ぶためだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "エアグルーヴが示した先を見ると、そこには赤、白、黄色――\r\n色とりどりの花が満載されたワゴンがあった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "想定より多く咲いてしまってな。\r\n本意ではないが、手を貸してもらいたい。",
+      "ChoiceDataList": [
+        "大事に育てたから、たくさん咲いたんだな",
+        "大事に育てたから、たくさん咲いたんだね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "……一言余計だ。\r\nいいから、きりきりと運ぶように。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘B",
+      "Text": "わあ、はなやか～！\r\n今年もありがとうございます、エアグルーヴ先輩！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "学生寮の前までワゴンを運んでくると、\r\nそこには、ウマ娘たちが長い列を作っていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "配給は、1人1つずつだ。\r\n列を乱さず、順番が来たら希望の色を言うように。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "出来ることなら、手紙をつけたり、顔を見せるのだぞ。\r\n……日頃の感謝を伝えてこい。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "きっと、母も喜びます！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "エアグルーヴと後輩ウマ娘たちを見比べて、ああ、と思う。\r\nもしかすると、この花は――",
+      "ChoiceDataList": [
+        "母の日のカーネーション？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "そうだ。この時期に合わせて咲くように植え付けをしている。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "皆、親元を離れて寮に入っている。\r\nこういう時こそ、遠きにありて思ういい機会だろう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "――貴様は、黄色いカーネーションの花言葉を知っているか？",
+      "ChoiceDataList": [
+        "色で違うものなのか？",
+        "色で違うものなの？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "ふっ、そこからか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "例えば、赤いカーネーションの花言葉は『母への愛』。\r\nよく好まれ、贈られているものだな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "それに対して、黄色は『嫉妬』だ。\r\n一般的には避けられる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "だが、ウマ娘の中には、\r\nあえて黄色のカーネーションを選ぶ者がいる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "母娘2代でターフに挑むと決めた……そんなウマ娘たちにとって、\r\n“母”は最高のライバルと言っても過言ではない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "すなわち――『あなたを超える』という決意を込めて、贈るんだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "……よし、配り終えたな。\r\n手伝いご苦労だった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "残ったのは……黄色いカーネーションが一輪か。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ワゴンに残ったカーネーションに目を落とし、\r\nエアグルーヴが穏やかな笑みを浮かべる――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "これは、私の母へ贈るとしよう。",
+      "ChoiceDataList": [
+        "見事な一輪だな",
+        "見事な一輪だね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "だが……そこへ、おずおずと1人のウマ娘が駆け寄ってきた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "赛马娘C",
+      "Text": "あっ……あの……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "む、お前は栗東寮の……。どうした？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "赛马娘C",
+      "Text": "自主トレしてたら、いつの間にかこんな時間になっちゃってて。\r\nあの……もう、お花はなくなってしまいましたか？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "――――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "いいや、お前は運がいい。\r\n最後にちょうど一輪、残っていたところだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "さあ、持っていけ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "赛马娘C",
+      "Text": "わあっ！\r\nありがとうございます！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "まだ幼さの残る少女は、エアグルーヴから花を受け取り、\r\n何度も頭を下げながら帰っていった……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "ふぅ――完売だな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そう呟いたエアグルーヴは、いつものように涼しげな顔をしている。\r\n表情からは、感情が読み取れない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ふと、後輩をかばってケガをしそうになった彼女を思い出し、\r\n心配になってしまった。",
+      "ChoiceDataList": [
+        "また自分のことを後回しにしていないか？",
+        "また自分のことを後回しにしていない？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "――ふっ。\r\nまったく、心配性な奴だ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "先日のダンス指導の時は、確かに無様を晒した。\r\nだが……私とて、あれから考え続けているんだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "“女帝”として、自らをどう省みるべきか――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "理想を追うあまり、自分の事を疎かにしては本末転倒だ。\r\nその点に関しては……私にも至らぬ面があった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "だが、今は違う。",
+      "ChoiceDataList": [
+        "自分を犠牲にはしていないってことか？",
+        "自分を犠牲にはしていないってこと？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "そうだ。……花は、なくとも構わん。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "形ある証がなくとも、私の心は揺るぎなく、確かなものだ。\r\n後は、直接会って母に伝えるさ。",
+      "ChoiceDataList": [
+        "それなら、よかった"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "ああ。貴様が心を砕く事などない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "穏やかに、泰然と在れ。\r\nそれが、“女帝”のトレーナーの姿としては相応しい。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "まあ、しかし……貴様が何かと騒がしく気を揉んでいたからこそ……\r\nその…………。",
+      "ChoiceDataList": [
+        "えっ？なんだ？",
+        "えっ？何？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "……だからっ、気付かされたという話だ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "以前……母が零していたのを、耳にした事がある。\r\n『独りでは、“女王”たりえなかった』と。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "誰かの向けてくれた真摯な瞳が鏡となり、\r\n己の理想の姿を、正しく映し出してくれたのだと。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "つまり、その……そういう話だ。",
+      "ChoiceDataList": [
+        "これからも君をちゃんと見てるぞ",
+        "これからも貴方をちゃんと見てるね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "ふん、改めて口にするような事か。\r\n……たわけが。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "どこか優しげな叱咤を受けながら、\r\n暮れゆく日を浴びる彼女を眺めていたのだった……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

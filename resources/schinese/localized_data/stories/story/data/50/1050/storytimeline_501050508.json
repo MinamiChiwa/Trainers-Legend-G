@@ -1,0 +1,64 @@
+{
+  "Title": "连战疲劳",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "校門前でナリタタイシンを見かけたが、\r\nいつもより元気がない気がする。",
+      "ChoiceDataList": [
+        "难道说身体不舒服吗？",
+        "难道说身体不舒服吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……哈？我很好！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "レースだってちゃんとこなしてるでしょ？\r\nアタシはそんなにヤワじゃない……！",
+      "ChoiceDataList": [
+        "但是……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "吵死了，你担心过度了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（……何やってんだろ、アタシ。\r\n疲れてイライラして、八つ当たりして）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（アイツの言う通り、\r\nちょっと休んだ方がいいのかな……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "その後、ナリタタイシンと別れたが、\r\n去り際の後ろ姿も覇気がなかった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "もしかすると、疲れが溜まっているのかも\r\nしれない。今後のレースの予定を\n見直す必要がありそうだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

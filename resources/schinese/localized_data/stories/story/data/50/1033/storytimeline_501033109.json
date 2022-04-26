@@ -1,0 +1,578 @@
+{
+  "Title": "圣诞节",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "12月下旬的某一天，\n爱慕织姬对刚刚送到的比赛杂志，\n表现出非同寻常的兴趣。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "特集されているのはもちろん、\r\n間近に迫った年末のグランプリ。\n『有馬記念』の出走ウマ娘たちについてだ。",
+      "ChoiceDataList": [
+        "啊、说起来——"
+      ],
+      "ColorTextInfoList": [
+        "グランプリ",
+        "有马纪念"
+      ]
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……？",
+      "ChoiceDataList": [
+        "成田路，好像获选参赛了。",
+        "出走者に選ばれてたね、ナリタトップロード"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "好像是呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……毕竟那孩子还挺受欢迎的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "爱慕织姬的指尖，轻抚着采访的内容。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『大家愿意选择我参加大奖赛，非常感谢！』\n『——我一定会回应大家的期待！』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "照片上的成田路，\n露出了甚至称得上耀眼的爽朗笑容。\n织姬看着照片，微微眯起了双眼。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "毫无疑问，与刚刚相遇时相比，\n她的表情变得柔和了不少……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "说起来，自出道以来，\n我与织姬已经共度了三年的时光。\n正好圣诞节也快到了——",
+      "ChoiceDataList": [
+        "（要不要送点什么慰劳礼物给她呢……）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "怀着这样的想法，我决定自己去挑挑礼物。",
+      "ChoiceDataList": [
+        "（唔……好难抉择……！）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "要送礼物的话，当然得送能让她开心的东西。\n为此，希望能有人为我指明一个大方向……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "――そんなふうに悩んでいたからか、\r\n『彼女』の姿はとてもよく目についた。",
+      "ChoiceDataList": [
+        "啊……！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "哇！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "……哎呀呀~？\n这不是织姬同学的训练员吗。",
+      "ChoiceDataList": [
+        "真机伶！正好……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "如果是织姬的室友、真机伶的话，\n应该会知道相关的情报才对！",
+      "ChoiceDataList": [
+        "我有些事想问问你……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "啊~……这个嘛……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "抱歉哦♪",
+      "ChoiceDataList": [
+        "欸"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "卡莲现在有些忙，所以抱歉了哦~",
+      "ChoiceDataList": [
+        "这、这样吗。抱歉，是我太唐突了。",
+        "そ、そっか、こっちこそ急にごめんね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "真是遗憾……我沉下双肩，无精打采地回去了。\n今天毫无收获，而第二天——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "……所以——……就是说～～～……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "原来如此……――这样吗……――那么――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "哈哈哈哈哈哈哈哈！！\n既然如此，不如——……的话——",
+      "ChoiceDataList": [
+        "（是织姬的劲敌们……！）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "若是她们的话，应该也会了解一些情况。\n这样想着，我出声搭话――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "……！\u3000……？！？！？！哇哇哇哇哇……\n啊、织织织织织姬同学的训练员？！",
+      "ChoiceDataList": [
+        "打扰了，非常抱歉！我有些话想——"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "哈哈哈哈哈哈哈哈哈！！\n——撤退！！！",
+      "ChoiceDataList": [
+        "诶！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "啊！啊啊啊啊~……\n但是、但是……这个……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "——非常对不起！失礼了！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "失、失礼了～～～～！！",
+      "ChoiceDataList": [
+        "欸欸欸……？？？？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……结果，我还是什么都没问出来。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我完全没想到，我，爱慕织姬的训练员，\n竟会被她身边的孩子们如此露骨地避开……\n我做错了什么吗……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "也许今后得好好审视一下平日里的言行举止了。\n就这样，我胡思乱想着这些事情——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……迎来了圣诞节当天。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我不断烦恼着——\n最后选定的，是一条手感很舒服的运动毛巾。\n……作为圣诞节礼物而言，似乎有点太朴素了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "虽然也试着跟上潮流，\n有样学样地在训练员室里挂了些装饰，\n不过也不知道她会不会喜欢……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……晚上好。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "就在我不停地烦恼着这些琐事的时候，\n爱慕织姬来了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………那个。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "圣诞快乐。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "她的手上，似乎有个小包装的礼物——",
+      "ChoiceDataList": [
+        "……哎？欸？？？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "还有……虽然很抱歉，但有件事我很不满。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……为什么，\n连你也要准备送我的礼物啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "啊，织姬同学你在这儿啊！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "卡莲同学……？\n怎么了，发生什么了吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "嗯……总之，先离开这儿吧！\n我刚刚在这里碰到织姬同学的训练员了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……诶？！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "啊哈，你好像也吓了一跳呢~！\n而且我觉得，他和你的目的一样哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "肯定都是『来选圣诞节礼物』！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……不会吧。\n为什么他要……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "好啦好啦，之后再想啦。\n在撞见他之前先出去吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "要是不小心把要送给他的东西给他看见了\n就不好了吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……也是呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田路",
+      "Text": "啊，织姬同学织姬同学！\n咱们先离开这儿吧！\n训练员也在这里……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "那个那个这个……大概，他也是……\n为了选送给织姬同学的礼物才来这儿的~……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（……所以，为什么啊！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "要是受惠于人，就应该好好回礼……\n若是一味受到帮助的话，\n我心里也会过意不去。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……你对我的帮助，我都牢记在心。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "自从我开始好好注意『我自己』的事情之后，\n我也明白了你为我做的那些事情有多么重要。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "让我不断进步的人，是你。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "一直守望着我的比赛的人，是你。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "在我前行之时，你一直与我同在。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "在我迷惘之时，是你推着我让我前进。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……所以，我是为了答谢你为我所做的一切，\n才会四处去寻求帮助，\n送出这个作为“还礼”的礼物。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "但如果你还要再送我东西的话……\n我们之间这样受惠与回礼的平衡就被打破了。\n……说实话，这让我很为难。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "她一直都坚守着这样的义理观，\n认为受惠就必须要回礼。这种性格，\n大概是她决心要为妹妹献上一切时养成的吧——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "脑海的角落中浮现出这样的想法。\n于是，我轻轻地摇头，否定了她的说法。",
+      "ChoiceDataList": [
+        "你不用觉得为难哦。",
+        "貴方が困ることなんてひとつもないよ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……为什么？",
+      "ChoiceDataList": [
+        "你对我也有不少恩情哦。",
+        "私だってたくさんのものをもらってるから"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……我……？\n不，我从来都没给过你什么恩情。",
+      "ChoiceDataList": [
+        "但你让我见到了你精神满满地奔跑的身姿……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "那就是――",
+      "ChoiceDataList": [
+        "愿意让我帮助你实现梦想……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "不，所以说……",
+      "ChoiceDataList": [
+        "而且，你还愿意让我成为你的担当训练员！",
+        "貴方の担当でいさせてもらえた！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "爱慕织姬渐渐沉默下来。\n终于，她长长的叹了一口气，\n接着才缓缓开口。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……虽然我以前就一直这么觉得了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "你……果然，是个让我搞不懂的人呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "——在爱慕织姬给我的小包里，\n装着一只设计简朴的藏青色钢笔。",
+      "ChoiceDataList": [
+        "就像是夜空的颜色，很棒呢。",
+        "夜みたいな色で、いいね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……是呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……我就是这么觉得，所以才送给你的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……我就是这么觉得，所以才送给你的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "接着，我们就像互相交换礼物一般，\n我也将我的礼物交给了织姬——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……这是……毛巾？",
+      "ChoiceDataList": [
+        "那个……最后选了个有点微妙的礼物，抱歉呢。",
+        "その、無難でごめんね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……没事，其实我也没怎么在意……",
+      "ChoiceDataList": [
+        "不过，这条毛巾的手感很棒哦……！",
+        "一応手触りにはこだわったんだけど……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "！\u3000……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……果然……\n受惠与回礼的平衡，崩毁了。",
+      "ChoiceDataList": [
+        "欸"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "………………我很喜欢这个。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "这种软绵绵毛茸茸的东西。\n……我很喜欢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "Title": "复仇战！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "前回は負けたけど……\r\n今度こそ絶対勝ってやる！",
+      "ChoiceDataList": [
+        "干劲十足啊！",
+        "やる気だね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "当たり前。\r\nナメられっぱなしなんてごめんだし。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "目ぇ逸らせない走りして、\r\n1着でゴールして――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "アタシはやれるんだって、\r\n証明してやる……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,385 @@
+{
+  "Title": "Home sweet home.",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "休息日。我作为美妙姿势的监护人，\n和她一起来到了离学园相当远的山中。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "呼~……哈~！嗯~果然，森林里的空气果然清爽得多呀！\n让我想起了庭院中朝露的味道了呢~",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "打来电话的SP队长",
+      "Text": "『……那么，训练员大人。殿下的事情就交给您了。\n请您千万要加倍小心。』",
+      "ChoiceDataList": [
+        "交给我吧。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哼哼哼，谢谢哦，训练员。因为只有和你一起，\n才能来到这个地方、创造这样的回忆哦。",
+      "ChoiceDataList": [
+        "顺便问一句，今天的目的地是？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哦！这可真是问了个好问题呢？\n哼哼哼，今天呢~——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……没决定目的地！我只是觉得，\n能和你一起在这种自然风光美妙的地方散散步就好啦~什么的。",
+      "ChoiceDataList": [
+        "是这样吗？",
+        "是这样吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "嘛……但是呢……\n说不定会发生什么奇妙的事情哦？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "果然，她似乎有什么事情还在瞒着我。\n我暂时将这件事放在一边，与美妙姿势一起走在小路上——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "——呼~多谢款待♪\n这次的特制蘸面便当，品质也相当优秀呢。",
+      "ChoiceDataList": [
+        "已经走了相当远了啊……",
+        "已经走了相当远了啊……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "是呢。萦绕在耳畔的，只有小溪的潺流声和虫鸟的轻鸣声……\n就好像是来到了不可思议的异世界呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……总觉得，回忆起了小时候读过的故事呢。\n勇者大人救出了被绑架的公主、带着她逃到了森林中……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "这时，可怖的恶龙为了夺回公主，突然袭击了过来。\n嗯……差不多就是在这样的森林里发生的故事呀。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……哼哼。现在总觉得，真的会有恶龙突然出现呢。",
+      "ChoiceDataList": [
+        "不，应该不会有吧……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "不过——如果，我说如果哦？\n恶龙真的出现的话，训练员会保护我的吧……？",
+      "ChoiceDataList": [
+        "肯定会的……要是恶龙真的出现的话。",
+        "肯定会的……要是恶龙真的出现的话。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "真的吗？！真开心呀~！啊啊……\n总觉得开始期待恶龙的出现了呢~——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "？？？",
+      "Text": "（吼哦哦哦哦哦哦……！）",
+      "ChoiceDataList": [
+        "啥？什么声音？！",
+        "啥？什么声音？！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "——啊！快看快看，训练员！\n河里面是……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "恶龙",
+      "Text": "吼吼吼吼吼吼吼！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "自水中浮现的……是仿佛从古代生物图鉴中复原出来的暴龙一般，\n双足站立，但却有着微妙的双翼的——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "——是恶龙呀！\n哇哇，冲我们这边来了！",
+      "ChoiceDataList": [
+        "……诶？诶诶诶诶？？？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "总觉得……这个所谓恶龙的各种表现都不大自然……\n它甚至会特意先交叉两只小短爪，然后摆出张牙舞爪的姿势……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊啊！这样下去的话……这样下去的话……\n会被恶龙吃掉了！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "呜呜……\n有没有哪位勇者能够击退这只恶龙呢……？",
+      "ChoiceDataList": [
+        "……这……那、那就只能我上了吧！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "恶龙",
+      "Text": "咕噢噢噢噢噢噢噢噢~~！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "请加油啊，勇者大人！\n愿胜利的荣光常伴你身！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "然后……在一番似乎有点激烈但好像也一点不激烈、\n我和恶龙谁都互不相让，不知持续了几分钟的战斗之后——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "恶龙",
+      "Text": "咕啊啊啊啊啊……！！被 干 掉 了~……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "漂亮！\n相当精彩的战斗呢，训练员！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "然而——就在此时，本应已经倒地的恶龙却站了起来，\n慢慢地摘下了自己的头……摘掉了自己的头？！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "SP队长",
+      "Text": "哼哼哼……Congratulations.",
+      "ChoiceDataList": [
+        "……什、什么？这到底……",
+        "……什、什么？这到底……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哼哼……预备~！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙&队长",
+      "Text": "整蛊大成功~！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……嘛，那就是这样了吧。",
+      "ChoiceDataList": [
+        "为什么要玩这种事情啊……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哈哈哈……前段时间，\n不是和你一起把那只迷路的小猫送了回去吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "那个时候，我就突然想到……这种小惊喜可太棒了！\n所以今天就试着准备了一下！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……我们准备的这种小惊喜，你觉得怎么样？",
+      "ChoiceDataList": [
+        "虽然吓了一跳……但是……还挺乐的。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "太好啦！也算是没有白费我们在学院里的反复彩排呢～♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "而且，训练员也好好遵守了约定呢。\n在恶龙出现的时候，真的挺身而出守护我了！",
+      "ChoiceDataList": [
+        "……差不多吧……",
+        "……差不多呢……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……哼哼，谢谢你了哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "之后，我与三人一起继续散步……\n在山顶之上尽情眺望了远处的风景之后，这才踏上归途。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "『面屋极极』老板",
+      "Text": "——哦哦，欢迎光临！\n就按老规矩来吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "嗯嗯，麻烦你啦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "呼……还是在这里能真切地感觉到自己回来了呢。\n二位，今天辛苦你们啦。",
+      "ChoiceDataList": [
+        "嘛……毕竟真的经历了一场战斗。",
+        "嘛……毕竟真的经历了一场战斗呢。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "SP队长",
+      "Text": "哼……对我而言，这种事已经司空见惯了。\n我所饰演的恶龙，曾经可是受赐殿下大人亲手制作的勋章的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哈哈，真是令人怀念呀。我的确给你颁发过『努力扮演恶龙之勋章』……\n我记得是用花与树枝做成的三叶草吧……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊，这样的话也该给训练员颁发奖章呢！\n那就……『屠龙者十字勋章』怎么样？",
+      "ChoiceDataList": [
+        "倒、倒也不是不行……？",
+        "倒、倒也不是不行……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "SP队长",
+      "Text": "可喜可贺。嘛，比起同时拥有\n『魔女热演勋章』『圣城战役勋章』的我而言，\n你还早的很呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "『面屋极极』老板",
+      "Text": "——好了哦！\n三份加大碗淡丽盐拉面！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……哎呀？咸笋和玉米……\n我不是没有点这两份配菜吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "『面屋极极』老板",
+      "Text": "姑娘说的『老规矩』就是这个吧。\n今天算是送的小福利，放心吃吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "！非常感谢！\n那么，我就不客气了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……“老规矩”吗。并不算特别，与往常别无二致的事物……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "——哈哈。不知不觉间，像这样享受拉面，\n与大家一起聊天，也已经是我的“老规矩”中的一部分了呢。",
+      "ChoiceDataList": [
+        "的确如此呢。",
+        "的确如此呢。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……对我而言，也许这个才是——",
+      "ChoiceDataList": [
+        "怎么啦？",
+        "怎么啦？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "嗯，没什么事哦。\n——今天真的很开心呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

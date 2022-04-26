@@ -1,0 +1,532 @@
+{
+  "Title": "对胜利的渴望愈发强烈",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "辛苦了，白仁。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "今天，还是没能拿到第1啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "但你已经拿出全力了。\n比赛也很精彩。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "但你已经拿出全力了。\n比赛也很精彩。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……训练员。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "有件事……必须要告诉你。\n我已经——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "做不到以前“那种奔跑”了……是吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "做不到以前“那种奔跑”了……是吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……你已经知道了吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "不，我是刚才看比赛的时候才意识到的。\n看着你挣扎着拼命奔跑的身影。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "不，我是刚才看比赛的时候才意识到的。\n看着你挣扎着拼命奔跑的身影。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……原因其实我也不清楚。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "只是，自己的感觉上有些偏差，\n没有办法像以前那样奔跑。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "成田白仁所受的伤，导致她的感觉\n出现了细微的偏差——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "那甚至影响到她的跑姿，令她失去了像以往一样奔跑的能力\n也导致了如此残酷的现实。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "抱歉之前瞒着你。\n只是觉得如果告诉你的话，你一定会阻止我继续跑步的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "确实，我很有可能会阻止你。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "确实，我很有可能会阻止你。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "但现在不一样。就算你无法像以前那样奔跑，\n你本身也没有任何改变。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "但现在不一样。就算你无法像以前那样奔跑，\n你本身也没有任何改变。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "渴望着胜利，无论何时都勇往直前。\n那个俘获了我心灵的成田白仁，现在仍在我眼前。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "渴望着胜利，无论何时都勇往直前。\n那个俘获了我心灵的成田白仁，现在仍在我眼前。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……跟大姐说的一样，你的确是个\n把赛马娘放在第一位考虑的训练员呢。",
+      "ChoiceDataList": [
+        "一起加油吧！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "好的……今后我也会继续奔跑下去……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "白仁的下场比赛是『阪神大赏典』\n我该怎样去帮助如今的她取胜呢……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "啊，你在这里啊！\n训练员，热身结束了哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "啊啊，抱歉。只是想考虑些事。\n白仁的训练该怎么办之类的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "如果想要让她发挥出100%的能力，\n必须得学会一种与以往不同的跑法……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "呃……听起来挺复杂的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "毕竟现在没时间去挨个尝试，\n所以我在思考有没有什么合理的训练方法。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "毕竟现在没时间去挨个尝试，\n所以我在思考有没有什么合理的训练方法。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "嗯～嗯～……什么合不合理，\n要是我的脑袋再好使点就好了～～！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "果然是奖券啊。\n1浪开外都能听见你的声音。（1浪≈200米）。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "啊啊啊啊～！！\u3000有了，训练员！\n这儿有个好使的脑袋！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "喂！\u3000我的脑袋才不大，要我说多少遍……\n等下，好使的脑袋？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "原来如此，确实身为理论派的晨光或许能有办法……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "等一下，你们到底在说什么……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "菱亚马逊",
+      "Text": "真热闹啊。白仁说她下场比赛已经确定了，\n所以我做了饭团来给她打气。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "哦哦！\u3000白仁的并跑对手也出现了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "哇！\u3000白仁的并跑对手也出现了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "菱亚马逊",
+      "Text": "……哈？\u3000是说单挑的事情吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "大姐和亚马同学……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "我打算让琵琶晨光也一起考虑一下\n什么样的训练和跑法适合现在的白仁。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "另外并跑对手的话，对你很了解的\n菱亚马逊应该蛮适合的吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "另外并跑对手的话，对你很了解的\n菱亚马逊应该蛮适合的吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "菱亚马逊",
+      "Text": "嘿嘿，就是这么一回事\n放心交给你菱姐姐吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "虽然我不知道基于理论的方法是否适合你，\n但总比瞎摸索要好得多。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "你要是再不恢复以前的状态……不对，你如果不变强的话，\n我也会没有干劲的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……呵呵，放马过来吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "好！\u3000那就向着胜利全力进发吧！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "所有人",
+      "Text": "哦！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "我看了一下，晨光的训练可真不得了啊！\n这样下去你再过一个月怕是要变成肌肉女咯",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "毕竟她是个很认真的人嘛。\n对训练可是一丝不苟的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "是你引以为傲的姐姐呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "是你引以为傲的姐姐呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……是啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "虽然是性格迥异的两人，但却互相关注着对方的比赛，\n还都被选为“年度代表赛马娘”，真是互为不可或缺的存在呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "啊！\u3000说起来今年的URA赏\n是不是快公布了？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "电视里应该在报导了，看看吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "电视里应该在报导了，看看吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "播音员",
+      "Text": "在『菊花赏』刷新了成田白仁小姐的纪录，\n紧接着又于『有马纪念』拿下精彩胜利！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "播音员",
+      "Text": "如今势不可挡的摩耶重炮小姐，\n被选为“年度代表赛马娘”！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "摩耶重炮",
+      "Text": "啊，那个，非常感谢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "播音员",
+      "Text": "过去的一年极其精彩，\n您今年又有怎样的打算呢？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "摩耶重炮",
+      "Text": "那当然是要参加许多比赛，\n让观众们和Maya自己都能热血沸腾！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "播音员",
+      "Text": "原来如此，看来今年也能期待看到\n非常精彩的比赛呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "播音员",
+      "Text": "另外想问一下，\n目前是否有能让您兴奋起来的对手呢？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "摩耶重炮",
+      "Text": "是的！\u3000有！\u3000有！！\n能让Maya兴奋起来的对手！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "摩耶重炮",
+      "Text": "去年『阪神大赏典』，那个人的比赛真的很精彩……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "摩耶重炮",
+      "Text": "怎么感觉每场比赛都那么平淡……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "摩耶重炮",
+      "Text": "呜呜~，还想来找乐子呢～！\n早知道就不来参观，直接回学校好了——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "甩开了甩开了！！\n她和后方的差距在不断拉大！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "摩耶重炮",
+      "Text": "……诶，不是吧！？\n都跑到那里了居然还能加速……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "已经无人能望其项背了！\u3000她正遥遥领先！！\n拉开6马身，7马身，现在，冲线！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "摩耶重炮",
+      "Text": "哇……好厉害……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "摩耶重炮",
+      "Text": "看得既兴奋，又心跳不停，Maya也想要有一天\n能和那个人一起赛跑，想要来一场那样闪闪发光的比赛！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "摩耶重炮",
+      "Text": "……但是，那个人自从受了伤之后，\n就一直在连败……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "摩耶重炮",
+      "Text": "不过不过！\u3000我在『有马纪念』和她一起\n跑过之后就明白了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "摩耶重炮",
+      "Text": "那一天感到的兴奋、令人颤抖不止的压迫感\n跟那时完全一样，所以Maya——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "摩耶重炮",
+      "Text": "想和成田白仁同学，再跑一次！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "播音员",
+      "Text": "新旧“年度代表赛马娘”的对决吗！\n那可太令人期待了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "没想到被指名了啊……她和白仁同学一样，\n都是有着能经典级中制霸『有马纪念』实力的强者。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……谁来做对手都无所谓。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "受到如此多的支持，我对胜利的渴望——\n对胜利的愿望怎会动摇！",
+      "ChoiceDataList": [
+        "白仁，绝对要获胜啊！",
+        "白仁，绝对要获胜啊！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "啊啊……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

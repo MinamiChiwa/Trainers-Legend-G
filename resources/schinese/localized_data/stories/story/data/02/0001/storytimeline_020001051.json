@@ -1,0 +1,251 @@
+{
+  "Title": "梦想的大舞台\u3000春季天皇赏",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "面向春季『天皇赏』，\n我们开始了正式训练。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "哈……呼……呼～……\n我大概已经明白呼吸的调整方式了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "训练已经按预定完成了，\n之后要做什么呢？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "顺带一提，我完全还能继续跑的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "也不算过度训练，\n这里就优先考虑她的心情吧――",
+      "ChoiceDataList": [
+        "好，那就再跑一圈吧"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "也不算过度训练，\n这里就优先考虑她的心情吧――",
+      "ChoiceDataList": [
+        "好，那就再跑一圈吧"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "呵呵，说的对呢。\n这种程度也不会有什么怨言。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "那么我便继续跑了哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "总感觉像回到了刚接手队伍时，\n那种和目白麦昆一起训练的心情。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "两人朝同一目标前进，结果究竟会如何呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "两人朝同一目标前进，结果究竟会如何呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "训练员，你好啊！\n麦昆看上去状态不错呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "呀，赖恩。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "呀，赖恩。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "就像在说自己的事情一样，\n赖恩脸上浮现出高兴的表情。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "能让目白麦昆的状态变好，\n无疑是赖恩的功劳。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "好了，劲敌的状态调整回来了，\n我也必须得朝着『天皇赏』努力了！",
+      "ChoiceDataList": [
+        "谢谢你，赖恩"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "哎嘿嘿，我才要多谢呢！\n果然能跟训练员商量一下太好了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "那么，现在就要期待比赛了呢。\n虽然赢的会是我啦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "为了跑出最好的比赛，春季『天皇赏』之前\n必须要让目白麦昆保持完美的状态。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "为了跑出最好的比赛，春季『天皇赏』之前\n必须要让目白麦昆保持完美的状态。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "几天后――终于迎来了目白麦昆夙愿的\n春季『天皇赏』当天。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "比赛结束之后，想吃点什么？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "唉……？\u3000嗯，这个嘛……\n既然难得来到京都，那就吃点京都料理之类的吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "这样啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "那个……您也太不擅长缓解紧张了吧……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "确实……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "真是的，也请您好好学习一下吧。\n这对于训练员来说可是相当重要的技能哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "您现在这样反倒让我注意力没法集中，\n开始担心起来了啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "这种时候，就很羡慕老师\n那种有社交力的性格。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "我没法像老师那样开朗地鼓舞她们来帮她们放松。\n不过――",
+      "ChoiceDataList": [
+        "与此相对，我会尽全力给你加油的"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "我没法像老师那样开朗地鼓舞她们来帮她们放松。\n不过――",
+      "ChoiceDataList": [
+        "与此相对，我会尽全力给你加油的"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "……呵呵，\n还请务必这样做。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "梦想已经到了触手可及的地方。\n接下来只需要尽全力去抓住它了。",
+      "ChoiceDataList": [
+        "加油，麦昆！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "嗯，我绝对会拿下胜利！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

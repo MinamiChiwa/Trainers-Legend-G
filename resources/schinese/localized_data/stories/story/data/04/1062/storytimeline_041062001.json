@@ -1,0 +1,341 @@
+{
+  "Title": "ゆるふわ、たったか、始動します",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "たい焼き屋",
+      "Text": "たい焼き、たい焼き、たい焼きはいかがですか～？\r\n残りあと1個だよ！",
+      "ChoiceDataList": [
+        "すみません、1つ――"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "请给我一个鲷鱼烧～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "……ハッ！\r\nうわばばっ！\u3000すみません！\u3000どうぞどうぞどうぞー！",
+      "ChoiceDataList": [
+        "いえいえ、どうぞ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "いえでも、でもでも同時でしたし！\r\n……あっ！\u3000そうだ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "んー、ほくほくもちもちベリーデリシャス～。\r\nごちそうさまでした！",
+      "ChoiceDataList": [
+        "半分もらってごめん",
+        "半分もらっちゃってごめんね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "いえいえ、半分こってなんか美味しいですから！\r\nそれにしても、学園のトレーナーさんだったんですねぇ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "これもきっとなにかの縁。\r\nまたどこかで会いましょう！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "那场相遇的几天后。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "肉まん屋",
+      "Text": "肉まん、肉まん、肉まんはいかがですか～？\r\nあと1個ですよ～！",
+      "ChoiceDataList": [
+        "すみません、1つ――"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "请给我一个肉包子～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "……ハッ！？\r\nうわばばっ！\u3000すみませ……って、ええ！？\u3000あなたでしたか！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "はややや～、こんなこともあるんですねぇ。\r\n……今日も、半分こしときます？\u3000ひひ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "在这样反复相遇之后――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "あ、おはようございます！\r\nそだそだ！\u3000ちょっと見てくださいよ～、この写真！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "むふふ、なんとなんと……おニューのクモのぬいぐるみを\r\nゲットしちゃったんです！\u3000これがもうかわいくって！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "学園ですれ違えば小話をする仲になった。\r\nそんなある日。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ミホノブルボンを筆頭に、\r\n数名のウマ娘が合同で坂路トレーニングを行っていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美浦波旁",
+      "Text": "坂路ダッシュ1本目達成。\r\n続いて、2本目を開始します。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "ぜ、は……も、もう行くのぉ！？\r\nむりぃ……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "呀ー，继续～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘B",
+      "Text": "む……りぃ……！\u3000はぁ～……！\r\n……うぅ、結構スタミナついてきてたと、思ったんだけどなぁ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "意気消沈するウマ娘たち。そんな中、マチカネタンホイザは\r\n遅まきながらも2本目の坂路を上がり続けていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "哈，哈，呜，哈！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美浦波旁",
+      "Text": "3本目、200mを追加。\r\n……ふっ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "我，我也～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "ふぅ、はぁ、はぁあ～……。あー、3本目、走り切れなかった～。\r\nブルボンさん、やっぱりすごいねぇ――わわっ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "没关系吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "哈哈哈，没事没事！\r\n只是脚有点僵硬。……果然还差得远呢～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘B",
+      "Text": "不不，最后300米不都还跟着吗。\r\n已经很厉害了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ミホノブルボンのハードトレーニングは学内でもトップレベル。\r\n実際ほとんどのウマ娘は1本目でギブアップしていたが――",
+      "ChoiceDataList": [
+        "（目立つタイプではないけど、地力が高い）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "那件事之后，又过了几天。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "哈，哈，哈……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "ねぇ、ライスさんたちもう2時間以上やってない？\r\nインターバル走だっけ……。2人ともすごいね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "ついてくっ、ついてくっ、ついてっ、てっ……！\r\nてぁ～、体力限界……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "はぁ、はぁ、はぁ～……。\r\nダメだぁ～！\u3000スタミナはそこそこ自信あったんだけどなぁ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "いやいや、十分すごいって。\r\nナイスファイトだよ、マチタン。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "いや～、そんな。ありがとうございますぅ……。\r\n――と、おお！\u3000あなたはいつぞやのっ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "情けないところ見られちゃったなー。\r\n最後までついてこうと思ったんですけどね。えへへ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "でもでも、長距離のコツとかもわかった気がするし、うん。\r\nよいトレーニングでした！\u3000と、忘れないうちにメモメモ……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "もうちょっとスタミナ系増やしてみようかな。\r\n空気抵抗の少ないフォームの練習もしときたいし……むん。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "そうだ、トレーナーさん！\r\nあのぅ、ちょっとだけアドバイスもらえたりしませんか？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "今月の目当ては『スタミナつけるぞ！』なので、\r\n遅筋をたくさん鍛えていきたいんです！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "渡されたメモ帳を見ると……日ごとにきちんと分けられた、\r\nそこそこハードな自主トレーニング計画が記載されていた。",
+      "ChoiceDataList": [
+        "え、えらい！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "嘿嘿。谢谢夸奖～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "そのぅ、私ってトップと戦うにはまだまだ実力が足りてなくって、\r\nだからって無茶なトレーニングができるタイプでもないんですよね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "だから、できることからコツコツと～、って気持ちでやって\r\nるんです。そしたら絶対、いつか勝てるようになると思うので！",
+      "ChoiceDataList": [
+        "！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "驚くほど前向きで、頑張り屋で、地力が高い。\r\nここ数日少し見ただけでも、彼女の性質は十分にわかった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "決して目立つタイプではない。\r\nが、今後の成長次第では大きく化けそうにも思える。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "？怎么了吗？",
+      "ChoiceDataList": [
+        "俺と契約してくれないか？",
+        "私と契約してくれないかな？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "契約？\r\n…………あっ、もしかしてオファーですか！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "わあ～！\u3000もちろんです！\u3000半分こ友だちのあなたなら、\r\nウェルカムカムですよ！\u3000これからどうぞよろしくお願いします！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "こうして、『普通』だけどちょっと変な、\r\nマチカネタンホイザとの日々が始まったのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

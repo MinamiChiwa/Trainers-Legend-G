@@ -1,0 +1,401 @@
+{
+  "Title": "エリザベス女王杯の後に・Lost...",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众们",
+      "Text": "――上啊～～～～！！\n跑起来，美妙姿势！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――哈啊……哈啊……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "喝啊啊啊啊啊！！\n美妙姿势……！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "（ダメよ、いやだ！\n譲りたくない、譲れない、私の――）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――绝对，不会输给你……！\n噢噢噢……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "――……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "看见了吧，那种表情……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "那个表情，还有那份热情。\n应该是她不会暴露在人前的东西吧……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "…………不对，她变了吗？\n还是说，没变？\n喂，难道说――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "是你的话，\n就能把阻拦你的一切障碍都撞碎吗……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "……哼。白痴吗。\n明明那家伙已经不在了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "……没错，所有数据都说得通，但是……\n如果还是有几厘米的误差的话――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众们",
+      "Text": "唔哦哦哦～！！！！\n真是激烈的比赛啊！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众们",
+      "Text": "カワカミ、すごかったぞ～！\nファインの勢いを止めるなんて……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哈啊……哈啊……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "勝ちましたわ～～～～ッッ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "No……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "……！\n怎么啦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "ファインさんも、そんな顔をなさるのね。\n目がギラッギラですわ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……！\n啊，我……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "没关系的哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "川上公主",
+      "Text": "わかりますわ。とてもあがるレースでした。\nぜひリベンジしてくださいまし！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……嗯，\n谢谢你，小川上。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……难道我，现在――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "已经忘却了，\n身为“美妙姿势”的使命？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……",
+      "ChoiceDataList": [
+        "お疲れ、ファイン"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "宣戦布告をしてきたカワカミプリンセスに、\r\n勝利できなかった彼女。だがその表情には、\n悔しさ以外の何かも滲んでおり――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊，嗯……\n谢谢。",
+      "ChoiceDataList": [
+        "……怎么了？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……那个。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……我想我明白了，\n为什么我能这么享受比赛。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "一定是因为，大家都带着纯粹的，\n『想要获胜』这样的想法在互相竞争。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "私に勝って、カワカミちゃんは\n大喜びしていた。それほど、\nレースに賭けていたということ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……私も、勝ちたいと思ったら、\n楽しさは倍になったんだよ！\n今日は、負けちゃったけれど。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "这应该是她的真心话吧，\n但我还是察觉到她有什么话没有告诉我。\n正在思考她隐藏了什么想法的时候――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "训练员，\n来决定一下明年的比赛吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "我呢，如果不继续奔跑的话，是不行的。\n……还请你帮我再选出这样美妙的比赛哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "她已经具备了相当的实力，\n就这样继续挑战GⅠ比赛也毫无问题。\n不过，这当然会变成异常艰苦的战斗。",
+      "ChoiceDataList": [
+        "就这样继续挑战比赛没问题吗？",
+        "このままレースに挑み続けて問題ない？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "所以说，有必要再确认一次，\n她是否已经具备了作为“参赛者”的觉悟――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "当然可以呀！\n那么，继续说吧？",
+      "ChoiceDataList": [
+        "『大阪杯』怎么样？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『大阪杯』――春の中距離のトップを\n決めるGⅠレース。彼女の能力的にも、\nレースの格的にも挑みたいと考えていた。",
+      "ChoiceDataList": [
+        "棘手的劲敌也会不断出现哦"
+      ],
+      "ColorTextInfoList": [
+        "大阪杯"
+      ]
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……嗯。\n那就这样安排吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "就这样，下一个目标定为春季三冠的初战，\n『大阪杯』。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "回到休息室――\n发现有意料之外的客人正在等候。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "果然来看我的比赛啦？\n我一直相信你会来的哦――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "继续这样悠哉游哉真的好吗？\n你的期限――只剩一年了。",
+      "ChoiceDataList": [
+        "……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "这样下去真的好吗？\n好不容易知晓的一切，都会消失。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "――今年一过，\n这一切都只能变成『回忆』了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……！",
+      "ChoiceDataList": [
+        "空中神宫，你――",
+        "エアシャカール、貴方は――"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "哎，说教我可敬谢不敏。\n我只是说出了事实。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "我之前就说过了。这家伙现在正处于最高潮。\n数据的成长也慢下来，说明已经到达顶峰了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "觉得不高兴的话……也不奇怪。\n你明白我的意思的吧，美妙？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "虽然我和空中神宫不太熟，\n但我也知道她不是会用这样的恶作剧伤害他人的人。\n她应该有更加明确的目的――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哼哼！\u3000神宫也真是的，\n关心别人的时候也要这样装腔作势。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "她一直是那样，不用在意也没问题哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "『大阪杯』という目標も決まったことだし！\r\n京都のラーメンを食べに行こう♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "美妙姿势还是一如既往。\n她的笑容还是那么完美而开朗――\n但我却能感觉到其中潜藏的些许不安。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "『――绝对，不会输给你……！\n噢噢噢……！』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……如果……不知道这一切的话就好了。\n毕竟这一切――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "都是会消失的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

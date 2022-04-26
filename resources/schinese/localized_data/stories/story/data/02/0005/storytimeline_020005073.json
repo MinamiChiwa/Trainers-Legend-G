@@ -1,0 +1,152 @@
+{
+  "Title": "第7話後半",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（咚咚咚）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "训练员，打扰了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "这种时间找我什么事？\n刚比完赛应该已经累了吧，有什么急事吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "这种时间找我什么事？\n刚比完赛应该已经累了吧，有什么急事吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "不知道算不算急事，\n我只是想尽快告诉你。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "今天比赛获胜的时候我突然想起来。\n我还从来没好好向训练员回过礼。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "道谢……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "明明当初不在同一队伍，\n训练员却亲切地倾听了我的烦恼。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "在我任性地说要移籍时，\n训练员也接纳了我。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "这种事……倒不如说我这种插手其他队伍的行为\n一般来讲会被指责也不为过呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "呵呵……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "加入<天狼星>以来，单单是观察队伍里的其他人就能明白\n训练员是怎样一个人。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "你是相信着我们，支撑着我们前行的人。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "所以我想着，要好好给你回礼……\n能不能稍微再等我一下呢？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "说什么等不等的，不用回礼也没关系的……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "不行，必须要好好地回礼。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "……用今后让你和我一起目睹那片“景色”的方式。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "无声铃鹿这么说着，露出了和她跑步时一样\n开心、而又温柔的表情。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "……这种形式的回礼的话，那就好说了。\n我绝对会让你能够回我这份礼的。",
+      "ChoiceDataList": [
+        "一起去欣赏那片“景色”吧！",
+        "一起去欣赏那片“景色”吧！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "是……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "无声铃鹿随心所欲地奔跑，\n终于斩获加入<天狼星>以来的初次胜利。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "身心都不断进步着的她，今后会让我看到什么样的“景色”呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "我想那一定是像现在的她这样，\n洋溢着喜悦、宛如梦幻一般的“景色”吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

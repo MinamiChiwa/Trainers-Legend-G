@@ -1,0 +1,43 @@
+{
+  "Title": "抓娃娃失败……",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "やっぱり難しいよね。\r\nあの取れそうで取れない感じ……！",
+      "ChoiceDataList": [
+        "抱歉……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "でも、ほら！\r\n遊べて楽しかったよ？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "ぬいぐるみはなくても、\r\n思い出は残ったということで！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "だから、あまり気を落とさないで。\r\nね、トレーナー？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "留下了令人遗憾的结果……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

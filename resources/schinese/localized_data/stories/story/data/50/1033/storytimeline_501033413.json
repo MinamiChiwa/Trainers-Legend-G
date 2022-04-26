@@ -1,0 +1,31 @@
+{
+  "Title": "迎接天皇赏（春）",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『天皇賞（春）』。強豪集うその舞台で、\r\n異質な圧を纏ったテイエムオペラオーは\n高らかに『新章の開幕』を宣言する。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "天皇赏（春）"
+      ]
+    },
+    {
+      "Name": "独白",
+      "Text": "歌劇に巻き込まれてやるつもりはない。\r\nだが、それでも『主役』の座は譲れない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "テイエムオペラオーと、そして\r\nナリタトップロードとの春の激戦に\nアドマイヤベガは赴いていった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

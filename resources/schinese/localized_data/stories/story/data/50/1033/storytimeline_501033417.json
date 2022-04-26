@@ -1,0 +1,29 @@
+{
+  "Title": "迎接有马纪念",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "年末、『有馬記念』。テイエムオペラオーに\r\nメイショウドトウ、そしてアドマイヤベガも\n集った冬のグランプリレースに――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ナリタトップロードもまた、出走者として\r\n選ばれていた。大歓声に迎えられて、\n同期と共に彼女もパドックに立つ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "もはや言葉はいらない。\r\nあとは走って、語り合おう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

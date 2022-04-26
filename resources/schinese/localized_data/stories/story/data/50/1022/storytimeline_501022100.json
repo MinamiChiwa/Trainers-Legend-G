@@ -1,0 +1,345 @@
+{
+  "Title": "美妙姿势登场！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――那一定是梦吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "即使投身于比赛的世界也无所谓。\n能尽情享受奔跑也关系。\n如谎言一般的幸福，也像梦一般美妙。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "能够拼尽全力地享受比赛――我做了这样的梦。\n但之后只能怀抱着这满溢而出的思念，\n离开这梦境。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "トゥインクル・シリーズでのデビューに向け、\nファインモーションとの本格的な\nトレーニングが始まる。そこで――",
+      "ChoiceDataList": [
+        "首先得确认下现在的能力呢"
+      ],
+      "ColorTextInfoList": [
+        "トゥインクル・シリーズ",
+        "美妙姿势"
+      ]
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "承知しました♪\r\nそれでは、走ってきます！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哈……哈……♪\n那就，再跑一圈……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "恐らく、持って生まれたものが違うのだろう。\r\n筋力のバランスのよさ、力強い走りは\n見る者を惹きつける。何より――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哈……♪\n真开心呀！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "她真正引人注目的地方，\n是那颗彻底享受奔跑乐趣的心。\n这样的‘姿势’，之后一定会成为武器吧。只是――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "那个，我可以再跑一圈吗？\n我还想再跑一小会呢！",
+      "ChoiceDataList": [
+        "先休息一下吧"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "欸，为什么？\n我还可以继续跑的哦？",
+      "ChoiceDataList": [
+        "可不能逞强啊",
+        "無理は禁物だよ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "出于某些原因，\n她在此之前从没进行过跑步的训练。\n突然增强训练负荷的话，会受伤也说不定。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "但是呀，脚还在喊着，『还想接着跑~』呢！\n所以，拜托了――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "ファインモーションが軽くけつまずく。\r\n少しふらついたところへ――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "SP队长",
+      "Text": "――殿下！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊，队长……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "慌てて駆けつけてきたのは、\r\nスーツ姿のウマ娘だった。\n彼女は――ファインモーションの護衛だ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "SP队长",
+      "Text": "您的身体有哪里不舒服吗？\n果然还是得进行一下检查。\n我马上安排，请稍等片刻。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "少しふらついただけです。\r\n問題ありませんわ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "SP队长",
+      "Text": "いえ、殿下の御身に何かあっては一大事です。\r\nなにしろ貴方は、かけがえのないお方……\n御父上からもくれぐれもと言われております。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "ファインモーションはさる王家に連なる\r\nやんごとない身分のウマ娘。\n『絶対安全』という条件で留学してきた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……ご心配いただき、\r\nありがとうございます。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "看起来，\n训练员好像也因为过于在意我的立场，\n过于害怕我受伤了呢？",
+      "ChoiceDataList": [
+        "在意的不是立场，而是比赛",
+        "立場じゃなくてレースのためだよ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "欸……",
+      "ChoiceDataList": [
+        "如果逞强的话就没法参加比赛了哦"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "是这样呢。嗯……确实如此呢。\n因为我也是要参加比赛的嘛！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "对不起，我不会再逞强了！\n我会好好听训练员的话的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "ですから……隊長も。私と、トレーナーを\r\n信じて見守ってくださいませんか？\n“立場”も必ず守るとお約束します。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "SP队长",
+      "Text": "……我知道殿下您相当聪慧。\n请您今后更自爱一些。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "SP队长",
+      "Text": "最後にひとつ。トレーニング後、\r\nお時間を賜ってもよろしいでしょうか？\nさるお方からご連絡がございます――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势的父亲",
+      "Text": "『――ファイン。\n励んでいるようだな』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "ファイン"
+      ]
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "父亲大人！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "电脑的屏幕上所出现的，\n是一个充满威严的男性――\n这就是美妙姿势的父亲。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势的父亲",
+      "Text": "『公務のため、かように連絡をとることも\r\n稀となるだろう。故に今一度、そなたと……\nそなたのトレーナーと話をしておきたい』",
+      "ChoiceDataList": [
+        "……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势的父亲",
+      "Text": "『そなたも既に承知している通り、\r\nファインは己の意志だけではままならぬ身だ』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势的父亲",
+      "Text": "『但她为了向我证明自己的素质，\n得到了自由的三年』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势的父亲",
+      "Text": "『当她回到祖国，履行自己的使命时\n便不允许再参加比赛了。\n所以她的比赛生涯只有这三年』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势的父亲",
+      "Text": "『今一度そなたに問うぞ。\r\n我が娘を、託される覚悟はあるか？』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "美妙姿势……与她的父亲\n如此相似的双眼注视着我。但是……\n不必多问，我也已经下定决心。",
+      "ChoiceDataList": [
+        "我会全力支持她的梦想！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势的父亲",
+      "Text": "『……这番话你可要务必牢记在心。\n美妙，你就在他身边尽情奔跑吧』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势的父亲",
+      "Text": "『祖国也会守望着你――』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "抱歉呢，然后……谢谢您。",
+      "ChoiceDataList": [
+        "……谢谢？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……我是说陪我吃拉面的事啦！\n今天的训练跑了那么久，\n肚子也非常饿了呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……啊，差点忘了！\n请容我再次向您问候。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "今后三年，要麻烦您担任我的训练员。\n希望我们彼此都能获得好成绩。\n请多指教。",
+      "ChoiceDataList": [
+        "请多指教啦！",
+        "よろしくね！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "呼呼♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "前面有一家相当不错的店呢！\n应该是煮干系拉面――",
+      "ChoiceDataList": [
+        "（只有三年啊……）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "与其他赛马娘不同\n她从一开始就有着被固定好的期限。\n而我能做到的事就是……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "训练员！\n快点啦快点♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "只是吃着拉面\n她的笑容便闪烁着如此耀眼的光芒，\n就算只为了这最棒的笑容……我也必须支持她。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

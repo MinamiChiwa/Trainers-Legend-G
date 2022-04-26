@@ -1,0 +1,73 @@
+{
+  "Title": "因头痛而忧郁",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "偶然、ナリタタイシンの姿を見かけたので\r\n声をかけようと思ったら――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……っ！\r\nそれ以上、近づかないで！",
+      "ChoiceDataList": [
+        "诶！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "今はチケットやアンタみたいな\r\n騒がしいヤツの相手する余裕ないの。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "いつもの調子でわーわー喋られると、\r\n頭が割れそうになる……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……近づいたら、\r\n本気で蹴っ飛ばすから。",
+      "ChoiceDataList": [
+        "今天的训练，要暂停一天吗？",
+        "今日のトレーニング、中止する？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "まさか！\r\nちょっと休めば治るし――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "唔唔唔……！",
+      "ChoiceDataList": [
+        "……看来还是安静些吧。",
+        "やっぱり安静にしていた方がいいよ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "ああ、もう……！\r\n保健室行ってくる！\u3000それでいいでしょ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "手負いの獣のようにこちらを警戒しながら、\r\nナリタタイシンは去っていったのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,560 @@
+{
+  "Title": "『gg』",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……で、今日もまた勝負するの？\r\n『RDLI』で。",
+      "ChoiceDataList": [
+        "拜托了！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "出かけた後に、ナリタタイシンと\r\nスマホゲームで対戦するのがすっかり\n定番となっていたある日のこと。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "アンタ負かすの、もう飽きてきたんだけど。\r\nてかこのゲーム自体も、\nお腹いっぱいって感じ……。",
+      "ChoiceDataList": [
+        "今天我要还是输的话以后我就不缠着你了！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……？\r\nやけに強気じゃん。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……まあいいや。\r\nこれで、マジで終わりだから。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そう、実は今回、強気になれる理由があった。\r\n彼女をよく知る者から、勝つアドバイスを\nもらってきたのだ。その者の名は――",
+      "ChoiceDataList": [
+        "胜利奖券",
+        "琵琶晨光",
+        "超级溪流"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "要赢过大进的话该怎么办才好？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "肯定是气势～～～～～～～～啊啊！！！！",
+      "ChoiceDataList": [
+        "气势？！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "そう、気合い！\r\n大体のことは気合いで解決できるもん！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "タイシンは素直じゃないから、\r\nちょっと大変かもだけど……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "でもねっ！？！？\u3000悪い子じゃないんだっ！\r\nだから粘り強く気合いでぶつかれ～～っっ！",
+      "ChoiceDataList": [
+        "哈、哈啊……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "にしても、あのタイシンが……\r\nこんなに愛してくれるトレーナーさんと\n出会えたなんて……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "ううううううううう～～～～！！\r\n感激だぁぁぁぁっっっっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "タイシンのトレーナーさんっっ！！\r\nタイシンのことっっ……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "大进以后就交给你了！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……よくよく思い起こせばゲームの話では\r\nなかったような気もするが、大事なのは――",
+      "ChoiceDataList": [
+        "（气势对吧！！！）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……？\r\nじゃ、始めるよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "热烈的对决！！！\n其结果是————",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "――『You Lose』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……不对，你怎么还是这么弱啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "大进的完全胜利……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "なんか作戦あるっぽかったけど……\r\nフツーに負けたじゃん。\nなんだったの？",
+      "ChoiceDataList": [
+        "气势！！！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……哈？",
+      "ChoiceDataList": [
+        "作战就是……气势！！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "ふはっ……何それ。\r\nチケットみたいなこと言う……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……啊。",
+      "ChoiceDataList": [
+        "……你刚刚，笑了吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "不、没有、我刚刚……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "～～～～……回去了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "機嫌を損ねてしまったようだ。\r\n先に行ってしまうかと思ったが……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……好啦，别傻呆着了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "待っていてくれる姿を見て、\r\n以前よりも距離が縮まったことを\n実感したのだった……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "……ああ、なるほど。\r\n君がタイシンのゲームに付き合っていたのか。\nそれで最近の彼女は、やけに――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "いや、なんでもない。さて、ゲームの\r\n勝ち方についてだが……残念ながら、\n私の専門領域外だ。力にはなれないな。",
+      "ChoiceDataList": [
+        "这样啊……",
+        "そっか……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "だが、対戦相手である\r\nタイシン自身についてであれば、\n私でも協力できるかもしれない。",
+      "ChoiceDataList": [
+        "诶？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "ふっ……何もゲームで勝つのに、\r\nゲーム内だけで策を弄すべきという\n条件があるわけでもないだろう？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "とはいえ、策というには\r\nあまりにも単純な話だがね。\nここだけの話、タイシンは――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ビワハヤヒデの助言を活かすタイミングは、\r\n粘りに粘って生き残り、\nサドンデスに持ち込めた終盤に訪れた――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……っ、しつこいな。\r\nもう、いい加減くっついてくんなっての。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "嘁……！",
+      "ChoiceDataList": [
+        "（……！就是现在！）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ビワハヤヒデのアドバイス、それは……。\r\nナリタタイシンの舌打ちは焦っている証拠。\nその時畳みかけられると――彼女は崩れる！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "っ！？\r\nあ、ちょ、待っ……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "――『You Win！』",
+      "ChoiceDataList": [
+        "我赢了大进了！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "………………不会吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "このゲームで？\u3000アタシが？\r\n低ランクのトレーナーに？\n負けた……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "よっぽど信じられないのか、\r\nナリタタイシンは呆然としている……。",
+      "ChoiceDataList": [
+        "愿意陪我最后打一场真是感激不尽。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "は、最後？\r\nあ、そっか約束……。",
+      "ChoiceDataList": [
+        "好，回去吧。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……。\r\n待って。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "今のはまぐれ。アタシの凡ミス。\r\nだから……勝ち逃げとか、許さない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "再来一轮！",
+      "ChoiceDataList": [
+        "但，刚刚那就是……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……アタシを楽しませたいんでしょ。\r\nだったら、付き合いなよ。",
+      "ChoiceDataList": [
+        "……你，现在在享受游戏吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……～～そういうことでいいから！\r\nほら、やるよっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "最初に想像していたものとは若干違うが、\r\nナリタタイシンとの距離が少し\n縮まったような――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "絶対許さない。\r\n今までで1番エグい勝ち方してやる……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……距离缩短了什么的，\n不会是我的错觉吧……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "あら～、\r\nタイシンちゃんを楽しませたいんですか？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "とっても偉いトレーナーさんですね。\r\nいいこ、いいこ♪",
+      "ChoiceDataList": [
+        "不是，我……",
+        "いえ、あの……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "タイシンちゃんてば、ちょっぴり……\r\nそう、ほんのちょっぴり不器用な子ですけど、\nそこがまたキュンときて～。",
+      "ChoiceDataList": [
+        "你说的没错，但我说的是……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "あ！\u3000そうだ、ちょっと待っててください。\r\nいま、お茶をご用意しますね～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "せっかくの機会ですし、\r\nゆっくりタイシンちゃんのお話しましょ～。",
+      "ChoiceDataList": [
+        "不，所以说我……",
+        "いえ、だから……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "いいこのトレーナーさんには、\r\nの～んびりする時間があってもいいんですよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "超级溪流",
+      "Text": "乖孩子、乖孩子～♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……思い返すと、\r\nなんのアドバイスももらえていない！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……？\r\nなに焦ってんの？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……まあいいや。\r\n始めるよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（啪嚓！啪嚓啪嚓啪嚓！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……好。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ナリタタイシンはいつも通り快調だ。\r\nしかしこちらはなんの策も思い浮かばず、\n防戦一方。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "このままでは負けてしまう……！\r\nそう思っていたのだが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……あ、やば。\r\nタイムアップ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "結果はなんと、タイムアップで引き分け。\r\nその理由は明らかだった。",
+      "ChoiceDataList": [
+        "……为什么不给我致命一击呢？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "普段、いっそ危ういほどに攻勢に出がちな\r\nナリタタイシンが、今回はこちらの様子を\n窺い、まるで攻撃をしてこなかったのだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……我想看看你打算怎么办。",
+      "ChoiceDataList": [
+        "诶？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "アンタが、やけに張り切ってたから……\r\nどんな作戦で来るのか、\n見てやろうかと思っただけ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "どうやらこちらから仕掛けるのを、\r\n待ってくれていたらしい。\nその不器用な優しさに、思わず――",
+      "ChoiceDataList": [
+        "大进可真是个好孩子啊。",
+        "タイシンはいいこだね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……哈……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "いいこって、何。\r\nアタシが……？",
+      "ChoiceDataList": [
+        "（被超级溪流传染了……！）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "これは確実に怒られる。\r\nそう身構えたのだが……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……真是的，别把我当小孩啊。",
+      "ChoiceDataList": [
+        "（哎……？）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "口調こそ厳しいが、満更でもなさそうだ。\r\n子ども扱いされることに、\n何よりも怒りを覚える彼女なのだが……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……作戦。\r\n仕掛け損なったなら、もう1回挑んでみれば。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "なんだかいつもより、\r\n優しいナリタタイシンだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    null
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "Title": "This Is Who I Am",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "这是美妙姿势开始训练之后的某一天――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（嘟噜噜……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "『トレーナーさま。\r\n突然のご連絡をお許しください。\n――お願いがあります』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "『请问您能成为我的家人吗？』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "家庭餐厅店员",
+      "Text": "欢迎光临～。\n请问几位呢？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "两位。\n……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "家庭餐厅店员",
+      "Text": "……请问怎么了？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "嗯？\u3000不需要确认我们的关系吗？\n这位是我的……姐夫。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "あら？\u3000続柄の確認は不要ですか？\nこちら私の、義理の姉です。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "对吧，兄长大人♪\n因为我们是一家人，所以能进店吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "ねぇ、お姉さま♪\n家族ですから、入店できるでしょう？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "……今ようやく事態をのみこめた。\r\n彼女は『ファミレス』を勘違いしている。",
+      "ChoiceDataList": [
+        "那个啊，美妙――",
+        "あのね、ファイン――"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊哈哈，果然呀。\n『家庭餐厅』没有限定家庭才能入内的意思啊。",
+      "ChoiceDataList": [
+        "果然？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "学校里不少孩子都是和朋友一起去的，\n我就想着应该不是一家人也能进去……\n但是呢，名字又叫家庭餐厅……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "这样的话，带家人来家庭餐厅的话，\n也许会受到特别招待什么的……\n我还觉得是个好主意呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "对了！作为陪我来家庭餐厅的谢礼，\n我就请你喝『黑暗饮料』吧♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……グルーヴさん、なんて言っていたかな。\r\n全部のボタンを押して、遊ぶ子がいて――\nあれ、ダメなんだっけ？\u3000まぁいいか♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "グルーヴ"
+      ]
+    },
+    {
+      "Name": "",
+      "Text": "……做好了品尝谜之饮料的觉悟，\n无意间环顾四周时――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "SP们",
+      "Text": "……",
+      "ChoiceDataList": [
+        "（吓我一跳……！）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "美妙姿势的护卫们，正一声不吭地坐在周围\n看来就算是这种微不足道的外出，\n也必须要执行护卫工作的样子。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "之后，与美妙姿势一同返回的归途中……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "トレーナー……！\r\n私、1人で買えたよ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "お財布探しから始めて、買い方を学んで。\r\nようやく、ここまで辿り着いたよ……！",
+      "ChoiceDataList": [
+        "可喜可贺！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "『在街边买东西来吃』听上去就觉得很青春呢。\n这样一来，我也有个学生的样子了吧？",
+      "ChoiceDataList": [
+        "那当然"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "太好啦～♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "只是在街边买了个小吃就高兴成这样……\n我不禁笑了起来。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊，我不小心又高兴过头啦。\n明明已经被朋友说过了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "『美妙好像会在一些奇怪的地方突然笑起来』……\n什么的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "ああ、これはよくない違和感だなぁ。\r\n気をつけないと！\n……って思ったんだけれど、忘れちゃってた。",
+      "ChoiceDataList": [
+        "因为你觉得这一切都很棒，值得享受嘛"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "诶？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……啊～啊哈哈，是这样呢，\n嗯，这样解释就好啦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "对了！\n吃完之后，能陪我散散步吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――私ね、大事に育ててもらったこと、\r\nとても感謝しているんだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "お城の中でずっと過ごしていた時期……\r\n家族も護衛の方々も、私が退屈しないよう、\n色々考えてくれていたの。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "现在也这么喜欢四处享乐，\n也是因为那时候大家也一直在陪我找乐子吧。\n我的回忆里，满满的都是大家的爱哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "要从那里跑出来什么的，\n我一次都没想过……一次都没有。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "私には、レースで活躍している\r\nお姉さまがいるんだけれどね？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "レースのためにお城を出ると仰った時、\r\nついてくるかって聞いてくださったの。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "けれど、その時はお断りしたんだ。\r\n私の果たすべき使命が、\nより重要になると思ったから。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――成为祖国繁荣的支柱。\n这就是我的使命。",
+      "ChoiceDataList": [
+        "支柱……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "嗯。\n为了达成那个使命的话，\n即便是让我现在立刻回国也可以。",
+      "ChoiceDataList": [
+        "（……！）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "当然，\n要是真的被『现在立马回来！』地说了的话，\n我也会试着说服他们的哦？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "在日本，还有很多我未曾知晓的事物嘛！\n能自己亲眼见识这个世界，\n我觉得是件相当美妙的事情！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "仅从书本上了解可完全不够。\n必须要亲自触碰、亲自体会――\n只有这样，才能体会到真正的乐趣。",
+      "ChoiceDataList": [
+        "比赛也是一样哦",
+        "レースも同じだね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "！的确如此呢！\n只有真的靠自己的脚去跑一跑，\n才能得到如此珍贵的体验！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "如果没有拼劲全力地奔跑，\n仅仅只是在心中憧憬的话，\n是体会不到此般乐趣的吧。",
+      "ChoiceDataList": [
+        "也见不到更美丽的景色了哦"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "景色……\n与我们如今看见的不一样吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "もう充分、\r\n素晴らしい気分だよ？",
+      "ChoiceDataList": [
+        "还能看见更棒的景色哦",
+        "もっとすごいはずだよ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "她还没有参与过更高规格的比赛。\n在更高的舞台上所看见的景色，\n那必定会更加美好。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……原来如此。\n我还能，参与更加让人激动的比赛。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "看见更美妙的景色……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "どんなレースを走れば、\r\n辿り着けるのかな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "这样喃喃自语的美妙姿势的双眼，\n在夕阳的照耀之下，熠熠生辉。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

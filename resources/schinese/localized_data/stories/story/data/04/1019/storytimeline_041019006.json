@@ -1,0 +1,328 @@
+{
+  "Title": "关于圣地太多了这档事♪",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "做推活的早晨会特别早――\n……应该说，现在才凌晨5点。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "训练员，早上好！\n然后欢迎……欢迎你过来ー！！",
+      "ChoiceDataList": [
+        "一大清早，就很有干劲啊",
+        "一大清早，就很有干劲啊"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "嗯！\u3000因为今天的推活，是『圣地巡礼之旅』啊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "马娘酱们都有各自的……戏剧般的人生。\n巡游那些戏剧发生的圣地。这就是这次的推活。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "说实话我想花一个月左右时间去巡游，\n但那就不能参加比赛了呢！\u3000只能充分利用休息日了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "时间有限！\u3000但对推的感情无限大！\n所以说，我们速速开始咯～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "首先是这里！\u3000牧场――并不是，而是那边的花圃！！\n又名，尊贵的休憩之园（数码碳命名）！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "在这里送花有一种魔咒，就是可以传达\n平常不能用花语传达的心意。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "无数的马娘酱们，在这互相赠送白三叶草\n给写作朋友读作对手的对方......！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "花语是――对！\u3000『想着我』『约定』！！\n也就是说，在此约定要彼此为了对方而竭尽全力哦……",
+      "ChoiceDataList": [
+        "是热血的戏剧啊",
+        "是热血的戏剧啊"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "就\u3000是\u3000说\u3000吧\u3000！？\n你的理解程度跟多佛海峡一样深了～！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "然后是这里！\u3000又名，姐妹赛跑公园！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "根据晨光姐姐的情报，\n小时候她跟妹妹白仁姐姐在这里赛过跑。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "既是姐妹，又是竞争对手的两人。\n一想到这里是她们的原点，就无法平静……就想跑起来！？",
+      "ChoiceDataList": [
+        "你要跑吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "只能这么做了ー！？\u3000通过模拟体验，感受自己的推！\n那也是，推活～！！\u3000哦哦哦ー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "噗哈～～～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "好吃！\u3000好吃！\u3000好吃！\n这就是……王者拉面的味道！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "还有！\u3000……这个……超出了常规的量……啊！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "不，不愧说……干掉它的人，才是王者……啊――\n……呜……",
+      "ChoiceDataList": [
+        "不，不要勉强自己为好！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "没有！\u3000为了争夺王之宝座，发生过多少生死搏斗……\n那种体验……我得亲身体会……啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "嘎呼。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "之后我也在和爱丽数码全力进行着圣地巡礼。\n然后――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "――好！\u3000加上刚才的『蜂蜜特饮店』，\n圣地全部巡礼……达成了！",
+      "ChoiceDataList": [
+        "转了很多地方呢",
+        "转了很多地方呢"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "不不～！\u3000真的，\n做了这么长时间的推活辛苦你了～！\u3000敬礼！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "而且……诶嘿嘿，能好好享受于其中真是太好了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "其实我一开始，也想像平常一样一个人去做的。\n但是――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "这次的巡礼场所，已经决定咯☆\u3000呜呼呼ー。\n好期待和训练员聊巡礼见闻的日子呢～♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "同班同学的马娘",
+      "Text": "啊哈哈，虽然听不懂你在说什么，\n但看起来还一如既往的开心呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "啾！\u3000我，不小心……说出来了吗……！？\n失礼了～……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "同班同学的马娘",
+      "Text": "对了，聊见闻的话……不和训练员一起去吗？\n那个……巡礼？\u3000什么的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "诶！？\u3000根，根本就没想过！\n……一起……去，圣地巡礼……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "唔……唔唔唔唔唔唔唔唔唔～～～！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "所以说！\u3000实际做过之后，\n超ーーーーーーーーーーーーー……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "……ーーーー级开心的～～！",
+      "ChoiceDataList": [
+        "我也很开心，谢谢你",
+        "我也很开心，谢谢你"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "太好了……毕竟是宝贵的休息日，还约了一大早碰头～\n本以为会是不可能做到的邀请！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "天呐天呐！\u3000真的是，一个伟大的发现！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "因为我已经发现了哦？\n和训练员一起热爱着推的快乐！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "本来我压根就没想过，\n地球上竟然还有人能陪我做推活到这种程度！",
+      "ChoiceDataList": [
+        "这话说得太夸张了……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "没有没有没有！？\u3000我想你已经知道了，\n我常常一个人就暴走了不是吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "但你跟得上我这种程度的交流，甚至还能产生共鸣！？\n我真的，很高兴……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "感觉超爽～～！\u3000的时候，\n我就想马上和训练员聊聊哦！",
+      "ChoiceDataList": [
+        "可以的话，什么都可以跟我聊哦",
+        "可以的话，什么都可以跟我聊哦"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "诶……！？\u3000什、什、什、什么都可以的吗！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "可以的吗？\u3000……可以的？？\u3000那我说了哦？？？\n数码碳真的要讲到极限的话――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "……STOーーーーP！！",
+      "ChoiceDataList": [
+        "？！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "那……那边的……在那边的是……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "伏特加姐姐和大和赤骥姐姐！？\n看，公路桥那边！\u3000好像在争论着什么……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "哈！\u3000这难道是，新的圣地诞生的瞬间！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "训练员，你还在做什么呢！\u3000要走了哦！？\n冲刺冲刺～～！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "爱丽数码没等我回应就跑走了。\n到这个地步就只能奉陪到底了，于是我追了上去。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

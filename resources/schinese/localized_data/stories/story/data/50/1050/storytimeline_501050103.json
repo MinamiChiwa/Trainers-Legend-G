@@ -1,0 +1,128 @@
+{
+  "Title": "夏季合宿（第2年）开始！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "今日から『夏合宿』。海辺近くの合宿所で\r\n泊まり込みのトレーニング生活が始まる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『菊花賞』に向け、大幅な実力向上が望める\r\nいい機会なのだが……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哈…………",
+      "ChoiceDataList": [
+        "没、没事吧？",
+        "だ、大丈夫？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……没事。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "普段から寮生活で、ただでさえ\r\n1人の時間なんか少ないってのに――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "合宿になると、他人の目がない時間なんか\r\nほとんど消え去るから、憂鬱ってだけ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……確かに、ナリタタイシンにとっては\r\nややストレスの高い環境かもしれない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "那么，为了让她保持好心情――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……うわ、マジで誰もいない。\r\nこんな穴場あったんだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "ふーん……静かだし……\r\n昼寝するにもよさそうじゃん。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……で、着くなり走り回ってたかと思ったら\r\nアンタ、こういう場所を探し回ってたわけ？",
+      "ChoiceDataList": [
+        "要是这里能让你觉得治愈就好啦"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……哈。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "心配しなくても、毎年のことなんだから\r\nここまでされなくたってトレーニングくらい\nちゃんとやるっつの。",
+      "ChoiceDataList": [
+        "我不是说训练的事情――"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "好啦别说了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "そんなことよりトレーニング！！\r\nやるんでしょ！！",
+      "ChoiceDataList": [
+        "要做要做！我现在就去准备！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……啊。该死。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……错过道谢的时机了啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

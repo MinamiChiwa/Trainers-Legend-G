@@ -1,0 +1,194 @@
+{
+  "Title": "严禁乱来！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ナリタタイシンがケガをしたので\r\n保健室に連れてきた。",
+      "ChoiceDataList": [
+        "大进！没事吧！？",
+        "タイシン、大丈夫！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……就算不用喊那么大声我也听得见。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "こんなケガ、大したことない！\r\n痛みも引いてきたし、全然余裕だから。",
+      "ChoiceDataList": [
+        "大进。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "トレーニングだって、\r\n問題なくできるし――",
+      "ChoiceDataList": [
+        "大进！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……怎、怎么啊？！",
+      "ChoiceDataList": [
+        "要是没问题的话，我才不会带你来保健室。",
+        "問題ありそうだから保健室に来たんだよ",
+        "那我也相信你的这份热血吧！",
+        "貴方の熱意に応えるよ！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……怎、怎么啊？！",
+      "ChoiceDataList": [
+        "要是没问题的话，我才不会带你来保健室。",
+        "問題ありそうだから保健室に来たんだよ",
+        "那我也相信你的这份热血吧！",
+        "貴方の熱意に応えるよ！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "咕……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "でも、休んでる暇なんてない！\r\nアンタだってわかるでしょ！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "こんなんで遅れを取ってちゃ、\r\nアタシはずっと弱っちいままだ……！",
+      "ChoiceDataList": [
+        "现在不休息的话，训练也没什么效果的。",
+        "休まないとまともに走れないよ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "～～～～～唔！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "うるさい、うるさい、うるさい！\r\n偉そうに正論ばっか言って……！！",
+      "ChoiceDataList": [
+        "但你也不希望我撒谎来让你安心吧？",
+        "でも嘘や気休めなんて望んでないでしょ？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "当たり前……！\r\nそんなこと言ったら許さないから！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……くそっ！\r\n絶対、早く治してやる……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "その後、ほとんど不貞寝ではあったが\r\nナリタタイシンは\n休養を取ってくれたのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ケガをしてもなお、\r\n立ち上がろうとする姿に胸を打たれた。\n全力で応援すると伝えると――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……啊，这样啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "わかったならいいけど……。\r\nやっぱアンタ、暑苦しい。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哈……哈啊……！",
+      "ChoiceDataList": [
+        "上吧上吧大进！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "ああもう、うるさい！\r\n気が散るからやめろって――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "好痛？！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "結局、ナリタタイシンは\r\nトレーニング中にケガを悪化させてしまい、\n休むことを余儀なくされるのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "还不够、不够啊……！",
+      "ChoiceDataList": [
+        "よーし！もっと声出してこー！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "ったく、\r\nチケットじゃあるまいし……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（けど、声を出せば痛みも減るし、\r\n気合い入るのは確かだ……癪だけど――）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "唔哦哦哦哦哦哦哦！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "見事に意地を見せたナリタタイシンは\r\nその日のトレーニングをやりきったのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

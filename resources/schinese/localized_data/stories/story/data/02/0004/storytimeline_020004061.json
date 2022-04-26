@@ -1,0 +1,293 @@
+{
+  "Title": "姐妹的约定",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "平稳度过了夏季合宿，转眼间入了秋——\n然而闪耀系列赛却扔被盛夏一般的热浪包裹着。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "那股热浪的中心，\n便是成田白仁与琵琶晨光姐妹二人。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "成田白仁打破了去年琵琶晨光创下的纪录，\n成功拿下『菊花赏』！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "史上第5位“三冠赛马娘”就此诞生！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "妹妹刚在『日本德比』展现出压倒性胜利，姐姐便在『宝冢纪念』\n创造了纪录，而妹妹紧随其后又创造了更大的纪录——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "即便她们奔跑在不同的赛场上，二人的针锋相对\n也令世人热血沸腾。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "然后，众人期待已久的两人的正面对决\n将在『有马纪念』中实现——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "今天也挤了一堆来采访的家伙啊～\n可真苦了他们了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "没办法啊。毕竟她可是达成了“三冠赛马娘”这个\n了不起的伟业啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "这种历史性时刻，不知什么时候才能再看到。\n所以采访络绎不绝也是理所当然的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "嘛，关键的白仁也不知道哪去了，\n他们现在都挺失望呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "白仁同学是去看望晨光同学了吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "是啊，我建议她去的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "是啊，我建议她去的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "之前找她一起去还被拒绝了呢。\n可能是还没整理好情绪吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "估计是吧～家人遭遇那种事肯定很不好受。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "虽然也有这个原因，但白仁同学自己也应该很期待\n和姐姐一起在『有马纪念』赛跑吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "正如目白麦昆所言，每次琵琶晨光有活跃表现，\n成田白仁都是一副斗志昂扬的样子。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "对赛跑渴望至三冠在她眼中都只是路标的程度，\n唯一能满足她的应该只有与姐姐的对决了吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "一直渴望与之一同奔跑的对手却无法参赛，\n发生了这种事，有点担心她啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "白仁……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "本来还打算把“三冠赛马娘”打趴下呢……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……你这么有精神我就放心了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "在『天皇赏（秋）』中负伤实在是意料之外。\n同你对决所需的胜利方程式我明明都构建出来了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "在比赛上代入方程式什么的，\n你还真是容易思考“过头”呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "我，我的头才不大啊！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "……白仁，我的方程式可不是纸上谈兵哦。\n本来能在『有马纪念』获胜的绝对会是我吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "你还记得自己小时候在运动会上\n拿到第1名的事吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "没什么印象了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "也是……对于从那时开始就觉得胜利理所应当的你来说，\n那种运动会的比赛肯定没法给你留下什么印象吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "一个被称为天才的数学家曾说：“不只满足于\n解决随处可见问题，挑战不可解决的困难之时\n才是我最幸福的时刻。”。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "你也一样。由于自己出色的才能，\n在普通比赛得不到满足，\n才永远怀揣着那份无法被满足的渴望。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "单靠努力是无法与你抗衡的……\n于是我在摸索过后，寻找到了现在的做法。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "不是横冲直撞，而是靠极致的理论脚踏实地去努力\n也确实收获了不错的成果。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……你这么说反而让我更想看到你在『有马纪念』\n证明自己的表现了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "……接下来要说的才是重点。我在医院很闲啊，\n于是试着为自己缺席的『有马纪念』构建了方程式。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "结果，不管怎么计算，得出的都是你的胜利。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "虽然不知道你对于我没能参赛的想法……\n但你绝对会赢哦，白仁。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……呵呵。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "要得出那个答案，没必要特意列什么方程式吧。\n我会获胜是理所当然的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……而且，假设大姐参加『有马纪念』，\n所谓的能战胜我，也只是纸上谈兵罢了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "所以，以后一定要找机会证明给我看。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "呵呵……啊，说好了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "在『有马纪念』上，就由我来证明大姐的方程式吧……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

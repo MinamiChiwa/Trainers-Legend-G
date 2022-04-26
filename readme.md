@@ -32,6 +32,7 @@
 
 - @chinosk114514
 - @akemimadoka
+- @MiddleRed
 
 ## 修图嵌字
 

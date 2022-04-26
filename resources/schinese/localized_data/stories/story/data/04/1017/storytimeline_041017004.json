@@ -1,0 +1,333 @@
+{
+  "Title": "情投意合",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "――期日だな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "では、トレーナー諸君。答えを聞かせてくれ。\r\n……君は何故、私の所へ来た？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "……よし、では俺から。先日も話した通り、俺は君を必ず強くする。\r\n君に勝利を掴ませるため、ここに来た。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "ここに、3年分のトレーニング計画表がある。\n今の俺が示せる限りの能力をここに示した。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "素晴らしい。見るからに力作だ。\n後程、じっくり拝見するとしよう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "では、次に――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员B",
+      "Text": "私ですね。……貴方は確かに、敬遠されてしまうほど\r\n大きな期待を寄せられているウマ娘です。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员B",
+      "Text": "けれど私には、その期待に応え、貴方を確実な勝利へと導く\r\n覚悟があります！\u3000だから私はここへ来ました！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员B",
+      "Text": "いかにしてレースに勝つか……その計画を、\r\n貴方の走りに関する研究を元に資料化しました。ぜひ見てください！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "ほう、こちらも秀逸だな。\n後で目を通そう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "さて……。最後に、君の考えを聞かせてもらおうか、\r\nトレーナー君。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "君は先日、『私の走りをもっと見たい』\n――つまり、私の未来への期待を語ったな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "ならば今ここで、形として示してくれ。\r\n君の期待する未来とは？\u3000君の見たい景色とは、何だ？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "シンボリルドルフの問いに応えるため、\n先日撮った写真を、彼女に見せた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "む？\u3000これは……私の写真か？\r\nグラスワンダーに、マルゼンスキーを引き合わせた時の……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "これが……君の示す形か？",
+      "ChoiceDataList": [
+        "これが、見たい未来だ",
+        "これが、見たい未来だよ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "……啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "――なるほど。\nそういう事、か……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "その後シンボリルドルフは、\r\n持ってこられた計画表や資料に、時間をかけ隅々まで目を通した。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "于是――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "折角用意してくれたというのに、\r\nすまないな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "……そうか。残念だ、とても。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员B",
+      "Text": "後の事は任せましたよ。\r\n……彼女に、必ず素晴らしい走りをさせてくださいね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "2人のトレーナーは、\n名残惜しそうにその場を立ち去って行った。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "実に優秀なトレーナーたちだった……。彼らと組む事が出来た\r\nウマ娘であれば、幸福な時間を過ごす事が出来るだろうな。",
+      "ChoiceDataList": [
+        "なのに、どうして俺を……？",
+        "なのに、どうして私を……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "どうして君を選んだのか、だって？\n……答えは明白だ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "君は、私と同じ視座に立とうとしてくれた。そして……その事が、\r\n予想以上に喜ばしかった。だからだよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "私が目指すのは常に、あらゆるウマ娘が幸福でいられる世界だ。\r\nその為に、これまで全力で励んできた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "だが……そうだな。あまりに青く、遠い夢だと……\r\n心の何処かで、そう思う自分もいたのだろう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "しかし、君はどうだ！\u3000随分付き合いがいいと感じてはいたが、\r\nまさか、私と同じ景色を見たいと望むとは！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "――嬉しかったよ、とても。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "志を共にする仲間がいる、というのは、\r\nこんなにも……心を温かにするのだな。",
+      "ChoiceDataList": [
+        "こちらこそ、選んでくれて嬉しい"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "おっと、そう来るか？\nははは！\u3000君は実に謙虚だな！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "――さて。\r\nでは改めて、決意表明といこうか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "私はシンボリルドルフ。あらゆるウマ娘が幸福に過ごせる、\r\n理想の世界を創る為、ここに立っている。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "だが夢を語るばかりでは、誰一人耳を貸さん。\nそれ相応の、評価と実績が無ければ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "故に、私が目指すのは頂点。\n皆を率いるに相応しい、王の座だ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "学園に来てしばらく、生徒会長として\r\n校内での活動に明け暮れていたが――いよいよ時は満ちた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "トレーナー君。\r\n私と、組んでもらえるだろうか？",
+      "ChoiceDataList": [
+        "那当然！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "よし、その答えを待っていた！\r\n……それでは、シンボリルドルフの栄光を始めるとしよう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "君と共に……な。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "それから、しばらく後のこと。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "早くもデビュー戦を迎えることとなった\nシンボリルドルフは――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "――皆、声援感謝する！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（ワァアアアアア……！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "強い強い、シンボリルドルフ！\nまさに破格！\u3000まさに最強！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "彼女の紡ぐ栄光の未来に、これからも目が離せませんっ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "……だ、そうだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "ふふっ、お互い責任重大だな、トレーナー君！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そう微笑む彼女は、デビュー戦にして、\n数多くの者たちを強く魅了したのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "すっ……ごいや……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "あれが……シンボリルドルフ……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

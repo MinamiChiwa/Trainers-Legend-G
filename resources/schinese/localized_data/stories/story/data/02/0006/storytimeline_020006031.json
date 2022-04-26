@@ -1,0 +1,326 @@
+{
+  "Title": "第3話",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "支持……我也没做什么大不了的事。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "没有这回事！\u3000你教会了我跑步的方法，\n在学校里很照顾我，还有还有——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "铃鹿同学开心跑步的样子，\n让我获得了追寻梦想的勇气呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "リラックスよ、スペちゃん。\r\n深呼吸をするだけでもずいぶん緊張をほぐせるから、やってみて。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "は、はい！\r\nすぅ～～……ぷはぁ～～っ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "『弥生賞』当日――世間からは“黄金世代”の三強による\r\n初対戦だと大きな注目を集めていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "セイウンスカイやキングヘイローを筆頭に、好成績を収めてきた\r\n実力者が今日の相手だ。当然、楽なレースなわけがない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "セイウンスカイやキングヘイローを筆頭に、好成績を収めてきた\r\n実力者が今日の相手。当然、楽なレースなわけがない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "だけど、相手を気にする前にまずは自分だ！\r\nここまで重ねてきた努力をしっかり出し切ろう！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "だけど、相手を気にする前にまずは自分！\r\nここまで重ねてきた努力をしっかり出し切ろう！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "私たちも精いっぱい応援いたしますわ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "先頭でゴール板を駆け抜ける姿、\r\n2人のお母さんに見てもらいましょう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "好的！那我去了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "……よ～し、トレーニングでしてきたこと\r\n全部出し切るつもりでっ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "青云天空",
+      "Text": "調子はバッチリみたいだね～、スペちゃん。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "あ、セイちゃんにキングちゃん。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "青云天空",
+      "Text": "私なんて緊張で眠れなくてさ～。\r\n今日のレース、後ろからになっちゃうかも？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "え、本当……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "まったく……ウソに決まってるじゃない。\r\nせっかくのほどよい緊張感が崩れそうだわ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "いい？\u3000これは本番であって練習じゃないの。\r\n正真正銘の真剣勝負……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "クラスメイトであっても、ターフの上ではライバルよ。\r\n私は一流である証明をするために、勝ち続けてみせるわ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "青云天空",
+      "Text": "今日は一段と気合い入ってるなぁ～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "嗯……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "青云天空",
+      "Text": "さてさて、結果はどうなりますやら。\r\nそれじゃスペちゃん、お先～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "……私も、トレーナーさんやチームのみんなと\r\nがんばってきたんだから、負けたくない……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "先頭はセイウンスカイ！\u3000セイウンスカイが逃げていく！\r\n必死に追い上げるキングヘイローは伸びが苦しいか、3着争い！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "その外からスペシャルウィーク！\r\nスペシャルウィークがものすごい脚で追い込んでくる！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "2バ身、1バ身、並んだっ、かわしたっ！\r\nスペシャルウィーク、先頭に立ったところでゴールイン！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "2着セイウンスカイ、3着キングヘイロー！\r\nやはりこの三強が『弥生賞』で魅せてくれました！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "はあっ……はあっ……はあっ……か、勝てた……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "……けど……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "……キングちゃん、セイちゃん……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "“黄金世代”の三強対決をスペシャルウィークは見事に勝利した。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "それから数日が経ち、いよいよクラシック本番である\r\n『皐月賞』に向けてトレーニングを始めた、ある日――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "ふぅ……お疲れ様でした、スペシャルウィークさん。\r\nますますレース運びが上達していますわね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "はぁ……ふぅ～……\r\n走りながらいろいろ考えられるようになりました！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "それもこれも、スズカさんとマックイーンさんが\r\nトレーニング相手をしてくれてるおかげです！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "だけど、実際一緒に走るのは私たちじゃないから、\r\n本当の相手の研究も忘れないでね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "はいっ！\u3000セイちゃんは先頭、キングちゃんは中団から……\r\n先頭……中団……先頭……中団……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "それにしても、なんだか『弥生賞』を走り終えた今の方が\r\n相手を意識しているみたいだね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "それは、2人と一緒に走ってようやくわかったといいますか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "セイちゃんもキングちゃんも仲良しで、\r\n一緒に遊びに行くこともよくありますけど……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "いつもの2人とは全然違う……見たこともない顔で走ってて……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "ゴール前の粘りなんてすごい執念で……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "『弥生賞』は勝つことができましたけど、少しでも気を抜いたら\r\n結果なんてすぐにひっくり返されちゃうなって！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "だから私も、もっともっとがんばらないと！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "チームメンバーを対戦相手に見立ててのトレーニングを\r\n申し出てきたのはスペシャルウィークからだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "勝利におごることなく、むしろ気を引き締めようと思うほどに\r\n“黄金世代”の実力は高いという証拠だろう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "よし、トレーニングメニューも練り直してみよう。\r\n改めてスペの末脚には驚かされたし、長所を伸ばしていきたい。",
+      "ChoiceDataList": [
+        "スペ、『皐月賞』も必ず勝つぞ！",
+        "スペ、『皐月賞』も必ず勝とう！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "是！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "お母ちゃんたちから託された夢、絶対に掴んでみせます！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

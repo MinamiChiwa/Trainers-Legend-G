@@ -1,0 +1,450 @@
+{
+  "Title": "第10話",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "今天又是铃鹿同学训练的时间，精神头很不错呢~！\n训练员也是，一股热血沸腾的感觉！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "嗯，我想向着更高处努力，\n训练员也说想看到走得更高处的我。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "而且接下来就要挑战『宝冢纪念』了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "气槽同学也要参加对吧！\n期待已久的劲敌对决~！\u3000那天我绝对会去加油的！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "……啊，对了！\u3000铃鹿同学，今天我也来给你做按摩吧！\n可不能把疲惫留到明天！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "呀~……铃鹿同学的腿真的邦邦硬啊，邦邦硬！\n这可得让我好好揉一揉了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "不管跑了多久，都感觉自己还能继续跑……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "跑步的时候感觉自己不是一个人，\n如同有人在背后推动着我一般自然地就向前奔跑了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "是因为小特和<天狼星>的大家……\n还有训练员在支持着我吗。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "诶嘿嘿……！\u3000从今往后大家也都会支持铃鹿同学的！\n所以铃鹿同学也要给我们展现更多更精彩的比赛哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "好了，要帮你把腿按到软趴趴为止~！\n给你看看我挤牛奶锻炼出来的技巧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "ni、牛……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "在『金鯱赏』上展现出压倒性实力的无声铃鹿，\n那之后她的状态更上了一层楼。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "正当我为了帮助她迎接『宝冢纪念』的挑战，\n而前往训练场时——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（刷！！！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "（诶……？\u3000怎、怎么了……！？\u3000突然一片漆黑……！？）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "（诶……？\u3000怎、怎么了……！？\u3000突然一片漆黑……！？）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "？？？",
+      "Text": "一二、一二。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "（诶，我被人抬着……？\u3000完全理解不了发生了什么！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "？？？",
+      "Text": "衷心欢迎你的到来，训练员。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "诶……这里是哪里！？\u3000你是什么人……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "诶……这里是哪里！？\u3000你是什么人……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "我的名字是爱丽速子。\n想和你稍微交谈一下，于是把你请来了这里。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "自称爱丽速子的马娘脸上浮现出淡淡的笑容。\n掉在她脚边的麻袋——是用那个把我套起来搬到这里的吗？",
+      "ChoiceDataList": [
+        "太可疑了……！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "自称爱丽速子的马娘脸上浮现出淡淡的笑容。\n掉在她脚边的麻袋——是用那个把我套起来搬到这里的吗？",
+      "ChoiceDataList": [
+        "太可疑了……！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "说我可疑未免也太失礼了。我承认手段略微粗暴了点，\n可我是有着极为正当的理由的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "关于你和你负责的无声铃鹿君，\n我有些事情想要问一下。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "关于我们的事？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "关于我们的事？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "嗯。你是否曾思考过所谓“马娘”\n究竟是怎样的存在呢？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "比方说虽然体型与人类并无二致，\n运动能力却远远凌驾其之上。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "类似的谜团，在马娘身上还有太多太多。\n而我正致力于解析这些马娘身上的谜团而进行着研究。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "……马娘的谜团跟我们有什么关系吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "……马娘的谜团跟我们有什么关系吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "她能够保持极为异常的速度跑完比赛全程——\n对于你们取得的成果，我很有兴趣！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "如果她的跑法最后能够趋于完美，\n或许能让我等马娘上升到另一个境界！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "为了达成这种对马娘来说仍然未知的跑法，\n你们都做出了怎样的努力呢？请务必允许我了解一下。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "……你的意思是，你们进行过的不过都是些稀松平常的训练？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "我们并没进行什么特殊训练，\n我也不会勉强她去做那些过分的事情。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "没有锻炼出来的超人般的体格，却能展现出那未知跑法的\n冰山一角，也就是说铃鹿君本身的素质是特别的——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "不，也许是精神方面的某种作用，\n令肉体产生了变化吗……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "精神方面……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "你没听说过吗？\n赛马娘可是背负着众多“思念”而奔跑的生物。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "伫立在中央广场的三女神像，与那雕像相关的故事，\n也提到了赛马娘是继承并背负着“思念”奔跑的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "以研究者而言肯定是无稽之谈吧，\n可我自己也是马娘呢——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "我在奔跑时也能感觉得到哦，\n仿佛有人在背后推着我一样。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "爱丽速子说的是指，周围的期待和加油声\n支持着马娘们之类的话吗……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "不对，失礼了……刚才的不是正题。\n可是，这么一来我的计划也就略微落空了啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "并且，如此一来你们可预见的未来……会有些可怕呢。",
+      "ChoiceDataList": [
+        "我们可预见的未来……？",
+        "我们可预见的未来……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "你们的目标是未知的东西。\n甚至说不定是超越了马娘极限范畴的某种东西。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "如果是那样的话，到时她的双腿……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "爱丽速子的话停在这里。\n但她接下去想说的肯定是——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "……会坏掉，是这个意思吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "……会坏掉，是这个意思吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "我不知道。说再多也不过是凭空臆测。\n连那种极限究竟是有、还是没有，我都没法给你结论。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "就像我一开始说的，马娘仍然是包裹在众多谜团当中的生物。\n如果这令你不安的话就先让我道个歉把。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "总而言之，我期待着你和铃鹿君今后也能带来惊人的比赛——\n期待着让我看到赛马娘的另一个境界。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "好，接下来是坡路训练~！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "我也是坡路训练，然后是直线跑对吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "无声铃鹿在努力训练着。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "训练内容很普通，\n体格也和普通的马娘相差无几。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "但是她的跑法绝对不普通，是独一无二的，\n继续将这种跑法钻研下去的结果是——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "你们的目标是未知的东西。\n甚至说不定是超越了马娘极限范畴的某种东西。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "训练员……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "啊，嗯。\n坡路和直线冲刺就行了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "啊，嗯。\n坡路和直线冲刺就行了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "那我去了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "无声铃鹿的跑法对赛马娘来说是理想至极的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "无人能实现的跑法，但换言之\n也是只有她实现过的跑法——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "（这样下去会触及极限之外吗……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "（这样下去会触及极限之外吗……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "内心深处涌上了些许不安，\n我拼命地将这件事从脑海中抹去。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

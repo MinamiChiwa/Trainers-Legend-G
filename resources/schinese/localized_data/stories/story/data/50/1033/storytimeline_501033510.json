@@ -1,0 +1,297 @@
+{
+  "Title": "必杀・织姬小姐",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "老师",
+      "Text": "好的，各位总务委员长！\n请各自清点各自负责区域的清扫工具！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（赶紧把这些事情做完，赶紧去训练……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "担任总务委员的赛马娘",
+      "Text": "大、大事不好，织姬同学！\n我们负责的区域——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "生野狄杜斯",
+      "Text": "……扫帚的数量和之前对不上吗。\n看来有仔细搜索的必要啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……好像是呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "听说爱慕织姬正活跃于委员会的工作之中，\n我便想来看看她工作的模样——\n不过，她的工作好像遇上了一些困难……",
+      "ChoiceDataList": [
+        "没关系吧？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……没事。和平时一样。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "生野狄杜斯",
+      "Text": "我们总务委员本就常常清点清扫工具，\n但先前我们从未遇上过类似的问题。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "生野狄杜斯",
+      "Text": "因为特雷森学园的各位同学的素质都相当优秀，\n所以会有专门的清扫人员定期出入学园。\n按理来说，清扫工具的数量应该是……",
+      "ChoiceDataList": [
+        "不会有误的，对吧？",
+        "不会有误的，对吧？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "按理来说，应该如此。\n但如今，究竟发生了什么……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "赶紧把这件事了结了吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "担任总务委员的赛马娘",
+      "Text": "织姬同学，真是一如既往的冷静呢~",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "生野狄杜斯",
+      "Text": "是的。同为总务委员，\n我们对她的工作态度都相当钦佩。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "生野狄杜斯",
+      "Text": "因此，我们总务委员们，\n在私底下其实都给她起了一个绰号。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "生野狄杜斯",
+      "Text": "——仕事人。\n（注：结合标题，此处neta为日剧《必杀仕事人》）",
+      "ChoiceDataList": [
+        "仕事人？！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "生野狄杜斯",
+      "Text": "那么，请跟我来。\n我们带您见识一下织姬同学身为仕事人的手腕。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "生野狄杜斯",
+      "Text": "——『第一，毫无累赘的行动』。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "微光飞驹",
+      "Text": "呜呜呜~！就算用上扫帚，\n也没法把落在树上的球弄下来……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（咔擦！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "生野狄杜斯",
+      "Text": "落下来的球已经由我们确保。\n能想到丢小石头把球撞下来，非常完美的行动。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "微光飞驹",
+      "Text": "好厉害——！\n这就是必杀・升龙之箭啊！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "拿到球了吗？那就把扫帚还给我们吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "生野狄杜斯",
+      "Text": "――『第二，万事顺势而为』。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东商变革",
+      "Text": "才不会飞不起来呢！\n我可是魔法使，肯定能做到的！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……飞不起来的话，\n那就只是一根普通的扫帚而已，并非魔法扫帚。\n这才是魔法使应有的判断方法吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东商变革",
+      "Text": "！的确，原来如此呢！\n哼哼哼 ♪ 下次一定要找到魔法扫帚！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "生野狄杜斯",
+      "Text": "第二根扫帚已确保。\n拿回扫帚的同时，也没有践踏他人的梦想。\n完美的圆场。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "生野狄杜斯",
+      "Text": "接下来，是最后一点。\n――『第三，工作完成得迅速而完美』。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……数量、特征都与清单一致。\n回收完毕。",
+      "ChoiceDataList": [
+        "真是巧妙而完美的对应方法！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "生野狄杜斯",
+      "Text": "是的。不过……\n今天实在是有些麻烦你了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……我只是想快点回去训练而已。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "所以在努力尽自己的义务罢了。\n你们也一样吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "生野狄杜斯",
+      "Text": "非常感谢。但是……若是仅仅凭借意志，\n可没法将工作完成得如你那样完美。",
+      "ChoiceDataList": [
+        "这就是“仕事人”的实力……！",
+        "真是个需要毅力的工作啊……",
+        "真是个需要毅力的工作呢……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "生野狄杜斯",
+      "Text": "ありがとうございます。ですが……\r\n意志だけで、ああも立ち回れませんよ。",
+      "ChoiceDataList": [
+        "这就是“仕事人”的实力……！",
+        "真是个需要毅力的工作啊……",
+        "真是个需要毅力的工作呢……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……哈？\u3000“仕事人”？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "生野狄杜斯",
+      "Text": "看来训练员也感觉到了呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "生野狄杜斯",
+      "Text": "以最小程度的工作，获得最高的效益。\n这样的手腕，令人叹为观止。",
+      "ChoiceDataList": [
+        "只有这个称号才配得上你啊！",
+        "只有这个称号才配得上你呢！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……等下。\n称号又是怎么一回事？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我对她说明了这个称号的事情。\n她看上去好像吃了一惊——\n但是，终究什么话都没说。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "今天实际目睹委员会的工作之后，\n我才感受到她们这些朴素的工作有多辛苦。\n我老老实实地将想法传达给她之后……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……你不也一样吗。",
+      "ChoiceDataList": [
+        "不过，你真的很温柔呢。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "所、所以说，那是……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……够了。我回去了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "虽然她并没有发表更多看法，\n但似乎勉勉强强认同了我的说法。\n总觉得自己也稍微受到了一些认可。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

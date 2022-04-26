@@ -1,0 +1,351 @@
+{
+  "Title": "麦昆与“天皇赏”",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "那天以来，我和目白麦昆每天\n都在反复的招募和训练中度过。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "那天以来，我和目白麦昆每天\n都在反复的招募和训练中度过。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "但是招募没什么成果，截至目前\n队员也只有目白麦昆一个人。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "虽然那也是一个问题，\n但现在，最重要的问题是...",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "哈……哈……哈……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "夜晚，本该空无一人的训练场上\n目白麦昆在一个人自主训练。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "现在开始要用更快的节奏跑！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "果然只靠我的训练计划还是不够的样子。\n最近每天她都在这样训练。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "果然只靠我的训练计划还是不够的样子。\n最近每天她都在这样训练。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "但现在是春季『天皇赏』的基础巩固阶段。\n这样勉强只会增加受伤的风险。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我究竟应该阻止她擅自训练。还是应该按她的意愿来\n变更训练计划呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "春季『天皇赏』，\n我绝对要取得胜利！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "究竟什么才是最好的方法？\u3000如果是老师的话他会怎么做？\n……我为此烦恼不已。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "第二天，我为了做训练的准备而到训练员室时\n除目白麦昆之外看到了不认识的赛马娘。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "？？？",
+      "Text": "你好！训练员，\n打扰啦！",
+      "ChoiceDataList": [
+        "你是……想入队的人吗！？",
+        "你是……想入队的人吗！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "不是。她叫目白赖恩。\n跟我一样也是目白家的赛马娘。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "她好像有话要跟你说，\n我只是带她来见您一面而已。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "初次见面！\n因为有些事情无论如何都想告诉训练员，就拜托麦昆了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "那么，我就继续去招募队员了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "嗯？\u3000麦昆留在这里吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "毕竟赖恩好像是想和训练员「两个人」，\n说一些「秘密话题」呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "碍事的人就该赶紧退场比较好。\n没错——反正我就是那个碍事的。",
+      "ChoiceDataList": [
+        "……怎么感觉你在生气？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "我可没在生气，反正赖恩想和您说什么悄悄话\n都和我没关系。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "所以，请二位慢慢聊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "啊哈哈，她吃醋的样子真可爱啊。\n我本来也没想和她抢训练员呀。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "所以想说的是？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "是跟麦昆有关的事。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "我想训练员你大概也注意到了，\n现在那孩子，相当勉强自己。",
+      "ChoiceDataList": [
+        "是指她晚上自主训练吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "果然注意到了呢。\n嗯嗯，是跟麦昆形容得一样的人呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "『虽然有点靠不住，但是个会好好关注着马娘\n真诚而平易近人的人』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "麦昆总是这样形容训练员哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "『所以，不管发生什么事\n我都会陪伴到最后』。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "竟然说了这种话……我还以为\n自己完全没被信任呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "竟然说了这种话……我还以为\n自己完全没被信任呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "所以就算对训练内容有不满，\n也不说出来而是去自主训练……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "没那回事，她早就相当信赖你了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "但是，对那样的训练员还要隐瞒着勉强自己的理由，\n就在『天皇赏』中。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "我们目白家的马娘，\n会根据适性来决定可以期待的比赛。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "我被期待的是『经典赛』，而那孩子有长距离适性，\n所以被期待着拿下『天皇赏』的胜利。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "而且『天皇赏』是作为目白家顶梁柱的\n祖母和祖父充满回忆的比赛……是特别重要比赛。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "从小就一直被期待着在『天皇赏』获胜的麦昆，\n比别人承担了更多责任。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "所以才会每天晚上都自主训练吗。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "所以才会每天晚上都自主训练吗。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "我想她应该很不安。有着要在『天皇赏』获胜\n的压力，最近队伍也不太顺利。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "麦昆的性格很认真\n应该也感到了自己的责任。所以……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "虽然表现得很刚强但其实很不安，\n而为了消除不安就去自主训练了吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "所以，请训练员\n在她逞强过头之前阻止她。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "如果训练员好好和她说的话，\n我想她一定能听进去的。",
+      "ChoiceDataList": [
+        "啊，我知道了。",
+        "啊，我知道了。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "真是的，我都干了些什么啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "真是的，我都干了些什么啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "因为周围的变化而迷茫，竟然忽视了\n最重要的目白麦昆。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "……谢谢你，赖恩。\n告诉我这么多重要的事。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "哎嘿嘿，不客气！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "那孩子对我来说就像妹妹一样，\n也是重要的对手。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "就请您多多关照麦昆了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

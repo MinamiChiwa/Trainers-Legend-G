@@ -1,0 +1,354 @@
+{
+  "Title": "尊是不分先后顺序的！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "几天后。我想再次问一下她的答案，\n于是决定去找爱丽数码。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "……那边那位。怎么了吗，东张西望的。\n难道是在光天化日之下追哪位马娘吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "啊哈哈！\u3000开玩笑ー。那样的话简直就跟\n数码君说的『喜欢马娘酱的训练员』一样了。",
+      "ChoiceDataList": [
+        "你认识爱丽数码吗？",
+        "你认识爱丽数码吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "噢，竟然就是你本人吗？\n这还真是……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "数码君的话出去了哦。好像是往车站方向走。\n应该是跟平时一样在找马娘周边吧――",
+      "ChoiceDataList": [
+        "谢谢！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "……哼，追着数码君的训练员，吗。\n她到底能不能保持适当的距离呢――呵呵，真有趣啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "照着爱丽速子的话，我去找了爱丽数码。\n然后――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "哈啊～……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "青青草叶映衬下的，清秀的玉足……\n有力踏在大地上的，健康的玉足……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "要买哪张写真好呢？\u3000――愚蠢的问题！\n两个我全都要！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "啊啊，老天爷，感谢您！\n让我和众多女神生在同一个世界上！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "对――数码碳的青春是为了马娘酱而存在的！\n要一起去跑什么的，可是错误的想法！",
+      "ChoiceDataList": [
+        "诶……！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "诶，怎么了吗……？\u3000你谁……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "哈……！？\u3000这，这是……！？\n难道说，你全都听见了吗……？",
+      "ChoiceDataList": [
+        "……是的"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "Oh……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "嘛，虽说刚才的话都让你听见了――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "但是这真的真的是个大问题！\n因为你想想看！\u3000我是谁！？\u3000没错――！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "――爱丽数码！\n比任何人都更爱马娘酱的马娘！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "那样的我有得可选吗！？\n选草地马娘酱，还是沙土马娘酱！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "不行不行，那不可能！！\u3000跟没有拨片\n就弹起了曼陀林一样不可能的ー！！",
+      "ChoiceDataList": [
+        "所以你自己不跑，吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "是这样～……对我来说，隔着屏幕\n膜拜我的推们才是最好的选择～……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "哈啊……小的时候，在电视上看到马娘酱跑步时\n的那份感动，至今也忘不掉……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "认真地互相竞争着的马娘酱们，\n各自背负着各种想法，不仅仅是闪闪发光……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "那份『觉悟』……！\u3000让我感觉到很尊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "幸运的是我也一样是个马娘。\n――那么，我就只能去跑了！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "在赛场这个马娘酱最闪耀的地方，将她们最好的身姿\n一览无余！\u3000尽全力去推！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "根据比赛的选择，也许就没办法近距离地看到所有人，\n即便如此……！\u3000我已做好了觉悟。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "然后，我进入了特雷森学园。\n但我刚踏入学园时――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "嘻嘻，呜呼呼……\n到处都是，马娘酱们的欢声笑语……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "活在现实中的推，作为三次元的存在感……\n――呼吸声、心跳声、脚步声，就在我耳边。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "啊啊，这就是……不隔着屏幕的特雷森学园的\n马娘酱……当我这么想的瞬间――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "――真是的，脑袋都要炸裂了！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "我的『觉悟』！？\n哈ー，那种东西不温不火的！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "全是清晰度超高的我推的马娘酱……！！\n再加上，自己本身什么都能跑的适性――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "不行！！\n是草地还是沙土我没法选啊！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "不，倒不如说不选才算是真挚的选择！！\n那才是身为粉丝的性情！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "所以――我不会选的！！\n我决定哪边都不跑！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "爱丽数码完全改变了态度。\n某种意义上来说，这样做没有破绽――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "来，怎么办呢，你还有空跟我扯上关系吗……！？\n去关注一下其他的马娘酱们比较好吧！？",
+      "ChoiceDataList": [
+        "（但换个角度想，……）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "哼哼哼，是感到无言以对了吗。\n那么，我就在此告别了――",
+      "ChoiceDataList": [
+        "――你，比谁都有觉悟！",
+        "――你，比谁都有觉悟！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "……什么？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "……刚才说的话，你都听了吗？\n我是没有觉悟做出选择的马娘哦？",
+      "ChoiceDataList": [
+        "那是，你有不做选择的觉悟！",
+        "那是，你有不做选择的觉悟！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "诶……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "对――回想起来，无法想象身躯矮小的她能在\n沙土跑道上有着强劲的表现。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "而且，在草地跑道上也不逊色于沙土跑道，\n展现出了轻快的跑姿。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "正因无法选择，她才对哪边都实打实努力着。\n既然如此，就不能不活用这一点了――！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "那个ー……\n我没太明白你在说什么……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "我立刻把想到的告诉了爱丽数码。\n然后――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "呜啊啊啊啊啊啊啊啊啊啊～～～～～～～～～～～！！！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "――过了几天后。\n学园里，热议着一个传闻。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "喂你听说了吗？\u3000数码她啊……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "嗯，听说了哦！\u3000但真难以置信。\n从没听说过那种事……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "选拔赛上，竟然要同时参加草地和沙土的比赛……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

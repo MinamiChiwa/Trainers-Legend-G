@@ -1,0 +1,38 @@
+{
+  "Title": "“Something Special”",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "もうすぐ『エリザベス女王杯』が始まる……！\r\nファインモーションは同室のウマ娘、\nエアグルーヴからそのレースのことを聞く。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "伊丽莎白二世女皇杯",
+        "气槽"
+      ]
+    },
+    {
+      "Name": "独白",
+      "Text": "かつてエアグルーヴも走ったそのレースは、\r\n誇りと敬意に満ちた偉大なレースで……\n“女王”の名にふさわしい特別な舞台だ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ファインモーションはトレーナーと\r\n共に中継を観戦した。彼女は『勝ちたい』\n想いが激しくぶつかるレースに感銘を受ける。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『エリザベス女王杯』――\r\nその名を記憶に留める\nファインモーションだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

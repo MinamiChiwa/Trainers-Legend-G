@@ -1,0 +1,234 @@
+{
+  "Title": "Life is full of wonders.",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "成为美妙姿势的担当训练员后，已经过了数星期。\n今天，她也开心地享受着和友人共度的训练生活。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势的友人",
+      "Text": "——拜拜，美妙！\n训练辛苦了哦~！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "辛苦啦~！明天见哦！",
+      "ChoiceDataList": [
+        "今天也好好加油了呢。",
+        "今天也好好加油了呢"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哼哼。因为训练真的很开心，所以根本没有觉得累哦。\n——总觉得，现在度过的每天都像梦一样美妙呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……那么那么，虽然很遗憾，但今天的训练已经到收尾阶段了呀！\n那先回训练员室进行讲评吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "但是……我原以为今天会和往常一样平平无奇地结束的时候，\n在这最后的最后，却发生了一点小插曲。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "——哎？这怎么了呀？！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "回到训练员室后的瞬间，我们马上看见房间一角的书架正倒在地上，\n摆在上面的东西和书籍散得满地都是。",
+      "ChoiceDataList": [
+        "这到底……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……哼哼。在这空无一人的封闭密室内，\n再加上倒在地上的书架、散落一地的杂物——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "——好厉害呀！训练员，\n这就是所谓的“密室谜题”吗？",
+      "ChoiceDataList": [
+        "倒也不至于密室……吧？",
+        "倒也不至于密室……吧？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哼哼哼……看来，这个案件，\n必须由我名侦探美妙来解决呢！",
+      "ChoiceDataList": [
+        "你啥时候转行做的侦探……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "咳咳。那么，首先进行现场取证吧。\n曾有一位伟大的侦探说过，“观察”是最为关键的一环。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "——哦呀！助手君，快来看看！\n这个地方没想到会发现足迹呢！难道说是犯人留下的吗？！",
+      "ChoiceDataList": [
+        "……是不是有点太小了？",
+        "……是不是有点太小了？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哼哼哼，我的拉面脑细胞已经开始全速转动了！\n这一定就是我们追求真相的关键——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "小猫",
+      "Text": "……………喵？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "…………喵？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我们追踪着足迹，来到桌子前……\n在桌子下面，躲着一只满眼戒备的猫咪。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "原来如此……谜题全都解开了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "犯人——就是你！",
+      "ChoiceDataList": [
+        "看上去好像真是这样呢……",
+        "看上去好像真是这样呢……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "小猫",
+      "Text": "唔……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "没事的哦，不用害怕哦，过来过来~",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哎呀？你带着项圈呢？",
+      "ChoiceDataList": [
+        "是别人养的猫吗？",
+        "是别人养的猫吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "好像是这样呢。\n是迷路之后闯到这儿来的吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "小猫",
+      "Text": "喵……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "乖哦乖哦，没事了哦。\n我们一起送你回家哦。",
+      "ChoiceDataList": [
+        "那就去找一下这小猫的主人吧。",
+        "那就去找一下这小猫的主人吧"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "嗯！那么事件完美解决！\n那就开始打听它主人的信息吧！Let's go♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "于是，我们从身边的学生开始询问，\n然后再从美妙姿势的拉面面友那边打听了一番——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "小猫的饲主",
+      "Text": "真的非常感谢！\n我还以为永远也找不到它了呢……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "能帮上您的忙就好了。\n那么二位，请多保重。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "好啦！事件解决！\n助手君……训练员，您也辛苦了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "——哼哼，尽情享受了一番呢！\n真是个美妙的小惊喜呢！",
+      "ChoiceDataList": [
+        "偶尔来些这种小插曲也不错啊。",
+        "偶尔来些这种小插曲也不错呢。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "对吧？哼哼……\n突然出现在日常之中的奇妙事件……吗……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "——哼哼。我想到了个好主意呢……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

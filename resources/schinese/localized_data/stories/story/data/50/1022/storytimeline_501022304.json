@@ -1,0 +1,234 @@
+{
+  "Title": "目標達成の後に・Open Horizon",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――那个，我决定好要参加什么比赛了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "这是在进行了精心准备的训练，\n体能已经能够接受稍显激烈的比赛之后，\n某一天的事情。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "差不多也该决定要参加怎样的比赛了\n这么想着准备确立日程表的时候，\n反而是她先联系了我。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "我呢，想跑『伊丽莎白二世女皇杯』！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "之前去看那场比赛的时候……\n我的心非常躁动。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "大家奔跑的模样都是如此美丽，\n充满了自信。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "明明我之前一直觉得只要能跑步的话怎么样都好，\n我却在那时候有了『就这个比赛了！』的感觉。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "大概……不，一定是因为，\n那个比赛对我而言有什么特别之处。\n我想那个比赛知道为什么会这么吸引我！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "而且呢，要是能赢下来的话，\n祖国的大家也会高兴的吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "我的“现在”，如果没有大家的支持与鼓励，\n便会化为乌有。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "所以我想要回报他们，\n带着荣耀凯旋而归……这样子。",
+      "ChoiceDataList": [
+        "那就把女王杯作为大目标吧",
+        "なら大目標はエリザベス女王杯で決まりだね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "大目标？\u3000……啊，这样呀。\n毕竟距离比赛还有很长一段时间嘛。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "一般而言会先考虑好比赛轮番，\n决定几个近期的比赛对吧？",
+      "ChoiceDataList": [
+        "好像跑牝马三冠的孩子比较多呢。",
+        "トリプルティアラ路線を走る子が多いかな"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『桜花賞』『オークス』『秋華賞』から成る\nトリプルティアラ路線。クラシック級でしか\n走れない、とても華やかなレースだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "樱花赏",
+        "优骏牝马（日本橡树大赛）",
+        "秋华赏",
+        "クラシック級"
+      ]
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "原来这样！\u3000那么，我也来跑这个比赛好了？\n这就是所谓“王道”嘛♪",
+      "ChoiceDataList": [
+        "要挑战固然不错，只是……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "她原本并不是作为赛马娘而成长起来的。\n为赛跑而进行的训练也是，\n比起其他孩子晚了不少。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "这个春天的话，实力差距可能还是有些大。\n要参加比赛的话，还是等夏天的训练与成长之后，\n在秋天再开始参加比赛比较好吧。",
+      "ChoiceDataList": [
+        "不过关键还是在于你想怎么做"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "那答案就只有一个啦！\n我在春天也想尽情奔跑呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "所以说，如果能参加比赛的话，\n就一定要挑战看看！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "而且呢！\n为了看见更棒的景色，\n也必须要去到更大的舞台对吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……原来如此。\n我还能，参与更加让人激动的比赛。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "看见更美妙的景色……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "我想看见比先前更棒的景色……\n我那时候可没在开玩笑哦？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "我还有更多的事情想知道呢。\n在比赛中能感受到的一切，我都想去感受一下！",
+      "ChoiceDataList": [
+        "一定能体会到无可比拟的喜悦吧"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哼哼，那就决定了哦♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "先以牝马三冠为目标，\n然后挑战『伊丽莎白二世女皇杯』！",
+      "ChoiceDataList": [
+        "那首先是春天的『樱花赏』！",
+        "まずは春の『桜花賞』だね！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "嗯！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "就这样，决定了下一次比赛的目标――\n『樱花赏』！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "春天啊……一定一眨眼就过去了吧。\n得好好珍惜这段时间呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "对了对了，要不然来赏花吧？\n就在训练室里栽上樱――",
+      "ChoiceDataList": [
+        "不行的吧！？",
+        "ダメだよ！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "当然，是开玩笑的啦？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "别当真了，是开玩ー……\n(打字）",
+      "ChoiceDataList": [
+        "也别马上就联系从业人员啊！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊哈哈，暴露了呀。\n哈～♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

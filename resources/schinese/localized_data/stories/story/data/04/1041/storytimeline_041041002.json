@@ -1,0 +1,353 @@
+{
+  "Title": "爆进！\u3000模范马娘！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "今日はトレーナーたちがウマ娘の実力を見極め、スカウトを行う\r\n選抜レースの日だ。会場にたどり着き、ふと辺りを見回すと――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "ややややややッ！！\u3000貴方は先日のトレーナーさん！！\r\nいらしてくださったのですね！！",
+      "ChoiceDataList": [
+        "状态如何？",
+        "状态如何？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "絶好調以外にありえませんとも！\r\n備えは常に万全！\u3000それが学級委員長ですッ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "では、次のレースに出走いたしますので！！\u3000私の優秀な姿に\r\nどうぞご期待ください！\u3000……それはそれはご期待くださいねッ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "失礼！\u3000爆进爆进ーーー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "あれっ？\u3000サクラバクシンオー、次なのか？\r\n短距離が得意の子のはずじゃ……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "長距離に出走登録しているわね。\r\nなにか考えがあるのかしら……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "比赛就这样开始了，樱花进王她――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "参ります！！\r\nバクシンバクシーーーンッ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "サクラバクシンオー、軽快にハナを切った！！\r\n後続をぐんぐん引き離し、先頭に立ちます！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "まだまだぁ～！！\r\nバクシンバクシンバクシーーーーンッ！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "バクシンオー先頭！\u3000バクシンオー先頭！！\r\n恐るべき加速力！！\u3000まさに神速の脚っ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（哇啊啊啊啊啊啊ー！！）",
+      "ChoiceDataList": [
+        "……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "まだレース最序盤だというのに客席が沸く。だがその異様な状況を\r\n思わず納得してしまうほど、彼女の走りは凄まじかった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "と、飛ばしすぎじゃないか！？\r\n序盤からあんな……いや、しかし……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "素晴らしいスピードね……！\r\nここまでのスタートダッシュを見たのは、初めてだわ……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "照这样跑下去，说不定……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……然而，大家的狂热也只是一瞬间。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "さあ、回って第4コーナー！\r\n各ウマ娘、今か今かと仕掛け時を――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "爆进……爆进……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "サ、サクラバクシンオーが下がっていく！？\r\nスタート時の勢いはどこへ消えたのかっ！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "体力已经用……尽……了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "训练员们",
+      "Text": "啊啊～……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "その後、サクラバクシンオーはずるずると\r\n順位を下げ、12着となったのだった……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "ふくぅ～、12着ッ……！\r\n不甲斐なし……！",
+      "ChoiceDataList": [
+        "初盘跑得还不错，真可惜了呢",
+        "初盘跑得还不错，真可惜了呢"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "不……这场，是大家都跑得很快呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "競走相手も素直に認める、それが学級委員長！\r\nいよッ、器が大きい！！\u3000もはや洗面器！！",
+      "ChoiceDataList": [
+        "自卖自夸吗……",
+        "自卖自夸吗……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "あ、いたいた。おーい、サクラバクシンオー！\r\nちょっと話がしたいんだが、いいかな？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "話ということはスカウトですねそうですね！？\r\n待っておりました、待っておりましたともッ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "そ、そうか、話が早くて助かるよ。結果は残念だったが、\r\n素晴らしい脚だった！\u3000ぜひ君をスカウトさせてほしい。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "一緒に最高のスプリンターを目指そう！！\r\n君なら短距離で世界を取れるはずだっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "ええ！\u3000ハイッ！\r\n共に最高のスプリンターに――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "嗯？\u3000短跑选手ー？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "ああ、そうだが……何か変なこと言ったか？\r\nさっきのレースからして、君の適性は明らかに短距離だろ？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "原来如此原来如此，您是这么想的啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "では、お断りさせていただきますッ！！\r\nお声がけありがとうございました！！\u3000お帰りはあちらからッ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "哎！？\u3000啊，等等……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "しばらく戸惑っていたが、声をかけていたトレーナーは、\r\nサクラバクシンオーの勢いに気圧され、その場から去ってしまった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "ふぅッ、残念です！！\r\nしかし別れがあれば出会いがあるというもの！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "というわけで――先ほどからずっとそちらで私を見守って\r\nいらっしゃった貴方！！\u3000私に言いたいことがあるのではッ！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "それとも……。もしや貴方も、“スプリンターとして”\r\n私をスカウトするおつもりでしたか？",
+      "ChoiceDataList": [
+        "那个……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "ここで迷いなく『NO』が出ないのならば、\r\n大変心苦しいのですが、お断りせねばなりませんッ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "すみません！\u3000私、短距離だけに絞ることは\r\nどぉぉ～～～しても出来ないのですッ！！",
+      "ChoiceDataList": [
+        "为什么你这么执着？",
+        "为什么你这么执着？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "那是因为，我是班长啊！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "ではここで貴方に質問です！！\u3000スプリント戦でないGⅠレースを\r\n列挙してください！\u3000はいどうぞッ！！",
+      "ChoiceDataList": [
+        "日本德比、天皇赏、有马纪念……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "好就到这里！\u3000……您已经明白了吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "いッッッッぱいあるんですよ！\r\n私が勝たなければならないレースは、短距離以外にもッ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "先日申し上げましたよね？\r\n私こそは学級委員長、学級委員長こそは私であると！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "我，必须成为大家的模范！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "『みなさんが模範とするウマ娘』、と聞いて\r\n貴方は何を思い浮かべますか？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "スプリンター？\u3000マイラー？\u3000ステイヤー？\r\n――いいえ、その全てを兼ね備えてこそ模範！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "这样！\u3000才是班长！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "なので――すみません。私はこれにてッ！！\r\nバクシンバクシィイーーン！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我还没邀请她就被拒绝了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

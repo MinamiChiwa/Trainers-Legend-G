@@ -1,0 +1,407 @@
+{
+  "Title": "『正因为是朋友！』",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "特别周在外面跑步。\n我一边等她回来，一边一直在想该怎么做好。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "虽然有成为日本第一的赛马娘这一远大目标，\n但她现在陷入了迷茫，作为训练员的我能做的是――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "哈……哈啊……奇怪，训练员！？\n你一直在等着我吗！？\u3000都已经这个时间了……",
+      "ChoiceDataList": [
+        "明天我们一起出去吧"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "诶？\u3000要出去，吗？\n但是，去哪……？",
+      "ChoiceDataList": [
+        "去你作为目标的那个地方吧！",
+        "去你作为目标的那个地方吧！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（哇啊啊啊啊啊啊啊啊！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "――第一名是，无声铃鹿！\n连影子都追不上，真是一场精彩的比赛！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "哇啊啊啊啊啊啊……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "好厉害，好厉害好厉害，好厉害啊！\u3000刚才看到了吗！？\n铃鹿同学的！\u3000铃鹿同学的爆领！\u3000真的真的！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "还有，会场上好厉害的欢呼声……！\n呵呵，震耳欲聋了呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "好厉害啊……闪耀系列赛，\n果然是很厉害……！",
+      "ChoiceDataList": [
+        "你从什么时候开始憧憬的？",
+        "你从什么时候开始憧憬的？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "呃？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "奇怪，从什么时候开始的……？\u3000我从小开始就一直\n想在这里跑步，但被问起来的话……那个――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "啊……对了，想起来了……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "大概是，我四岁的时候……和妈妈一起外出兜风时，\n在路上遇到了一个痛苦着的老奶奶。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "好像是什么病发作了，必须马上叫医生，\n但附近又没有能打电话的民宅……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "所以我，就跑去了诊所。\n我是第一次，全速去奔跑。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "因为医生尽全力去治疗，\n老奶奶平安无事得救了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "而我，因为一个人跑掉而被骂了……\n但之后，妈妈紧紧抱住了我。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "……她对我说，『我很自豪』。",
+      "ChoiceDataList": [
+        "自豪？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "是的。她说『你是我的，以及我们的骄傲』。\n还说『我很高兴你能这样充满朝气、优秀地成长。』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "是这样……所以说我才想『要继续跑，\n让大家看到我更佳优秀之处』……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "想要成为『最值得骄傲的自己』，\n然后……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "在那时……确实，在特别周的眼眸中，\n仿佛亮起了和她开始向我诉说梦想时一样的光芒。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "――那么即将开始，今天最后一场比赛！\u3000在闪耀系列赛\n这个大舞台上，能够骄傲地勇夺桂冠的，会是哪位马娘！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "训练员……拜托你。\n请让我再一次，和小鹰她们一起做陪跑训练。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "拜托了……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "然后，第二天――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "神鹰",
+      "Text": "哈，哈，哈……！\u3000小特，已经不行了吗！？\n那么……第一名，是我的了！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "小特……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "哈啊……哈啊……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "（……还是感觉，身体有点发冷啊）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "（回想起那时的事情，果然还是很害怕。\n因为，和大家在一起的日子真的很快乐！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "（被朋友讨厌这种事，好可怕……！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "（但是……！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "呜……啊啊啊啊啊啊啊啊！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "2人",
+      "Text": "嘁……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "神鹰",
+      "Text": "小特……！\n呵呵，那样才对，Death……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "但是……我不会输的！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "（对了……为了取胜，我得跑！\u3000跑！\u3000继续跑！\n因为……我就是为此才来到这里的！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "（虽然是朋友！\u3000虽然害怕被讨厌！\u3000尽管如此，\n为了我自己――为了成为值得骄傲的自己，要跑下去！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "啊啊啊啊啊啊啊啊啊啊！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "特别周她，直到最后都在和那两个人展开\n拼尽全力的激烈竞争……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "3人",
+      "Text": "哈啊，哈啊，哈啊～……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "神鹰",
+      "Text": "……小特。Gracias！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "诶？\u3000Gra……那个，什么意思……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "神鹰",
+      "Text": "谢谢，Death！\u3000……小特，你跑得很认真。\n所以我也认真地去跑了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "神鹰",
+      "Text": "正因为这样认真地相互竞争着，我们才能一起，认真地\n向前进步！\u3000才能够成长！\u3000――所以说，Gracias！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "神鹰",
+      "Text": "今后也要做朋友……还有做竞争对手。更加更加，\n认真地去互相碰撞吧！\u3000切磋！\u3000琢磨！\u3000继续下去Death！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "小鹰……！\u3000嗯……嗯，是啊！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "呵呵……小特，小特。刚才一直在那边看着的，\n那个孩子……好像也有话要对小特说哦？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "诶，那个孩子……？\u3000……啊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周的同学",
+      "Text": "小特……！\u3000抱，抱歉呢。\n我……我这是，怎么了……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周的同学",
+      "Text": "我状态不好，又太着急……就对小特说了些\n很过分的话……真的，真的很对不起！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "……没有。没关系，我不在意的。\n所以说，不要再哭了？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "作为补偿……下次堂堂正正，来比一场吧！\u3000你要赢过我，\n以出道为目标。我也会为了不输给你，而全力去跑的！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周的同学",
+      "Text": "小特……！\u3000嗯……我也会多多训练，\n为了能赢过全力以赴的小特而努力……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "呵呵……嗯！\u3000一起加油吧！\n作为竞争对手……还有朋友。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "……训练员，谢谢你。\n你让我想起了很重要的事情。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "和训练员还有大家在一起的话，我从今以后\n也会继续跑下去！！\u3000然后总有一天，以日本第一的赛马娘――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（咕呜呜呜～……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "呜啊！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "哎呀，嘛。小特，刚才是……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "神鹰",
+      "Text": "噗，啊哈哈哈哈哈哈！！\n时机也太巧了啊～！",
+      "ChoiceDataList": [
+        "……啊哈哈！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "等等，竟然连训练员也！\n不要再笑话我了啊，真是的～！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

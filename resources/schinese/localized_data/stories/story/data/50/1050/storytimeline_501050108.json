@@ -1,0 +1,326 @@
+{
+  "Title": "粉丝感谢祭",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "今天便是『春季粉丝感谢祭』！\n赛马娘各自都会参加各种有趣的比赛——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哈？『训练员两人三脚』！？\n这什么东西！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……就如其名。\n和你的担当训练员参加两人三脚的比赛。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "对你们来说很简单吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "我不是说这个……\n我什么时候报的这个比赛啊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "你……在大家决定参赛项目的时候，\n一个人溜走了不在对吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "唔。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "所以什么比赛都没有参加。\n但所有人最少都得参加一项比赛。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "所以学生会替你报了这个比赛。\n有什么意见吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "有……有啊！\n为什么偏偏选这个比赛！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "我姐姐说……\n要让你不偷懒翘班的话，\n就只能把你和你的训练员分在一组。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "看来你还挺中意那个训练员的啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "～～～～呜……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "右脚就好了吧！我系上了啊！\n真是的……快点比完吧……！",
+      "ChoiceDataList": [
+        "是、是！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "和不知为何极度不爽的大进一起，\n准备要参加两人三脚比赛……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "実況担当のウマ娘",
+      "Text": "那么『训练员两人三脚』，各就各位！\n预备――开始！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "一、二、一、二——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "诶、什么？这根本快不起来啊！？",
+      "ChoiceDataList": [
+        "抱歉……！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "虽然已经在考虑我，但大进不管怎么说也是赛马娘，\n只要稍微认真一点，\n就根本不是人类能追上的速度……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "不然的话会输掉的……！",
+      "ChoiceDataList": [
+        "不要在意我了，尽情加速吧，大进！",
+        "不要在意我了，尽情加速吧，大进！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哈？！但是，这样的话你不就——",
+      "ChoiceDataList": [
+        "尽情跑吧，不管怎样我都会跟上你的！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……\n那我可不管你了啊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "于是，我只能忘我地不断移动双脚，直到——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "――――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……啊。你醒了啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "真是的……我不是告诉过你了吗。\n还硬要乱来。笨蛋。",
+      "ChoiceDataList": [
+        "诶，我……晕倒了……？",
+        "诶，我……晕倒了……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（咔嚓！！）",
+      "ChoiceDataList": [
+        "好痛痛痛痛？！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "全身肌肉酸痛。\n人类要跟上马娘的速度，肯定会这样的吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "ほら、うつ伏せになって。\r\nほぐしてやるから。",
+      "ChoiceDataList": [
+        "诶诶？不用这么麻烦你——"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "快・点・趴・好！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "こうしてナリタタイシンは\r\n凝り固まった体をほぐしてくれた、のだが――",
+      "ChoiceDataList": [
+        "痛痛痛痛痛痛痛痛痛！轻点轻点！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "给我忍着，笨蛋！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……这是你乱来的惩罚。\n给我忍着。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "正当我焦急地想要加快步伐时——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "算了。别乱来，慢慢加速就好！",
+      "ChoiceDataList": [
+        "但这样下去的话——"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "现在先慢慢加速。\n等到最终直线的时候再配合我。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "这样的话一定能追上的。\n——就靠你和我的『末脚』！",
+      "ChoiceDataList": [
+        "大进……！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "実況担当のウマ娘",
+      "Text": "那么，终于到了最终直线！\n究竟是哪一组能率先冲线呢？！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "——要上了！一二、一二！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "実況担当のウマ娘",
+      "Text": "唔哦！成田大进组，\n此时以惊人的气势追了上来！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "実況担当のウマ娘",
+      "Text": "令人惊异的末脚！\n他们一口气甩开了所有人——冲线！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "粉丝们",
+      "Text": "哇ーーーー！！\n干得漂亮，大进组ーーーー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哈啊……哈……\n总觉得……是这辈子最累的比赛……吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我也感觉累到不行了。\n估计暂时都会躺在地上一动不能动……",
+      "ChoiceDataList": [
+        "（不过，最终直线上感觉到的那个速度——）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……嗯？\n干嘛啊，一直盯着我看。",
+      "ChoiceDataList": [
+        "果然大进的末脚很厉害啊。",
+        "果然大进的末脚很厉害呢。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……哈？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "突然说些什么呢……笨蛋。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "总觉得……\n得到了相当珍贵的体验呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

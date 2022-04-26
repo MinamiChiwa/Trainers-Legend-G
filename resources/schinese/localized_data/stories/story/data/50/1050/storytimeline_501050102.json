@@ -1,0 +1,364 @@
+{
+  "Title": "新年参拜",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "新年。改めてナリタタイシンを支えていく\r\n誓いを立てるため、初詣に来ていたのだが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "あっっっっ！！！\r\nタイシンのトレーナーさぁぁぁーん！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "嘁……",
+      "ChoiceDataList": [
+        "大进！？你也来了吗！",
+        "タイシン！？来てたんだ！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "人混み嫌いの彼女と、まさか初詣客で賑わう\r\n神社で会えるとは、意外だった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "いや、アタシはフツーに来たく\r\nなかったんだけど……なんか、コイツらが。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "だってさっ！！\r\nアタシたちいよいよシニア級だよ！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "シニア級"
+      ]
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "後にデビューした子たちもどんどん強くなる！\r\nけどアタシたちだって、3人で強くなるんだ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "だったら新年から燃えてかなきゃっ！！\r\nうぉぉぉおおおおおーーーーーーー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "まあチケットは常日頃から燃えている気も\r\nするが……意見自体には概ね賛成だ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "さあ行くぞ、タイシン。\r\n……私は、君の健康祈願もするつもりだぞ？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……多管闲事。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『菊花賞』前後よりはずっとくだけた調子で\r\n3人話せている様子を、\n微笑ましく見守ったのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "さてと、参拝は済んだが――\r\nタイシン、大丈夫か？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……不了。感觉好恶心。不行了。回去吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "えーーー！\u3000せっかく一緒に出かけたのに！！\r\nもうちょっと一緒にいようよぉぉおおおお！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "唔唔唔，训练员……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "話を振られてしまった……！\u3000とはいえ\r\nこれ以上ここにいるのは本当に辛そうなので、\n移動もかねて――",
+      "ChoiceDataList": [
+        "去吃点什么好吃的吧",
+        "干脆去慢跑吧",
+        "去游戏厅吧！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "…………为什么…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "なんっっっっで、この店なわけ……！？\r\nアンタの趣味……！？",
+      "ChoiceDataList": [
+        "不是不是不是……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ただ、どこも混んでいて、並ばずに\r\n入れそうなのがここしかなかったのだ……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "熊耳店员",
+      "Text": "いらっしゃいくま～♪\r\nご注文お決まりでしたらお呼びくださいくま♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "谢谢……但句尾kuma是……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "……是这儿的规矩吗……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "アハハハハッ、面白いカフェだねぇー！！\r\nよーし、決ーめたっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "すいませーん！\u3000くまくまパンケーキセット、\r\nお願いしますくまー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "熊耳店员",
+      "Text": "はぁ～い♪\r\nそちらの方は、どうしますくま？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "え、あ……\r\nじゃあ、ホットレモンティーで……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "熊耳店员",
+      "Text": "kuma？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "呜……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "一杯热柠檬茶……kuma。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "熊耳店员",
+      "Text": "好的kuma～♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "咕……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『後で絶対蹴っ飛ばす』……\r\n視線でそう伝えられた気がしたのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……你认真的？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "ははは！\u3000正月までとは、\r\nずいぶんと熱心なことだな！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "まあしかし、私たちらしいといえば\r\nらしいのかもしれない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "よし、せっかくだ。気分転換の\r\nできそうな場所まで、走るとしよう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "うぉおおおおおっ！\r\n初・日の・出ーーーー！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "いや、こんだけ昇りきってたら\r\n初も何もないでしょ……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "にしてもここ、気持ちいいねぇーっ！！\r\nこんな場所あったんだ、知らなかった！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "確かに絶景だ。\r\nタイシン、君はよく来る場所なのか？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……算是吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "あっ！！！\u3000レース場が見える！！\r\nタイシン、ハヤヒデ、こっちこっちーーー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（……这儿……第一次这么热闹啊……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "あぁっ！！\u3000それ、いいッ！！！\r\nねねねね、ゲーセンならいいよねタイシン！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "いや……ゲームは暇潰しにやってるだけだし、\r\n別にゲーセンとか普段行かないんだけど……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "大进……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……哈啊……\n好好好，去吧去吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "真的！？\u3000太太太太好啦！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "……你也变得越来越宠她了啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……要你多嘴。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "うぉおおおおおっ！！！\r\n全・力・掃・射ぁーーーーっ！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "バカ、雑魚にショットガンなんか使うなって！\r\nこの後デカいの来るんだから――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "うぎゃー！？！？\u3000どうしよどうしよっ、\r\nアタシ噛みつかれてる！？\nゾンビになるのはいやだよぉおおお！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "くっそ……要は頭に当たれば、\r\n1発でしょっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "うひゃあ！？\u3000す、すごいやタイシン……\r\n全部ヘッドショット……！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "……看来还挺乐在其中的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+{
+  "Title": "推活是××××××的☆",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "呜呼呼……呜呼呼呼呼呼呼……",
+      "ChoiceDataList": [
+        "……怎么了？",
+        "……怎么了？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "噢ー呀，不好意思。\n一想到下回休息要去做『推活』，就忍不住笑了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "最近我特别专注于享受推活！\n心中抱着那时的觉悟――！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "……确实，我一直有在努力。\n每天孜孜不倦地膜拜、供奉着女神们，积累信仰――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "好――觉悟，已经做好了！！\u3000数码碳要成为全能\n跑者！！\u3000为了能近距离感受我所有的推们！！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "『膜拜马娘酱，积累信仰』……推活也是其中一种手段。\n也就是说！\u3000推活也属于很重要的训练！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "虽然我不知道推活到底是做什么的，\n但既然是训练的话……",
+      "ChoiceDataList": [
+        "我也可以跟着去吗？",
+        "我也可以跟着去吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "诶？\u3000推活，吗？\n不，数码碳我当然很欢迎的！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "……但，没问题的吗？\u3000那个是非常适合深度宅的。\n过度摄取不喜欢的形式内容的话，会让人疲惫不堪的……",
+      "ChoiceDataList": [
+        "我不会勉强自己的"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "……训练员的觉悟，我收下了！\n那么让我们一起实现――『推们的比赛全通』吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "哈啊ー！\u3000能来阪神竞马场真是太好了～！！\n好棒的出道战……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "那个第一名的马娘酱，是个继承了去年隐退的姐姐\n留下的意志而出道的孩子！\u3000那太热血了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "互不相让！\u3000两个竞争对手，并排了！\n但中山的直线可很短噢～～！？\u3000咕啊啊啊～～～！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "呜……呜……太棒了……\n超越了脚质和适性的理论，是思念间的较量……超＆赞……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "――大井竞马场的沙土跑道，比其他地方的距离要长。\n是适合豪爽的居中和追赶战术的跑道。",
+      "ChoiceDataList": [
+        "怎么突然说这个"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "把那理论一脚踢开而选择了领放战术――那就是她的倔强。\n所以最后，她露出轻松愉快的笑容……即使只拿了第四……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "感觉不到吗！？\u3000闪耀着的马娘酱的热情！\n精神十足的推们的幸福，就是数码碳我的幸福～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "好！\u3000该去买爆LIVE的商品了！！\n训练员也准备一下！",
+      "ChoiceDataList": [
+        "很有精神啊",
+        "很有精神啊"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "哦呀！？\u3000……训练员，怎么一副疲惫的样子！？\n那么买东西的事交给我，你休息吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "……爱丽数码迟迟没有回来。\n我正担心地找她时――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "？？？",
+      "Text": "没想到数码小姐在这！\n我是你的粉丝！\u3000超级感激！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "粉丝",
+      "Text": "决定草地和沙土都跑，\n果然说是有什么不寻常的想法吗！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "诶！？\u3000……啊，呃…………那，那个……\n……我，其实……是……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "看来她正被粉丝们的提问轰炸着，\n不知该如何回答。",
+      "ChoiceDataList": [
+        "关于这点――"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "……！\u3000训，训练员～～～～！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "呼啊～……训练员，谢谢你。\n那样被问话，我怎么也不习惯……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "对了训练员，你为什么会在这？？\n是迷路了吗？",
+      "ChoiceDataList": [
+        "因为你一直也没回来……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "怎，怎么会……你都累成那副模样了，\n还特意跑来了这里……训练员――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "你按捺不住想拿到周边，到那种程度了吗！？",
+      "ChoiceDataList": [
+        "……诶？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "没有没有！\u3000可以不必说出来！\n想要快点拿到周边的心情，那种痛苦我能理解！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽数码",
+      "Text": "是吗是吗。嗯嗯。\n今天的推活能让你享受到这种程度，让我感慨良多啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "其实我是因为担心才来的……但看到她那么高兴，\n我也没再订正她，只是顺着她继续讲。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

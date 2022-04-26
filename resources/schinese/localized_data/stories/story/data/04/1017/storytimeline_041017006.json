@@ -1,0 +1,309 @@
+{
+  "Title": "知己朋友",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "休日、映画を観に行くと――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "おや、トレーナー君。君も観に来たのか？\r\n『ウマ娘の夜明け～未踏の記録へ～』を。",
+      "ChoiceDataList": [
+        "『ウマ娘の夜明け』？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "ん？\u3000その反応を見るに、\r\nこの作品自体を知らない様子だな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "『ウマ娘の夜明け』というのは、\r\n人生を競技に捧げたウマ娘の伝記シリーズでね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "無論、脚色された部分もあるかもしれないが、\r\nレースに臨むウマ娘の心情を見事に映し出している。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "トレーナーである君にも、参考となるはずだ。\r\n機会があれば鑑賞する事を勧めるよ。",
+      "ChoiceDataList": [
+        "なら、今観ようかな"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "おお。早速、興味を持ってくれたか！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "では共に観るとしようか。\r\nふふっ、終わったら感想を語り合おう！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そして映画の上映が始まり……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "ケガでの葛藤に、奇跡の復活劇……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "誰もがあのように見事な復活を果たせるわけではないだろう。\r\nだが抱える悩みは、きっと私たちにも通じるものがある。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そうシンボリルドルフが語るように、\r\nトレーナーの身としても非常に参考になる映画だった。",
+      "ChoiceDataList": [
+        "すごく勉強になった"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "ふふっ、だろう？\u3000良かったよ、\r\nトレーナー君も気に入ってくれたみたいで。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "その様子なら、きっと前作も君の意に適うだろう。\r\n興味があれば貸すから、ひと声かけてくれ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "――あっ、ほらほら！\u3000やっぱ今日からだ！\r\nアタシ超たのしみにしてたから覚えてたんだよね～♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘B",
+      "Text": "ホントだ！\u3000初日に見れるとか、めちゃめちゃラッキー♪\r\nは～、早くキュンキュンしたーい！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "ん？\u3000今のはうちの生徒か。ふむ、殊勝な心がけだ。\r\n『ウマ娘の夜明け』を公開初日に観るとは……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "……しかし、“きゅんきゅん”か。\r\nこの映画にそのような感覚を求める子たちもいるのだな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……映画館の中を見回すと、『本日公開！』と書かれた\r\n恋愛映画の広告があることに気づいた。",
+      "ChoiceDataList": [
+        "こっちを観に来たんじゃないか？",
+        "こっちを観に来たんじゃない？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "ほう、どれどれ……\r\n『初恋キャロットケーキ～恋はにんじんより甘く～』……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "ポスターからして、どうやら青春恋愛映画のようだな。\r\nもしかすると、生徒の間ではこれが流行っている……のか？",
+      "ChoiceDataList": [
+        "ちょっと観てみるか？",
+        "ちょっと観てみる？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "え？\u3000それは構わないが、何故……？",
+      "ChoiceDataList": [
+        "同じ趣味は会話のきっかけになるぞ",
+        "同じ趣味は会話のきっかけになるよ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "……原来如此。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "確かに共通の趣味があると話が弾む。\r\nそれに自分の趣味を許容する相手には懐を開き易い。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "うむ。私が生徒たちとうまく話す事ができないのは\r\n性格のせいだけでなく、趣味嗜好の問題もあるのだろうな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "君の言うとおりだ。虎穴虎子、何事も行動せねば始まらない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "よし、早速チケットを取りに行こう！\r\n是非とも観てみようじゃないか！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "とあるカフェのキャロットケーキをきっかけに出会った2人が\r\n恋に落ち、甘酸っぱい恋愛模様を描いていく作品……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ラストで、ヒロインが去ろうとする男性の腕を引き、\r\n勇気を振り絞って告白するシーンが特に印象的だった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "映画を2本も見てしまうとは、なんだか贅沢な日だな。",
+      "ChoiceDataList": [
+        "恋愛映画は楽しめたか？",
+        "恋愛映画は楽しめた？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "ああ、とても楽しめたよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "中盤までは緩やかに2人の関係性を描いていたが、\r\nラストで一気に加速させる事で、感動を引き出す――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "特殊なトリックは用いられていなかったが、\r\n主人公の感情に寄り添って丁寧に物語が描かれていたね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "派手さはないが、よく練られた筋立てだった。\r\nうん、生徒たちの中で流行る理由がわかった気がするよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "シンボリルドルフの感想は的確だが、\r\nやや批評に偏っている気がするのは気のせいだろうか……？",
+      "ChoiceDataList": [
+        "内容の方は……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "ん？\u3000今言った通りだが……何かおかしかっただろうか？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "ああ、そうか。あの主人公のユニークな\r\nかけ合いの部分が気になったというわけだな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "『好きだと申す気はございません』……ふふっ。\r\n『好き』と『もうすき』の組み合わせには、意表を突かれたよ。",
+      "ChoiceDataList": [
+        "共感とかはしなかった？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "共感……？\u3000それは、恋愛をする主人公に対する共感、\r\nという意味だろうか……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "残念ながら、その観点は全く以ってなかったな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "登場人物たちの恋愛に\r\n自己を重ねる事でときめきを追体験する、か……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "確かに、一般的にはそちらを重視するのかもしれない。\r\nだからこそ若者たちに人気があるのだろう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "よし、今後はそういった部分も含めて鑑賞してみようか。\r\nそうすれば、より生徒たちと同じ感覚を得られるはずだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "ははっ、また1つ君に教えられてしまったな。\r\n君の視点は実に勉強になる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……“皇帝”シンボリルドルフと1日を過ごしたことで、\r\nまた少しだけ彼女のことがわかった気がした。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "Title": "皋月赏之后・鬼脚炸裂",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "～～～～啊，该死……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（くそ、くそ、くそ、負けた！！\r\nくそぉぉっ……！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众们",
+      "Text": "――大进ーーー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "啊……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众们",
+      "Text": "すごいぞっ、タイシィィィン！！\r\nいい走りだったよ、タイシーーーン！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众们",
+      "Text": "貴方のキレに惚れ込んだよっ！！\r\n次は勝つとこ、見せてくれぇー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（哇啊啊啊！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（……真的有啊）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（真的会有……看着我的人啊……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……哈。真是的。这种感觉还挺不错的啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……呼。",
+      "ChoiceDataList": [
+        "欢迎回来，大进！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "ん。……けどこんなんじゃ、\r\n満足なんかしてらんない。",
+      "ChoiceDataList": [
+        "也是啊……！",
+        "そうだね……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "你明白的话，咱们就继续训练吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "『日本ダービー』に向けて、\r\n鍛え直すんだから……！！",
+      "ChoiceDataList": [
+        "嗯！",
+        "嗯！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "红发的少女",
+      "Text": "…………大进……小姐。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "红发的少女",
+      "Text": "すごかった……すごかったよぉっ……！！\r\nあたしも……あたし、だって……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "わっ、ど、どうしたの、大丈夫！？\r\nあなた……泣いてるの……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "勝利こそできなかったものの、\r\nナリタタイシンの力走は、\nたくさんの人の心に残ったようだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そんな『皐月賞』が終わり――\r\n次は『日本ダービー』に向けての\n日々が始まる……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

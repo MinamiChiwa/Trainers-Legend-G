@@ -1,0 +1,271 @@
+{
+  "Title": "以我的风格变强",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "ナリタタイシンの勝負服が届いた。\r\nストリート系のクールな衣装は、\n彼女の鋭さをより際立たせてくれている。",
+      "ChoiceDataList": [
+        "好好地按你的想法设计了呢",
+        "デザインの希望、出してよかったね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "まあ……そりゃ、\r\n合わない服よこされても困るから。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "アタシの気持ちも、\r\nあのときと変わってないし――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "タイシンタイシンタイシーーーーーン！！\r\n勝負服支給されるってホントっ！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "タイシンの努力が実ったんだね……！\r\nよがっだよぉぉぉぉ～～～～～！！",
+      "ChoiceDataList": [
+        "可喜可贺呢，大进！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "だあぁ、うっさ！\r\n2人して大声出すなっての。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "ふふ、めでたいことだからな。\r\n気持ちが昂るのも仕方ないだろう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "それで、\r\n勝負服のデザインはどうするんだ？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "雑誌を見たところ、\r\n最近の流行りはこういった感じらしいが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "ビワハヤヒデが見せてくれたページには、\r\n人目を引く煌びやかな衣装や\nライブ映えするキュートな衣装が載っていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "どれも却下。\r\nこういうのキャラじゃないし。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "アタシは……そんなんじゃなくて、\r\nいつも着てる私服みたいなのがいい。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "ええっ！？\u3000勝負服だよっ？\r\nばばーんってすっごいのにしなくていいの！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "ゴテゴテな衣装で着飾るとか、\r\n衣装に頼らなきゃ勝てないみたいでヤダし。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "いつも通り、ありのままのアタシがいい。\r\n――アタシは自分自身の力で強くなるんだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "なるほど。勝負服はその証明というわけか。\r\n悪くない理論だな、タイシン。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "雰囲気に流されて余計なこと言った気も\r\nするけど……ま、ウソじゃないし。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "誰にも媚びないし、何にも頼らない。\r\n……アタシだけの力でレースに勝ってやる！",
+      "ChoiceDataList": [
+        "现在开始才算真正的起跑呢！",
+        "ここからが本当のスタートだね！",
+        "我倒是觉得你可以依靠一下我哦",
+        "でも私には頼って欲しい"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "誰にも媚びないし、何にも頼らない。\r\n……アタシだけの力でレースに勝ってやる！",
+      "ChoiceDataList": [
+        "现在开始才算真正的起跑呢！",
+        "ここからが本当のスタートだね！",
+        "我倒是觉得你可以依靠一下我哦",
+        "でも私には頼って欲しい"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哼。这种事情我还是明白的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "ようやく、\r\n大勢の目に留まるところまで来たんだ……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "このままトゥインクル・シリーズの頂点まで\r\n上り詰めてやる！",
+      "ChoiceDataList": [
+        "好！无论刀山火海我都陪着你！！",
+        "うん！どこまでも付き合うよ！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……いや、別にアンタは\r\n前のめりにならなくていいし。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "その後、衣装の慣らしを兼ねて\r\n走りたいというナリタタイシンの希望で、\nトレーニングコースへ向かった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哈……哈……哈……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "今日のタイシン先輩、すごくない？\r\n勝負服着て迫力増してるっていうか……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘B",
+      "Text": "うん！\r\n見てるだけで飲み込まれそう！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "吞没……吗。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "（上等じゃん……！\r\nなら、全部喰らいついて飲み込んでやる！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "こうして彼女の叛逆の狼煙は、\r\n今、再び轟々と立ち昇ったのであった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "ナリタタイシンを支え、強くするために\r\nトレーナーは存在するのだと伝えた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "呜……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……はぁ、気が向いたらね。\r\n別に馴れ合いとかいらないし。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "アタシはアタシの意志で強くなる。\r\nアンタはアンタの意志でサポートする。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "这样就好吧。",
+      "ChoiceDataList": [
+        "这样就好。一起变强吧！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "…………嗯。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "渋々といった感じではあるが頷いてくれた。\r\n一応はトレーナーという存在を\n認めてくれているようだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "ちょっと、何ニヤニヤしてんの。\r\n変なこと考えてたら蹴っ飛ばすから！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "まだまだ課題が多く、ナリタタイシンと\r\n信頼関係を完璧に築けたとは言えないが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "自分たちは自分たちなりに\r\n前進していこうと心に誓ったのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

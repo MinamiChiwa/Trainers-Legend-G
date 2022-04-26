@@ -1,0 +1,329 @@
+{
+  "Title": "望",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "小时候的晨光",
+      "Text": "……ブライアン、ごめんな。\nお医者さんがしばらくは一緒に走れないって。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "小时候的白仁",
+      "Text": "……うん。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "小时候的晨光",
+      "Text": "だけどお前の相手は、私以外にもたくさんいる。\nだから何も気にせず楽しんでおいで。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "小时候的白仁",
+      "Text": "…………うん。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "ウマ娘の少女A",
+      "Text": "はあ……はあ……ブライアンちゃん、\n速すぎるよぉ……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "小时候的白仁",
+      "Text": "……でも次はもっと速く走れる。\nだからもう1周、走ろう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "ウマ娘の少女B",
+      "Text": "……っ、いいかげんにして！\nアンタは勝って楽しいかもだけど、アタシは楽しくない！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "小时候的白仁",
+      "Text": "えっ……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "ウマ娘の少女B",
+      "Text": "ぐすっ……アンタ、強すぎるんだもん……。\nアンタなんか、だいっきらい～……っ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "ウマ娘の少女A",
+      "Text": "あ、あのっ。ブライアンちゃん、今度レース教室に行かない？\nそこならすごい人もいっぱいいるから。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "数年後。あるレース教室にて――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "はぁ……っ、はぁ……っ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "レース教室の教官A",
+      "Text": "ナリタブライアン、あの子はとてもいい走りをしますね。\nさまざまな教室を渡り歩いてきたとは聞きましたが。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "レース教室の教官B",
+      "Text": "いやあ、本当に何故でしょうね。1度彼女の素質を見れば、\nどこも逃したくないと思うはずなんですが……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "……もうっ……無理……っ。\r\nほんっと最悪……なんであんな速い子がウチに……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "（……“そう”じゃない！\u3000競ってこい！！\nここはレースをする場だろう！？\u3000そんな簡単に――）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘B",
+      "Text": "ムーリー……あーあ、本気出してもかなうわけないじゃん。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "――今日限りでここを辞めます。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "レース教室の教官A",
+      "Text": "なっ、どうして！？\u3000前の教室よりもウチはよかったでしょう！？\n本物に近いレース場もあるし、より高いレベルの実戦ができるわ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "いえ。ここではもう満たされないんです。\n……熱を失ったレースで競っても、何も意味がない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "……ここにいたのか、ブライアン。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……姉貴。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "トレセン学園に来い。そこでなら本物のレースができる。\n……お前の渇望も満たせるかもしれん。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "さあ、始まりました。トレセン学園選抜レース！\n飛び出したのはゼッケン6番！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "8番、ナリタブライアンは虎視眈々と機会を狙っている！\nだが6番、リードをどんどん広げていく！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "6番のウマ娘",
+      "Text": "たああああああああっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "………………！\r\n…………。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "6番のウマ娘",
+      "Text": "えっ――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "（……――あ）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "（ここでもまた、なのか？）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……どこへ行っても、誰に挑んでも\r\n満たされない。渇きだけが、増していく。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "ならばもう、ここにいても――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "思考をまとめるには、歩きながら考えると良いらしい。\nこの日は1人、河川敷を散歩がてら訪れると……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员",
+      "Text": "あなた、本当にそうするのね？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "前辈马娘",
+      "Text": "……はい。もうあんな失態、繰り返したくないんです。\nだから私は……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "あれは以前、ナリタブライアンと勝負をしていたウマ娘だ。\n彼女たちもここでトレーニングをしていたのかもしれない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "なあ、君。ちょっといいかな？",
+      "ChoiceDataList": [
+        "呃？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "ふふっ、突然驚かせてしまってすまない。\n私はビワハヤヒデ。ナリタブライアンの姉だ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "何度フられても頑なにブライアンに声をかけるという、\r\n噂のトレーナーの姿が見えたものだから。ぜひ話がしたくてね。",
+      "ChoiceDataList": [
+        "お、お話ですか……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "そんなに恐縮しないでほしい。\n少しばかり時間をいただけないだろうか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "ふぅ、そろそろクールダウンといこうか。\n最後のタイムは青ペンで記録してもらえると助かる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……なぜか気づくと、彼女のトレーニングに付き合っていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "ありがとう、いいデータが取れたよ。最後に君が提案したウインド\nスプリントもよかった。補強すべき点を常に思うが故の発想、かな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "何よりこの時間まで付き合おうとする、ウマ娘第一というべき性格。\n……うん、君なら大丈夫だ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "では本題に移ろうか。",
+      "ChoiceDataList": [
+        "……本題？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "すまない。君を試させてもらった。私の理論に基づくと、\nトレーニングに対する姿勢はその人の人となりをも表す。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "失礼なことだとは重々承知の上だ。だがどうしても知りたかった。\n君が私の望みをかけてもいい相手か、否かを。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "――どうか私の妹を。ナリタブライアンを\n私のメイクデビューに連れて来てはもらえないだろうか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "実は先日、気にかかる噂を聞いてね。\nその前に本物のレースを見せたいんだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "……彼女が退学する決意を固める前に。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

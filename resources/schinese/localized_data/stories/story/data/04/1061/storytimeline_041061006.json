@@ -1,0 +1,338 @@
+{
+  "Title": "一流的服饰",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "最新勝負服のファッションショーがあるというので、\r\nキングヘイローと観に行くことになった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "虽说约好了在9点见面――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "太慢了！\u3000你以为现在几点钟了！？",
+      "ChoiceDataList": [
+        "9点啊……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "キングが9時と言ったら8時のことでしょう！？\r\n私を1時間も待たせるなんて、どういうつもりかしら！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "真是的，身为一流马娘的我，\n竟然要排在长队的最后面。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "罰として、帰りにお茶をご馳走なさい。\r\nふんっ、キングの寛大な処置に感謝するのね！",
+      "ChoiceDataList": [
+        "不，不讲道理啊……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "理不尽じゃなく、そういうものなの！\r\nいいから早く並ぶわよ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "在圣王光环的压迫下，我排进了队伍里……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "こんなに人がいたら、前の方でステージを観るのは\r\n難しいかも知れないわね。",
+      "ChoiceDataList": [
+        "很有人气的时装秀啊",
+        "很有人气的时装秀啊"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "当然でしょ。……いいわ、あなたは詳しくないようだし、\r\n心優しいキングが教えてあげる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "今日、出演するのは一流ブランドばかりなの。\r\n最高の職人による、最高の一品！\u3000まさに一流の集い！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "瞬きするのも勿体ないくらいのショーよ。\r\n目に焼き付けるつもりでごらんなさい。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "特别是今天的压轴――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "キングヘイローは目を輝かせ、\r\n楽しそうにショーの説明をしてくれた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "然后，等了一个小时之后――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "そろそろ始まる時間だけど……前の方、動いてるのかしら。\r\nここからだと見えないわね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "まさか待たせるだけ待たせて、\r\n人数制限する気じゃないでしょうね……。",
+      "ChoiceDataList": [
+        "今天要放弃了回去吗？",
+        "今天要放弃了回去吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "怎么可能！\u3000而且这次的演出――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "演出的负责人",
+      "Text": "……不好意思，请问您是圣王光环大小姐吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "え、ええ……そうですけど。\r\nどちらさまでしょうか？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "演出的负责人",
+      "Text": "やはりそうでしたか。私、ショーの運営をしている者でして、\r\n今回お母さまにはショーのデザインから、大変ご尽力いただき――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "啊……是这样啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "聞いてますわ、お母さまが作った勝負服、\r\nショーの目玉としてラストを飾るんですってね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "演出的负责人",
+      "Text": "ああ、お嬢様もご興味が！\u3000やはり親子ですね。\r\nお母さまから聞きましたよ、お嬢様も今トレセン学園で大活躍中――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "那话真的是从母亲那里听说的？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "社交辞令なら結構です。娘ですもの。\r\nあの人がしないことくらい、わかっていますわ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "演出的负责人",
+      "Text": "是，是这样吗……失礼了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "呼，好像是母亲大人的熟人呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "あら、何か言いたげな表情じゃない。私、不完全燃焼は嫌いなの。\r\n思うことがあるなら言ってごらんなさい。",
+      "ChoiceDataList": [
+        "这场演出与你的母亲有关系啊",
+        "这场演出与你的母亲有关系啊"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "ええ、そうよ。お母さまはレース引退後に、\r\n勝負服のデザイナーになって、今も活躍中ってワケ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "悔しいけど、あの人は一流よ。次から次に新しい視点で、\r\nみんなの期待を軽々と超えたドレスを生み出してくるんだもの。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "全てはレースに出るウマ娘たちのために。捨てることを恐れない\r\n洗練されたデザインには、一流を目指すうえで学ぶべき所があるわ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "……虽然，从未给我做过衣服。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "ま、しょうがないわ。あの人、デザインの才能はあっても\r\n裁縫はてんでダメ。むしろ不器用すぎるくらいだったんだもの。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "なのに輪をかけて負けず嫌いで、見栄っ張りだから。\r\n娘の私にすら、不格好な失敗作を見られたくなかったんでしょうね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "誕生日の時もそうだったわ。買ってきたケーキを私に食べさせて、\r\n満足して。自分は失敗した見てくれの悪いケーキをこっそり食べて。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "ばっかみたいよね。\r\n意地を張らずに失敗したって言えばいいだけなのに。",
+      "ChoiceDataList": [
+        "和你很像呢",
+        "和你很像呢"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "才不像！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "整列队伍的姐姐",
+      "Text": "皆さま、お待たせしましたー！\r\nこれより会場にご案内いたします！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "真是让人等得累死了。好了，赶快走吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "……待たせた分、美しくないドレスが出てきたら、\r\n本当に許さないんだから。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "场内广播",
+      "Text": "――以上で、ファッションショーは終了です。\r\n皆さまお気をつけてお帰りくださいませ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "最っ高……だったわねっ！\u3000UMADAの新作とか見た？\r\nスカートの切り替えしがすっごく美しかったわ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "但是最漂亮的还是――",
+      "ChoiceDataList": [
+        "最漂亮的是？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "……什么也没有！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "ふんっ、私はお母さまの記録なんて、\r\nあっという間に超えてみせるんだから。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "それで勝負服もたくさんコレクションするのよ！\r\n1着だけじゃない、クローゼットがあふれるくらい手に入れるわ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "因为我是一流马娘，圣王光环啊！",
+      "ChoiceDataList": [
+        "是啊，一起加油吧",
+        "是啊，一起加油吧"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "おーっほっほっほ！\r\nあなたも気合いが入っているみたいね、感心感心♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "さぁ、学園に帰りましょう。\r\n明日のトレーニングの予定、組みなおすわよっ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "ファッションショーを後にするキングヘイローの瞳は、\r\n新たな決意に満ちているようだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

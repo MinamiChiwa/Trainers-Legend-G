@@ -1,0 +1,49 @@
+{
+  "Title": "宝冢纪念之后・姗姗来迟的蒭藁增二",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "テイエムオペラオー、ナリタトップロード、\r\nそしてメイショウドトウとの激戦を終え――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『ライバルたちとのレースは、\r\nどうしようもなく楽しい』。\nそのことをアドマイヤベガは噛み締める。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そして、彼女は改めて語った。\r\n他の誰のためでもなく――彼女自身の目指す、\n『自慢の姉』について。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "あらゆる光を、栄光を手にして、\r\nどんなに遠い場所にさえ輝きを届ける\n『一等星』。それが、彼女の目標だった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "であれば、それだけの格を持つレースへ。\r\n共に次走を『天皇賞（秋）』へと定める。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "天皇赏（秋）"
+      ]
+    },
+    {
+      "Name": "独白",
+      "Text": "誰かに捧げるためではなく、ただ自身の\r\n心と脚の決めたほうへと。\nアドマイヤベガは、歩みを進める。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

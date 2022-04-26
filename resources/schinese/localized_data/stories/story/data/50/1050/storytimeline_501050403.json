@@ -1,0 +1,47 @@
+{
+  "Title": "不要说出来",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『夏合宿』以降、ライバルのビワハヤヒデは\n格段に力をつけてきた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "幼い頃、共に走ったレースでも、現在でも。\n彼女は大きな壁となって\nナリタタイシンの前に立ち塞がる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そんなビワハヤヒデにも怯まず、前向きに\n闘志を燃やすウイニングチケットの姿勢も\nナリタタイシンの心をひどく焦らせた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "自分だけが置いて行かれてしまう――\n焦燥に駆られて無茶を続けた結果、\nナリタタイシンは体を壊してしまう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "自分にはレースしか――走って勝つしかない。\n涙を溢れさせ、『菊花賞』に出してくれと\n懇願するナリタタイシン。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "トレーナーは、彼女の悲痛な願いを\n無下にすることはできなかった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

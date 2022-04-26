@@ -1,0 +1,386 @@
+{
+  "Title": "从这里，迈出第一步",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "呜……训练员……",
+      "ChoiceDataList": [
+        "今天的比赛，你好像不参加了？",
+        "今天的比赛，你好像不参加了？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "…………！\u3000对，对不起。\n对不起，对不起……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "米浴……米浴……呜呜，对不起……！",
+      "ChoiceDataList": [
+        "你不必道歉哦",
+        "你不必道歉哦"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "……为什么？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "为什么训练员这么温柔？\n米浴……米浴明明是没用的孩子。",
+      "ChoiceDataList": [
+        "米浴并不是没用哦"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "就是没用啊！！\n米浴是……米浴是，无可救药没用的孩子啊……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "好多次……好多次。\n……都想要改变的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "虽然不想和妈妈分开，但还是来到了特雷森学园。\n进行了很多训练，还报名参加了比赛！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "但是……还是不行。一想到要参加比赛，\n无论如何都会感到害怕……无论是选拔赛时还是现在……！",
+      "ChoiceDataList": [
+        "害怕什么呢？",
+        "害怕什么呢？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "……害怕知道自己『绝对无法成为蓝蔷薇』。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "害怕发现即使米浴出现在比赛中……\n也没有人会因此感到幸福。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "如果参加比赛的话，就会知道事实。\n说不定会发现，自己从今往后都会是个没用的孩子……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "这么一想的话……就很害怕，害怕到止不住颤抖……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "对不起训练员。像米浴这种……\n这么没用的孩子，还是放弃比较好……！",
+      "ChoiceDataList": [
+        "你，真的很想做出改变呢",
+        "你，真的很想做出改变呢"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "诶…………？",
+      "ChoiceDataList": [
+        "害怕，换言之就是因为想做出改变哦",
+        "害怕，换言之就是因为想做出改变哦"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "那，那个是……但是……",
+      "ChoiceDataList": [
+        "只要你还没放弃，我就也不会放弃",
+        "只要你还没放弃，我就也不会放弃"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "……！\u3000训练，员。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "你不会，放弃吗……？\n你相信……米浴是能改变的……？",
+      "ChoiceDataList": [
+        "我在赛场等你哦，米浴！",
+        "我在赛场等你哦，米浴！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "啊……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "哼哼哼哼ー，哼哼哼～……♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "加油，加油，米浴……加油……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "啊，小米浴！\u3000小米浴出来了ー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "啊……小乌拉拉。\n你在等着我吗……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "春丽",
+      "Text": "嗯！\u3000小米浴，要加油吗？\n那乌拉拉来给你应援！\u3000加油～，小米浴ー！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "小乌拉拉……！\n嗯！\u3000谢谢……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "要加油咯，哦ー……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "哈啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "（脚和手……都还在颤抖。手指也很冷……！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "（但是……！！）",
+      "ChoiceDataList": [
+        "米浴！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "训练员……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "那个……那个，那个呢我……！！",
+      "ChoiceDataList": [
+        "没问题，你也一定能绽放的！",
+        "没问题，你也一定能绽放的！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "嗯。……我，出发了！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "（……我，讨厌我自己）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "（总是给大家添麻烦，总是让大家陷入不幸的\n没用的孩子。一直，一直都很讨厌）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "（但是――！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "哈，哈，哈，哈……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "前方已经通过了第三个弯道！！\n在这里从外道加速的是漆黑的马娘米浴ー！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "（想改变！\u3000不想放弃！\n不想当没用的孩子！绝对不要！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "（我也可以……变成给大家带来幸福的，蓝蔷薇……！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "剩下不到200m，处于领先的是米浴ー！！\n最后的直线，和第二位的竞争十分激烈！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "剩下100m！\u3000最后获得胜利的是――！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "我……想成为，理想中的自己啊啊啊啊啊啊！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "冲线！！\u3000获得胜利的是，米浴ー！！\n经过激烈的竞争，最后展现了自己的意志！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（哇啊啊啊啊啊啊ー！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "赢得漂亮，米浴！！\n很精彩的比赛～！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众B",
+      "Text": "真让人兴奋啊！！\n下次也会去看的！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "哇啊……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "训练员……那个呢，我可以，提一个任性的要求吗……？",
+      "ChoiceDataList": [
+        "任性的？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "嗯。那个，那个呢……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "我想把……训练员你，叫做『哥哥』。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "我想把……训练员你，叫做『姐姐』。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "不行，吗……？",
+      "ChoiceDataList": [
+        "米浴想的话，当然可以哦",
+        "米浴想的话，当然可以哦"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "可以吗！？\u3000那，那……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "从今以后……请多多指教。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "――哥哥！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "――姐姐！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "Title": "『我请客』『好啊』",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『天皇賞（春）』を間近に控えた、\nある日のこと――ビワハヤヒデは、\nどこか疲れている様子をのぞかせていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ナリタブライアンが『皐月賞』で1着を取り、\nコースレコードを更新した――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "華々しく打ち出された快挙が\nビワハヤヒデの心に影を落としているようだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『……アタシはハヤヒデのこと、\nずっと厄介なヤツだって思ってる』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ナリタタイシンは\n友でありライバルでもある彼女を\n不器用なりに励ますのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

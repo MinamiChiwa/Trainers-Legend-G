@@ -1,0 +1,357 @@
+{
+  "Title": "大阪杯の後に・Just a Dream...",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……嗯，没问题。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众们",
+      "Text": "美妙姿势～～～～！！\n辛苦啦～～～～！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "（像平时那样享受了比赛，\n大家看起来也很开心――）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "……美妙姿势她身上，\n发生了什么吗。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众B",
+      "Text": "哎，怎么啦？\n她刚刚跑得不是很好吗！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "虽然是跑得很好啦……\n感觉和女王杯的时候，有些不一样了？\n该说是没有了『好开心啊～～』这种感觉吗。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "感觉，有点不像她自己了。\n应该是我的错觉吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "那个，美妙小姐……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "……请问，呃…………\n今天，状态不太好吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "！！\u3000为什么这么问……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "啊，其实也没什么……\n只是觉得有些在意而已。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "美妙小姐的笑容，\n总觉得有些勉强……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "啊，果然问得太唐突了吧！对不起！\n应该只是我的错觉而已，请不要在意。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……あは、バレちゃった？\r\nいつもよりほんの少しだけ、\n具合が優れなくて。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "果然是这样……！\n美妙小姐可不能逞强呀。\n今天回去后请务必好好休息！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "等美妙小姐的身体恢复之后，\n再比一场吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……谢谢♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "比赛结束之后，\n美妙姿势的笑容，很僵硬。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "果然不行呀。\n我本来以为没关系的……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……训练员。\n之后，稍微陪我散下步可以吗？",
+      "ChoiceDataList": [
+        "那当然"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――嗯～……夕阳真美啊♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "说起来，祖国的夕阳也很美呢……\n因为住在城堡里，所以看得还蛮清楚的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "其实呢，有些事情我一直在想。\n『为什么夕阳一定会沉入地平线呢』\n『明明只要没有夜晚，就可以玩得更久了』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――『……好寂寞啊』……这样。\n不过，我没有对任何人说过。",
+      "ChoiceDataList": [
+        "美妙，你……",
+        "ファイン、貴方は……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "其实神宫说得很对哦。\n我已经离不开现在的一切了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……我还在梦想着，\n这一切不要结束。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "但这样快乐而又幸福的日子……\n很快就要迎来结局了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "回到祖国去之后，这段时间就会离大家远去，\n而在之后的某一天，大家也会忘了我吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "这段梦一般的时间，\n也的确如梦那样，一触即碎……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "就像我从未出现过一样。\n我也什么都留不下……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "这样……觉得非常，非常寂寞。\n所以就觉得很烦闷……就是这样啦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "我不想这个梦境就这么结束。\n要是在抵达终点之后，比赛还能一直，一直\n一直继续下去的话就好了――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――但世上没有这样的好事吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "呼啊～～～～！！",
+      "ChoiceDataList": [
+        "？！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哈ー畅快多了！\n原来如此，神宫说的就是指这种事呀！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "抱着不想结束的愿望去跑步，\n脚步当然会变得沉重，没法向前迈进。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "所以说，必须要大喊出来来发泄一下。\n原来如此呀。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "即便是要妥协于心……\n――也是为了成为祖国的支柱。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊ー……！\n舒服了舒服了♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "她现在的笑容，与先前不同，\n看起来心情真的舒畅了不少。",
+      "ChoiceDataList": [
+        "（但是……）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊，说起来！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "还没和你商量下一次的比赛呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "プランがあるなら、\r\nお聞かせいただけるかな？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "的确有相关的计划。\n现在的美妙姿势有着值得夸耀的粉丝数量，\n而粉丝们可能也想看见她参加的比赛是――",
+      "ChoiceDataList": [
+        "要不要以『宝冢纪念』为目标？",
+        "『宝塚記念』を目指さない？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哇，那可是大奖赛吧？\n由粉丝们决定出场选手的比赛……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "嗯，如果能参加的话一定能很开心呢。\n得让大家看见我发自内心的笑容！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "那么，就决定了下次比赛的目标。\n当我正想再和她聊聊她的心事时――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "SP队长",
+      "Text": "殿下，抱歉打扰您了。\n但是大家正在等您。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……好。也到商讨的时候了。\n――我回国后的相关事宜。",
+      "ChoiceDataList": [
+        "……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "训练员，能请您先回去休息吗？\n晚点我们再一起坐新干线回去♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "还有化妆的时间吧？\n也请把相关资料发到我的手机上――",
+      "ChoiceDataList": [
+        "（……她原来，一直是这样的么）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "一直以来，她都这样，\n压抑自己的内心，表现出众人期望的一面吗？\n而且，看上去已经习惯于此了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "但是，“好寂寞啊”的确是她真实的想法，\n我真的可以就这样无视吗？\n我，真的有在好好面对她吗――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

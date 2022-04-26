@@ -1,0 +1,343 @@
+{
+  "Title": "宝塚記念の後に・Weave a Story",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哈啊……哈啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "我的愿望，能传达给大家吗……？\n传达给大家吧――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众们",
+      "Text": "很好哦，美妙姿势！！\n跑得很棒！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "唔……呜呜……！\n咕呜呜！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众B",
+      "Text": "诶！？\u3000你在哭吗！？\n为啥啊！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "因，因为……美妙姿势她……\n看上去非常开心，非常幸福……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "我今天，看见了人生的光芒啊！\n就好像她在告诉我，\n『一定要把我的模样烙印在眼中』一样……呜哇～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "美妙姿势～～～～！！\n你今天的模样，我永远都不会忘记的～！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……唔！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "荒漠英雄",
+      "Text": "美妙小姐……！\n那，那个……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "荒漠英雄！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "荒漠英雄",
+      "Text": "噫！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "我特别开心呢。\n我觉得我的心意，顺利地传递到了大家心中！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "而且呀，比赛也很享受！\n与大家一起燃烧自己的热情，而且――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "荒漠英雄",
+      "Text": "……呵呵。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "诶？怎么啦，\n我说了很有趣的话吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "荒漠英雄",
+      "Text": "啊，那，那个……\n我在想，这也许是一个很棒的故事呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "故事？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "荒漠英雄",
+      "Text": "其实我之前就在想了。美妙小姐你，\n看上去简直就是只在故事里才有的，\n充满魅力的主人公呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "荒漠英雄",
+      "Text": "充满激情，引人注目，总是享受着当下，\n在读完之后，会让人不自觉地露出微笑的故事……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "荒漠英雄",
+      "Text": "这样的故事总是能一直流传，\n但我今天竟能像今天这样，\n和你一起奔跑……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "荒漠英雄",
+      "Text": "就像是，\n我也身处于这样美妙的故事里一样……\n我很开心……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……故事，吗。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "『要留下名为美妙姿势的冲击』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……这样啊。\n我的故事，早就已经开始了啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "会不会寂寞什么的，好像也没那么重要。\n因为――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "我永远都在大家的心中，\n继续驰骋在赛场上。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众们",
+      "Text": "果然是一场出色的比赛啊。\n美妙姿势她，整个人都感觉焕然一新了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众们",
+      "Text": "对吧！光是看着都觉得心情舒畅了～。\n之后的比赛也能好好享受了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "……啊啊，该死。\n我的心情可是一点没变好啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "到头来，不会连你也要改写命运吧。\n――那我……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "在休息室门口迎接归来的美妙姿势……\n她的表情，仿佛是终于放晴的天空。",
+      "ChoiceDataList": [
+        "发生了什么好事吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "只能是今天的比赛了呀！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "我的心一直在『可别忘了我呀～！』地喊着，\n是迄今为止跑得最开心的一次啦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "虽然还不知道有没有给世界留下冲击。\n但是今天的比赛，已经铭刻在我的心里了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "还想跑更多这样的比赛！\n你看，时间不还多的是嘛？",
+      "ChoiceDataList": [
+        "时间完全足够！",
+        "たっぷりね！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "考虑到她的战绩，\n就这样继续参加GⅠ的比赛倒也没问题――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "对了！\n我想到一件好事。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "我有个请求。\n去一些平时不会去的地方比赛吧！",
+      "ChoiceDataList": [
+        "怎么啦？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "去到更远的地方，就会有更多的人看见我嘛！\n这样一来，\n不就能有更多人能记住我的比赛了吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "那我的思念，\n就会在更多人心中生根发芽……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "为此，\n我也要去到他们所在的地方比赛！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "我清楚她的愿望了。\n但考虑到她如今的实力以及同等级的选手。\n要选出合适的比赛还挺难的……",
+      "ChoiceDataList": [
+        "有什么特别想去的地方吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "唔嗯……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊，拉面！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "不是很多地方都有当地拉面吗？\n我在神宫制作的app里备注过，\n那些我想去的外地的拉面店。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊，想去的地方好像还挺多的？\n最多的是……福冈，北海道――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "说到北海道，我想起来了之前听到的情报。\n说是有不少强者会参加礼幌纪念。\n她应该也能享受这样的比赛吧。",
+      "ChoiceDataList": [
+        "那就参加『礼幌纪念』如何？",
+        "なら『札幌記念』はどうかな？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "噢噢！礼幌拉面呢！\n当然要去吃吃看♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "什么的，肯定不只是为了吃拉面啦？\n我会让北海道的大家，也记住我奔跑时的模样的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "向礼幌，GOー♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "こうして、次の目標レースは\n『札幌記念』に決まった！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "札幌纪念"
+      ]
+    }
+  ]
+}

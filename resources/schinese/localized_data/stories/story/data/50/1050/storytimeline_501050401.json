@@ -1,0 +1,38 @@
+{
+  "Title": "『B』&『W』",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ナリタタイシンのデビューから数か月後、\nある2人のウマ娘がデビューを果たした。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ウイニングチケットとビワハヤヒデ――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "胜利奖券",
+        "琵琶晨光"
+      ]
+    },
+    {
+      "Name": "独白",
+      "Text": "友人であり同じクラシック三冠を目指す\r\nライバルである2人の実力は\nナリタタイシンも認めるほどだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "しかし、負けてはいられない――\nいずれ来る彼女たちとの対決に備え、\n今日もトレーニングを重ねるのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

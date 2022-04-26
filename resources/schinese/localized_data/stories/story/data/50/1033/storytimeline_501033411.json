@@ -1,0 +1,38 @@
+{
+  "Title": "迎接日本德比",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "全てのウマ娘たちの夢とも言われるレース、\r\n『日本ダービー』。その事前人気度調査で、\nアドマイヤベガは初めて1番人気を逃した。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "その座を得たのは――ナリタトップロード。\r\n『期待に応えたい』一心で努力する\n彼女の姿を、アドマイヤベガは見ていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "黄金世代の一員としてライバルに恵まれた\r\nスペシャルウィークからの激励も受け――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "特别周",
+        "黄金世代"
+      ]
+    },
+    {
+      "Name": "独白",
+      "Text": "アドマイヤベガはついに、\r\n本気でライバルとの戦いに胸を躍らせて、\n『日本ダービー』のコースに立つ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

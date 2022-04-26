@@ -1,0 +1,298 @@
+{
+  "Title": "殿下莅临义卖会！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "与美妙姿势出门的归途上――\n依照她的希望，去看了看教会举行的义卖会。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "好多～！好多小店！\n简直就像祭典的庙会呢，训练员！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "玉藻十字",
+      "Text": "見覚えのある姿がおる思ったら、\r\nやっぱアンタらか！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "艾尼斯同学和玉藻同学！\n你们二位也在呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "玉藻十字",
+      "Text": "毕竟这义卖会对咱来说也是挺重要的嘛！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "艾尼斯风神",
+      "Text": "每次都能买到很多很划算的东西，\n帮大忙啦～♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "这样呀！\n觉得越来越有趣了呢～♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "SP队长",
+      "Text": "全体听令，阵型α！\n保护殿下一行人不会被危险人物靠近！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "玉藻十字",
+      "Text": "真帮子护卫的动作真麻利呀！\n但――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "女孩A",
+      "Text": "呜呜呜……好可怕啊，妈妈～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "艾尼斯风神",
+      "Text": "哎呀。\n好像吓到小孩子了～",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……队长，我们就此回去吧。\n万不可给这里的其他人添麻烦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "这里还有在享受义卖会的孩子，\n不可让他们感到害怕。\n我只是远远地观望这场活动就很满足了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "玉藻十字",
+      "Text": "不不不不，等下呀！\n你要这么说的话――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "艾尼斯风神",
+      "Text": "咳咳！美妙殿下，\n今天就由我们来护卫您♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "玉藻十字",
+      "Text": "哦啦！\n要是瞅见可疑人物，\n咱玉藻大人肯定不会放过他！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "SP队长",
+      "Text": "如果是二位也愿意护卫的话，我等也放心了。\n我等就以少数人员组成阵型β，在后方待机吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "みなさまのご厚意に感謝します。\r\nそれでは、参りましょうか♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "玉藻十字",
+      "Text": "要说到义卖会就得来看看这玩儿呢！\n这是咱和艾尼斯都很中意的店！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "お洋服におもちゃに……あら、\r\nこのアクセサリーは手作りかしら。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "艾尼斯风神",
+      "Text": "义卖会呢，除了卖一些平时用不上的东西，\n售卖手制商品也是重中之重呢～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "原来如此。\n那我要这个~您就是制作者吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "义卖会的店员",
+      "Text": "嗯，是的……\n诶？您是，美妙姿势小姐！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "我很喜欢这些作品呢。\n您真是个了不起的匠人呢♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "义卖会的店员",
+      "Text": "哪里哪里！\n我、我不胜惶恐……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "玉藻十字",
+      "Text": "啥呀，咋回事啊……\n咱好像看见美妙的背后在发光啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "タマモさん、アイネスさん！\r\n素晴らしき出会いを授けてくれた\nお2人にも、感謝しますわ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "艾尼斯风神",
+      "Text": "好、好耀眼～！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "接下来，美妙姿势也优雅地享受着义卖会。\n然后――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "あら、もう終了のお時間？\r\nなんだかあっという間だったなぁ～。",
+      "ChoiceDataList": [
+        "玩得开心吗？",
+        "真是可靠的护卫呀",
+        "頼もしい護衛だったね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "あら、もう終了のお時間？\r\nなんだかあっという間だったなぁ～。",
+      "ChoiceDataList": [
+        "玩得开心吗？",
+        "真是可靠的护卫呀",
+        "頼もしい護衛だったね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "嗯！托大家的福，\n我与许多美妙的宝物相遇了呢♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "玉藻十字",
+      "Text": "说来，你最后是不是买了件T恤衫？\n让大家伙瞅瞅呗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "艾尼斯风神",
+      "Text": "是呢！买了怎样的衣服呢？\n让我们也看看嘛～♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "艾尼斯风神",
+      "Text": "总、总觉得……好厉害……\n而且上面还有写着个『面』字呢……",
+      "ChoiceDataList": [
+        "这T恤挺有个性的……？",
+        "ずいぶん個性的なシャツだね……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "对吧？因为我没怎么见过这种样式的衣服，\n所以特别中意呢～♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "玉藻十字",
+      "Text": "这品味挺独特呀。\n本地的老奶奶们也会很喜欢这种样式吧……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "为了纪念，就把它装饰在房间里面吧～？\n哼哼，毕竟义卖会对我而言可是难得一见呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "与朋友一起在义卖会上游玩，\n美妙姿势看起来也很高兴的样子。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "ええ！\u3000次の機会には\r\nぜひともまたお願いしたいくらい。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "玉藻十字",
+      "Text": "任しとき！\u3000買い物っちゅーもんは奥深い\r\nからな。次はもっといろいろ教えたるわ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "艾尼斯风神",
+      "Text": "以后还能在其他地方一起买东西玩就好了呢～",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "托两位的福，\n我感受到了这个国家深奥的购物文化……\n谢谢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "艾尼斯风神",
+      "Text": "嗯嗯！\n下次的话……\n我们应该也能习惯这种闪闪发光的氛围了吧～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "玉藻十字",
+      "Text": "对、对哈……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "看来即便是她的朋友，\n对她时不时散发的皇家光芒也有些招架不住……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

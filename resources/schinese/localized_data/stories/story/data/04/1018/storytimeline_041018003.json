@@ -1,0 +1,349 @@
+{
+  "Title": "その瞳が見据えるもの",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "いよいよ今日はデビュー戦。\r\n前評判の高さもあり、エアグルーヴは断トツの1番人気だった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "不过——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "先頭のウマ娘が最後の直線に差し掛かりました！\r\nここで鋭く足を伸ばすのは、1番人気エアグルーヴ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "届くか！\u3000届くか！\u3000ゴール板はもう目の前！！\r\nエアグルーヴ届くかっ！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "ここで――ゴールインッ！！\r\n“女帝”エアグルーヴ、クビ差及ばず2着ですっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『激走』……その一言に尽きる走りを見せたウマ娘に、\r\nエアグルーヴは破れてしまったのだった……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "敗北、か……くそっ。なんと無様な……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "……いや、怒っている場合でも、悔いている場合でもない。\r\n私は“女帝”として足りておらず、故に失態を演じた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "であれば、足りる私と成るまで、積み重ねるのみだ……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "おい貴様、担当ウマ娘として予定の変更を提案する。\r\n本日午後は休息日であったが、ミーティングを執り行いたい。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "これまでのトレーニングメニューを徹底的に見つめ直し、\r\nさらなる向上を目指すのだ……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "屈辱的な気持ちを押し殺し、彼女は早くも前を向こうとしている。\r\nエアグルーヴは、自らの志す理想の“女帝”たらんと常に全力だ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "だからこそ、トレーナーとしてもっと力になってあげたい。\r\n例えば、多忙過ぎる現況を少しでも改善するとか――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "おい、聞いているのか？\u3000何を考え込んでいる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "……まさか、貴様も余計な事を言い出すのではあるまいな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "最初に告げたな？\u3000貴様は私との『トレーニング』のみに気を配れ、\r\nそれ以外のあらゆる事に対する口出しは決して許さんと。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "それとも、契約に違反するつもりか？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……エアグルーヴの多忙ぶりは気がかりだが、\r\n下手に口出しをすると契約を打ち切られてしまいそうだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "では、自分はどうすべきなのか。\r\nその日、自室に戻ってから必死に考えを巡らせていると――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "グルーヴの元担当",
+      "Text": "でも、このまま生徒会活動や後輩指導に関わっていては、\r\n彼女自身の成長の妨げになってしまうわ！\u3000だから――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "エアグルーヴは、明確な意志と目的があり活動に参加している。\r\n誰であれ、彼女の同意無しにその権利を剥奪出来ないはずだが。",
+      "ChoiceDataList": [
+        "（……そうか！！）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そもそも、なぜエアグルーヴは自らの貴重な時間を犠牲にしてまで\r\n生徒会活動や後輩指導を行っているのか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "まずは、その真意を知るべきなのかもしれない……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "なるほど、それで私の所へ来たという訳か。\r\nふむ……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "私の口から全てを語る事も、出来なくは無い。\r\nが、それでは彼女の真意を知ったと言うには足らんだろう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "視座を同じくしたいと願うのなら、\r\n彼女と同じものを見て、己の内に落とし込むべきではないだろうか？",
+      "ChoiceDataList": [
+        "确实呢……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "だが君は、彼女に関し懸命に思いを巡らせた上で、\r\n私の元を訪れてくれたのだな。その真心はよくよく伝わった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "真摯さに敬意を評し、君を案内しよう。\r\n着いて来てくれ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "シンボリルドルフに先導され、たどり着いた先のコースでは、\r\nエアグルーヴがメジロドーベルのトレーニングを見てあげていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "スタート直後の加速がまだ甘いな。\r\nピッチはもっと速く、ストライドはもっと広く取れ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白多伯",
+      "Text": "ストライド、ですか……でも、歩幅を広げようと意識すると、\r\nどうしてもスピードが落ちてしまって……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "ロングストライドで走る際のリズムに、体が慣れていないせいだな。\r\nよし、1ついいトレーニング方法を教えてやる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "1.5m程度の間隔でコース上に印をつけ、\r\nその上を正確に踏み抜きつつ、なるべく減速せぬよう走ってみろ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "慣れてきたら1.8m、2m……といったように間隔を広げていけ。\r\nそうすれば、ロングストライドのリズムに自然と体が慣れるぞ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白多伯",
+      "Text": "なるほど……！\r\nありがとうございます。やってみます……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "……メジロドーベルは男性を不得手としていてな。\r\n男性教官からトレーニング指導を受ける際など苦労していたようだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "そんな時、いち早く彼女の様子に気づき、\r\n手を差し伸べたのがエアグルーヴだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "メジロドーベルが今もこの学園でのびのびと学んでくれているのは、\r\nエアグルーヴの功績による所が非常に大きいのだよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "而且——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "スズカ、ここにいたのか。\r\n何をしていたんだ？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "えっ？\u3000ええと……特に何も。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "トレーニングコースが整備不良で使用できないらしくて……。\r\n走れないとなると……なんだか、することがなくて。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "それでここで呆けていたというわけか。\r\nふ……なんともお前らしい。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "さて、そんなお前に朗報だ。コースの整備不良の件、\r\n生徒会として先程対応を済ませた。一部はもう使用可能だぞ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "わ……本当！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "气槽",
+      "Text": "門限が近づいてはいるが、お前のことだ。\r\n10分でも20分でも、走れるならば走りたいだろう？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "ええ……！\u3000ありがとう、エアグルーヴ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "少々気難しい所のあるサイレンススズカにも、\r\nエアグルーヴは入学当初からよく声をかけてやっていたな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "それに生徒会副会長としても、常に学園をよりよい環境とするため、\r\n刻苦勉励を重ねてくれている。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "彼女の働きは、学園生徒全体の助けとなってくれているし……\r\n無論、会長であるこの私にとっても大切な右腕だ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "さて……どうだろう。\r\n今日の体験は君に何かの答えをもたらしたかな？",
+      "ChoiceDataList": [
+        "もう1度よく考えてみるよ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "なるほど。結論ばかりを急がないのは、素晴らしい姿勢だな。\r\nうむ――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "彼女自ら杖を手放していやしないかと案じていたのだが、\r\nどうやら杞憂に終わりそうだ。",
+      "ChoiceDataList": [
+        "呃？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "いや。……じき、未勝利戦だな。健闘を祈るよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "もう1度、エアグルーヴのことについて考えよう……。\r\nそう決意を固めたのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

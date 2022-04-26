@@ -1,0 +1,112 @@
+{
+  "Title": "比赛失败",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……ふぅ。\r\n負けちゃった、ね……残念……。",
+      "ChoiceDataList": [
+        "抱歉……没能让你获胜。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "不，请您不要道歉。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "このレースに挑戦できたことは、\r\n決して無駄ではなかったと思うし……\n残念だったけれど、悲しむことはないよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "だって、まだ次のレースがあるもの……！\r\nそれに私には、嘆いている時間はない。",
+      "ChoiceDataList": [
+        "……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "負けたことは、本当に悔しい。\r\nそれでも誰かと走って競い続けられることは\nこんなにも素敵で、楽しいことだから……！",
+      "ChoiceDataList": [
+        "这样……还真有你的风格呀",
+        "そっか、貴方らしいね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "嘿嘿嘿～♪\u3000对吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "それにねトレーナー、負けちゃったのは、\r\nまだまだ伸びしろがある！\u3000ってことだよ♪",
+      "ChoiceDataList": [
+        "的确如此……！",
+        "那就得好好锻炼了",
+        "じゃあビシバシ鍛えないとね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "それにねトレーナー、負けちゃったのは、\r\nまだまだ伸びしろがある！\u3000ってことだよ♪",
+      "ChoiceDataList": [
+        "的确如此……！",
+        "那就得好好锻炼了",
+        "じゃあビシバシ鍛えないとね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "ふふふ……！\r\n私はまだ強くなれるの……楽しみにしていて。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "鍛え直して、次こそ勝っちゃおう♪\r\nキミにも素敵な思い出をあげるからねっ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "あら、手厳しい！\u3000でも……\r\n元気を取り戻せたってことかな？",
+      "ChoiceDataList": [
+        "托你的福"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "それじゃあ、私も気合いを入れ直して\r\nどんな『ビシバシ』にもお応えしないとね♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "下次一定会取胜的，训练员……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "穏やかに微笑むファインモーションは、\r\n熱い闘志を秘めているようだった……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

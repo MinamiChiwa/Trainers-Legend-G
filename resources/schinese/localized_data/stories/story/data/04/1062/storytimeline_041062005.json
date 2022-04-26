@@ -1,0 +1,239 @@
+{
+  "Title": "今日も、ゆるっと、元気です",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "満足満足、大満足～！\u3000むっふっふ～♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "トレーニング前に仕事を片づけていると、\r\nマチカネタンホイザが上機嫌で入ってきた。",
+      "ChoiceDataList": [
+        "買い物してきたのか？",
+        "買い物してきたの？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "ですです！\u3000七色タコさんにホタテの貝ヒモ、\r\nそれからえっと～……第八の七福神、ところ天！！",
+      "ChoiceDataList": [
+        "……なんて？？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "むふふっ♪\u3000ですからタコさんに、ホタテに、\r\n第八の七福神を楽しんできたのですよ～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……よくわからないので、\r\n詳しく話を聞いてみることにした。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "まずですね～、七色タコさんグミを買いたいという\r\nターボとコンビニに行ってきまして！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "色とりどりタコさんグミを入手したのです。が！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "パッケージをよくよく見ると、タコさんの吹き出しに\r\n『激レアカニさんグミが入っているよ！』と書かれており――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "それからはもうタコさん食べまくり！\u3000そして粘りに粘った結果\r\nカニさんを2個も発見し、楽しくわけっこしてきたわけです♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "そしてお次はネイチャと商店街でホタテの貝ヒモを買ってからの～、\r\nむしゃむしゃお茶ターイム！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "いやー、たまたま会った商店街のおばちゃんがお茶を淹れてくれて、\r\nこれが貝ヒモに合うのなんのっ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "それにネイチャもすっごく優しくって。\r\nなんと最後に残った貴重な1本を私に譲ってくれたんですよ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "私は貝ヒモをじっくり噛みしめ……人生について考えながら\r\n深い味わいに浸ったというわけです～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "最後はフクちゃん先輩と福探し！\u3000野を越え山を越え、\r\nたどり着いた場所で、私たちは――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "ついに見つけたのです！\r\n大黒天や恵比寿天に連なる――第八の七福神、ところ天を！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "フクちゃん先輩が言うには、この事実はまだおおっぴらに\r\nなっておらず、私たちだけが知っているとか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "そんな伝説の存在にフクちゃん先輩も私も大感激……っ！\r\nお祈りしつつ美味しくいただきました、というわけです～♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "いやぁ～、本当、みんなが私の仲良しさんでよかったです。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……思っていた以上に激しい1日だったようだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "それに、1日に詰め込むにしては盛りだくさんだ。\r\n人によっては疲れてしまいそうだが……。",
+      "ChoiceDataList": [
+        "大丈夫？疲れてない？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "え？\u3000ぜんぜん疲れてないですよ～。全部ご近所でしたし\r\n元気元気です！\u3000だってほら、こ～んなに身軽っ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "彼女の言う通り、心身共に疲れは見られない。\r\nむしろいつも以上に生き生きとして、元気そうに見える。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "思い返してみれば、よっぽどのことがない限り、\r\n彼女はいつも元気だった気がする。",
+      "ChoiceDataList": [
+        "君は本当に元気なんだな",
+        "貴方は本当に元気なんだね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "そうですかねえ？\u3000普通だと思いますけど。\r\nでも元気って言われるとなんか嬉しいですねえ。えへへ♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "そだそだ、トレーナーもタコさんグミ食べませんか？\r\nまだいっぱい残ってるので。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "……ん、ありゃ？\u3000どこに置いたっけ？\r\nおぉーい、タコさん出ておいで～。タ～コさ～～ん――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（ごちーーーーん！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "どわぁっ！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（ドサササササッ！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "はひゃああぁっ！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "マチカネタンホイザはテーブルにぶつかり、\r\nその上に置いてあったグミの袋を盛大にぶちまけた……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "しかも、テーブルにぶつかった衝撃で鼻血が出ている……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "あだだ、やっぢゃった。……ずびっ。",
+      "ChoiceDataList": [
+        "没事吧！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "はい、いつものことなので。\r\nぜんぜん大丈夫です～。……ずびびっ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "待兼诗歌剧",
+      "Text": "――あ！\u3000でも袋詰めのタコさんたちが！\r\nごめんねぇ、今助けるからね～～～……っ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "時々心配になるくらい、元気で明るいマチカネタンホイザ。\r\nできる限りこれからも見守ろう……と改めて思った。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

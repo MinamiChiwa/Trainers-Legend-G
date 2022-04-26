@@ -1,0 +1,215 @@
+{
+  "Title": "让我满足吧！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "今日はコースの整備が入るので、トレーニングの開始時間を\r\nいつもより早めたのだが……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "一！\u3000二！\u3000三！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "はあ……はあ……最後のターンのキレが足りなかったかしら。\r\nそれじゃあ、もう1度……。",
+      "ChoiceDataList": [
+        "马上就要到训练的时间了……",
+        "马上就要到训练的时间了……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "んもう、わかってるわ。\r\n急かすトレーナーはウマ娘から嫌われるわよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "でも、もう少しだけ集中させて。\r\n……この前のウイニングライブ、途中で躓いちゃったでしょ。",
+      "ChoiceDataList": [
+        "有这回事吗？",
+        "有这回事吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "哎呀，没发现吗？\n那说明我的圆场很完美嘛。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "けどいかに人に気づかれなかったとしても、失敗は失敗よ。\r\nまた同じ失敗をするようじゃ、私は私が許せないわ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "――因为，我是一流的马娘啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "だからお願い、もう1度だけ確認させて。\r\nトレーニングの開始時間を、ちょっとズラすだけでいいのよ。",
+      "ChoiceDataList": [
+        "明白了，再来一遍是吧",
+        "明白了，再来一遍是吧"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "ええ。\r\nもう1度、私が満足できるまで練習しましょう。",
+      "ChoiceDataList": [
+        "……诶？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "あら、何か私おかしいことでも言った？\r\n言ってないわよね？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "おーっほっほっほ！\u3000一流のキングが、\r\n生半可な気持ちで特訓をやめるワケないじゃない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "さあ、あなたには音楽をかける権利をあげる！\r\n共にキングの踊りを最高レベルまで高めるわよ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "さ、トレーニングを開始するわよ。\r\n準備はいいかしら？",
+      "ChoiceDataList": [
+        "可是时间快要……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "什么啊，还有时间的吧。真是个急性子呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "……そもそも、この私が使うコースに\r\n利用時間があること自体が間違いなのよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "とにかく、無駄口はそこまで！\r\n黙ってトレーニングの準備をなさい！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "……何事も全力で諦めずに。それがキングの信条なんだから。\r\nダンスだって、トレーニングだって完璧にこなして――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "(叮咚，叮咚……)",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "校内广播",
+      "Text": "トレーニング終了の時間です。本日はコースの整備が行われるため、\r\n生徒の皆さんは速やかに帰宅の準備を進めてください。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "……哈。",
+      "ChoiceDataList": [
+        "难道你忘了跑道要整修吗？",
+        "难道你忘了跑道要整修吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "うぐっ……わ、私が忘れるはずないでしょっ。\r\n別に学園でなくとも走れるんだし、問題ないわ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "ふんっ、トレーナーは先に帰って結構よ。\r\n外で自主トレをするぐらい、私1人でもできるもの！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "好了，你快点――",
+      "ChoiceDataList": [
+        "我陪你吧。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "欸。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "でも、予定がズレたのだし、あなたも自分の仕事があるでしょ？\r\n別に私に付き合う必要なんて――",
+      "ChoiceDataList": [
+        "我是你的训练员啊",
+        "我是你的训练员啊"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "なっ、なら最後まで付き合いなさいよね！\r\n私が満足するまで、帰したりしないんだからっ！",
+      "ChoiceDataList": [
+        "正合我意！",
+        "正合我意！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "圣王光环",
+      "Text": "おーっほっほっほ！\u3000いい返事だわ。\r\n今日はとことん、最後まであなたのことを活用してあげる！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "そしてその日はキングヘイローが満足いくまで、\r\n彼女のトレーニングに付き合うことになったのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

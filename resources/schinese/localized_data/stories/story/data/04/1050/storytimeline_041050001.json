@@ -1,0 +1,373 @@
+{
+  "Title": "No one knows me.",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "？？？",
+      "Text": "――なに？\r\nチビは何しても無駄だって言いたいわけ！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "昼間のカフェテリア。ひしめくウマ娘たちの穏やかな様子には\r\n不似合いな激昂が、一瞬の静寂をもたらす。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "沈黙……からの、ざわめき。\r\n困惑するウマ娘たちの視線を一身に集めていたのは――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我不由得大吃一惊——发出怒吼的，是个身材娇小的马娘。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "わわわ、待って待って待ってッ！！\u3000違うよぉタイシンーーー！！\r\nアタシ、そんなつもりで言ったんじゃ……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "大进，这次奖券说得对。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "確かに身体的成長には十分な栄養が必要不可欠だが、\r\n君のそれは度を越している。いわゆる過食の範囲に近いぞ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "彼女たちの傍のテーブルに並んだ、大量の料理。\r\nあれがナリタタイシン1人の分だとすると、確かに過分だろう……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……多嘴。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "琵琶晨光",
+      "Text": "いいから聞け、君はただでさえ食が細い方だろう。\r\n先日も食事の後に顔色が――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "你们少管闲事！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "大、大进……但是但是，我……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "别跟过来！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……付きまとってくんのはもうやめて。\r\nアタシのことは、放っといてよ……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "そんな、心のざわつく一幕を目にしてしまった日の\r\n夜のこと。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "遅くまでかかった仕事を終えた帰り、\r\nふとトレーニングコースに立ち寄ると――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哈……哈……哈……！！",
+      "ChoiceDataList": [
+        "（这个时间还有孩子在自主训练……？）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哈……咕唔……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "コースを走っていたのは、昼間に見かけた小柄な体躯のウマ娘――\r\nナリタタイシンだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "はぁっ、はぁっ……くっ、ぅ――\r\n……ぁああああああっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "歯を食いしばりながら、血を吐くような叫びと共に\r\nコースを駆けるナリタタイシン。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "見ているこちらが痛々しくなるような走りから感じられたのは、\r\nひどく痛切な――焦燥だった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "それから数日後……ウマ娘たちが自身の実力を\r\nトレーナーに示す場『選抜レース』の開催日。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "一生のうちで最も走力の充実する『本格化』を迎えたウマ娘たちは、\r\n鍛錬の成果を発揮せんとやる気を漲らせている。そんな中――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "参加比赛的赛马娘",
+      "Text": "哇！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "参加比赛的赛马娘",
+      "Text": "抱歉，我没看见你……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……もうじきデビューに手が届くであろう子たちの中に、\r\n今にも埋もれてしまいそうなナリタタイシンの姿があった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "新人训练员A",
+      "Text": "うわ、やけに小柄な子がいるな？\r\n……にしても今日の選抜レースは目玉不在ですね。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "優秀な家柄の出身だったり、可能性に溢れていたりする子は\r\nまとう雰囲気からして違うものだからな。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "まあまあ、最終的には走りを見てみなければわかりませんよ。\r\nさて、そろそろ出走ですね……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……ふん。\r\nやってやる……今日こそ……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "さあ、各ウマ娘、ゲートに入りまして――\r\nスタートしましたっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "好快……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "新人训练员A",
+      "Text": "うわっ、あの小さい子、後方スタートかと思ったら前へ行くのか！\r\n集団の位置取り争いに強引に混ざる気か……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "好像是。但是，她的身体——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "唔……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "……やはり、位置取り争いに混ざるのは厳しいだろうな。\r\n体格差で不利すぎる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "该死……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "新人训练员A",
+      "Text": "あーあ、何度も押しのけられて……\r\nあれじゃスタミナが持たないんじゃないか？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哈啊……哈啊……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "さあ、先頭が第4コーナーを曲がりました！\r\nここで仕掛けてくるのは――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "哈啊啊啊啊啊啊啊！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "ナリタタイシン！\u3000ナリタタイシン、素晴らしい末脚！！\r\n一気に先頭へ躍り出ます！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "はぁ……はぁ……！！\r\nっ、ぐぅ……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "……序盤で消耗し過ぎたわね。\r\n無茶な走り……痛々しいわ……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "一瞬見せた末脚のキレが素晴らしかった事は間違いない。だが結局、\r\nナリタタイシンはずるずると順位を落とし――10着に終わった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "比赛之后——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "はぁ……はぁ……くそっ。\r\n……頭、いた……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "――タイシンさん、話が……あら、大丈夫？\r\n息、まだ整いきれてないの……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "っ！\u3000別に、何でもない。\r\n……何の用？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "いえ……やっぱり、思った通りね。タイシンさん、あなた……\r\nこのままレースの世界に居続けるのは、やめたほうがいいわ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……哈？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "そんな体でトゥインクル・シリーズに挑むなんて、無茶よ。\r\n取り返しのつかないことにだってなるかもしれない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "そうなる前に……この道は、諦めなさい。\r\nウマ娘でも、走る以外の生き方はあるでしょう？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "……不用你多嘴。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "タイシンさん！\u3000お願い、あなたのために言っているのよ。\r\nちゃんと話を――！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "うるさい、うるさいっ！！\r\nアタシのため？\u3000は、ふざけんな！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田大进",
+      "Text": "アタシはこの脚で勝つ。必ず勝つ。\r\nアンタにも絶対、見せつけてやるから……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "吐き捨てるように言ってから、駆け去っていったナリタタイシン。\r\nその追い詰められた横顔が、脳裏に焼き付いた……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,438 @@
+{
+  "Title": "新年参拜",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "——新年。\n即便是刺骨的寒意此刻也带着焕然一新的感觉。\n我强忍寒意，去到了学校附近的神社。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "今年开始，爱慕织姬就步入了古马级。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "你觉得……她会夸我吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "不断奔跑、参加各种比赛、拿下无数胜利……\n然后……终有一日，我与她再会的时候……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "那个时候……等到那个时候……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "那个时候……她……会夸我吗——？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "虽然她失去了支撑自己的，最为重要的东西……\n但是，她也同样得到了小小的希望之种。\n今年，我也要好好支持她才行。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "一边这样想着，\n我一边排进了参拜人员排成的长龙之中——",
+      "ChoiceDataList": [
+        "……哎？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……………………",
+      "ChoiceDataList": [
+        "织姬！你也来了啊……？",
+        "アヤベ！貴方も来てたんだ……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "欸？啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "站在一旁，\n不知为何没有排队的织姬注意到了我这边。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "接着，她就像身体哪儿不舒服似的，\n目光开始游离——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……新年快乐。",
+      "ChoiceDataList": [
+        "今、今年也请你多多关照！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "但她没有说别的事情，而是先跟我问了好。\n……真守规矩啊。",
+      "ChoiceDataList": [
+        "……你不来参拜吗？",
+        "……参拝、しに行かないの？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……我还没想好。",
+      "ChoiceDataList": [
+        "诶？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………就是，那个……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "啊嚏！",
+      "ChoiceDataList": [
+        "唔哇！你没事吧！",
+        "わっ！大丈夫！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "她到底在这儿站了多久啊……\n爱慕织姬看上去已经着凉了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "总之，还是去个暖和点的地方谈事情吧……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "在新年的一片混乱之中，\n我们进到了一家看上去相当典雅的咖啡店。\n但店内也是热闹非凡，看上去相当忙碌。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "用着似乎要被这喧闹吞没的细语声，\n她轻轻地开了口。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "我在思考……要怎么做，才算是好好活下去。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "因为妹妹在最后这样嘱托过我……\n而且，这不是为了赎罪……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……我是为了，实现她的愿望。",
+      "ChoiceDataList": [
+        "这样啊。",
+        "……そっか"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "爱慕织姬的心中，果然妹妹占了相当大的比重。\n自从我们相遇开始，这件事就从未改变。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "……不过，在这两年里，她似乎也有所改变。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "现在的她和过去不一样，\n并非是为了实现妹妹的愿望而甘愿燃尽自己——",
+      "ChoiceDataList": [
+        "（是将愿望埋藏于心，昂首挺胸地活下去。）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "所以，那个啊……\n因为是要好好地活下去嘛……我觉得……\n就像大家那样，在新年立下新的誓言比较好……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "但是……\n到底该立下怎样的誓言——\n或者说……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……我想不到什么『我想做的事情』。",
+      "ChoiceDataList": [
+        "是这样吗？",
+        "这样吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……因为一直以来，\n我都在全力抑制着『自己』……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "为了将一切都献给我妹妹，\n我应该尽可能抹消『自己』的一切，\n用尽全力去达成目的……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "如果不这样做的话，\n我就会觉得我还不够真诚……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "所以……与跑步无关的事情我一概不关心，\n与我使命无关的，\n『我自己』的想法也一直被我刻意无视……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "就这样，从不移开视线，不关心周围的一切……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……现在要想『我想做的事情』的时候……\n我反而想不出来了。",
+      "ChoiceDataList": [
+        "是这样吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "——欸？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "她将这一切想得太复杂了。\n不过，\n这也正是一直刻意无视『自己』的风格。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "但至少，以我一个旁观者的角度而言，\n她想做的事情其实一直都很明了。",
+      "ChoiceDataList": [
+        "『想要好好活下去。』"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……啊。",
+      "ChoiceDataList": [
+        "就把这作为今年立下的誓言如何？",
+        "それが今年の誓い、でいいんじゃないかな？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "这样——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………是……呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "——就这样，我们又一次出发去了神社。\n虽然午后的参拜客数量已经有所减少，\n但我们在队伍里前进的步伐依旧非常缓慢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "不过，这样也许正好。\n对于在我身边不自在地迈着步子的她而言，\n也能有更多的时间思考自己的事情。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "——终于轮到了我们。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "站在双手合十的她身边，我闭目祈祷\n『请让爱慕织姬在今年——』",
+      "ChoiceDataList": [
+        "（身体健康！）",
+        "（能在比赛中获得好成绩！）",
+        "（能够找到更多喜欢的东西！）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……那，训练的时候再见。",
+      "ChoiceDataList": [
+        "记得吃些热的东西，好好睡觉哦！",
+        "あったかいもの食べて、ゆっくり寝てね！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "欸？现在可不是做那种事情的时——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……是呢。\n我……尽量这样做吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……那，训练的时候再见。",
+      "ChoiceDataList": [
+        "要变得更强，今年也拿下比赛的胜利哦！",
+        "強くなって、今年もいっぱい勝とうね！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……是呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "就这样做吧。\n所以——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "今年，也拜托您指导了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……那，训练的时候再见。",
+      "ChoiceDataList": [
+        "记得要好好休息好好玩哦！",
+        "息抜きもいっぱいするんだよ！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "哈？好好休息好好玩？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……啊……\n好像……是该这样做呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……我会想想看的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………我能想得出来吗…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

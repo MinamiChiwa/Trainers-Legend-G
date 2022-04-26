@@ -1,0 +1,350 @@
+{
+  "Title": "激昂，而后心碎——",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "在发掘黄金城市失败后的第二天，\n我正走在林荫小道上时——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "果然，刚刚在跑道上大发脾气的是阿城同学对吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘B",
+      "Text": "和她起争执的是她的训练员吗？\n吵得蛮厉害的，没事吧……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "发生什么事了……我决定去看看。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "——那你说你是什么意思啊！\n难道是让我以后别训练了吗？！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "不是不是，不是这个意思啦。我是说，\n现在锻炼肌肉的话可能会导致形体走样，也有可能受伤啦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "比起那个，现在你应该更注重自己的仪态啦！\n你还是应该想办法让自己跑起来的时候模样更漂亮才对哦。\n对了，还得好好练习胜者舞台的舞蹈呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "……做这种事情能让我进步吗？\n能让我赢下比赛吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "你说这个啊！没事没事，这方面就交给我吧。\n要点就是“只参加能赢的比赛”。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "这样一来你的名声也不会受损啦！\n在众人的注视下，以华美跑姿获胜的黄金城市——完美的计划对吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "……不对。不对、不对、不对！！\n我才不是为了这种事情才……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "……告诉我吧。为什么？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "……你不是说过『让所有人都目不转睛地注视着我的奔跑』\n『让我成为赛场上最闪耀的赛马娘』的吗……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "但是现在……为什么啊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "哎？我的心意从来没有改变哦。\n因为，你是那个“黄金城市”对吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "那个有名的帅气模特嘛！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "…………！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "没事啦，全部交给我就好！\n需要的人设也好、闪耀在赛场上的方法也好，我都已经在考虑了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "之后只要按我的的指示行动就好啦！\n这也是为了你好嘛。所谓训练员，就是这样的存在对吧？",
+      "ChoiceDataList": [
+        "这才不是训练员！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "哈……？\n啊、你……为什么……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "……喂，你谁啊。\n一个外人就请别来管我们的事情好吗？",
+      "ChoiceDataList": [
+        "身为训练员，你甚至不愿意听听她的心声吗！",
+        "身为训练员，你甚至不愿意听听她的心声吗！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "你说什么？一副自以为是的模样……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "…………唔。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "啊、喂！……闹什么啊，搞不明白。\n难得我想让她在赛场上变得闪耀起来……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "这脾气可真够古怪啊~……\n算啦，去发掘别的姑娘吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……现在可不能放着黄金城市不管。\n得赶紧追上去才行！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我在学园中找了个遍，但还是没找到她。\n只剩下——",
+      "ChoiceDataList": [
+        "黄金城市！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "呜哇啊啊啊啊啊？！怎么了怎么了？！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "吓我一跳~……这是怎么啦~？\n你在找阿城吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我向她说明了情况，\n接着询问她是否知道黄金城市可能在哪里。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "……唔嗯，所以你才在到处找阿城？\n……诶~好可疑啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "虽然你说你也想发掘阿城，但你多半也是因为她长得漂亮才想发掘她对吧？\n呀……虽然她长得真的很漂亮啦，漂亮到让我直呼不妙哇。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "但这样的话，你就和那个经纪人小姐完全一样了吧~……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "我姑且先打听一下，\n你是为什么一直拘泥于发掘阿城啊？",
+      "ChoiceDataList": [
+        "我想支持一直拼尽全力的她。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "『想支持她』呢～……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "顺便再问一句，你有考虑过『想和她一起这样努力～』吗？",
+      "ChoiceDataList": [
+        "没考虑过。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "没考虑过的吗？！\n诶？真的？这不是超不妙的吗？",
+      "ChoiceDataList": [
+        "因为我对她还一无所知。",
+        "因为我对她还一无所知。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "……诶？",
+      "ChoiceDataList": [
+        "所以才想跟她聊聊，多了解一些她的事情。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "在这之后，再和她好好商量一下以后应该怎么做。\n我将这样的想法原原本本地告诉了东瀛佐敦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "哼嗯……？\n啊，我算是勉强明白啦……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "……哎？这种好像在等我说什么的气氛怎么回事啊……\n我也不知道你想要我说什么啊……",
+      "ChoiceDataList": [
+        "请告诉我她现在在哪里……！",
+        "请告诉我她现在在哪里……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "哇哇哇、别这样步步紧逼啦~！\n讨厌啦~！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "——居然跟上来了吗~？！说真的，别开玩笑啦！\n【注：双关语冷笑话，佐敦（ジョーダン）音同玩笑（じょうだん)】",
+      "ChoiceDataList": [
+        "拜托了，告诉我吧！！",
+        "求你了，告诉我吧！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "不要不要！！你别跟过来啦~！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "哈……跑到这里的话——",
+      "ChoiceDataList": [
+        "求你了ーーー！！",
+        "求你了ーーーー！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "怎么还在追我呀~？！\n差不多就得了吧~！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "真是的~我不知道啦不知道！\n就算你问我我也不知道啦~！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "反正阿城喜欢去的地方也就是河川旁之类的……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "……啊，不妙。",
+      "ChoiceDataList": [
+        "谢谢！！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "唔哇！等下啦？！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "喂——可别告诉阿城是我说的哦？！\n千万不要暴露了哦~？！阿城发火的时候真的超恐怖的！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "喂！！你听见了吗~！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

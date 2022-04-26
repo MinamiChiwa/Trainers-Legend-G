@@ -1,0 +1,439 @@
+{
+  "Title": "情人节",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "——今天是情人节。\n在这个特殊的节日里，会上市一些比较特殊的甜点。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我抱着来尝尝鲜的心态，\n来到地下商场的特卖场乱逛的时候——",
+      "ChoiceDataList": [
+        "（人太多了……好挤！！）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "？？？",
+      "Text": "加油哦，训练员！\n这时候就该不甘示弱地和人群对抗哦～♪",
+      "ChoiceDataList": [
+        "诶？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "啊哈，真是奇遇呢♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………",
+      "ChoiceDataList": [
+        "你们也来了啊",
+        "2人も来てたんだ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "是的，我们正在约会哦～♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……不是约会吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……只是被她带着到处乱逛而已。\n去的尽是些花哨得让人眼睛疼的餐厅，\n要不就是只卖些荧光视频的小摊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "哈哈，因为是情人节嘛。\n街上到处都是光彩夺目的东西。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "所以，今天我会带着织姬同学\n逛遍卡莲喜欢的地方哦♪",
+      "ChoiceDataList": [
+        "（织姬……难道她，\n会对『光彩夺目的东西』感兴趣！？）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……你刚刚，是不是在想些奇怪的东西。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "虽然不知道你在想什么，但肯定错了。\n只是因为——\u3000",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "――だから、その。\r\n『菊花賞』前のことは……ごめんなさい。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "那些事情……都是我的错。\n那时的我只是迁怒于你而已……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……真的，非常对不起。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "织姬同学……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "……呜呜……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "呜呜呜……\n那时候的卡莲……真的很伤心……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "那时候的织姬同学……\n简直就是在说『就此死去也无妨』……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "卡莲……卡莲我呜哇啊啊~~……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "对……对不起。\n现在的我已经不会再那么想，\n也不会再那么说了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "我才不原谅你！！\n我那个时候是真的、真的很担心！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……是……呢。\n不原谅我也没关系……\n我不值得获得你的原谅——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "我只是现在不原谅你哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "所以！为了表示歉意，\n织姬同学就尽可能地陪陪卡莲吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "………………哎？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……这只是我在表示对她的歉意而已。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "真是的~不要老说这种话嘛。\n明明织姬同学看起来也乐在其中的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "卡莲呢~今天打算带织姬同学一起，\n去织姬同学不了解的地方、\n去体验织姬同学不了解的事物！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "这样一来，\n说不定织姬同学也能找到自己的『爱好』哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "对于现在的『织姬同学』而言，\n这就是最重要的事情吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "………？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "真机伶满脸认真地说出的话语，\n令我回忆起了之前于爱慕织姬的对话。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "与跑步无关的事情我一概不关心，\n与我使命无关的，\n『我自己』的想法也一直被我刻意无视……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "就这样，从不移开视线，不关心周围的一切……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……现在要想『我想做的事情』的时候……\n我反而想不出来了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "看来是要捡起曾被无视、被丢弃的『自我』。\n对于决心要『好好活下去』的织姬而言——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "找到自己的『爱好』，的确是非常重要的事情。",
+      "ChoiceDataList": [
+        "织姬的事情就交给你了，卡莲。",
+        "アヤベをお願いね、カレン"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "！\n哈哈，好的～♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "真机伶",
+      "Text": "那么，去下一家店把——！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "欸……喂！\n稍微等下啊……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "——接着，当晚。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……今天还真是经常碰上呢。",
+      "ChoiceDataList": [
+        "是呢。你现在要回去吗？",
+        "だね。帰るところ？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "不是。我先把卡莲同学送回了宿舍……\n然后又出门了而已。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……我想去看看星星。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "虽然她已经不在了，\n也没法像以前那样陪她说话，\n所以最近去得比较少……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "但是，今天被卡莲同学带着东奔西跑之后……\n就不知道为什么……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……突然，就想去了。",
+      "ChoiceDataList": [
+        "那，织姬的爱好就是这个了哦。",
+        "じゃあ、アヤベはきっとそれが好きなんだね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "呃？",
+      "ChoiceDataList": [
+        "你喜欢的就是『天体观测』！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "啊啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……这样。原来如此。\n……这个爱好还挺不错的呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "她仿佛终于确认了什么似的喃喃自语道。\n我微笑着看向她，余光却瞥见一台自动售货机。\n……难得遇上了，我送她点喝的吧。",
+      "ChoiceDataList": [
+        "要带点热饮去喝吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "为了不让她顾虑太多，\n我告诉她我自己也会买。\n她沉默了一会，接着——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "じゃあ……烏龍茶。\n……ありがとう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "她做出了比我的想象更简单的回答。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "要不……回了房间之后我也看看星星吧？\n我一边想着这些事情，\n一边目送织姬那似乎有些雀跃的背影远去。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "那、乌龙茶——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……算了。\n你打算喝什么？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "被问到之后，我才开始考虑这件事情。\n这时，我想起了白天特卖场的事情——",
+      "ChoiceDataList": [
+        "毕竟是情人节，就打算喝热可可。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……好奇怪的决定方式啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（但是――）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………那，我也喝这个吧。",
+      "ChoiceDataList": [
+        "！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "接过热可可之后，\n织姬小跑着去往高台的方向——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（……甜味……在口中回荡。）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……这个决定方式，真的好怪啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

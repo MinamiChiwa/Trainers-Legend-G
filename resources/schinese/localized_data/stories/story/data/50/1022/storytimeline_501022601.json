@@ -1,0 +1,46 @@
+{
+  "Title": "复仇战！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "ふんふふ～ん♪\u3000ふふふ～ん♪\r\nよし、綺麗に磨けたね。",
+      "ChoiceDataList": [
+        "それは……蹄鉄……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "ええ、勝利に懸ける想いと祈りを込めて\r\nピカピカにしていたの♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "前のレースでは残念な結果だったから、\r\nやれることは全部やっておきたくて。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "今日に向けて、キミとたっくさん\r\nトレーニングしたもの。\nあとは私の心次第でしょう？",
+      "ChoiceDataList": [
+        "ああ、頑張っておいで！",
+        "うん、頑張っておいで！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "はい、行ってきます。\r\n今日こそ必ず勝ってくるから……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

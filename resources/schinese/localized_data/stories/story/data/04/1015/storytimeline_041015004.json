@@ -1,0 +1,241 @@
+{
+  "Title": "全てはまだプレリュード",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "――独特な思想は抜きにして、夢を信じ続けるという\r\nとても難しいことをテイエムオペラオーは貫いている。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ターフを駆けるウマ娘にとって大事なものを持つ彼女と\r\nもう1度話をしたいと思い、学園を探し回っていると――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "嗚呼、木洩れ日よ！\r\nボクと共にこの世界を照らそうじゃないか！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "彼女が求めるのは、太陽のような“覇王”の輝き。\r\nそしてその思いには強い信念がある。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "今日もボクは光り輝いている！\r\nはっはっはっはっは！\u3000はーっはっはっはっはっはっはっは！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "また独特なトレーニングのために、他の場所へ行くのだろう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "こうしてみると、その走りは力強い。\r\n思い返せば、これまでのトレーニングも――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "嗚呼、白鳥のように美しく舞うボク……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "あのステップやジャンプだって、相応のバランス感覚を\r\n持ち合わせていなければできないことだろう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "嗚呼、ツバメのように美しく宙を舞うボク……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "プールでの飛び込みにしても、\r\nあらゆる局面で屈しない強靭なメンタルがあってこそ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "ボクの美しさで\r\n世界に幸せが満ちあふれますように……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "神社で石段を登るそのパワーとスピードは、\r\n彼女の実力を裏付けている。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "彼女はただ『“覇王”になる』と言っているわけではない。\r\n“覇王”になるための、たしかな実力をしっかりと持っている。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ならば彼女が言う“覇王”というのも、いつか本当に――",
+      "ChoiceDataList": [
+        "待ってくれ！テイエムオペラオー！",
+        "待って！テイエムオペラオー！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "ん…………？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "今、誰かが呼んだような気がしたが、気のせいかな……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "距離が離れているせいか、\r\nテイエムオペラオーはこちらに気付いていないようだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ならば、もっと大きな声を……\r\n例えば、“覇王”である彼女にふさわしい声で――！",
+      "ChoiceDataList": [
+        "はっはっは！はーっはっはっは！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "この声は……っ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "なんてことだ！\u3000元トレーナー君じゃないか！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "今の笑い声、まるで“覇王”が如く堂々としていたが……\r\n一体どうしたというんだい？",
+      "ChoiceDataList": [
+        "君にふさわしいトレーナーになりたくて",
+        "貴方にふさわしいトレーナーになりたくて"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "なんてことだっ！\r\nもう1度、ボクのトレーナーになりたいというのかい！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "だからこそ、あの堂々とした笑い声を！？\r\nそうか……ふふっ、はははっ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "はーっはっはっはっはっはっは！\r\nなかなか面白いじゃないか、トレーナー君！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "しかし！\u3000本当にボクの担当トレーナーになるのなら、\r\n互いの目標は同じであるべきだろう？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "確認させてもらおう！\r\nずばり、ボクが目指す絶対的な“覇王”とは一体なんだい？",
+      "ChoiceDataList": [
+        "圧倒的な勝利で夢を与える存在だ！",
+        "圧倒的な勝利で夢を与える存在！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "嗚呼……素晴らしい！！\r\n完璧だ、エクセレントだよトレーナー君……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "絶対的な“覇王”というのは、みなに勇気を与えてくれる！\r\n人々の生きる希望になる！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "だからこそボクは、ただの1着に甘んじるのではなく\r\n圧倒的な勝利をこの手に掴み、“世紀末覇王”になるんだ！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "君はボクと共に、それを目指す覚悟があるというんだね！？",
+      "ChoiceDataList": [
+        "君を“世紀末覇王”にしてみせる！",
+        "貴方を“世紀末覇王”にしてみせる！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "はーっはっはっはっはっはっは！\u3000いい返事だよ、トレーナー君！\r\nボクたちでここから新たな伝説を始めよう！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "よし、せっかくの記念日なのだから、\r\n何か形になるもの……写真でも撮ろうじゃないか！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "好歌剧",
+      "Text": "“覇王”であるボクとのツーショットは貴重だよ。\r\n喜んで写るといい！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "後日、ほとんどテイエムオペラオーしか\r\n写っていない写真が送られてきた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "こうして、彼女が思い描く王道――\r\nその1歩目を2人で踏み出したのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

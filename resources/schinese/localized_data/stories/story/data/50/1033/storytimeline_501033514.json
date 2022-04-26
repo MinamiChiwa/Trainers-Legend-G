@@ -1,0 +1,290 @@
+{
+  "Title": "顺其自然",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "这天，我发现——\n爱慕织姬和无声铃鹿正在一起跑步。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "哈……哈……",
+      "ChoiceDataList": [
+        "你会和别人一起训练，还挺罕见的的啊……",
+        "你会和别人一起训练，还挺罕见的的啊……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……？什么一起——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……啊啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "那个……\n其实，我们没有在一起训练……",
+      "ChoiceDataList": [
+        "诶？是吗？",
+        "诶？是吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "只是凑巧在同一个时间训练而已。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "不过……仔细想想的话……\n好像我们训练的时间点，经常重合呢……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……嘛，好像是呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "这么说的话……\n好像结束训练的时间也差不多。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "之后虽然就各自收拾东西回去了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……在学院外自主练习的时候也经常碰上……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "啊。在比赛之前，\n好像我们的步调都会不自觉地加快……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "……这两个人是不是在训练这方面像过头了啊？\n既然如此——",
+      "ChoiceDataList": [
+        "你们要试试看一起训练吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "嗯嗯……我倒是没关系……\n织姬前辈愿意吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……是呢。\n既然也没坏处，试试看吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "那个……那要怎么做呢……？\n按平时那样跑就行了嘛……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……就算你说“平时那样跑”……\n那到底是种什么跑法啊？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "啊。说的也是，我还没说过呢……抱歉……\n那个……该怎么说才好呢……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "综上所述，两个人一起开始训练了。\n但是……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "（因为是双人训练，应该改变下步调呢……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（总感觉……好奇怪……根本没法配合……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "……似乎打从双人训练开始，\n这两个人就一直没配合好。",
+      "ChoiceDataList": [
+        "今天就到这里吧……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "是呢……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "嗯，我明白了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "数日后，\n我再次看见两人一起在跑道上奔跑的身影。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "两人毫不干涉对方的奔跑。\n她们各自注意着各自的距离、位置、速度，\n在跑道上尽情驰骋着……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "这副仿佛完全没有意识到对方的存在，\n仅仅是忘我地向前奔跑的姿势——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "归根结底，这才是最适合这二人的相处方式吧。",
+      "ChoiceDataList": [
+        "你们好厉害啊……",
+        "你们好厉害啊……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "有吗……？\n我不是太明白这种感觉……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "……不过，和织姬前辈一起奔跑的话……\n的确会比平时更开心一些。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "无论什么时候，\n织姬前辈都只是沉默地一味向前奔跑着……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "那样自然的模样……让我觉得非常舒适。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……嘛，就是这样。",
+      "ChoiceDataList": [
+        "能感觉到某种奇妙的因缘啊。",
+        "你们都交到了不错的朋友呢。",
+        "你们都交到了不错的朋友呢。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……嘛，就是这样。",
+      "ChoiceDataList": [
+        "能感觉到某种奇妙的因缘啊。",
+        "你们都交到了不错的朋友呢。",
+        "你们都交到了不错的朋友呢。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "又不是什么小说……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（……不过，要说什么都没感觉到的话……\n也是不可能的。）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "（从以前开始，好像就一直能感觉到什么……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（但现在……已经不用特意说出口了吧。）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "算是吧……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……算吧。我搞不明白。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "对我而言，怎么样的关系都行，\n只要我们彼此都能舒舒服服地奔跑就好了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……嘛，同感。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "虽然感觉她们关系很好，\n但似乎算不上朋友……\n这二人的关系，真的非常奇妙呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

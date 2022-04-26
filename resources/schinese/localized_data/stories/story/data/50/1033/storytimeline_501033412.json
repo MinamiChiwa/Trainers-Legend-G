@@ -1,0 +1,35 @@
+{
+  "Title": "迎接菊花赏",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "夏合宿での一件以降、アドマイヤベガは、\r\n毎晩のように悪夢を見るようになっていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "償いを忘れ、レースを楽しんだことを\r\n妹に責められ続ける悪夢を……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "もう2度と、自分自身のために\r\n走ったりなんかしない――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "悲しい決意を胸に、アドマイヤベガは\r\n『菊花賞』本番の舞台へと向かって行った。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

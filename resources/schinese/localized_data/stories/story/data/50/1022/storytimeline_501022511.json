@@ -1,0 +1,292 @@
+{
+  "Title": "殿下与刺激的茶会",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ファインモーションにお茶会へ誘われた。\r\n学園の生徒と交流を深めるべく\n開催しているらしいのだが……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "やあやあやあ、お招き感謝するよ。\r\n美味しい紅茶、友との語らい……\n実に有意義な会だねぇ？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "因为如此，为了让这场茶会更有意义，\n我准备了新的药！\n如何，有兴趣吗？有兴趣吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "イヤ飲まねーよ！\r\n開始早々何勧めてンだ、オメーは。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "曼城茶座",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "嗯？\u3000怎么啦，茶座？\n很在意那边的墙壁吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "曼城茶座",
+      "Text": "……不，没什么大事……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "曼城茶座",
+      "Text": "那边……有个我没见过的人……\n……所以有点在意……",
+      "ChoiceDataList": [
+        "……虽然我什么都看不见……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "茶座有着能『看见』什么东西的能力吧！\n真好呀，那是个是什么样的人呢？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "难道说有妖精吗？\n日本的妖精？\u3000是座敷童子吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "曼城茶座",
+      "Text": "……感觉……\n……不大像……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "那就是，幽灵咯？\n说不定在城堡里见过呢！\n……说不定！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "哦呀哦呀，让我也加入罢～。\n对于那些没法用科学证明的存在，\n我还挺感兴趣的呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "咕……你们这帮子人，\n别尽聊些稀奇古怪的东西――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（zuwa……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "呀！？\u3000什么鬼！？\n（译：什么嘛，不是能发出可爱的声音嘛）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "桀桀，是我的尾巴。\n让我看见了珍奇的画面呢，\n神宫君？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "你、你丫……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哈哈，不过很开心呢！\n既然神宫你怕了，\n也就是说你也相信鬼神呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "你丫说谁怕了！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊哈哈！\u3000别生气嘛！\n想到神宫和我原来都相信鬼神的存在，\n我还是很开心的哦♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "……嘁。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "呼，稍微休息一会～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……",
+      "ChoiceDataList": [
+        "没事吧……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "あ、うん！\u3000ちょっと考えごとしていただけ。\r\n……前の私が聞いたら、\nきっとびっくりするだろうな～って。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "居然我也会做出，\n与朋友一起胡闹傻笑到觉得累了这种事情。\n……毕竟――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "要是遇到同龄人的话，我们会聊些什么呢？\n今天之前，我有幻想过好多次――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "その、想像以上のことが、\r\n今目の前で起きているんだもの！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "一点都不无聊哦？\n而且，这里的马娘们都充满个性，\n感觉很刺激呢！",
+      "ChoiceDataList": [
+        "这样啊"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "同世代のウマ娘との交流を通して\r\n学び取る……ファインモーションの\n留学の意義はしっかりあるようだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "这就是所谓――累并快乐着吧！\n接下来就准备开始二台啦♪",
+      "ChoiceDataList": [
+        "切换状态的速度好快……！",
+        "趁着还有耐力的时候尽情享受吧！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊哈哈！行动力强这个优点，\n我一直都还挺自豪的哦？……对吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "SP队长",
+      "Text": "在视察的时候，\n殿下也曾满怀好奇心地转遍所有相关设施。\n也曾有过在一日之内走过半个国家的经历。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊，对呢！\n每到一个地方就去和大家喝茶，\n最后晚饭都没吃上呢……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "嗯！这么一说，\n干脆这次茶会也用我国的茶叶吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "好♪\u3000那么现在就去买吧！\n我记得隔壁那条街就有专卖店！",
+      "ChoiceDataList": [
+        "诶、现在……！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（啪嗒啪嗒）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "SP队长",
+      "Text": "…………愿您武运昌隆。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……怀着队长的悲愿而打起精神，\n我也只能追着她的背影，向隔壁街的专卖店出发。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "嗯！\n我享受的时候，耐力可是无穷的哦――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "喂！\n为啥在冒烟啊！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "ククッ、ははは！\u3000先の薬が、\r\n思ったより早く効果を現したようだねぇ……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "曼城茶座",
+      "Text": "……你最差劲了，速子……咳咳。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哇啊，发生了什么啊？\n训练员，我先回去了哦♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "看着她开开心心地跑回去的模样，\n我觉得，这姑娘的精力估计是无穷无尽的……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

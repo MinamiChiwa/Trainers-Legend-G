@@ -1,0 +1,160 @@
+{
+  "Title": "迎接宝冢纪念",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "……啊啊，果然还是有些不安啊。\n美妙姿势，她没事吧……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众B",
+      "Text": "不知道你在担心些什么啦。\n嘛ー，一起来为她加油吧。\n你的这份心意一定能传递给她的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "唔……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "……先不管能不能传递给她的事情吧。\n美妙，你自己的答案是――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……哇。\n紧张起来了！",
+      "ChoiceDataList": [
+        "怎么啦？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "不是说，\n要给世界留下名为美妙姿势的冲击嘛？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "那一般的跑法会不会显得太平常了？\n要不要在赛道上横冲直撞，左右驰骋！\n……什么的，好像有点难呢。",
+      "ChoiceDataList": [
+        "绝对别这样做啊……",
+        "絶対にやめてね……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "わかっています。\r\nレースの品格を落とすことはしません！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "但这样一来，好像也就和平时没什么两样。\n到底应该怎么做才好……",
+      "ChoiceDataList": [
+        "按你平时那样来就行了"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "按平时那样来，\n那就只是在普通地享乐而已了哦？",
+      "ChoiceDataList": [
+        "要全力享受才行"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "她只是单纯地在享受比赛，\n依旧能够俘获无数粉丝的心，\n也能给予其他赛马娘梦想。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "彼女はもう充分衝撃的な存在で、\r\n変えるべきなのは想いの方向性――\nそれは『終わらないで』とは真逆のものだ。",
+      "ChoiceDataList": [
+        "想着『不要忘记我』来跑就行了"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊哈哈，\n这话很有意思呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "那么，我就去试一试吧。\n不能光是一味祈祷呀。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "要将我奔跑的身姿……\n唰地一下，刻在大家心里！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "留下玉石被唰地切开那样的，\n強烈的冲击！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "唰～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "荒漠英雄",
+      "Text": "ひゃっ……！？\r\nファ、ファインさん……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "あはは、驚かせちゃったかな？\r\n気合いを入れなおしておりました。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "今日は味変したファインモーションです。\r\nロブロイちゃんもぜひ楽しんでね？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "荒漠英雄",
+      "Text": "……！\r\nはいっ……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

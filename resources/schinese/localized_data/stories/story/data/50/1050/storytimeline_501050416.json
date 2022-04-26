@@ -1,0 +1,41 @@
+{
+  "Title": "迎接有马纪念",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『有馬記念』当日。\nナリタタイシンの居ぬ間に、\n控室には意外な来客があった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "来客――ナリタタイシンの母から\n母娘に生じているすれ違いを聞き、\n応援の花束を受け取るトレーナー。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "その後、戻ってきたナリタタイシンに\nファンからだと言って花束を渡すが、\nすぐに見破られてしまう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "彼女は言う。\n母が見ていようがいまいが関係ないと。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "――いつも通り自分のために走り、\n勝つだけだと。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

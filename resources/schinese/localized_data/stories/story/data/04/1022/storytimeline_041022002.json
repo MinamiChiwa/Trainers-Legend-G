@@ -1,0 +1,386 @@
+{
+  "Title": "Life is not fair.",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "自那以后，已经过了数日。\n我来到阪神竞技场，打算观看一场比赛——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "没想到会在这里再碰见呢……！\n而且，那个徽章……你原来是学园的训练员呀！",
+      "ChoiceDataList": [
+        "你是……美妙姿势殿下？！",
+        "你是……美妙姿势殿下？！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊哈哈，『殿下』就免啦，叫我美妙姿势就好。\n贵安哦♪前几天给您添麻烦了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "不过，真是奇遇呢，你也是来看比赛的吗？\n……啊，原来如此。对训练员来说，这也是学习的一环呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "我呢——今天也是来看比赛的哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "若是不嫌弃的话，请坐到这边来！其实，我今天特意起了个大早，\n专门来占了好位置哦。和我一起看比赛吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（唔哦哦哦哦哦哦！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "各位马娘已经转向正面！人气第一的好歌剧身处中团，\n空中神宫虽身处最后方，但意图要冲上前来！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "嘿……看见了……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "神宫！加油——！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "美妙姿势努力地探出身子，还不断轻轻蹦跶着，\n拼命地为空中神宫加油。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "神宫是个非常棒的赛马娘哦。\n脑子非常聪明……但是一说到比赛的事情，就会满脑子只想着获胜呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "越过第四弯道，从外侧向前逼近的是人气第一、好歌剧！！\n她能够保持状态冲到最前方吗？！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "不会的……！啊，请您也好好看着神宫吧。\n接下来，才是表现神宫“真髓”的时刻！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "欧拉啊啊啊啊啊啊啊啊！！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "空中神宫！空中神宫此时赶了上来！\n经过精细而准确的计算，空中神宫直追而上！第一名是——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "唔、神宫……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "在那瞬间——坐在她身边的我，猛然注意到。",
+      "ChoiceDataList": [
+        "（啊……双眼的光芒，和之前一样……）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（——唔噢噢噢噢噢噢噢噢！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "辛苦啦，神宫！最终直线上的表现非常厉害呢！\n我现在都还心动不已呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "嘁……但结果不还是就拿个第二，不过如此。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "也是呢……虽然对你而言，这也许是一场遗憾的比赛……\n但对我而言……果然，是能让我的心胸高鸣不已的奔跑哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "你迄今为止，一步步积累起来的一切，\n如今都如同一个个音符一般，奏出悦耳的音色……真的很棒哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "——今天发生的一切，也会变为我重要的回忆的哦。\n谢谢你，神宫！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "…………啊啊，这样啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "之后，为了慎重起见，我决定送美妙姿势回学校。\n——在归途上，她一直都满心雀跃的样子。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊啊，果然比赛太棒啦！啊，神宫也很棒哦！\n你也看见了吧？终盘时那鬼神一般的追赶！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "那模样总是在我脑中挥之不去呢！\n在序盘，先这样保持冷静，保持在后方——！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "SP队长",
+      "Text": "啊，殿下？！请稍等一下——！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哈、哈、哈……还不到时候！\n首先要保存脚力，然后……！",
+      "ChoiceDataList": [
+        "……？！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "虽然她突然跑出去的确让我吓了一跳……\n但更让我吃惊的，是她奔跑的能力远超我的想象！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "虽然奔跑的姿势还有些粗糙，但同样也能感受到她潜在能力之高。\n……而且，最重要的是——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哈、哈、就是这里……！\n最后关头！呀啊啊啊啊啊——！！",
+      "ChoiceDataList": [
+        "（双眼中的光辉，还在闪烁……）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我目不转睛地注视着美妙姿势的双眼。\n毫无疑问，她非常、非常地——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "——乐在其中。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "SP队长",
+      "Text": "殿下……！到、到底怎么了？！\n难道您忘记了您父上严禁您全力奔跑的旨意了吗？！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "诶？……啊！\n非常抱歉！我不小心就忘啦……",
+      "ChoiceDataList": [
+        "你……难道是被禁止跑步的吗？",
+        "你……难道是被禁止跑步的吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊哈哈……嗯，的确如此。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "本来，『绝对完全』就是留学的条件之一。\n任何可能导致我受伤的事情……不管是奔跑还是比赛，全都是被禁止的。",
+      "ChoiceDataList": [
+        "全部禁止……怎么会这样……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "——不过呢，我就是不管怎样都想来特雷森学园嘛！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "毕竟这儿有很多和我年龄相仿、朝着梦想全力迈进的孩子……\n我也想试着和她们做朋友、和她们一起欢笑……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "这一切，一定都会成为我的宝物……\n会成为我为完成应尽之事的宝贵经验。",
+      "ChoiceDataList": [
+        "（『应尽之事』……）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "听见她轻描淡写地抛出如此沉重的词汇，我心中涌起一阵苦闷。\n虽然她看上去如此天真无邪、平易近人，但是——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "她作为『王室』的一员，依旧肩负着与生俱来的责任。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哼哼，不过日本是个安全的国家真是帮大忙了！\n能够说服父亲大人，这一点也非常重要哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "到现在，我也交了不少朋友，去了想去的店，\n还在那种绝佳的好位置看了场比赛。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "——我已经非常满足，能安心回国了哦！",
+      "ChoiceDataList": [
+        "……真的吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……我不经意间说出的话语，连我自己都感到惊讶。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……欸？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "她笑着说自己已经非常满足了。即便无法奔跑，她仅仅是来到了这个学园、\n仅仅是交到了年龄相仿的朋友，她就非常满足了。但是——",
+      "ChoiceDataList": [
+        "……真的，已经满足了吗？",
+        "……真的，已经满足了吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "——因为，刚才她笑着说自己满足的时候，眼中的光辉不复存在。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "呃……这个……我——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "SP队长",
+      "Text": "殿下，这样下去会着凉的。\n请回去宿舍吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "最后，护卫突然插嘴，强行结束了我们的谈话。\n但是……在我的心中，我已经确定了一件事情。",
+      "ChoiceDataList": [
+        "（那孩子，一定——！）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "喂。\n……你丫，真的明白她背负的东西了吗？",
+      "ChoiceDataList": [
+        "呃？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "别回个“诶”啊！！你丫脑子不好使吗！\n……啊啊，该死。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "——没做好觉悟的话，就别突然插手她的事情啊！",
+      "ChoiceDataList": [
+        "（觉悟……）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "这句忠告、深深地扎进我的心底……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "Title": "想いの継承",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――あら、おかしいなぁ……\r\n誰もいないのかしら？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "たしかに呼ばれた気がしたのだけれど。\r\n妖精のいたずら……？\u3000それとも……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "三女神さま……貴方がたのお呼びでしょうか？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

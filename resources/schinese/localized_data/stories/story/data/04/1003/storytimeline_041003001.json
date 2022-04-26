@@ -1,0 +1,333 @@
+{
+  "Title": "无敌的帝王大人！",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "选拔赛即将到来的前一天中午，\n在学园附近的公园散步时――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "哇啊啊啊，让一下让一下！！",
+      "ChoiceDataList": [
+        "？！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "――哈？！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "（咚！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "突然跑过来的马娘，东海帝王\n以一个出色的跳跃越过了我的头顶！\u3000然后――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "（落地）\n……来，你的帽子！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "看起来，是把被挂在树上的，\n女孩的帽子给取了下来……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "女孩A",
+      "Text": "哇啊，谢谢姐姐！\n好厉害的跳跃啊，太帅了~！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "啧啧啧。不是『姐姐』，\n应该叫我『无敌的帝王大人』哦♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "女孩A",
+      "Text": "呜……？\n虽然不知道是什么意思，但是好帅啊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "哇哈哈哈~！！\n再多称赞称赞我也是可以的哦~！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "……啊，对了。\n这位！\u3000不好意思吓到你了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "实在是刹不住车，直接从你身上跳过去了！\n啊，没有受伤吧？\u3000没问题吧？",
+      "ChoiceDataList": [
+        "你才是没事吧？落地受了冲击……",
+        "你才是没事吧？落地受了冲击……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "啊哈，这种情况对我来说根本没什么！\n你看，完全没有任何问题！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "从那么高的地方落地，\n东海帝王真就看起来一点都不在乎的样子。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "轻松跳跃的身姿看起来很优美，\n被赋予了如此优秀身体能力的孩子……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "吓到了吗？\u3000肯定被吓到了吧！\n嘿嘿♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "……不好！\u3000我还在跑步呢。\n再见了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "东海帝王这么说着，\n我瞠目结舌地看着她以轻快的步伐跑开了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "这道身姿还未从脑海中消散，\n在第二天的选拔赛中――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "哈，哈，哈，哈……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众们",
+      "Text": "上啊帝王—————！！\n就这样拉开差距———！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "冲上来的是东海帝王！\n以轻盈的步伐领先了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "嘿……第一名，由我拿下了！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "东海帝王的优势越来越大！！\n那悠闲奔跑着的身影，任何人都无法追赶！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "与第二名拉开了四马身的差距，冲线了！！\u3000选拔赛的第一名是，\n东海帝王！！\u3000给大家展现了她压倒性的强大！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "呼！\n各位，我的比赛怎么样啊！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众A",
+      "Text": "太棒了，帝王！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "观众B",
+      "Text": "太帅了～～～！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "啊哈，谢谢————！\n不过，这对我来说反正是理所当然的结果罢了！！",
+      "ChoiceDataList": [
+        "跑得真棒啊……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "诶？\u3000你……啊，是昨天公园里的那个人！\n啊嘞嘞，为什么会在这里呢……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "嗯，是这样啊！\u3000你，是训练员吧！？\n仔细一看你还带着徽章呢！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "这么说的话，你把我叫住~……\n是想要发掘我吗！？",
+      "ChoiceDataList": [
+        "请务必成为我的担当马娘！",
+        "请务必成为我的担当马娘！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "诶嘿嘿，该怎么办呢？\u3000其实，这种话，\n我在选拔赛开始之前，就已经听到过好几次了~",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "新人训练员A",
+      "Text": "啊！\u3000东海帝王，终于找到你了！！\n你的奔跑实在是太完美了……！\u3000还请让我发掘你！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "帝王，和我搭档吧！\u3000和你一起的话，无论是GⅠ制霸\n还是三冠马娘的称号全都能手到擒来！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "哇啊，人越来越多了！！\u3000呜，这么多人的话\n我都不知道该选谁才好了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "不过，反正到时候跑的是我，\n选谁当训练员也没差了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "那，来和我猜拳，谁赢了我就和谁走！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "好了好了，帝王。\n训练员和马娘，要齐心协力――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "啊，会长！！\n是会长～～～！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "选拔赛，您看了吧！？\u3000我的奔跑，怎么样！？\n我又拿到第一名了哦！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "鲁道夫象征",
+      "Text": "真是的……是啊，我看了。\n一如既往优秀的奔跑啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "太好了~~~！！\u3000诶嘿嘿，被会长夸奖了♪\n你们听到了吗！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "新人训练员A",
+      "Text": "诶？\u3000啊，是啊。\n但比起这个，我们还是先讨论――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "什么！？\u3000比起这个是什么意思，什么叫比起这个！！\n你难道不知道会长她有多厉害吗！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "会长是特雷森学园的学生会长，十分帅气的最快最强马娘，\n是我最崇拜的对象！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "我总有一天，一定会成为像会长一样的马娘，\n然后让会长尽情地夸我♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "所——以——说，想要发掘我的各位，\n必须要好好地了解会长的厉害之处才行！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东海帝王",
+      "Text": "我想想，首先……出道战看了吗？\u3000看了吧！？\n会长她，从第一个弯道起她的传说就已经开始了~……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "之后，过来发掘的训练员们\n一直在听东海帝王滔滔不绝地在那边述说『会长』的英勇事迹……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "……结果，根本就没有再提过发掘的事。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

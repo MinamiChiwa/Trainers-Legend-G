@@ -1,0 +1,328 @@
+{
+  "Title": "红叶秀丽的群山啊",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "除了晨练以外，北部玄驹一有空就会来做训练。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "哈啊，哈啊……还能继续！\n训练员，就这样继续下去吧！",
+      "ChoiceDataList": [
+        "差不多该休息了"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "没事的！\u3000因为我还很有精神。\n我不会浪费训练员的时间！\u3000继续吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "噢噢噢噢……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "北部玄驹以惊人的气势跑走了。\n她比平时更有干劲，但同时也给我一种过于拼命的感觉。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "『不会浪费训练员的时间』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "……难道说，我为北部玄驹设计的训练项目，\n让她感到焦虑了吗。",
+      "ChoiceDataList": [
+        "（这样下去可不行……）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "我不想让她焦虑地跑。我希望北部玄驹能够放轻松，\n跑出适合自己的跑法――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "诶？\u3000明天，要去赏红叶……吗？\n本来是计划要训练的，怎么突然……",
+      "ChoiceDataList": [
+        "我想让你转换一下心情"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "转换心情……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "……………………啊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "是，是这样！\u3000训练员疲劳了……！\n是啊，理所当然啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "啊啊真是。\n我一点也没有眼力见……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "我知道了！\u3000我们全力去转换心情吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "顺利度过悠闲自在的时光！！\n全ー部都交给我吧！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "虽说她那姿态跟悠闲自在完全相反――总之，\n跟北部玄驹约好一起去赏红叶了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "奇怪？\u3000那个人……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "那个，你还好吗？\n难道说是迷路了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "迷路的女性",
+      "Text": "啊……是、是这样。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "迷路的女性",
+      "Text": "朋友给我画了地图，但我不熟悉这儿的\n地理情况，所以不太清楚路……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "稍等一下呢。这儿是车站，那个ー……\n啊，可能有点儿复杂。而且有一段距离，我来――",
+      "ChoiceDataList": [
+        "我们来给你带路吧",
+        "我们来给你带路吧"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "迷路的女性",
+      "Text": "真的吗？\u3000谢谢你们的好意！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "老爷爷",
+      "Text": "啊……站起来……\n哎，哎哟哟……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "哇哇，危险……！\n好多行李呢，老爷爷。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "老爷爷",
+      "Text": "哦哦，吓到你了真不好意思。我是想给孙子送特产，\n结果买得有点多了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "要把行李放到架子上是吧？\n那么就交给我――",
+      "ChoiceDataList": [
+        "嘿咻！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "啊……",
+      "ChoiceDataList": [
+        "到了下车站点请告诉我们"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "老爷爷",
+      "Text": "啊啊，帮大忙了哦。谢谢你们的好意。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "哇啊，好漂亮……！\u3000颜色真鲜艳啊……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "踩在叶子上的声音也很舒服！\n来，我们去那边看看吧，训练员。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "这儿看到的景色也超棒……！\n奇怪！？\u3000那边有一家团子店！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "快看啊训练员！\n那边那座山――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "看来赏红叶是种很好的放松。但是，想要追上\n北部玄驹那欢快的步伐，却相当困难――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "啊啊啊，流了好多汗……\n没、没事吧，训练员。",
+      "ChoiceDataList": [
+        "稍作休息就没事了"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "…………\n……对不起！",
+      "ChoiceDataList": [
+        "？怎么了？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "都怪我不停拉着你到处跑，害你受累了……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "而且，在来这儿之前……那个，帮别人忙……\n都让训练员来干了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "她在附近帮助别人，我在不妨碍别人的情况下帮忙\n也是理所当然。而且――",
+      "ChoiceDataList": [
+        "我很高兴能帮你的忙"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "！\u3000训练员……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "……呃，不该是这样的！\n不，虽说我也感觉特别高兴！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "但是，我希望训练员能好好休息，\n你平日里太累了吧，得更加――",
+      "ChoiceDataList": [
+        "更加强健体魄才行……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "呜ーーーー！\u3000那个已经够充分了，够充分了啊……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "每天你都陪着我训练，在外面跑步的时候\n也骑着自行车跟在我身边……！",
+      "ChoiceDataList": [
+        "作为训练员这是理所当然的哦"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "那、那话倒是没错，但是那种理所当然，\n实在是……呜，呜呜～……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "……怎么办……总是，只有我……\n得到着你的支持……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "北部玄驹",
+      "Text": "（唉……爸爸……想要成为别人的依靠，真的很难呢）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

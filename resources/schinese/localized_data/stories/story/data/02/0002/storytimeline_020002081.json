@@ -1,0 +1,352 @@
+{
+  "Title": "丢失的对胜利的执念",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "事关我3连霸的春季『天皇赏』，请让米浴同学也参赛……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "让米浴……参加『天皇赏』？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "对目白麦昆来说有着重要意义的春季『天皇赏』。\n让米浴也参加的目的是什么呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "『菊花赏』的一片嘘声……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "阻止了美浦波旁同学三冠，明明应该是值得称赞\n的事情，但出现的却是几乎完全相反的声音。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "而跟『菊花赏』刚好有相似情况的，\n正是春季『天皇赏』。",
+      "ChoiceDataList": [
+        "硬要让米浴参加那场比赛的话……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "我有想让米浴同学在那里看到的“景色”。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "这是只有在草地上奔跑的人才能传达的东西，\n我会负责去传达的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "而你作为训练员能做到的事……\n请让米浴站上『天皇赏』的舞台。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "对目白麦昆来说很重要的比赛……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "她说想让米浴也参加那场比赛，\n应该是考虑了很久的结果吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "但是，这样真的好吗。只想着米浴，\n而没能让目白麦昆全力奔跑的话……",
+      "ChoiceDataList": [
+        "这是事关你3连霸的比赛，真的可以吗？",
+        "这是事关你3连霸的比赛，真的可以吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "呵呵，训练员觉得我会输吧。\n那还真是令人伤心啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "话先放在这里，我可没打算输。作为目白家的赛马娘，\n我会达成『天皇赏』3连霸的伟业的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "训练员可真辛苦呢。不管谁赢了，\n都得安慰输掉的那个人呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "目白麦昆如同恶作剧一般笑了。\n但是，对于春季『天皇赏』，她是相当认真的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "即便如此，她也想要让米浴参赛\n传达给米浴某种心情的话——",
+      "ChoiceDataList": [
+        "我会让米浴也参赛的",
+        "我会让米浴也参赛的"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "好的，拜托你了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "第二天训练中——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "哈……呼……\n那个，成绩怎么样……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "成绩还不错。可是一旦变成竞争性训练\n她就怎么也赢不了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "果然由于『菊花赏』那一片嘘声，\n她的取胜心被削弱了吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "成绩不错哦。\n这样的话在那个大舞台上也能赢吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "成绩不错哦。\n这样的话在那个大舞台上也能赢吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "大舞台……米浴下次要跑的比赛已经决定了吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "虽然已经决定了，但米浴一定会拒绝吧。\n即便如此，为了她能够找回取胜心——",
+      "ChoiceDataList": [
+        "我想让你参加春季『天皇赏』",
+        "我想让你参加春季『天皇赏』"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "……诶？\u3000春季『天皇赏』……！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "米浴有获胜的实力。\n那一点在『菊花赏』已经证明过了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "但……但是，春季『天皇赏』\n关系到麦昆同学的3连霸……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "那么重要的比赛，米浴跑不好的。\n而且就算赢了，米浴又会被……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "说到这里，米浴垂下了头。\n仿佛就像听到了那时的嘘声一样。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "结果，米浴没有同意参加\n春季『天皇赏』。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "考虑到米浴的心情，我不想强行让她参赛。\n但是，一直这样下去不行……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美浦波旁",
+      "Text": "米浴同学的训练员？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "搭话的是正在自主训练的\n美浦波旁。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "啊，波旁。正在自主训练吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "啊，波旁。正在自主训练吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美浦波旁",
+      "Text": "是的，毕竟『菊花赏』之后的伤\n终于治好了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美浦波旁",
+      "Text": "……米浴同学最近怎么样？\n她还在在意那天的事情吗。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "那天，距离被嘘声影响的米浴最近的\n就是美浦波旁。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "最在意米浴的，\n可能就是她了。",
+      "ChoiceDataList": [
+        "米浴的状态还没恢复……",
+        "米浴的状态还没恢复……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美浦波旁",
+      "Text": "这样啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美浦波旁",
+      "Text": "……我现在这样自主训练，\n不是为了“胜利”的命令，而是自己决定的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美浦波旁",
+      "Text": "『特别想跑步』——\n这样的想法，就是从输给米浴同学开始产生的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美浦波旁",
+      "Text": "想和米浴同学再跑一次，并且想战胜她。\n为此，我才进行自主训练的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "让无败赛马娘美浦波旁\n第一次败北的正是米浴。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "想与那个对手再战一次，这样的想法激励着她的训练。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "从现在美浦波旁的身上，能看见以前米浴的影子。\n为了想战胜的对手而努力的影子……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美浦波旁",
+      "Text": "……有我能帮上忙的事情吗。\n为了能再一次与米浴同学赛跑。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "波旁……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "失去了『想赢』这种心情的米浴。\n萌生了『想赢』这种心情的美浦波旁。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "如果让米浴看到现在的美浦波旁的话……",
+      "ChoiceDataList": [
+        "我有件事想让你帮忙",
+        "我有件事想让你帮忙"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美浦波旁",
+      "Text": "了解。\n收到命令……不，是执行我自己的愿望。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "美浦波旁说着，脸上浮现出柔和的表情，\n令人十分安心。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

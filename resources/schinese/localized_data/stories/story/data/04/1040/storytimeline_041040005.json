@@ -1,0 +1,221 @@
+{
+  "Title": "不适合我的职业",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "金色的长发在夕阳之下如同熊熊燃烧的火焰。\n黄金城市驰骋在跑道上，表情异常认真。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "冲线……！哈、哈、哈啊……！\n时、时间！时间怎么样？！",
+      "ChoiceDataList": [
+        "恭喜，更新记录了哦。",
+        "恭喜，更新记录了哦。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "真的？！……啊哈，真的啊。\n我不也挺能干的吗……！",
+      "ChoiceDataList": [
+        "挺厉害的嘛，黄金城市！",
+        "挺厉害的嘛，黄金城市！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "烦人。你这种夸奖方式也太热血笨蛋了吧。\n不过……“很厉害”呢……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "那个，训练员。虽然你又热血又烦人又粗神经，\n有时候真的也挺让人火大的……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "不过你挺适合做训练员的啊。该说这就是你的天职吧。",
+      "ChoiceDataList": [
+        "ありがとう\n非常感谢"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "但是……嘛，你别因为我这么说就得意忘形哦？\n我还没完全认可你呢。",
+      "ChoiceDataList": [
+        "我会尽力不被你抛弃的……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "都ー说ー啦，这种说法太热血笨蛋啦！哈哈哈哈！\n好，那么接下来就在体育馆锻炼下肢——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市的经纪人",
+      "Text": "阿城！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "哈？经纪人？为啥亲自跑到这儿呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市的经纪人",
+      "Text": "抱歉，在训练中来打扰你们。不过有紧急事态哦！\n现在可有个不可错失的大机会！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市的经纪人",
+      "Text": "抱歉，训练员！\n今天的训练就到此结束吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "等下？！别擅自替我做决定啊！\n我接下来还有很多训练内容啊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市的经纪人",
+      "Text": "求你了，好好听我说。\n这关乎你的未来哦……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "我的……未来……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "——结果到头来，就是个替人擦屁股的工作。\n原本预定的大牌模特没能到场，就让我去替她。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "当然，我好好地完成工作啦。\n我是绝对不会在工作上懈怠的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "不过经纪人也真是的……\n说什么『算是差强人意的普通表现吧』。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "这样给人收拾烂摊子有时候也确实是件大工作。\n要是做得好的话，说不定会给什么大人物留下深刻的印象。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "就算是理由充分，但占用我的训练时间，就拉我去做这个？\n而且——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "居然还说『自从你跟那个训练员开始组队，\n你身为模特的意识就开始变得迟钝了』……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "气死人了对吧！……就这样，我和经纪人大吵一架。\n真是的……感觉真糟糕。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "……其实我心里也明白，我在工作中的确有些注意力不比从前了。\n比起该摆什么样的动作，我脑子里想的更多的是该怎么样奔跑。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "我其实和经纪人约好了“绝不会放弃模特工作”，她这才放我来的特雷森学园。\n我还对她夸下海口说『一定能两头都做好！』了呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "不过，一旦心系比赛就开始变成这副德行了。\n我也真逊啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "我本来真的以为我能在两条道路上都闯出一番天地的呢……\n看来，我也没那么能干啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "黄金城市此时突然沉默了下来。\n她的表情异常严肃，看上去好像在思考什么事情。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "……那个，训练员。\n你真的相信我是『理应奔跑的赛马娘』吗？",
+      "ChoiceDataList": [
+        "嗯。",
+        "嗯。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "我不是徒有其表的人偶，是能够在赛场上夺下胜利的马娘……\n你真的这样相信吗？",
+      "ChoiceDataList": [
+        "那当然！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "这样啊……哈哈。那就决定了。\n我也该下定决心了。\n……早点做个了断吧。",
+      "ChoiceDataList": [
+        "……你在说什么啊？",
+        "……你在说什么啊？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "满脸不安呢。这样看上去可有点烦人哦？\n有言在先，对你而言应该算是好消息吧。因为，我打算……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "辞掉模特的工作！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

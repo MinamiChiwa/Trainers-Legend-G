@@ -1,0 +1,46 @@
+{
+  "Title": "抽取角色",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "首先，去见一下将在未来\n与您共同努力的赛马娘吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "您负责的赛马娘被称作\n育成赛马娘。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "育成赛马娘"
+      ]
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "没有获得育成赛马娘的话\n将无法进行赛马娘育成\n请注意这一点哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "没有获得育成赛马娘",
+        "无法进行赛马娘育成"
+      ]
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "您将在这个卡池中\n与您的育成赛马娘邂逅哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "那么，请试着抽一下\nPretty Derby卡池吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "Title": "迎接宝冢纪念",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『宝塚記念』の出走直前。\r\n控室にやって来たのは\nメイショウドトウだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "自信のなさ。アドマイヤベガへの尊敬。\r\nテイエムオペラオーへの憧憬。\nそれらすべてを語ったうえで――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "メイショウドトウは改めてアドマイヤベガを\r\n倒し、自分こそがテイエムオペラオーの\nライバルになってみせると宣言する。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "だがアドマイヤベガも負けられない。\r\nなぜならこれは春のグランプリレース。\n間違いなく妹にとって自慢になるだろうから。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "それぞれの想いをのせて、\r\n『宝塚記念』の幕が上がる……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

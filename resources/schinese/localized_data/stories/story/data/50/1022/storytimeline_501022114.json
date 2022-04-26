@@ -1,0 +1,369 @@
+{
+  "Title": "My Dear...",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――啊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "找到啦♪\n喂～！",
+      "ChoiceDataList": [
+        "美妙！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "在训练中，\n美妙姿势突然跑向观众席……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "嘁。\n别每次都跑过来啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "観客席にいたのは、エアシャカール――\nファインモーションより先に\nデビューした理論派ウマ娘――だった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "空中神宫"
+      ]
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "あら？\u3000シャカールから\n会いに来てくれたんだと思ったのだけれど。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "シャカール"
+      ]
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "啊啊？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "因为，神宫又在收集我的数据了吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "她会这么说也不是没有理由的。\n迄今为止，每次训练的时候，\n都能看见带着电脑的神宫坐在观众席。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "……你不喜欢的话躲起来训练不就完了。\n还是说，我得向您提交申请呢，殿下？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "不是这样啦！\u3000\n我是说，反正都来收集我的数据了，\n干脆来和我一起训练吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "我觉得这样一来，\n神宫也能得到更为有效的数据哦？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "那被你缠上的概率也会上升。\n恕我拒绝。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "原来是在害怕这个呀？\n那我不缠着你说话的话就好了吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "……喂，你是这家伙的训练员吧。\n没教过她别瞎给人添麻烦吗？",
+      "ChoiceDataList": [
+        "不喜欢吗？",
+        "嫌なの？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "啊啊！？\n这不明摆着的吗！",
+      "ChoiceDataList": [
+        "那为什么要收集美妙的数据呢？",
+        "じゃあなぜファインのデータを取るの？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "因为有必要啊？\n因为数据基本上是不会说谎的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "举个例子。\n研究表明，有些遗传因子是和距离适性相关的。\n你知道吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "这是熟悉比赛的人耳熟能详的理论。\n如果抑制肌肉细胞的遗传、\n就会得到更多影响到距离适性的遗传细胞。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "为了确认这个倾向，需要无数样本。\n也就是说，数量就是正义。\n没有大量的样本的话，也得不出正确的结论",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "虽然我和那些浪漫主义者不一样，\n但也不会单纯地只看数据。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "我感觉冥冥中一切皆有定数。\n就好像有“神明的低语”在安排这一切\n听得明白吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "为了寻找这“定数”的漏洞……\n再多样本我都不嫌多。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "……就是这样。\n所以我在收集那些明显异于他人的人的数据。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "嗯？\u3000在说我吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "不然我才对你打不起半分兴趣。\n你的数据之中、能看见明显的浮动。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "毫无规则的浮动。\n如果能利用起来的话……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "……应该不至于连“7厘米”都改变不了。\n这个差距，会变大还是缩小呢……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "――“7厘米”。\n对于空中神宫而言，是令人绝望的差距。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "『皐月賞』を勝ち二冠目のかかった\n『日本ダービー』で、彼女はたった\n7センチ差で敗北した。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "皋月赏",
+        "日本德比"
+      ]
+    },
+    {
+      "Name": "独白",
+      "Text": "その後、『菊花賞』では勝利し\n二冠ウマ娘となったが……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "菊花赏"
+      ]
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "『我没法超越数据推演出的结果……\n结果……我只证明了这个吗。』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我至今都还记得，比赛结束后，独自一人离开时，\n空中神宫的喃喃自语――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "神宫……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "……嘁。\n闲聊太久了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊，等等！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "……咋啦啊。\n要说些无聊的话我就揍你哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "还是说，\u3000\n慈悲为怀的殿下大人，\n想从我这贱民这儿索要些收集数据的回报？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "数据什么的随你喜欢地收集就好啦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "总之，\n只是想跟你多说说话啦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "才不要啊。\n那边那个训练员都等得好寂寞了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "アァ、お前。\r\n……コイツのこと、ちゃンと見とけよ。",
+      "ChoiceDataList": [
+        "……什么意思？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "……这家伙，现在都还带着悠哉游哉的心情在跑。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "――“让她跑到最后”，这就是你的工作吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "神宫真是一如既往呀？\n交流的方式非常独特呢。",
+      "ChoiceDataList": [
+        "你就是喜欢她这一点吧。",
+        "そういうところが好きなんだね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "哼哼，明白了吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "就是这样。\n神宫她跟我在学校里交到的其他朋友比起来，\n就像是完全不一样的存在哦？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "倒不是因为她的言行举止……\n啊，当然她的言行举止我也很喜欢啦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "因为她是我觉得最值得尊重的人……吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "即便是被绝望笼罩，\n也绝不会就此放弃，一直思考着破局的方法。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "非常聪明，也非常帅气。\n我就是喜欢她这个。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "从她谈论神宫的语气来看，\n的确是包含着敬意。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "那么，神宫那边又是怎么想的呢？\n虽然看上去是关注着美妙姿势，分析着她的数据……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "空中神宫",
+      "Text": "……就是这样。\n所以我在收集那些明显异于他人的人的数据。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "但我觉得，她似乎还在追求着别的什么东西……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

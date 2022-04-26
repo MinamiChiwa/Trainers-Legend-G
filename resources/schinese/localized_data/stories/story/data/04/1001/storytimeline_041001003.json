@@ -1,0 +1,381 @@
+{
+  "Title": "颤抖的指尖，焦躁",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "以第七名结束的模拟赛的第二天。\n虽然特别周在训练中露面了――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "神鹰",
+      "Text": "哈，哈……好ー！\n我要上了ーーー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "我也，不会让步的……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "啊……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "但是，就在那时――特别周却把路让给了追上来的\n神鹰和草上飞。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "神鹰",
+      "Text": "诶，啊啦啦？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "小特……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "她没有反应――那可谓是消极的跑法，让陪跑的神鹰\n她们也面露出困惑的表情……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "哈啊……哈啊……\n……………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "神鹰",
+      "Text": "等等等等，小特！！\n你ーーー这是怎么了！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "神鹰",
+      "Text": "平时的敏捷呢！\u3000韧性呢！\u3000毅力呢！\n到底去哪儿了啊～！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "小鹰……呜，那个……抱，抱歉呢……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "神鹰",
+      "Text": "……哈啊。就这样ー！！\u3000不好意思，\n陪跑训练就到此为止吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "神鹰",
+      "Text": "现在的小特，是不想和我跑的吧！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "小，小鹰……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "小特……很抱歉。\n我今天也，在此告辞了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "小草……那，那个，很抱歉，我……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "请不要道歉，小特。\n我们两个，并不是想让小特去责备自己哦～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "只是……以迷茫的状态去跑步是非常危险的。\n内心的紊乱有可能会导致跑步的紊乱，因而意外受伤。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "小草……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "不用着急哦～，小特。好吗？\n冷静下来，试着直面现在的自己怎么样。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "……正好，最想着要帮助你的人也在这里呢。",
+      "ChoiceDataList": [
+        "小特……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "训练员……！\u3000呜，我……我……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "呵呵……那么那么，我先走了～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "嗯……谢谢你，小草。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "……训练员，抱歉。\n我，完全跑不动了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "小草说得没错……我现在，很迷茫……",
+      "ChoiceDataList": [
+        "朋友说的那些话，你很在意吗？",
+        "朋友说的那些话，你很在意吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "诶……训练员，你已经知道了吗……？",
+      "ChoiceDataList": [
+        "抱歉，我听到了",
+        "抱歉，我听到了"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "原来是这样啊……\n对不起，一定让你受吓了吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "我也……吓了，一大跳。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "被除自己以外的马娘包围，以及交到朋友都是第一次……\n所以说，被朋友怒吼，也是第一次。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "我被，吓了一大跳。是那种感觉……\n全身，都变得冷冰冰的啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "……从那以后我就，变得很奇怪。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "想要向前冲的时候，想要取胜的时候，\n那时的感觉就又苏醒了……身体就，使不上来劲。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "训练员，该怎么办啊……？\n我，不能再继续跑步了吗。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "我是变得，什么都不行了吗……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "我……应该怎么办，才好呢……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "特别周蹲在那里，\n终于开始落下眼泪。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "直到她的情绪平复下来，\n这很长一段时间，我一直在她身边守护着……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "嘶……哈啊。抱歉，训练员……\n我大概平静下来了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "……已经是，傍晚时分了啊。我刚来的时候，\n还觉得这里的天黑得很晚――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "小特！\u3000你在这儿啊……呃，啊，那个。\n抱歉，你们正在忙吗……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "啊没有，没事的铃鹿同学！\n找我有什么事吗……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "那个，你母亲的来信寄到了宿舍，\n我想着快点交给你……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "小特你，一直都很期待对吧？\n所以说……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "铃鹿同学……！\u3000谢，谢谢你！\n劳烦你特地过来一趟……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "无声铃鹿只是把信交给了她，就快步离开了。\n她，也是在用自己的方式担心着室友吧……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "――然后，特别周慢慢地读完了信。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "……呵呵。这次也，一样呢。",
+      "ChoiceDataList": [
+        "一样？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "啊……那个，是的。妈妈给我寄来的信，\n最后写的总是一样的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "『小特，愿你永远幸福』\n妈妈一直，一直都这么对我说。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "养育我长大的妈妈也是……\n以及，把我生下来的妈妈也是。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "……把我生下来的妈妈在我睁开眼之前\n就离世了。她的面容，我只在照片上见过。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "但是，把我生下来的妈妈的挚友，也就是养育我长大\n的另一个妈妈，总是告诉我。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "把我生下来的妈妈直至临终前都希望我幸福，她说。\n我的内心里也充满了那份心情，她还说。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "……诶嘿嘿。很厉害吧！\u3000我有两个妈妈……\n而且两个人，都是很棒的妈妈。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "真的……很棒……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "……可是我，是在做什么呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "……抱歉，训练员。\n我……想稍微在附近跑一跑。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "特别周她，只留下了这句话\n然后就离开了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

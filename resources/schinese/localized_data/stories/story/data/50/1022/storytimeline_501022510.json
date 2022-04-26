@@ -1,0 +1,302 @@
+{
+  "Title": "殿下的华丽举止",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "那么，今天『日本文化学习会』的主题是插花，\n让我们快点开始吧～♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "はーい♪\r\nジャパニーズフラワーアレンジメント、\n楽しみにしていたよ！",
+      "ChoiceDataList": [
+        "望您不吝赐教"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "这一天，我和美妙姿势一起参加了，\n学习日本文化的学习会。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "插花的目的是让花“活过来”。\n所以请二位静下心来，与花好好交流哦～。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "まずは、主役にするお花選びを。\r\nいくつか用意しましたが……\n気になるお花、ありますか？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "嗯～……那我就选这里面的樱花吧？\n我还蛮喜欢这种花的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "実家の自室で、留学について考えていた時、\r\n満開の桜の写真を見てね！\u3000ああ、\n日本はなんて美しいんだろうって思ったんだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "樱花的确也是最能代表日本的一种花呢。\n原来如此～……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "插花也是一种表达的形式，\n选用自己有特别情感的花也是别出心裁呢。\n那我们就选这个吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "选好了花，之后就是……交流了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "どうしたら、キミの美しさを出せるかな？\r\n青い空と、白い花弁のコントラスト……\n本当にひと目惚れだったんだ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "而且呀，在日本终于见到你的时候我可感动啦！\n我还会经常跑到樱花盛开的小路上，\n让自己沐浴在花雨之中……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "呵呵……感觉能做出非常美妙的作品呢～♪\n高度差也做得也很平衡，\n搭配方法也完美无缺。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "看她惹人怜爱的一举一动，\n应该能够完成满怀纤细之美的作品吧，\n一边想象着，一边进行我自己的作业……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "她的插花作品终于完成。\n让人觉得风度凛然、不动如山――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "仿佛岩石一般巍然屹立的作品，\n正屹立于大地之上――！",
+      "ChoiceDataList": [
+        "这、这是……！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "……也就是说，这个……\n是美妙前辈内心深处……真正的姿态吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "ふふっ、なんだか見透かされたようで\r\n少し恥ずかしいかも！",
+      "ChoiceDataList": [
+        "内心深处……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "这作品跟纤细八竿子打不着边，\n反而充满力量感。\n当我大受震撼，不禁想凑近点看时――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "小心！",
+      "ChoiceDataList": [
+        "呃？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（咚――）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "――没事吧？\u3000没受伤吧？",
+      "ChoiceDataList": [
+        "没、没事……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "我好像被桌子腿给绊了下……\n在我摔倒之前，\n美妙姿势一把抱住了我……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "不知为何……\n我好像看见了她身后有什么东西――！",
+      "ChoiceDataList": [
+        "（充满力量感的……绝壁！？）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "あははっ、咄嗟とはいえお行儀が悪かった\r\nかな？\u3000でもキミにケガがなくてよかった！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "方才还惹人怜爱的她，\n此刻却如此可爱……！\n原来如此，这就是我从插花中感受到的力量感……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "毫无迷惘的踏步，不动如山的重心……\n甚至还有……残心。\n（残心：日本武术术语，击倒对手后依旧保持警惕）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "今の体さばき、非常に素晴らしかったです～。\r\nファイン先輩、何か武道のご経験が？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "唔……击剑的话有学过一点。\n只能算略懂哦？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "なるほど～！\u3000崩れない背筋や、\r\n揺るがない精神……花を生けていく過程でも、\n目を見張るものがありました。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊哈哈！承蒙谬赞～。\n那个，训练员。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……嗯、哎？\u3000喂ー？\n怎么了吗？",
+      "ChoiceDataList": [
+        "感受到了压倒性的力量……",
+        "只是觉得今天也受益匪浅呢……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "啊啦。真是对不起，\n没想到您会受到这么大的惊吓！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "呵呵，没必要道歉哦。\n我想，训练员这也是憧憬之情的一种表达吧。",
+      "ChoiceDataList": [
+        "正是……！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "呃ー……也就是说，\n训练员刚刚觉得我很帅吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "……哼哼，要是这么想的话.\n感觉也不坏呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "今天，我再一次窥见了，\n才色兼备的美妙姿势魅力的一角。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "确实，学到了很多呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "下次也陪我一起来好吗？\n我觉得还有很多可以学习的东西呢。",
+      "ChoiceDataList": [
+        "请务必带我一起！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "では、次は何をいたしましょうか～？\r\nせっかくなら、複数で参加できるものが\nよさそうですが……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "请指导我”柔道“！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "『不被扭倒的情况下取胜』……\n第一次听说的时候就印象深刻呢！\n实在是想体会一下其中奥妙！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "训练员也在的话，又能组手又能比赛，\n怎么样呢？（组手 ：两人互相扭住对方的双臂\n进行对抗，大概相扑那样）",
+      "ChoiceDataList": [
+        "和美妙，组手……！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "草上飞",
+      "Text": "嗯ー、这个嘛～。\n因为会演变成学习之外的情况的样子，\n所以以后有机会的话再说吧……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "一瞬ヒヤリとしたが……なにはともあれ、\r\n好奇心に目を輝かせるファインモーション。\n彼女の学ぶ姿勢に、深く感じ入ったのだった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "Title": "不在の理由は……",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "トレーニングの時間になっても\r\nファインモーションが来ないので、\n校内を捜していると……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "むむ……このニュースは見逃せないね……！\r\nアイルランドだけじゃなく各国に影響が……。",
+      "ChoiceDataList": [
+        "それは……週刊誌？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "あらトレーナー。キミも見る？\r\n政治関連の記事って気になるよね……！",
+      "ChoiceDataList": [
+        "もうトレーニングの時間だけど……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "えっ！\u3000もうそんな時間？\r\nご、ごめんなさいっ、すっかり夢中に……。",
+      "ChoiceDataList": [
+        "あとで読むようにな",
+        "あとで読むようにね"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "美妙姿势",
+      "Text": "はい……気が緩んでいましたね。\r\n今度からは気をつけます。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "ファイモーションは\r\nきちんと反省しているようだ。\n軽く注意するに留めておいた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

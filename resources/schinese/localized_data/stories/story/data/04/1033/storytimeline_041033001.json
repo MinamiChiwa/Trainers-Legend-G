@@ -1,0 +1,296 @@
+{
+  "Title": "辉煌的新星",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（对我而言——奔跑，与祈祷无异。）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "はっ……はっ……はぁ。\r\nッ、ごほっ……げほっ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（喉が詰まる。だからわかる。突きつけられる。\r\n私は、……息をしている、と）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（冬のダイヤモンドを構成する、全天21の一等星の1つ。\r\n優しく瞬く赤い恒星、ポルックス）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（……今晚，你也一定在那里注视着我吧。）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………该走了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（私は祈る。手を合わせる代わりに大地を蹴って。\r\nこの道の先にある輝かしいもの、温かなもの、そのすべてが――）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（将这一切，全部献给你——）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "そろそろ、トレーナー陣がウマ娘の実力を見極める\r\n大事な『選抜レース』の開催日だ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "コースを訪れると、他にも数多くのトレーナーたちが\r\n本番に向けトレーニングを重ねるウマ娘たちの様子を見に来ていた。",
+      "ChoiceDataList": [
+        "（我看看……这次的参赛者名单……）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "——哦哦！刚刚的末脚，很厉害嘛……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "仕掛けどころの見極めも抜群……\r\nアドマイヤベガ、ますます今度の選抜が楽しみになってきたわね。",
+      "ChoiceDataList": [
+        "（“爱慕织姬”……！）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "選抜レースの出走者リストにあり、自分も注目していた名が聞こえ、\r\n急いでコースに目を走らせる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "はふ、はふ、はひ……\r\nへ、併走、ありがとうございましたぁ……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "我才该说谢谢。\n……你要走了吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "は、はい～、この後ウララさんたちと、お夕飯をいただく\r\n約束でして……あのあのあの、よければ、アヤベさんもっ――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "不用。我……我再跑一会。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "名将怒涛",
+      "Text": "啊！啊……那……请、请你不要太勉强自己了哦……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "哈、哈、哈——！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "少しずつ上がっていく子も増えていく中で、友人の誘いを\r\n淡々と断り、独り、ストイックにトレーニングを続ける彼女。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "哈啊……！！",
+      "ChoiceDataList": [
+        "（与评价一样……好强的加速力……！）",
+        "（評判通り、素晴らしい加速力……！）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "她那奔跑的模样，让我感到足以令人震惊的才能。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "優れた能力を持ち、輝かしい未来へと至る可能性を感じさせる\r\nウマ娘、アドマイヤベガ。彼女は――",
+      "ChoiceDataList": [
+        "（是个怎样的姑娘呢？）",
+        "（どんなウマ娘なのかな？）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "その後トレーナー室に戻り、アドマイヤベガに関する過去の資料を\r\nあさっていると、すっかり夢中になって気づけば夜も更けていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "正当我想着差不多改回宿舍，走出房间的时候——",
+      "ChoiceDataList": [
+        "嗯？跑道上……还有人影？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "——呼……哈……哈……！",
+      "ChoiceDataList": [
+        "（她还在训练吗？！）",
+        "（まだやってたの！？）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "すっかり誰もいなくなったコースを、彼女は独り、走り続けていた。\r\nさすがに疲れきった様子だったが――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "还不够……还不够……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "ペースは落ちない。彼女の脚は止まらない。\r\nまるで――",
+      "ChoiceDataList": [
+        "有什么东西对她穷追不舍一般……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "哈……哈……呜……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "疲弊しきった様子のアドマイヤベガがふと足を止める。\r\n最後の足音さえ消えた静寂の中で、彼女の瞳は――星を映していた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "星を。星を。満天の星空を。\r\n……まるで、今にも吞まれてしまいそうに、儚く揺れて――",
+      "ChoiceDataList": [
+        "……没、没事吧？",
+        "……大、丈夫？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "诶？",
+      "ChoiceDataList": [
+        "あっ"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "——我到底为什么要搭话呢。\n时至今日，我也没想明白这个问题的答案。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "？……没事。我平时都是这样训练的。",
+      "ChoiceDataList": [
+        "每次都练到这么晚？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "差不多吧。",
+      "ChoiceDataList": [
+        "……不累吗？",
+        "……辛くないの？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "不累。为了获胜，这点训练量是必须的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……我必须要获胜。奔跑、然后取胜。\n就是这样。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……トレーナーとして話があるなら、選抜レースの後にして。\r\nそれじゃ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "瞬間、夜練用に点いていたコースの明かりもとうとう消え――\r\n星明かりの中、夜に溶けるように、彼女は立ち去っていった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "まるで身を削るように、ひどく重い覚悟を背負っている様子の\r\nアドマイヤベガの姿は、いつまでも胸に残ったのだった……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

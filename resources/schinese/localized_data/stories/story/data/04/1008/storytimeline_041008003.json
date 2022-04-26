@@ -1,0 +1,339 @@
+{
+  "Title": "第3話",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "距离『分项目竞技大会』正式开始，\n还剩一点儿时间——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘A",
+      "Text": "聞いた？\u3000芝2000mの第10グループ、ブライアン先輩が\r\nいるからって色んな子たちが辞退しまくったみたいでさ……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "马娘B",
+      "Text": "聞いた聞いた！\u3000あのグループだけGⅠクラスの子たちばっかりの\r\nレースになっちゃったんだよね。辞退しててよかった～……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "……唔ー，事情已经变成这样了啊。",
+      "ChoiceDataList": [
+        "……没关系吗？",
+        "……没事吧？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "哈？\u3000什么啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "……你不会是也想对我说『快退赛』吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "别人怎么做都不重要！\u3000我会出场的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "確かに、ブライアン先輩はヤベー相手だよ。\r\n“GⅠクラス”、なんて評価でさえ足りねぇぐらいの実力者だ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "行事のレースでも、先生とかトレーナーたちはしっかり見てっから、\r\n負けて評価下げるくらいなら別のに出るって連中の言い分もわかる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "但是，我是不会退赛的。",
+      "ChoiceDataList": [
+        "因为退赛『很逊』吗？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "嘿，是这样。你很懂啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "……なるんだよ、カッコいいウマ娘に。\r\nだったら、こんなとこでビビってられっか！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "さ、行くぜトレーナー！\r\n本番も近いんだ、バッチリ鍛えておかねぇとな！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "就这样，我看着伏特加全身心地投入训练，几天后——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "终于，分项目竞技大会的举办日来了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（哇啊啊啊啊啊ー！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "お聞きください、この歓声！\u3000GⅠレース並の盛り上がりを見せる\r\n芝2000m、第10レースのスターは――やはりこのウマ娘！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "可怕的“怪物”，成田白仁ーーー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（唔哦哦哦哦哦哦！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……好吵啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "白仁前辈……果然是给人很强的压迫感啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "あら、今からでも辞退したくなっちゃった？\r\nアタシが実行委員会に掛け合ってきてあげましょうか。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "笨…怎么可能啊！\u3000你别多管闲事。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "……我会赢的。看好了！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "好好，我会好好看着的哦。……真是的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "『勝って来る』って、高らかに宣言してたが……\r\nまさかウオッカ、ナリタブライアンに勝つ気でいるのか？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "伏特加也很有天分……但是，这好像有点……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "大和赤骥",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "然后，伏特加她们的比赛终于开始了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（――哒哒哒！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "哈、哈、哈……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "（やってやるさ、俺だって……！\r\nここで先輩に勝ちゃあ……カッコいいなんてもんじゃねぇだろ！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "好……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "ここでウオッカが前に出ましたっ！\r\nしなやかな加速で集団をかわしていきます！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "実力者揃いのレースなだけあり序盤から速いペースだったが、\r\nウオッカは懸命について行っていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "但是，当比赛进行到终盘时——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "哈，哈……哈……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "（糟糕……视野，开始变模糊了……！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "可恶……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "……就是这里！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "来ました、ナリタブライアン！\u3000ここでスパートっ！！\r\n強豪ウマ娘たちをやすやすと追い抜き、先頭に立ちましたっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "可……恶ーーーーーーー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "ウオッカもスピードを上げます！\u3000しかしこの差は厳しいか！？\r\n先頭はナリタブライアン、2番手との差は5バ身から6バ身！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "（不行了……太强了……！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "不行了……已经，追不上了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "ナリタブライアン、ゴォオオオオル！！\r\n圧倒的と言うに相応しい、見事な走りを見せてくれましたっ！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "……遗憾的是，伏特加只得到了第五名。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "中坚训练员A",
+      "Text": "健闘はしていたが……\r\nさすがに無謀なチャレンジだったな、ウオッカ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "嗯。要是选择一个合适的舞台的话，明星就会是她了。",
+      "ChoiceDataList": [
+        "等等，差不多别再这样侮辱她了――",
+        "等等，差不多别再这样侮辱她了――"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "喂喂，你的表情怎么这么恐怖啊，训练员？",
+      "ChoiceDataList": [
+        "伏特加……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "いいんだよ。\r\nっていうか……しかたねぇよ。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "伏特加",
+      "Text": "现在的我……真的，超逊啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "『そんなことはない』……そう伝えようとしたのだが、\r\nウオッカはその場を立ち去ってしまった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

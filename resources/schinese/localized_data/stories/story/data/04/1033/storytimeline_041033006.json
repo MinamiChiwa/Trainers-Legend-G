@@ -1,0 +1,255 @@
+{
+  "Title": "宛若畅游于星海",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（……你就在那里吧。）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（我曾无数次地幻想过这种事情。）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（きっと、これからも。\r\nあなたはずっと私の中にいて、消えることはない）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（感じているから。\r\n聞こえない声を、見えない姿を、大切な想いを）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（但是，即便是这片伪造的星空之下，你也——）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "馆内广播",
+      "Text": "『それでは、またのお越しをお待ちしております。\r\n次の投影開始時刻は――』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "――プラネタリウム。アドマイヤベガが星を好きだと知り、\r\n少しでも会話のきっかけになればとやってきたのだが……。",
+      "ChoiceDataList": [
+        "真美啊……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "想像以上に楽しめた。せっかくなら、もっと星について\r\n勉強してみようかと、館内の売店で図鑑を物色していると――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……啊。",
+      "ChoiceDataList": [
+        "织姬也来了呀？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……。私は、いつも来てる。\r\nトレーナーさんは、なにしてるの。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "只是来看星星吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "アドマイヤベガが、質問をくれる。\r\n……会話が繋がるなんて、珍しい。",
+      "ChoiceDataList": [
+        "我想学些关于星星的事情。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……どうして？\r\n星に興味があったの？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "やはり、会話を続けてくれている！\r\nこのチャンスをムダにはしたくない。何か気の利いたことを――",
+      "ChoiceDataList": [
+        "因为喜欢织姬嘛！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………哈？",
+      "ChoiceDataList": [
+        "诶？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……你、你……说……什么啊……",
+      "ChoiceDataList": [
+        "啊、不是……我是说，星星！星星！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "焦って、おかしな返しをしてしまったようだ。\r\n慌てて『アヤベが星を好きだから』と言い直す。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……はぁ。そういうこと。\r\nちゃんと、考えてからしゃべって。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "だけど……私が星を好きだからって、\r\nあなたまで好きになる必要はないでしょう？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "わかってる。あなたが、1人のトレーナーとして、\r\n私に歩み寄ろうとしていることは。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……但是，没这个必要。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "何度も言っているけど……私は独りでいい。\r\n馴れ合いも、慰めも、優しさだっていらない。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "走ることも、勝つことも、私が独りで背負うべきこと。\r\nだってあの子は、……私の妹は、他でもない――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……是因为我而死的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……所以，你不用管我。",
+      "ChoiceDataList": [
+        "我只是想擅自靠近你一些而已哦。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……你又在说这种话了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "不管我说什么，你总会用这种话回应我……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………。\r\n……私、帰るから。",
+      "ChoiceDataList": [
+        "啊，那我们一起——"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "你准备买书对吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "……右手的那本书，我觉得对初学者更友好。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "こちらが手に持っていた本に視線をやり、そう言い残すと、\r\nアドマイヤベガは静かに立ち去っていった。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（……为什么，总是没法把他好好推开呢……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（もっと強く……怒鳴ったっていいから、\r\n突き放してしまえばいいのに）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "…………但是为了参加比赛，必须要有训练员才行。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱慕织姬",
+      "Text": "（ただ、それだけ。きっと、それだけだから。\r\n……私は、ちゃんと独りだから）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

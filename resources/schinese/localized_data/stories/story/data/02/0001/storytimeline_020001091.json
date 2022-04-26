@@ -1,0 +1,386 @@
+{
+  "Title": "开始错开的齿轮\u3000秋季天皇赏",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "让我开记者会吗……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "手纲小姐来联系我了。\n说是想采访你的申请蜂拥而至。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "手纲小姐来联系我了。\n说是想采访你的申请蜂拥而至。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "下场比赛秋季『天皇赏』你也是人气第1，\n越来越引人注目了呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "似乎是这样呢……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "咋啦？\u3000不想接受采访的话\n我替你去吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "『为了减肥，我一直忍着不吃自己最爱吃的蛋糕』\n这么说就行了吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "你这家伙，我在蛋糕店门前烦恼的时候\n让你看到了吧！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "我虽然没设置饮食限制，\n她还是自主控制了吗……",
+      "ChoiceDataList": [
+        "就吃一个蛋糕没问题哦"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "不了，松懈可能会带来意想不到的后果。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "总之，采访我接受了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "记者A",
+      "Text": "秋季『天皇赏』，你目前处于人气第1位，\n自信程度如何呢？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "自信当然是有的，但比赛会发生什么还不得而知。\n我不会满腔傲慢地参加比赛的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "记者B",
+      "Text": "参加这场比赛都是强者，\n你考虑如何进行比赛呢？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "这个嘛……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "不知道能不能说，\n于是目白麦昆开始用目光找起我来。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "由于这事关我们的作战策略，\n不能详细回答。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "不过嘛，闸号如果能抽到内侧就好了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "记者C",
+      "Text": "说起来，据说有一段时间\n队伍成员就只有目白麦昆小姐一个人呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "是的。但现在队员也增加了\n算是终于重振旗鼓了吧……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "记者C",
+      "Text": "队员增加的契机，果然还是目白麦昆\n春季『天皇赏』的胜利吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "目白麦昆似乎在困扰如何回答，\n于是再次看向我。",
+      "ChoiceDataList": [
+        "是的，多亏了她我们才能重振旗鼓"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "在队伍陷入解散危机时她还能好好地赢下春季『天皇赏』，\n为队伍募集来了成员。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "麦昆今后也是队伍的中心，\n是不可欠缺的存在。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "记者C",
+      "Text": "原来如此，对麦昆小姐给予了很大的期待呢！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "…………",
+      "ChoiceDataList": [
+        "麦昆？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "哎？\u3000啊，那个……是呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "记者B",
+      "Text": "那么在最后，请对粉丝们说一些话。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "大家能把我推为人气第1，我感到非常光荣。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "为了回应大家的期待，\n到比赛当天为止，我都会好好训练的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "呀～太正经了！\u3000正经过头了，\n都变成普~通的记者见面会了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "因为我普通地回答了，当然会变成那样。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "齐刘海的赛马娘",
+      "Text": "但是但是，\n每个回答都相当帅气！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "垂眼的赛马娘",
+      "Text": "我现在就开始期待\n麦昆的比赛了～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "现在不止是粉丝们，\n队员们也相当期待目白麦昆的表现。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "与队伍的中心相称，真的是非常靠得住的存在。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "好！\u3000为了鼓舞士气，咱们去吃点好的吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "喔～！\u3000真的假的！\n太好了，可以随便吃伊势虾咯！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "齐刘海的赛马娘",
+      "Text": "我想去那家叫『胡萝卜甜点』\n的名店！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黑色短发的赛马娘",
+      "Text": "真是的，主角可是麦昆啊，\n所以应该吃麦昆喜欢的东西吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "那个……不用顾虑我了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "毕竟今天去接受采访了，\n我想把那部分的训练补回来。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "现在去训练～？\n喂喂，你没问题吧？\u3000感觉最近你紧张过头了哦？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "我当然没勉强自己。\n毕竟之前也病倒过。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "但是，正是状态极佳的当下，\n我才不想打乱这种状态。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "可以吗？\u3000训练员。",
+      "ChoiceDataList": [
+        "就交给你判断吧",
+        "就交给你判断吧"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "谢谢。\n那么，我去训练了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "……果然很认真啊，那家伙。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "然后终于迎来了，目白麦昆备受瞩目的大舞台\n――秋季『天皇赏』的当天。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "呼～看台都满了。\n人真多啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "呼～看台都满了。\n人真多啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "我已经有『阿船炒面』大卖特卖的预感了！\n得赶紧准备了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "不是，你也好好给麦昆加油啊。\n说起来，麦昆呢？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "不是，你也好好给麦昆加油啊。\n说起来，麦昆呢？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "那家伙的话，早就出去了哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "诶……？\u3000时间不是还有的是吗。\n为什么那么早就……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "诶……？\u3000时间不是还有的是吗。\n为什么那么早就……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "呼ー……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "作为目白家赛马娘背负的期待，\n支持我粉丝们的期待，还有――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "信任着我的队员们和\n训练员的期待……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "……大家，我一定会取胜的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

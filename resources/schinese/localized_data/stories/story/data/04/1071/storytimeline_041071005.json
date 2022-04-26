@@ -1,0 +1,264 @@
+{
+  "Title": "以崇高之物为目标",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "为了迎接正式的出道战，我和阿尔丹每天都不断进行着训练。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "哈、哈……呼。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "时间也缩短了不少呢。\n而且，感觉训练之后的呼吸也比先前更加平缓了。",
+      "ChoiceDataList": [
+        "训练的节奏也把控得很好哦！",
+        "训练的节奏也把控得很好哦！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "非常感谢您。\n那么——为了不浪费时间，踏踏实实地继续训练吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "即便是被我夸奖了，也能立刻将注意力放回训练中来。\n正如她所说的“为了不浪费时间”，她在训练时的集中力非常之高。",
+      "ChoiceDataList": [
+        "你的这份集中力，也是你的武器啊。",
+        "你的这份集中力，也是你的武器哦。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "武器……吗……？啊……没什么。我非常光荣哦。\n我只是没想到有这样的思考方式……有点意外而已。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "看上去，似乎连她自己都没有意识到这件事。\n也许训练时的这份气魄，正是出于她的决心吧——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "……虽然，我想您应该已经知道了吧。\n我从出生开始，身体就非常脆弱，非常容易受伤……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "即便终有一日，我会粉身碎骨……即便终有一日，\n我的一切都埋葬在目白家——或是说，赛马娘们所编织的光辉历史之下。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "即便终有一日，我的一切都不复存在、为人淡忘——\n即便如此，我依旧拥有『现在』。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "舍弃永恒的安宁，为绽放刹那的光辉而赌上性命。\n这就是我所能被允许的，唯一的权利。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "那一天，静静地描述自己的境遇的目白阿尔丹双眼之中，\n透露出平稳……但绝对不可能动摇的决心。",
+      "ChoiceDataList": [
+        "（我想回应她的这份决心……）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "训练员，我准备好了。\n最后一圈也麻烦您计时了。",
+      "ChoiceDataList": [
+        "——那么，预备……开始！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "前来见习的马娘们",
+      "Text": "——诶？阿尔丹前辈这是在跑第几圈了？\n——好像训练量比以前更多了呢。她的身体没问题吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "前来见习她训练的后辈们，纷纷发出了关切的声音——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "哈、哈……\n……嗯。感觉不错……",
+      "ChoiceDataList": [
+        "（没关系，她还能继续。）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "训练员？请问怎么了？",
+      "ChoiceDataList": [
+        "照这个状态，可以稍微加大训练量了吧……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "……！请务必这样安排。\n正好，我也在考虑可以适当增加奔跑的距离了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "——今天也非常感谢您。\n这次的训练让我获益匪浅，感觉能够拿出更加充实的成果了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "那么……可以继续采用这套训练方案吗？\n从明天开始，就以这份训练菜单为基准进行调整。",
+      "ChoiceDataList": [
+        "我也想说相同的话呢。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "……呵呵呵。真是得感谢“当下”呢。\n现在的我状态非常良好，也不会因为身体发热而动弹不得。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "即便如此，在出道战前也并非是天天都能够进行训练。\n但是，今天的训练却相当顺利。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "我们共同享受着这份胜利的喜悦，结束了训练后讲评。\n但她却仿佛无法放松一般，依旧把腰板挺得笔直。",
+      "ChoiceDataList": [
+        "休息的时候，更放松一些也可以哦？",
+        "休息的时候，更放松一些也可以哟？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "放松……您是说？",
+      "ChoiceDataList": [
+        "你可以用用靠枕啊，或者躺在沙发上也行。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "哎呀，那真是感激不尽。\n不过，我这种状态才是最自然的哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "身为目白家的马娘，我们常常会出现在大众的视线之中。\n所以我自幼就开始被教育要时刻注重仪表端庄。而且——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白家的友人",
+      "Text": "哎呀，小阿尔丹，怎么在角落里一个人低着头呢？\n难道说身体不舒服吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "幼小的阿尔丹",
+      "Text": "不是的，阿姨，我只是在思考一些事情而已……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白家的友人",
+      "Text": "哎呀，你这样可不行哦。你的身体不好，这样会让人担心的……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "幼小的阿尔丹",
+      "Text": "（……这样呀。要是不时刻挺直腰板的话，\n会让人觉得我身体不舒服的……）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "……",
+      "ChoiceDataList": [
+        "阿尔丹……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "啊，抱歉，我没事的。\n只是我这样更能冷静下来。请不要担心。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "我不会在训练员面前勉强自己的。\n请您安心。",
+      "ChoiceDataList": [
+        "我明白了。不过，想撒娇时可以尽情撒娇哦。",
+        "我明白了。不过，想撒娇时可以尽情撒娇哦。"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "哎呀……要是放任自己的担当马娘撒娇的话，\n不会对训练员的工作造成困扰吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "如果我今天告诉您，我的心情不大好的话，\n您会说“那就休息吧！”这样的话吗？",
+      "ChoiceDataList": [
+        "训、训练的时候我可不会手软！",
+        "训、训练的时候我可不会手软！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白阿尔丹",
+      "Text": "呵呵呵……请您务必如此。\n没关系的。实际上，我认为您现在已经相当娇惯我了。",
+      "ChoiceDataList": [
+        "（都这样说了的话，就交给她本人吧……）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "面对露出温柔笑容的目白阿尔丹，\n我决定不再多言。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

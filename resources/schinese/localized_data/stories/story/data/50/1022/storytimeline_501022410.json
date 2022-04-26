@@ -1,0 +1,25 @@
+{
+  "Title": "迎接出道战",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "メイクデビュー当日。ファインモーションは\r\nレースを前に浮き立っているように見えた。\nしかし、彼女には考えがあった……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "出道战"
+      ]
+    },
+    {
+      "Name": "独白",
+      "Text": "それは……全力を出して走るためには\r\n全力で楽しむ必要がある、ということ。\nここから、彼女の本気のレースが始まる――！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

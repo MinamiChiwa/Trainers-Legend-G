@@ -1,0 +1,41 @@
+{
+  "Title": "Fork in the Road",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "ファインモーションとトレーナーは、\r\n『有馬記念』の観戦に来ていた。\nレースには、エアシャカールが出走する。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "結果――エアシャカールは敗北した。\r\n彼女はデータに定められた結末にあがくなか、\nファインモーションに希望を見ていたと語る。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "このレースで、結末に変化を起こしたかった。\r\nしかしファインモーションの心は変わらない。\nすべては予測通りの終わりを迎える。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "だが、エアシャカールは走り切ったことで\r\n自分の道に納得していた。\nファインモーションにもまた、己の道がある。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "その後、ファインモーションは\r\n会見を開き、帰国を発表する。\n彼女の瞳には涙がきらめいていた……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "Title": "\t天皇賞（秋）の後に・Ever After",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "見事、『天皇賞（秋）』を制した\r\nファインモーション！\n万雷の拍手と歓声が彼女を包む……。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "彼女の走りは、まさに一瞬一瞬が輝いていた。\r\n誰もがこの勝利を、語り草にするだろう。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "最高のレースを終えたファインモーションは、\r\nトレーナーと明日は何をしようかと笑い合う。\n帰国まで残り数か月。まだ時間はある……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

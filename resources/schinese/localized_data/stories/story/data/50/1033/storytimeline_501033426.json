@@ -1,0 +1,37 @@
+{
+  "Title": "日本德比后・希望的灯火",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "勝敗は決した。1着はナリタトップロード。\r\nアドマイヤベガは初めて、\n胸に湧き上がる悔しさを感じていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "だがその悔しさこそが、\r\n次のレースへと向かう原動力にもなる。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "次はクラシック三冠路線の最終戦、菊花賞で。\r\nライバルともそう誓いあって――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "菊花赏"
+      ]
+    },
+    {
+      "Name": "独白",
+      "Text": "楽しさを胸に、夏が来ようとしていた。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

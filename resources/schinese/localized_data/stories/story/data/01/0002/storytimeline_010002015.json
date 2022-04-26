@@ -1,0 +1,37 @@
+{
+  "Title": "亮相圈导入",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "这里被称作『亮相圈』。\n赛马娘们参赛前会在此处登场，\n向粉丝们展示自己！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": [
+        "亮相圈"
+      ]
+    },
+    {
+      "Name": "秋川理事长",
+      "Text": "注目！\u3000在亮相圈，可以确认参赛前的\n各种事项哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "秋川理事长",
+      "Text": "详细内容……手纲！\n就请你说明了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "骏川手纲",
+      "Text": "请交给我吧♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}

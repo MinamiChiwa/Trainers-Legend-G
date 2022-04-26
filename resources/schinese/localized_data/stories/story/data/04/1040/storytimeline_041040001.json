@@ -1,0 +1,344 @@
+{
+  "Title": "尾花栗毛，随风起舞",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "今天便是赛马娘们展现实力的选拔赛开赛的日子。\n能够邂逅到怎样的赛马娘呢——怀揣着这样的希望，我来到了赛场。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "没关系的……为了这场比赛，我一直训练至今……\n一定能赢的。一定能赢的……凭借我的双脚，一定……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "这时，我碰见了预定要参赛的黄金城市。\n看上去，她紧张得要命，根本没法放松下来……",
+      "ChoiceDataList": [
+        "没事吧？",
+        "没关系吧？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "……唔？！哈？你谁啊，吓我一跳……\n这身衣服……你是学园所属的训练员？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "抱歉，等选拔赛结束之后再搭话吧。\n在那之前，我不想和别人说话。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "黄金城市对我的关心回以冷淡的话语，\n就这样离开了……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "前几场选拔赛已经结束。\n我将目光投向下一场比赛的参赛表——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "训练员们",
+      "Text": "唔哇，好漂亮……！快看，那孩子……！\n那就是那个传闻中的？！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "新人训练员A",
+      "Text": "那个……你、你……难道说……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "……在。您是在叫我吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "新人训练员A",
+      "Text": "果然！你是那位叫阿城的模特对吧？\n以前在杂志上见过你的照片，没想到真人比照片更漂亮……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "啊……谢谢夸奖。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "哎呀……比赛里能有外貌如此出众的选手，\n看来比赛也会很有看头呢~加油哦，阿城！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "…………好的。\n我也努力让大家为我的奔跑着迷的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "经历过这番骚乱，比赛终于开始——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "黄金城市，依旧处在最后方无法突破！\n比赛只剩下400米，情况相当严峻！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "哈……哈……别开玩笑了……！\n我还能……！我还能继续……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "——冲线！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "哈、哈、哈……\n第五啊……可恶。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "虽然在最后关头展现出非比寻常的末脚，\n但黄金城市的最终成绩依旧不太理想……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "资深训练员A",
+      "Text": "唔嗯……虽然那强大的末脚的确是闪光点，但整体实力并不出众……\n哎，也就这样了吧。作为模特兼职的运动员倒是还行。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "新人训练员A",
+      "Text": "比起那个，还是多关注一下她跑步时候的模样吧！\n尾花栗毛在奔跑时那随风起舞的模样……今天真是看见了绝景啊！\n（尾花栗毛：栗毛马的鬃毛尾巴等部位等呈现浅色，形似芒草穗，即尾花。）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "…………唔。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "黄金城市沉默地呆立片刻后便离去了。\n那副不甘心到紧咬牙关的模样，给我留下了些许印象……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "那天的黄昏，我一边回想着选拔赛中各个马娘的表现，\n一边在河畔漫步时——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "等下啦阿城，暂停暂停~~！！\n真的超不妙呀~~！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "哈……哈……\n怎么了，佐敦？跑不动了吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "虽然我确实有些跑不动啦……但阿城你不累的吗？\n之前才刚跑了比赛，现在不要逞强比较好吧~",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市的经纪人",
+      "Text": "……阿城，佐敦同学说得对。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "唔哇，出现了？！吓我一跳~……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "经纪人……什么啊，你一直在看我们吗。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市的经纪人",
+      "Text": "要是继续训练的话，可能会影响到明天的工作哦。\n你看，你的脚都在发软了……要是受伤了怎么办啊？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "……好好好。\n毕竟橱窗里的商品可不能受损呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市的经纪人",
+      "Text": "阿城……稍微理解一下我吧。\n我也是为了你好啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市的经纪人",
+      "Text": "下一次工作也是因为相当符合你的形象才接下的哦。\n又帅气、又华丽、还符合你这种有些冷淡的气质——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "……嘁。我说过我会好好完成工作了吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "我知道受了你不少照顾，也一直很感激你。\n就是因为有这份情谊在，我才没有马上辞掉模特的工作。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "但是，我现在正在为比赛而训练！\n你不是一直喜欢说『只有这件事，我绝对不会阻止你』吗！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市的经纪人",
+      "Text": "……从一开始我就说过『反对』了。\n阿城，你根本完全不了解你的价值……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "哈啊？！价值？！\n这种事情根本就不是“我的价值”——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "不妙哇——！\n我突然好想吃炖肉啊~~！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "……哈？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "还不是因为你们一直在“阿城”“阿城”地喊啦~\n你听，这两个词不是很像嘛？都把我说饿啦~\n【注：阿城（シチー）与炖肉（シチュー）发音相似。】",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "就是这样啦，经纪人小姐。\n我们吃过晚饭就回去啦，这样就行了吧~？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市的经纪人",
+      "Text": "……好吧。我明天还要开会，就先回去准备资料了。\n阿城，千万注意不要受伤了哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "……走掉了？哈~真是不妙哇~\n经纪人小姐真是一向如此呢~",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "哈……抱歉，佐敦。\n谢谢你帮忙啦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "哈哈哈哈哈！\n阿城难得直接说『谢谢』呢，不妙哇～☆",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "不过，我肚子倒是真的饿啦。\n差不多也该去吃饭了吧~？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "……抱歉，我再跑一会。\n你先去吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "东瀛佐敦",
+      "Text": "真的嘛~？也行啦~\n你可别太勉强自己了哦？那、待会见~",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "……好，继续吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "我可不是虚有其表。\n我可不是空空如也的人偶——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金城市",
+      "Text": "为了成为想成为的那个“我”……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "独白",
+      "Text": "沐浴在夕阳之下的黄金城市汗如雨下。\n如今的她，比我见过的的任何赛马娘都更加美丽……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}
