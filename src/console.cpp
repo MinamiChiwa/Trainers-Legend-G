@@ -43,10 +43,6 @@ namespace
 				auto&& [storyDict, raceDict] = LoadStories();
 				local::reload_textdb(&dicts, ensure_latest_static_cache(g_static_dict_path), std::move(storyDict), std::move(raceDict));
 			}
-			else if (line == "reboot")
-			{
-				msgFunc::fastReboot();
-			}
 		}
 	}
 }

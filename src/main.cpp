@@ -33,7 +33,6 @@ std::unique_ptr<AutoUpdate::IAutoUpdateService> g_auto_update_service{};
 std::string g_static_dict_path;
 bool g_no_static_dict_cache;
 std::string g_stories_path;
-bool g_read_request_pack = true;
 
 constexpr const char LocalizedDataPath[] = "localized_data";
 constexpr const char OldLocalizedDataPath[] = "old_localized_data";
@@ -355,7 +354,6 @@ namespace
 			g_max_fps = document["maxFps"].GetInt();
 			g_unlock_size = document["unlockSize"].GetBool();
 			g_ui_scale = document["uiScale"].GetFloat();
-			g_read_request_pack = document["readRequestPack"].GetBool();
 
 			const auto& extraAssetBundlePath = document["extraAssetBundlePath"];
 			if (extraAssetBundlePath.IsString())
