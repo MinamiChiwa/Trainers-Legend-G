@@ -1,19 +1,21 @@
 #pragma once
-#include <nlohmann/json.hpp>
 #include <exception>
 #include <iostream>
 #include <fstream>
 #include <Windows.h>
-#include <nlohmann/json.hpp>
+#include <rapidjson/document.h>
+#include <vector>
+#include <msgpack.hpp>
+#include <regex>
 
 namespace msgPrase
 {
-	nlohmann::json praseRequestPack(const std::string& data);
+	rapidjson::Document praseRequestPack(const std::string& data);
 }
 
 namespace msgFunc
 {
 	extern bool isDMMTokenLoaded;
-	void initDMMToken(nlohmann::json pack);
+	void initDMMToken(rapidjson::Document pack);
 	void fastReboot();
 }

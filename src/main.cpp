@@ -355,8 +355,11 @@ namespace
 			g_max_fps = document["maxFps"].GetInt();
 			g_unlock_size = document["unlockSize"].GetBool();
 			g_ui_scale = document["uiScale"].GetFloat();
-			g_read_request_pack = document["readRequestPack"].GetBool();
 
+			if (document.HasMember("readRequestPack")) {
+				g_read_request_pack = document["readRequestPack"].GetBool();
+			}
+			
 			const auto& extraAssetBundlePath = document["extraAssetBundlePath"];
 			if (extraAssetBundlePath.IsString())
 			{
