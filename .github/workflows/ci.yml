@@ -2,11 +2,29 @@ name: ci
 on: 
   push: 
     paths:
+      - '**.lua'
+      - '**.cpp'
+      - '**.c'
+      - '**.hpp'
+      - '**.h'
+      - '.gitmodules'
+      - '.gitignore'
+      - '.gitattributes'
+      - 'conanfile.txt'
       - 'deps/**'
       - 'src/**'
       - 'utils/**'
   pull_request:
       paths:
+      - '**.lua'
+      - '**.cpp'
+      - '**.c'
+      - '**.hpp'
+      - '**.h'
+      - '.gitmodules'
+      - '.gitignore'
+      - '.gitattributes'
+      - 'conanfile.txt'
       - 'deps/**'
       - 'src/**'
       - 'utils/**'
