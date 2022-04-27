@@ -1,0 +1,371 @@
+{
+  "Title": "蔡格尼克记忆效应",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "头好痛……",
+      "ChoiceDataList": [
+        "（咦……怎么回事……？）",
+        "（咦……怎么回事……？）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "我那封闭在黑暗中的意识慢慢苏醒。\n然后――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "――哦呀。你醒啦？",
+      "ChoiceDataList": [
+        "爱丽速子……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "『隐藏着惊人能力的马娘』，连我这个新人训练员\n都听闻过的爱丽速子，现在就站在眼前……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "看来你现在有些混乱呢。\n毕竟也刚刚恢复意识，别太勉强为好。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "去吧，坐那边椅子上。你现在应该放松一下。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "我被她催促着，坐到了保健室的圆凳上。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "那么……你身处这里的原因？\u3000还想得起来吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "顺便说一下，是我把昏过去的你搬到这儿来的哦。\n因此你应该回想的是，『为何』『怎样』昏过去的。",
+      "ChoiceDataList": [
+        "那个……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "我转起隐隐作痛的脑袋，开始回想。\n我记得自己今天……正在走廊上走路……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "喂喂喂ーーー！！\n那边的速子同学，请等一下ーーー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "哦呀哦呀，进王君！\u3000这么慌张是出什么事了吗？\n你所爱的教室也没烧成灰。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "是，确实没烧成灰！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "好啦，和平和平。那我就先告辞了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "班长STOOOP！！\n这可一点都不和平啊！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "虽然确实没把教室烧成灰！！\n但也就差一点啊！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "只不过是在教室的一个小角落，稍～微冒了点儿烟吧？\n这是能够惊扰到班长您这等人物的事情吗。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "呣！？\u3000呣、呣呣呣……这么说确实……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "只是黑烟笼罩整个教室的程度，\n应该宽容原谅吗……？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "宽容是美德啊，班长君。\n那么，我先告辞了――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "……哈，不对！说起来老师好像嘱咐了整整八次\n『不管她说什么总之先抓过来』……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "所以不会放你走的哦，速子同学ーーー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "哈哈哈哈！\u3000果然还是蒙混不过去吗！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "站住站住ーーーーーーー！！\n爆进爆进！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "樱花进王",
+      "Text": "啊……那边的训练员！\n请帮忙拦住速子同学！！",
+      "ChoiceDataList": [
+        "（我、我……！？）",
+        "（我、我……！？）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "嗯……？\u3000哎呀！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "――嗯，看来你想起事情的经过了呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "虽然想起来了，但也记起来眼前的这位\n貌似就是在教室里放黑烟的罪魁祸首……",
+      "ChoiceDataList": [
+        "为什么要在教室里放黑烟……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "你真是问了个奇怪的问题呢。\n那种东西，除了『研究的一环』以外还能是什么呢？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "『研究』――爱丽速子说出这话时，\n眼里闪着诡异的光芒。",
+      "ChoiceDataList": [
+        "（感觉有点瘆人……）"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "或许不要跟她扯上关系比较好。\n我这样想着，尝试从椅子上站起来――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（咯吱……）",
+      "ChoiceDataList": [
+        "哎！？动不了！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "我什么时候被绑在椅子上的……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "你，是那种一埋头思考就不会在意其他事情的类型吗？\n不过这方面我也是同类，倒是能理解你的心情。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "话虽如此，我还是诚心劝你一句，\n至少时刻注意一下自己的状态比较好哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "毕竟不知道什么时候你会撞上一个正在寻找\n“健康且有精神的成年男性”实验体的研究者呢",
+      "ChoiceDataList": [
+        "实、实验体……！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "毕竟不知道什么时候你会撞上一个正在寻找\n“健康且有精神的成年女性”实验体的研究者呢",
+      "ChoiceDataList": [
+        "实、实验体……！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "不过对我来说真是难得的幸运呢。\n偶尔也感谢一下神明吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "毕竟关于我的传言好像早就传遍整个学园了呢。\n现在就算去找实验体，在对上眼的瞬间对方就跑掉了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "虽说是这样――哈ー哈哈！\n没想到面前出现了一个没听过传闻的新人！\u3000何等的幸运！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "所以豚鼠君。\n――搞错了，新人训练员君。",
+      "ChoiceDataList": [
+        "你刚才说了『豚鼠』是吧！？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "老大不小的人就不要在意这些细节了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "比起那个，现在先来一瓶……不过你这么健康的话\n应该能喝更多，先喝掉三瓶药吧。",
+      "ChoiceDataList": [
+        "什么药……？"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "桀桀桀桀桀，那个，你就先喝了之后再期待吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "啊没问题……最坏的结果也就是几个小时内\n双腿皮肤会泛起黄绿色的光而已。很可爱的副作用吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "比那点破事更重要的，是用这个药来观测\n人类股四头肌的收缩数据。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "马娘和人类的身体构造虽然事实上几乎完全相同，\n通过比较两者的数据之后会有新的――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "曼城茶座",
+      "Text": "速子同学……你又在做那种事情吗……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "哦呀，这不是茶座吗！\n怎么了，难道是来帮我做实验的――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "曼城茶座",
+      "Text": "不会做的。老师找你，我只是来传话的……\n好像是关于下一次选拔赛……有话要跟你说……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "曼城茶座",
+      "Text": "赶紧……过去。立刻……马上……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "唔……知道了知道了，别那么瞪我嘛！\n没办法，实验就下次再做吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "爱丽速子",
+      "Text": "新人训练员君，下次再见！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "曼城茶座",
+      "Text": "……哈。我帮你解开……绳子……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "『得救了』……我从心底里松了一口气。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}
