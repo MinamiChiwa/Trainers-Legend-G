@@ -37,7 +37,7 @@
     },
     {
       "Name": "独白",
-      "Text": "言われてみれば面差しがそっくりな\r\n大人のウマ娘は、驚く自分をよそに\n深々と頭を下げた。",
+      "Text": "这样说完之后，\n这位成年的马娘没有对我的惊讶做出回应，\n只是深深低下头。",
       "ChoiceDataList": [],
       "ColorTextInfoList": []
     },
@@ -48,19 +48,19 @@
       "ColorTextInfoList": []
     },
     {
-      "Name": "独白",
-      "Text": "レースを走る子たちが軒並み春生まれなのに\r\n対してナリタタイシンはとても遅く生まれ、\nそのせいか体も小さかったこと。",
+      "Name": "大进的母亲",
+      "Text": "参加比赛的孩子们一般都出生在春季，\n但我生大进生得很晚……\n这也许就是她个子这么小的原因吧。",
       "ChoiceDataList": [],
       "ColorTextInfoList": []
     },
     {
-      "Name": "独白",
+      "Name": "大进的母亲",
       "Text": "だからこそ、レースでひどいケガを\r\n負うのではないかと心配で、\nきちんと応援してあげられなかったこと。",
       "ChoiceDataList": [],
       "ColorTextInfoList": []
     },
     {
-      "Name": "独白",
+      "Name": "大进的母亲",
       "Text": "それでも走りたがるナリタタイシンに、\r\n小さく生んだことを謝ったら、\nひどく怒らせてしまったこと――",
       "ChoiceDataList": [],
       "ColorTextInfoList": []
@@ -108,7 +108,7 @@
       "Name": "成田大进",
       "Text": "……バカにしてんの？\r\nアンタも、……母さんも。",
       "ChoiceDataList": [
-        "欸"
+        "哎？"
       ],
       "ColorTextInfoList": []
     },

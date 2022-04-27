@@ -1,5 +1,33 @@
 name: ci
-on: [push, pull_request]
+on: 
+  push: 
+    paths:
+      - '**.lua'
+      - '**.cpp'
+      - '**.c'
+      - '**.hpp'
+      - '**.h'
+      - '.gitmodules'
+      - '.gitignore'
+      - '.gitattributes'
+      - 'conanfile.txt'
+      - 'deps/**'
+      - 'src/**'
+      - 'utils/**'
+  pull_request:
+      paths:
+      - '**.lua'
+      - '**.cpp'
+      - '**.c'
+      - '**.hpp'
+      - '**.h'
+      - '.gitmodules'
+      - '.gitignore'
+      - '.gitattributes'
+      - 'conanfile.txt'
+      - 'deps/**'
+      - 'src/**'
+      - 'utils/**'
 jobs:
   build:
     runs-on: windows-2019
