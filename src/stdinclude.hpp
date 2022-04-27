@@ -32,6 +32,7 @@
 #include "local/local.hpp"
 #include "logger/logger.hpp"
 #include "auto_update/auto_update.hpp"
+#include "msgpack/msgpack.hpp"
 
 extern bool g_dump_entries;
 extern bool g_enable_logger;
@@ -40,6 +41,7 @@ extern int g_max_fps;
 extern bool g_unlock_size;
 extern float g_ui_scale;
 extern float g_aspect_ratio;
+extern bool g_read_request_pack;
 
 extern std::string g_extra_assetbundle_path;
 
