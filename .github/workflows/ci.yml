@@ -1,5 +1,15 @@
 name: ci
-on: [push, pull_request]
+on: 
+  push: 
+    paths:
+      - '**/deps'
+      - '**/src'
+      - '**/utils'
+  pull_request:
+      paths:
+      - '**/deps'
+      - '**/src'
+      - '**/utils'
 jobs:
   build:
     runs-on: windows-2019
