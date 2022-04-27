@@ -97,6 +97,7 @@
     "maxFps": 60, /*帧率限制 (-1 = 游戏原版/0 = 无限/>0 = 锁定到特定帧数)——注: 垂直同步已开启*/
     "unlockSize": true, /*允许游戏使用`1080p`以上的分辨率 (true/false)*/
     "uiScale": 1.0, /*自定义UI缩放*/
+    "readRequestPack": true, /*是否读取客户端发送包信息，开启此功能可在命令行中输入reboot快速重启游戏(true/false)*/
     "extraAssetBundlePath": null, /*图片等资源替换包的路径（需要用unity打包，一般情况下请不要改动此项）*/
     "replaceFont": true, /*替换字体，true:用系统默认字体或自定义字体替换；false：使用游戏原字体*/
     "customFontPath": null, /*extraAssetBundlePath项设置的资源包内的字体路径：自定义字体*/
