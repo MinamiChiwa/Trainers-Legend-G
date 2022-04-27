@@ -50,8 +50,9 @@
 
 ### LIVE歌词
 
+- @Suzuka Sairensu(萌娘百科) 【涙ひかって明日になれ！】
 - @凉月crella（Bilibili）【transforming】
-- @雪村あおいaoi(Bilibili) 【Grow up Shine! 】
+- @雪村あおいaoi(Bilibili) 【Grow up Shine!】【BLAZE】
 - @Rajiformes软骨鱼(Bilibili) 【UNLIMITED IMPACT】←暂未获得授权
 
 ### 角色语音
