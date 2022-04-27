@@ -2,14 +2,14 @@ name: ci
 on: 
   push: 
     paths:
-      - '**/deps'
-      - '**/src'
-      - '**/utils'
+      - 'deps/**'
+      - 'src/**'
+      - 'utils/**'
   pull_request:
       paths:
-      - '**/deps'
-      - '**/src'
-      - '**/utils'
+      - 'deps/**'
+      - 'src/**'
+      - 'utils/**'
 jobs:
   build:
     runs-on: windows-2019
