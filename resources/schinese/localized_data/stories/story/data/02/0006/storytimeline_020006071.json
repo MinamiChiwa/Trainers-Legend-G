@@ -1,0 +1,551 @@
+{
+  "Title": "決意の年始め",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "宴会司仪",
+      "Text": "那么各位，今年也请在祈愿目白家的活跃的同时，享受今天的新年宴会。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "好耶！我们赶紧享受起来吧，麦昆！\r\n先吃寿司吗？！还是先吃螃蟹呢？！真叫人烦恼啊——！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "我倒是在烦恼你为什么会在这里……\r\n这可是目白家的新年宴会啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "别说这种见外的话啦！我们可是在同一支队伍里喝同一瓶运动饮料的交情——\r\n换句话说，简直就是家人一般的关系嘛！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "好啦，快在这些新鲜的海鲜逃回大海之前把它们装进名为胃袋的渔网里面吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "完全听不懂你在说些什么东西……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "新年快乐，麦昆！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "赖恩和多伯……你们也新年快乐。\r\n今年也请你们多多指教哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白多伯",
+      "Text": "嗯，我才是要请你多指教。\r\n今年也要一起加油哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "多伯去年也在GⅠ上获得了胜利，现在势头正旺对吧。\r\n我有听过关于你的各种传闻，也不难听出其中对你的期待之高哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "哎嘿嘿，她真的很受欢迎啊。\r\n同为目白家成员的我也跟着开心起来了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白多伯",
+      "Text": "我、我也没想过要让自己变得受欢迎……\r\n我只是想赢才去参加比赛的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白多伯",
+      "Text": "说到这个，备受期待的人应该还有一位吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "啊啊，我刚才好像刚见过她……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "宴会司仪",
+      "Text": "光明大小姐，差不多到演讲的时间了。\r\n请您来舞台这边吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白光明",
+      "Text": "……演讲？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "宴会司仪",
+      "Text": "就是谈谈您对去年活跃表现的感受！\r\n我先前对您说明过的那个！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白光明",
+      "Text": "嗯～……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白光明",
+      "Text": "啊啊，你说的演讲是那个演讲啊。\r\n好的，我明白了哦～",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "宴会司仪",
+      "Text": "真是的～拜托您上点心呀～",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白光明",
+      "Text": "哎呀，赖恩姐姐大人。\r\n还有麦昆大人和多伯，贵安～",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白多伯",
+      "Text": "一如既往地把赖恩称作姐姐大人啊。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "啊哈哈……毕竟很小开始就是我在照顾她嘛。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "光明，你在『天皇赏（春）』的胜利相当精彩哦。\r\n而且还在URA赏获奖了吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白光明",
+      "Text": "说到天皇赏，那可是与目白家有剪不断的缘分的重要比赛。\r\n我也感慨颇深呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白光明",
+      "Text": "能拿到这样的荣誉，\r\n都是同在一个队伍里激励着我的赖恩姐姐的功劳。请容我对您表示衷心的感谢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "毕竟经典级时候的比赛一直都很可惜啊。\r\n你能在古马级获得成功，我也真的很高兴哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "按这个状态，今年也一起以重大比赛为目标努力吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白多伯",
+      "Text": "……不过，今年应该是很难拿出好成绩的一年吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "毕竟有“黄金世代”在啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白多伯",
+      "Text": "嗯。今年开始她们也升上古马级了，肯定免不了一战吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白光明",
+      "Text": "嗯～……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白光明",
+      "Text": "无论会有谁成为我的对手，我都会完成我的应尽之事。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白光明",
+      "Text": "无数场惜败的回忆不断累计，这才将我送上如今的顶点。\r\n我可不会将这宝座轻易地让给其他人～",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白光明",
+      "Text": "……所以，我一定会达成目标的——\r\n连霸『天皇赏（春）』。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白多伯",
+      "Text": "对目白家而言，天皇赏是有着特别意义的比赛。\r\n要是能连霸的话，那可就是麦昆之后的又一伟业了呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白赖恩",
+      "Text": "哎嘿嘿，别看光明这样，但她可是个相当顽固的人哦。\r\n如果她决定要取胜，那就一定能赢的。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "宴会司仪",
+      "Text": "啊啊，光明大小姐！您怎么还在这里呀！\r\n已经到演讲的时间了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白光明",
+      "Text": "……演讲？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "宴会司仪",
+      "Text": "就是那个啦～！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "光明这个春天的目标是『天皇赏（春）』啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白多伯",
+      "Text": "怎么了，麦昆？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "没什么……果然，会发展成这样呀。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "神仙保佑佛祖保佑Shiraoki大人保佑！\r\n请让我今年也让我大显身手——！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "……还有，请保佑我就算吃了饭后甜点也不会长胖……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "新年已至，特别周也加入了古马级的行列。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "抱着为新的旅途祈福的想法，＜天狼星＞的成员们也一同来到神社参拜。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "大家，久等了哦～我已经好好许过愿了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "你许愿的时候可真认真啊。\r\n……话说，Shiraoki是啥啊？\r\n（Shiraoki：1951年出生的牝马，特别周的外高祖母）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "是被福来传教了吧……\r\n（Shiraoki也是福来的外天祖母）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "可不能觉得许过愿就万事大吉了哦。\r\n小特自己也要好好努力才行。\r\n",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "可不能觉得许过愿就万事大吉了哦。\r\n小特自己也要好好努力才行。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "当然！我在训练里会比以往更加努力的！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "我已经相～当明白在比赛里取胜也不是那么简单的事情了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "……毕竟，连着几次比赛都很可惜呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "在赢下『德比』之后，特别周趁着势头向秋天的比赛也发起挑战，但是——",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "她正领跑全场！！青云天空仍在领放！！\r\n终于特别周自外道赶上，但是青云天空——！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "青云天空如今，在『菊花赏』以第一名冲线！！\r\n完赛时间竟是——３分３秒２！令人敬畏不已的世界纪录！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "拥有“德比赛马娘”之称的特别周，以三马身之差屈居第二！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "神鹰、是神鹰！！气槽和特别周也追了上来，但是神鹰——！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "身为经典级赛马娘的神鹰，在强者如林的『日本杯』漂亮地摘得桂冠！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "实况",
+      "Text": "同期的特别周，在直线棋差一着，屈居第三！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "小青和小鹰，真的都很强……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "连赢下了『德比』的特别周同学都没法简单取胜，\r\n“黄金世代”的大家都好厉害啊……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "再加上从今年开始，你就会与古马级的成员一起跑比赛。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "不仅不能输给同期的对手，同样不能落后于前后世代的其他人！\r\n鼓起干劲加油吧！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "好的！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "虽然败仗连连，但特别周仍然不断向前奋进。\r\n在这一年之初，她对梦想的信念也依旧没有改变。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "…………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "……怎么了吗，铃鹿？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "……怎么了，铃鹿？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "无声铃鹿",
+      "Text": "啊……没，没什么……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "成田白仁",
+      "Text": "虽然跻身古马级的确值得庆贺，但现在小特决定好春季的目标了吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "啊，其实我也很在意哦！\r\n训练员，我们有什么计划吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "说实话，我觉得小特的实力还是相当强的。\r\n所以，我想活用她能连续进行长距离冲刺的体力。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "也就是说，小特春季的目标就是『天皇赏（春）』了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "也就是说，小特春季的目标就是『天皇赏（春）』了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "『天皇赏（春）』……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "不错呢不错呢！\r\n我也想看小特参加『天皇赏（春）』！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "胜利奖券",
+      "Text": "我们队伍里也有亲历比赛的优胜者，应该能教不少比赛的诀窍！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黑色短发的赛马娘",
+      "Text": "小麦昆和米浴同学，两人取胜时候的模样真的好帅气呀～……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "齐刘海的赛马娘",
+      "Text": "嗯嗯！我也一直很憧憬二位哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "诶、诶嘿嘿……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "米浴",
+      "Text": "要是有什么米浴能帮上忙的地方，一定要叫米浴哦。\r\n小特同学，一起加油吧。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "非常感谢～！务必务必请你多多指教了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "那我们再去附近的摊位转转吧。\r\n今天我请客哦。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "<username>",
+      "Text": "大家就好好享受吧，今年也要加油哦！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "特别周",
+      "Text": "好的！\r\n目标“天皇赏制霸”！\r\n目标“日本第一的赛马娘”～！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "特别周这样说着，将手高高指向天空。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "即便是仍然虚无缥缈的梦想，也一定要亲手抓住它——\r\n她的手势，仿佛是在展现这样的决心。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}
