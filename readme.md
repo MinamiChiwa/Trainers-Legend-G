@@ -50,6 +50,7 @@
 
 ### LIVE歌词
 
+- @SinonJZH（萌娘百科）【Never Looking Back】
 - @Suzuka Sairensu(萌娘百科) 【涙ひかって明日になれ！】
 - @凉月crella（Bilibili）【transforming】
 - @雪村あおいaoi(Bilibili) 【Grow up Shine!】【BLAZE】
