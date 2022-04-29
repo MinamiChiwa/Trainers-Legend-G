@@ -1,0 +1,314 @@
+{
+  "Title": "（名为）逆发掘（的绑架）",
+  "TextBlockList": [
+    {
+      "Name": "",
+      "Text": "",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "――在特雷森学园里成为训练员之后的日子里。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "我一边看着马娘们做训练，\r\n一边畅想着未曾见过的璀璨未来。岁月静好……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "总有一天自己也会成为某人的担当训练员，\r\n助力她的成长――我本是这么想的……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "呜呀啊啊啊啊啊啊啊啊ーーーーーー！！\r\n快滚快滚快滚ーーーーーーー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "哈啊……哈啊……\r\n可恶……在哪呢！？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "该死，找不到啊！\u3000小金船雷达\r\n显示的，应该就是在这儿没错――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "――哈啊！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "『……雷达接收，雷达接收。\r\n周围有，训练员反应』",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "雷达有反应的话准没错了！！\r\n这附近应该是有训练员的！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "但是……在哪呢？\u3000训练员应该是一种，\r\n长着绿色皮肤，獠牙外露的生物――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "――哦！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "我和眼前这个奇怪的马娘对上视线了。\r\n……有种不祥的预感。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "难不成，你就是训练员吧！？",
+      "ChoiceDataList": [
+        "我没有长着绿色皮肤，獠牙外露！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "啊？\u3000你说啥呢？\r\n佩戴训练员徽章的家伙就是训练员吧？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "真是，别说些莫名其妙的话啊！\r\n那样可会被想被发掘的马娘给抓住的哦？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "比如说……像我黄金船大人这样的家伙！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "我可寻找你多年了！\r\n来捕获野生训练员咯，哦啦啦啦啦啦啦啦！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "自称为黄金船的马娘不断靠近了！\r\n感觉这样下去可不妙……！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "我察觉到自身要有危险了，决定赶紧逃离现场――！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "啊……！！\u3000你丫，给我站住ー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "我好不容易逃到了校舍后面，\r\n这时终于看不到那个自称为黄金船的马娘了。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "但是，刚才那到底是怎么回事……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "那边的那位……你还好吗？",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "你看起来气喘吁吁的，\r\n是发生了什么事吗。",
+      "ChoiceDataList": [
+        "我被黄金船追着……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "啊，被黄金船同学！？\r\n那个，该怎么说呢……请节哀顺变。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "但是，你为什么会被她追着呢？",
+      "ChoiceDataList": [
+        "她好像在寻找训练员……",
+        "她好像在寻找训练员……"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "原来如此……那个人，还是有想要去\r\n参加比赛的热情呢。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "马娘要参加正式比赛的话，\r\n训练员的存在不可或缺。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "但是黄金船同学，该说是难以捉摸呢，\r\n还是说根本没法捉摸呢，怎么说呢……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "总而言之，因为一直没有训练员愿意找她\r\n所以她想强行抓一个过来吧……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "看来那个叫黄金船的马娘，\r\n是个十足的问题儿童。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "有想参加比赛的热情固然很好，\r\n但说实话我不知道能否跟得上她……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "呜哦啊啊啊啊啊啊啊！！\r\n你在哪，野生训练员！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "哎呀……好像往这来了！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "目白麦昆",
+      "Text": "被她缠上的话可就麻烦了，所以我先在此告辞了。\r\n你也要多加小心……！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "哦啦哦啦哦啦哦啦哦啦！！\r\n在哪呢啊啊啊啊啊啊ーーーーー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "坏了，得赶紧逃跑！！\r\n但我这么想的时候为时已晚――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "啊哈！\u3000野生训练员，发现ーー♪",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "嘿咻――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "（啪唰！！）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "爽翻！！\u3000捕获完成！！",
+      "ChoiceDataList": [
+        "救、救命……！！"
+      ],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "喂喂，别害怕啊。\r\n我又不是把你抓来吃了ー。",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "只是让你，稍ーー微陪我玩一场比较怪的大冒险而已。\r\n所以说ー，出发前进ー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "我被装在了袋子里，\r\n被抬到了个什么地方……",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "然后，几小时后――",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "晴天！\u3000满分！\u3000烈日炎炎！\r\n正是个适合寻宝的好天气啊！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "黄金船",
+      "Text": "那么，和小金船的兴奋不已☆心跳加速！？\r\n寻宝之旅开始啦ー！！",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "……………………",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    },
+    {
+      "Name": "",
+      "Text": "这儿…………到底是哪儿啊！？（未完待续）",
+      "ChoiceDataList": [],
+      "ColorTextInfoList": []
+    }
+  ]
+}
