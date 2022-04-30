@@ -117,25 +117,23 @@
     "aspect_ratio": [16.0,9.0], /*设置UI比例, 格式: `array[w, h]`（没有需求可以不填）*/
     "dicts": [ /*将会读取的字典列表` (相对/绝对路径)，可删除相应字典提取命令。例如删除"localized_data/Umaname.json",即可在游戏内显示角色名日文，不影响其他翻译*/
         "localized_data/chara.json", /*角色语音*/
+        "localized_data/event.json", /*育成事件文本*/
         "localized_data/race_name.json", /*比赛名*/
         "localized_data/race_message.json", /*比赛实况・解说*/
-        "localized_data/race_comment.json", /*旧实况解说文件(简中版删掉即可)*/
         "localized_data/Umaname.json", /*角色名*/
-        "localized_data/mainstory.json", /*主线剧情*/
-        "localized_data/umastory.json", /*角色个人剧情*/
-        "localized_data/extrastory.json", /*额外剧情*/
         "localized_data/himitsumanga.json", /*漫画标题、小秘密*/
         "localized_data/item.json", /*物品及描述*/
         "localized_data/LIVE.json", /*LIVE歌词等*/
         "localized_data/scardname.json", /*支援卡名*/
         "localized_data/skillname.json", /*技能名*/
         "localized_data/skillcontent.json", /*技能描述*/
-        "localized_data/event.json", /*育成事件文本*/
+        "localized_data/storytitle.json", /*剧情故事标题*/
         "localized_data/designation.json", /*训练员称号及赛马娘称号(二つ名)*/
-        "localized_data/common.json", /*旧杂项文本(简中版可删掉)*/
         "localized_data/hash_entries.json" /*杂项文本*/
     ],
     "static_dict": "localized_data/static.json", /*static字典文件的路径*/
+    "no_static_dict_cache": true, /*是否禁用static字典文件缓存(true/false)*/
+    "stories_path": "localized_data/stories", /*剧情文本文件的路径*/
     "autoUpdate": {
         "source": "github", /*自动更新的仓库源（gitee或github）*/
         "path": "http://uma.chinosk6.cn/api/get_localify_latest_releases" /*自动更新的抓取地址*/
