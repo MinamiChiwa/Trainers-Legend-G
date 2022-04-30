@@ -39,7 +39,7 @@
         "localized_data/hash_entries.json"
     ],
     "static_dict": "localized_data/static.json",
-    "no_static_dict_cache": false,
+    "no_static_dict_cache": true,
     "stories_path": "localized_data/stories",
     "autoUpdate": {
         "source": "github",
