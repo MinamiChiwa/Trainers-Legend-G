@@ -7,3 +7,4 @@
 [submodule "resources/schinese"]
 	path = resources/schinese
 	url = https://github.com/MinamiChiwa/Trainers-Legend-G-TRANS.git
+	branch = master
