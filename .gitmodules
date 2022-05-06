@@ -4,3 +4,6 @@
 [submodule "deps/rapidjson"]
 	path = deps/rapidjson
 	url = https://github.com/Tencent/rapidjson.git
+[submodule "resources/schinese"]
+	path = resources/schinese
+	url = https://github.com/MinamiChiwa/Trainers-Legend-G-TRANS.git
