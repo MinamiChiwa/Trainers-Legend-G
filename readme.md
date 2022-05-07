@@ -1,5 +1,6 @@
 # 注意
 
+- **本插件内所有翻译内容均属于原翻译者，转载请注明出处**
 - 此插件在[`umamusume-localify`](https://github.com/GEEKiDoS/umamusume-localify)基础上改善、扩展而成。
 - 插件原作者@GEEKiDoS
 - 原插件已实现的功能：帧数解锁、分辨率解锁、更换游戏内的文本、自动全屏、将游戏内字体更换为默认字体等。
@@ -13,83 +14,20 @@
 根据我国《计算机软件保护条例》第十七条规定：“为了学习和研究软件内含的设计思想和原理，通过安装、显示、传输或者存储软件等方式使用软件的，可以不经软件著作权人许可，不向其支付报酬。”您需知晓本插件仅供用户交流学习与研究使用，用户本人下载后不能用作商业或非法用途，需在24小时之内删除，否则后果均由用户承担责任。**
 
 # 贡献者
-
-## 翻译
-
-- **本插件内所有翻译内容均属于原翻译者，转载请注明出处**
-
-### 目前的贡献者
-
-#### 简体中文
-
-- @MinamiChiwa（南千和）
-- @晖轩
-- @毫毛
-- @Chihyuen
-- @八意永恩
-- @uss-enterprise1071
-- @ManakaAo
-
-## 技术协力
-
-- @chinosk114514
-- @akemimadoka
-- @MiddleRed
-
-## 修图嵌字
-
-- @KiraPoi 【嵌字】
-- @虚拟狗头人 【修图】
-- @狸 【修图】
-
-## 译文搬运授权
-
-### 主线剧情
-
-- @秋裤SE7EN（Bilibili）【主线剧情第1~3章】
-- @凉月crella（Bilibili）【主线剧情第4章】
-- @凉月crella（Bilibili） @水银h2oag @ASD一ZERO @monsterwatari @シキ【主线剧情第5章】
-
-### LIVE歌词
-
-- @SinonJZH（萌娘百科）【Never Looking Back】
-- @Suzuka Sairensu(萌娘百科) 【涙ひかって明日になれ！】
-- @凉月crella（Bilibili）【transforming】
-- @雪村あおいaoi(Bilibili) 【Grow up Shine!】【BLAZE】
-- @Rajiformes软骨鱼(Bilibili) 【UNLIMITED IMPACT】←暂未获得授权
-
-### 角色语音
-
-- @Linxesu（萌娘百科）【特别周语音】
-
- **另外本插件内引用了较多[B站赛马娘中文WIKI](https://wiki.biligame.com/umamusume/%E9%A6%96%E9%A1%B5)和[萌娘百科](https://zh.moegirl.org.cn/%E8%B5%9B%E9%A9%AC%E5%A8%98_Pretty_Derby)的翻译内容，由于寻找所有翻译者较为困难，故没有特别列出。若相关翻译者认为此插件的引用内容侵犯了您的权利，请联系此仓库所有者@MinamiChiwa 或直接发布Issue。**
-
-### 原贡献者
-
-#### 简体中文
-
-- @AirJerryWhite
-- @Yaklo
-- @july20026
-- @RikkaTakanaishi
-- @羲羲
-
-#### 繁体中文
-
-- @yotv2000tw
+[项目贡献者名单](https://github.com/MinamiChiwa/Trainers-Legend-G-TRANS#%E8%B4%A1%E7%8C%AE%E8%80%85)
 
 # 介绍
 
-## 赛马娘 (DMM版) 本地化补丁
+## Trainer's Legend G本地化插件(DMM版)
 
 ### 使用方法
 
-1. 下载发行版`DMMUPD-Schinese`压缩包，将压缩包内的文件解压至游戏根目录`X:\Umamusume`( **请注意是包含`umamusume.exe`的文件夹** ）
-2. 从DMM启动游戏
+1. 下载发行版`Trainers' Legend G`压缩包，将压缩包内的文件解压至游戏根目录`X:\Umamusume`( **请注意是包含`umamusume.exe`的文件夹** ）
+2. 从DMM平台启动游戏
 
 ### 更新方法
 
-可自动更新，当插件本体需要更新时需手动下载发行版最新压缩包。
+可自动更新。
 
 ### 设置选项（`config.json`）
 
@@ -147,7 +85,6 @@
 
 出现崩溃后`C:\Users\（用户名）\AppData\LocalLow\Cygames\umamusume` 文件夹下会产生 `Player.log` 文件，里面包含崩溃的具体信息，如果有崩溃的用户能够在崩溃发生后立即上传此文件到仓库的`crash`文件夹内并注明报告使用的插件版本将会对调试有巨大帮助。
 
-- ~~有时候加载 yaml 时会卡住，原因不明~~ 换成了rapidjson, 再见了您内
 - 目前插件仅为部分汉化，很多文本仍未翻译。
 - 各种网络连接错误：请检查您的加速器或者梯子，必要时联系相关客服，不要问此项目的贡献者。
 - 如果按正常流程安装了插件，却发现所有文本都没汉化，或者仍然停留在旧版本汉化状态，那请检查你的电脑里是否装了两个赛马娘游戏。
@@ -158,16 +95,3 @@
 - `autoFullscreen`设为true时，部分用户会出现汉化失效的问题，此时请将汉化文件重新覆盖一遍即可。
 - 可能会出现内存报错（`内存不能为read`）无法启动游戏的情况，请尝试下载安装微软常用运行库。
 - `Assertion failed`报错：请将`config.json`文件也一同更新，或检查插件内的所有json文件内是否出现语法错误。
-
-### 如何贡献【建议加频道，频道内可以提供更多汉化相关的工具】
-
-- [烤肉教程](https://docs.qq.com/doc/DYk1Ia3h4UHRocGVJ)
-
-- 代码
-  - 想必各位都是老司机了
-
-### ~~`static.json`更新工具~~【此问题已解决】
-
-- ~~目前已知游戏在更新时有可能导致`static.json`文本序号改变，需要使用以下地址的软件进行更新~~
-- github（原作者）：<https://github.com/AirJerryWhite/i18upgrade>
-- gitee（搬运）：<https://gitee.com/Minami_Chiwa/i18upgrade>
