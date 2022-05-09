@@ -7,7 +7,7 @@
 - 此插件的汉化进度目前为 **部分汉化**
 [翻译进度及比赛译名对照表](http://docs.qq.com/sheet/DYkFFZVJudWxTa1Vq)
 - [![Download](https://img.shields.io/github/v/release/MinamiChiwa/umamusume-localify-zh-CN?color=orange&logoColor=orange&label=Download&logo=DocuSign)](https://github.com/MinamiChiwa/umamusume-localify-zh-CN/releases/latest)
-- [![Chat](https://img.shields.io/badge/Join-QQ%E9%A2%91%E9%81%93-red?logo=tencent-qq&logoColor=red)](https://qun.qq.com/qqweb/qunpro/share?_wv=3&_wwv=128&inviteCode=1olqdK&from=246610&biz=ka) 密码：cygames 若无资格请挂梯子
+- [![Chat](https://img.shields.io/badge/Join-QQ%E9%A2%91%E9%81%93-orange?logo=tencent-qq&logoColor=red)](https://qun.qq.com/qqweb/qunpro/share?_wv=3&_wwv=128&inviteCode=1olqdK&from=246610&biz=ka) 密码：cygames 若无资格请挂梯子
 - [![Discord](https://img.shields.io/discord/973208860217200653?color=orange&label=Discord%E9%A2%91%E9%81%93&logo=Discord&logoColor=red)](https://discord.com/channels/973208860217200653)
 - **_!由于本插件涉及到更改游戏文件，可能会有封号风险，本项目及其贡献者均与cygames无关并且不对使用该项目造成账号被ban负责，如果账号因使用此项目被ban请发issue!_**
 - **此插件完全免费，若您发现有倒卖此插件的店家请立刻举报。
