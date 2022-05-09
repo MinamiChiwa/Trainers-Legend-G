@@ -1,3 +1,5 @@
+# Trainer's Legend G本地化插件(DMM版)
+中文 | [English](readme_EN.md)
 # 注意
 
 - **本插件内所有翻译内容均属于原翻译者，转载请注明出处**
@@ -18,7 +20,6 @@
 
 # 介绍
 
-## Trainer's Legend G本地化插件(DMM版)
 
 ### 使用方法
 
