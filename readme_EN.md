@@ -4,7 +4,7 @@ A plugin for translating Umamusume Pretty Derby (DMM Client) to Chinese.
 # Notice
 - The plugin is forked from [`umamusume-localify`](https://github.com/GEEKiDoS/umamusume-localify) by @GEEKiDoS
 - This repo **ONLY** provides Chinese translation. We currently have no plans for translating the game into other languages.
-- However, the plugin itself is **universal**. If you have any motivation to make the translation of other languages, we fully encourage you to set up your own translation repo. If you have any technical problem such as translation files format or how to use the plugin, you can join our discord and contact to our developers.  
+- However, the plugin itself is **universal**. If you have any motivation to translate the game into other languages, we fully encourage you to set up your own translation repo. If you have any technical problem such as translation files format or how to use the plugin, you can join our discord and contact to our developers.  
 - **The plugin will modify the game file and chances are that you may be warned or banned by Cygames because of using the plugin, though we haven't met any players who use it get restricted.**
 - **The plugin source code follows WTFPL license. Any pull request to the plugin source code is welcomed.**
 
@@ -66,7 +66,7 @@ A plugin for translating Umamusume Pretty Derby (DMM Client) to Chinese.
 
 ### Already known issues
 
-Game will create `Player.log` at `C:\Users\（用户名）\AppData\LocalLow\Cygames\umamusume` if game crash, which contains the details of it. Report the log file to developers if you met any bugs or problems.
+Game will create `Player.log` at `%UserProfile%\AppData\LocalLow\Cygames\umamusume` if game crash, which contains the details of it. Report the log file to developers if you met any bugs or problems.
 
 - The characters' eyebow may be locked in live when 'maxFPS' is 0
 - Too intensive shaking of camera when 'maxFPS' is bigger than 60
