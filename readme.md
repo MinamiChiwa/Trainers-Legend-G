@@ -37,7 +37,7 @@
     "enableConsole": true, /*启用用来输出调试信息的控制台 (true/false)*/
     "enableLogger": true, /*将未覆盖的文本输出到 `dump.txt` (true/false)*/
     "dumpStaticEntries": true, /*需要上一条启用, 在游戏启动时将游戏内硬编码的文本条目输出到 `dump.txt`*/
-    "maxFps": 60, /*帧率限制 (-1 = 游戏原版/0 = 无限/>0 = 锁定到特定帧数)——注: 垂直同步已开启*/
+    "maxFps": 60, /*帧率限制 (-1 = 游戏原版|0 = 无限|>0 = 锁定到特定帧数)——注: 垂直同步已开启*/
     "unlockSize": true, /*允许游戏使用`1080p`以上的分辨率 (true/false)*/
     "uiScale": 1.0, /*自定义UI缩放*/
     "readRequestPack": true, /*是否读取客户端发送包信息，开启此功能可在命令行中输入reboot快速重启游戏(true/false)*/
@@ -50,8 +50,8 @@
     "replaceAssets": false, /*是否开启图片等资源替换(true/false)*/
     "assetLoadLog": false, /*是否在debug输出游戏资源调用情况(true/false)*/
     "autoFullscreen": false, /*在屏幕比例对应时自动设置为全屏 (true/false)
-    - 如屏幕是16:9 并且横屏，将会在横屏播放剧情/live时全屏
-    - 如屏幕是9:16，将会在绝大多数情况下全屏*/
+                            - 如屏幕是16:9 并且横屏，将会在横屏播放剧情/live时全屏
+                            - 如屏幕是9:16，将会在绝大多数情况下全屏*/
     "LineBreakHotKey": "u", /*设置 "忽略换行符" 模式的热键。按下`Ctrl` + `设置的键`  即可切换。（若不需要可以直接删除此条命令）*/
     "autoChangeLineBreakMode": true, /*根据横竖屏模式自动切换"忽略换行符"模式*/
     "resolution_start": [-1,-1], /*设置启动时的分辨率, 格式: `array[w, h]`（[-1,-1]为默认）*/
