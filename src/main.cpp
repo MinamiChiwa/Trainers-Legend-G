@@ -687,27 +687,47 @@ namespace {
 
 			const std::string_view fileNameView(buffer, fileInfo.size_filename);
 			buffer[fileInfo.size_filename] = '\0';
+			std::printf("Entry name: %s, ", buffer);
 			// 仅更新 LocalizedData config.json 及本体，不包含目录
 			if ((fileNameView.length() > std::size(LocalizedDataPrefix) && fileNameView.starts_with(LocalizedDataPrefix)) || fileNameView == "config.json" || fileNameView == "version.dll")
 			{
+				std::printf("decompress\n");
 				if (unzOpenCurrentFile(zipFile) != UNZ_OK)
 				{
 					std::wprintf(L"Cannot open current update file entry, updating interrupted\n");
 					return false;
 				}
-				std::ofstream output(tmpPath / (fileNameView.starts_with(LocalizedDataPrefix) ? fileNameView.substr(std::size(LocalizedDataPrefix) - 1) : fileNameView), std::ios::binary);
-				int readSizeOrError;
-				// 循环开始时不能继续使用 fileNameView，已被复用于文件内容缓存
-				do
+				const std::filesystem::path filePath = tmpPath / (fileNameView.starts_with(LocalizedDataPrefix) ? fileNameView.substr(std::size(LocalizedDataPrefix) - 1) : fileNameView);
+				if (filePath.native().ends_with(L"/"))
 				{
-					readSizeOrError = unzReadCurrentFile(zipFile, buffer, BufferSize);
-					if (readSizeOrError < 0)
+					std::filesystem::create_directories(filePath);
+				}
+				else
+				{
+					std::filesystem::create_directories(filePath.parent_path());
+					std::ofstream output(filePath, std::ios::binary);
+					if (!output.is_open())
 					{
-						std::wprintf(L"Cannot read current update file entry, updating interrupted\n");
+						std::wprintf(L"Cannot open update file entry, updating interrupted\n");
 						return false;
 					}
-					output.write(buffer, readSizeOrError);
-				} while (readSizeOrError != 0);
+					int readSizeOrError;
+					// 循环开始时不能继续使用 fileNameView，已被复用于文件内容缓存
+					do
+					{
+						readSizeOrError = unzReadCurrentFile(zipFile, buffer, BufferSize);
+						if (readSizeOrError < 0)
+						{
+							std::wprintf(L"Cannot read current update file entry, updating interrupted\n");
+							return false;
+						}
+						output.write(buffer, readSizeOrError);
+					} while (readSizeOrError != 0);
+				}
+			}
+			else
+			{
+				std::printf("skip\n");
 			}
 
 			unzCloseCurrentFile(zipFile);
