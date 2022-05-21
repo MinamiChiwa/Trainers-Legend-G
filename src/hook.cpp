@@ -266,13 +266,13 @@ namespace
 	{
 		QueryIndex Id;
 
-		QueryIndex Text;
+		QueryIndex Message;
 
 		void AddColumn(std::size_t index, std::wstring_view column) override
 		{
-			if (column == L"text"sv)
+			if (column == L"message"sv)
 			{
-				Text.emplace<ColumnIndex>(index);
+				Message.emplace<ColumnIndex>(index);
 			}
 			else if (column == L"id"sv)
 			{
@@ -301,7 +301,7 @@ namespace
 
 		void Step(void* query) override
 		{
-			if (const auto p = std::get_if<ColumnIndex>(&Text))
+			if (const auto p = std::get_if<ColumnIndex>(&Id))
 			{
 				const auto id = Query_GetInt(query, p->Value);
 				p->QueryResult.emplace(id);
@@ -310,7 +310,7 @@ namespace
 
 		Il2CppString* GetString(std::size_t index) override
 		{
-			if (index == std::get<ColumnIndex>(Text).Value)
+			if (index == std::get<ColumnIndex>(Message).Value)
 			{
 				const auto id = [&]
 				{
@@ -333,13 +333,13 @@ namespace
 	{
 		QueryIndex Id;
 
-		QueryIndex Text;
+		QueryIndex Message;
 
 		void AddColumn(std::size_t index, std::wstring_view column) override
 		{
-			if (column == L"text"sv)
+			if (column == L"message"sv)
 			{
-				Text.emplace<ColumnIndex>(index);
+				Message.emplace<ColumnIndex>(index);
 			}
 			else if (column == L"id"sv)
 			{
@@ -368,7 +368,7 @@ namespace
 
 		void Step(void* query) override
 		{
-			if (const auto p = std::get_if<ColumnIndex>(&Text))
+			if (const auto p = std::get_if<ColumnIndex>(&Id))
 			{
 				const auto id = Query_GetInt(query, p->Value);
 				p->QueryResult.emplace(id);
@@ -377,7 +377,7 @@ namespace
 
 		Il2CppString* GetString(std::size_t index) override
 		{
-			if (index == std::get<ColumnIndex>(Text).Value)
+			if (index == std::get<ColumnIndex>(Message).Value)
 			{
 				const auto id = [&]
 				{

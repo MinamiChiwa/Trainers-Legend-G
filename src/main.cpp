@@ -569,15 +569,16 @@ std::tuple<local::TextData, local::CharacterSystemTextData, local::RaceJikkyoCom
 		for (const auto& [category, indexTextMap] : doc.GetObject())
 		{
 			const auto categoryValue = std::stoll(category.GetString());
+			auto& map = std::get<0>(result).Data[categoryValue];
 			for (const auto& [index, text] : indexTextMap.GetObject())
 			{
 				const auto indexValue = std::stoll(index.GetString());
 				const auto textValue = utility::conversions::to_string_t(text.GetString());
-				std::get<0>(result).Data[categoryValue].emplace(indexValue, textValue);
+				map.emplace(indexValue, textValue);
 			}
 		}
 	}
-	
+
 	// CharacterSystemText
 	{
 		std::ifstream characterSystemTextDict(g_character_system_text_dict_path);
@@ -593,11 +594,12 @@ std::tuple<local::TextData, local::CharacterSystemTextData, local::RaceJikkyoCom
 		for (const auto& [characterId, voiceIdTextMap] : doc.GetObject())
 		{
 			const auto characterIdValue = std::stoll(characterId.GetString());
+			auto& map = std::get<1>(result).Data[characterIdValue];
 			for (const auto& [voiceId, text] : voiceIdTextMap.GetObject())
 			{
 				const auto voiceIdValue = std::stoll(voiceId.GetString());
 				const auto textValue = utility::conversions::to_string_t(text.GetString());
-				std::get<1>(result).Data[characterIdValue][voiceIdValue] = textValue;
+				map.emplace(voiceIdValue, textValue);
 			}
 		}
 	}
@@ -618,7 +620,7 @@ std::tuple<local::TextData, local::CharacterSystemTextData, local::RaceJikkyoCom
 		{
 			const auto idValue = std::stoll(id.GetString());
 			const auto textValue = utility::conversions::to_string_t(text.GetString());
-			std::get<2>(result).Data[idValue] = textValue;
+			std::get<2>(result).Data.emplace(idValue, textValue);
 		}
 	}
 
@@ -638,7 +640,7 @@ std::tuple<local::TextData, local::CharacterSystemTextData, local::RaceJikkyoCom
 		{
 			const auto idValue = std::stoll(id.GetString());
 			const auto textValue = utility::conversions::to_string_t(text.GetString());
-			std::get<3>(result).Data[idValue] = textValue;
+			std::get<3>(result).Data.emplace(idValue, textValue);
 		}
 	}
 
