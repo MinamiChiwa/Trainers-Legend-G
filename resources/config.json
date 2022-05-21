@@ -37,6 +37,10 @@
     "static_dict": "localized_data/static.json",
     "no_static_dict_cache": true,
     "stories_path": "localized_data/stories",
+    "text_data_dict": "localized_data/text_data.json",
+    "character_system_text_dict": "localized_data/character_system_text.json",
+    "race_jikkyo_comment_dict": "localized_data/race_jikkyo_comment.json",
+    "race_jikkyo_message_dict": "localized_data/race_jikkyo_message.json",
     "autoUpdate": {
         "source": "github",
         "path": "http://uma.chinosk6.cn/api/get_localify_latest_releases"
