@@ -15,6 +15,11 @@ namespace local
 		
 		std::unordered_map<std::size_t, StoryTextData> StoryDict;
 		std::unordered_map<std::size_t, RaceTextData> RaceDict;
+
+		TextData TextDataContent;
+		CharacterSystemTextData CharacterSystemTextDataContent;
+		RaceJikkyoCommentData RaceJikkyoCommentDataContent;
+		RaceJikkyoMessageData RaceJikkyoMessageDataContent;
 	}
 
 	string wide_u8(wstring str)
@@ -29,7 +34,7 @@ namespace local
 		return result;
 	}
 
-	void unlocked_load_textdb(const vector<string>* dicts, map<size_t, string>&& staticDict, std::unordered_map<std::size_t, StoryTextData>&& storyDict, std::unordered_map<std::size_t, RaceTextData>&& raceDict)
+	void unlocked_load_textdb(const vector<string>* dicts, map<size_t, string>&& staticDict, std::unordered_map<std::size_t, StoryTextData>&& storyDict, std::unordered_map<std::size_t, RaceTextData>&& raceDict, TextData&& textData, CharacterSystemTextData&& characterSystemTextData, RaceJikkyoCommentData&& raceJikkyoCommentData, RaceJikkyoMessageData&& raceJikkyoMessageData)
 	{
 		for (auto&& [id, content] : staticDict)
 		{
@@ -68,21 +73,26 @@ namespace local
 		StoryDict = std::move(storyDict);
 		RaceDict = std::move(raceDict);
 
+		TextDataContent = std::move(textData);
+		CharacterSystemTextDataContent = std::move(characterSystemTextData);
+		RaceJikkyoCommentDataContent = std::move(raceJikkyoCommentData);
+		RaceJikkyoMessageDataContent = std::move(raceJikkyoMessageData);
+
 		printf("loaded %llu localized entries.\n", text_db.size());
 		// read_str_config();
 	}
 
-	void reload_textdb(const vector<string>* dicts, map<size_t, string>&& staticDict, std::unordered_map<std::size_t, StoryTextData>&& storyDict, std::unordered_map<std::size_t, RaceTextData>&& raceDict)
+	void reload_textdb(const vector<string>* dicts, map<size_t, string>&& staticDict, std::unordered_map<std::size_t, StoryTextData>&& storyDict, std::unordered_map<std::size_t, RaceTextData>&& raceDict, TextData&& textData, CharacterSystemTextData&& characterSystemTextData, RaceJikkyoCommentData&& raceJikkyoCommentData, RaceJikkyoMessageData&& raceJikkyoMessageData)
 	{
 		std::unique_lock lock(db_lock);
 		text_db.clear();
-		unlocked_load_textdb(dicts, std::move(staticDict), std::move(storyDict), std::move(raceDict));
+		unlocked_load_textdb(dicts, std::move(staticDict), std::move(storyDict), std::move(raceDict), std::move(textData), std::move(characterSystemTextData), std::move(raceJikkyoCommentData), std::move(raceJikkyoMessageData));
 	}
 
-	void load_textdb(const vector<string>* dicts, map<size_t, string>&& staticDict, std::unordered_map<std::size_t, StoryTextData>&& storyDict, std::unordered_map<std::size_t, RaceTextData>&& raceDict)
+	void load_textdb(const vector<string>* dicts, map<size_t, string>&& staticDict, std::unordered_map<std::size_t, StoryTextData>&& storyDict, std::unordered_map<std::size_t, RaceTextData>&& raceDict, TextData&& textData, CharacterSystemTextData&& characterSystemTextData, RaceJikkyoCommentData&& raceJikkyoCommentData, RaceJikkyoMessageData&& raceJikkyoMessageData)
 	{
 		std::unique_lock lock(db_lock);
-		unlocked_load_textdb(dicts, std::move(staticDict), std::move(storyDict), std::move(raceDict));
+		unlocked_load_textdb(dicts, std::move(staticDict), std::move(storyDict), std::move(raceDict), std::move(textData), std::move(characterSystemTextData), std::move(raceJikkyoCommentData), std::move(raceJikkyoMessageData));
 	}
 
 	bool localify_text(size_t hash, string** result)
@@ -238,6 +248,52 @@ namespace local
 		if (const auto iter = RaceDict.find(raceId); iter != RaceDict.end())
 		{
 			return &iter->second;
+		}
+
+		return nullptr;
+	}
+
+	Il2CppString* GetTextData(std::size_t category, std::size_t index)
+	{
+		if (const auto iter = TextDataContent.Data.find(category); iter != TextDataContent.Data.end())
+		{
+			if (const auto iter2 = iter->second.find(index); iter2 != iter->second.end())
+			{
+				return il2cpp_string_new_utf16(iter2->second.c_str(), iter2->second.size());
+			}
+		}
+
+		return nullptr;
+	}
+
+	Il2CppString* GetCharacterSystemTextData(std::size_t characterId, std::size_t voiceId)
+	{
+		if (const auto iter = CharacterSystemTextDataContent.Data.find(characterId); iter != CharacterSystemTextDataContent.Data.end())
+		{
+			if (const auto iter2 = iter->second.find(voiceId); iter2 != iter->second.end())
+			{
+				return il2cpp_string_new_utf16(iter2->second.c_str(), iter2->second.size());
+			}
+		}
+
+		return nullptr;
+	}
+
+	Il2CppString* GetRaceJikkyoCommentData(std::size_t id)
+	{
+		if (const auto iter = RaceJikkyoCommentDataContent.Data.find(id); iter != RaceJikkyoCommentDataContent.Data.end())
+		{
+			return il2cpp_string_new_utf16(iter->second.c_str(), iter->second.size());
+		}
+
+		return nullptr;
+	}
+
+	Il2CppString* GetRaceJikkyoMessageData(std::size_t id)
+	{
+		if (const auto iter = RaceJikkyoMessageDataContent.Data.find(id); iter != RaceJikkyoMessageDataContent.Data.end())
+		{
+			return il2cpp_string_new_utf16(iter->second.c_str(), iter->second.size());
 		}
 
 		return nullptr;

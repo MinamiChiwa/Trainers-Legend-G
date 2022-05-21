@@ -35,6 +35,11 @@ bool g_no_static_dict_cache;
 std::string g_stories_path;
 bool g_read_request_pack = true;
 
+std::string g_text_data_dict_path;
+std::string g_character_system_text_dict_path;
+std::string g_race_jikkyo_comment_dict_path;
+std::string g_race_jikkyo_message_dict_path;
+
 constexpr const char LocalizedDataPath[] = "localized_data";
 constexpr const char OldLocalizedDataPath[] = "old_localized_data";
 constexpr const char ConfigJson[] = "config.json";
@@ -436,6 +441,11 @@ namespace
 
 			g_stories_path = document["stories_path"].GetString();
 
+			g_text_data_dict_path = document["text_data_dict"].GetString();
+			g_character_system_text_dict_path = document["character_system_text_dict"].GetString();
+			g_race_jikkyo_comment_dict_path = document["race_jikkyo_comment_dict"].GetString();
+			g_race_jikkyo_message_dict_path = document["race_jikkyo_message_dict"].GetString();
+
 			if (document.HasMember("autoUpdate"))
 			{
 				const auto& autoUpdate = document["autoUpdate"];
@@ -540,6 +550,101 @@ std::pair<std::unordered_map<std::size_t, local::StoryTextData>, std::unordered_
 	return result;
 }
 
+std::tuple<local::TextData, local::CharacterSystemTextData, local::RaceJikkyoCommentData, local::RaceJikkyoMessageData> LoadDicts()
+{
+	std::tuple<local::TextData, local::CharacterSystemTextData, local::RaceJikkyoCommentData, local::RaceJikkyoMessageData> result;
+
+	// TextData
+	{
+		std::ifstream textDict(g_text_data_dict_path);
+		rapidjson::IStreamWrapper wrapper(textDict);
+		rapidjson::Document doc;
+		doc.ParseStream(wrapper);
+		if (doc.HasParseError() || !doc.IsObject())
+		{
+			std::cout << "Error parsing text dict file: " << g_text_data_dict_path << std::endl;
+			return result;
+		}
+
+		for (const auto& [category, indexTextMap] : doc.GetObject())
+		{
+			const auto categoryValue = std::stoll(category.GetString());
+			for (const auto& [index, text] : indexTextMap.GetObject())
+			{
+				const auto indexValue = std::stoll(index.GetString());
+				const auto textValue = utility::conversions::to_string_t(text.GetString());
+				std::get<0>(result).Data[categoryValue].emplace(indexValue, textValue);
+			}
+		}
+	}
+	
+	// CharacterSystemText
+	{
+		std::ifstream characterSystemTextDict(g_character_system_text_dict_path);
+		rapidjson::IStreamWrapper wrapper(characterSystemTextDict);
+		rapidjson::Document doc;
+		doc.ParseStream(wrapper);
+		if (doc.HasParseError() || !doc.IsObject())
+		{
+			std::cout << "Error parsing text dict file: " << g_text_data_dict_path << std::endl;
+			return result;
+		}
+
+		for (const auto& [characterId, voiceIdTextMap] : doc.GetObject())
+		{
+			const auto characterIdValue = std::stoll(characterId.GetString());
+			for (const auto& [voiceId, text] : voiceIdTextMap.GetObject())
+			{
+				const auto voiceIdValue = std::stoll(voiceId.GetString());
+				const auto textValue = utility::conversions::to_string_t(text.GetString());
+				std::get<1>(result).Data[characterIdValue][voiceIdValue] = textValue;
+			}
+		}
+	}
+
+	// RaceJikkyoComment
+	{
+		std::ifstream raceJikkyoCommentDict(g_race_jikkyo_comment_dict_path);
+		rapidjson::IStreamWrapper wrapper(raceJikkyoCommentDict);
+		rapidjson::Document doc;
+		doc.ParseStream(wrapper);
+		if (doc.HasParseError() || !doc.IsObject())
+		{
+			std::cout << "Error parsing text dict file: " << g_text_data_dict_path << std::endl;
+			return result;
+		}
+
+		for (const auto& [id, text] : doc.GetObject())
+		{
+			const auto idValue = std::stoll(id.GetString());
+			const auto textValue = utility::conversions::to_string_t(text.GetString());
+			std::get<2>(result).Data[idValue] = textValue;
+		}
+	}
+
+	// RaceJikkyoMessage
+	{
+		std::ifstream raceJikkyoMessageDict(g_race_jikkyo_message_dict_path);
+		rapidjson::IStreamWrapper wrapper(raceJikkyoMessageDict);
+		rapidjson::Document doc;
+		doc.ParseStream(wrapper);
+		if (doc.HasParseError() || !doc.IsObject())
+		{
+			std::cout << "Error parsing text dict file: " << g_text_data_dict_path << std::endl;
+			return result;
+		}
+
+		for (const auto& [id, text] : doc.GetObject())
+		{
+			const auto idValue = std::stoll(id.GetString());
+			const auto textValue = utility::conversions::to_string_t(text.GetString());
+			std::get<3>(result).Data[idValue] = textValue;
+		}
+	}
+
+	return result;
+}
+
 namespace {
 	void reload_config()
 	{
@@ -569,7 +674,8 @@ namespace {
 			}
 
 			auto&& [storyDict, raceDict] = LoadStories();
-			local::reload_textdb(&dicts, std::move(staticDictCache), std::move(storyDict), std::move(raceDict));
+			auto&& [textData, characterSystemTextData, raceJikkyoCommentData, raceJikkyoMessageData] = LoadDicts();
+			local::reload_textdb(&dicts, std::move(staticDictCache), std::move(storyDict), std::move(raceDict), std::move(textData), std::move(characterSystemTextData), std::move(raceJikkyoCommentData), std::move(raceJikkyoMessageData));
 		}
 	}
 
@@ -1159,7 +1265,8 @@ int __stdcall DllMain(HINSTANCE dllModule, DWORD reason, LPVOID)
 				dump_static_dict("static_dump.json", staticDictCache);
 			}
 			auto&& [storyDict, raceDict] = LoadStories();
-			local::load_textdb(&dicts, std::move(staticDictCache), std::move(storyDict), std::move(raceDict));
+			auto&& [textData, characterSystemTextData, raceJikkyoCommentData, raceJikkyoMessageData] = LoadDicts();
+			local::load_textdb(&dicts, std::move(staticDictCache), std::move(storyDict), std::move(raceDict), std::move(textData), std::move(characterSystemTextData), std::move(raceJikkyoCommentData), std::move(raceJikkyoMessageData));
 			auto_update();
 		});
 		init_thread.detach();

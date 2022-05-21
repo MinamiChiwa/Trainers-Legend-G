@@ -29,7 +29,10 @@
         },
         "extraAssetBundlePath": {
             "description": "图片等资源替换包的路径（需要用unity打包，一般情况下请不要改动此项）",
-            "type": ["string", "null"]
+            "type": [
+                "string",
+                "null"
+            ]
         },
         "replaceFont": {
             "description": "替换字体，true:用系统默认字体或自定义字体替换；false：使用游戏原字体",
@@ -37,7 +40,10 @@
         },
         "customFontPath": {
             "description": "extraAssetBundlePath项设置的资源包内的字体路径：自定义字体",
-            "type": ["string", "null"]
+            "type": [
+                "string",
+                "null"
+            ]
         },
         "customFontSizeOffset": {
             "description": "字体大小，-4即为减少4",
@@ -108,6 +114,22 @@
         },
         "stories_path": {
             "description": "剧情文件路径",
+            "type": "string"
+        },
+        "text_data_dict": {
+            "description": "文本数据字典文件路径",
+            "type": "string"
+        },
+        "character_system_text_dict": {
+            "description": "角色系统文本字典文件路径",
+            "type": "string"
+        },
+        "race_jikkyo_comment_dict": {
+            "description": "比赛实况评论字典文件路径",
+            "type": "string"
+        },
+        "race_jikkyo_message_dict": {
+            "description": "比赛实况信息字典文件路径",
             "type": "string"
         },
         "autoUpdate": {
