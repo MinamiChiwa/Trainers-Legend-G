@@ -1,8 +1,10 @@
 # Trainer's Legend G本地化插件(DMM版)
 中文 | [English](readme_EN.md)
+
 # 注意
 
-- **本插件内所有翻译内容均属于原翻译者，转载请注明出处**
+- **本插件内所有翻译内容均属于原翻译者，以任何方式（录制视频、提取文本等）转载或大段搬运译文请注明原作者或此仓库的贡献者列表**
+
 - 此插件在[`umamusume-localify`](https://github.com/GEEKiDoS/umamusume-localify)基础上改善、扩展而成。
 - 插件原作者@GEEKiDoS
 - 原插件已实现的功能：帧数解锁、分辨率解锁、更换游戏内的文本、自动全屏、将游戏内字体更换为默认字体等。
