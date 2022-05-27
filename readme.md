@@ -6,7 +6,7 @@
 
 # 注意
 
-- **本插件内所有翻译内容均属于原翻译者，以任何方式（录制视频、提取文本等）转载或大段搬运译文请注明原作者或译文仓库的[贡献者列表及授权参考列表](https://github.com/MinamiChiwa/Trainers-Legend-G-TRANS#%E8%B4%A1%E7%8C%AE%E8%80%85)**
+- **本插件内所有翻译内容均属于原翻译者，以任何方式（录制视频、提取文本等）转载或大段搬运译文请注明原译者或译文仓库的[贡献者列表及授权参考列表](https://github.com/MinamiChiwa/Trainers-Legend-G-TRANS#%E8%B4%A1%E7%8C%AE%E8%80%85)**
 
 - 此插件在[`umamusume-localify`](https://github.com/GEEKiDoS/umamusume-localify)基础上改善、扩展而成。
 - 插件原作者@GEEKiDoS
