@@ -12,7 +12,7 @@
 - 插件原作者@GEEKiDoS
 - 原插件已实现的功能：帧数解锁、分辨率解锁、更换游戏内的文本、自动全屏、将游戏内字体更换为默认字体等。
 - 此插件的汉化进度目前为 **部分汉化**
-[翻译进度及比赛译名对照表](http://docs.qq.com/sheet/DYkFFZVJudWxTa1Vq)
+[翻译进度表](https://github.com/MinamiChiwa/Trainers-Legend-G-TRANS/blob/master/translation-progress.md)
 
 - **_!由于本插件涉及到更改游戏文件，可能会有封号风险，本项目及其贡献者均与cygames无关并且不对使用该项目造成账号被ban负责，如果账号因使用此项目被ban请发issue!_**
 - **此插件完全免费，若您发现有倒卖此插件的店家请立刻举报。
