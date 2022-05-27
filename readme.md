@@ -1,27 +1,42 @@
+[![Download](https://img.shields.io/github/v/release/MinamiChiwa/umamusume-localify-zh-CN?color=blue&logoColor=white&label=Download&logo=DocuSign)](https://github.com/MinamiChiwa/Trainers-Legend-G/releases/latest)
+[![Chat](https://img.shields.io/badge/Join-QQ%E9%A2%91%E9%81%93-blue?logo=tencent-qq&logoColor=white)](https://qun.qq.com/qqweb/qunpro/share?_wv=3&_wwv=128&inviteCode=1olqdK&from=246610&biz=ka)
+[![Discord](https://img.shields.io/discord/973208860217200653?color=blue&label=Discord&logo=Discord&logoColor=white)](https://discord.com/invite/TBCSv5hU69)
 # Trainer's Legend G本地化插件(DMM版)
 中文 | [English](readme_EN.md)
 
 # 注意
 
-- **本插件内所有翻译内容均属于原翻译者，以任何方式（录制视频、提取文本等）转载或大段搬运译文请注明原作者或此仓库的[贡献者列表及授权参考列表](https://github.com/MinamiChiwa/Trainers-Legend-G-TRANS#%E8%B4%A1%E7%8C%AE%E8%80%85)**
+- **本插件内所有翻译内容均属于原翻译者，以任何方式（录制视频、提取文本等）转载或大段搬运译文请注明原作者或译文仓库的[贡献者列表及授权参考列表](https://github.com/MinamiChiwa/Trainers-Legend-G-TRANS#%E8%B4%A1%E7%8C%AE%E8%80%85)**
 
 - 此插件在[`umamusume-localify`](https://github.com/GEEKiDoS/umamusume-localify)基础上改善、扩展而成。
 - 插件原作者@GEEKiDoS
 - 原插件已实现的功能：帧数解锁、分辨率解锁、更换游戏内的文本、自动全屏、将游戏内字体更换为默认字体等。
 - 此插件的汉化进度目前为 **部分汉化**
 [翻译进度及比赛译名对照表](http://docs.qq.com/sheet/DYkFFZVJudWxTa1Vq)
-- [![Download](https://img.shields.io/github/v/release/MinamiChiwa/umamusume-localify-zh-CN?color=orange&logoColor=orange&label=Download&logo=DocuSign)](https://github.com/MinamiChiwa/umamusume-localify-zh-CN/releases/latest)
-- [![Chat](https://img.shields.io/badge/Join-QQ%E9%A2%91%E9%81%93-orange?logo=tencent-qq&logoColor=red)](https://qun.qq.com/qqweb/qunpro/share?_wv=3&_wwv=128&inviteCode=1olqdK&from=246610&biz=ka) 密码：cygames 若无资格请挂梯子
-- [![Discord](https://img.shields.io/discord/973208860217200653?color=orange&label=Discord&logo=Discord&logoColor=red)](https://discord.com/invite/TBCSv5hU69)
+
 - **_!由于本插件涉及到更改游戏文件，可能会有封号风险，本项目及其贡献者均与cygames无关并且不对使用该项目造成账号被ban负责，如果账号因使用此项目被ban请发issue!_**
 - **此插件完全免费，若您发现有倒卖此插件的店家请立刻举报。
 根据我国《计算机软件保护条例》第十七条规定：“为了学习和研究软件内含的设计思想和原理，通过安装、显示、传输或者存储软件等方式使用软件的，可以不经软件著作权人许可，不向其支付报酬。”您需知晓本插件仅供用户交流学习与研究使用，用户本人下载后不能用作商业或非法用途，需在24小时之内删除，否则后果均由用户承担责任。**
 
 # 贡献及译文
-[简体中文项目贡献者名单、译文仓库](https://github.com/MinamiChiwa/Trainers-Legend-G-TRANS#%E8%B4%A1%E7%8C%AE%E8%80%85)
+
+## 翻译者
+
+#### 简体中文
+
+- [`简体中文项目贡献者名单、译文仓库`](https://github.com/MinamiChiwa/Trainers-Legend-G-TRANS#%E8%B4%A1%E7%8C%AE%E8%80%85)
+
+#### 繁体中文
+
+- @yotv2000tw
+
+## 技术支持
+
+- @chinosk114514
+- @akemimadoka
+- @MiddleRed
 
 # 介绍
-
 
 ### 使用方法
 
