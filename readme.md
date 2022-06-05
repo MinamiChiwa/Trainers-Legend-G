@@ -54,19 +54,19 @@
 ```
 {
     "enableConsole": true, /*启用用来输出调试信息的控制台 (true/false)*/
-    "enableLogger": true, /*将未覆盖的文本输出到 `dump.txt` (true/false)*/
-    "dumpStaticEntries": true, /*需要上一条启用, 在游戏启动时将游戏内硬编码的文本条目输出到 `dump.txt`*/
+    "enableLogger": false, /*将未覆盖的文本输出到 `dump.txt` (true/false)*/
+    "dumpStaticEntries": false, /*需要上一条启用, 在游戏启动时将游戏内硬编码的文本条目输出到 `dump.txt`*/
     "maxFps": 60, /*帧率限制 (-1 = 游戏原版|0 = 无限|>0 = 锁定到特定帧数)——注: 垂直同步已开启*/
     "unlockSize": true, /*允许游戏使用`1080p`以上的分辨率 (true/false)*/
     "uiScale": 1.0, /*自定义UI缩放*/
-    "readRequestPack": true, /*是否读取客户端发送包信息，开启此功能可在命令行中输入reboot快速重启游戏(true/false)*/
-    "extraAssetBundlePath": null, /*图片等资源替换包的路径（需要用unity打包，一般情况下请不要改动此项）*/
+    "readRequestPack": false, /*是否读取客户端发送包信息，开启此功能可在命令行中输入reboot快速重启游戏(true/false)*/
+    "extraAssetBundlePath": "localized_data/umamusumelocalify", /*图片等资源替换包的路径（需要用unity打包，一般情况下请不要改动此项）*/
     "replaceFont": true, /*替换字体，true:用系统默认字体或自定义字体替换；false：使用游戏原字体*/
-    "customFontPath": null, /*extraAssetBundlePath项设置的资源包内的字体路径：自定义字体*/
+    "customFontPath": "assets/bundledassets/umamusumelocalify/fonts/MSYH.TTC", /*extraAssetBundlePath项设置的资源包内的字体路径：自定义字体*/
     "customFontSizeOffset": -4, /*字体大小，-4即为减少4*/
     "customFontStyle": 1, /*字体风格，0为正常，1为粗体，2为斜体，3为粗斜体*/
-    "customFontLinespacing": 1.05, /*文字行间距，基准值为1.0*/
-    "replaceAssets": false, /*是否开启图片等资源替换(true/false)*/
+    "customFontLinespacing": 0.9, /*文字行间距，基准值为1.0*/
+    "replaceAssets": true, /*是否开启图片等资源替换(true/false)*/
     "assetLoadLog": false, /*是否在debug输出游戏资源调用情况(true/false)*/
     "autoFullscreen": false, /*在屏幕比例对应时自动设置为全屏 (true/false)
                             - 如屏幕是16:9 并且横屏，将会在横屏播放剧情/live时全屏
@@ -75,25 +75,18 @@
     "autoChangeLineBreakMode": true, /*根据横竖屏模式自动切换"忽略换行符"模式*/
     "resolution_start": [-1,-1], /*设置启动时的分辨率, 格式: `array[w, h]`（[-1,-1]为默认）*/
     "aspect_ratio": [16.0,9.0], /*设置UI比例, 格式: `array[w, h]`（没有需求可以不填）*/
-    "dicts": [ /*将会读取的字典列表` (相对/绝对路径)，可删除相应字典提取命令。例如删除"localized_data/Umaname.json",即可在游戏内显示角色名日文，不影响其他翻译*/
-        "localized_data/chara.json", /*角色语音*/
+    "dicts": [ /*将会读取的字典列表` (相对/绝对路径)*/
         "localized_data/event.json", /*育成事件文本*/
-        "localized_data/race_name.json", /*比赛名*/
-        "localized_data/race_message.json", /*比赛实况・解说*/
-        "localized_data/Umaname.json", /*角色名*/
-        "localized_data/himitsumanga.json", /*漫画标题、小秘密*/
-        "localized_data/item.json", /*物品及描述*/
         "localized_data/LIVE.json", /*LIVE歌词等*/
-        "localized_data/scardname.json", /*支援卡名*/
-        "localized_data/skillname.json", /*技能名*/
-        "localized_data/skillcontent.json", /*技能描述*/
-        "localized_data/storytitle.json", /*剧情故事标题*/
-        "localized_data/designation.json", /*训练员称号及赛马娘称号(二つ名)*/
         "localized_data/hash_entries.json" /*杂项文本*/
     ],
     "static_dict": "localized_data/static.json", /*static字典文件的路径*/
     "no_static_dict_cache": true, /*是否禁用static字典文件缓存(true/false)*/
     "stories_path": "localized_data/stories", /*剧情文本文件的路径*/
+    "text_data_dict": "localized_data/text_data.json", /*文本数据字典文件的路径*/
+    "character_system_text_dict": "localized_data/character_system_text.json", /*角色系统文本字典文件的路径*/
+    "race_jikkyo_comment_dict": "localized_data/race_jikkyo_comment.json", /*比赛实况评论字典文件的路径*/
+    "race_jikkyo_message_dict": "localized_data/race_jikkyo_message.json", /*比赛实况信息字典文件的路径*/ 
     "autoUpdate": {
         "source": "github", /*自动更新的仓库源（gitee或github）*/
         "path": "http://uma.chinosk6.cn/api/get_localify_latest_releases" /*自动更新的抓取地址*/
