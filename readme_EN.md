@@ -18,19 +18,19 @@ A plugin for translating Umamusume Pretty Derby (DMM Client) to Chinese.
 ```
 {
     "enableConsole": true, /*Show the cmd console (true/false)*/
-    "enableLogger": true, /*Dump the untranslated text to `dump.txt` (true/false)*/
-    "dumpStaticEntries": true, /*Dump the untranslated hardcored text to `dump.txt`, require enabling 'enableLogger'*/
+    "enableLogger": false, /*Dump the untranslated text to `dump.txt` (true/false)*/
+    "dumpStaticEntries": false, /*Dump the untranslated hardcored text to `dump.txt`, require enabling 'enableLogger'*/
     "maxFps": 60, /*Fps setting (-1 = Default fps|0 = Infinity|>0 = Limit game to specific fps)——Vertical synchronization is enabled*/
     "unlockSize": true, /*Allow to use the resolution higher than `1080p` (true/false)*/
     "uiScale": 1.0, /*Customize the scale of ui (set 0.8 if you find your game windows can't show all the graphic)*/
-    "readRequestPack": true, /*Read the msgpack sent by game, you can reboot the game quicker by typing 'reboot' in the console if you enable it (true/false)*/
-    "extraAssetBundlePath": null, /*The location of asset bundle that is used to replace the original asset file of the game (Do not change it if you don't understand what it is)*/
+    "readRequestPack": false, /*Read the msgpack sent by game, you can reboot the game quicker by typing 'reboot' in the console if you enable it (true/false)*/
+    "extraAssetBundlePath": "localized_data/umamusumelocalify", /*The location of asset bundle that is used to replace the original asset file of the game (Do not change it if you don't understand what it is)*/
     "replaceFont": true, /*Use system default font to show the Chinese characters that is not contained in the orignal game font (true/false)*/
-    "customFontPath": null, /*the font's asset bundle location (in extraAssetBundlePath)*/
+    "customFontPath": "assets/bundledassets/umamusumelocalify/fonts/MSYH.TTC", /*the font's asset bundle location (in extraAssetBundlePath)*/
     "customFontSizeOffset": -4, /*Size of font*/
     "customFontStyle": 1, /*Style of font (if exist), 0-Normal, 1-Bold, 2-Italic, 3-Bold italic*/
-    "customFontLinespacing": 1.05, /*Text line spacing, Default 1.0*/
-    "replaceAssets": false, /*Replacing the game picture/texture with resource in extraAssetBundlePath if exist (true/false)*/
+    "customFontLinespacing": 0.9, /*Text line spacing, Default 1.0*/
+    "replaceAssets": true, /*Replacing the game picture/texture with resource in extraAssetBundlePath if exist (true/false)*/
     "assetLoadLog": false, /*Print the asset bundle path of game resource that the game is using (true/false)*/
     "autoFullscreen": false, /*Full screen the game automaticlly (true/false)
                             - If monitor resolution is 16:9, game will be full screened during watching live/story
@@ -40,26 +40,20 @@ A plugin for translating Umamusume Pretty Derby (DMM Client) to Chinese.
     "resolution_start": [-1, -1], /*set the game windows size when booting the game (Use [-1, -1] if you don't need it)*/
     "aspect_ratio": [16.0, 9.0], /*set UI scale*/
     "dicts": [ /*The translation files' path (Absolute/Relative path)*/
-        "localized_data/chara.json",
         "localized_data/event.json",
-        "localized_data/race_name.json",
-        "localized_data/race_message.json",
-        "localized_data/Umaname.json",
-        "localized_data/himitsumanga.json",
-        "localized_data/item.json",
         "localized_data/LIVE.json",
-        "localized_data/scardname.json",
-        "localized_data/skillname.json",
-        "localized_data/skillcontent.json",
-        "localized_data/storytitle.json",
-        "localized_data/designation.json",
         "localized_data/hash_entries.json"
     ], 
     "static_dict": "localized_data/static.json", /* The path of translated static text*/
     "no_static_dict_cache": true, /*Disable cache using of static dict(true/false)*/
     "stories_path": "localized_data/stories", /*The path of translated story text*/
+    "text_data_dict": "localized_data/text_data.json", /*The path of translated text data*/
+    "character_system_text_dict": "localized_data/character_system_text.json", /*The path of translated character system text*/
+    "race_jikkyo_comment_dict": "localized_data/race_jikkyo_comment.json", /*The path of translated race jikkyo comment*/
+    "race_jikkyo_message_dict": "localized_data/race_jikkyo_message.json", /*The path of translated race jikkyo message*/
     "autoUpdate": {
-        "path": "" /*auto updating url */
+        "source": "github",
+        "path": "http://uma.chinosk6.cn/api/get_localify_latest_releases" /*auto updating url */
     }
 }
 ```
