@@ -6,4 +6,5 @@ namespace MHotkey {
 	int start_hotkey(char sethotk = 'u');
 	void setExtPluginPath(std::string ppath);
 	void setUmaCommandLine(std::string args);
+	void fopenExternalPlugin();
 }

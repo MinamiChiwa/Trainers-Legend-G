@@ -14,20 +14,29 @@ namespace MHotkey{
         std::string umaArgs = "";
     }
     
-    /*
-    void showmessagebox() {
-        MSGBOXPARAMSW msgBox;
-        msgBox.cbSize = sizeof(MSGBOXPARAMS);
-        msgBox.dwStyle = MB_USERICON | MB_OK | MB_SYSTEMMODAL;
-        msgBox.hInstance = NULL;
-        msgBox.hwndOwner = NULL;
-        msgBox.lpszCaption = L"测试标题";
-        msgBox.lpszIcon = MAKEINTRESOURCE(JI_BITMAP0);
-        msgBox.lpszText = L"测试内容";
+    void fopenExternalPlugin() {
+        if (MHotkey::extPluginPath == "") {
+            printf("\"externalPlugin\" not found\n");
+            return;
+        }
 
-        MessageBoxIndirect(&msgBox);
+        std::string cmdLine = extPluginPath + " " + MHotkey::umaArgs;
+        char* commandLine = new char[255];
+        strcpy(commandLine, cmdLine.c_str());
+
+        printf("open external plugin: %s\n", commandLine);
+
+        STARTUPINFOA startupInfo{ .cb = sizeof(STARTUPINFOA) };
+        PROCESS_INFORMATION pi{};
+        if (CreateProcessA(NULL, commandLine, NULL, NULL, FALSE, 0, NULL, NULL, &startupInfo, &pi)) {
+            CloseHandle(pi.hThread);
+            // WaitForSingleObject(pi.hProcess, INFINITE);
+            CloseHandle(pi.hProcess);
+        }
+        else {
+            printf("Open external plugin failed.\n");
+        }
     }
-    */
     
 
     __declspec(dllexport) LRESULT CALLBACK KeyboardEvent(int nCode, WPARAM wParam, LPARAM lParam)
@@ -61,27 +70,7 @@ namespace MHotkey{
 
                 if (CTRL_key != 0 && key == hotk)
                 {
-                    if (MHotkey::extPluginPath == "") {
-                        printf("\"externalPlugin\" not found\n");
-                        return CallNextHookEx(hKeyboardHook, nCode, wParam, lParam);
-                    }
-
-                    std::string cmdLine = extPluginPath + " " + MHotkey::umaArgs;
-                    char* commandLine = new char[255];
-                    strcpy(commandLine, cmdLine.c_str());
-
-                    printf("open external plugin: %s\n", commandLine);
-
-                    STARTUPINFOA startupInfo{ .cb = sizeof(STARTUPINFOA) };
-                    PROCESS_INFORMATION pi{};
-                    if (CreateProcessA(NULL, commandLine, NULL, NULL, FALSE, 0, NULL, NULL, &startupInfo, &pi)) {
-                        CloseHandle(pi.hThread);
-                        // WaitForSingleObject(pi.hProcess, INFINITE);
-                        CloseHandle(pi.hProcess);
-                    }
-                    else {
-                        printf("Open external plugin failed.\n");
-                    }
+                    fopenExternalPlugin();
                 }
 
                 // printf("key = %c\n", key);

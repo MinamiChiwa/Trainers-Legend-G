@@ -999,7 +999,6 @@ namespace
 			return;
 
 		printf("Trying to patch GameAssembly.dll...\n");
-		MHotkey::setUmaCommandLine(GetCommandLineA());
 
 		auto il2cpp_module = GetModuleHandle("GameAssembly.dll");
 

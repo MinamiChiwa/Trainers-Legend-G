@@ -342,6 +342,7 @@ namespace
 {
 	std::vector<std::string> read_config()
 	{
+		MHotkey::setUmaCommandLine(GetCommandLineA());
 		std::ifstream config_stream{ ConfigJson };
 		std::vector<std::string> dicts{};
 
@@ -408,6 +409,12 @@ namespace
 					externalPluginPath = document["externalPlugin"].GetArray()[1].GetString();
 					MHotkey::setExtPluginPath(externalPluginPath);
 					MHotkey::start_hotkey(open_plugin_hotkey);  // 启动热键监听进程
+				}
+			}
+
+			if (document.HasMember("openExternalPluginOnLoad")) {
+				if (document["openExternalPluginOnLoad"].GetBool()) {
+					MHotkey::fopenExternalPlugin();
 				}
 			}
 
