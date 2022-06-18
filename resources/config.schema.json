@@ -71,9 +71,18 @@
             "description": "在屏幕比例对应时自动设置为全屏 (true/false)\n- 如屏幕是16:9 并且横屏，将会在横屏播放剧情/live时全屏\n- 如屏幕是9:16，将会在绝大多数情况下全屏",
             "type": "boolean"
         },
-        "LineBreakHotKey": {
-            "description": "设置 \"忽略换行符\" 模式的热键。按下`Ctrl` + `设置的键`  即可切换。（若不需要可以直接删除此条命令）",
-            "type": "string"
+        "externalPlugin": {
+            "description": "外部插件配置, 参数1填写热键, 参数2填写路径",
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 2,
+            "maxItems": 2
+        },
+        "openExternalPluginOnLoad": {
+            "description": "启动游戏时自动打开外部插件",
+            "type": "boolean"
         },
         "autoChangeLineBreakMode": {
             "description": "根据横竖屏模式自动切换\"忽略换行符\"模式",

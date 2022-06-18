@@ -2,7 +2,6 @@
 #include <unordered_set>
 
 using namespace std;
-
 std::function<void()> g_on_hook_ready;
 
 void _set_u_stat(bool s) {

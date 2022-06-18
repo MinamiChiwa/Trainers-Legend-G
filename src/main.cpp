@@ -50,7 +50,8 @@ constexpr const char StaticDictCachePath[] = "localized_data/static_cache.json";
 constexpr const char StaticDictStamp[] = "static_cache.stamp";
 constexpr const char StaticDictStampPath[] = "localized_data/static_cache.stamp";
 
-char line_break_hotkey = 'u';
+char open_plugin_hotkey = 'u';
+std::string externalPluginPath = "";
 bool autoChangeLineBreakMode = false;
 int start_width = -1;
 int start_height = -1;
@@ -341,6 +342,7 @@ namespace
 {
 	std::vector<std::string> read_config()
 	{
+		MHotkey::setUmaCommandLine(GetCommandLineA());
 		std::ifstream config_stream{ ConfigJson };
 		std::vector<std::string> dicts{};
 
@@ -398,8 +400,23 @@ namespace
 			g_asset_load_log = document["assetLoadLog"].GetBool();
 
 			g_auto_fullscreen = document["autoFullscreen"].GetBool();
-			line_break_hotkey = document["LineBreakHotKey"].GetString()[0];
+			
 			autoChangeLineBreakMode = document["autoChangeLineBreakMode"].GetBool();
+
+			if (document.HasMember("externalPlugin")) {
+				if (document["externalPlugin"].IsArray()) {
+					open_plugin_hotkey = document["externalPlugin"].GetArray()[0].GetString()[0];
+					externalPluginPath = document["externalPlugin"].GetArray()[1].GetString();
+					MHotkey::setExtPluginPath(externalPluginPath);
+					MHotkey::start_hotkey(open_plugin_hotkey);  // 启动热键监听进程
+				}
+			}
+
+			if (document.HasMember("openExternalPluginOnLoad")) {
+				if (document["openExternalPluginOnLoad"].GetBool()) {
+					MHotkey::fopenExternalPlugin();
+				}
+			}
 
 			if (document.HasMember("resolution_start")) {
 				if (document["resolution_start"].IsArray()) {
@@ -419,9 +436,6 @@ namespace
 					}
 				}
 			}
-
-			MHotkey::start_hotkey(line_break_hotkey);
-			std::wprintf(L"换行符切换热键已设置为: ctrl + %c\n", static_cast<wchar_t>(line_break_hotkey));
 
 			// Looks like not working for now
 			// g_aspect_ratio = document["customAspectRatio"].GetFloat();
@@ -694,7 +708,8 @@ namespace {
 			"uiScale",
 			"replaceFont",
 			"autoFullscreen",
-			"LineBreakHotKey",
+			"externalPlugin",
+			"openExternalPluginOnLoad",
 			"autoChangeLineBreakMode",
 		};
 

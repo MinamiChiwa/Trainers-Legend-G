@@ -10,22 +10,33 @@ namespace MHotkey{
         HHOOK hKeyboardHook;
         bool is_uma = false;
         char hotk = 'u';
+        std::string extPluginPath = "";
+        std::string umaArgs = "";
     }
     
-    /*
-    void showmessagebox() {
-        MSGBOXPARAMSW msgBox;
-        msgBox.cbSize = sizeof(MSGBOXPARAMS);
-        msgBox.dwStyle = MB_USERICON | MB_OK | MB_SYSTEMMODAL;
-        msgBox.hInstance = NULL;
-        msgBox.hwndOwner = NULL;
-        msgBox.lpszCaption = L"测试标题";
-        msgBox.lpszIcon = MAKEINTRESOURCE(JI_BITMAP0);
-        msgBox.lpszText = L"测试内容";
+    void fopenExternalPlugin() {
+        if (MHotkey::extPluginPath == "") {
+            printf("\"externalPlugin\" not found\n");
+            return;
+        }
 
-        MessageBoxIndirect(&msgBox);
+        std::string cmdLine = extPluginPath + " " + MHotkey::umaArgs;
+        char* commandLine = new char[255];
+        strcpy(commandLine, cmdLine.c_str());
+
+        printf("open external plugin: %s\n", commandLine);
+
+        STARTUPINFOA startupInfo{ .cb = sizeof(STARTUPINFOA) };
+        PROCESS_INFORMATION pi{};
+        if (CreateProcessA(NULL, commandLine, NULL, NULL, FALSE, 0, NULL, NULL, &startupInfo, &pi)) {
+            CloseHandle(pi.hThread);
+            // WaitForSingleObject(pi.hProcess, INFINITE);
+            CloseHandle(pi.hProcess);
+        }
+        else {
+            printf("Open external plugin failed.\n");
+        }
     }
-    */
     
 
     __declspec(dllexport) LRESULT CALLBACK KeyboardEvent(int nCode, WPARAM wParam, LPARAM lParam)
@@ -59,13 +70,7 @@ namespace MHotkey{
 
                 if (CTRL_key != 0 && key == hotk)
                 {
-                    MHotkey::is_uma = !MHotkey::is_uma;
-                    auto pt = MHotkey::is_uma ? L"已切换为: 无视换行符优先(竖屏推荐)" : L"已切换为: 使用原换行配置优先(横屏推荐)";
-                    // showmessagebox();
-                    MessageBoxW(NULL, 
-                        pt,
-                        L"文本显示配置 Modified by 'sunset",
-                        MB_OK|MB_SYSTEMMODAL);
+                    fopenExternalPlugin();
                 }
 
                 // printf("key = %c\n", key);
@@ -108,6 +113,13 @@ namespace MHotkey{
     }
     void set_uma_stat(bool s) {
         MHotkey::is_uma = s;
+    }
+
+    void setExtPluginPath(std::string ppath) {
+        MHotkey::extPluginPath = ppath;
+    }
+    void setUmaCommandLine(std::string args) {
+        MHotkey::umaArgs = args;
     }
 
     int start_hotkey(char sethotk='u')

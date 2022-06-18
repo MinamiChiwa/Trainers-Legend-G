@@ -51,7 +51,7 @@
 
 ### 设置选项（`config.json`）
 
-```
+```javascript
 {
     "enableConsole": true, /*启用用来输出调试信息的控制台 (true/false)*/
     "enableLogger": false, /*将未覆盖的文本输出到 `dump.txt` (true/false)*/
@@ -71,10 +71,11 @@
     "autoFullscreen": false, /*在屏幕比例对应时自动设置为全屏 (true/false)
                             - 如屏幕是16:9 并且横屏，将会在横屏播放剧情/live时全屏
                             - 如屏幕是9:16，将会在绝大多数情况下全屏*/
-    "LineBreakHotKey": "u", /*设置 "忽略换行符" 模式的热键。按下`Ctrl` + `设置的键`  即可切换。（若不需要可以直接删除此条命令）*/
     "autoChangeLineBreakMode": true, /*根据横竖屏模式自动切换"忽略换行符"模式*/
     "resolution_start": [-1,-1], /*设置启动时的分辨率, 格式: `array[w, h]`（[-1,-1]为默认）*/
     "aspect_ratio": [16.0,9.0], /*设置UI比例, 格式: `array[w, h]`（没有需求可以不填）*/
+    "externalPlugin": ["u", "explugin.exe"], /*外部插件, 第一个参数为启动热键, 按下ctrl+设定值启动, 第二个参数为外部插件位置。若没有配置请直接删除此项*/
+    "openExternalPluginOnLoad": false, /*启动游戏时自动打开外部插件*/
     "dicts": [ /*将会读取的字典列表` (相对/绝对路径)*/
         "localized_data/event.json", /*育成事件文本*/
         "localized_data/LIVE.json", /*LIVE歌词等*/
