@@ -15,7 +15,7 @@ A plugin for translating Umamusume Pretty Derby (DMM Client) to Chinese.
 
 
 ### Plugin Setting(`config.json`)
-```json
+```javascript
 {
     "enableConsole": true, /*Show the cmd console (true/false)*/
     "enableLogger": false, /*Dump the untranslated text to `dump.txt` (true/false)*/

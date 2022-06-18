@@ -51,7 +51,7 @@
 
 ### 设置选项（`config.json`）
 
-```json
+```javascript
 {
     "enableConsole": true, /*启用用来输出调试信息的控制台 (true/false)*/
     "enableLogger": false, /*将未覆盖的文本输出到 `dump.txt` (true/false)*/
