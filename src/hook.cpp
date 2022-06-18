@@ -2,7 +2,6 @@
 #include <unordered_set>
 
 using namespace std;
-
 std::function<void()> g_on_hook_ready;
 
 void _set_u_stat(bool s) {
@@ -1000,6 +999,7 @@ namespace
 			return;
 
 		printf("Trying to patch GameAssembly.dll...\n");
+		MHotkey::setUmaCommandLine(GetCommandLineA());
 
 		auto il2cpp_module = GetModuleHandle("GameAssembly.dll");
 

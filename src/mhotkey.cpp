@@ -10,6 +10,8 @@ namespace MHotkey{
         HHOOK hKeyboardHook;
         bool is_uma = false;
         char hotk = 'u';
+        std::string extPluginPath = "";
+        std::string umaArgs = "";
     }
     
     /*
@@ -59,13 +61,27 @@ namespace MHotkey{
 
                 if (CTRL_key != 0 && key == hotk)
                 {
-                    MHotkey::is_uma = !MHotkey::is_uma;
-                    auto pt = MHotkey::is_uma ? L"已切换为: 无视换行符优先(竖屏推荐)" : L"已切换为: 使用原换行配置优先(横屏推荐)";
-                    // showmessagebox();
-                    MessageBoxW(NULL, 
-                        pt,
-                        L"文本显示配置 Modified by 'sunset",
-                        MB_OK|MB_SYSTEMMODAL);
+                    if (MHotkey::extPluginPath == "") {
+                        printf("\"externalPlugin\" not found\n");
+                        return CallNextHookEx(hKeyboardHook, nCode, wParam, lParam);
+                    }
+
+                    std::string cmdLine = extPluginPath + " " + MHotkey::umaArgs;
+                    char* commandLine = new char[255];
+                    strcpy(commandLine, cmdLine.c_str());
+
+                    printf("open external plugin: %s\n", commandLine);
+
+                    STARTUPINFOA startupInfo{ .cb = sizeof(STARTUPINFOA) };
+                    PROCESS_INFORMATION pi{};
+                    if (CreateProcessA(NULL, commandLine, NULL, NULL, FALSE, 0, NULL, NULL, &startupInfo, &pi)) {
+                        CloseHandle(pi.hThread);
+                        // WaitForSingleObject(pi.hProcess, INFINITE);
+                        CloseHandle(pi.hProcess);
+                    }
+                    else {
+                        printf("Open external plugin failed.\n");
+                    }
                 }
 
                 // printf("key = %c\n", key);
@@ -108,6 +124,13 @@ namespace MHotkey{
     }
     void set_uma_stat(bool s) {
         MHotkey::is_uma = s;
+    }
+
+    void setExtPluginPath(std::string ppath) {
+        MHotkey::extPluginPath = ppath;
+    }
+    void setUmaCommandLine(std::string args) {
+        MHotkey::umaArgs = args;
     }
 
     int start_hotkey(char sethotk='u')
