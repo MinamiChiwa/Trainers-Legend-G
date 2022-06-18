@@ -709,6 +709,7 @@ namespace {
 			"replaceFont",
 			"autoFullscreen",
 			"externalPlugin",
+			"openExternalPluginOnLoad",
 			"autoChangeLineBreakMode",
 		};
 
