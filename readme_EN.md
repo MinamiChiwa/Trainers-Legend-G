@@ -15,7 +15,7 @@ A plugin for translating Umamusume Pretty Derby (DMM Client) to Chinese.
 
 
 ### Plugin Setting(`config.json`)
-```
+```json
 {
     "enableConsole": true, /*Show the cmd console (true/false)*/
     "enableLogger": false, /*Dump the untranslated text to `dump.txt` (true/false)*/
@@ -35,10 +35,11 @@ A plugin for translating Umamusume Pretty Derby (DMM Client) to Chinese.
     "autoFullscreen": false, /*Full screen the game automaticlly (true/false)
                             - If monitor resolution is 16:9, game will be full screened during watching live/story
                             - If monitor resolution is 9:16, game will be full screened in most circumstances*/
-    "LineBreakHotKey": "u", /*Set the hotkey of toggling "Ignore line break" mode. Press `Ctrl` + `the key you set` to toggle it.*/
     "autoChangeLineBreakMode": true, /*Automatically toggle "Ignore line break" mode based on whether the game is 16:9 or 9:16*/
     "resolution_start": [-1, -1], /*set the game windows size when booting the game (Use [-1, -1] if you don't need it)*/
     "aspect_ratio": [16.0, 9.0], /*set UI scale*/
+    "externalPlugin": ["u", "explugin.exe"], /*Set external plugin. arg1: Hotkey, press ctrl + `the key you set` to open it. arg2: plugin path. If no plug-ins are configured, delete this configuration item*/
+    "openExternalPluginOnLoad": false, /*Open external plugin on load*/
     "dicts": [ /*The translation files' path (Absolute/Relative path)*/
         "localized_data/event.json",
         "localized_data/LIVE.json",
