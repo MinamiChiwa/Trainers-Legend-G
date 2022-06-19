@@ -1,145 +1,145 @@
 {
     "title": "Umamusume Localify Config",
-    "description": "赛马娘本地化插件配置",
+    "description": "Umamusume Localify Config",
     "type": "object",
     "properties": {
         "enableConsole": {
-            "description": "启用用来输出调试信息的控制台",
+            "description": "Show the cmd console",
             "type": "boolean"
         },
         "enableLogger": {
-            "description": "将未覆盖的文本输出到 `dump.txt`",
+            "description": "Dump the untranslated text to `dump.txt`",
             "type": "boolean"
         },
         "dumpStaticEntries": {
-            "description": "需要上一条启用, 在游戏启动时将游戏内硬编码的文本条目输出到 `dump.txt`",
+            "description": "Dump the untranslated hardcored text to `dump.txt`, require enabling 'enableLogger'",
             "type": "boolean"
         },
         "maxFps": {
-            "description": "帧率限制 (-1 = 游戏原版/0 = 无限/>0 = 锁定到特定帧数)——注: 垂直同步已开启",
+            "description": "Fps setting (-1 = Default fps|0 = Infinity|>0 = Limit game to specific fps)——Vertical synchronization is enabled",
             "type": "integer",
             "minimum": -1
         },
         "unlockSize": {
-            "description": "允许游戏使用`1080p`以上的分辨率",
+            "description": "Allow to use the resolution higher than `1080p`",
             "type": "boolean"
         },
         "uiScale": {
-            "description": "自定义UI缩放",
+            "description": "Customize the scale of ui (set 0.8 if you find your game windows can't show all the graphic)",
             "type": "number"
         },
         "extraAssetBundlePath": {
-            "description": "图片等资源替换包的路径（需要用unity打包，一般情况下请不要改动此项）",
+            "description": "The location of asset bundle that is used to replace the original asset file of the game (Do not change it if you don't understand what it is)",
             "type": [
                 "string",
                 "null"
             ]
         },
         "replaceFont": {
-            "description": "替换字体，true:用系统默认字体或自定义字体替换；false：使用游戏原字体",
+            "description": "Use system default font to show the Chinese characters that is not contained in the orignal game font",
             "type": "boolean"
         },
         "customFontPath": {
-            "description": "extraAssetBundlePath项设置的资源包内的字体路径：自定义字体",
+            "description": "the font's asset bundle location (in extraAssetBundlePath)",
             "type": [
                 "string",
                 "null"
             ]
         },
         "customFontSizeOffset": {
-            "description": "字体大小，-4即为减少4",
+            "description": "Size of font",
             "type": "integer"
         },
         "customFontStyle": {
-            "description": "字体风格，0为正常，1为粗体，2为斜体，3为粗斜体",
+            "description": "*Style of font (if exist), 0-Normal, 1-Bold, 2-Italic, 3-Bold italic",
             "type": "integer",
             "minimum": 0,
             "maximum": 3
         },
         "customFontLinespacing": {
-            "description": "文字行间距，基准值为1.0",
+            "description": "Text line spacing, Default 1.0",
             "type": "number"
         },
         "replaceAssets": {
-            "description": "是否开启图片等资源替换",
+            "description": "Replacing the game picture/texture with resource in extraAssetBundlePath if exist",
             "type": "boolean"
         },
         "assetLoadLog": {
-            "description": "是否在debug输出游戏资源调用情况",
+            "description": "Print the asset bundle path of game resource that the game is using",
             "type": "boolean"
         },
         "autoFullscreen": {
-            "description": "在屏幕比例对应时自动设置为全屏 (true/false)\n- 如屏幕是16:9 并且横屏，将会在横屏播放剧情/live时全屏\n- 如屏幕是9:16，将会在绝大多数情况下全屏",
+            "description": "Full screen the game automaticlly.\nIf monitor resolution is 16:9, game will be full screened during watching live/story\nIf monitor resolution is 9:16, game will be full screened in most circumstances",
             "type": "boolean"
         },
         "externalPlugin": {
-            "description": "外部插件配置",
+            "description": "Set external plugin.",
             "type": "object",
             "properties": {
                 "hotkey": {
-                    "description": "启动热键",
+                    "description": "Hotkey. Press ctrl + `the key you set` to open it",
                     "type": "string"
                 },
                 "path": {
-                    "description": "插件路径",
+                    "description": "plugin path",
                     "type": "string"
                 },
                 "openExternalPluginOnLoad": {
-                    "description": "启动游戏时自动打开外部插件",
+                    "description": "Open external plugin on load.",
                     "type": "boolean"
                 }
             },
             "additionalProperties": false
         },
         "autoChangeLineBreakMode": {
-            "description": "根据横竖屏模式自动切换\"忽略换行符\"模式",
+            "description": "Automatically toggle \"Ignore line break\" mode based on whether the game is 16:9 or 9:16",
             "type": "boolean"
         },
         "static_dict": {
-            "description": "static字典文件的路径",
+            "description": "The path of translated static text",
             "type": "string"
         },
         "no_static_dict_cache": {
-            "description": "是否禁用static字典缓存",
+            "description": "Disable cache using of static dict",
             "type": "boolean"
         },
         "stories_path": {
-            "description": "剧情文件路径",
+            "description": "The path of translated story text",
             "type": "string"
         },
         "text_data_dict": {
-            "description": "文本数据字典文件路径",
+            "description": "The path of translated text data",
             "type": "string"
         },
         "character_system_text_dict": {
-            "description": "角色系统文本字典文件路径",
+            "description": "The path of translated character system text",
             "type": "string"
         },
         "race_jikkyo_comment_dict": {
-            "description": "比赛实况评论字典文件路径",
+            "description": "The path of translated race jikkyo comment",
             "type": "string"
         },
         "race_jikkyo_message_dict": {
-            "description": "比赛实况信息字典文件路径",
+            "description": "The path of translated race jikkyo message",
             "type": "string"
         },
         "autoUpdate": {
-            "description": "自动更新",
+            "description": "auto update",
             "type": "object",
             "properties": {
                 "source": {
-                    "description": "自动更新的仓库源",
+                    "description": "source (github)",
                     "type": "string"
                 },
                 "path": {
-                    "description": "自动更新的抓取地址",
+                    "description": "auto updating url",
                     "type": "string"
                 }
             },
             "additionalProperties": false
         },
         "resolution_start": {
-            "description": "设置启动时的分辨率",
+            "description": "set the game windows size when booting the game (Use [-1, -1] if you don't need it)",
             "type": "array",
             "items": {
                 "type": "integer",
@@ -149,7 +149,7 @@
             "maxItems": 2
         },
         "aspect_ratio": {
-            "description": "设置UI比例",
+            "description": "set UI scale",
             "type": "array",
             "items": {
                 "type": "number"
@@ -158,7 +158,7 @@
             "maxItems": 2
         },
         "dicts": {
-            "description": "将会读取的字典列表` (相对/绝对路径)，可删除相应字典提取命令。例如删除\"localized_data/Umaname.json\",即可在游戏内显示角色名日文，不影响其他翻译",
+            "description": "The translation files' path (Absolute/Relative path)",
             "type": "array",
             "items": {
                 "type": "string"

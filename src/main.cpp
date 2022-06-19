@@ -404,19 +404,16 @@ namespace
 			autoChangeLineBreakMode = document["autoChangeLineBreakMode"].GetBool();
 
 			if (document.HasMember("externalPlugin")) {
-				if (document["externalPlugin"].IsArray()) {
-					open_plugin_hotkey = document["externalPlugin"].GetArray()[0].GetString()[0];
-					externalPluginPath = document["externalPlugin"].GetArray()[1].GetString();
-					MHotkey::setExtPluginPath(externalPluginPath);
-					MHotkey::start_hotkey(open_plugin_hotkey);  // 启动热键监听进程
-				}
-			}
+				open_plugin_hotkey = document["externalPlugin"]["hotkey"].GetString()[0];
+				externalPluginPath = document["externalPlugin"]["path"].GetString();
+				MHotkey::setExtPluginPath(externalPluginPath);
+				MHotkey::start_hotkey(open_plugin_hotkey);  // 启动热键监听进程
 
-			if (document.HasMember("openExternalPluginOnLoad")) {
-				if (document["openExternalPluginOnLoad"].GetBool()) {
+				if (document["externalPlugin"]["openExternalPluginOnLoad"].GetBool()) {
 					MHotkey::fopenExternalPlugin();
 				}
 			}
+
 
 			if (document.HasMember("resolution_start")) {
 				if (document["resolution_start"].IsArray()) {

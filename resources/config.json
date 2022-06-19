@@ -15,11 +15,20 @@
     "replaceAssets": true,
     "assetLoadLog": false,
     "autoFullscreen": false,
-    "externalPlugin": ["u", ""],
-    "openExternalPluginOnLoad": false,
+    "externalPlugin": {
+        "hotkey": "u",
+        "path": "main.exe",
+        "openExternalPluginOnLoad": false
+    },
     "autoChangeLineBreakMode": true,
-    "resolution_start": [-1, -1],
-    "aspect_ratio": [16.0, 9.0],
+    "resolution_start": [
+        -1,
+        -1
+    ],
+    "aspect_ratio": [
+        16.0,
+        9.0
+    ],
     "dicts": [
         "localized_data/event.json",
         "localized_data/LIVE.json",
