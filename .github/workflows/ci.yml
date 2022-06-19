@@ -52,12 +52,12 @@ jobs:
       - name: prepare-package
         run: |
           mkdir package
-          mkdir package/config_schema
           cp build/bin/x64/Release/version.dll package/version.dll
           cp -r resources/schinese/localized_data package/localized_data
           cp resources/config.json package/config.json
-          cp resources/config.schema.json package/config_schema/config.schema.json
-          cp resources/config_en.schema.json package/config_schema/config_en.schema.json
+          mkdir package/localized_data/config_schema
+          cp resources/config.schema.json package/localized_data/config_schema/config.schema.json
+          cp resources/config_en.schema.json package/localized_data/config_schema/config_en.schema.json
       - uses: actions/upload-artifact@v2
         with:
           name: umamusume-localify
