@@ -28,6 +28,10 @@
             "description": "自定义UI缩放",
             "type": "number"
         },
+        "readRequestPack": {
+            "description": "是否读取客户端发送包信息，开启此功能可在命令行中输入reboot快速重启游戏",
+            "type": "boolean"
+        },
         "extraAssetBundlePath": {
             "description": "图片等资源替换包的路径（需要用unity打包，一般情况下请不要改动此项）",
             "type": [
