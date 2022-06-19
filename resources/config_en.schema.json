@@ -28,6 +28,10 @@
             "description": "Customize the scale of ui (set 0.8 if you find your game windows can't show all the graphic)",
             "type": "number"
         },
+        "readRequestPack": {
+            "description": "Read the msgpack sent by game, you can reboot the game quicker by typing 'reboot' in the console if you enable it.",
+            "type": "boolean"
+        },
         "extraAssetBundlePath": {
             "description": "The location of asset bundle that is used to replace the original asset file of the game (Do not change it if you don't understand what it is)",
             "type": [
