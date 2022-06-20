@@ -26,7 +26,7 @@
 
 #### 简体中文
 
-- [`简体中文项目贡献者名单、译文仓库`](https://github.com/MinamiChiwa/Trainers-Legend-G-TRANS#%E8%B4%A1%E7%8C%AE%E8%80%85)
+- [`简体中文项目译文仓库`](https://github.com/MinamiChiwa/Trainers-Legend-G-TRANS)
 
 #### 繁体中文
 
@@ -47,10 +47,10 @@
 
 ### 更新方法
 
-可自动更新。
+启动`legend_g_plugin.exe`。
 
-### 设置选项（`config.json`）
-
+### 设置选项
+启动`legend_g_plugin.exe`，进行设置；或直接打开`config.json`进行编辑。
 ```javascript
 {
     "enableConsole": true, /*启用用来输出调试信息的控制台 (true/false)*/
