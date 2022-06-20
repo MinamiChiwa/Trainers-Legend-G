@@ -71,3 +71,4 @@ extern std::string g_static_dict_path;
 extern bool autoChangeLineBreakMode;
 extern int start_width;
 extern int start_height;
+extern bool openExternalPluginOnLoad;

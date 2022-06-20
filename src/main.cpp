@@ -51,6 +51,7 @@ constexpr const char StaticDictStamp[] = "static_cache.stamp";
 constexpr const char StaticDictStampPath[] = "localized_data/static_cache.stamp";
 
 char open_plugin_hotkey = 'u';
+bool openExternalPluginOnLoad = false;
 std::string externalPluginPath = "";
 bool autoChangeLineBreakMode = false;
 int start_width = -1;
@@ -410,7 +411,8 @@ namespace
 				MHotkey::start_hotkey(open_plugin_hotkey);  // 启动热键监听进程
 
 				if (document["externalPlugin"]["openExternalPluginOnLoad"].GetBool()) {
-					MHotkey::fopenExternalPlugin();
+					// MHotkey::fopenExternalPlugin();
+					openExternalPluginOnLoad = true;
 				}
 			}
 
@@ -457,13 +459,17 @@ namespace
 			g_race_jikkyo_comment_dict_path = document["race_jikkyo_comment_dict"].GetString();
 			g_race_jikkyo_message_dict_path = document["race_jikkyo_message_dict"].GetString();
 
-			if (document.HasMember("autoUpdate"))
-			{
-				const auto& autoUpdate = document["autoUpdate"];
-				const auto& source = autoUpdate["source"];
-				const auto& path = autoUpdate["path"];
+			if (document.HasMember("enableBuiltinAutoUpdate")) {
+				if (document["enableBuiltinAutoUpdate"].GetBool()) {
+					if (document.HasMember("autoUpdate"))
+					{
+						const auto& autoUpdate = document["autoUpdate"];
+						const auto& source = autoUpdate["source"];
+						const auto& path = autoUpdate["path"];
 
-				g_auto_update_service = AutoUpdate::CreateAutoUpdateService(source.GetString(), path.GetString());
+						g_auto_update_service = AutoUpdate::CreateAutoUpdateService(source.GetString(), path.GetString());
+					}
+				}
 			}
 		}
 

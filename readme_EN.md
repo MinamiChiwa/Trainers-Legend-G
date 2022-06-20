@@ -58,7 +58,8 @@ A plugin for translating Umamusume Pretty Derby (DMM Client) to Chinese.
     "autoUpdate": {
         "source": "github",
         "path": "http://uma.chinosk6.cn/api/get_localify_latest_releases" /*auto updating url */
-    }
+    },
+    "enableBuiltinAutoUpdate": false /*enable built-in auto update*/
 }
 ```
 

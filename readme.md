@@ -94,7 +94,8 @@
     "autoUpdate": {
         "source": "github", /*自动更新的仓库源（gitee或github）*/
         "path": "http://uma.chinosk6.cn/api/get_localify_latest_releases" /*自动更新的抓取地址*/
-    }
+    },
+    "enableBuiltinAutoUpdate": false /*启用内置自动更新*/
 }
 ```
 

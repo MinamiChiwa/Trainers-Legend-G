@@ -142,6 +142,10 @@
             },
             "additionalProperties": false
         },
+        "enableBuiltinAutoUpdate": {
+            "description": "启用内置自动更新 (可能有BUG)",
+            "type": "boolean"
+        },
         "resolution_start": {
             "description": "设置启动时的分辨率",
             "type": "array",
