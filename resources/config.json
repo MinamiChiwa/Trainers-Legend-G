@@ -17,8 +17,8 @@
     "autoFullscreen": false,
     "externalPlugin": {
         "hotkey": "u",
-        "path": "main.exe",
-        "openExternalPluginOnLoad": false
+        "path": "legend_g_plugin.exe",
+        "openExternalPluginOnLoad": true
     },
     "autoChangeLineBreakMode": true,
     "resolution_start": [
@@ -44,5 +44,6 @@
     "autoUpdate": {
         "source": "github",
         "path": "http://uma.chinosk6.cn/api/get_localify_latest_releases"
-    }
+    },
+    "enableBuiltinAutoUpdate": false
 }

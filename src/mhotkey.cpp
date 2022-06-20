@@ -13,11 +13,27 @@ namespace MHotkey{
         std::string extPluginPath = "";
         std::string umaArgs = "";
     }
+
+    bool check_file_exist(const std::string& name) {
+        struct stat buffer;
+        return (stat(name.c_str(), &buffer) == 0);
+    }
     
     void fopenExternalPlugin() {
+        std::string file_check_name = extPluginPath + ".autoupdate";
+
         if (MHotkey::extPluginPath == "") {
             printf("\"externalPlugin\" not found\n");
             return;
+        }
+
+        if (check_file_exist(file_check_name)) {
+            if (check_file_exist(extPluginPath)) {
+                remove(extPluginPath.c_str());
+            }
+            if (rename(file_check_name.c_str(), extPluginPath.c_str()) == 0) {
+                printf("update external plugin failed\n");
+            }
         }
 
         std::string cmdLine = extPluginPath + " " + MHotkey::umaArgs;
