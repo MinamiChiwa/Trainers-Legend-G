@@ -4,6 +4,7 @@
 #include <windows.h>
 #include <stdio.h>
 #include <iostream>
+#include <thread>
 
 namespace MHotkey{
     namespace {
@@ -12,6 +13,8 @@ namespace MHotkey{
         char hotk = 'u';
         std::string extPluginPath = "";
         std::string umaArgs = "";
+        bool openPluginSuccess = false;
+        DWORD pluginPID = -1;
     }
 
     bool check_file_exist(const std::string& name) {
@@ -20,41 +23,66 @@ namespace MHotkey{
     }
     
     void fopenExternalPlugin() {
-        std::string file_check_name = extPluginPath + ".autoupdate";
-
-        if (MHotkey::extPluginPath == "") {
-            printf("\"externalPlugin\" not found\n");
-            return;
-        }
-
-        if (check_file_exist(file_check_name)) {
-            if (check_file_exist(extPluginPath)) {
-                remove(extPluginPath.c_str());
+        std::thread([](){
+            if (openPluginSuccess) {
+                printf("External plugin is already open.\n");
+                return;
             }
-            if (rename(file_check_name.c_str(), extPluginPath.c_str()) != 0) {
-                printf("update external plugin failed\n");
+            openPluginSuccess = true;
+
+            std::string file_check_name = extPluginPath + ".autoupdate";
+
+            if (MHotkey::extPluginPath == "") {
+                printf("\"externalPlugin\" not found\n");
+                return;
             }
-        }
 
-        std::string cmdLine = extPluginPath + " " + MHotkey::umaArgs;
-        char* commandLine = new char[255];
-        strcpy(commandLine, cmdLine.c_str());
+            if (check_file_exist(file_check_name)) {
+                if (check_file_exist(extPluginPath)) {
+                    remove(extPluginPath.c_str());
+                }
+                if (rename(file_check_name.c_str(), extPluginPath.c_str()) != 0) {
+                    printf("update external plugin failed\n");
+                }
+            }
 
-        printf("open external plugin: %s\n", commandLine);
+            std::string cmdLine = extPluginPath + " " + MHotkey::umaArgs;
+            char* commandLine = new char[255];
+            strcpy(commandLine, cmdLine.c_str());
 
-        STARTUPINFOA startupInfo{ .cb = sizeof(STARTUPINFOA) };
-        PROCESS_INFORMATION pi{};
-        if (CreateProcessA(NULL, commandLine, NULL, NULL, FALSE, 0, NULL, NULL, &startupInfo, &pi)) {
+            STARTUPINFOA startupInfo{ .cb = sizeof(STARTUPINFOA) };
+            PROCESS_INFORMATION pi{};
+            if (CreateProcessA(NULL, commandLine, NULL, NULL, FALSE, 0, NULL, NULL, &startupInfo, &pi)) {
+                printf("open external plugin: %s (%lu)\n", commandLine, pi.dwProcessId);
+                pluginPID = pi.dwProcessId;
+                DWORD dwRetun = 0;
+                WaitForSingleObject(pi.hProcess, INFINITE);
+                GetExitCodeProcess(pi.hProcess, &dwRetun);
+                printf("plugin exit: %d\n", dwRetun);
+                CloseHandle(pi.hThread);
+                CloseHandle(pi.hProcess);
+            }
+            else {
+                printf("Open external plugin failed.\n");
+            }
+            openPluginSuccess = false;
+        }).detach();
+    }
+
+    void closeExternalPlugin() {
+        if (openPluginSuccess && pluginPID != -1) {
+            std::string cmdLine = std::format("taskkill /F /T /PID {}", pluginPID);
+            char* commandLine = new char[255];
+            strcpy(commandLine, cmdLine.c_str());
+            STARTUPINFOA startupInfo{ .cb = sizeof(STARTUPINFOA) };
+            PROCESS_INFORMATION pi{};
+            CreateProcessA(NULL, commandLine, NULL, NULL, FALSE, 0, NULL, NULL, &startupInfo, &pi);
+            printf("kill: %s\n", commandLine);
             CloseHandle(pi.hThread);
-            // WaitForSingleObject(pi.hProcess, INFINITE);
             CloseHandle(pi.hProcess);
-        }
-        else {
-            printf("Open external plugin failed.\n");
         }
     }
     
-
     __declspec(dllexport) LRESULT CALLBACK KeyboardEvent(int nCode, WPARAM wParam, LPARAM lParam)
     {
         DWORD SHIFT_key = 0;
