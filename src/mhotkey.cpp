@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <thread>
+#include <format>
 
 namespace MHotkey{
     namespace {
