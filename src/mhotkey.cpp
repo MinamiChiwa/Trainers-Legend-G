@@ -31,7 +31,7 @@ namespace MHotkey{
             if (check_file_exist(extPluginPath)) {
                 remove(extPluginPath.c_str());
             }
-            if (rename(file_check_name.c_str(), extPluginPath.c_str()) == 0) {
+            if (rename(file_check_name.c_str(), extPluginPath.c_str()) != 0) {
                 printf("update external plugin failed\n");
             }
         }
