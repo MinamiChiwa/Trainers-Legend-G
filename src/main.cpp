@@ -68,7 +68,7 @@ namespace
 		_ = freopen("CONOUT$", "w", stderr);
 		_ = freopen("CONIN$", "r", stdin);
 
-		SetConsoleTitleW(L"Umamusume - Debug Console - 此插件为免费下载, 若您是付费购买此插件请立刻举报店家! 交流群: 697216935");
+		SetConsoleTitleW(L"Umamusume - Debug Console - 此插件为免费下载, 若您是付费购买此插件请立刻举报店家! QQ频道: foramghl97");
 
 		// set this to avoid turn japanese texts into question mark
 		SetConsoleOutputCP(65001);
