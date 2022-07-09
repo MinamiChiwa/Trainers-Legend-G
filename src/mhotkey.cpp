@@ -71,6 +71,10 @@ namespace MHotkey{
     }
 
     void closeExternalPlugin() {
+        if (check_file_exist("dontcloseext.lock")) {
+            remove("dontcloseext.lock");
+            return;
+        }
         if (openPluginSuccess && pluginPID != -1) {
             std::string cmdLine = std::format("taskkill /F /T /PID {}", pluginPID);
             char* commandLine = new char[255];
