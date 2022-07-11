@@ -7,4 +7,5 @@ namespace MHotkey {
 	void setExtPluginPath(std::string ppath);
 	void setUmaCommandLine(std::string args);
 	void fopenExternalPlugin();
+	void closeExternalPlugin();
 }

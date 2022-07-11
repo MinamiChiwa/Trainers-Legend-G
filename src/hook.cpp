@@ -512,6 +512,12 @@ namespace
 		return result;
 	}
 
+	void* on_exit_orig = nullptr;
+	void on_exit_hook(void* _this) {
+		MHotkey::closeExternalPlugin();
+		TerminateProcess(GetCurrentProcess(), 0);
+	}
+
 	void* set_fps_orig = nullptr;
 	void set_fps_hook(int value)
 	{
@@ -1266,6 +1272,11 @@ namespace
 			"Screen", "SetResolution", 3
 		);
 
+		auto on_exit_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"GameSystem", "OnApplicationQuit", 0
+		);
+
 		auto load_scene_internal_addr = il2cpp_resolve_icall("UnityEngine.SceneManagement.SceneManager::LoadSceneAsyncNameIndexInternal_Injected(System.String,System.Int32,UnityEngine.SceneManagement.LoadSceneParameters&,System.Boolean)");
 
 		const auto GallopUtil_GetModifiedString_addr = il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "GallopUtil", "GetModifiedString", -1);
@@ -1285,7 +1296,7 @@ namespace
 
 		// Looks like they store all localized texts that used by code in a dict
 		ADD_HOOK(localize_jp_get, "Gallop.Localize.JP.Get(TextId) at %p\n");
-
+		ADD_HOOK(on_exit, "Gallop.GameSystem.onApplicationQuit at %p\n");
 		ADD_HOOK(query_ctor, "Query::ctor at %p\n");
 		ADD_HOOK(query_getstr, "Query::GetString at %p\n");
 		ADD_HOOK(query_dispose, "Query::Dispose at %p\n");
@@ -1347,72 +1358,8 @@ namespace
 		}
 
 	}
-
-	/*
-	是否为横屏
-
-	bool is_landscape() {
-		int www, hhh;
-		www = gallop_get_screenwidth_hook();
-		hhh = gallop_get_screenheight_hook();
-		return www > hhh;
-	}
-	*/
 }
 
-/*
-void change_type() {
-	bool last_is_landspace = true;  // 上次状态是否为横屏
-	bool now_is_landspace = false;  // 当前是否为横屏
-	int now_w, now_h;
-	// int last_land_w = -1, last_land_h = -1;  // 上次横屏分辨率
-	// int last_vert_w = -1, last_vert_h = -1;  // 上次竖屏分辨率
-
-	now_w = gallop_get_screenwidth_hook();
-	now_h = gallop_get_screenheight_hook();
-
-	if (!autoChangeLineBreakMode) {
-		std::wprintf(L"未激活: 横竖屏自动切换模式\n");
-		// return;
-	}
-	else {
-		std::wprintf(L"已激活: 横竖屏自动切换模式\n");
-	}
-
-	Vector3_t vt;
-
-	while (true) {
-		now_w = gallop_get_screenwidth_hook();
-		now_h = gallop_get_screenheight_hook();
-		now_is_landspace = now_w > now_h;
-
-
-		if (now_is_landspace != last_is_landspace) {
-			if (now_is_landspace) {
-				_set_u_stat(false);  // 横屏模式
-
-			}
-			else {
-				_set_u_stat(true);  // 竖屏模式
-
-			}
-
-			std::wprintf(now_is_landspace ? L"已切换到横屏\n" : L"已切换到竖屏\n");
-			last_is_landspace = now_is_landspace;
-		}
-
-		Sleep(500);
-	}
-
-}
-
-
-void start_monitor_thread() {
-	thread mythread1(change_type);
-	// mythread1.join();
-	mythread1.detach();
-}
-*/
 
 bool init_hook()
 {
