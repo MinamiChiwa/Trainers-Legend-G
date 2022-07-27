@@ -6,6 +6,10 @@
 #include <unordered_set>
 #include <charconv>
 #include <cassert>
+#include<format>
+#include <cpprest/uri.h>
+#include <cpprest/http_listener.h>
+#include <cpprest/asyncrt_utils.h>
 
 extern bool init_hook();
 extern void uninit_hook();
@@ -56,6 +60,19 @@ std::string externalPluginPath = "";
 bool autoChangeLineBreakMode = false;
 int start_width = -1;
 int start_height = -1;
+
+
+// #pragma comment(lib, "cpprest_2_10_18.lib")
+// #pragma comment(lib, "bcrypt.lib")
+// #pragma comment(lib, "crypt32.lib")
+// #pragma comment(lib, "winhttp.lib")
+// #pragma comment(lib, "httpapi.lib")
+
+using namespace web;
+using namespace http;
+using namespace utility;
+using namespace http::experimental::listener;
+
 
 namespace
 {
@@ -1214,6 +1231,146 @@ del SelfUpdate.bat)";
 
 extern std::function<void()> g_on_hook_ready;
 
+void reload_all_data() {
+	reload_config();
+
+	auto dicts = read_config();
+	auto d = std::move(dicts);
+	auto staticDictCache = ensure_latest_static_cache(g_static_dict_path);
+	auto&& [storyDict, raceDict] = LoadStories();
+	auto&& [textData, characterSystemTextData, raceJikkyoCommentData, raceJikkyoMessageData] = LoadDicts();
+	if (g_dump_entries)
+	{
+		dump_static_dict("static_dump.json", staticDictCache);
+	}
+	local::reload_textdb(&d, std::move(staticDictCache), std::move(storyDict), std::move(raceDict), std::move(textData), std::move(characterSystemTextData), std::move(raceJikkyoCommentData), std::move(raceJikkyoMessageData));
+}
+
+namespace mPipe {
+	HANDLE hPipe = CreateNamedPipeW(L"\\\\.\\Pipe\\umatlg", PIPE_ACCESS_DUPLEX, PIPE_TYPE_MESSAGE | PIPE_READMODE_MESSAGE | PIPE_WAIT
+		, PIPE_UNLIMITED_INSTANCES, 0, 0, NMPWAIT_WAIT_FOREVER, 0);
+	
+	void writeData(const char* pStr) {
+		DWORD    dwWrite;
+		// const char* pStr = "data from server";
+		if (!WriteFile(hPipe, pStr, strlen(pStr), &dwWrite, NULL))
+		{
+			printf("write failed...\n");
+		}
+		printf("sent data: %s\n", pStr);
+	}
+
+	void startPipe() {
+		printf("pipe open\n");
+
+		//waiting to be connected
+
+		if (ConnectNamedPipe(hPipe, NULL) != NULL)
+		{
+			printf("connected\n");
+
+			std::thread readT([hPipe = hPipe]
+				{
+					char buf[100]{ 0 };
+					DWORD dwRead, dwLength;
+					OVERLAPPED ov;
+					DWORD tStart, tCurrent;
+					if (ReadFile(hPipe, buf, 10, &dwRead, &ov))
+					{
+						printf("get: %s", buf);
+					}
+				}
+			);
+			readT.detach();
+			writeData("data from server");
+		}
+	}
+
+	void close() {
+		DisconnectNamedPipe(hPipe);
+		CloseHandle(hPipe);
+	}
+}
+
+namespace HttpServer {
+	class CommandHandler
+	{
+	public:
+		CommandHandler() {}
+		CommandHandler(utility::string_t url);
+		pplx::task<void> open() { return m_listener.open(); }
+		pplx::task<void> close() { return m_listener.close(); }
+	private:
+		void handle_get(http_request message);
+		void handle_post(http_request message);
+		http_listener m_listener;
+	};
+
+	CommandHandler::CommandHandler(utility::string_t url) : m_listener(url)
+	{
+		m_listener.support(methods::GET, std::bind(&CommandHandler::handle_get, this, std::placeholders::_1));
+		m_listener.support(methods::POST, std::bind(&CommandHandler::handle_post, this, std::placeholders::_1));
+	}
+
+	void CommandHandler::handle_get(http_request message)
+	{
+		ucout << "GET: " << message.relative_uri().to_string() << std::endl;
+		message.reply(status_codes::OK, "Trainer's Legend G\nsource:https://github.com/MinamiChiwa/Trainers-Legend-G\nQQ Guild: foramghl97\nDiscord: https://discord.com/invite/TBCSv5hU69");
+	};
+
+	void CommandHandler::handle_post(http_request message)
+	{
+		try {
+			auto path = http::uri::decode(message.relative_uri().path());
+			ucout << "POST: " << path << std::endl;
+
+			auto json_data = message.extract_json().get();
+			ucout << "Data: " << json_data.to_string() << std::endl;
+
+			if (json_data.has_string_field(L"type")) {
+				ucout << "type: " << json_data.at(L"type").as_string() << std::endl;
+			}
+
+			message.reply(status_codes::OK, "OK(〃'▽'〃)");
+		}
+		catch (std::exception& ex)
+		{
+			ucout << U("HTTP Server Exception: ") << ex.what() << std::endl;
+			message.reply(status_codes::InternalError, std::format("Error: {}", ex.what()));
+		}
+	};
+
+	bool is_stop_server = false;
+
+	void start_http_server(int port)
+	{
+		std::thread([port] {
+			try
+			{
+				utility::string_t address = std::format(L"http://*:{}", port);
+				uri_builder uri(address);
+				auto addr = uri.to_uri().to_string();
+				CommandHandler handler(addr);
+				handler.open().wait();
+				ucout << utility::string_t(U("Listening for requests at: ")) << addr << std::endl;
+				while (!is_stop_server) {
+					Sleep(500);
+				}
+			}
+			catch (std::exception& ex)
+			{
+				ucout << U("HTTP Server Exception: ") << ex.what() << std::endl;
+			}
+			is_stop_server = false;
+			}).detach();
+	}
+
+	void stop_server() {
+		is_stop_server = true;
+	}
+
+}
+
 int __stdcall DllMain(HINSTANCE dllModule, DWORD reason, LPVOID)
 {
 	if (reason == DLL_PROCESS_ATTACH)
@@ -1288,6 +1445,8 @@ int __stdcall DllMain(HINSTANCE dllModule, DWORD reason, LPVOID)
 			auto&& [textData, characterSystemTextData, raceJikkyoCommentData, raceJikkyoMessageData] = LoadDicts();
 			local::load_textdb(&dicts, std::move(staticDictCache), std::move(storyDict), std::move(raceDict), std::move(textData), std::move(characterSystemTextData), std::move(raceJikkyoCommentData), std::move(raceJikkyoMessageData));
 			auto_update();
+			// mPipe::startPipe();
+			HttpServer::start_http_server(9875);
 		});
 		init_thread.detach();
 	}
