@@ -95,6 +95,10 @@
             },
             "additionalProperties": false
         },
+        "httpServerPort": {
+            "description": "HTTP Server Port",
+            "type": "integer"
+        },
         "autoChangeLineBreakMode": {
             "description": "Automatically toggle \"Ignore line break\" mode based on whether the game is 16:9 or 9:16",
             "type": "boolean"

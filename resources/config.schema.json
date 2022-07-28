@@ -95,6 +95,10 @@
             },
             "additionalProperties": false
         },
+        "httpServerPort": {
+            "description": "HTTP服务器端口, 用于外部插件交互",
+            "type": "integer"
+        },
         "autoChangeLineBreakMode": {
             "description": "根据横竖屏模式自动切换\"忽略换行符\"模式",
             "type": "boolean"

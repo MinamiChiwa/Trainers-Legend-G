@@ -1005,9 +1005,6 @@ namespace
 			return;
 
 		printf("Trying to patch GameAssembly.dll...\n");
-		if (openExternalPluginOnLoad) {
-			MHotkey::fopenExternalPlugin();
-		}
 
 		auto il2cpp_module = GetModuleHandle("GameAssembly.dll");
 

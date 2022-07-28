@@ -9,7 +9,6 @@
 #include<format>
 #include <cpprest/uri.h>
 #include <cpprest/http_listener.h>
-#include <cpprest/asyncrt_utils.h>
 
 extern bool init_hook();
 extern void uninit_hook();
@@ -38,6 +37,7 @@ std::string g_static_dict_path;
 bool g_no_static_dict_cache;
 std::string g_stories_path;
 bool g_read_request_pack = true;
+int http_start_port = 43215;
 
 std::string g_text_data_dict_path;
 std::string g_character_system_text_dict_path;
@@ -72,7 +72,6 @@ using namespace web;
 using namespace http;
 using namespace utility;
 using namespace http::experimental::listener;
-
 
 namespace
 {
@@ -384,6 +383,10 @@ namespace
 			if (document.HasMember("readRequestPack")) {
 				g_read_request_pack = document["readRequestPack"].GetBool();
 			}
+
+			if (document.HasMember("httpServerPort")) {
+				http_start_port = document["httpServerPort"].GetInt();
+			}
 			
 			const auto& extraAssetBundlePath = document["extraAssetBundlePath"];
 			if (extraAssetBundlePath.IsString())
@@ -428,7 +431,6 @@ namespace
 				MHotkey::start_hotkey(open_plugin_hotkey);  // 启动热键监听进程
 
 				if (document["externalPlugin"]["openExternalPluginOnLoad"].GetBool()) {
-					// MHotkey::fopenExternalPlugin();
 					openExternalPluginOnLoad = true;
 				}
 			}
@@ -1232,18 +1234,8 @@ del SelfUpdate.bat)";
 extern std::function<void()> g_on_hook_ready;
 
 void reload_all_data() {
+	read_config();
 	reload_config();
-
-	auto dicts = read_config();
-	auto d = std::move(dicts);
-	auto staticDictCache = ensure_latest_static_cache(g_static_dict_path);
-	auto&& [storyDict, raceDict] = LoadStories();
-	auto&& [textData, characterSystemTextData, raceJikkyoCommentData, raceJikkyoMessageData] = LoadDicts();
-	if (g_dump_entries)
-	{
-		dump_static_dict("static_dump.json", staticDictCache);
-	}
-	local::reload_textdb(&d, std::move(staticDictCache), std::move(storyDict), std::move(raceDict), std::move(textData), std::move(characterSystemTextData), std::move(raceJikkyoCommentData), std::move(raceJikkyoMessageData));
 }
 
 namespace mPipe {
@@ -1322,15 +1314,22 @@ namespace HttpServer {
 	{
 		try {
 			auto path = http::uri::decode(message.relative_uri().path());
-			ucout << "POST: " << path << std::endl;
+			// ucout << "POST: " << path << std::endl;
 
-			auto json_data = message.extract_json().get();
-			ucout << "Data: " << json_data.to_string() << std::endl;
+			if (path == L"/sets") {
+				auto json_data = message.extract_json().get();
+				// ucout << "Data: " << json_data.to_string() << std::endl;
 
-			if (json_data.has_string_field(L"type")) {
-				ucout << "type: " << json_data.at(L"type").as_string() << std::endl;
+				if (json_data.has_string_field(L"type")) {
+					// ucout << "type: " << json_data.at(L"type").as_string() << std::endl;
+					auto doType = json_data.at(L"type").as_string();
+
+					if (doType == L"reload_all") {
+						printf("reloading all config and data...\n");
+						reload_all_data();
+					}
+				}
 			}
-
 			message.reply(status_codes::OK, "OK(〃'▽'〃)");
 		}
 		catch (std::exception& ex)
@@ -1341,10 +1340,11 @@ namespace HttpServer {
 	};
 
 	bool is_stop_server = false;
+	int http_restart_count = 0;
 
-	void start_http_server(int port)
+	void start_http_server(int port, bool openExternalPlugin)
 	{
-		std::thread([port] {
+		std::thread([port, openExternalPlugin] {
 			try
 			{
 				utility::string_t address = std::format(L"http://*:{}", port);
@@ -1352,10 +1352,36 @@ namespace HttpServer {
 				auto addr = uri.to_uri().to_string();
 				CommandHandler handler(addr);
 				handler.open().wait();
-				ucout << utility::string_t(U("Listening for requests at: ")) << addr << std::endl;
+				MHotkey::setTlgPort(port);
+
+				if (openExternalPlugin && openExternalPluginOnLoad) {  // 打开外部插件
+					MHotkey::fopenExternalPlugin(http_start_port);
+				}
+
+				ucout << utility::string_t(U("Server Start at: ")) << addr << std::endl;
 				while (!is_stop_server) {
 					Sleep(500);
 				}
+			}
+			catch (web::http::http_exception& herr) {
+				if (herr.error_code().value() == 32) {
+					if (http_restart_count > 5) {
+						printf("HTTP Server start failed.\n");
+
+						if (openExternalPlugin && openExternalPluginOnLoad) {  // 打开外部插件
+							MHotkey::fopenExternalPlugin(http_start_port);
+						}
+					}
+					else {
+						printf("port %d already in used, try %d\n", port, port + 1);
+						http_restart_count++;
+						http_start_port++;
+						start_http_server(port + 1, openExternalPlugin);
+						return;
+					}
+				}
+
+				ucout << U("HTTP Server Exception: ") << herr.error_code().value() << " " << herr.what() << std::endl;
 			}
 			catch (std::exception& ex)
 			{
@@ -1363,6 +1389,10 @@ namespace HttpServer {
 			}
 			is_stop_server = false;
 			}).detach();
+	}
+
+	void start_http_server(bool openExternalPlugin) {
+		start_http_server(http_start_port, openExternalPlugin);
 	}
 
 	void stop_server() {
@@ -1381,7 +1411,7 @@ int __stdcall DllMain(HINSTANCE dllModule, DWORD reason, LPVOID)
 		module_name.resize(GetModuleFileName(nullptr, module_name.data(), MAX_PATH));
 
 		std::filesystem::path module_path(module_name);
-
+		
 		// check name
 		if (module_path.filename() != "umamusume.exe")
 			return 1;
@@ -1436,6 +1466,8 @@ int __stdcall DllMain(HINSTANCE dllModule, DWORD reason, LPVOID)
 				_ = freopen("CONIN$", "r", stdin);
 			}
 
+			HttpServer::start_http_server(true);  // 启动HTTP服务器
+
 			auto staticDictCache = ensure_latest_static_cache(g_static_dict_path);
 			if (g_dump_entries)
 			{
@@ -1446,7 +1478,6 @@ int __stdcall DllMain(HINSTANCE dllModule, DWORD reason, LPVOID)
 			local::load_textdb(&dicts, std::move(staticDictCache), std::move(storyDict), std::move(raceDict), std::move(textData), std::move(characterSystemTextData), std::move(raceJikkyoCommentData), std::move(raceJikkyoMessageData));
 			auto_update();
 			// mPipe::startPipe();
-			HttpServer::start_http_server(9875);
 		});
 		init_thread.detach();
 	}

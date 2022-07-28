@@ -72,3 +72,4 @@ extern bool autoChangeLineBreakMode;
 extern int start_width;
 extern int start_height;
 extern bool openExternalPluginOnLoad;
+extern int http_start_port;

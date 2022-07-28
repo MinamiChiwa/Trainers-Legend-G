@@ -29,6 +29,7 @@
         16.0,
         9.0
     ],
+    "httpServerPort": 43215,
     "dicts": [
         "localized_data/event.json",
         "localized_data/LIVE.json",
