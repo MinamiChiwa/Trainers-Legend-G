@@ -1238,52 +1238,6 @@ void reload_all_data() {
 	reload_config();
 }
 
-namespace mPipe {
-	HANDLE hPipe = CreateNamedPipeW(L"\\\\.\\Pipe\\umatlg", PIPE_ACCESS_DUPLEX, PIPE_TYPE_MESSAGE | PIPE_READMODE_MESSAGE | PIPE_WAIT
-		, PIPE_UNLIMITED_INSTANCES, 0, 0, NMPWAIT_WAIT_FOREVER, 0);
-	
-	void writeData(const char* pStr) {
-		DWORD    dwWrite;
-		// const char* pStr = "data from server";
-		if (!WriteFile(hPipe, pStr, strlen(pStr), &dwWrite, NULL))
-		{
-			printf("write failed...\n");
-		}
-		printf("sent data: %s\n", pStr);
-	}
-
-	void startPipe() {
-		printf("pipe open\n");
-
-		//waiting to be connected
-
-		if (ConnectNamedPipe(hPipe, NULL) != NULL)
-		{
-			printf("connected\n");
-
-			std::thread readT([hPipe = hPipe]
-				{
-					char buf[100]{ 0 };
-					DWORD dwRead, dwLength;
-					OVERLAPPED ov;
-					DWORD tStart, tCurrent;
-					if (ReadFile(hPipe, buf, 10, &dwRead, &ov))
-					{
-						printf("get: %s", buf);
-					}
-				}
-			);
-			readT.detach();
-			writeData("data from server");
-		}
-	}
-
-	void close() {
-		DisconnectNamedPipe(hPipe);
-		CloseHandle(hPipe);
-	}
-}
-
 namespace HttpServer {
 	class CommandHandler
 	{
@@ -1477,7 +1431,6 @@ int __stdcall DllMain(HINSTANCE dllModule, DWORD reason, LPVOID)
 			auto&& [textData, characterSystemTextData, raceJikkyoCommentData, raceJikkyoMessageData] = LoadDicts();
 			local::load_textdb(&dicts, std::move(staticDictCache), std::move(storyDict), std::move(raceDict), std::move(textData), std::move(characterSystemTextData), std::move(raceJikkyoCommentData), std::move(raceJikkyoMessageData));
 			auto_update();
-			// mPipe::startPipe();
 		});
 		init_thread.detach();
 	}
