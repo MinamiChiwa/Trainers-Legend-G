@@ -39,6 +39,8 @@ extern bool g_enable_logger;
 extern bool g_enable_console;
 extern int g_max_fps;
 extern bool g_unlock_size;
+extern float g_unlock_size_offset_land;
+extern float g_unlock_size_offset_vert;
 extern float g_ui_scale;
 extern float g_aspect_ratio;
 extern bool g_read_request_pack;

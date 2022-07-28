@@ -22,6 +22,8 @@ bool g_enable_logger = false;
 bool g_enable_console = false;
 int g_max_fps = -1;
 bool g_unlock_size = false;
+float g_unlock_size_offset_land = 0.;
+float g_unlock_size_offset_vert = 0.;
 float g_ui_scale = 1.0f;
 float g_aspect_ratio = 16.f / 9.f;
 std::string g_extra_assetbundle_path;
@@ -379,6 +381,11 @@ namespace
 			g_max_fps = document["maxFps"].GetInt();
 			g_unlock_size = document["unlockSize"].GetBool();
 			g_ui_scale = document["uiScale"].GetFloat();
+
+			if (document.HasMember("unlockSizeOffset")) {
+				g_unlock_size_offset_land = document["unlockSizeOffset"]["landspace"].GetFloat();
+				g_unlock_size_offset_vert = document["unlockSizeOffset"]["vertical"].GetFloat();
+			}
 
 			if (document.HasMember("readRequestPack")) {
 				g_read_request_pack = document["readRequestPack"].GetBool();
