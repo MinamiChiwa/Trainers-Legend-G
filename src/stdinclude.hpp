@@ -75,3 +75,6 @@ extern int start_width;
 extern int start_height;
 extern bool openExternalPluginOnLoad;
 extern int http_start_port;
+extern int g_antialiasing;
+extern int g_graphics_quality;
+extern int g_vsync_count;

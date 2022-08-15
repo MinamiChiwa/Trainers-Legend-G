@@ -524,6 +524,27 @@ namespace
 		return reinterpret_cast<decltype(set_fps_hook)*>(set_fps_orig)(g_max_fps);
 	}
 
+	void* set_vsync_count_orig = nullptr;
+	void set_vsync_count_hook(int value) {
+		printf("setVsyncCount: %d -> %d\n", value, g_vsync_count);
+		return reinterpret_cast<decltype(set_vsync_count_hook)*>(set_vsync_count_orig)(g_vsync_count == -1 ? value : g_vsync_count);
+	}
+
+	void* set_antialiasing_orig = nullptr;
+	void set_antialiasing_hook(int value) {
+		printf("setAntialiasing: %d -> %d\n", value, g_antialiasing);
+		set_vsync_count_hook(1);
+		return reinterpret_cast<decltype(set_antialiasing_hook)*>(set_antialiasing_orig)(g_antialiasing == -1 ? value : g_antialiasing);
+	}
+
+	void* graphics_quality_orig = nullptr;
+	void graphics_quality_hook(Il2CppObject* thisObj, int quality, bool force) {
+		printf("setGraphicsQuality: %d -> %d\n", quality, g_graphics_quality);
+		return reinterpret_cast<decltype(graphics_quality_hook)*>(graphics_quality_orig)(thisObj, 
+			g_graphics_quality == -1 ? quality : g_graphics_quality,
+			true);
+	}
+
 	bool (*is_virt)() = nullptr;
 	int last_height = 0, last_width = 0;
 
@@ -1080,6 +1101,20 @@ namespace
 			"Application", "set_targetFrameRate", 1
 		);
 
+		auto set_antialiasing_addr = il2cpp_symbols::get_method_pointer(
+				"UnityEngine.CoreModule.dll", "UnityEngine",
+				"QualitySettings", "set_antiAliasing", 1
+			);
+
+		auto graphics_quality_addr = il2cpp_symbols::get_method_pointer(
+				"umamusume.dll", "Gallop",
+				"GraphicSettings", "ApplyGraphicsQuality", 2);
+
+		auto set_vsync_count_addr = il2cpp_symbols::get_method_pointer(
+			"UnityEngine.CoreModule.dll", "UnityEngine",
+			"QualitySettings", "set_vSyncCount", 1
+		);
+
 		auto wndproc_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"StandaloneWindowResize", "WndProc", 4
@@ -1330,6 +1365,11 @@ namespace
 			ADD_HOOK(set_fps, "UnityEngine.Application.set_targetFrameRate at %p \n");
 		}
 
+		ADD_HOOK(set_antialiasing, "UnityEngine.CoreModule.QualitySettings.set_antiAliasing at %p\n");
+		ADD_HOOK(graphics_quality, "Gallop.GraphicSettings.ApplyGraphicsQuality at %p\n");
+		ADD_HOOK(set_vsync_count, "UnityEngine.CoreModule.QualitySettings.set_vSyncCount at %p\n");
+		set_vsync_count_hook(1);
+	
 		// if (g_unlock_size)
 		// {
 		// break 1080p size limit
