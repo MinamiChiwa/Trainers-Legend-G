@@ -526,20 +526,20 @@ namespace
 
 	void* set_vsync_count_orig = nullptr;
 	void set_vsync_count_hook(int value) {
-		printf("setVsyncCount: %d -> %d\n", value, g_vsync_count);
+		// printf("setVsyncCount: %d -> %d\n", value, g_vsync_count);
 		return reinterpret_cast<decltype(set_vsync_count_hook)*>(set_vsync_count_orig)(g_vsync_count == -1 ? value : g_vsync_count);
 	}
 
 	void* set_antialiasing_orig = nullptr;
 	void set_antialiasing_hook(int value) {
-		printf("setAntialiasing: %d -> %d\n", value, g_antialiasing);
+		// printf("setAntialiasing: %d -> %d\n", value, g_antialiasing);
 		set_vsync_count_hook(1);
 		return reinterpret_cast<decltype(set_antialiasing_hook)*>(set_antialiasing_orig)(g_antialiasing == -1 ? value : g_antialiasing);
 	}
 
 	void* graphics_quality_orig = nullptr;
 	void graphics_quality_hook(Il2CppObject* thisObj, int quality, bool force) {
-		printf("setGraphicsQuality: %d -> %d\n", quality, g_graphics_quality);
+		// printf("setGraphicsQuality: %d -> %d\n", quality, g_graphics_quality);
 		return reinterpret_cast<decltype(graphics_quality_hook)*>(graphics_quality_orig)(thisObj, 
 			g_graphics_quality == -1 ? quality : g_graphics_quality,
 			true);
@@ -938,11 +938,11 @@ namespace
 
 		if (width > height) {
 			_set_u_stat(false);  // false-横屏
-			std::wprintf(L"to land: %d * %d\n", width, height);
+			// std::wprintf(L"to land: %d * %d\n", width, height);
 		}
 		else {
 			_set_u_stat(true);
-			std::wprintf(L"to virt: %d * %d\n", width, height);
+			// std::wprintf(L"to virt: %d * %d\n", width, height);
 		}
 
 		bool need_fullscreen = false;

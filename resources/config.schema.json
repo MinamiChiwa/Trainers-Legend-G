@@ -16,9 +16,17 @@
             "type": "boolean"
         },
         "maxFps": {
-            "description": "帧率限制 (-1 = 游戏原版/0 = 无限/>0 = 锁定到特定帧数)——注: 垂直同步已开启",
+            "description": "帧率限制 (-1 = 游戏原版/0 = 无限/>0 = 锁定到特定帧数)",
             "type": "integer",
             "minimum": -1
+        },
+        "highQuality": {
+            "description": "高画质模式(FullQuality, MSAA x8)",
+            "type": "boolean"
+        },
+        "enableVSync": {
+            "description": "开启垂直同步 (开启后maxFps设置将会失效)",
+            "type": "boolean"
         },
         "unlockSize": {
             "description": "允许游戏使用`1080p`以上的分辨率",
