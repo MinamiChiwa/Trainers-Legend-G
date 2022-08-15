@@ -6,6 +6,9 @@
 #include <unordered_set>
 #include <charconv>
 #include <cassert>
+#include<format>
+#include <cpprest/uri.h>
+#include <cpprest/http_listener.h>
 
 extern bool init_hook();
 extern void uninit_hook();
@@ -19,6 +22,8 @@ bool g_enable_logger = false;
 bool g_enable_console = false;
 int g_max_fps = -1;
 bool g_unlock_size = false;
+float g_unlock_size_offset_land = 0.;
+float g_unlock_size_offset_vert = 0.;
 float g_ui_scale = 1.0f;
 float g_aspect_ratio = 16.f / 9.f;
 std::string g_extra_assetbundle_path;
@@ -34,6 +39,7 @@ std::string g_static_dict_path;
 bool g_no_static_dict_cache;
 std::string g_stories_path;
 bool g_read_request_pack = true;
+int http_start_port = 43215;
 
 std::string g_text_data_dict_path;
 std::string g_character_system_text_dict_path;
@@ -56,6 +62,18 @@ std::string externalPluginPath = "";
 bool autoChangeLineBreakMode = false;
 int start_width = -1;
 int start_height = -1;
+
+
+// #pragma comment(lib, "cpprest_2_10_18.lib")
+// #pragma comment(lib, "bcrypt.lib")
+// #pragma comment(lib, "crypt32.lib")
+// #pragma comment(lib, "winhttp.lib")
+// #pragma comment(lib, "httpapi.lib")
+
+using namespace web;
+using namespace http;
+using namespace utility;
+using namespace http::experimental::listener;
 
 namespace
 {
@@ -364,8 +382,17 @@ namespace
 			g_unlock_size = document["unlockSize"].GetBool();
 			g_ui_scale = document["uiScale"].GetFloat();
 
+			if (document.HasMember("unlockSizeOffset")) {
+				g_unlock_size_offset_land = document["unlockSizeOffset"]["landspace"].GetFloat();
+				g_unlock_size_offset_vert = document["unlockSizeOffset"]["vertical"].GetFloat();
+			}
+
 			if (document.HasMember("readRequestPack")) {
 				g_read_request_pack = document["readRequestPack"].GetBool();
+			}
+
+			if (document.HasMember("httpServerPort")) {
+				http_start_port = document["httpServerPort"].GetInt();
 			}
 			
 			const auto& extraAssetBundlePath = document["extraAssetBundlePath"];
@@ -411,7 +438,6 @@ namespace
 				MHotkey::start_hotkey(open_plugin_hotkey);  // 启动热键监听进程
 
 				if (document["externalPlugin"]["openExternalPluginOnLoad"].GetBool()) {
-					// MHotkey::fopenExternalPlugin();
 					openExternalPluginOnLoad = true;
 				}
 			}
@@ -1214,6 +1240,128 @@ del SelfUpdate.bat)";
 
 extern std::function<void()> g_on_hook_ready;
 
+void reload_all_data() {
+	read_config();
+	reload_config();
+}
+
+namespace HttpServer {
+	class CommandHandler
+	{
+	public:
+		CommandHandler() {}
+		CommandHandler(utility::string_t url);
+		pplx::task<void> open() { return m_listener.open(); }
+		pplx::task<void> close() { return m_listener.close(); }
+	private:
+		void handle_get(http_request message);
+		void handle_post(http_request message);
+		http_listener m_listener;
+	};
+
+	CommandHandler::CommandHandler(utility::string_t url) : m_listener(url)
+	{
+		m_listener.support(methods::GET, std::bind(&CommandHandler::handle_get, this, std::placeholders::_1));
+		m_listener.support(methods::POST, std::bind(&CommandHandler::handle_post, this, std::placeholders::_1));
+	}
+
+	void CommandHandler::handle_get(http_request message)
+	{
+		ucout << "GET: " << message.relative_uri().to_string() << std::endl;
+		message.reply(status_codes::OK, "Trainer's Legend G\nsource:https://github.com/MinamiChiwa/Trainers-Legend-G\nQQ Guild: foramghl97\nDiscord: https://discord.com/invite/TBCSv5hU69");
+	};
+
+	void CommandHandler::handle_post(http_request message)
+	{
+		try {
+			auto path = http::uri::decode(message.relative_uri().path());
+			// ucout << "POST: " << path << std::endl;
+
+			if (path == L"/sets") {
+				auto json_data = message.extract_json().get();
+				// ucout << "Data: " << json_data.to_string() << std::endl;
+
+				if (json_data.has_string_field(L"type")) {
+					// ucout << "type: " << json_data.at(L"type").as_string() << std::endl;
+					auto doType = json_data.at(L"type").as_string();
+
+					if (doType == L"reload_all") {
+						printf("reloading all config and data...\n");
+						reload_all_data();
+					}
+				}
+			}
+			message.reply(status_codes::OK, "OK(〃'▽'〃)");
+		}
+		catch (std::exception& ex)
+		{
+			ucout << U("HTTP Server Exception: ") << ex.what() << std::endl;
+			message.reply(status_codes::InternalError, std::format("Error: {}", ex.what()));
+		}
+	};
+
+	bool is_stop_server = false;
+	int http_restart_count = 0;
+
+	void start_http_server(int port, bool openExternalPlugin)
+	{
+		std::thread([port, openExternalPlugin] {
+			try
+			{
+				utility::string_t address = std::format(L"http://*:{}", port);
+				uri_builder uri(address);
+				auto addr = uri.to_uri().to_string();
+				CommandHandler handler(addr);
+				handler.open().wait();
+				MHotkey::setTlgPort(port);
+
+				if (openExternalPlugin && openExternalPluginOnLoad) {  // 打开外部插件
+					MHotkey::fopenExternalPlugin(http_start_port);
+				}
+
+				ucout << utility::string_t(U("Server Start at: ")) << addr << std::endl;
+				while (!is_stop_server) {
+					Sleep(500);
+				}
+			}
+			catch (web::http::http_exception& herr) {
+				if (herr.error_code().value() == 32) {
+					if (http_restart_count > 5) {
+						printf("HTTP Server start failed.\n");
+
+						if (openExternalPlugin && openExternalPluginOnLoad) {  // 打开外部插件
+							MHotkey::fopenExternalPlugin(http_start_port);
+						}
+					}
+					else {
+						printf("port %d already in used, try %d\n", port, port + 1);
+						http_restart_count++;
+						http_start_port++;
+						start_http_server(port + 1, openExternalPlugin);
+						return;
+					}
+				}
+
+				ucout << U("HTTP Server Exception: ") << herr.error_code().value() << " " << herr.what() << std::endl;
+			}
+			catch (std::exception& ex)
+			{
+				ucout << U("HTTP Server Exception: ") << ex.what() << std::endl;
+			}
+			is_stop_server = false;
+			}).detach();
+	}
+
+	void start_http_server(bool openExternalPlugin) {
+		start_http_server(http_start_port, openExternalPlugin);
+	}
+
+	void stop_server() {
+		is_stop_server = true;
+	}
+
+}
+
 int __stdcall DllMain(HINSTANCE dllModule, DWORD reason, LPVOID)
 {
 	if (reason == DLL_PROCESS_ATTACH)
@@ -1224,7 +1372,7 @@ int __stdcall DllMain(HINSTANCE dllModule, DWORD reason, LPVOID)
 		module_name.resize(GetModuleFileName(nullptr, module_name.data(), MAX_PATH));
 
 		std::filesystem::path module_path(module_name);
-
+		
 		// check name
 		if (module_path.filename() != "umamusume.exe")
 			return 1;
@@ -1278,6 +1426,8 @@ int __stdcall DllMain(HINSTANCE dllModule, DWORD reason, LPVOID)
 				_ = freopen("CONOUT$", "w", stderr);
 				_ = freopen("CONIN$", "r", stdin);
 			}
+
+			HttpServer::start_http_server(true);  // 启动HTTP服务器
 
 			auto staticDictCache = ensure_latest_static_cache(g_static_dict_path);
 			if (g_dump_entries)

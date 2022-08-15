@@ -24,6 +24,21 @@
             "description": "允许游戏使用`1080p`以上的分辨率",
             "type": "boolean"
         },
+        "unlockSizeOffset": {
+            "description": "unlockSize 偏移率设置. 当出现点击偏移时可以设置",
+            "type": "object",
+            "properties": {
+                "landspace": {
+                    "description": "横屏状态偏移率",
+                    "type": "number"
+                },
+                "vertical": {
+                    "description": "竖屏状态偏移率",
+                    "type": "number"
+                }
+            },
+            "additionalProperties": false
+        },
         "uiScale": {
             "description": "自定义UI缩放",
             "type": "number"
@@ -94,6 +109,10 @@
                 }
             },
             "additionalProperties": false
+        },
+        "httpServerPort": {
+            "description": "HTTP服务器端口, 用于外部插件交互",
+            "type": "integer"
         },
         "autoChangeLineBreakMode": {
             "description": "根据横竖屏模式自动切换\"忽略换行符\"模式",

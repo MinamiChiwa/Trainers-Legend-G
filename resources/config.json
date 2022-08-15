@@ -3,7 +3,11 @@
     "enableLogger": false,
     "dumpStaticEntries": false,
     "maxFps": 60,
-    "unlockSize": true,
+    "unlockSize": false,
+    "unlockSizeOffset": {
+        "landspace": -0.07144,
+        "vertical": 0
+    },
     "uiScale": 1.0,
     "readRequestPack": false,
     "extraAssetBundlePath": "localized_data/umamusumelocalify",
@@ -29,6 +33,7 @@
         16.0,
         9.0
     ],
+    "httpServerPort": 43215,
     "dicts": [
         "localized_data/event.json",
         "localized_data/LIVE.json",

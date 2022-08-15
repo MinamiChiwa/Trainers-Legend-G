@@ -24,6 +24,21 @@
             "description": "Allow to use the resolution higher than `1080p`",
             "type": "boolean"
         },
+        "unlockSizeOffset": {
+            "description": "unlockSize offset",
+            "type": "object",
+            "properties": {
+                "landspace": {
+                    "description": "landspace offset",
+                    "type": "number"
+                },
+                "vertical": {
+                    "description": "vertical offset",
+                    "type": "number"
+                }
+            },
+            "additionalProperties": false
+        },
         "uiScale": {
             "description": "Customize the scale of ui (set 0.8 if you find your game windows can't show all the graphic)",
             "type": "number"
@@ -94,6 +109,10 @@
                 }
             },
             "additionalProperties": false
+        },
+        "httpServerPort": {
+            "description": "HTTP Server Port",
+            "type": "integer"
         },
         "autoChangeLineBreakMode": {
             "description": "Automatically toggle \"Ignore line break\" mode based on whether the game is 16:9 or 9:16",

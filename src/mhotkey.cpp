@@ -16,6 +16,7 @@ namespace MHotkey{
         std::string umaArgs = "";
         bool openPluginSuccess = false;
         DWORD pluginPID = -1;
+        int tlgport = 43215;
     }
 
     bool check_file_exist(const std::string& name) {
@@ -23,15 +24,15 @@ namespace MHotkey{
         return (stat(name.c_str(), &buffer) == 0);
     }
     
-    void fopenExternalPlugin() {
-        std::thread([](){
+    void fopenExternalPlugin(int tlgPort) {
+        std::thread([tlgPort](){
             if (openPluginSuccess) {
                 printf("External plugin is already open.\n");
                 return;
             }
             openPluginSuccess = true;
 
-            std::string file_check_name = extPluginPath + ".autoupdate";
+            std::string file_check_name = std::format("{}.autoupdate", extPluginPath);
 
             if (MHotkey::extPluginPath == "") {
                 printf("\"externalPlugin\" not found\n");
@@ -47,7 +48,7 @@ namespace MHotkey{
                 }
             }
 
-            std::string cmdLine = extPluginPath + " " + MHotkey::umaArgs;
+            std::string cmdLine = std::format("{} {} --tlgport={}", extPluginPath, MHotkey::umaArgs, tlgPort);
             char* commandLine = new char[255];
             strcpy(commandLine, cmdLine.c_str());
 
@@ -119,7 +120,7 @@ namespace MHotkey{
 
                 if (CTRL_key != 0 && key == hotk)
                 {
-                    fopenExternalPlugin();
+                    fopenExternalPlugin(tlgport);
                 }
 
                 // printf("key = %c\n", key);
@@ -169,6 +170,9 @@ namespace MHotkey{
     }
     void setUmaCommandLine(std::string args) {
         MHotkey::umaArgs = args;
+    }
+    void setTlgPort(int port) {
+        tlgport = port;
     }
 
     int start_hotkey(char sethotk='u')

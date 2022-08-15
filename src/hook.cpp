@@ -530,28 +530,33 @@ namespace
 	void* wndproc_orig = nullptr;
 	LRESULT wndproc_hook(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	{
-		/*  注释掉了屏幕就不错位了, 先暂时这样, 看看有没有BUG(
-		if (uMsg == WM_SIZING)
-		{
-			RECT* rect = reinterpret_cast<RECT*>(lParam);
-
-			float ratio = is_virt() ? 1.f / g_aspect_ratio : g_aspect_ratio;
-			float height = rect->bottom - rect->top;
-			float width = rect->right - rect->left;
-
-			// int www = gallop_get_screenwidth_hook();
-			// int hhh = gallop_get_screenheight_hook();
-			// printf("now width: %f height: %f\nhook: w: %d h: %d\n\n", width, height, www, hhh);
-
-			float new_ratio = width / height;
-
-			if (new_ratio > ratio && height >= last_height || width < last_width)
-				height = width / ratio;
-			else if (new_ratio < ratio && width >= last_width || height < last_height)
-				width = height * ratio;
-
-			switch (wParam)
+		if (g_unlock_size) {
+			if (uMsg == WM_SIZING)
 			{
+				RECT* rect = reinterpret_cast<RECT*>(lParam);
+				bool isVert = is_virt();
+
+				float ratio = isVert ? 1.f / g_aspect_ratio : g_aspect_ratio;
+				float height = rect->bottom - rect->top;
+				float width = rect->right - rect->left;
+
+				float new_ratio = width / height;
+
+				// std::cout << std::format("top: {}, bottom: {}, left: {}, right: {}", rect->top, rect->bottom, rect->left, rect->right) << std::endl;
+				// std::cout << std::format("w:{} h: {} new_ra: {}, set_ra: {}, af_offset_ra: {}\n", width, height, new_ratio, ratio, ratio + (isVert ? g_unlock_size_offset_vert : g_unlock_size_offset_land)) << std::endl;
+				float offset_ratio = ratio + (isVert ? g_unlock_size_offset_vert : g_unlock_size_offset_land);
+				if (offset_ratio <= 0) {
+					std::cout << std::format("offset <= 0, value: {} - {} = {}", ratio, (isVert ? g_unlock_size_offset_vert : g_unlock_size_offset_land), offset_ratio) << endl;
+					offset_ratio = ratio;
+				}
+
+				if (new_ratio > ratio && height >= last_height || width < last_width)
+					height = width / offset_ratio;
+				else if (new_ratio < ratio && width >= last_width || height < last_height)
+					width = height * offset_ratio;
+
+				switch (wParam)
+				{
 				case WMSZ_TOP:
 				case WMSZ_TOPLEFT:
 				case WMSZ_TOPRIGHT:
@@ -560,10 +565,10 @@ namespace
 				default:
 					rect->bottom = rect->top + height;
 					break;
-			}
+				}
 
-			switch (wParam)
-			{
+				switch (wParam)
+				{
 				case WMSZ_LEFT:
 				case WMSZ_TOPLEFT:
 				case WMSZ_BOTTOMLEFT:
@@ -572,14 +577,15 @@ namespace
 				default:
 					rect->right = rect->left + width;
 					break;
+				}
+
+				last_height = height;
+				last_width = width;
+				return TRUE;
 			}
 
-			last_height = height;
-			last_width = width;
-			return TRUE;
 		}
-		*/
-
+	
 		return reinterpret_cast<decltype(wndproc_hook)*>(wndproc_orig)(hWnd, uMsg, wParam, lParam);
 	}
 
@@ -911,11 +917,11 @@ namespace
 
 		if (width > height) {
 			_set_u_stat(false);  // false-横屏
-			std::wprintf(L"已切换到横屏\n");
+			std::wprintf(L"to land: %d * %d\n", width, height);
 		}
 		else {
 			_set_u_stat(true);
-			std::wprintf(L"已切换到竖屏\n");
+			std::wprintf(L"to virt: %d * %d\n", width, height);
 		}
 
 		bool need_fullscreen = false;
@@ -1005,9 +1011,6 @@ namespace
 			return;
 
 		printf("Trying to patch GameAssembly.dll...\n");
-		if (openExternalPluginOnLoad) {
-			MHotkey::fopenExternalPlugin();
-		}
 
 		auto il2cpp_module = GetModuleHandle("GameAssembly.dll");
 
@@ -1327,19 +1330,19 @@ namespace
 			ADD_HOOK(set_fps, "UnityEngine.Application.set_targetFrameRate at %p \n");
 		}
 
-		if (g_unlock_size)
-		{
-			// break 1080p size limit
-			ADD_HOOK(get_virt_size, "Gallop.StandaloneWindowResize.getOptimizedWindowSizeVirt at %p \n");
-			ADD_HOOK(get_hori_size, "Gallop.StandaloneWindowResize.getOptimizedWindowSizeHori at %p \n");
-			//ADD_HOOK(wndproc, "Gallop.StandaloneWindowResize.WndProc at %p \n");
+		// if (g_unlock_size)
+		// {
+		// break 1080p size limit
+		ADD_HOOK(get_virt_size, "Gallop.StandaloneWindowResize.getOptimizedWindowSizeVirt at %p \n");
+		ADD_HOOK(get_hori_size, "Gallop.StandaloneWindowResize.getOptimizedWindowSizeHori at %p \n");
+		ADD_HOOK(wndproc, "Gallop.StandaloneWindowResize.WndProc at %p \n");
 
-			// remove fixed 1080p render resolution
-			ADD_HOOK(gallop_get_screenheight, "Gallop.Screen::get_Height at %p\n");
-			ADD_HOOK(gallop_get_screenwidth, "Gallop.Screen::get_Width at %p\n");
+		// remove fixed 1080p render resolution
+		ADD_HOOK(gallop_get_screenheight, "Gallop.Screen::get_Height at %p\n");
+		ADD_HOOK(gallop_get_screenwidth, "Gallop.Screen::get_Width at %p\n");
 
-			ADD_HOOK(canvas_scaler_setres, "UnityEngine.UI.CanvasScaler::set_referenceResolution at %p\n");
-		}
+		ADD_HOOK(canvas_scaler_setres, "UnityEngine.UI.CanvasScaler::set_referenceResolution at %p\n");
+		// }
 
 		ADD_HOOK(set_resolution, "UnityEngine.Screen.SetResolution(int, int, bool) at %p\n");
 		ADD_HOOK(GallopUtil_GetModifiedString, "GallopUtil_GetModifiedString at %p\n");
