@@ -1,5 +1,5 @@
 {
-    "title": "Umamusume Localify Config",
+    "title": "Trainers-Legend-G Config",
     "description": "赛马娘本地化插件配置",
     "type": "object",
     "properties": {
@@ -21,11 +21,11 @@
             "minimum": -1
         },
         "highQuality": {
-            "description": "高画质模式(FullQuality, MSAA x8)",
+            "description": "高画质模式 (抗锯齿 MSAA x8, 锁定图形质量等级到最高)",
             "type": "boolean"
         },
         "enableVSync": {
-            "description": "开启垂直同步 (开启后maxFps设置将会失效)",
+            "description": "开启垂直同步 (开启后 maxFps 设置将会失效)",
             "type": "boolean"
         },
         "unlockSize": {
