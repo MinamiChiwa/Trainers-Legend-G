@@ -44,6 +44,9 @@ int g_antialiasing = -1;
 int g_graphics_quality = -1;
 int g_vsync_count = 0;
 
+bool g_live_free_camera = false;
+bool g_live_force_changeVisibility_false = false;
+
 std::string g_text_data_dict_path;
 std::string g_character_system_text_dict_path;
 std::string g_race_jikkyo_comment_dict_path;
@@ -485,6 +488,13 @@ namespace
 			if (document.HasMember("vSync_count")) {  // 自定义配置, 不包含到schema
 				g_vsync_count = document["vSync_count"].GetInt();
 			}
+
+			if (document.HasMember("live")) {
+				g_live_free_camera = document["live"]["free_camera"].GetBool();
+				g_live_force_changeVisibility_false = document["live"]["force_changeVisibility_false"].GetBool();
+				auto moveStep = document["live"]["moveStep"].GetFloat();
+				UmaCamera::setMoveStep(moveStep);
+			}
 			
 			if (document.HasMember("aspect_ratio")) {
 				if (document["aspect_ratio"].IsArray()) {
@@ -494,6 +504,7 @@ namespace
 					}
 				}
 			}
+			UmaCamera::initCameraSettings();
 
 			// Looks like not working for now
 			// g_aspect_ratio = document["customAspectRatio"].GetFloat();

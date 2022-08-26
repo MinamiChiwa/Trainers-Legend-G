@@ -38,6 +38,25 @@ public:
 	float z;
 };
 
+// UnityEngine.Rect
+struct Rect_t
+{
+public:
+	Vector2_t center;
+	float height;
+	Vector2_t max;
+	Vector2_t min;
+	Vector2_t position;
+	Vector2_t size;
+	float width;
+	float x;
+	float xMax;
+	float xMin;
+	float y;
+	float yMax;
+	float yMin;
+};
+
 struct Resolution_t
 {
 public:

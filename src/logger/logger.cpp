@@ -7,7 +7,11 @@ namespace logger
 	namespace
 	{
 		fstream log_file;
+		fstream test_log_file;
 
+		bool test_log_opened = false;
+		bool test_log_changed = false;
+		bool test_log_started = false;
 		bool enabled = false;
 		bool request_exit = false;
 		bool has_change = false;
@@ -24,6 +28,43 @@ namespace logger
 				start_pos += to.length(); // In case 'to' contains 'from', like replacing 'x' with 'yx'
 			}
 		}
+	}
+
+	void start_test_log() {
+		test_log_started = true;
+		thread testt([]() {
+			while (true)
+			{
+				this_thread::sleep_for(1s);
+				if (test_log_changed) {
+					test_log_file.flush();
+					test_log_changed = false;
+				}
+			}
+			});
+		testt.detach();
+	}
+
+	void open_test_log_file() {
+		test_log_opened = true;
+		test_log_file.open("legendtest.log", ios::app | ios::out);
+	}
+
+	void write_test_log(wstring text) {
+		if (!test_log_opened) open_test_log_file();
+		if (!test_log_started) start_test_log();
+		auto u8str = local::wide_u8(text);
+		test_log_file << u8str << "\n";
+		test_log_changed = true;
+
+	}
+
+	void write_test_log(string text) {
+		if (!test_log_opened) open_test_log_file();
+		if (!test_log_started) start_test_log();
+		test_log_file << text << "\n";
+		test_log_changed = true;
+
 	}
 
 	void init_logger()

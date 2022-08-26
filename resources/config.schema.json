@@ -99,6 +99,25 @@
             "description": "在屏幕比例对应时自动设置为全屏 (true/false)\n- 如屏幕是16:9 并且横屏，将会在横屏播放剧情/live时全屏\n- 如屏幕是9:16，将会在绝大多数情况下全屏",
             "type": "boolean"
         },
+        "live": {
+            "description": "Live配置",
+            "type": "object",
+            "properties": {
+                "free_camera": {
+                    "description": "启用自由视角",
+                    "type": "boolean"
+                },
+                "force_changeVisibility_false": {
+                    "description": "禁用改变角色可见性",
+                    "type": "boolean"
+                },
+                "moveStep": {
+                    "description": "相机移动步幅",
+                    "type": "number"
+                }
+            },
+            "additionalProperties": false
+        },
         "externalPlugin": {
             "description": "外部插件配置",
             "type": "object",

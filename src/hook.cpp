@@ -540,9 +540,15 @@ namespace
 	void* graphics_quality_orig = nullptr;
 	void graphics_quality_hook(Il2CppObject* thisObj, int quality, bool force) {
 		// printf("setGraphicsQuality: %d -> %d\n", quality, g_graphics_quality);
-		return reinterpret_cast<decltype(graphics_quality_hook)*>(graphics_quality_orig)(thisObj, 
+		return reinterpret_cast<decltype(graphics_quality_hook)*>(graphics_quality_orig)(thisObj,
 			g_graphics_quality == -1 ? quality : g_graphics_quality,
 			true);
+	}
+
+	void* set_RenderTextureAntiAliasing_orig;
+	void set_RenderTextureAntiAliasing_hook(void* _this, int value) {
+		return reinterpret_cast<decltype(set_RenderTextureAntiAliasing_hook)*>(set_RenderTextureAntiAliasing_orig)(_this, 
+			g_antialiasing == -1 ? value : g_antialiasing);
 	}
 
 	bool (*is_virt)() = nullptr;
@@ -922,6 +928,10 @@ namespace
 			text_assign_font(_this);
 		}
 
+		// auto getText = TextCommon_get_text(_this);
+		// logger::write_test_log(getText->start_char);
+		// wprintf(L"inGetText: %ls\n", getText->start_char);
+
 		Text_set_horizontalOverflow(_this, 1);
 		Text_set_verticalOverflow(_this, 1);
 		text_set_style(_this, g_custom_font_style);
@@ -955,6 +965,151 @@ namespace
 		return reinterpret_cast<decltype(set_resolution_hook)*>(set_resolution_orig)(
 			need_fullscreen ? r.width : width, need_fullscreen ? r.height : height, need_fullscreen
 			);
+	}
+
+	void* set_shadows_orig;
+	void set_shadows_hook(void* _this, int value) {
+		// printf("set_shadows: %d\n", value);  暂时没用
+		return reinterpret_cast<decltype(set_shadows_hook)*>(set_shadows_orig)(_this, value);
+	}
+
+	void* set_shadow_resolution_orig;
+	void set_shadow_resolution_hook(void* _this, int value) {
+		// printf("shadowResolution: %d\n", value);  暂时没用
+		return reinterpret_cast<decltype(set_shadow_resolution_hook)*>(set_shadow_resolution_orig)(_this, value);
+	}
+
+	void* alterupdate_camera_pos_orig;
+	void alterupdate_camera_pos_hook(void* _this, Il2CppObject* sheet, int currentFrame, int sheetIndex, bool isUseCameraMotion) {
+		// printf("frame: %d, index: %d, motion: %s\n", currentFrame, sheetIndex, isUseCameraMotion ? "true" : "false");
+		return reinterpret_cast<decltype(alterupdate_camera_pos_hook)*>(alterupdate_camera_pos_orig)(
+			_this, sheet, currentFrame, sheetIndex, isUseCameraMotion);
+	}
+
+	void* AlterUpdate_RadialBlur_orig;
+	void AlterUpdate_RadialBlur_hook(void* _this, Il2CppObject* sheet, int currentFrame) {
+		if (g_live_free_camera) return;
+		return reinterpret_cast<decltype(AlterUpdate_RadialBlur_hook)*>(AlterUpdate_RadialBlur_orig)(
+			_this, sheet, currentFrame);
+
+		// printf("AlterUpdate_RadialBlur frame: %d\n", currentFrame);
+	}
+
+	void* AlterUpdate_MultiCameraRadialBlur_orig;
+	void AlterUpdate_MultiCameraRadialBlur_hook(void* _this, void* sheet, int frame) {
+		if (g_live_free_camera) return;
+		return reinterpret_cast<decltype(AlterUpdate_MultiCameraRadialBlur_hook)*>(AlterUpdate_MultiCameraRadialBlur_orig)(
+			_this, sheet, frame);
+
+		// printf("AlterUpdate_MultiCameraRadialBlur frame: %d\n", frame);
+		// return reinterpret_cast<decltype(AlterUpdate_MultiCameraRadialBlur_hook)*>(AlterUpdate_MultiCameraRadialBlur_orig)(_this, sheet, frame);
+	}
+
+	void* SetupRadialBlurInfo_orig;
+	void SetupRadialBlurInfo_hook(void* _this, void* updateInfo, void* curData, void* nextData, int currentFrame) {
+		if (g_live_free_camera) return;
+		return reinterpret_cast<decltype(SetupRadialBlurInfo_hook)*>(SetupRadialBlurInfo_orig)(
+			_this, updateInfo, curData, nextData, currentFrame);
+		// printf("SetupRadialBlurInfo frame: %d\n", currentFrame);
+	}
+
+	void* alterupdate_eye_camera_pos_orig;
+	void alterupdate_eye_camera_pos_hook(void* _this, Il2CppObject* sheet, int currentFrame) {
+		return reinterpret_cast<decltype(alterupdate_eye_camera_pos_hook)*>(alterupdate_eye_camera_pos_orig)(
+			_this, sheet, currentFrame);
+	}
+
+	void* update_live_camera_offset_orig;
+	void update_live_camera_offset_hook(void* _this, void* sheet, int currentFrame, void* characterObjectList, bool changeVisibility) {
+		// printf("offset frame: %d\n", currentFrame);  控制角色
+		return reinterpret_cast<decltype(update_live_camera_offset_hook)*>(update_live_camera_offset_orig)(_this, sheet, currentFrame, characterObjectList, g_live_force_changeVisibility_false ? false : changeVisibility);
+	}
+
+	void* get_camera_pos_orig;
+	Vector3_t* get_camera_pos_hook(void* _this, Il2CppObject* timelineControl) {
+		auto pos = reinterpret_cast<decltype(get_camera_pos_hook)*>(get_camera_pos_orig)(_this, timelineControl);
+		if (!g_live_free_camera) {
+			return pos;
+		}
+
+		printf("orig_pos: %f, %f, %f\n", pos->x, pos->y, pos->z);
+		auto setPos = UmaCamera::getCameraPos();
+		pos->x = setPos.x;
+		pos->y = setPos.y;
+		pos->z = setPos.z;
+		// printf("pos: %f, %f, %f\n", pos->x, pos->y, pos->z);
+		return pos;
+	}
+
+	void* alterupdate_camera_lookat_orig;
+	void alterupdate_camera_lookat_hook(void* _this, Il2CppObject* sheet, int currentFrame, Vector3_t* outLookAt) {
+		if (!g_live_free_camera) {
+			 return reinterpret_cast<decltype(alterupdate_camera_lookat_hook)*>(alterupdate_camera_lookat_orig)(
+				_this, sheet, currentFrame, outLookAt);
+		}
+
+		auto setLookat = UmaCamera::getCameraLookat();
+		outLookAt->x = setLookat.x;
+		outLookAt->y = setLookat.y;
+		outLookAt->z = setLookat.z;
+		// printf("frame: %d, look: %f, %f, %f\n", currentFrame, outLookAt->x, outLookAt->y, outLookAt->z);
+	}
+
+	void* live_on_destroy_orig;
+	void live_on_destroy_hook(void* _this) {
+		printf("Live End!\n");
+		UmaCamera::reset_camera();
+		return reinterpret_cast<decltype(live_on_destroy_hook)*>(live_on_destroy_orig)(_this);
+	}
+
+	void* get_camera_pos2_orig;  // 暂时没用
+	Vector3_t* get_camera_pos2_hook(void* _this, Il2CppObject* timelineControl, void* type) {
+		auto pos = reinterpret_cast<decltype(get_camera_pos2_hook)*>(get_camera_pos2_orig)(_this, timelineControl, type);
+		printf("pos2: %f, %f, %f\n", pos->x, pos->y, pos->z);
+		return pos;
+	}
+
+	void* AlterLateUpdate_CameraMotion_orig;
+	bool AlterLateUpdate_CameraMotion_hook(void* _this, Il2CppObject* sheet, int currentFrame) {  // main
+		return reinterpret_cast<decltype(AlterLateUpdate_CameraMotion_hook)*>(AlterLateUpdate_CameraMotion_orig)(_this, sheet, currentFrame);
+		// printf("frame_motion: %d\n", currentFrame);
+		// return true;
+	}
+
+	void* AlterUpdate_CameraFov_orig;
+	bool AlterUpdate_CameraFov_hook(void* _this, Il2CppObject* sheet, int currentFrame) {
+		if (!g_live_free_camera) {
+			return reinterpret_cast<decltype(AlterUpdate_CameraFov_hook)*>(AlterUpdate_CameraFov_orig)(_this, sheet, currentFrame);
+		}
+		// printf("updateFOV: %d\n", currentFrame);
+		return true;
+	}
+
+	void* AlterUpdate_CameraRoll_orig;
+	bool AlterUpdate_CameraRoll_hook(void* _this, Il2CppObject* sheet, int currentFrame) {
+		if (!g_live_free_camera) {
+			return reinterpret_cast<decltype(AlterUpdate_CameraRoll_hook)*>(AlterUpdate_CameraRoll_orig)(_this, sheet, currentFrame);
+		}
+		// printf("updateRoll: %d\n", currentFrame);
+		return true;
+	}
+
+	void* AlterUpdate_CameraSwitcher_orig;
+	bool AlterUpdate_CameraSwitcher_hook(void* _this, Il2CppObject* sheet, int currentFrame) {
+		if (!g_live_free_camera) {
+			return reinterpret_cast<decltype(AlterUpdate_CameraSwitcher_hook)*>(AlterUpdate_CameraSwitcher_orig)(_this, sheet, currentFrame);
+		}
+		// printf("updateCameraSwitcher: %d\n", currentFrame);
+		return true;
+	}
+
+	void* AlterUpdate_MultiCamera_orig;
+	bool AlterUpdate_MultiCamera_hook(void* _this, Il2CppObject* sheet, int currentFrame) {
+		if (!g_live_free_camera) {
+			return reinterpret_cast<decltype(AlterUpdate_MultiCamera_hook)*>(AlterUpdate_MultiCamera_orig)(_this, sheet, currentFrame);
+		}
+		// printf("updateMultiCamera: %d\n", currentFrame);
+		return true;
 	}
 
 	void* GallopUtil_GetModifiedString_orig;
@@ -1310,9 +1465,99 @@ namespace
 			"Screen", "SetResolution", 3
 		);
 
+		auto set_shadow_resolution_addr = il2cpp_symbols::get_method_pointer(
+			"UnityEngine.CoreModule.dll", "UnityEngine",
+			"Light", "set_shadowResolution", 1
+		);
+
+		auto set_shadows_addr = il2cpp_symbols::get_method_pointer(
+			"UnityEngine.CoreModule.dll", "UnityEngine",
+			"Light", "set_shadows", 1
+		);
+
+		auto set_RenderTextureAntiAliasing_addr = il2cpp_symbols::get_method_pointer(
+			"UnityEngine.CoreModule.dll", "UnityEngine",
+			"RenderTexture", "set_antiAliasing", 1
+		);
+
 		auto on_exit_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"GameSystem", "OnApplicationQuit", 0
+		);
+
+		auto alterupdate_camera_pos_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "AlterUpdate_CameraPos", 4
+		);
+
+		auto AlterUpdate_RadialBlur_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "AlterUpdate_RadialBlur", 2
+		);
+
+		auto SetupRadialBlurInfo_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "SetupRadialBlurInfo", 4
+		);
+
+		auto AlterUpdate_MultiCameraRadialBlur_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "AlterUpdate_MultiCameraRadialBlur", 2
+		);
+
+		auto alterupdate_eye_camera_pos_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "AlterUpdate_EyeCameraPosition", 2
+		);
+
+		auto get_camera_pos_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineKeyCameraPositionData", "GetValue", 1
+		);
+
+		auto get_camera_pos2_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "AlterUpdate_FormationOffset", 2
+		);
+
+		auto update_live_camera_offset_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "AlterUpdate_FormationOffset", 4
+		);
+
+		auto AlterLateUpdate_CameraMotion_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "AlterLateUpdate_CameraMotion", 2
+		);
+
+		auto AlterUpdate_CameraFov_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "AlterUpdate_CameraFov", 2
+		);
+
+		auto AlterUpdate_CameraRoll_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "AlterUpdate_CameraRoll", 2
+		);
+
+		auto AlterUpdate_CameraSwitcher_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "AlterUpdate_CameraSwitcher", 2
+		);
+
+		auto AlterUpdate_MultiCamera_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "AlterUpdate_MultiCamera", 2
+		);
+
+		auto alterupdate_camera_lookat_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "AlterUpdate_CameraLookAt", 3
+		);
+
+		auto live_on_destroy_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "OnDestroy", 0
 		);
 
 		auto load_scene_internal_addr = il2cpp_resolve_icall("UnityEngine.SceneManagement.SceneManager::LoadSceneAsyncNameIndexInternal_Injected(System.String,System.Int32,UnityEngine.SceneManagement.LoadSceneParameters&,System.Boolean)");
@@ -1340,6 +1585,25 @@ namespace
 		ADD_HOOK(query_dispose, "Query::Dispose at %p\n");
 		ADD_HOOK(PreparedQuery_BindInt, "PreparedQuery::BindInt at %p\n");
 		ADD_HOOK(Query_Step, "Query::Step at %p\n");
+		ADD_HOOK(alterupdate_camera_pos, "alterupdate_camera_pos at %p\n");
+		ADD_HOOK(alterupdate_camera_lookat, "alterupdate_camera_lookat at %p\n");
+		ADD_HOOK(live_on_destroy, "live_on_destroy at %p\n");
+		ADD_HOOK(get_camera_pos, "get_camera_pos at %p\n");
+		ADD_HOOK(get_camera_pos2, "get_camera_pos2 at %p\n");
+		ADD_HOOK(update_live_camera_offset, "update_live_camera_offset at %p\n");
+		ADD_HOOK(alterupdate_eye_camera_pos, "alterupdate_eye_camera_pos at %p\n");
+		ADD_HOOK(AlterLateUpdate_CameraMotion, "AlterLateUpdate_CameraMotion at %p\n");
+		ADD_HOOK(AlterUpdate_CameraFov, "AlterUpdate_CameraFov at %p\n");
+		ADD_HOOK(AlterUpdate_CameraRoll, "AlterUpdate_CameraRoll at %p\n");
+		ADD_HOOK(AlterUpdate_CameraSwitcher, "AlterUpdate_CameraSwitcher at %p\n");
+		ADD_HOOK(AlterUpdate_RadialBlur, "AlterUpdate_RadialBlur at %p\n");
+		ADD_HOOK(AlterUpdate_MultiCameraRadialBlur, "AlterUpdate_MultiCameraRadialBlur at %p\n");
+		ADD_HOOK(SetupRadialBlurInfo, "SetupRadialBlurInfo at %p\n");
+		ADD_HOOK(AlterUpdate_MultiCamera, "AlterUpdate_MultiCamera at %p\n");
+		ADD_HOOK(set_shadow_resolution, "set_shadow_resolution at %p\n");
+		ADD_HOOK(set_RenderTextureAntiAliasing, "set_RenderTextureAntiAliasing at %p\n");
+		ADD_HOOK(set_shadows, "set_shadows at %p\n");
+
 		//ADD_HOOK(camera_reset, "UnityEngine.Camera.Reset() at %p\n");
 
 		// ADD_HOOK(load_scene_internal, "SceneManager::LoadSceneAsyncNameIndexInternal at %p\n");

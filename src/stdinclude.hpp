@@ -34,6 +34,8 @@
 #include "auto_update/auto_update.hpp"
 #include "msgpack/msgpack.hpp"
 
+#include "camera/camera.hpp"
+
 extern bool g_dump_entries;
 extern bool g_enable_logger;
 extern bool g_enable_console;
@@ -78,3 +80,5 @@ extern int http_start_port;
 extern int g_antialiasing;
 extern int g_graphics_quality;
 extern int g_vsync_count;
+extern bool g_live_free_camera;
+extern bool g_live_force_changeVisibility_false;

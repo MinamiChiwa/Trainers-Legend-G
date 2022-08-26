@@ -99,6 +99,25 @@
             "description": "Full screen the game automaticlly.\nIf monitor resolution is 16:9, game will be full screened during watching live/story\nIf monitor resolution is 9:16, game will be full screened in most circumstances",
             "type": "boolean"
         },
+        "live": {
+            "description": "Set Live",
+            "type": "object",
+            "properties": {
+                "free_camera": {
+                    "description": "Enable free camera",
+                    "type": "boolean"
+                },
+                "force_changeVisibility_false": {
+                    "description": "Force disable character visibility changing",
+                    "type": "boolean"
+                },
+                "moveStep": {
+                    "description": "Camera move step",
+                    "type": "number"
+                }
+            },
+            "additionalProperties": false
+        },
         "externalPlugin": {
             "description": "Set external plugin.",
             "type": "object",

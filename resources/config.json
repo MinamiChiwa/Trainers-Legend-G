@@ -21,6 +21,11 @@
     "replaceAssets": true,
     "assetLoadLog": false,
     "autoFullscreen": false,
+    "live": {
+        "free_camera": false,
+        "force_changeVisibility_false": false,
+        "moveStep": 0.1
+    },
     "externalPlugin": {
         "hotkey": "u",
         "path": "legend_g_plugin.exe",
