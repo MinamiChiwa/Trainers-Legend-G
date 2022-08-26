@@ -40,6 +40,9 @@ bool g_no_static_dict_cache;
 std::string g_stories_path;
 bool g_read_request_pack = true;
 int http_start_port = 43215;
+int g_antialiasing = -1;
+int g_graphics_quality = -1;
+int g_vsync_count = 0;
 
 std::string g_text_data_dict_path;
 std::string g_character_system_text_dict_path;
@@ -453,6 +456,36 @@ namespace
 				}
 			}
 
+			if (document.HasMember("highQuality")) {
+				if (document["highQuality"].GetBool()) {
+					g_graphics_quality = 3;
+					g_antialiasing = 8;
+				}
+				else {
+					g_graphics_quality = -1;
+					g_antialiasing = -1;
+				}
+			}
+
+			if (document.HasMember("enableVSync")) {
+				if (document["enableVSync"].GetBool()) {
+					g_vsync_count = 1;
+				}
+				else {
+					g_vsync_count = 0;
+				}
+			}
+			
+			if (document.HasMember("antiAliasing")) {  // 自定义配置, 不包含到schema
+				g_antialiasing = document["antiAliasing"].GetInt();
+			}
+			if (document.HasMember("graphics_quality")) {  // 自定义配置, 不包含到schema
+				g_graphics_quality = document["graphics_quality"].GetInt();
+			}
+			if (document.HasMember("vSync_count")) {  // 自定义配置, 不包含到schema
+				g_vsync_count = document["vSync_count"].GetInt();
+			}
+			
 			if (document.HasMember("aspect_ratio")) {
 				if (document["aspect_ratio"].IsArray()) {
 					auto asp = document["aspect_ratio"].GetArray();

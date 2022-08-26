@@ -3,6 +3,8 @@
     "enableLogger": false,
     "dumpStaticEntries": false,
     "maxFps": 60,
+    "highQuality": true,
+    "enableVSync": false,
     "unlockSize": false,
     "unlockSizeOffset": {
         "landspace": -0.07144,

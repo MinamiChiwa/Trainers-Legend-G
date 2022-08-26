@@ -1,5 +1,5 @@
 {
-    "title": "Umamusume Localify Config",
+    "title": "Trainers-Legend-G Config",
     "description": "Umamusume Localify Config",
     "type": "object",
     "properties": {
@@ -16,9 +16,17 @@
             "type": "boolean"
         },
         "maxFps": {
-            "description": "Fps setting (-1 = Default fps|0 = Infinity|>0 = Limit game to specific fps)——Vertical synchronization is enabled",
+            "description": "Fps setting (-1 = Default fps|0 = Infinity|>0 = Limit game to specific fps)",
             "type": "integer",
             "minimum": -1
+        },
+        "highQuality": {
+            "description": "High quality mode (FullQuality, MSAA x8)",
+            "type": "boolean"
+        },
+        "enableVSync": {
+            "description": "Enable vertical synchronization",
+            "type": "boolean"
         },
         "unlockSize": {
             "description": "Allow to use the resolution higher than `1080p`",
