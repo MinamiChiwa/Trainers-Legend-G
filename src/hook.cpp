@@ -997,13 +997,23 @@ namespace
 
 	void* get_IsEnabledDiffusion_orig;
 	bool get_IsEnabledDiffusion_hook(void* _this) {
-		if (g_live_free_camera) return false;
+		// if (g_live_free_camera) return false;  // 唱歌口型问题
 		return reinterpret_cast<decltype(get_IsEnabledDiffusion_hook)*>(get_IsEnabledDiffusion_orig)(_this);
+	}
+
+	void* LiveTimelineKeyRadialBlurData_get_orig;
+	bool LiveTimelineKeyRadialBlurData_get_hook(void* _this) {
+		auto data = reinterpret_cast<decltype(LiveTimelineKeyRadialBlurData_get_hook)*>(LiveTimelineKeyRadialBlurData_get_orig)(_this);
+		// printf("nbnbnbnb: %d\n", data);
+		if (g_live_free_camera)
+			return !data;
+		else
+			return data;
 	}
 
 	void* get_IsEnabledBloom_orig;
 	bool get_IsEnabledBloom_hook(void* _this) {
-		if (g_live_free_camera) return false;
+		// if (g_live_free_camera) return false;  // 非唱歌期间表情问题
 		return reinterpret_cast<decltype(get_IsEnabledBloom_hook)*>(get_IsEnabledBloom_orig)(_this);
 	}
 
@@ -1180,7 +1190,7 @@ namespace
 
 	void* AlterUpdate_CameraMotion_orig;
 	bool AlterUpdate_CameraMotion_hook(void* _this, Il2CppObject* sheet, int currentFrame) {
-		if (g_live_free_camera) return true;
+		// if (g_live_free_camera) return true;
 		// printf("frame_motion: %d\n", currentFrame);
 		return reinterpret_cast<decltype(AlterUpdate_CameraMotion_hook)*>(AlterUpdate_CameraMotion_orig)(_this, sheet, currentFrame);
 		// return true;
@@ -1608,6 +1618,11 @@ namespace
 			"LiveTimelineKeyPostEffectBloomDiffusionData", "get_IsEnabledDiffusion", 0
 		);
 
+		auto LiveTimelineKeyRadialBlurData_get_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineKeyRadialBlurData", "get_IsEnabledDepthCancelRect", 0
+		);
+
 		auto get_IsEnabledBloom_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop.Live.Cutt",
 			"LiveTimelineKeyPostEffectBloomDiffusionData", "get_IsEnabledBloom", 0
@@ -1781,6 +1796,7 @@ namespace
 		ADD_HOOK(AlterUpdate_CameraSwitcher, "AlterUpdate_CameraSwitcher at %p\n");
 		ADD_HOOK(AlterUpdate_RadialBlur, "AlterUpdate_RadialBlur at %p\n");
 		ADD_HOOK(get_IsEnabledDiffusion, "get_IsEnabledDiffusion at %p\n");
+		ADD_HOOK(LiveTimelineKeyRadialBlurData_get, "LiveTimelineKeyRadialBlurData_get at %p\n");
 		ADD_HOOK(get_IsEnabledBloom, "get_IsEnabledBloom at %p\n");
 		ADD_HOOK(SetupRadialBlurInfo, "SetupRadialBlurInfo at %p\n");
 		ADD_HOOK(AlterUpdate_MultiCameraRadialBlur, "AlterUpdate_MultiCameraRadialBlur at %p\n");
