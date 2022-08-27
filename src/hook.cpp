@@ -979,11 +979,11 @@ namespace
 		return reinterpret_cast<decltype(set_shadow_resolution_hook)*>(set_shadow_resolution_orig)(_this, value);
 	}
 
-	void* alterupdate_camera_pos_orig;
-	void alterupdate_camera_pos_hook(void* _this, Il2CppObject* sheet, int currentFrame, int sheetIndex, bool isUseCameraMotion) {
+	void* AlterUpdate_CameraPos_orig;
+	void AlterUpdate_CameraPos_hook(void* _this, Il2CppObject* sheet, int currentFrame, int sheetIndex, bool isUseCameraMotion) {
 		// printf("frame: %d, index: %d, motion: %s\n", currentFrame, sheetIndex, isUseCameraMotion ? "true" : "false");
-		return reinterpret_cast<decltype(alterupdate_camera_pos_hook)*>(alterupdate_camera_pos_orig)(
-			_this, sheet, currentFrame, sheetIndex, isUseCameraMotion);
+		return reinterpret_cast<decltype(AlterUpdate_CameraPos_hook)*>(AlterUpdate_CameraPos_orig)(
+			_this, sheet, g_live_free_camera ? 0: currentFrame, sheetIndex, isUseCameraMotion);
 	}
 
 	void* AlterUpdate_RadialBlur_orig;
@@ -993,6 +993,21 @@ namespace
 			_this, sheet, currentFrame);
 
 		// printf("AlterUpdate_RadialBlur frame: %d\n", currentFrame);
+	}
+
+	void* AlterUpdate_MultiCameraPosition_orig;
+	void AlterUpdate_MultiCameraPosition_hook(void* _this, void* sheet, int currentFrame) {
+		// printf("UpdMultiPos: %d\n", currentFrame);
+		if (g_live_free_camera) return;
+		return reinterpret_cast<decltype(AlterUpdate_MultiCameraPosition_hook)*>(AlterUpdate_MultiCameraPosition_orig)(
+			_this, sheet, currentFrame);
+	}
+
+	void* AlterUpdate_MultiCameraLookAt_orig;
+	void AlterUpdate_MultiCameraLookAt_hook(void* _this, void* sheet, int currentFrame) {
+		if (g_live_free_camera) return;
+		return reinterpret_cast<decltype(AlterUpdate_MultiCameraLookAt_hook)*>(AlterUpdate_MultiCameraLookAt_orig)(
+			_this, sheet, currentFrame);
 	}
 
 	void* AlterUpdate_MultiCameraRadialBlur_orig;
@@ -1015,14 +1030,22 @@ namespace
 
 	void* alterupdate_eye_camera_pos_orig;
 	void alterupdate_eye_camera_pos_hook(void* _this, Il2CppObject* sheet, int currentFrame) {
+		if (g_live_free_camera) return;
 		return reinterpret_cast<decltype(alterupdate_eye_camera_pos_hook)*>(alterupdate_eye_camera_pos_orig)(
 			_this, sheet, currentFrame);
 	}
 
-	void* update_live_camera_offset_orig;
-	void update_live_camera_offset_hook(void* _this, void* sheet, int currentFrame, void* characterObjectList, bool changeVisibility) {
+	void* AlterUpdate_FormationOffset_orig;
+	void AlterUpdate_FormationOffset_hook(void* _this, void* sheet, int currentFrame, void* characterObjectList, bool changeVisibility) {
 		// printf("offset frame: %d\n", currentFrame);  控制角色
-		return reinterpret_cast<decltype(update_live_camera_offset_hook)*>(update_live_camera_offset_orig)(_this, sheet, currentFrame, characterObjectList, g_live_force_changeVisibility_false ? false : changeVisibility);
+		return reinterpret_cast<decltype(AlterUpdate_FormationOffset_hook)*>(AlterUpdate_FormationOffset_orig)(_this, sheet, currentFrame, characterObjectList, g_live_force_changeVisibility_false ? false : changeVisibility);
+	}
+
+	void* AlterUpdate_PostEffect_BloomDiffusion_orig;
+	void AlterUpdate_PostEffect_BloomDiffusion_hook(void* _this, Il2CppObject* sheet, int currentFrame) {
+		if (g_live_free_camera) return;
+		return reinterpret_cast<decltype(AlterUpdate_PostEffect_BloomDiffusion_hook)*>(AlterUpdate_PostEffect_BloomDiffusion_orig)(
+			_this, sheet, currentFrame);
 	}
 
 	void* get_camera_pos_orig;
@@ -1031,8 +1054,7 @@ namespace
 		if (!g_live_free_camera) {
 			return pos;
 		}
-
-		printf("orig_pos: %f, %f, %f\n", pos->x, pos->y, pos->z);
+		// printf("orig_pos: %f, %f, %f\n", pos->x, pos->y, pos->z);
 		auto setPos = UmaCamera::getCameraPos();
 		pos->x = setPos.x;
 		pos->y = setPos.y;
@@ -1055,6 +1077,52 @@ namespace
 		// printf("frame: %d, look: %f, %f, %f\n", currentFrame, outLookAt->x, outLookAt->y, outLookAt->z);
 	}
 
+	void* AlterUpdate_MonitorCameraLookAt_orig;
+	void AlterUpdate_MonitorCameraLookAt_hook(void* _this, Il2CppObject* sheet, int currentFrame) {
+		// printf("AlterUpdate_MonitorCameraLookAt frame: %d\n", currentFrame);
+		if (!g_live_free_camera) {
+			return reinterpret_cast<decltype(AlterUpdate_MonitorCameraLookAt_hook)*>(AlterUpdate_MonitorCameraLookAt_orig)(
+				_this, sheet, currentFrame);
+		}
+	}
+
+	void* AlterUpdate_CameraSwitcher_orig;
+	void AlterUpdate_CameraSwitcher_hook(void* _this, Il2CppObject* sheet, int currentFrame) {
+		// printf("AlterUpdate_CameraSwitcher frame: %d\n", currentFrame);
+		if (!g_live_free_camera) {
+			return reinterpret_cast<decltype(AlterUpdate_CameraSwitcher_hook)*>(AlterUpdate_CameraSwitcher_orig)(
+				_this, sheet, currentFrame);
+		}
+	}
+
+	void* LiveTimelineEasing_orig;
+	float LiveTimelineEasing_hook(void* type, float t, float b, float c, float d) {
+		auto data = reinterpret_cast<decltype(LiveTimelineEasing_hook)*>(LiveTimelineEasing_orig)(
+			type, t, b, c, d);
+		if (!g_live_free_camera) {
+			return data;
+		}
+		// printf("LiveTimelineEasing: %f\n", data);
+		return 0;
+	}
+
+	void* LiveTimelineMotionSequence_AlterUpdate_orig;  // 角色动作
+	void LiveTimelineMotionSequence_AlterUpdate_hook(void* _this, int currentFrame, float currentTime, float addTime, float targetFps, void* timescaleKeys) {
+		// printf("MotionSequenceUpdate frame: %d, currTime: %f, addTime: %f, targetFps: %f\n", currentFrame, currentTime, addTime, targetFps);
+		return reinterpret_cast<decltype(LiveTimelineMotionSequence_AlterUpdate_hook)*>(LiveTimelineMotionSequence_AlterUpdate_orig)(
+			_this, currentFrame, currentTime, addTime, targetFps, timescaleKeys
+			);
+	}
+
+	void* AlterUpdate_EyeCameraLookAt_orig;
+	void AlterUpdate_EyeCameraLookAt_hook(void* _this, Il2CppObject* sheet, int currentFrame) {
+		// printf("AlterUpdate_EyeCameraLookAt frame: %d\n", currentFrame);
+		if (!g_live_free_camera) {
+			return reinterpret_cast<decltype(AlterUpdate_EyeCameraLookAt_hook)*>(AlterUpdate_EyeCameraLookAt_orig)(
+				_this, sheet, currentFrame);
+		}
+	}
+
 	void* live_on_destroy_orig;
 	void live_on_destroy_hook(void* _this) {
 		printf("Live End!\n");
@@ -1066,13 +1134,50 @@ namespace
 	Vector3_t* get_camera_pos2_hook(void* _this, Il2CppObject* timelineControl, void* type) {
 		auto pos = reinterpret_cast<decltype(get_camera_pos2_hook)*>(get_camera_pos2_orig)(_this, timelineControl, type);
 		printf("pos2: %f, %f, %f\n", pos->x, pos->y, pos->z);
+		if (!g_live_free_camera) {
+			return pos;
+		}
+		auto setPos = UmaCamera::getCameraPos();
+		pos->x = setPos.x;
+		pos->y = setPos.y;
+		pos->z = setPos.z;
 		return pos;
+	}
+
+	void* AlterUpdate_CameraMotion_orig;
+	bool AlterUpdate_CameraMotion_hook(void* _this, Il2CppObject* sheet, int currentFrame) {
+		if (g_live_free_camera) return true;
+		// printf("frame_motion: %d\n", currentFrame);
+		return reinterpret_cast<decltype(AlterUpdate_CameraMotion_hook)*>(AlterUpdate_CameraMotion_orig)(_this, sheet, currentFrame);
+		// return true;
+	}
+
+	void* AlterUpdate_CameraLayer_orig;
+	void AlterUpdate_CameraLayer_hook(void* _this, void* sheet, int currentFrame, Vector3_t* offsetMaxPosition, Vector3_t* offsetMinPosition) {
+		if (g_live_free_camera) return;
+		return reinterpret_cast<decltype(AlterUpdate_CameraLayer_hook)*>(AlterUpdate_CameraLayer_orig)(
+			_this, sheet, currentFrame, offsetMaxPosition, offsetMinPosition
+		);
+	}
+
+	void* AlterUpdate_TiltShift_orig;
+	void AlterUpdate_TiltShift_hook(void* _this, Il2CppObject* sheet, int currentFrame) {
+		if (g_live_free_camera) return;
+		return reinterpret_cast<decltype(AlterUpdate_TiltShift_hook)*>(AlterUpdate_TiltShift_orig)(_this, sheet, currentFrame);
+		// return true;
+	}
+
+	void* AlterUpdate_PostEffect_DOF_orig;
+	void AlterUpdate_PostEffect_DOF_hook(void* _this, Il2CppObject* sheet, int currentFrame, Vector3_t* cameraLookAt) {
+		if (g_live_free_camera) return;
+		return reinterpret_cast<decltype(AlterUpdate_PostEffect_DOF_hook)*>(AlterUpdate_PostEffect_DOF_orig)(_this, sheet, currentFrame, cameraLookAt);
+		// return true;
 	}
 
 	void* AlterLateUpdate_CameraMotion_orig;
 	bool AlterLateUpdate_CameraMotion_hook(void* _this, Il2CppObject* sheet, int currentFrame) {  // main
+		// printf("frame_late_motion: %d\n", currentFrame);
 		return reinterpret_cast<decltype(AlterLateUpdate_CameraMotion_hook)*>(AlterLateUpdate_CameraMotion_orig)(_this, sheet, currentFrame);
-		// printf("frame_motion: %d\n", currentFrame);
 		// return true;
 	}
 
@@ -1091,15 +1196,6 @@ namespace
 			return reinterpret_cast<decltype(AlterUpdate_CameraRoll_hook)*>(AlterUpdate_CameraRoll_orig)(_this, sheet, currentFrame);
 		}
 		// printf("updateRoll: %d\n", currentFrame);
-		return true;
-	}
-
-	void* AlterUpdate_CameraSwitcher_orig;
-	bool AlterUpdate_CameraSwitcher_hook(void* _this, Il2CppObject* sheet, int currentFrame) {
-		if (!g_live_free_camera) {
-			return reinterpret_cast<decltype(AlterUpdate_CameraSwitcher_hook)*>(AlterUpdate_CameraSwitcher_orig)(_this, sheet, currentFrame);
-		}
-		// printf("updateCameraSwitcher: %d\n", currentFrame);
 		return true;
 	}
 
@@ -1485,7 +1581,7 @@ namespace
 			"GameSystem", "OnApplicationQuit", 0
 		);
 
-		auto alterupdate_camera_pos_addr = il2cpp_symbols::get_method_pointer(
+		auto AlterUpdate_CameraPos_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop.Live.Cutt",
 			"LiveTimelineControl", "AlterUpdate_CameraPos", 4
 		);
@@ -1517,12 +1613,37 @@ namespace
 
 		auto get_camera_pos2_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop.Live.Cutt",
-			"LiveTimelineControl", "AlterUpdate_FormationOffset", 2
+			"LiveTimelineKeyCameraPositionData", "GetValue", 2
 		);
 
-		auto update_live_camera_offset_addr = il2cpp_symbols::get_method_pointer(
+		auto AlterUpdate_FormationOffset_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop.Live.Cutt",
 			"LiveTimelineControl", "AlterUpdate_FormationOffset", 4
+		);
+
+		auto AlterUpdate_PostEffect_BloomDiffusion_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "AlterUpdate_PostEffect_BloomDiffusion", 2
+		);
+
+		auto AlterUpdate_CameraMotion_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "AlterUpdate_CameraMotion", 2
+		);
+
+		auto AlterUpdate_TiltShift_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "AlterUpdate_TiltShift", 2
+		);
+
+		auto AlterUpdate_PostEffect_DOF_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "AlterUpdate_PostEffect_DOF", 3
+		);
+
+		auto AlterUpdate_CameraLayer_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "AlterUpdate_CameraLayer", 4
 		);
 
 		auto AlterLateUpdate_CameraMotion_addr = il2cpp_symbols::get_method_pointer(
@@ -1540,11 +1661,6 @@ namespace
 			"LiveTimelineControl", "AlterUpdate_CameraRoll", 2
 		);
 
-		auto AlterUpdate_CameraSwitcher_addr = il2cpp_symbols::get_method_pointer(
-			"umamusume.dll", "Gallop.Live.Cutt",
-			"LiveTimelineControl", "AlterUpdate_CameraSwitcher", 2
-		);
-
 		auto AlterUpdate_MultiCamera_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop.Live.Cutt",
 			"LiveTimelineControl", "AlterUpdate_MultiCamera", 2
@@ -1553,6 +1669,41 @@ namespace
 		auto alterupdate_camera_lookat_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop.Live.Cutt",
 			"LiveTimelineControl", "AlterUpdate_CameraLookAt", 3
+		);
+
+		auto AlterUpdate_CameraSwitcher_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "AlterUpdate_CameraSwitcher", 2
+		);
+
+		auto AlterUpdate_MonitorCameraLookAt_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "AlterUpdate_MonitorCameraLookAt", 2
+		);
+
+		auto LiveTimelineEasing_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineEasing", "GetValue", 5
+		);
+
+		auto LiveTimelineMotionSequence_AlterUpdate_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineMotionSequence", "AlterUpdate", 5
+		);
+
+		auto AlterUpdate_EyeCameraLookAt_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "AlterUpdate_EyeCameraLookAt", 2
+		);
+
+		auto AlterUpdate_MultiCameraPosition_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "AlterUpdate_MultiCameraPosition", 2
+		);
+
+		auto AlterUpdate_MultiCameraLookAt_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "AlterUpdate_MultiCameraLookAt", 2
 		);
 
 		auto live_on_destroy_addr = il2cpp_symbols::get_method_pointer(
@@ -1585,13 +1736,23 @@ namespace
 		ADD_HOOK(query_dispose, "Query::Dispose at %p\n");
 		ADD_HOOK(PreparedQuery_BindInt, "PreparedQuery::BindInt at %p\n");
 		ADD_HOOK(Query_Step, "Query::Step at %p\n");
-		ADD_HOOK(alterupdate_camera_pos, "alterupdate_camera_pos at %p\n");
+		ADD_HOOK(AlterUpdate_CameraPos, "AlterUpdate_CameraPos at %p\n");
 		ADD_HOOK(alterupdate_camera_lookat, "alterupdate_camera_lookat at %p\n");
+		ADD_HOOK(AlterUpdate_MonitorCameraLookAt, "AlterUpdate_MonitorCameraLookAt at %p\n");
+		ADD_HOOK(LiveTimelineEasing, "LiveTimelineEasing at %p\n");
+		ADD_HOOK(LiveTimelineMotionSequence_AlterUpdate, "LiveTimelineMotionSequence_AlterUpdate at %p\n");
+		ADD_HOOK(AlterUpdate_EyeCameraLookAt, "AlterUpdate_EyeCameraLookAt at %p\n");
+		ADD_HOOK(AlterUpdate_MultiCameraPosition, "AlterUpdate_MultiCameraPosition at %p\n");
+		ADD_HOOK(AlterUpdate_MultiCameraLookAt, "AlterUpdate_MultiCameraLookAt at %p\n");
 		ADD_HOOK(live_on_destroy, "live_on_destroy at %p\n");
 		ADD_HOOK(get_camera_pos, "get_camera_pos at %p\n");
 		ADD_HOOK(get_camera_pos2, "get_camera_pos2 at %p\n");
-		ADD_HOOK(update_live_camera_offset, "update_live_camera_offset at %p\n");
+		ADD_HOOK(AlterUpdate_FormationOffset, "AlterUpdate_FormationOffset at %p\n");
+		ADD_HOOK(AlterUpdate_PostEffect_BloomDiffusion, "AlterUpdate_PostEffect_BloomDiffusion at %p\n");
 		ADD_HOOK(alterupdate_eye_camera_pos, "alterupdate_eye_camera_pos at %p\n");
+		ADD_HOOK(AlterUpdate_CameraMotion, "AlterUpdate_CameraMotion at %p\n");
+		ADD_HOOK(AlterUpdate_TiltShift, "AlterUpdate_TiltShift at %p\n");
+		ADD_HOOK(AlterUpdate_CameraLayer, "AlterUpdate_CameraLayer at %p\n");
 		ADD_HOOK(AlterLateUpdate_CameraMotion, "AlterLateUpdate_CameraMotion at %p\n");
 		ADD_HOOK(AlterUpdate_CameraFov, "AlterUpdate_CameraFov at %p\n");
 		ADD_HOOK(AlterUpdate_CameraRoll, "AlterUpdate_CameraRoll at %p\n");
