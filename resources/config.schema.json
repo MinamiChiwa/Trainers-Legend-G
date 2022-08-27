@@ -114,6 +114,10 @@
                 "moveStep": {
                     "description": "相机移动步幅",
                     "type": "number"
+                },
+                "close_all_blur": {
+                    "description": "关闭所有模糊镜头",
+                    "type": "boolean"
                 }
             },
             "additionalProperties": false

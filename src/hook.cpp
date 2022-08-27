@@ -1001,11 +1001,21 @@ namespace
 		return reinterpret_cast<decltype(get_IsEnabledDiffusion_hook)*>(get_IsEnabledDiffusion_orig)(_this);
 	}
 
-	void* LiveTimelineKeyRadialBlurData_get_orig;
-	bool LiveTimelineKeyRadialBlurData_get_hook(void* _this) {
-		auto data = reinterpret_cast<decltype(LiveTimelineKeyRadialBlurData_get_hook)*>(LiveTimelineKeyRadialBlurData_get_orig)(_this);
+	void* get_IsEnabledDepthCancelRect_get_orig;
+	bool get_IsEnabledDepthCancelRect_get_hook(void* _this) {
+		auto data = reinterpret_cast<decltype(get_IsEnabledDepthCancelRect_get_hook)*>(get_IsEnabledDepthCancelRect_get_orig)(_this);
 		// printf("nbnbnbnb: %d\n", data);
-		if (g_live_free_camera)
+		if (g_live_free_camera && !g_live_close_all_blur)
+			return !data;
+		else
+			return data;
+	}
+
+	void* get_IsExpandDepthCancelRect_orig;
+	bool get_IsExpandDepthCancelRect_hook(void* _this) {
+		auto data = reinterpret_cast<decltype(get_IsExpandDepthCancelRect_hook)*>(get_IsExpandDepthCancelRect_orig)(_this);
+		// printf("nbnbnbnb: %d\n", data);
+		if (g_live_free_camera && g_live_close_all_blur)
 			return !data;
 		else
 			return data;
@@ -1618,9 +1628,14 @@ namespace
 			"LiveTimelineKeyPostEffectBloomDiffusionData", "get_IsEnabledDiffusion", 0
 		);
 
-		auto LiveTimelineKeyRadialBlurData_get_addr = il2cpp_symbols::get_method_pointer(
+		auto get_IsEnabledDepthCancelRect_get_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop.Live.Cutt",
 			"LiveTimelineKeyRadialBlurData", "get_IsEnabledDepthCancelRect", 0
+		);
+
+		auto get_IsExpandDepthCancelRect_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineKeyRadialBlurData", "get_IsExpandDepthCancelRect", 0
 		);
 
 		auto get_IsEnabledBloom_addr = il2cpp_symbols::get_method_pointer(
@@ -1795,9 +1810,10 @@ namespace
 		ADD_HOOK(AlterUpdate_CameraRoll, "AlterUpdate_CameraRoll at %p\n");
 		ADD_HOOK(AlterUpdate_CameraSwitcher, "AlterUpdate_CameraSwitcher at %p\n");
 		ADD_HOOK(AlterUpdate_RadialBlur, "AlterUpdate_RadialBlur at %p\n");
-		ADD_HOOK(get_IsEnabledDiffusion, "get_IsEnabledDiffusion at %p\n");
-		ADD_HOOK(LiveTimelineKeyRadialBlurData_get, "LiveTimelineKeyRadialBlurData_get at %p\n");
-		ADD_HOOK(get_IsEnabledBloom, "get_IsEnabledBloom at %p\n");
+		// ADD_HOOK(get_IsEnabledDiffusion, "get_IsEnabledDiffusion at %p\n");
+		ADD_HOOK(get_IsEnabledDepthCancelRect_get, "get_IsEnabledDepthCancelRect_get at %p\n");
+		ADD_HOOK(get_IsExpandDepthCancelRect, "get_IsExpandDepthCancelRect at %p\n");
+		// ADD_HOOK(get_IsEnabledBloom, "get_IsEnabledBloom at %p\n");
 		ADD_HOOK(SetupRadialBlurInfo, "SetupRadialBlurInfo at %p\n");
 		ADD_HOOK(AlterUpdate_MultiCameraRadialBlur, "AlterUpdate_MultiCameraRadialBlur at %p\n");
 		ADD_HOOK(AlterUpdate_MultiCamera, "AlterUpdate_MultiCamera at %p\n");

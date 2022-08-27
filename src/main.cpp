@@ -46,6 +46,7 @@ int g_vsync_count = 0;
 
 bool g_live_free_camera = false;
 bool g_live_force_changeVisibility_false = false;
+bool g_live_close_all_blur = false;
 
 std::string g_text_data_dict_path;
 std::string g_character_system_text_dict_path;
@@ -492,6 +493,11 @@ namespace
 			if (document.HasMember("live")) {
 				g_live_free_camera = document["live"]["free_camera"].GetBool();
 				g_live_force_changeVisibility_false = document["live"]["force_changeVisibility_false"].GetBool();
+
+				if (document["live"].HasMember("close_all_blur")) {
+					g_live_close_all_blur = document["live"]["close_all_blur"].GetBool();
+				}
+				
 				auto moveStep = document["live"]["moveStep"].GetFloat();
 				UmaCamera::setMoveStep(moveStep);
 			}

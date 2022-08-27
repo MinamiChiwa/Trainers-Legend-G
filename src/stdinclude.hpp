@@ -82,3 +82,4 @@ extern int g_graphics_quality;
 extern int g_vsync_count;
 extern bool g_live_free_camera;
 extern bool g_live_force_changeVisibility_false;
+extern bool g_live_close_all_blur;

@@ -24,7 +24,8 @@
     "live": {
         "free_camera": false,
         "force_changeVisibility_false": false,
-        "moveStep": 0.1
+        "moveStep": 0.1,
+        "close_all_blur": false
     },
     "externalPlugin": {
         "hotkey": "u",

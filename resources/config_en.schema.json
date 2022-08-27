@@ -114,6 +114,10 @@
                 "moveStep": {
                     "description": "Camera move step",
                     "type": "number"
+                },
+                "close_all_blur": {
+                    "description": "Disable all blur",
+                    "type": "boolean"
                 }
             },
             "additionalProperties": false
