@@ -983,16 +983,28 @@ namespace
 	void AlterUpdate_CameraPos_hook(void* _this, Il2CppObject* sheet, int currentFrame, int sheetIndex, bool isUseCameraMotion) {
 		// printf("frame: %d, index: %d, motion: %s\n", currentFrame, sheetIndex, isUseCameraMotion ? "true" : "false");
 		return reinterpret_cast<decltype(AlterUpdate_CameraPos_hook)*>(AlterUpdate_CameraPos_orig)(
-			_this, sheet, g_live_free_camera ? 0: currentFrame, sheetIndex, isUseCameraMotion);
+			_this, sheet, g_live_free_camera ? 0 : currentFrame, sheetIndex, isUseCameraMotion);
 	}
 
 	void* AlterUpdate_RadialBlur_orig;
 	void AlterUpdate_RadialBlur_hook(void* _this, Il2CppObject* sheet, int currentFrame) {
-		if (g_live_free_camera) return;
+		// if (g_live_free_camera) return;
 		return reinterpret_cast<decltype(AlterUpdate_RadialBlur_hook)*>(AlterUpdate_RadialBlur_orig)(
-			_this, sheet, currentFrame);
+			_this, sheet, 0);
 
 		// printf("AlterUpdate_RadialBlur frame: %d\n", currentFrame);
+	}
+
+	void* get_IsEnabledDiffusion_orig;
+	bool get_IsEnabledDiffusion_hook(void* _this) {
+		if (g_live_free_camera) return false;
+		return reinterpret_cast<decltype(get_IsEnabledDiffusion_hook)*>(get_IsEnabledDiffusion_orig)(_this);
+	}
+
+	void* get_IsEnabledBloom_orig;
+	bool get_IsEnabledBloom_hook(void* _this) {
+		if (g_live_free_camera) return false;
+		return reinterpret_cast<decltype(get_IsEnabledBloom_hook)*>(get_IsEnabledBloom_orig)(_this);
 	}
 
 	void* AlterUpdate_MultiCameraPosition_orig;
@@ -1144,14 +1156,6 @@ namespace
 		return pos;
 	}
 
-	void* AlterUpdate_CameraMotion_orig;
-	bool AlterUpdate_CameraMotion_hook(void* _this, Il2CppObject* sheet, int currentFrame) {
-		if (g_live_free_camera) return true;
-		// printf("frame_motion: %d\n", currentFrame);
-		return reinterpret_cast<decltype(AlterUpdate_CameraMotion_hook)*>(AlterUpdate_CameraMotion_orig)(_this, sheet, currentFrame);
-		// return true;
-	}
-
 	void* AlterUpdate_CameraLayer_orig;
 	void AlterUpdate_CameraLayer_hook(void* _this, void* sheet, int currentFrame, Vector3_t* offsetMaxPosition, Vector3_t* offsetMinPosition) {
 		if (g_live_free_camera) return;
@@ -1171,6 +1175,14 @@ namespace
 	void AlterUpdate_PostEffect_DOF_hook(void* _this, Il2CppObject* sheet, int currentFrame, Vector3_t* cameraLookAt) {
 		if (g_live_free_camera) return;
 		return reinterpret_cast<decltype(AlterUpdate_PostEffect_DOF_hook)*>(AlterUpdate_PostEffect_DOF_orig)(_this, sheet, currentFrame, cameraLookAt);
+		// return true;
+	}
+
+	void* AlterUpdate_CameraMotion_orig;
+	bool AlterUpdate_CameraMotion_hook(void* _this, Il2CppObject* sheet, int currentFrame) {
+		if (g_live_free_camera) return true;
+		// printf("frame_motion: %d\n", currentFrame);
+		return reinterpret_cast<decltype(AlterUpdate_CameraMotion_hook)*>(AlterUpdate_CameraMotion_orig)(_this, sheet, currentFrame);
 		// return true;
 	}
 
@@ -1591,6 +1603,16 @@ namespace
 			"LiveTimelineControl", "AlterUpdate_RadialBlur", 2
 		);
 
+		auto get_IsEnabledDiffusion_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineKeyPostEffectBloomDiffusionData", "get_IsEnabledDiffusion", 0
+		);
+
+		auto get_IsEnabledBloom_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineKeyPostEffectBloomDiffusionData", "get_IsEnabledBloom", 0
+		);
+
 		auto SetupRadialBlurInfo_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop.Live.Cutt",
 			"LiveTimelineControl", "SetupRadialBlurInfo", 4
@@ -1758,8 +1780,10 @@ namespace
 		ADD_HOOK(AlterUpdate_CameraRoll, "AlterUpdate_CameraRoll at %p\n");
 		ADD_HOOK(AlterUpdate_CameraSwitcher, "AlterUpdate_CameraSwitcher at %p\n");
 		ADD_HOOK(AlterUpdate_RadialBlur, "AlterUpdate_RadialBlur at %p\n");
-		ADD_HOOK(AlterUpdate_MultiCameraRadialBlur, "AlterUpdate_MultiCameraRadialBlur at %p\n");
+		ADD_HOOK(get_IsEnabledDiffusion, "get_IsEnabledDiffusion at %p\n");
+		ADD_HOOK(get_IsEnabledBloom, "get_IsEnabledBloom at %p\n");
 		ADD_HOOK(SetupRadialBlurInfo, "SetupRadialBlurInfo at %p\n");
+		ADD_HOOK(AlterUpdate_MultiCameraRadialBlur, "AlterUpdate_MultiCameraRadialBlur at %p\n");
 		ADD_HOOK(AlterUpdate_MultiCamera, "AlterUpdate_MultiCamera at %p\n");
 		ADD_HOOK(set_shadow_resolution, "set_shadow_resolution at %p\n");
 		ADD_HOOK(set_RenderTextureAntiAliasing, "set_RenderTextureAntiAliasing at %p\n");
