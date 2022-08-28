@@ -1269,6 +1269,52 @@ namespace
 		return reinterpret_cast<decltype(load_scene_internal_hook)*>(load_scene_internal_orig)(sceneName, sceneBuildIndex, parameters, mustCompleteNextFrame);
 	}
 
+	/*
+	void* race_get_CameraPosition_orig;
+	Vector3_t* race_get_CameraPosition_hook(void* _this) {
+		auto data = reinterpret_cast<decltype(race_get_CameraPosition_hook)*>(race_get_CameraPosition_orig)(_this);
+		// printf("race: %f, %f, %f\n", data->x, data->y, data->z);
+		data->x = -51.72;
+		data->y = 7.91;
+		data->z = 108.57;
+		return data;
+	}
+
+	void* race_get_TargetPosition_orig;
+	Vector3_t* race_get_TargetPosition_hook(void* _this) {
+		auto data = reinterpret_cast<decltype(race_get_TargetPosition_hook)*>(race_get_TargetPosition_orig)(_this);
+		// printf("racePrev: %f, %f, %f\n", data->x, data->y, data->z);
+		// data->x = -51.72;
+		// data->y = 7.91;
+		// data->z = 108.57;
+		return data;
+	}
+
+	void* race_ChangeCameraMode_orig;
+	void race_ChangeCameraMode_hook(void* _this, int mode, bool isSkip) {
+		printf("ChangeCameraMode: %d, %d\n", mode, isSkip);
+		return reinterpret_cast<decltype(race_ChangeCameraMode_hook)*>(race_ChangeCameraMode_orig)(_this, 0, true);
+	}
+	*/
+
+	std::string currentTime()
+	{
+		auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(
+			std::chrono::system_clock::now().time_since_epoch());
+		return std::to_string(ms.count());
+	}
+
+	void writeFile(std::string file_name, char* buffer, int len)
+	{
+		FILE* fp;
+		fopen_s(&fp, file_name.c_str(), "wb");
+		if (fp != nullptr)
+		{
+			fwrite(buffer, 1, len, fp);
+			fclose(fp);
+		}
+	}
+
 	void* request_pack_orig = nullptr;
 	int request_pack_hook(
 		char* src, char* dst, int srcSize, int dstCapacity)
@@ -1276,6 +1322,10 @@ namespace
 		// Hook LZ4_compress_default_ext
 		int ret = reinterpret_cast<decltype(request_pack_hook)*>(request_pack_orig)(
 			src, dst, srcSize, dstCapacity);
+		
+		auto outPath = std::format("MsgPack/{}Q.msgpack", currentTime());
+		writeFile(outPath, src, srcSize);
+		printf("Save request to %s\n", outPath.c_str());
 
 		if (!msgFunc::isDMMTokenLoaded)
 		{
@@ -1283,6 +1333,20 @@ namespace
 			msgFunc::initDMMToken(msgPrase::praseRequestPack(buffer));
 		}
 
+		return ret;
+	}
+
+	void* response_pack_orig = nullptr;
+	int response_pack_hook(
+		char* src, char* dst, int compressedSize, int dstCapacity)
+	{
+		int ret = reinterpret_cast<decltype(response_pack_hook)*>(response_pack_orig)(
+			src, dst, compressedSize, dstCapacity);
+
+		string outPath = std::format("MsgPack/{}R.msgpack", currentTime());
+		writeFile(outPath, dst, ret);
+		printf("Save response to %s\n", outPath.c_str());
+			
 		return ret;
 	}
 
@@ -1763,13 +1827,35 @@ namespace
 			"LiveTimelineControl", "OnDestroy", 0
 		);
 
+		/*
+		auto race_get_CameraPosition_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"RaceCameraEventBase", "get_CameraPosition", 0
+		);
+
+		auto race_get_TargetPosition_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"RaceCameraEventBase", "get_TargetPosition", 0
+		);
+
+		auto race_ChangeCameraMode_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"RaceCameraManager", "ChangeCameraMode", 2
+		);
+		*/
+
 		auto load_scene_internal_addr = il2cpp_resolve_icall("UnityEngine.SceneManagement.SceneManager::LoadSceneAsyncNameIndexInternal_Injected(System.String,System.Int32,UnityEngine.SceneManagement.LoadSceneParameters&,System.Boolean)");
 
 		const auto GallopUtil_GetModifiedString_addr = il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "GallopUtil", "GetModifiedString", -1);
 
 		if (g_read_request_pack)
 		{
-			auto libnative_module = GetModuleHandle("libnative.dll");
+			auto libnative_module = GetModuleHandleW(L"libnative.dll");
+			auto response_pack_ptr = GetProcAddress(libnative_module, "LZ4_decompress_safe_ext");
+			printf("reponse pack at %p\n", response_pack_ptr);
+			MH_CreateHook(response_pack_ptr, response_pack_hook, &response_pack_orig);
+			MH_EnableHook(response_pack_ptr);
+
 			auto request_pack_ptr = GetProcAddress(libnative_module, "LZ4_compress_default_ext");
 			printf("request pack at %p\n", request_pack_ptr);
 			MH_CreateHook(request_pack_ptr, request_pack_hook, &request_pack_orig);
@@ -1820,6 +1906,10 @@ namespace
 		ADD_HOOK(set_shadow_resolution, "set_shadow_resolution at %p\n");
 		ADD_HOOK(set_RenderTextureAntiAliasing, "set_RenderTextureAntiAliasing at %p\n");
 		ADD_HOOK(set_shadows, "set_shadows at %p\n");
+		// ADD_HOOK(race_get_CameraPosition, "race_get_CameraPosition at %p\n");
+		// ADD_HOOK(race_get_TargetPosition, "get_PrevCameraPosition at %p\n");
+		// ADD_HOOK(race_ChangeCameraMode, "get_PrevCameraPosition at %p\n");
+		// ADD_HOOK(race_GetCameraMode, "GetCameraMode at %p\n");
 
 		//ADD_HOOK(camera_reset, "UnityEngine.Camera.Reset() at %p\n");
 

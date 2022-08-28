@@ -19,11 +19,13 @@ namespace UmaCamera {
 	namespace {
 		float moveStep = 0.1;
 		float look_radius = 0.5;  // 转向半径
-		float moveAngel = 2;  // 转向角度
+		float moveAngel = 3.5;  // 转向角度
 
 		float horizontalAngle = 0;  // 水平方向角度
 		float verticalAngle = 0;  // 垂直方向角度
 
+		int smoothLevel = 5;
+		unsigned long sleepTime = 2;
 		Vector3_t cameraPos{ 0.093706, 0.467159, 9.588791 };
 		Vector3_t cameraLookAt{ cameraPos.x, cameraPos.y, cameraPos.z - look_radius };
 	}
@@ -49,13 +51,16 @@ namespace UmaCamera {
 
 	void set_lon_move(float degree) {  // 前后移动
 		auto radian = degree * 3.14159 / 180;
-		auto f_len = cos(radian) * moveStep;  // ↑↓
-		auto l_len = sin(radian) * moveStep;  // ←→
+		auto f_step = cos(radian) * moveStep / smoothLevel;  // ↑↓
+		auto l_step = sin(radian) * moveStep / smoothLevel;  // ←→
 
-		cameraPos.z -= f_len;
-		cameraLookAt.z -= f_len;
-		cameraPos.x += l_len;
-		cameraLookAt.x += l_len;
+		for (int i = 0; i < smoothLevel; i++) {
+			cameraPos.z -= f_step;
+			cameraLookAt.z -= f_step;
+			cameraPos.x += l_step;
+			cameraLookAt.x += l_step;
+			Sleep(sleepTime);
+		}
 	}
 
 	void camera_forward() {  // 向前
@@ -75,42 +80,52 @@ namespace UmaCamera {
 	}
 
 	void camera_down() {  // 向下
-		cameraPos.y -= moveStep;
-		cameraLookAt.y -= moveStep;
-	}
+		auto preStep = moveStep / smoothLevel;
 
+		for (int i = 0; i < smoothLevel; i++) {
+			cameraPos.y -= preStep;
+			cameraLookAt.y -= preStep;
+			Sleep(sleepTime);
+		}
+	}
+	
 	void camera_up() {  // 向上
-		cameraPos.y += moveStep;
-		cameraLookAt.y += moveStep;
+		auto preStep = moveStep / smoothLevel;
+
+		for (int i = 0; i < smoothLevel; i++) {
+			cameraPos.y += preStep;
+			cameraLookAt.y += preStep;
+			Sleep(sleepTime);
+		}
 	}
 
 	void setVertLook(float angle1, float angle2) {  // 上+
 		auto radian = angle1 * 3.14159 / 180;
-		auto radian2 = (angle2 - 90) * 3.14159 / 180;  // 日
+		auto radian2 = ((double)angle2 - 90) * 3.14159 / 180;  // 日
 
-		auto x1 = look_radius * sin(radian2) * cos(radian);
-		auto x2 = look_radius * sin(radian2) * sin(radian);
-		auto x3 = look_radius * cos(radian2);
+		auto stepX1 = look_radius * sin(radian2) * cos(radian) / smoothLevel;
+		auto stepX2 = look_radius * sin(radian2) * sin(radian) / smoothLevel;
+		auto stepX3 = look_radius * cos(radian2) / smoothLevel;
 
-		cameraLookAt.z = cameraPos.z + x1;
-		cameraLookAt.y = cameraPos.y + x3;
-		cameraLookAt.x = cameraPos.x - x2;
+		for (int i = 0; i < smoothLevel; i++) {
+			cameraLookAt.z = cameraPos.z + stepX1;
+			cameraLookAt.y = cameraPos.y + stepX3;
+			cameraLookAt.x = cameraPos.x - stepX2;
+			Sleep(sleepTime);
+		}
 
-		/*
-		auto bt_len = cos(radian) * look_radius;
-		auto hi_len = sin(radian) * look_radius;
-
-		cameraLookAt.z = cameraPos.z - bt_len;
-		cameraLookAt.y = cameraPos.y + hi_len;
-		*/
 	}
 
 	void setHoriLook(float degree) {  // 左+
 		auto radian = degree * 3.14159 / 180;
-		auto bt_len = cos(radian) * look_radius;
-		auto hi_len = sin(radian) * look_radius;
-		cameraLookAt.x = cameraPos.x + hi_len;
-		cameraLookAt.z = cameraPos.z - bt_len;
+		auto stepBt = cos(radian) * look_radius / smoothLevel;
+		auto stepHi = sin(radian) * look_radius / smoothLevel;
+
+		for (int i = 0; i < smoothLevel; i++) {
+			cameraLookAt.x = cameraPos.x + stepHi;
+			cameraLookAt.z = cameraPos.z - stepBt;
+			Sleep(sleepTime);
+		}
 	}
 
 	void cameraLookat_up() {
