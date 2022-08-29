@@ -122,6 +122,55 @@
             },
             "additionalProperties": false
         },
+        "race_camera": {
+            "description": "比赛相机设置",
+            "type": "object",
+            "properties": {
+                "free_camera": {
+                    "description": "启用自由视角",
+                    "type": "boolean"
+                },
+                "moveStep": {
+                    "description": "相机移动步幅",
+                    "type": "number"
+                },
+                "defaultFOV": {
+                    "description": "默认FOV",
+                    "type": "number"
+                },
+                "freecam_lookat_target": {
+                    "description": "视角随着马娘移动",
+                    "type": "boolean"
+                },
+                "freecam_follow_target": {
+                    "description": "摄像机随着马娘移动",
+                    "type": "boolean"
+                },
+                "follow_offset": {
+                    "description": "摄像机随马娘移动参数",
+                    "type": "object",
+                    "properties": {
+                        "distance": {
+                            "description": "与目标马娘的距离",
+                            "type": "number"
+                        },
+                        "x": {
+                            "description": "x轴偏移",
+                            "type": "number"
+                        },
+                        "y": {
+                            "description": "y轴偏移",
+                            "type": "number"
+                        },
+                        "z": {
+                            "description": "z轴偏移",
+                            "type": "number"
+                        }
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
         "externalPlugin": {
             "description": "外部插件配置",
             "type": "object",

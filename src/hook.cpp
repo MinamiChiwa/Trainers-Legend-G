@@ -1088,6 +1088,7 @@ namespace
 		}
 		// printf("orig_pos: %f, %f, %f\n", pos->x, pos->y, pos->z);
 		auto setPos = UmaCamera::getCameraPos();
+		UmaCamera::setUmaCameraType(CAMERA_LIVE);
 		pos->x = setPos.x;
 		pos->y = setPos.y;
 		pos->z = setPos.z;
@@ -1103,6 +1104,7 @@ namespace
 		}
 
 		auto setLookat = UmaCamera::getCameraLookat();
+		UmaCamera::setUmaCameraType(CAMERA_LIVE);
 		outLookAt->x = setLookat.x;
 		outLookAt->y = setLookat.y;
 		outLookAt->z = setLookat.z;
@@ -1170,6 +1172,7 @@ namespace
 			return pos;
 		}
 		auto setPos = UmaCamera::getCameraPos();
+		UmaCamera::setUmaCameraType(CAMERA_LIVE);
 		pos->x = setPos.x;
 		pos->y = setPos.y;
 		pos->z = setPos.z;
@@ -1269,33 +1272,101 @@ namespace
 		return reinterpret_cast<decltype(load_scene_internal_hook)*>(load_scene_internal_orig)(sceneName, sceneBuildIndex, parameters, mustCompleteNextFrame);
 	}
 
-	/*
+	Vector3_t targetPosLastCache{};
+	Vector3_t targetPosCache{};
 	void* race_get_CameraPosition_orig;
 	Vector3_t* race_get_CameraPosition_hook(void* _this) {
 		auto data = reinterpret_cast<decltype(race_get_CameraPosition_hook)*>(race_get_CameraPosition_orig)(_this);
+		if (!g_race_free_camera) return data;
 		// printf("race: %f, %f, %f\n", data->x, data->y, data->z);
-		data->x = -51.72;
-		data->y = 7.91;
-		data->z = 108.57;
+		UmaCamera::setUmaCameraType(CAMERA_RACE);
+
+		if (g_race_freecam_follow_umamusume) {
+			UmaCamera::updateFollowUmaPos(targetPosLastCache, targetPosCache, data);
+			return data;
+			/*
+			data->x = targetPosCache.x + g_race_freecam_follow_umamusume_offset.x;
+			data->y = ceil(targetPosCache.y + g_race_freecam_follow_umamusume_offset.y);
+			data->z = targetPosCache.z + g_race_freecam_follow_umamusume_offset.z;
+			// printf("targetY: %f, posY: %f\n", targetPosCache.y, data->y);
+			return data;
+			*/
+		}
+
+		auto pos = UmaCamera::getCameraPos();
+		data->x = pos.x;
+		data->y = pos.y;
+		data->z = pos.z;
 		return data;
 	}
+
 
 	void* race_get_TargetPosition_orig;
 	Vector3_t* race_get_TargetPosition_hook(void* _this) {
 		auto data = reinterpret_cast<decltype(race_get_TargetPosition_hook)*>(race_get_TargetPosition_orig)(_this);
+		if (!g_race_free_camera) return data;
 		// printf("racePrev: %f, %f, %f\n", data->x, data->y, data->z);
-		// data->x = -51.72;
-		// data->y = 7.91;
-		// data->z = 108.57;
+		if (g_race_freecam_follow_umamusume) {
+			if ((targetPosCache.x != data->x) || (targetPosCache.z != data->z)) {
+				targetPosLastCache = Vector3_t{ targetPosCache.x, targetPosCache.y, targetPosCache.z };
+			}
+			targetPosCache = Vector3_t{ data->x, data->y, data->z };
+		}
+
+		if (g_race_freecam_lookat_umamusume) return data;
+
+		auto target = UmaCamera::getCameraLookat();
+		UmaCamera::setUmaCameraType(CAMERA_RACE);
+		data->x = target.x;
+		data->y = target.y;
+		data->z = target.z;
 		return data;
 	}
 
 	void* race_ChangeCameraMode_orig;
 	void race_ChangeCameraMode_hook(void* _this, int mode, bool isSkip) {
-		printf("ChangeCameraMode: %d, %d\n", mode, isSkip);
+		// printf("ChangeCameraMode: %d, %d\n", mode, isSkip);
+		if (g_race_free_camera) return;
 		return reinterpret_cast<decltype(race_ChangeCameraMode_hook)*>(race_ChangeCameraMode_orig)(_this, 0, true);
 	}
-	*/
+
+	void* race_get_CameraFov_orig;
+	float race_get_CameraFov_hook(void* _this) {
+		if (!g_race_free_camera) return reinterpret_cast<decltype(race_get_CameraFov_hook)*>(race_get_CameraFov_orig)(_this);
+		return UmaCamera::getRaceCamFov();
+	}
+	
+	void* race_PlayEventCamera_orig;
+	bool race_PlayEventCamera_hook(void* _this, int p1, int p2, int p3, bool p4, bool p5) {
+		if (g_race_free_camera) return false;
+
+		return reinterpret_cast<decltype(race_PlayEventCamera_hook)*>(race_PlayEventCamera_orig)(_this, p1, p2, p3, p4, p5);
+	}
+
+	void* race_UpdateCameraDistanceBlendRate_orig;
+	void race_UpdateCameraDistanceBlendRate_hook(void* _this, void* p1, void* p2, void* p3) {
+		if (g_race_free_camera) return;
+		reinterpret_cast<decltype(race_UpdateCameraDistanceBlendRate_hook)*>(race_UpdateCameraDistanceBlendRate_orig)(_this, p1, p2, p3);
+		// printf("UpdateCameraDistanceBlendRate\n");
+	}
+
+	void* race_get_CameraShakeTargetOffset_orig;
+	Vector3_t* race_get_CameraShakeTargetOffset_hook(void* _this) {
+		auto data = reinterpret_cast<decltype(race_get_CameraShakeTargetOffset_hook)*>(race_get_CameraShakeTargetOffset_orig)(_this);
+		// printf("shake: %d, %d, %d\n", data->x, data->y, data->z);
+		if (!g_race_free_camera) return data;
+		data->x = 0;
+		data->y = 0;
+		data->z = 0;
+		return data;
+	}
+
+	void* race_OnDestroy_orig;
+	void race_OnDestroy_hook(void* _this) {
+		reinterpret_cast<decltype(race_OnDestroy_hook)*>(race_OnDestroy_orig)(_this);
+		printf("Race End!\n");
+		UmaCamera::reset_camera();
+	}
 
 	std::string currentTime()
 	{
@@ -1827,7 +1898,7 @@ namespace
 			"LiveTimelineControl", "OnDestroy", 0
 		);
 
-		/*
+		
 		auto race_get_CameraPosition_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"RaceCameraEventBase", "get_CameraPosition", 0
@@ -1842,7 +1913,31 @@ namespace
 			"umamusume.dll", "Gallop",
 			"RaceCameraManager", "ChangeCameraMode", 2
 		);
-		*/
+
+		auto race_get_CameraFov_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"RaceCameraEventBase", "get_CameraFov", 0
+		);
+
+		auto race_PlayEventCamera_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"RaceCameraManager", "PlayEventCamera", 5
+		);
+
+		auto race_UpdateCameraDistanceBlendRate_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"RaceModelController", "UpdateCameraDistanceBlendRate", 3
+		);
+
+		auto race_get_CameraShakeTargetOffset_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"RaceCameraEventBase", "get_CameraShakeTargetOffset", 0
+		);
+
+		auto race_OnDestroy_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"RaceEffectManager", "OnDestroy", 0
+		);
 
 		auto load_scene_internal_addr = il2cpp_resolve_icall("UnityEngine.SceneManagement.SceneManager::LoadSceneAsyncNameIndexInternal_Injected(System.String,System.Int32,UnityEngine.SceneManagement.LoadSceneParameters&,System.Boolean)");
 
@@ -1906,10 +2001,14 @@ namespace
 		ADD_HOOK(set_shadow_resolution, "set_shadow_resolution at %p\n");
 		ADD_HOOK(set_RenderTextureAntiAliasing, "set_RenderTextureAntiAliasing at %p\n");
 		ADD_HOOK(set_shadows, "set_shadows at %p\n");
-		// ADD_HOOK(race_get_CameraPosition, "race_get_CameraPosition at %p\n");
-		// ADD_HOOK(race_get_TargetPosition, "get_PrevCameraPosition at %p\n");
-		// ADD_HOOK(race_ChangeCameraMode, "get_PrevCameraPosition at %p\n");
-		// ADD_HOOK(race_GetCameraMode, "GetCameraMode at %p\n");
+		ADD_HOOK(race_get_CameraPosition, "race_get_CameraPosition at %p\n");
+		ADD_HOOK(race_get_TargetPosition, "get_PrevCameraPosition at %p\n");
+		ADD_HOOK(race_ChangeCameraMode, "get_PrevCameraPosition at %p\n");
+		ADD_HOOK(race_get_CameraFov, "get_IsFrameMode at %p\n");
+		ADD_HOOK(race_PlayEventCamera, "SetCourseCameraState at %p\n");
+		ADD_HOOK(race_UpdateCameraDistanceBlendRate, "SetCourseCameraState at %p\n");
+		ADD_HOOK(race_get_CameraShakeTargetOffset, "get_CameraShakePositionOffset at %p\n");
+		ADD_HOOK(race_OnDestroy, "race_OnDestroy at %p\n");
 
 		//ADD_HOOK(camera_reset, "UnityEngine.Camera.Reset() at %p\n");
 

@@ -62,6 +62,11 @@ struct UseCustomFont
 	std::string FontPath;
 };
 
+enum CameraType {
+	CAMERA_LIVE = 0,
+	CAMERA_RACE = 1
+};
+
 extern std::variant<UseOriginalFont, UseDefaultFont, UseCustomFont> g_replace_font;
 extern int g_custom_font_size_offset;
 extern int g_custom_font_style;
@@ -83,3 +88,10 @@ extern int g_vsync_count;
 extern bool g_live_free_camera;
 extern bool g_live_force_changeVisibility_false;
 extern bool g_live_close_all_blur;
+extern float g_live_move_step;
+extern float g_race_move_step;
+extern bool g_race_free_camera;
+extern bool g_race_freecam_lookat_umamusume;
+extern bool g_race_freecam_follow_umamusume;
+extern float g_race_freecam_follow_umamusume_distance;
+extern Vector3_t g_race_freecam_follow_umamusume_offset;
