@@ -170,11 +170,11 @@ namespace UmaCamera {
 
 		if (cameraType == CAMERA_LIVE && value == CAMERA_RACE) {
 			moveStep = g_race_move_step;
-			moveAngel /= 3;
+			moveAngel /= 2;
 		}
 		else if (cameraType == CAMERA_RACE && value == CAMERA_LIVE) {
 			moveStep = g_live_move_step;
-			moveAngel *= 3;
+			moveAngel *= 2;
 		}
 		cameraType = value;
 		reset_camera();
@@ -217,15 +217,14 @@ namespace UmaCamera {
 	}
 
 	void updateFollowUmaPos(Vector3_t lastFrame, Vector3_t thisFrame, Vector3_t* setPos) {
-		float follow_len = g_race_freecam_follow_umamusume_distance;  // ¸úËæÂíÄï¾àÀë
 		SDPoint pt1{thisFrame.x, thisFrame.z};
 		SDPoint pt2{lastFrame.x, lastFrame.z};
 		SDPoint ptOut{};
-		ExPandLine(pt1, pt2, follow_len, ptOut);
+		ExPandLine(pt1, pt2, g_race_freecam_follow_umamusume_distance, ptOut);
 
 		setPos->x = ptOut.x + g_race_freecam_follow_umamusume_offset.x;
 		setPos->z = ptOut.y + g_race_freecam_follow_umamusume_offset.z;
-		setPos->y = ceil(thisFrame.y + g_race_freecam_follow_umamusume_offset.y);
+		setPos->y = ceil((lastFrame.y + thisFrame.y) / 2) + g_race_freecam_follow_umamusume_offset.y;
 		// printf("calc: %f, %f  last: %f, %f  this: %f, %f\n", setPos->x, setPos->z, pt2.x, pt2.y, pt1.x, pt1.y);
 		chechAndUpdateRaceRet(setPos);
 	}
@@ -268,7 +267,13 @@ namespace UmaCamera {
 			return;
 		}
 
-		auto preStep = moveStep / smoothLevel;
+		float preStep;
+		if (cameraType == CAMERA_RACE) {
+			preStep = moveStep / 3 / smoothLevel;
+		}
+		else {
+			preStep = moveStep / smoothLevel;
+		}
 
 		for (int i = 0; i < smoothLevel; i++) {
 			cameraPos.y -= preStep;
@@ -283,7 +288,13 @@ namespace UmaCamera {
 			return;
 		}
 
-		auto preStep = moveStep / smoothLevel;
+		float preStep;
+		if (cameraType == CAMERA_RACE) {
+			preStep = moveStep / 3 / smoothLevel;
+		}
+		else {
+			preStep = moveStep / smoothLevel;
+		}
 
 		for (int i = 0; i < smoothLevel; i++) {
 			cameraPos.y += preStep;
@@ -358,7 +369,7 @@ namespace UmaCamera {
 	void changeRaceCameraFOV(float value) {
 		if (!(cameraType == CAMERA_RACE)) return;
 		raceDefaultFOV += value;
-		printf("Race came FOV has been changed to %f\n", raceDefaultFOV);
+		printf("Race camera FOV has been changed to %f\n", raceDefaultFOV);
 	}
 
 	void changeFollowTargetState() {

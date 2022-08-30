@@ -1284,13 +1284,6 @@ namespace
 		if (g_race_freecam_follow_umamusume) {
 			UmaCamera::updateFollowUmaPos(targetPosLastCache, targetPosCache, data);
 			return data;
-			/*
-			data->x = targetPosCache.x + g_race_freecam_follow_umamusume_offset.x;
-			data->y = ceil(targetPosCache.y + g_race_freecam_follow_umamusume_offset.y);
-			data->z = targetPosCache.z + g_race_freecam_follow_umamusume_offset.z;
-			// printf("targetY: %f, posY: %f\n", targetPosCache.y, data->y);
-			return data;
-			*/
 		}
 
 		auto pos = UmaCamera::getCameraPos();
@@ -2002,11 +1995,11 @@ namespace
 		ADD_HOOK(set_RenderTextureAntiAliasing, "set_RenderTextureAntiAliasing at %p\n");
 		ADD_HOOK(set_shadows, "set_shadows at %p\n");
 		ADD_HOOK(race_get_CameraPosition, "race_get_CameraPosition at %p\n");
-		ADD_HOOK(race_get_TargetPosition, "get_PrevCameraPosition at %p\n");
-		ADD_HOOK(race_ChangeCameraMode, "get_PrevCameraPosition at %p\n");
-		ADD_HOOK(race_get_CameraFov, "get_IsFrameMode at %p\n");
-		ADD_HOOK(race_PlayEventCamera, "SetCourseCameraState at %p\n");
-		ADD_HOOK(race_UpdateCameraDistanceBlendRate, "SetCourseCameraState at %p\n");
+		ADD_HOOK(race_get_TargetPosition, "race_get_TargetPosition at %p\n");
+		ADD_HOOK(race_ChangeCameraMode, "race_ChangeCameraMode at %p\n");
+		ADD_HOOK(race_get_CameraFov, "race_get_CameraFov at %p\n");
+		ADD_HOOK(race_PlayEventCamera, "race_PlayEventCamera at %p\n");
+		ADD_HOOK(race_UpdateCameraDistanceBlendRate, "race_UpdateCameraDistanceBlendRate at %p\n");
 		ADD_HOOK(race_get_CameraShakeTargetOffset, "get_CameraShakePositionOffset at %p\n");
 		ADD_HOOK(race_OnDestroy, "race_OnDestroy at %p\n");
 
