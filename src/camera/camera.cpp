@@ -42,6 +42,7 @@ namespace UmaCamera {
 			g_race_freecam_follow_umamusume_offset.z
 		};
 		Vector3_t cacheLastRacePos{};
+		bool lookAtUmaReverse = false;
 
 		typedef struct Point
 		{
@@ -163,6 +164,7 @@ namespace UmaCamera {
 			orig_g_race_freecam_follow_umamusume_offset.z
 		};
 		orig_g_race_freecam_follow_umamusume_distance = g_race_freecam_follow_umamusume_distance;
+		g_race_freecam_follow_umamusume = -1;
 	}
 
 	void setUmaCameraType(int value) {
@@ -220,13 +222,26 @@ namespace UmaCamera {
 		SDPoint pt1{thisFrame.x, thisFrame.z};
 		SDPoint pt2{lastFrame.x, lastFrame.z};
 		SDPoint ptOut{};
-		ExPandLine(pt1, pt2, g_race_freecam_follow_umamusume_distance, ptOut);
-
+		if (lookAtUmaReverse) {
+			ExPandLine(pt2, pt1, g_race_freecam_follow_umamusume_distance, ptOut);  // 从前面看, 嘿嘿...马娘娇羞的神态...嘿嘿...
+		}
+		else {
+			ExPandLine(pt1, pt2, g_race_freecam_follow_umamusume_distance, ptOut);
+		}
+		
 		setPos->x = ptOut.x + g_race_freecam_follow_umamusume_offset.x;
 		setPos->z = ptOut.y + g_race_freecam_follow_umamusume_offset.z;
 		setPos->y = ceil((lastFrame.y + thisFrame.y) / 2) + g_race_freecam_follow_umamusume_offset.y;
 		// printf("calc: %f, %f  last: %f, %f  this: %f, %f\n", setPos->x, setPos->z, pt2.x, pt2.y, pt1.x, pt1.y);
 		chechAndUpdateRaceRet(setPos);
+	}
+
+	void setReverseLookatUma() {
+		lookAtUmaReverse = !lookAtUmaReverse;
+		if (lookAtUmaReverse)
+			printf("Race camera ahead.\n");
+		else
+			printf("Race camera behind.\n");
 	}
 
 	void camera_forward() {  // 向前
@@ -355,15 +370,41 @@ namespace UmaCamera {
 	}
 
 	void cameraLookat_left() {
+		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
+			return;
+		}
 		verticalAngle += moveAngel;
 		if (verticalAngle >= 360) verticalAngle = 0;
 		setHoriLook(verticalAngle);
 	}
 
 	void cameraLookat_right() {
+		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
+			return;
+		}
 		verticalAngle -= moveAngel;
 		if (verticalAngle <= -360) verticalAngle = 0;
 		setHoriLook(verticalAngle);
+	}
+
+	void singleLeftClick() {
+		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
+			if (g_race_freecam_follow_umamusume_index <= -1) return;
+			g_race_freecam_follow_umamusume_index--;
+			if (g_race_freecam_follow_umamusume_index <= -1) {
+				printf("Look at auto\n");
+			}
+			else {
+				printf("Look at No.%d\n", g_race_freecam_follow_umamusume_index + 1);
+			}
+		}
+	}
+
+	void singleRightClick() {
+		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
+			g_race_freecam_follow_umamusume_index++;
+			printf("Look at No.%d\n", g_race_freecam_follow_umamusume_index + 1);
+		}
 	}
 
 	void changeRaceCameraFOV(float value) {
@@ -411,6 +452,12 @@ namespace UmaCamera {
 				changeRaceCameraFOV(-0.5f); break;
 			case 'F':
 				changeFollowTargetState(); break;
+			case KEY_LEFT:
+				singleLeftClick(); break;
+			case KEY_RIGHT:
+				singleRightClick(); break;
+			case 'V':
+				setReverseLookatUma(); break;
 			default:
 				break;
 		}

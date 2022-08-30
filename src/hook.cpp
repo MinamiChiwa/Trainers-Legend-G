@@ -1354,11 +1354,36 @@ namespace
 		return data;
 	}
 
+	void* race_GetTargetHorseIndex_orig;
+	int race_GetTargetHorseIndex_hook(void* _this, void* info, int type, int targetIndex) {
+		if (g_race_free_camera && g_race_freecam_follow_umamusume && (g_race_freecam_follow_umamusume_index >= 0)) {
+			return g_race_freecam_follow_umamusume_index;
+		}
+		return reinterpret_cast<decltype(race_GetTargetHorseIndex_hook)*>(race_GetTargetHorseIndex_orig)(
+			_this, info, type, targetIndex
+		);
+	}
+
+	void* race_GetTargetRotation_orig;
+	Quaternion_t* race_GetTargetRotation_hook(void* _this, int targetIndex, bool isClipTargetTransOnGoal) {
+		auto data = reinterpret_cast<decltype(race_GetTargetRotation_hook)*>(race_GetTargetRotation_orig)(_this, targetIndex, isClipTargetTransOnGoal);
+		// printf("rot: %f, %f, %f, %f\n", data->w, data->x, data->y, data->z);
+		return data;
+		if ((!g_race_free_camera) || (!g_race_freecam_follow_umamusume)) return data;
+		data->w = 0;
+		data->x = 0;
+		data->y = 0;
+		data->z = 0;
+		return data;
+	}
+
 	void* race_OnDestroy_orig;
 	void race_OnDestroy_hook(void* _this) {
 		reinterpret_cast<decltype(race_OnDestroy_hook)*>(race_OnDestroy_orig)(_this);
 		printf("Race End!\n");
 		UmaCamera::reset_camera();
+		targetPosLastCache = Vector3_t{};
+		targetPosCache = Vector3_t{};
 	}
 
 	std::string currentTime()
@@ -1927,6 +1952,16 @@ namespace
 			"RaceCameraEventBase", "get_CameraShakeTargetOffset", 0
 		);
 
+		auto race_GetTargetHorseIndex_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"RaceCameraEventBase", "GetTargetHorseIndex", 3
+		);
+
+		auto race_GetTargetRotation_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"RaceCameraEventBase", "GetTargetRotation", 2
+		);
+
 		auto race_OnDestroy_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"RaceEffectManager", "OnDestroy", 0
@@ -2001,6 +2036,8 @@ namespace
 		ADD_HOOK(race_PlayEventCamera, "race_PlayEventCamera at %p\n");
 		ADD_HOOK(race_UpdateCameraDistanceBlendRate, "race_UpdateCameraDistanceBlendRate at %p\n");
 		ADD_HOOK(race_get_CameraShakeTargetOffset, "get_CameraShakePositionOffset at %p\n");
+		ADD_HOOK(race_GetTargetHorseIndex, "CalcScoreTargetHorsePos at %p\n");
+		ADD_HOOK(race_GetTargetRotation, "GetTargetRotation at %p\n");
 		ADD_HOOK(race_OnDestroy, "race_OnDestroy at %p\n");
 
 		//ADD_HOOK(camera_reset, "UnityEngine.Camera.Reset() at %p\n");

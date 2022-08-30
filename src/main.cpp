@@ -53,6 +53,7 @@ bool g_race_free_camera = false;
 float g_race_move_step = 5;
 bool g_race_freecam_lookat_umamusume = false;
 bool g_race_freecam_follow_umamusume = false;
+int g_race_freecam_follow_umamusume_index = -1;
 Vector3_t g_race_freecam_follow_umamusume_offset = {0, 10, -10};
 float g_race_freecam_follow_umamusume_distance = 0;
 

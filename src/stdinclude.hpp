@@ -95,3 +95,4 @@ extern bool g_race_freecam_lookat_umamusume;
 extern bool g_race_freecam_follow_umamusume;
 extern float g_race_freecam_follow_umamusume_distance;
 extern Vector3_t g_race_freecam_follow_umamusume_offset;
+extern int g_race_freecam_follow_umamusume_index;
