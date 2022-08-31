@@ -28,7 +28,7 @@
         "close_all_blur": false
     },
     "race_camera": {
-        "free_camera": true,
+        "free_camera": false,
         "moveStep": 5,
         "defaultFOV": 40,
         "freecam_lookat_target": false,
