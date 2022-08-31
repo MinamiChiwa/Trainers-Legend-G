@@ -64,7 +64,29 @@ A plugin for translating Umamusume Pretty Derby (DMM Client) to Chinese.
 }
 ```
 
+
+
+### Free Camera
+
+----
+
+##### Live Free Camera
+
+- Move: `WSAD`, Down: `Ctrl`, Up: `Space`, Adjust Angle: `↑↓←→`, Reset Camera:`R`
+
+##### Race Free Camera
+
+- Down: `Ctrl`, Up: `Space`, Adjust FOV: `Q`/`E`, Reset Camera:`R`, Change mode: `F`
+- Follow Umamusume Mode
+  - Change Offset: `WSAD`, Adjust Distance: `↑↓`, Switching front and back views: `V`
+- Free Camera Mode
+  - Move: `WSAD`, Adjust Angle: `↑↓←→`
+
+
+
 ### Already known issues
+
+----
 
 Game will create `Player.log` at `%UserProfile%\AppData\LocalLow\Cygames\umamusume` if game crash, which contains the details of it. Report the log file to developers if you met any bugs or problems.
 
