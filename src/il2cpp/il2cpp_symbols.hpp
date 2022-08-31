@@ -38,6 +38,16 @@ public:
 	float z;
 };
 
+// UnityEngine.Quaternion
+struct Quaternion_t
+{
+public:
+	float w;
+	float x;
+	float y;
+	float z;
+};
+
 struct Resolution_t
 {
 public:

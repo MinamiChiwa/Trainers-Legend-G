@@ -21,6 +21,25 @@
     "replaceAssets": true,
     "assetLoadLog": false,
     "autoFullscreen": false,
+    "live": {
+        "free_camera": false,
+        "force_changeVisibility_false": false,
+        "moveStep": 0.1,
+        "close_all_blur": false
+    },
+    "race_camera": {
+        "free_camera": true,
+        "moveStep": 5,
+        "defaultFOV": 40,
+        "freecam_lookat_target": false,
+        "freecam_follow_target": false,
+        "follow_offset": {
+            "distance": 4,
+            "x": 0,
+            "y": 1,
+            "z": 0
+        }
+    },
     "externalPlugin": {
         "hotkey": "u",
         "path": "legend_g_plugin.exe",

@@ -44,6 +44,19 @@ int g_antialiasing = -1;
 int g_graphics_quality = -1;
 int g_vsync_count = 0;
 
+bool g_live_free_camera = false;
+bool g_live_force_changeVisibility_false = false;
+bool g_live_close_all_blur = false;
+float g_live_move_step = 0.2;
+
+bool g_race_free_camera = false;
+float g_race_move_step = 5;
+bool g_race_freecam_lookat_umamusume = false;
+bool g_race_freecam_follow_umamusume = false;
+int g_race_freecam_follow_umamusume_index = -1;
+Vector3_t g_race_freecam_follow_umamusume_offset = {0, 10, -10};
+float g_race_freecam_follow_umamusume_distance = 0;
+
 std::string g_text_data_dict_path;
 std::string g_character_system_text_dict_path;
 std::string g_race_jikkyo_comment_dict_path;
@@ -485,6 +498,34 @@ namespace
 			if (document.HasMember("vSync_count")) {  // 自定义配置, 不包含到schema
 				g_vsync_count = document["vSync_count"].GetInt();
 			}
+
+			if (document.HasMember("live")) {
+				g_live_free_camera = document["live"]["free_camera"].GetBool();
+				g_live_force_changeVisibility_false = document["live"]["force_changeVisibility_false"].GetBool();
+				
+				if (document["live"].HasMember("close_all_blur")) {
+					g_live_close_all_blur = document["live"]["close_all_blur"].GetBool();
+				}
+				
+				auto moveStep = document["live"]["moveStep"].GetFloat();
+				g_live_move_step = moveStep;
+				UmaCamera::setMoveStep(moveStep);
+			}
+
+			if (document.HasMember("race_camera")) {
+				g_race_free_camera = document["race_camera"]["free_camera"].GetBool();
+				g_race_move_step = document["race_camera"]["moveStep"].GetFloat();
+				UmaCamera::setRaceCamFOV(document["race_camera"]["defaultFOV"].GetFloat());
+				g_race_freecam_lookat_umamusume = document["race_camera"]["freecam_lookat_target"].GetBool();
+				g_race_freecam_follow_umamusume = document["race_camera"]["freecam_follow_target"].GetBool();
+				if (g_race_freecam_follow_umamusume) g_race_freecam_lookat_umamusume = true;
+				auto& follow_offset = document["race_camera"]["follow_offset"];
+				g_race_freecam_follow_umamusume_distance = follow_offset["distance"].GetFloat();
+				g_race_freecam_follow_umamusume_offset.x = follow_offset["x"].GetFloat();
+				g_race_freecam_follow_umamusume_offset.y = follow_offset["y"].GetFloat();
+				g_race_freecam_follow_umamusume_offset.z = follow_offset["z"].GetFloat();
+				UmaCamera::loadGlobalData();
+			}
 			
 			if (document.HasMember("aspect_ratio")) {
 				if (document["aspect_ratio"].IsArray()) {
@@ -494,6 +535,7 @@ namespace
 					}
 				}
 			}
+			UmaCamera::initCameraSettings();
 
 			// Looks like not working for now
 			// g_aspect_ratio = document["customAspectRatio"].GetFloat();

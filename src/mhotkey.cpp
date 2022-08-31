@@ -6,6 +6,7 @@
 #include <iostream>
 #include <thread>
 #include <format>
+#include <functional>
 
 namespace MHotkey{
     namespace {
@@ -17,6 +18,12 @@ namespace MHotkey{
         bool openPluginSuccess = false;
         DWORD pluginPID = -1;
         int tlgport = 43215;
+
+        std::function<void(int, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD)> mKeyBoardCallBack = nullptr;
+    }
+
+    void SetKeyCallBack(std::function<void(int, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD)> callbackfun) {
+        mKeyBoardCallBack = callbackfun;
     }
 
     bool check_file_exist(const std::string& name) {
@@ -94,9 +101,15 @@ namespace MHotkey{
         DWORD SHIFT_key = 0;
         DWORD CTRL_key = 0;
         DWORD ALT_key = 0;
+        DWORD SPACE_key = 0;
+        DWORD UP_key = 0;
+        DWORD DOWN_key = 0;
+        DWORD LEFT_key = 0;
+        DWORD RIGHT_key = 0;
 
         if ((nCode == HC_ACTION) && ((wParam == WM_SYSKEYDOWN) || (wParam == WM_KEYDOWN)))
         {
+
             KBDLLHOOKSTRUCT hooked_key = *((KBDLLHOOKSTRUCT*)lParam);
             DWORD dwMsg = 1;
             dwMsg += hooked_key.scanCode << 16;
@@ -112,6 +125,16 @@ namespace MHotkey{
             SHIFT_key = GetAsyncKeyState(VK_SHIFT);
             CTRL_key = GetAsyncKeyState(VK_CONTROL);
             ALT_key = GetAsyncKeyState(VK_MENU);
+            SPACE_key = GetAsyncKeyState(VK_SPACE);
+
+            UP_key = GetAsyncKeyState(VK_UP);
+            DOWN_key = GetAsyncKeyState(VK_DOWN);
+            LEFT_key = GetAsyncKeyState(VK_LEFT);
+            RIGHT_key = GetAsyncKeyState(VK_RIGHT);
+
+            if (mKeyBoardCallBack != nullptr) {
+                mKeyBoardCallBack(key, SHIFT_key, CTRL_key, ALT_key, SPACE_key, UP_key, DOWN_key, LEFT_key, RIGHT_key);
+            }
 
             if (key >= 'A' && key <= 'Z')
             {
@@ -128,7 +151,11 @@ namespace MHotkey{
                 SHIFT_key = 0;
                 CTRL_key = 0;
                 ALT_key = 0;
-
+                SPACE_key = 0;
+                DWORD UP_key = 0;
+                DWORD DOWN_key = 0;
+                DWORD LEFT_key = 0;
+                DWORD RIGHT_key = 0;
             }
 
             // printf("lpszKeyName = %s\n", lpszKeyName);
