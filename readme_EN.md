@@ -78,7 +78,7 @@ A plugin for translating Umamusume Pretty Derby (DMM Client) to Chinese.
 
 - Down: `Ctrl`, Up: `Space`, Adjust FOV: `Q`/`E`, Reset Camera:`R`, Change mode: `F`
 - Follow Umamusume Mode
-  - Change Offset: `WSAD`, Adjust Distance: `↑↓`, Switching front and back views: `V`
+  - Change Offset: `WSAD`, Adjust Distance: `↑↓`, Switching observation targets: `←→`, Switching front and back views: `V`
 - Free Camera Mode
   - Move: `WSAD`, Adjust Angle: `↑↓←→`
 
