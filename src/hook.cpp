@@ -740,7 +740,7 @@ namespace
 			RubyBlockDataClass = il2cpp_symbols::get_class_from_instance(data);
 			RubyBlockDataClass_BlockIndex = il2cpp_class_get_field_from_name(RubyBlockDataClass, "BlockIndex");
 			RubyBlockDataClass_RubyDataList = il2cpp_class_get_field_from_name(RubyBlockDataClass, "RubyDataList");
-			auto blockIndex = il2cpp_symbols::read_field<int32_t>(data, RubyBlockDataClass_BlockIndex);
+			// auto blockIndex = il2cpp_symbols::read_field<int32_t>(data, RubyBlockDataClass_BlockIndex);
 			auto rubyDataList = il2cpp_symbols::read_field(data, RubyBlockDataClass_RubyDataList);
 
 			il2cpp_symbols::iterate_list(rubyDataList, [&](int32_t i, void* rubyData) {
@@ -749,13 +749,12 @@ namespace
 				RubyDataClass_CharY = il2cpp_class_get_field_from_name(RubyDataClass, "CharY");
 				RubyDataClass_RubyText = il2cpp_class_get_field_from_name(RubyDataClass, "RubyText");
 
-				auto charX = il2cpp_symbols::read_field<float>(rubyData, RubyDataClass_CharX);
-				auto charY = il2cpp_symbols::read_field<float>(rubyData, RubyDataClass_CharY);
-				auto rubyText = il2cpp_symbols::read_field<Il2CppString*>(rubyData, RubyDataClass_RubyText);
+				// auto charX = il2cpp_symbols::read_field<float>(rubyData, RubyDataClass_CharX);
+				// auto charY = il2cpp_symbols::read_field<float>(rubyData, RubyDataClass_CharY);
+				// auto rubyText = il2cpp_symbols::read_field<Il2CppString*>(rubyData, RubyDataClass_RubyText);
 
-				printf("index: %d, x: %f, y: %f, char: %ls\n", blockIndex, charX, charY, rubyText->start_char);
-				// TODO
-				// il2cpp_symbols::write_field(rubyData, RubyDataClass_RubyText, il2cpp_symbols::NewWStr(L"wuhuqifei"));
+				// printf("index: %d, x: %f, y: %f, char: %ls\n", blockIndex, charX, charY, rubyText->start_char);
+				il2cpp_symbols::write_field(rubyData, RubyDataClass_RubyText, il2cpp_symbols::NewWStr(L""));
 			});
 			
 		});
@@ -895,9 +894,9 @@ namespace
 				assert(assetName.starts_with(RacePrefix));
 				LocalizeStoryRaceTextAsset(result, static_cast<std::size_t>(_wtoll(assetName.substr(std::size(RacePrefix) - 1).data())));
 			}
-		}
-		if (cls == TextRubyDataClass) {
-			LocalizeStoryTextRubyData(result);
+			else if (cls == TextRubyDataClass) {
+				LocalizeStoryTextRubyData(result);
+			}
 		}
 		return result;
 	}
