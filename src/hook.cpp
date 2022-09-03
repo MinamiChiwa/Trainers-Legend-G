@@ -1660,7 +1660,6 @@ namespace
 		
 		TextRubyDataClass = il2cpp_symbols::get_class("umamusume.dll", "", "TextRubyData");
 		TextRubyDataClass_DataArray = il2cpp_class_get_field_from_name(TextRubyDataClass, "DataArray");
-		// RubyBlockDataClass = il2cpp_class_get_field_from_name("umamusume.dll", "", "RubyBlockData");
 
 		StoryTimelineDataClass = il2cpp_symbols::get_class("umamusume.dll", "Gallop", "StoryTimelineData");
 		StoryTimelineDataClass_StoryIdField = il2cpp_class_get_field_from_name(StoryTimelineDataClass, "StoryId");
