@@ -723,6 +723,44 @@ namespace
 	FieldInfo* StoryTimelineTrackDataClass_ClipListField;
 	void* StoryTimelineClipDataClass;
 
+	void* TextRubyDataClass;
+	FieldInfo* TextRubyDataClass_DataArray;
+	void* RubyBlockDataClass;
+	FieldInfo* RubyBlockDataClass_BlockIndex;
+	FieldInfo* RubyBlockDataClass_RubyDataList;
+	void* RubyDataClass;
+	FieldInfo* RubyDataClass_CharX;
+	FieldInfo* RubyDataClass_CharY;
+	FieldInfo* RubyDataClass_RubyText;
+
+	void LocalizeStoryTextRubyData(void* textRuby) {
+		const auto textRubyDataArr = il2cpp_symbols::read_field(textRuby, TextRubyDataClass_DataArray);
+
+		il2cpp_symbols::iterate_IEnumerable(textRubyDataArr, [&](void* data) {
+			RubyBlockDataClass = il2cpp_symbols::get_class_from_instance(data);
+			RubyBlockDataClass_BlockIndex = il2cpp_class_get_field_from_name(RubyBlockDataClass, "BlockIndex");
+			RubyBlockDataClass_RubyDataList = il2cpp_class_get_field_from_name(RubyBlockDataClass, "RubyDataList");
+			auto blockIndex = il2cpp_symbols::read_field<int32_t>(data, RubyBlockDataClass_BlockIndex);
+			auto rubyDataList = il2cpp_symbols::read_field(data, RubyBlockDataClass_RubyDataList);
+
+			il2cpp_symbols::iterate_list(rubyDataList, [&](int32_t i, void* rubyData) {
+				RubyDataClass = il2cpp_symbols::get_class_from_instance(rubyData);
+				RubyDataClass_CharX = il2cpp_class_get_field_from_name(RubyDataClass, "CharX");
+				RubyDataClass_CharY = il2cpp_class_get_field_from_name(RubyDataClass, "CharY");
+				RubyDataClass_RubyText = il2cpp_class_get_field_from_name(RubyDataClass, "RubyText");
+
+				auto charX = il2cpp_symbols::read_field<float>(rubyData, RubyDataClass_CharX);
+				auto charY = il2cpp_symbols::read_field<float>(rubyData, RubyDataClass_CharY);
+				auto rubyText = il2cpp_symbols::read_field<Il2CppString*>(rubyData, RubyDataClass_RubyText);
+
+				printf("index: %d, x: %f, y: %f, char: %ls\n", blockIndex, charX, charY, rubyText->start_char);
+				// TODO
+				// il2cpp_symbols::write_field(rubyData, RubyDataClass_RubyText, il2cpp_symbols::NewWStr(L"wuhuqifei"));
+			});
+			
+		});
+	}
+
 	void LocalizeStoryTimelineData(void* timelineData)
 	{
 		const auto storyIdStr = il2cpp_symbols::read_field<Il2CppString*>(timelineData, StoryTimelineDataClass_StoryIdField);
@@ -857,6 +895,9 @@ namespace
 				assert(assetName.starts_with(RacePrefix));
 				LocalizeStoryRaceTextAsset(result, static_cast<std::size_t>(_wtoll(assetName.substr(std::size(RacePrefix) - 1).data())));
 			}
+		}
+		if (cls == TextRubyDataClass) {
+			LocalizeStoryTextRubyData(result);
 		}
 		return result;
 	}
@@ -1615,6 +1656,11 @@ namespace
 			"umamusume.dll", "Gallop",
 			"TextCommon", "Awake", 0
 		);
+
+		
+		TextRubyDataClass = il2cpp_symbols::get_class("umamusume.dll", "", "TextRubyData");
+		TextRubyDataClass_DataArray = il2cpp_class_get_field_from_name(TextRubyDataClass, "DataArray");
+		// RubyBlockDataClass = il2cpp_class_get_field_from_name("umamusume.dll", "", "RubyBlockData");
 
 		StoryTimelineDataClass = il2cpp_symbols::get_class("umamusume.dll", "Gallop", "StoryTimelineData");
 		StoryTimelineDataClass_StoryIdField = il2cpp_class_get_field_from_name(StoryTimelineDataClass, "StoryId");
