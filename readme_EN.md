@@ -94,6 +94,7 @@ Game will create `Player.log` at `%UserProfile%\AppData\LocalLow\Cygames\umamusu
 - Too intensive shaking of camera when 'maxFPS' is bigger than 60
 - If you find your game windows can't show all the game graphic, set `uiScale` to 0.8.
 - The `AUTO` mode when viewing the story will broken if 'maxFPS' is bigger than 60.
+- When playing the scenario `つなげ、照らせ、ひかれ。私たちのグランドライブ`, chances are that the game will raise errors if 'maxFPS' is bigger than 90.
 - When `autoFullscreen` is true, serverl texts may be left untranslated. Replace the translation file to solve the problem.
 - Chances are that the game will raise errors such as `Memory could not be read` when launching the game, please try to install MS runtime library.
 - Raise `Assertion failed`: Check whether `config.json` is updated or is there any json syntax error in it.
