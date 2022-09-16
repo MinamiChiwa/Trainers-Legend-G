@@ -861,6 +861,7 @@ namespace
 			});
 	}
 
+
 	void* AssetBundle_LoadAsset_orig;
 	void* AssetBundle_LoadAsset_hook(void* _this, Il2CppString* name, Il2CppReflectionType* type)
 	{
@@ -873,13 +874,49 @@ namespace
 				return reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(extraAssetBundle, name, type);
 			}
 		}
+
 		const auto cls = il2cpp_class_from_type(type->type);
 		if (g_asset_load_log)
 		{
 			const auto assetCls = static_cast<Il2CppClassHead*>(cls);
 			std::wprintf(L"AssetBundle.LoadAsset(this = %p, name = %ls, type = %ls)\n", _this, name->start_char, utility::conversions::to_string_t(assetCls->name).c_str());
 		}
-		const auto result = reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(_this, name, type);
+
+		void* result = nullptr;
+		if (g_enable_replaceBuiltInAssets) {
+			auto newAsseetData = UmaDatabase::origPathToNewPath(name->start_char);
+			if (!newAsseetData.first.empty()) {
+				const auto newAssetBundlePath = std::string(newAsseetData.second.begin(), newAsseetData.second.end());
+				const auto newBundleFilePath = UmaDatabase::bundleNameToPath(newAssetBundlePath);
+				const auto bundleFile = AssetBundle_LoadFromFile(
+					il2cpp_string_new(newBundleFilePath.c_str())
+				);
+				if (bundleFile) {
+					auto bundleHandle = il2cpp_gchandle_new(bundleFile, false);
+					const auto bundle = il2cpp_gchandle_get_target(bundleHandle);
+					auto newFilePath = std::string(newAsseetData.first.begin(), newAsseetData.first.end());
+
+					printf("Redirect asset: %ls To: %s At: %s\n", name->start_char, newFilePath.c_str(), newBundleFilePath.c_str());
+
+					UmaDatabase::setBundleHandleTargetCache(newAsseetData.first, bundle);
+					auto retData = reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(bundle, il2cpp_string_new(newFilePath.c_str()), type);
+					AssetBundle_Unload(bundle, false);
+					return retData;
+				}
+				else {
+					printf("Load built-in asset failed: %s\n", newBundleFilePath.c_str());
+				}
+			}
+
+			 auto cachePtr = UmaDatabase::getBundleHandleTargetCache(name->start_char);
+			 if (cachePtr != nullptr) {
+				printf("hit cache\n");  // TODO 重复加载
+			 	result = reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(cachePtr, name, type);
+			 }
+		}
+
+		if (result == nullptr)
+			result = reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(_this, name, type);
 		if (result)
 		{
 			if (cls == StoryTimelineDataClass)
@@ -899,6 +936,12 @@ namespace
 			}
 		}
 		return result;
+	}
+
+	void* AssetLoader_LoadAssetHandle_orig;
+	void* AssetLoader_LoadAssetHandle_hook(void* _this, Il2CppString* path, bool isLowerCase) {
+		auto ret = reinterpret_cast<decltype(AssetLoader_LoadAssetHandle_hook)*>(AssetLoader_LoadAssetHandle_orig)(_this, path, isLowerCase);
+		return ret;
 	}
 
 	Il2CppReflectionType* Font_Type;
@@ -1693,6 +1736,12 @@ namespace
 				"UnityEngine.AssetBundleModule.dll", "UnityEngine",
 				"AssetBundle", "LoadAsset", 2
 			);
+		
+		auto AssetLoader_LoadAssetHandle_addr =
+			il2cpp_symbols::get_method_pointer(
+				"_Cyan.dll", "Cyan.Loader",
+				"AssetLoader", "LoadAssetHandle", 2
+			);
 
 		Object_IsNativeObjectAlive = reinterpret_cast<bool(*)(void*)>(il2cpp_symbols::get_method_pointer("UnityEngine.CoreModule.dll", "UnityEngine", "Object", "IsNativeObjectAlive", 1));
 
@@ -2083,6 +2132,7 @@ namespace
 		ADD_HOOK(race_GetTargetHorseIndex, "CalcScoreTargetHorsePos at %p\n");
 		ADD_HOOK(race_GetTargetRotation, "GetTargetRotation at %p\n");
 		ADD_HOOK(race_OnDestroy, "race_OnDestroy at %p\n");
+		ADD_HOOK(AssetLoader_LoadAssetHandle, "AssetLoader_LoadAssetHandle at %p\n");
 
 		//ADD_HOOK(camera_reset, "UnityEngine.Camera.Reset() at %p\n");
 
