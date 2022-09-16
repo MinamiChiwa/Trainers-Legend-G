@@ -899,7 +899,9 @@ namespace
 					printf("Redirect asset: %ls To: %s At: %s\n", name->start_char, newFilePath.c_str(), newBundleFilePath.c_str());
 
 					UmaDatabase::setBundleHandleTargetCache(newAsseetData.first, bundle);
-					return reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(bundle, il2cpp_string_new(newFilePath.c_str()), type);
+					auto retData = reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(bundle, il2cpp_string_new(newFilePath.c_str()), type);
+					AssetBundle_Unload(bundle, false);
+					return retData;
 				}
 				else {
 					printf("Load built-in asset failed: %s\n", newBundleFilePath.c_str());
