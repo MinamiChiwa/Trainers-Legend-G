@@ -900,10 +900,10 @@ namespace
 					il2cpp_string_new(newBundleFilePath.c_str())
 				);
 				if (!bundleFile) {
-					auto reGet = UmaDatabase::getBundleHandleTargetCache(std::wstring(newBundleFilePath.begin(), newBundleFilePath.end()));
+					auto reGet = UmaDatabase::getBundleHandleTargetCache(newAsseetData.first);
 					if (reGet != nullptr) {
 						bundleFile = reGet;
-						printf("Load failed but hit cache: %s\n", newBundleFilePath.c_str());
+						printf("Load failed but hit cache: %ls\n", newAsseetData.first.c_str());
 					}
 				}
 				if (bundleFile) {
