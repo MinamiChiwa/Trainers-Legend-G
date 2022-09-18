@@ -14,7 +14,7 @@ namespace UmaDatabase {
         std::unordered_map<std::string, std::string> umaFileAssetHash{};  // dbPath: bundleName
         // std::unordered_map<std::string, std::list<std::wstring>> bundleNames{};  // dbName: [bundlePath1, bundlePath2, ...]
         std::map<std::wstring, std::string> pathBundle{};  // bundlePath: bundleName
-        std::unordered_map<std::string, void*> bundleHandleTargetCache{};
+        std::unordered_map<std::wstring, void*> bundleHandleTargetCache{};
     }
 
     void initPtr() {
@@ -61,14 +61,7 @@ namespace UmaDatabase {
     }
 
     void setBundleHandleTargetCache(std::wstring bundlePath, void* target) {
-        if (pathBundle.find(bundlePath) == pathBundle.end()) {
-            printf("setBundleHandleTargetCache: %ls not found\n", bundlePath.c_str());
-            return;
-        }
-
-        auto bundleName = pathBundle.at(bundlePath);
-        // printf("set bundle: %s cache at %p", bundleName.c_str(), target);
-        bundleHandleTargetCache.emplace(bundleName, target);
+        bundleHandleTargetCache.emplace(bundlePath, target);
     }
 
     void* getBundleHandleTargetCache(std::wstring bundlePath, bool isDbPath) {
@@ -76,39 +69,12 @@ namespace UmaDatabase {
             initPtr();
         }
 
-        std::string bundleName;
-        
-        if (isDbPath) {
-            const auto newBundlePath = dbPathToBundlePath(std::string(bundlePath.begin(), bundlePath.end()));
-            if (newBundlePath.empty()) {
-                return nullptr;
-            }
-
-            if (pathBundle.find(newBundlePath) == pathBundle.end()) {
-                // printf("getBundleHandleTargetCache: %ls not found\n", bundlePath.c_str());
-                return nullptr;
-            }
-            bundleName = pathBundle.at(newBundlePath);
-        }
-        else {
-            if (pathBundle.find(bundlePath) == pathBundle.end()) {
-                // printf("getBundleHandleTargetCache: %ls not found\n", bundlePath.c_str());
-                return nullptr;
-            }
-            bundleName = pathBundle.at(bundlePath);
-        }
-        
-
-        printf("searchBundleName: %s\n", bundleName.c_str());
-
-        if (bundleHandleTargetCache.find(bundleName) == bundleHandleTargetCache.end()) {
-            printf("getBundleHandleTargetCache: Bundle %s not found\n", bundleName.c_str());
+        if (bundleHandleTargetCache.find(bundlePath) == bundleHandleTargetCache.end()) {
             return nullptr;
         }
-        auto ret = bundleHandleTargetCache.at(bundleName);
+        auto ret = bundleHandleTargetCache.at(bundlePath);
         if (!reinterpret_cast<bool(*)(void*)>(Object_IsNativeObjectAlive)(ret)) {
-            printf("bundle: %s death\n", bundleName.c_str());
-            bundleHandleTargetCache.erase(bundleName);
+            bundleHandleTargetCache.erase(bundlePath);
             return nullptr;
         }
         return ret;
@@ -174,15 +140,6 @@ namespace UmaDatabase {
         il2cpp_symbols::iterate_IEnumerable<Il2CppString*>(allAssetPaths, [bundleName](Il2CppString* path)
             {
                 pathBundle.emplace(path->start_char, bundleName);
-                /*
-                if (bundleNames.find(bundleName) == bundleNames.end()) {
-                    bundleNames.emplace(bundleName, std::list<std::wstring>{path->start_char});
-                }
-                else {
-                    auto& lst = bundleNames.at(bundleName);
-                    lst.emplace_back(path->start_char);
-                }
-                */
             }
         );
 
@@ -237,7 +194,8 @@ namespace UmaDatabase {
                         umaFileAssetHash.emplace(queryPath, value);
                     }
                 }
-                printf("Row: %d, Col: %d\n", nRow, nCol);
+                // printf("Row: %d, Col: %d\n", nRow, nCol);
+                if ((nRow == 0) && (nCol == 0)) printf("Resource Not Found: %s\n", queryPath);
                 sqlite3_free_table(pResult);
             }
         }

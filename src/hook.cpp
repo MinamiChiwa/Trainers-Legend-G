@@ -551,6 +551,14 @@ namespace
 			g_antialiasing == -1 ? value : g_antialiasing);
 	}
 
+	void* Get3DAntiAliasingLevel_orig;
+	int Get3DAntiAliasingLevel_hook(void* _this, bool allowMSAA) {
+		if (g_antialiasing != -1) allowMSAA = true;
+		auto data = reinterpret_cast<decltype(Get3DAntiAliasingLevel_hook)*>(Get3DAntiAliasingLevel_orig)(_this, allowMSAA);
+		// printf("Get3DAntiAliasingLevel: %d %d\n", allowMSAA, data);
+		return data;
+	}
+
 	bool (*is_virt)() = nullptr;
 	int last_height = 0, last_width = 0;
 
@@ -865,6 +873,7 @@ namespace
 	void* AssetBundle_LoadAsset_orig;
 	void* AssetBundle_LoadAsset_hook(void* _this, Il2CppString* name, Il2CppReflectionType* type)
 	{
+		UmaDatabase::setBundleHandleTargetCache(name->start_char, _this);
 		//const auto stackTrace = environment_get_stacktrace();
 		if (ExtraAssetBundleHandle)
 		{
@@ -882,15 +891,21 @@ namespace
 			std::wprintf(L"AssetBundle.LoadAsset(this = %p, name = %ls, type = %ls)\n", _this, name->start_char, utility::conversions::to_string_t(assetCls->name).c_str());
 		}
 
-		void* result = nullptr;
 		if (g_enable_replaceBuiltInAssets) {
 			auto newAsseetData = UmaDatabase::origPathToNewPath(name->start_char);
 			if (!newAsseetData.first.empty()) {
 				const auto newAssetBundlePath = std::string(newAsseetData.second.begin(), newAsseetData.second.end());
 				const auto newBundleFilePath = UmaDatabase::bundleNameToPath(newAssetBundlePath);
-				const auto bundleFile = AssetBundle_LoadFromFile(
+				auto bundleFile = AssetBundle_LoadFromFile(
 					il2cpp_string_new(newBundleFilePath.c_str())
 				);
+				if (!bundleFile) {
+					auto reGet = UmaDatabase::getBundleHandleTargetCache(std::wstring(newBundleFilePath.begin(), newBundleFilePath.end()));
+					if (reGet != nullptr) {
+						bundleFile = reGet;
+						printf("Load failed but hit cache: %s\n", newBundleFilePath.c_str());
+					}
+				}
 				if (bundleFile) {
 					auto bundleHandle = il2cpp_gchandle_new(bundleFile, false);
 					const auto bundle = il2cpp_gchandle_get_target(bundleHandle);
@@ -898,7 +913,6 @@ namespace
 
 					printf("Redirect asset: %ls To: %s At: %s\n", name->start_char, newFilePath.c_str(), newBundleFilePath.c_str());
 
-					UmaDatabase::setBundleHandleTargetCache(newAsseetData.first, bundle);
 					auto retData = reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(bundle, il2cpp_string_new(newFilePath.c_str()), type);
 					AssetBundle_Unload(bundle, false);
 					return retData;
@@ -907,16 +921,10 @@ namespace
 					printf("Load built-in asset failed: %s\n", newBundleFilePath.c_str());
 				}
 			}
-
-			 auto cachePtr = UmaDatabase::getBundleHandleTargetCache(name->start_char);
-			 if (cachePtr != nullptr) {
-				printf("hit cache\n");  // TODO 重复加载
-			 	result = reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(cachePtr, name, type);
-			 }
 		}
 
-		if (result == nullptr)
-			result = reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(_this, name, type);
+
+		void* result = reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(_this, name, type);
 		if (result)
 		{
 			if (cls == StoryTimelineDataClass)
@@ -1854,6 +1862,11 @@ namespace
 			"RenderTexture", "set_antiAliasing", 1
 		);
 
+		auto Get3DAntiAliasingLevel_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"GraphicSettings", "Get3DAntiAliasingLevel", 1
+		);
+
 		auto on_exit_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"GameSystem", "OnApplicationQuit", 0
@@ -2121,6 +2134,7 @@ namespace
 		ADD_HOOK(AlterUpdate_MultiCamera, "AlterUpdate_MultiCamera at %p\n");
 		ADD_HOOK(set_shadow_resolution, "set_shadow_resolution at %p\n");
 		ADD_HOOK(set_RenderTextureAntiAliasing, "set_RenderTextureAntiAliasing at %p\n");
+		ADD_HOOK(Get3DAntiAliasingLevel, "Get3DAntiAliasingLevel at %p\n");
 		ADD_HOOK(set_shadows, "set_shadows at %p\n");
 		ADD_HOOK(race_get_CameraPosition, "race_get_CameraPosition at %p\n");
 		ADD_HOOK(race_get_TargetPosition, "race_get_TargetPosition at %p\n");
