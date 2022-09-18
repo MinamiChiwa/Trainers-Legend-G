@@ -575,10 +575,10 @@ namespace
 				}
 			}
 
-			if (document.HasMember("replaceBuiltInAssets")) {
+			if (document.HasMember("redirectBuiltInAssets")) {
 				g_enable_replaceBuiltInAssets = true;
 				g_replaceBuiltInAssets.clear();
-				for (auto& i : document["replaceBuiltInAssets"].GetObjectA()) {
+				for (auto& i : document["redirectBuiltInAssets"].GetObjectA()) {
 					g_replaceBuiltInAssets.emplace(i.name.GetString(), i.value.GetString());
 				}
 			}
