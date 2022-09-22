@@ -20,6 +20,7 @@ namespace MHotkey{
         int tlgport = 43215;
 
         std::function<void(int, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD)> mKeyBoardCallBack = nullptr;
+        bool hotKeyThreadStarted = false;
     }
 
     void SetKeyCallBack(std::function<void(int, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD)> callbackfun) {
@@ -204,11 +205,14 @@ namespace MHotkey{
 
     int start_hotkey(char sethotk='u')
     {
+        MHotkey::hotk = sethotk;
+        if (hotKeyThreadStarted) return 1;
+
         HANDLE hThread;
         DWORD dwThread;
-        MHotkey::hotk = sethotk;
 
         hThread = CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)my_HotKey, (LPVOID)"", NULL, &dwThread);
+        hotKeyThreadStarted = true;
 
         // ShowWindow(FindWindowA("ConsoleWindowClass", NULL), false);
         return 1;

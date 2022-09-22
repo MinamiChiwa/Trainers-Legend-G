@@ -35,6 +35,7 @@
 #include "msgpack/msgpack.hpp"
 
 #include "camera/camera.hpp"
+#include "umadb/umadb.hpp"
 
 extern bool g_dump_entries;
 extern bool g_enable_logger;
@@ -96,3 +97,5 @@ extern bool g_race_freecam_follow_umamusume;
 extern float g_race_freecam_follow_umamusume_distance;
 extern Vector3_t g_race_freecam_follow_umamusume_offset;
 extern int g_race_freecam_follow_umamusume_index;
+extern std::map<std::string, std::string> g_replaceBuiltInAssets;
+extern bool g_enable_replaceBuiltInAssets;

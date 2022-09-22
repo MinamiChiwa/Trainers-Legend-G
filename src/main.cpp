@@ -56,6 +56,8 @@ bool g_race_freecam_follow_umamusume = false;
 int g_race_freecam_follow_umamusume_index = -1;
 Vector3_t g_race_freecam_follow_umamusume_offset = {0, 10, -10};
 float g_race_freecam_follow_umamusume_distance = 0;
+std::map<std::string, std::string> g_replaceBuiltInAssets{};
+bool g_enable_replaceBuiltInAssets = false;
 
 std::string g_text_data_dict_path;
 std::string g_character_system_text_dict_path;
@@ -572,6 +574,17 @@ namespace
 					}
 				}
 			}
+
+			if (document.HasMember("redirectBuiltInAssets")) {
+				g_enable_replaceBuiltInAssets = true;
+				g_replaceBuiltInAssets.clear();
+				for (auto& i : document["redirectBuiltInAssets"].GetObjectA()) {
+					g_replaceBuiltInAssets.emplace(i.name.GetString(), i.value.GetString());
+				}
+			}
+			else {
+				g_enable_replaceBuiltInAssets = false;
+			}
 		}
 
 		config_stream.close();
@@ -796,6 +809,9 @@ namespace {
 			auto&& [storyDict, raceDict] = LoadStories();
 			auto&& [textData, characterSystemTextData, raceJikkyoCommentData, raceJikkyoMessageData] = LoadDicts();
 			local::reload_textdb(&dicts, std::move(staticDictCache), std::move(storyDict), std::move(raceDict), std::move(textData), std::move(characterSystemTextData), std::move(raceJikkyoCommentData), std::move(raceJikkyoMessageData));
+			if (g_enable_replaceBuiltInAssets) {
+				UmaDatabase::executeQueryRes();
+			}
 		}
 	}
 
@@ -1503,6 +1519,7 @@ int __stdcall DllMain(HINSTANCE dllModule, DWORD reason, LPVOID)
 			}
 
 			HttpServer::start_http_server(true);  // 启动HTTP服务器
+			UmaDatabase::executeQueryRes();
 
 			auto staticDictCache = ensure_latest_static_cache(g_static_dict_path);
 			if (g_dump_entries)
