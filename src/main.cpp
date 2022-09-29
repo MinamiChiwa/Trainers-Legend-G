@@ -59,6 +59,9 @@ float g_race_freecam_follow_umamusume_distance = 0;
 std::map<std::string, std::string> g_replaceBuiltInAssets{};
 bool g_enable_replaceBuiltInAssets = false;
 
+bool g_enable_home_char_replace = false;
+std::unordered_map<int, std::pair<int, int>> g_home_char_replace{};
+
 std::string g_text_data_dict_path;
 std::string g_character_system_text_dict_path;
 std::string g_race_jikkyo_comment_dict_path;
@@ -538,6 +541,19 @@ namespace
 				}
 			}
 			UmaCamera::initCameraSettings();
+
+			if (document.HasMember("replaceHomeStandChar")) {
+				g_home_char_replace.clear();
+				auto& homeStand = document["replaceHomeStandChar"];
+				g_enable_home_char_replace = homeStand["enable"].GetBool();
+				auto dataList = homeStand["data"].GetArray();
+				for (auto& i : dataList) {
+					g_home_char_replace.emplace(
+						i["origCharId"].GetInt(),
+						std::make_pair(i["newChrId"].GetInt(), i["newClothId"].GetInt())
+					);
+				}
+			}
 
 			// Looks like not working for now
 			// g_aspect_ratio = document["customAspectRatio"].GetFloat();

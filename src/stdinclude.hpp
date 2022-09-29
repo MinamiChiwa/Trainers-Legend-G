@@ -99,3 +99,5 @@ extern Vector3_t g_race_freecam_follow_umamusume_offset;
 extern int g_race_freecam_follow_umamusume_index;
 extern std::map<std::string, std::string> g_replaceBuiltInAssets;
 extern bool g_enable_replaceBuiltInAssets;
+extern bool g_enable_home_char_replace;
+extern std::unordered_map<int, std::pair<int, int>> g_home_char_replace;

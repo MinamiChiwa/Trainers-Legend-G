@@ -270,6 +270,37 @@
             "items": {
                 "type": "string"
             }
+        },
+        "replaceHomeStandChar": {
+            "description": "替换主页角色",
+            "type": "object",
+            "properties": {
+                "enable": {
+                    "description": "启用角色替换",
+                    "type": "boolean"
+                },
+                "data": {
+                    "description": "角色替换设置",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "origCharId": {
+                                "description": "原角色ID, 例: 1046",
+                                "type": "integer"
+                            },
+                            "newChrId": {
+                                "description": "新角色ID, 例: 1046",
+                                "type": "integer"
+                            },
+                            "newClothId": {
+                                "description": "新角色服装ID, 例: 104601",
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "additionalProperties": false,

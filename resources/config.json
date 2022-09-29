@@ -71,5 +71,15 @@
         "source": "github",
         "path": "http://uma.chinosk6.cn/api/get_localify_latest_releases"
     },
-    "enableBuiltinAutoUpdate": false
+    "enableBuiltinAutoUpdate": false,
+    "replaceHomeStandChar": {
+        "enable": false,
+        "data": [
+            {
+                "origCharId": 1046,
+                "newChrId": 2001,
+                "newClothId": 9
+            }
+        ]
+    }
 }

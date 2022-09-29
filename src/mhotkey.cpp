@@ -211,8 +211,8 @@ namespace MHotkey{
         HANDLE hThread;
         DWORD dwThread;
 
-        hThread = CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)my_HotKey, (LPVOID)"", NULL, &dwThread);
         hotKeyThreadStarted = true;
+        hThread = CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)my_HotKey, (LPVOID)"", NULL, &dwThread);
 
         // ShowWindow(FindWindowA("ConsoleWindowClass", NULL), false);
         return 1;

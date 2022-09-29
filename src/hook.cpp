@@ -1477,6 +1477,24 @@ namespace
 		targetPosCache = Vector3_t{};
 	}
 
+	void* CharacterBuildInfo_ctor_0_orig;
+	void CharacterBuildInfo_ctor_0_hook(void* _this, int charaId, int dressId, int controllerType, int headId,
+		int zekken, int mobId, int backDancerColorId, bool isUseDressDataHeadModelSubId, int audienceId,
+		int motionDressId, bool isEnableModelCache)
+	{
+		// printf("CharacterBuildInfo_ctor_0 charaId: %d, dressId: %d, headId: %d\n", charaId, dressId, headId);
+
+		if (g_enable_home_char_replace && (controllerType == 0x5)) {  // HomeStand
+			if (g_home_char_replace.find(charaId) != g_home_char_replace.end()) {
+				auto* replaceChar = &g_home_char_replace.at(charaId);
+				charaId = replaceChar->first;
+				dressId = replaceChar->second;
+			}
+		}
+
+		return reinterpret_cast<decltype(CharacterBuildInfo_ctor_0_hook)*>(CharacterBuildInfo_ctor_0_orig)(_this, charaId, dressId, controllerType, headId, zekken, mobId, backDancerColorId, isUseDressDataHeadModelSubId, audienceId, motionDressId, isEnableModelCache);
+	}
+
 	std::string currentTime()
 	{
 		auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(
@@ -2073,6 +2091,12 @@ namespace
 			"RaceEffectManager", "OnDestroy", 0
 		);
 
+		auto CharacterBuildInfo_ctor_0_addr =
+			il2cpp_symbols::get_method_pointer(
+				"umamusume.dll", "Gallop",
+				"CharacterBuildInfo", ".ctor", 11
+			);
+
 		auto load_scene_internal_addr = il2cpp_resolve_icall("UnityEngine.SceneManagement.SceneManager::LoadSceneAsyncNameIndexInternal_Injected(System.String,System.Int32,UnityEngine.SceneManagement.LoadSceneParameters&,System.Boolean)");
 
 		const auto GallopUtil_GetModifiedString_addr = il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "GallopUtil", "GetModifiedString", -1);
@@ -2147,6 +2171,7 @@ namespace
 		ADD_HOOK(race_GetTargetRotation, "GetTargetRotation at %p\n");
 		ADD_HOOK(race_OnDestroy, "race_OnDestroy at %p\n");
 		ADD_HOOK(AssetLoader_LoadAssetHandle, "AssetLoader_LoadAssetHandle at %p\n");
+		ADD_HOOK(CharacterBuildInfo_ctor_0, "CharacterBuildInfo_ctor_0 at %p\n");
 
 		//ADD_HOOK(camera_reset, "UnityEngine.Camera.Reset() at %p\n");
 

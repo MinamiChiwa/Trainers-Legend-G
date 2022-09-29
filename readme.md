@@ -96,7 +96,36 @@
         "source": "github", /*自动更新的仓库源（gitee或github）*/
         "path": "http://uma.chinosk6.cn/api/get_localify_latest_releases" /*自动更新的抓取地址*/
     },
-    "enableBuiltinAutoUpdate": false /*启用内置自动更新*/
+    "enableBuiltinAutoUpdate": false, /*启用内置自动更新*/
+    "live": {
+        "free_camera": false,
+        "force_changeVisibility_false": false,
+        "moveStep": 0.1,
+        "close_all_blur": false
+    },
+    "race_camera": {
+        "free_camera": false,
+        "moveStep": 5.0,
+        "defaultFOV": 40.0,
+        "freecam_lookat_target": false,
+        "freecam_follow_target": false,
+        "follow_offset": {
+            "distance": 4.0,
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+        }
+    },
+    "replaceHomeStandChar": {
+        "enable": false,
+        "data": [
+            {
+                "origCharId": 1046,
+                "newChrId": 2001,
+                "newClothId": 9
+            }
+        ]
+    }
 }
 ```
 
