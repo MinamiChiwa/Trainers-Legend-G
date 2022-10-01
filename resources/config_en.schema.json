@@ -270,6 +270,37 @@
             "items": {
                 "type": "string"
             }
+        },
+        "replaceHomeStandChar": {
+            "description": "Replace Home Character",
+            "type": "object",
+            "properties": {
+                "enable": {
+                    "description": "Enable home character replace",
+                    "type": "boolean"
+                },
+                "data": {
+                    "description": "Home character replace settings",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "origCharId": {
+                                "description": "Original charID, eg.1046",
+                                "type": "integer"
+                            },
+                            "newChrId": {
+                                "description": "New charID, eg.1046",
+                                "type": "integer"
+                            },
+                            "newClothId": {
+                                "description": "New clothId, eg.104601",
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "additionalProperties": false,
