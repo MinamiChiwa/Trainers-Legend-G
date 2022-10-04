@@ -101,3 +101,6 @@ extern std::map<std::string, std::string> g_replaceBuiltInAssets;
 extern bool g_enable_replaceBuiltInAssets;
 extern bool g_enable_home_char_replace;
 extern std::unordered_map<int, std::pair<int, int>> g_home_char_replace;
+extern bool g_enable_global_char_replace;
+extern std::unordered_map<int, std::pair<int, int>> g_global_char_replace;
+extern std::unordered_map<int, std::pair<int, int>> g_global_mini_char_replace;

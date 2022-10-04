@@ -81,5 +81,9 @@
                 "newClothId": 9
             }
         ]
+    },
+    "replaceGlobalChar": {
+        "enable": false,
+        "data": []
     }
 }
