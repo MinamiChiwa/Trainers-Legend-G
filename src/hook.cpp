@@ -1635,7 +1635,6 @@ namespace
 	{
 		if (enableLoadCharLog) printf("CharacterBuildInfo_ctor_1 cardId: %d, charaId: %d, dressId: %d, headId: %d, audienceId: %d, motionDressId: %d, controllerType: 0x%x\n", cardId, charaId, dressId, headId, audienceId, motionDressId, controllerType);
 		replaceCharController(&charaId, &dressId, &headId, controllerType);
-		
 		return reinterpret_cast<decltype(CharacterBuildInfo_ctor_1_hook)*>(CharacterBuildInfo_ctor_1_orig)(_this, cardId, charaId, dressId, controllerType, headId, zekken, mobId, backDancerColorId, overrideClothCategory, isUseDressDataHeadModelSubId, audienceId, motionDressId, isEnableModelCache);
 	}
 
@@ -1644,24 +1643,6 @@ namespace
 		if (enableLoadCharLog) printf("EditableCharacterBuildInfo_ctor cardId: %d, charaId: %d, dressId: %d, headId: %d, controllerType: 0x%x\n", cardId, charaId, dressId, headId, controllerType);
 		replaceCharController(&cardId, &charaId, &dressId, &headId, controllerType);
 		return reinterpret_cast<decltype(EditableCharacterBuildInfo_ctor_hook)*>(EditableCharacterBuildInfo_ctor_orig)(_this, cardId, charaId, dressId, controllerType, zekken, mobId, backDancerColorId, headId, isUseDressDataHeadModelSubId, isEnableModelCache);
-	}
-
-	void* EditableCharacterBuildInfo_set_DressId_orig;
-	void EditableCharacterBuildInfo_set_DressId_hook(void* _this, int value) {
-		// printf("set_DressId: %d\n", value);
-		return reinterpret_cast<decltype(EditableCharacterBuildInfo_set_DressId_hook)*>(EditableCharacterBuildInfo_set_DressId_orig)(_this, value);
-	}
-
-	void* EditableCharacterBuildInfo_set_CharaId_orig;
-	void EditableCharacterBuildInfo_set_CharaId_hook(void* _this, int value) {
-		// if (value >= 1000) printf("set_CharaId: %d\n", value);
-		return reinterpret_cast<decltype(EditableCharacterBuildInfo_set_CharaId_hook)*>(EditableCharacterBuildInfo_set_CharaId_orig)(_this, value);
-	}
-
-	void* CreateInfo_ctor_orig;
-	void CreateInfo_ctor_hook(void* _this, int charaId, int dressId) {
-		// printf("CreateInfo_ctor charaId: %d, dressId: %d\n", charaId, dressId);
-		return reinterpret_cast<decltype(CreateInfo_ctor_hook)*>(CreateInfo_ctor_orig)(_this, charaId, dressId);
 	}
 
 	std::string currentTime()
@@ -2278,16 +2259,6 @@ namespace
 				"EditableCharacterBuildInfo", ".ctor", 10
 			);
 
-		auto EditableCharacterBuildInfo_set_DressId_addr =
-			il2cpp_symbols::get_method_pointer(
-				"umamusume.dll", "Gallop",
-				"EditableCharacterBuildInfo", "set_DressId", 1
-			);
-		auto EditableCharacterBuildInfo_set_CharaId_addr =
-			il2cpp_symbols::get_method_pointer(
-				"umamusume.dll", "Gallop",
-				"EditableCharacterBuildInfo", "set_CharaId", 1
-			);
 		auto StorySceneController_LoadCharacter_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"StorySceneController", "LoadCharacter", 2
@@ -2303,9 +2274,9 @@ namespace
 			"SingleModeSceneController", "CreateModel", 3
 		);
 
-		auto HomeCharacterCreator_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop", "HomeCharacterCreator");
-		auto CreateInfo_klass = il2cpp_symbols::find_nested_class_from_name(HomeCharacterCreator_klass, "CreateInfo");
-		auto CreateInfo_ctor_addr = il2cpp_class_get_method_from_name(CreateInfo_klass, ".ctor", 2)->methodPointer;
+		// auto HomeCharacterCreator_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop", "HomeCharacterCreator");
+		// auto CreateInfo_klass = il2cpp_symbols::find_nested_class_from_name(HomeCharacterCreator_klass, "CreateInfo");
+		// auto CreateInfo_ctor_addr = il2cpp_class_get_method_from_name(CreateInfo_klass, ".ctor", 2)->methodPointer;
 
 		// initTimelineCharaBuildInfo();
 		
@@ -2385,10 +2356,7 @@ namespace
 		ADD_HOOK(AssetLoader_LoadAssetHandle, "AssetLoader_LoadAssetHandle at %p\n");
 		ADD_HOOK(CharacterBuildInfo_ctor_0, "CharacterBuildInfo_ctor_0 at %p\n");
 		ADD_HOOK(CharacterBuildInfo_ctor_1, "CharacterBuildInfo_ctor_1 at %p\n");
-		ADD_HOOK(CreateInfo_ctor, "CreateInfo_ctor at %p\n");
 		ADD_HOOK(EditableCharacterBuildInfo_ctor, "EditableCharacterBuildInfo_ctor at %p\n");
-		ADD_HOOK(EditableCharacterBuildInfo_set_DressId, "EditableCharacterBuildInfo_set_DressId at %p\n");
-		ADD_HOOK(EditableCharacterBuildInfo_set_CharaId, "EditableCharacterBuildInfo_set_CharaId at %p\n");
 		// ADD_HOOK(StorySceneController_LoadCharacter, "StorySceneController_LoadCharacter at %p\n");
 		ADD_HOOK(StoryCharacter3D_LoadModel, "StoryCharacter3D_LoadModel at %p\n");
 		ADD_HOOK(SingleModeSceneController_CreateModel, "SingleModeSceneController_CreateModel at %p\n");
