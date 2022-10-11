@@ -303,7 +303,7 @@
             }
         },
         "replaceGlobalChar": {
-            "description": "全局角色替换\n  （暂时无法替换育成角色）",
+            "description": "全局角色替换\n  （暂时无法替换 预览 和 育成角色）",
             "type": "object",
             "properties": {
                 "enable": {
