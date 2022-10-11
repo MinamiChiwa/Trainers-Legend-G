@@ -301,6 +301,42 @@
                     }
                 }
             }
+        },
+        "replaceGlobalChar": {
+            "description": "Replace Global Character\n  (Can't replace simple and training character now.)",
+            "type": "object",
+            "properties": {
+                "enable": {
+                    "description": "Enable global character replace",
+                    "type": "boolean"
+                },
+                "data": {
+                    "description": "Global character replace settings",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "origCharId": {
+                                "description": "Original charID, eg.1046",
+                                "type": "integer"
+                            },
+                            "newChrId": {
+                                "description": "New charID, eg.1046",
+                                "type": "integer"
+                            },
+                            "newClothId": {
+                                "description": "New clothId, eg.104601",
+                                "type": "integer"
+                            },
+                            "replaceMini": {
+                                "description": "Replace Mini Character",
+                                "type": "boolean",
+                                "default": false
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "additionalProperties": false,

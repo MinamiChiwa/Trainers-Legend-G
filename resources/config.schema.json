@@ -276,11 +276,11 @@
             "type": "object",
             "properties": {
                 "enable": {
-                    "description": "启用角色替换",
+                    "description": "启用主页角色替换",
                     "type": "boolean"
                 },
                 "data": {
-                    "description": "角色替换设置",
+                    "description": "主页角色替换设置",
                     "type": "array",
                     "items": {
                         "type": "object",
@@ -296,6 +296,42 @@
                             "newClothId": {
                                 "description": "新角色服装ID, 例: 104601",
                                 "type": "integer"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "replaceGlobalChar": {
+            "description": "全局角色替换\n  （暂时无法替换 预览 和 育成角色）",
+            "type": "object",
+            "properties": {
+                "enable": {
+                    "description": "启用全局角色替换",
+                    "type": "boolean"
+                },
+                "data": {
+                    "description": "全局角色替换设置",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "origCharId": {
+                                "description": "原角色ID, 例: 1046",
+                                "type": "integer"
+                            },
+                            "newChrId": {
+                                "description": "新角色ID, 例: 1046",
+                                "type": "integer"
+                            },
+                            "newClothId": {
+                                "description": "新角色服装ID, 例: 104601",
+                                "type": "integer"
+                            },
+                            "replaceMini": {
+                                "description": "替换迷你角色",
+                                "type": "boolean",
+                                "default": false
                             }
                         }
                     }

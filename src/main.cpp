@@ -61,6 +61,9 @@ bool g_enable_replaceBuiltInAssets = false;
 
 bool g_enable_home_char_replace = false;
 std::unordered_map<int, std::pair<int, int>> g_home_char_replace{};
+bool g_enable_global_char_replace = false;
+std::unordered_map<int, std::pair<int, int>> g_global_char_replace{};
+std::unordered_map<int, std::pair<int, int>> g_global_mini_char_replace{};
 
 std::string g_text_data_dict_path;
 std::string g_character_system_text_dict_path;
@@ -552,6 +555,36 @@ namespace
 						i["origCharId"].GetInt(),
 						std::make_pair(i["newChrId"].GetInt(), i["newClothId"].GetInt())
 					);
+				}
+			}
+
+			if (document.HasMember("replaceGlobalChar")) {
+				g_global_char_replace.clear();
+				g_global_mini_char_replace.clear();
+				auto& globalChar = document["replaceGlobalChar"];
+				g_enable_global_char_replace = globalChar["enable"].GetBool();
+				auto dataList = globalChar["data"].GetArray();
+				for (auto& i : dataList) {
+					const auto charId = i["origCharId"].GetInt();
+					if (i["replaceMini"].GetBool()) {
+						g_global_mini_char_replace.emplace(
+							charId,
+							std::make_pair(i["newChrId"].GetInt(), i["newClothId"].GetInt())
+						);
+						if (!g_global_char_replace.contains(charId)) {
+							g_global_char_replace.emplace(
+								charId,
+								std::make_pair(i["newChrId"].GetInt(), i["newClothId"].GetInt())
+							);
+						}
+					}
+					else {
+						if (g_global_char_replace.contains(charId)) g_global_char_replace.erase(charId);
+						g_global_char_replace.emplace(
+							charId,
+							std::make_pair(i["newChrId"].GetInt(), i["newClothId"].GetInt())
+						);
+					}
 				}
 			}
 
