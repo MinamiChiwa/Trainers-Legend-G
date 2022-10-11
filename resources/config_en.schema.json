@@ -303,7 +303,7 @@
             }
         },
         "replaceGlobalChar": {
-            "description": "Replace Global Character",
+            "description": "Replace Global Character\n  (Can't replace training character now.)",
             "type": "object",
             "properties": {
                 "enable": {

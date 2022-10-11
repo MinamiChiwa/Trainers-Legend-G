@@ -89,6 +89,17 @@ A plugin for translating Umamusume Pretty Derby (DMM Client) to Chinese.
                 "newClothId": 9
             }
         ]
+    },
+    "replaceGlobalChar": {
+        "enable": false,
+        "data": [
+            {
+                "origCharId": 1046,
+                "newChrId": 1030,
+                "newClothId": 103001,
+                "replaceMini": false
+            }
+        ]
     }
 }
 ```
