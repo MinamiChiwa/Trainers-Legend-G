@@ -15,6 +15,8 @@ namespace UmaDatabase {
         // std::unordered_map<std::string, std::list<std::wstring>> bundleNames{};  // dbName: [bundlePath1, bundlePath2, ...]
         std::map<std::wstring, std::string> pathBundle{};  // bundlePath: bundleName
         std::unordered_map<std::wstring, void*> bundleHandleTargetCache{};
+        std::unordered_map<int, int> umaDressHeadId{};
+        std::unordered_map<int, int> umaDressHasMini{};
     }
 
     void initPtr() {
@@ -201,4 +203,98 @@ namespace UmaDatabase {
         }
         sqlite3_close(db);
     }
+
+    void executeQueryDress()
+    {
+        sqlite3* db;
+        char* zErrMsg = 0;
+        const char* data = "Getting Master Data...";
+
+        const auto dbPath = std::format("{}/master/master.mdb", basePath);
+        int rc = sqlite3_open(dbPath.c_str(), &db);
+        if (rc) {
+            printf("Can't open database: %s\n", sqlite3_errmsg(db));
+            return;
+        }
+        umaFileAssetHash.clear();
+        // bundleNames.clear();
+        pathBundle.clear();
+
+
+        auto sql = "SELECT id, head_sub_id, have_mini FROM dress_data";
+
+        char** pResult;
+        char* errmsg;
+        int nRow;
+        int nCol;
+
+        // rc = sqlite3_exec(db, sql, callback, (void*)data, &zErrMsg);
+        rc = sqlite3_get_table(db, sql, &pResult, &nRow, &nCol, &zErrMsg);
+        if (rc != SQLITE_OK) {
+            printf("SQL error: %s\n", zErrMsg);
+            sqlite3_free(zErrMsg);
+            return;
+        }
+        umaDressHeadId.clear();
+
+        int index = 0;
+        for (int n = 0; n < nRow; n++)
+        {
+            int umaDressId = -114514;
+            int umaHeadId = 0;
+            int haveMini = 0;
+            bool hasErr = false;
+            for (int j = 0; j < nCol; j++)
+            {
+                try {
+                    auto value = pResult[index];
+                    switch (j)
+                    {
+                    case 0:
+                        umaDressId = std::stoi(value); break;
+                    case 1:
+                        umaHeadId = std::stoi(value); break;
+                    case 2:
+                        haveMini = std::stoi(value); break;
+                    default:
+                        break;
+                    }
+                }
+                catch (std::exception& e) {
+                    // printf("err: %s\n", e.what());
+                    hasErr = true;
+                }
+                index++;
+            }
+            if (hasErr) continue;
+            umaDressHeadId.emplace(umaDressId, umaHeadId);
+            umaDressHasMini.emplace(umaDressId, haveMini);
+        }
+        sqlite3_free_table(pResult);
+        sqlite3_close(db);
+    }
+
+    int get_head_id_from_dress_id(int dressId) {
+        if (umaDressHeadId.empty()) {
+            executeQueryDress();
+        }
+
+        if (umaDressHeadId.contains(dressId)) {
+            return umaDressHeadId.at(dressId);
+        }
+        printf("uma dressId not found: %d\n", dressId);
+        return 0;
+    }
+
+    bool get_dress_have_mini(int dressId) {
+        if (umaDressHasMini.empty()) {
+            executeQueryDress();
+        }
+        if (umaDressHasMini.contains(dressId)) {
+            return umaDressHasMini.at(dressId);
+        }
+        return false;
+    }
+
+
 }

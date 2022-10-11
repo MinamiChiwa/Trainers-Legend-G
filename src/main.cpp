@@ -560,6 +560,7 @@ namespace
 
 			if (document.HasMember("replaceGlobalChar")) {
 				g_global_char_replace.clear();
+				g_global_mini_char_replace.clear();
 				auto& globalChar = document["replaceGlobalChar"];
 				g_enable_global_char_replace = globalChar["enable"].GetBool();
 				auto dataList = globalChar["data"].GetArray();
