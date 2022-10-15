@@ -397,8 +397,8 @@ namespace
 
 	std::unordered_map<void*, std::unique_ptr<ILocalizationQuery>> text_queries;
 
-	void* query_ctor_orig = nullptr;
-	void* query_ctor_hook(void* _this, void* conn, Il2CppString* sql)
+	void* query_setup_orig = nullptr;
+	void* query_setup_hook(void* _this, void* conn, Il2CppString* sql)
 	{
 		static const std::wregex statementPattern(LR"(SELECT (.+?) FROM `(.+?)`(?: WHERE (.+))?;)");
 		static const std::wregex columnPattern(LR"(,?`(\w+)`)");
@@ -462,7 +462,7 @@ namespace
 		}
 
 	NormalPath:
-		return reinterpret_cast<decltype(query_ctor_hook)*>(query_ctor_orig)(_this, conn, sql);
+		return reinterpret_cast<decltype(query_setup_hook)*>(query_setup_orig)(_this, conn, sql);
 	}
 
 	void* query_dispose_orig = nullptr;
@@ -501,10 +501,10 @@ namespace
 
 	std::ptrdiff_t Query_stmt_offset;
 
-	void* Query_Step_orig = nullptr;
-	int Query_Step_hook(void* _this)
+	void* Plugin_sqlite3_step_orig = nullptr;
+	int Plugin_sqlite3_step_hook(void* _this)
 	{
-		const auto result = reinterpret_cast<decltype(Query_Step_hook)*>(Query_Step_orig)(_this);
+		const auto result = reinterpret_cast<decltype(Plugin_sqlite3_step_hook)*>(Plugin_sqlite3_step_orig)(_this);
 		// 注意现在直接调用 sqlite3_step，_this 是 Query._stmt
 		// TODO: 另一部分 step 直接调用 trampoline，以现在的 hook 实现无法修改，当前在 getstr 中调用 step，这可能使得 step 被重复调用
 		const auto query = static_cast<std::byte*>(_this) - Query_stmt_offset;
@@ -1781,7 +1781,7 @@ namespace
 
 		environment_get_stacktrace = reinterpret_cast<decltype(environment_get_stacktrace)>(il2cpp_symbols::get_method_pointer("mscorlib.dll", "System", "Environment", "get_StackTrace", 0));
 
-		auto query_ctor_addr = il2cpp_symbols::get_method_pointer(
+		auto query_setup_addr = il2cpp_symbols::get_method_pointer(
 			"LibNative.Runtime.dll", "LibNative.Sqlite3",
 			"Query", "_Setup", 2
 		);
@@ -1808,7 +1808,7 @@ namespace
 			"PreparedQuery", "BindInt", -1
 		);
 
-		const auto Query_Step_addr = il2cpp_symbols::get_method_pointer(
+		const auto Plugin_sqlite3_step_addr = il2cpp_symbols::get_method_pointer(
 			"LibNative.Runtime.dll", "LibNative.Sqlite3",
 			"Plugin", "sqlite3_step", -1
 		);
@@ -2329,11 +2329,11 @@ namespace
 		// Looks like they store all localized texts that used by code in a dict
 		ADD_HOOK(localize_jp_get, "Gallop.Localize.JP.Get(TextId) at %p\n");
 		ADD_HOOK(on_exit, "Gallop.GameSystem.onApplicationQuit at %p\n");
-		ADD_HOOK(query_ctor, "Query::ctor at %p\n");
+		ADD_HOOK(query_setup, "Query::_Setup at %p\n");
 		ADD_HOOK(query_getstr, "Query::GetString at %p\n");
 		ADD_HOOK(query_dispose, "Query::Dispose at %p\n");
 		ADD_HOOK(PreparedQuery_BindInt, "PreparedQuery::BindInt at %p\n");
-		ADD_HOOK(Query_Step, "Query::Step at %p\n");
+		ADD_HOOK(Plugin_sqlite3_step, "Plugin_sqlite3_step at %p\n");
 		ADD_HOOK(AlterUpdate_CameraPos, "AlterUpdate_CameraPos at %p\n");
 		ADD_HOOK(alterupdate_camera_lookat, "alterupdate_camera_lookat at %p\n");
 		ADD_HOOK(AlterUpdate_MonitorCameraLookAt, "AlterUpdate_MonitorCameraLookAt at %p\n");
