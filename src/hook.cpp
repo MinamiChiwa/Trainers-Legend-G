@@ -750,7 +750,7 @@ namespace
 		Resolution_t r;
 		get_resolution_stub(&r);
 
-		reinterpret_cast<decltype(change_resize_ui_for_pc_hook)*>(change_resize_ui_for_pc_orig)(_this, r.width, r.height);
+		reinterpret_cast<decltype(change_resize_ui_for_pc_hook)*>(change_resize_ui_for_pc_orig)(_this, width, height);
 
 		const auto canvasScalerList = UIManager_GetCanvasScalerList(_this);
 		il2cpp_symbols::iterate_IEnumerable(canvasScalerList, [&](void* canvasScaler)
