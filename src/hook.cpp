@@ -747,7 +747,6 @@ namespace
 	void* change_resize_ui_for_pc_orig;
 	void change_resize_ui_for_pc_hook(void* _this, int width, int height)
 	{
-		std::printf("%s: %d, %d\n", __func__, width, height);
 		Resolution_t r;
 		get_resolution_stub(&r);
 
