@@ -400,7 +400,6 @@ namespace
 	void* query_ctor_orig = nullptr;
 	void* query_ctor_hook(void* _this, void* conn, Il2CppString* sql)
 	{
-		auto ssql = std::wstring_view(sql->start_char);
 		static const std::wregex statementPattern(LR"(SELECT (.+?) FROM `(.+?)`(?: WHERE (.+))?;)");
 		static const std::wregex columnPattern(LR"(,?`(\w+)`)");
 		static const std::wregex whereClausePattern(LR"((?:AND )?`(\w+)=?`)");
@@ -477,36 +476,78 @@ namespace
 	void* query_getstr_orig = nullptr;
 	Il2CppString* query_getstr_hook(void* _this, int32_t idx)
 	{
-		if (const auto iter = text_queries.find(_this); iter != text_queries.end())
+		// **魔法，勿动**
+		try
 		{
-			if (const auto localizedStr = iter->second->GetString(idx))
+			if (const auto iter = text_queries.find(_this); iter != text_queries.end())
 			{
-				return localizedStr;
+				iter->second->Step(_this);
+				if (const auto localizedStr = iter->second->GetString(idx))
+				{
+					return localizedStr;
+				}
 			}
 		}
-
+		catch (std::exception& e)
+		{
+			std::printf("%s caught exception: %s\n", __func__, e.what());
+		}
+		catch (...)
+		{
+			std::wprintf(L"caught unknown exception");
+		}
 		return reinterpret_cast<decltype(query_getstr_hook)*>(query_getstr_orig)(_this, idx);
 	}
 
 	void* PreparedQuery_BindInt_orig = nullptr;
 	void PreparedQuery_BindInt_hook(void* _this, int32_t idx, int32_t value)
 	{
-		if (const auto iter = text_queries.find(_this); iter != text_queries.end())
+		// **魔法，勿动**
+		try
 		{
-			iter->second->Bind(idx, value);
+			if (const auto iter = text_queries.find(_this); iter != text_queries.end())
+			{
+				iter->second->Bind(idx, value);
+			}
+		}
+		catch (std::exception& e)
+		{
+			std::printf("%s caught exception: %s\n", __func__, e.what());
+		}
+		catch (...)
+		{
+			std::wprintf(L"caught unknown exception");
 		}
 
 		return reinterpret_cast<decltype(PreparedQuery_BindInt_hook)*>(PreparedQuery_BindInt_orig)(_this, idx, value);
 	}
 
+	std::ptrdiff_t Query_stmt_offset;
+
 	void* Query_Step_orig = nullptr;
 	bool Query_Step_hook(void* _this)
 	{
+		//std::wprintf(L"Step: this = %p\n", _this);
 		const auto result = reinterpret_cast<decltype(Query_Step_hook)*>(Query_Step_orig)(_this);
+		// 注意现在直接调用 sqlite3_step，_this 是 Query._stmt
+		// TODO: 另一部分 step 直接调用 trampoline，以现在的 hook 实现无法修改，当前在 getstr 中调用 step，这可能使得 step 被重复调用
+		_this = static_cast<std::byte*>(_this) - Query_stmt_offset;
 
-		if (const auto iter = text_queries.find(_this); iter != text_queries.end())
+		// **魔法，勿动**
+		try
 		{
-			iter->second->Step(_this);
+			if (const auto iter = text_queries.find(_this); iter != text_queries.end())
+			{
+				iter->second->Step(_this);
+			}
+		}
+		catch (std::exception& e)
+		{
+			std::printf("%s caught exception: %s\n", __func__, e.what());
+		}
+		catch (...)
+		{
+			std::wprintf(L"caught unknown exception");
 		}
 
 		return result;
@@ -689,6 +730,8 @@ namespace
 
 	void (*set_scale_factor)(void*, float);
 
+	void* (*UIManager_GetCanvasScalerList)(void*);
+
 	void* canvas_scaler_setres_orig;
 	void canvas_scaler_setres_hook(void* _this, Vector2_t res)
 	{
@@ -699,6 +742,22 @@ namespace
 		set_scale_factor(_this, max(1.0f, r.width / 1920.f) * g_ui_scale);
 
 		return reinterpret_cast<decltype(canvas_scaler_setres_hook)*>(canvas_scaler_setres_orig)(_this, res);
+	}
+
+	void* change_resize_ui_for_pc_orig;
+	void change_resize_ui_for_pc_hook(void* _this, int width, int height)
+	{
+		std::printf("%s: %d, %d\n", __func__, width, height);
+		Resolution_t r;
+		get_resolution_stub(&r);
+
+		reinterpret_cast<decltype(change_resize_ui_for_pc_hook)*>(change_resize_ui_for_pc_orig)(_this, r.width, r.height);
+
+		const auto canvasScalerList = UIManager_GetCanvasScalerList(_this);
+		il2cpp_symbols::iterate_IEnumerable(canvasScalerList, [&](void* canvasScaler)
+			{
+				set_scale_factor(canvasScaler, max(1.0f, r.width / 1920.f) * g_ui_scale);
+			});
 	}
 
 	struct TransparentStringHash : std::hash<std::wstring>, std::hash<std::wstring_view>
@@ -1761,7 +1820,7 @@ namespace
 
 		auto query_ctor_addr = il2cpp_symbols::get_method_pointer(
 			"LibNative.Runtime.dll", "LibNative.Sqlite3",
-			"Query", ".ctor", 2
+			"Query", "_Setup", 2
 		);
 
 		auto query_getstr_addr = il2cpp_symbols::get_method_pointer(
@@ -1788,13 +1847,13 @@ namespace
 
 		const auto Query_Step_addr = il2cpp_symbols::get_method_pointer(
 			"LibNative.Runtime.dll", "LibNative.Sqlite3",
-			"Query", "Step", -1
+			"Plugin", "sqlite3_step", -1
 		);
 
-		auto set_fps_addr = il2cpp_symbols::get_method_pointer(
-			"UnityEngine.CoreModule.dll", "UnityEngine",
-			"Application", "set_targetFrameRate", 1
-		);
+		const auto Query_stmt_field = il2cpp_symbols::get_field("LibNative.Runtime.dll", "LibNative.Sqlite3", "Query", "_stmt");
+		Query_stmt_offset = Query_stmt_field->offset;
+
+		auto set_fps_addr = il2cpp_resolve_icall("UnityEngine.Application::set_targetFrameRate(System.Int32)");
 
 		auto set_antialiasing_addr = il2cpp_symbols::get_method_pointer(
 				"UnityEngine.CoreModule.dll", "UnityEngine",
@@ -1865,6 +1924,11 @@ namespace
 			)
 			);
 
+		UIManager_GetCanvasScalerList = reinterpret_cast<decltype(UIManager_GetCanvasScalerList)>(il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"UIManager", "GetCanvasScalerList", -1
+		));
+
 		auto on_populate_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"TextCommon", "OnPopulateMesh", 1
@@ -1908,10 +1972,7 @@ namespace
 			);
 
 		const auto AssetBundle_LoadAsset_addr =
-			il2cpp_symbols::get_method_pointer(
-				"UnityEngine.AssetBundleModule.dll", "UnityEngine",
-				"AssetBundle", "LoadAsset", 2
-			);
+			il2cpp_resolve_icall("UnityEngine.AssetBundle::LoadAsset_Internal(System.String,System.Type)");
 		
 		auto AssetLoader_LoadAssetHandle_addr =
 			il2cpp_symbols::get_method_pointer(
@@ -2403,6 +2464,7 @@ namespace
 		ADD_HOOK(gallop_get_screenwidth, "Gallop.Screen::get_Width at %p\n");
 
 		ADD_HOOK(canvas_scaler_setres, "UnityEngine.UI.CanvasScaler::set_referenceResolution at %p\n");
+		ADD_HOOK(change_resize_ui_for_pc, "change_resize_ui_for_pc at %p\n");
 		// }
 
 		ADD_HOOK(set_resolution, "UnityEngine.Screen.SetResolution(int, int, bool) at %p\n");
