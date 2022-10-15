@@ -476,47 +476,24 @@ namespace
 	void* query_getstr_orig = nullptr;
 	Il2CppString* query_getstr_hook(void* _this, int32_t idx)
 	{
-		// **魔法，勿动**
-		try
+		if (const auto iter = text_queries.find(_this); iter != text_queries.end())
 		{
-			if (const auto iter = text_queries.find(_this); iter != text_queries.end())
+			iter->second->Step(_this);
+			if (const auto localizedStr = iter->second->GetString(idx))
 			{
-				iter->second->Step(_this);
-				if (const auto localizedStr = iter->second->GetString(idx))
-				{
-					return localizedStr;
-				}
+				return localizedStr;
 			}
 		}
-		catch (std::exception& e)
-		{
-			std::printf("%s caught exception: %s\n", __func__, e.what());
-		}
-		catch (...)
-		{
-			std::wprintf(L"caught unknown exception");
-		}
+
 		return reinterpret_cast<decltype(query_getstr_hook)*>(query_getstr_orig)(_this, idx);
 	}
 
 	void* PreparedQuery_BindInt_orig = nullptr;
 	void PreparedQuery_BindInt_hook(void* _this, int32_t idx, int32_t value)
 	{
-		// **魔法，勿动**
-		try
+		if (const auto iter = text_queries.find(_this); iter != text_queries.end())
 		{
-			if (const auto iter = text_queries.find(_this); iter != text_queries.end())
-			{
-				iter->second->Bind(idx, value);
-			}
-		}
-		catch (std::exception& e)
-		{
-			std::printf("%s caught exception: %s\n", __func__, e.what());
-		}
-		catch (...)
-		{
-			std::wprintf(L"caught unknown exception");
+			iter->second->Bind(idx, value);
 		}
 
 		return reinterpret_cast<decltype(PreparedQuery_BindInt_hook)*>(PreparedQuery_BindInt_orig)(_this, idx, value);
@@ -525,29 +502,16 @@ namespace
 	std::ptrdiff_t Query_stmt_offset;
 
 	void* Query_Step_orig = nullptr;
-	bool Query_Step_hook(void* _this)
+	int Query_Step_hook(void* _this)
 	{
-		//std::wprintf(L"Step: this = %p\n", _this);
 		const auto result = reinterpret_cast<decltype(Query_Step_hook)*>(Query_Step_orig)(_this);
 		// 注意现在直接调用 sqlite3_step，_this 是 Query._stmt
 		// TODO: 另一部分 step 直接调用 trampoline，以现在的 hook 实现无法修改，当前在 getstr 中调用 step，这可能使得 step 被重复调用
-		_this = static_cast<std::byte*>(_this) - Query_stmt_offset;
+		const auto query = static_cast<std::byte*>(_this) - Query_stmt_offset;
 
-		// **魔法，勿动**
-		try
+		if (const auto iter = text_queries.find(query); iter != text_queries.end())
 		{
-			if (const auto iter = text_queries.find(_this); iter != text_queries.end())
-			{
-				iter->second->Step(_this);
-			}
-		}
-		catch (std::exception& e)
-		{
-			std::printf("%s caught exception: %s\n", __func__, e.what());
-		}
-		catch (...)
-		{
-			std::wprintf(L"caught unknown exception");
+			iter->second->Step(query);
 		}
 
 		return result;
