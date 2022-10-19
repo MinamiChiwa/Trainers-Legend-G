@@ -2,7 +2,7 @@
 [![Chat](https://img.shields.io/badge/Join-QQ%E9%A2%91%E9%81%93-blue?logo=tencent-qq&logoColor=white)](https://qun.qq.com/qqweb/qunpro/share?_wv=3&_wwv=128&inviteCode=1olqdK&from=246610&biz=ka)
 [![Discord](https://img.shields.io/discord/973208860217200653?color=blue&label=Discord&logo=Discord&logoColor=white)](https://discord.com/invite/TBCSv5hU69)
 # Trainer's Legend G本地化插件(DMM版)
-中文 | [English](readme_EN.md)
+中文 | [繁体中文（台湾）](https://github.com/yotv2000tw/Trainers-Legend-G-TRANS-zh-tw/) | [English](readme_EN.md)
 
 # 注意
 
@@ -28,9 +28,10 @@
 
 - [`简体中文项目译文仓库`](https://github.com/MinamiChiwa/Trainers-Legend-G-TRANS)
 
-#### 繁体中文
+#### 繁体中文（台湾）
 
-- @yotv2000tw
+- @yotv2000tw （原始插件）
+- [`繁體中文（台灣）項目譯文倉庫`](https://github.com/yotv2000tw/Trainers-Legend-G-TRANS-zh-tw)
 
 ## 技术支持
 
@@ -50,6 +51,8 @@
 启动`legend_g_plugin.exe`。
 
 ### 设置选项
+- 如果使用的是繁体中文（台湾）的翻译，请使用 [`繁體中文（台灣）項目譯文倉庫`](https://github.com/yotv2000tw/Trainers-Legend-G-TRANS-zh-tw) 内提供的配置。
+
 启动`legend_g_plugin.exe`，进行设置；或直接打开`config.json`进行编辑。
 ```javascript
 {
