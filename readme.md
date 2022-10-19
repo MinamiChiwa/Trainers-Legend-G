@@ -2,7 +2,7 @@
 [![Chat](https://img.shields.io/badge/Join-QQ%E9%A2%91%E9%81%93-blue?logo=tencent-qq&logoColor=white)](https://qun.qq.com/qqweb/qunpro/share?_wv=3&_wwv=128&inviteCode=1olqdK&from=246610&biz=ka)
 [![Discord](https://img.shields.io/discord/973208860217200653?color=blue&label=Discord&logo=Discord&logoColor=white)](https://discord.com/invite/TBCSv5hU69)
 # Trainer's Legend G本地化插件(DMM版)
-中文 | [繁体中文（台湾）](https://github.com/yotv2000tw/Trainers-Legend-G-TRANS-zh-tw/) | [English](readme_EN.md)
+中文 | [繁體中文（台灣）](https://github.com/yotv2000tw/Trainers-Legend-G-TRANS-zh-tw/) | [English](readme_EN.md)
 
 # 注意
 
