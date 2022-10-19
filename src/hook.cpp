@@ -1818,10 +1818,7 @@ namespace
 
 		auto set_fps_addr = il2cpp_resolve_icall("UnityEngine.Application::set_targetFrameRate(System.Int32)");
 
-		auto set_antialiasing_addr = il2cpp_symbols::get_method_pointer(
-				"UnityEngine.CoreModule.dll", "UnityEngine",
-				"QualitySettings", "set_antiAliasing", 1
-			);
+		auto set_antialiasing_addr = il2cpp_resolve_icall("UnityEngine.QualitySettings::set_antiAliasing(System.Int32)");
 
 		auto graphics_quality_addr = il2cpp_symbols::get_method_pointer(
 				"umamusume.dll", "Gallop",
