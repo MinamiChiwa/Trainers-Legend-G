@@ -397,10 +397,9 @@ namespace
 
 	std::unordered_map<void*, std::unique_ptr<ILocalizationQuery>> text_queries;
 
-	void* query_ctor_orig = nullptr;
-	void* query_ctor_hook(void* _this, void* conn, Il2CppString* sql)
+	void* query_setup_orig = nullptr;
+	void* query_setup_hook(void* _this, void* conn, Il2CppString* sql)
 	{
-		auto ssql = std::wstring_view(sql->start_char);
 		static const std::wregex statementPattern(LR"(SELECT (.+?) FROM `(.+?)`(?: WHERE (.+))?;)");
 		static const std::wregex columnPattern(LR"(,?`(\w+)`)");
 		static const std::wregex whereClausePattern(LR"((?:AND )?`(\w+)=?`)");
@@ -463,7 +462,7 @@ namespace
 		}
 
 	NormalPath:
-		return reinterpret_cast<decltype(query_ctor_hook)*>(query_ctor_orig)(_this, conn, sql);
+		return reinterpret_cast<decltype(query_setup_hook)*>(query_setup_orig)(_this, conn, sql);
 	}
 
 	void* query_dispose_orig = nullptr;
@@ -479,6 +478,7 @@ namespace
 	{
 		if (const auto iter = text_queries.find(_this); iter != text_queries.end())
 		{
+			iter->second->Step(_this);
 			if (const auto localizedStr = iter->second->GetString(idx))
 			{
 				return localizedStr;
@@ -499,14 +499,19 @@ namespace
 		return reinterpret_cast<decltype(PreparedQuery_BindInt_hook)*>(PreparedQuery_BindInt_orig)(_this, idx, value);
 	}
 
-	void* Query_Step_orig = nullptr;
-	bool Query_Step_hook(void* _this)
-	{
-		const auto result = reinterpret_cast<decltype(Query_Step_hook)*>(Query_Step_orig)(_this);
+	std::ptrdiff_t Query_stmt_offset;
 
-		if (const auto iter = text_queries.find(_this); iter != text_queries.end())
+	void* Plugin_sqlite3_step_orig = nullptr;
+	int Plugin_sqlite3_step_hook(void* _this)
+	{
+		const auto result = reinterpret_cast<decltype(Plugin_sqlite3_step_hook)*>(Plugin_sqlite3_step_orig)(_this);
+		// 注意现在直接调用 sqlite3_step，_this 是 Query._stmt
+		// TODO: 另一部分 step 直接调用 trampoline，以现在的 hook 实现无法修改，当前在 getstr 中调用 step，这可能使得 step 被重复调用
+		const auto query = static_cast<std::byte*>(_this) - Query_stmt_offset;
+
+		if (const auto iter = text_queries.find(query); iter != text_queries.end())
 		{
-			iter->second->Step(_this);
+			iter->second->Step(query);
 		}
 
 		return result;
@@ -689,6 +694,8 @@ namespace
 
 	void (*set_scale_factor)(void*, float);
 
+	void* (*UIManager_GetCanvasScalerList)(void*);
+
 	void* canvas_scaler_setres_orig;
 	void canvas_scaler_setres_hook(void* _this, Vector2_t res)
 	{
@@ -699,6 +706,21 @@ namespace
 		set_scale_factor(_this, max(1.0f, r.width / 1920.f) * g_ui_scale);
 
 		return reinterpret_cast<decltype(canvas_scaler_setres_hook)*>(canvas_scaler_setres_orig)(_this, res);
+	}
+
+	void* change_resize_ui_for_pc_orig;
+	void change_resize_ui_for_pc_hook(void* _this, int width, int height)
+	{
+		Resolution_t r;
+		get_resolution_stub(&r);
+
+		reinterpret_cast<decltype(change_resize_ui_for_pc_hook)*>(change_resize_ui_for_pc_orig)(_this, width, height);
+
+		const auto canvasScalerList = UIManager_GetCanvasScalerList(_this);
+		il2cpp_symbols::iterate_IEnumerable(canvasScalerList, [&](void* canvasScaler)
+			{
+				set_scale_factor(canvasScaler, max(1.0f, r.width / 1920.f) * g_ui_scale);
+			});
 	}
 
 	struct TransparentStringHash : std::hash<std::wstring>, std::hash<std::wstring_view>
@@ -1759,9 +1781,9 @@ namespace
 
 		environment_get_stacktrace = reinterpret_cast<decltype(environment_get_stacktrace)>(il2cpp_symbols::get_method_pointer("mscorlib.dll", "System", "Environment", "get_StackTrace", 0));
 
-		auto query_ctor_addr = il2cpp_symbols::get_method_pointer(
+		auto query_setup_addr = il2cpp_symbols::get_method_pointer(
 			"LibNative.Runtime.dll", "LibNative.Sqlite3",
-			"Query", ".ctor", 2
+			"Query", "_Setup", 2
 		);
 
 		auto query_getstr_addr = il2cpp_symbols::get_method_pointer(
@@ -1786,20 +1808,17 @@ namespace
 			"PreparedQuery", "BindInt", -1
 		);
 
-		const auto Query_Step_addr = il2cpp_symbols::get_method_pointer(
+		const auto Plugin_sqlite3_step_addr = il2cpp_symbols::get_method_pointer(
 			"LibNative.Runtime.dll", "LibNative.Sqlite3",
-			"Query", "Step", -1
+			"Plugin", "sqlite3_step", -1
 		);
 
-		auto set_fps_addr = il2cpp_symbols::get_method_pointer(
-			"UnityEngine.CoreModule.dll", "UnityEngine",
-			"Application", "set_targetFrameRate", 1
-		);
+		const auto Query_stmt_field = il2cpp_symbols::get_field("LibNative.Runtime.dll", "LibNative.Sqlite3", "Query", "_stmt");
+		Query_stmt_offset = Query_stmt_field->offset;
 
-		auto set_antialiasing_addr = il2cpp_symbols::get_method_pointer(
-				"UnityEngine.CoreModule.dll", "UnityEngine",
-				"QualitySettings", "set_antiAliasing", 1
-			);
+		auto set_fps_addr = il2cpp_resolve_icall("UnityEngine.Application::set_targetFrameRate(System.Int32)");
+
+		auto set_antialiasing_addr = il2cpp_resolve_icall("UnityEngine.QualitySettings::set_antiAliasing(System.Int32)");
 
 		auto graphics_quality_addr = il2cpp_symbols::get_method_pointer(
 				"umamusume.dll", "Gallop",
@@ -1865,6 +1884,11 @@ namespace
 			)
 			);
 
+		UIManager_GetCanvasScalerList = reinterpret_cast<decltype(UIManager_GetCanvasScalerList)>(il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"UIManager", "GetCanvasScalerList", -1
+		));
+
 		auto on_populate_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"TextCommon", "OnPopulateMesh", 1
@@ -1908,10 +1932,7 @@ namespace
 			);
 
 		const auto AssetBundle_LoadAsset_addr =
-			il2cpp_symbols::get_method_pointer(
-				"UnityEngine.AssetBundleModule.dll", "UnityEngine",
-				"AssetBundle", "LoadAsset", 2
-			);
+			il2cpp_resolve_icall("UnityEngine.AssetBundle::LoadAsset_Internal(System.String,System.Type)");
 		
 		auto AssetLoader_LoadAssetHandle_addr =
 			il2cpp_symbols::get_method_pointer(
@@ -2305,11 +2326,11 @@ namespace
 		// Looks like they store all localized texts that used by code in a dict
 		ADD_HOOK(localize_jp_get, "Gallop.Localize.JP.Get(TextId) at %p\n");
 		ADD_HOOK(on_exit, "Gallop.GameSystem.onApplicationQuit at %p\n");
-		ADD_HOOK(query_ctor, "Query::ctor at %p\n");
+		ADD_HOOK(query_setup, "Query::_Setup at %p\n");
 		ADD_HOOK(query_getstr, "Query::GetString at %p\n");
 		ADD_HOOK(query_dispose, "Query::Dispose at %p\n");
 		ADD_HOOK(PreparedQuery_BindInt, "PreparedQuery::BindInt at %p\n");
-		ADD_HOOK(Query_Step, "Query::Step at %p\n");
+		ADD_HOOK(Plugin_sqlite3_step, "Plugin_sqlite3_step at %p\n");
 		ADD_HOOK(AlterUpdate_CameraPos, "AlterUpdate_CameraPos at %p\n");
 		ADD_HOOK(alterupdate_camera_lookat, "alterupdate_camera_lookat at %p\n");
 		ADD_HOOK(AlterUpdate_MonitorCameraLookAt, "AlterUpdate_MonitorCameraLookAt at %p\n");
@@ -2403,6 +2424,7 @@ namespace
 		ADD_HOOK(gallop_get_screenwidth, "Gallop.Screen::get_Width at %p\n");
 
 		ADD_HOOK(canvas_scaler_setres, "UnityEngine.UI.CanvasScaler::set_referenceResolution at %p\n");
+		ADD_HOOK(change_resize_ui_for_pc, "change_resize_ui_for_pc at %p\n");
 		// }
 
 		ADD_HOOK(set_resolution, "UnityEngine.Screen.SetResolution(int, int, bool) at %p\n");
