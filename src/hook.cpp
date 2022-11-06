@@ -1,5 +1,6 @@
 #include <stdinclude.hpp>
 #include <unordered_set>
+#include <ranges>
 
 using namespace std;
 std::function<void()> g_on_hook_ready;
@@ -790,10 +791,8 @@ namespace
 		});
 	}
 
-	void LocalizeStoryTimelineData(void* timelineData)
+	void LocalizeStoryTimelineData(void* timelineData, std::size_t storyId)
 	{
-		const auto storyIdStr = il2cpp_symbols::read_field<Il2CppString*>(timelineData, StoryTimelineDataClass_StoryIdField);
-		const auto storyId = static_cast<std::size_t>(_wtoll(storyIdStr->start_char));
 		const auto localizedStoryData = local::GetStoryTextData(storyId);
 		if (!localizedStoryData)
 		{
@@ -951,7 +950,15 @@ namespace
 		{
 			if (cls == StoryTimelineDataClass)
 			{
-				LocalizeStoryTimelineData(result);
+				const auto assetPath = std::filesystem::path(name->start_char).stem();
+				const std::wstring_view assetName = assetPath.native();
+				constexpr const wchar_t StoryTimelinePrefix[] = L"storytimeline_";
+				constexpr const wchar_t HomeTimelinePrefix[] = L"hometimeline_";
+				const auto storyId = assetName.starts_with(StoryTimelinePrefix) ? static_cast<std::size_t>(_wtoll(assetName.substr(std::size(StoryTimelinePrefix) - 1).data())) : static_cast<std::size_t>(std::stoull([&] {
+					auto range = assetName | std::ranges::views::drop(std::size(HomeTimelinePrefix) - 1) | std::ranges::views::filter([](wchar_t ch) { return ch != L'_'; });
+					return std::wstring(std::ranges::begin(range), std::ranges::end(range));
+				}()));
+				LocalizeStoryTimelineData(result, storyId);
 			}
 			else if (cls == StoryRaceTextAssetClass)
 			{
