@@ -954,11 +954,15 @@ namespace
 				const std::wstring_view assetName = assetPath.native();
 				constexpr const wchar_t StoryTimelinePrefix[] = L"storytimeline_";
 				constexpr const wchar_t HomeTimelinePrefix[] = L"hometimeline_";
-				const auto storyId = assetName.starts_with(StoryTimelinePrefix) ? static_cast<std::size_t>(_wtoll(assetName.substr(std::size(StoryTimelinePrefix) - 1).data())) : static_cast<std::size_t>(std::stoull([&] {
+				const auto storyId = assetName.starts_with(StoryTimelinePrefix) ? static_cast<std::size_t>(_wtoll(assetName.substr(std::size(StoryTimelinePrefix) - 1).data())) :
+					assetName.starts_with(HomeTimelinePrefix) ? static_cast<std::size_t>(std::stoull([&] {
 					auto range = assetName | std::ranges::views::drop(std::size(HomeTimelinePrefix) - 1) | std::ranges::views::filter([](wchar_t ch) { return ch != L'_'; });
 					return std::wstring(std::ranges::begin(range), std::ranges::end(range));
-				}()));
-				LocalizeStoryTimelineData(result, storyId);
+				}())) : -1;
+				if (storyId != -1)
+				{
+					LocalizeStoryTimelineData(result, storyId);
+				}
 			}
 			else if (cls == StoryRaceTextAssetClass)
 			{
