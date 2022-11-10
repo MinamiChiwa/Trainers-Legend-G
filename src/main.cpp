@@ -1476,7 +1476,7 @@ namespace HttpServer {
 					closeTrans.textData = false;
 					const auto& textDataArr = json_data.at(L"text_data").as_array();
 					for (auto& i : textDataArr) {
-						printf("set textdata untrans: %ls\n", i.as_string().c_str());
+						printf("Don't trans textdata: %ls\n", i.as_string().c_str());
 						trans_off_textData.emplace(std::stoull(i.as_string()));
 					}
 				}
