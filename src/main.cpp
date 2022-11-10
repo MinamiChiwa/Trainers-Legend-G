@@ -87,7 +87,9 @@ std::string externalPluginPath = "";
 bool autoChangeLineBreakMode = false;
 int start_width = -1;
 int start_height = -1;
+CloseTrans closeTrans{false};
 
+std::unordered_set<std::size_t> trans_off_textData{};
 
 // #pragma comment(lib, "cpprest_2_10_18.lib")
 // #pragma comment(lib, "bcrypt.lib")
@@ -1441,6 +1443,31 @@ namespace HttpServer {
 					}
 				}
 			}
+
+			if (path == L"/set_untrans") {
+				auto json_data = message.extract_json().get();
+				if (json_data.has_array_field(L"textData")) {
+					trans_off_textData.clear();
+					closeTrans.textData = false;
+					const auto& textDataArr = json_data.at(L"textData").as_array();
+					for (auto& i : textDataArr) {
+						printf("add textdata untrans: %ls\n", i.as_string().c_str());
+						trans_off_textData.emplace(std::stoull(i.as_string()));
+					}
+				}
+				else if (json_data.has_string_field(L"textData")) {
+					auto closeType = json_data.at(L"textData").as_string();
+					if (closeType == L"all") {
+						closeTrans.textData = true;
+					}
+					else {
+						closeTrans.textData = false;
+					}
+				}
+
+				
+			}
+
 			message.reply(status_codes::OK, "OK(〃'▽'〃)");
 		}
 		catch (std::exception& ex)

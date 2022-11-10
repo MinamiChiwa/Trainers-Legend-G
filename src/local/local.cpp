@@ -255,6 +255,9 @@ namespace local
 
 	Il2CppString* GetTextData(std::size_t category, std::size_t index)
 	{
+		if (closeTrans.all || closeTrans.textData || trans_off_textData.contains(category)) {
+			return nullptr;
+		}
 		if (const auto iter = TextDataContent.Data.find(category); iter != TextDataContent.Data.end())
 		{
 			if (const auto iter2 = iter->second.find(index); iter2 != iter->second.end())
