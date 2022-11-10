@@ -1446,6 +1446,31 @@ namespace HttpServer {
 
 			if (path == L"/set_untrans") {
 				auto json_data = message.extract_json().get();
+				if (json_data.has_boolean_field(L"closeAll")) {
+					closeTrans.all = json_data.at(L"closeAll").as_bool();
+				}
+				if (json_data.has_boolean_field(L"storyTextData")) {
+					closeTrans.storyTextData = json_data.at(L"storyTextData").as_bool();
+				}
+				if (json_data.has_boolean_field(L"raceTextData")) {
+					closeTrans.raceTextData = json_data.at(L"raceTextData").as_bool();
+				}
+				if (json_data.has_boolean_field(L"characterSystemTextData")) {
+					closeTrans.characterSystemTextData = json_data.at(L"characterSystemTextData").as_bool();
+				}
+				if (json_data.has_boolean_field(L"raceJikkyoCommentData")) {
+					closeTrans.raceJikkyoCommentData = json_data.at(L"raceJikkyoCommentData").as_bool();
+				}
+				if (json_data.has_boolean_field(L"raceJikkyoMessageData")) {
+					closeTrans.raceJikkyoMessageData = json_data.at(L"raceJikkyoMessageData").as_bool();
+				}
+				if (json_data.has_boolean_field(L"staticAndHashTextData")) {
+					closeTrans.staticAndHashTextData = json_data.at(L"staticAndHashTextData").as_bool();
+				}
+				if (json_data.has_boolean_field(L"hashTextData")) {
+					closeTrans.hashTextData = json_data.at(L"hashTextData").as_bool();
+				}
+
 				if (json_data.has_array_field(L"textData")) {
 					trans_off_textData.clear();
 					closeTrans.textData = false;
@@ -1455,14 +1480,8 @@ namespace HttpServer {
 						trans_off_textData.emplace(std::stoull(i.as_string()));
 					}
 				}
-				else if (json_data.has_string_field(L"textData")) {
-					auto closeType = json_data.at(L"textData").as_string();
-					if (closeType == L"all") {
-						closeTrans.textData = true;
-					}
-					else {
-						closeTrans.textData = false;
-					}
+				else if (json_data.has_boolean_field(L"textData")) {
+					closeTrans.textData = json_data.at(L"textData").as_bool();
 				}
 
 				

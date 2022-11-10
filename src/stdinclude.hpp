@@ -71,6 +71,13 @@ enum CameraType {
 struct CloseTrans {
 	bool all = false;
 	bool textData = false;
+	bool storyTextData = false;
+	bool raceTextData = false;
+	bool characterSystemTextData = false;
+	bool raceJikkyoCommentData = false;
+	bool raceJikkyoMessageData = false;
+	bool staticAndHashTextData = false;
+	bool hashTextData = false;
 };
 
 extern std::variant<UseOriginalFont, UseDefaultFont, UseCustomFont> g_replace_font;
