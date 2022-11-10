@@ -1471,17 +1471,17 @@ namespace HttpServer {
 					closeTrans.hashTextData = json_data.at(L"hashTextData").as_bool();
 				}
 
-				if (json_data.has_array_field(L"textData")) {
+				if (json_data.has_array_field(L"text_data")) {
 					trans_off_textData.clear();
 					closeTrans.textData = false;
-					const auto& textDataArr = json_data.at(L"textData").as_array();
+					const auto& textDataArr = json_data.at(L"text_data").as_array();
 					for (auto& i : textDataArr) {
-						printf("add textdata untrans: %ls\n", i.as_string().c_str());
+						printf("set textdata untrans: %ls\n", i.as_string().c_str());
 						trans_off_textData.emplace(std::stoull(i.as_string()));
 					}
 				}
-				else if (json_data.has_boolean_field(L"textData")) {
-					closeTrans.textData = json_data.at(L"textData").as_bool();
+				else if (json_data.has_boolean_field(L"text_data")) {
+					closeTrans.textData = json_data.at(L"text_data").as_bool();
 				}
 
 				
