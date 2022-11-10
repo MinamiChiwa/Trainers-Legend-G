@@ -8,7 +8,7 @@
     "staticAndHashTextData": "static 和 hash 文本",
     "hashTextData": "hash 文本",
     "text_data": {
-        "system": "系统语音",
+        "system": "系统文本",
         "event_title": "育成事件标题",
         "tutorial": "教程",
         "character_name": "角色名",
