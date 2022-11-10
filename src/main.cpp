@@ -9,6 +9,7 @@
 #include<format>
 #include <cpprest/uri.h>
 #include <cpprest/http_listener.h>
+#include <ranges>
 
 extern bool init_hook();
 extern void uninit_hook();
@@ -54,7 +55,7 @@ float g_race_move_step = 5;
 bool g_race_freecam_lookat_umamusume = false;
 bool g_race_freecam_follow_umamusume = false;
 int g_race_freecam_follow_umamusume_index = -1;
-Vector3_t g_race_freecam_follow_umamusume_offset = {0, 10, -10};
+Vector3_t g_race_freecam_follow_umamusume_offset = { 0, 10, -10 };
 float g_race_freecam_follow_umamusume_distance = 0;
 std::map<std::string, std::string> g_replaceBuiltInAssets{};
 bool g_enable_replaceBuiltInAssets = false;
@@ -418,7 +419,7 @@ namespace
 			if (document.HasMember("httpServerPort")) {
 				http_start_port = document["httpServerPort"].GetInt();
 			}
-			
+
 			const auto& extraAssetBundlePath = document["extraAssetBundlePath"];
 			if (extraAssetBundlePath.IsString())
 			{
@@ -452,7 +453,7 @@ namespace
 			g_asset_load_log = document["assetLoadLog"].GetBool();
 
 			g_auto_fullscreen = document["autoFullscreen"].GetBool();
-			
+
 			autoChangeLineBreakMode = document["autoChangeLineBreakMode"].GetBool();
 
 			if (document.HasMember("externalPlugin")) {
@@ -496,7 +497,7 @@ namespace
 					g_vsync_count = 0;
 				}
 			}
-			
+
 			if (document.HasMember("antiAliasing")) {  // 自定义配置, 不包含到schema
 				g_antialiasing = document["antiAliasing"].GetInt();
 			}
@@ -510,11 +511,11 @@ namespace
 			if (document.HasMember("live")) {
 				g_live_free_camera = document["live"]["free_camera"].GetBool();
 				g_live_force_changeVisibility_false = document["live"]["force_changeVisibility_false"].GetBool();
-				
+
 				if (document["live"].HasMember("close_all_blur")) {
 					g_live_close_all_blur = document["live"]["close_all_blur"].GetBool();
 				}
-				
+
 				auto moveStep = document["live"]["moveStep"].GetFloat();
 				g_live_move_step = moveStep;
 				UmaCamera::setMoveStep(moveStep);
@@ -534,7 +535,7 @@ namespace
 				g_race_freecam_follow_umamusume_offset.z = follow_offset["z"].GetFloat();
 				UmaCamera::loadGlobalData();
 			}
-			
+
 			if (document.HasMember("aspect_ratio")) {
 				if (document["aspect_ratio"].IsArray()) {
 					auto asp = document["aspect_ratio"].GetArray();
@@ -655,11 +656,15 @@ std::pair<std::unordered_map<std::size_t, local::StoryTextData>, std::unordered_
 		if (std::filesystem::is_regular_file(file) && file.path().extension() == ".json")
 		{
 			constexpr const wchar_t StoryTimelinePrefix[] = L"storytimeline_";
+			constexpr const wchar_t HomeTimelinePrefix[] = L"hometimeline_";
 			constexpr const wchar_t StoryRacePrefix[] = L"storyrace_";
 
 			const auto& path = file.path();
 			const auto stem = path.stem();
-			if (stem.native().starts_with(StoryTimelinePrefix))
+			const auto& stemNative = stem.native();
+			const auto isStoryTimeline = stemNative.starts_with(StoryTimelinePrefix);
+			const auto isHomeTimeline = stemNative.starts_with(HomeTimelinePrefix);
+			if (isStoryTimeline || isHomeTimeline)
 			{
 				std::ifstream storyTimeline(path);
 				rapidjson::IStreamWrapper wrapper(storyTimeline);
@@ -672,7 +677,7 @@ std::pair<std::unordered_map<std::size_t, local::StoryTextData>, std::unordered_
 				}
 
 				local::StoryTextData data;
-					
+
 				data.Title = utility::conversions::to_string_t(doc["Title"].GetString());
 				const auto textBlockList = doc["TextBlockList"].GetArray();
 				for (const auto& block : textBlockList)
@@ -700,10 +705,15 @@ std::pair<std::unordered_map<std::size_t, local::StoryTextData>, std::unordered_
 					}
 				}
 
-				const auto storyId = static_cast<std::size_t>(_wtoll(stem.c_str() + std::size(StoryTimelinePrefix) - 1));
+				const auto storyId = isStoryTimeline ?
+					static_cast<std::size_t>(_wtoll(stem.c_str() + std::size(StoryTimelinePrefix) - 1)) :
+					static_cast<std::size_t>(std::stoull([&] {
+						auto range = stemNative | std::ranges::views::drop(std::size(HomeTimelinePrefix) - 1) | std::ranges::views::filter([](wchar_t ch) { return ch != L'_'; });
+						return std::wstring(std::ranges::begin(range), std::ranges::end(range));
+					}()));
 				result.first.emplace(storyId, std::move(data));
 			}
-			else if (stem.native().starts_with(StoryRacePrefix))
+			else if (stemNative.starts_with(StoryRacePrefix))
 			{
 				std::ifstream storyTimeline(path);
 				rapidjson::IStreamWrapper wrapper(storyTimeline);
@@ -1512,7 +1522,7 @@ int __stdcall DllMain(HINSTANCE dllModule, DWORD reason, LPVOID)
 		module_name.resize(GetModuleFileName(nullptr, module_name.data(), MAX_PATH));
 
 		std::filesystem::path module_path(module_name);
-		
+
 		// check name
 		if (module_path.filename() != "umamusume.exe")
 			return 1;
@@ -1533,8 +1543,8 @@ int __stdcall DllMain(HINSTANCE dllModule, DWORD reason, LPVOID)
 
 		auto dicts = read_config();
 
-		if(g_enable_console)
-		 	create_debug_console();
+		if (g_enable_console)
+			create_debug_console();
 
 		std::thread init_thread([dicts = std::move(dicts)] {
 			logger::init_logger();
@@ -1559,7 +1569,7 @@ int __stdcall DllMain(HINSTANCE dllModule, DWORD reason, LPVOID)
 			std::unique_lock lock(mutex);
 			cond.wait(lock, [&] {
 				return hookIsReady.load(std::memory_order_acquire);
-			});
+				});
 			if (g_enable_console)
 			{
 				auto _ = freopen("CONOUT$", "w+t", stdout);
@@ -1579,7 +1589,7 @@ int __stdcall DllMain(HINSTANCE dllModule, DWORD reason, LPVOID)
 			auto&& [textData, characterSystemTextData, raceJikkyoCommentData, raceJikkyoMessageData] = LoadDicts();
 			local::load_textdb(&dicts, std::move(staticDictCache), std::move(storyDict), std::move(raceDict), std::move(textData), std::move(characterSystemTextData), std::move(raceJikkyoCommentData), std::move(raceJikkyoMessageData));
 			auto_update();
-		});
+			});
 		init_thread.detach();
 	}
 	else if (reason == DLL_PROCESS_DETACH)
