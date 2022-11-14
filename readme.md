@@ -145,6 +145,17 @@
 
 
 
+### 卸载方法
+
+- 关闭游戏后，删除umamusume文件夹内的以下内容：
+
+
+ `localized_data`文件夹、`config.json`、`legend_g_plugin.exe`、`version.dll`、`version.txt`
+
+（可能存在的文件）：`static_dump.json`、`dump.txt`、`legend_g_plugin_log.log`
+
+- 如果仅需要暂时令插件失效，修改`version.dll`文件名即可。
+
 ### 自由镜头操作说明
 
 ----
