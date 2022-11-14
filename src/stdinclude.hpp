@@ -68,6 +68,18 @@ enum CameraType {
 	CAMERA_RACE = 1
 };
 
+struct CloseTrans {
+	bool all = false;
+	bool textData = false;
+	bool storyTextData = false;
+	bool raceTextData = false;
+	bool characterSystemTextData = false;
+	bool raceJikkyoCommentData = false;
+	bool raceJikkyoMessageData = false;
+	bool staticAndHashTextData = false;
+	bool hashTextData = false;
+};
+
 extern std::variant<UseOriginalFont, UseDefaultFont, UseCustomFont> g_replace_font;
 extern int g_custom_font_size_offset;
 extern int g_custom_font_style;
@@ -104,3 +116,5 @@ extern std::unordered_map<int, std::pair<int, int>> g_home_char_replace;
 extern bool g_enable_global_char_replace;
 extern std::unordered_map<int, std::pair<int, int>> g_global_char_replace;
 extern std::unordered_map<int, std::pair<int, int>> g_global_mini_char_replace;
+extern std::unordered_set<std::size_t> trans_off_textData;
+extern CloseTrans closeTrans;

@@ -87,7 +87,9 @@ std::string externalPluginPath = "";
 bool autoChangeLineBreakMode = false;
 int start_width = -1;
 int start_height = -1;
+CloseTrans closeTrans{false};
 
+std::unordered_set<std::size_t> trans_off_textData{};
 
 // #pragma comment(lib, "cpprest_2_10_18.lib")
 // #pragma comment(lib, "bcrypt.lib")
@@ -1441,6 +1443,50 @@ namespace HttpServer {
 					}
 				}
 			}
+
+			if (path == L"/set_untrans") {
+				auto json_data = message.extract_json().get();
+				if (json_data.has_boolean_field(L"closeAll")) {
+					closeTrans.all = json_data.at(L"closeAll").as_bool();
+				}
+				if (json_data.has_boolean_field(L"storyTextData")) {
+					closeTrans.storyTextData = json_data.at(L"storyTextData").as_bool();
+				}
+				if (json_data.has_boolean_field(L"raceTextData")) {
+					closeTrans.raceTextData = json_data.at(L"raceTextData").as_bool();
+				}
+				if (json_data.has_boolean_field(L"characterSystemTextData")) {
+					closeTrans.characterSystemTextData = json_data.at(L"characterSystemTextData").as_bool();
+				}
+				if (json_data.has_boolean_field(L"raceJikkyoCommentData")) {
+					closeTrans.raceJikkyoCommentData = json_data.at(L"raceJikkyoCommentData").as_bool();
+				}
+				if (json_data.has_boolean_field(L"raceJikkyoMessageData")) {
+					closeTrans.raceJikkyoMessageData = json_data.at(L"raceJikkyoMessageData").as_bool();
+				}
+				if (json_data.has_boolean_field(L"staticAndHashTextData")) {
+					closeTrans.staticAndHashTextData = json_data.at(L"staticAndHashTextData").as_bool();
+				}
+				if (json_data.has_boolean_field(L"hashTextData")) {
+					closeTrans.hashTextData = json_data.at(L"hashTextData").as_bool();
+				}
+
+				if (json_data.has_array_field(L"text_data")) {
+					trans_off_textData.clear();
+					closeTrans.textData = false;
+					const auto& textDataArr = json_data.at(L"text_data").as_array();
+					for (auto& i : textDataArr) {
+						printf("Don't trans textdata: %ls\n", i.as_string().c_str());
+						trans_off_textData.emplace(std::stoull(i.as_string()));
+					}
+				}
+				else if (json_data.has_boolean_field(L"text_data")) {
+					closeTrans.textData = json_data.at(L"text_data").as_bool();
+				}
+
+				
+			}
+
 			message.reply(status_codes::OK, "OK(〃'▽'〃)");
 		}
 		catch (std::exception& ex)

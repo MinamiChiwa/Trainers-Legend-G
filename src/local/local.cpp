@@ -97,6 +97,10 @@ namespace local
 
 	bool localify_text(size_t hash, string** result)
 	{
+		if (closeTrans.all || closeTrans.staticAndHashTextData) {
+			return false;
+		}
+
 		std::unique_lock lock(db_lock);
 		if (text_db.contains(hash))
 		{
@@ -144,19 +148,13 @@ namespace local
 
 	Il2CppString* get_localized_string(Il2CppString* str)
 	{
-		// printf("call get_localized_string(Il2CppString* str): %ls\n", str->start_char);
+		if (closeTrans.all || closeTrans.hashTextData) {
+			return str;
+		}
+
 		string* result;
 		wstring result_without_lb = line_break_replace(str);
 		
-		/*
-		if (wcscmp(L"わわわっ、どいてどいてぇー！！", str->start_char) == 0) {
-			printf("LOOOOOOOOOOOOOOOOOOOOOOG: 命中 - '%ls'\n", str->start_char);
-			// wchar_t rr[] = L"哇, zhemeniuibi";
-			string rr = "wa, zhemeniuibi";
-			return il2cpp_string_new(rr.data());
-		}
-		*/
-
 		size_t hash;
 		auto hash_with_lb = std::hash<wstring>{}(str->start_char);
 		auto hash_without_lb = std::hash<wstring>{}(result_without_lb);
@@ -169,21 +167,6 @@ namespace local
 			hash = hash_with_lb;
 		}
 		
-		/*
-		wstring nb = L"わわわっ、どいてどいてぇー！！";
-		// nb.c_str(); // char*
-
-		size_t len = strlen(nb.c_str()) + 1;
-		size_t converted = 0;
-		wchar_t* WStr;
-		WStr = (wchar_t*)malloc(len * sizeof(wchar_t));
-
-		mbstowcs_s(&converted, WStr, len, nb.c_str(), _TRUNCATE);
-
-		// auto test1 = std::hash<wstring> {}(L"わわわっ、どいてどいてぇー！！");
-		auto test1 = std::hash<wstring> {}(WStr);
-		printf("haha: %zu\n", test1);
-		*/
 
 		Il2CppString* t_with_lp = NULL;
 		Il2CppString* t_without_lp = NULL;
@@ -208,16 +191,6 @@ namespace local
 
 		if (g_enable_logger && !std::any_of(str_list.begin(), str_list.end(), [hash](size_t hash1) { return hash1 == hash; }))
 		{
-			
-			/*
-			if (hash == 13202430879488954923) {
-				wprintf(L"LOOOOOOOOOOOOOOOOOOOOOOG: 命中id - '%ls'\n", str->start_char);
-
-				string rr = "zhemeniuibi";
-				string* ret = &rr;
-				return il2cpp_string_new(ret->data());
-			}
-			*/
 
 			str_list.push_back(hash);
 
@@ -225,9 +198,6 @@ namespace local
 			if (hash_with_lb != hash_without_lb) {
 				logger::write_entry(hash_without_lb, result_without_lb);
 			}
-			
-			// wprintf(L"未命中: %ls(%zu)\n", str->start_char, hash);
-
 		}
 
 		return str;
@@ -235,6 +205,10 @@ namespace local
 
 	StoryTextData const* GetStoryTextData(std::size_t storyId)
 	{
+		if (closeTrans.all || closeTrans.storyTextData) {
+			return nullptr;
+		}
+
 		if (const auto iter = StoryDict.find(storyId); iter != StoryDict.end())
 		{
 			return &iter->second;
@@ -245,6 +219,10 @@ namespace local
 
 	RaceTextData const* GetRaceTextData(std::size_t raceId)
 	{
+		if (closeTrans.all || closeTrans.raceTextData) {
+			return nullptr;
+		}
+
 		if (const auto iter = RaceDict.find(raceId); iter != RaceDict.end())
 		{
 			return &iter->second;
@@ -255,6 +233,9 @@ namespace local
 
 	Il2CppString* GetTextData(std::size_t category, std::size_t index)
 	{
+		if (closeTrans.all || closeTrans.textData || trans_off_textData.contains(category)) {
+			return nullptr;
+		}
 		if (const auto iter = TextDataContent.Data.find(category); iter != TextDataContent.Data.end())
 		{
 			if (const auto iter2 = iter->second.find(index); iter2 != iter->second.end())
@@ -268,6 +249,10 @@ namespace local
 
 	Il2CppString* GetCharacterSystemTextData(std::size_t characterId, std::size_t voiceId)
 	{
+		if (closeTrans.all || closeTrans.characterSystemTextData) {
+			return nullptr;
+		}
+
 		if (const auto iter = CharacterSystemTextDataContent.Data.find(characterId); iter != CharacterSystemTextDataContent.Data.end())
 		{
 			if (const auto iter2 = iter->second.find(voiceId); iter2 != iter->second.end())
@@ -281,6 +266,10 @@ namespace local
 
 	Il2CppString* GetRaceJikkyoCommentData(std::size_t id)
 	{
+		if (closeTrans.all || closeTrans.raceJikkyoCommentData) {
+			return nullptr;
+		}
+
 		if (const auto iter = RaceJikkyoCommentDataContent.Data.find(id); iter != RaceJikkyoCommentDataContent.Data.end())
 		{
 			return il2cpp_string_new_utf16(iter->second.c_str(), iter->second.size());
@@ -291,6 +280,10 @@ namespace local
 
 	Il2CppString* GetRaceJikkyoMessageData(std::size_t id)
 	{
+		if (closeTrans.all || closeTrans.raceJikkyoMessageData) {
+			return nullptr;
+		}
+
 		if (const auto iter = RaceJikkyoMessageDataContent.Data.find(id); iter != RaceJikkyoMessageDataContent.Data.end())
 		{
 			return il2cpp_string_new_utf16(iter->second.c_str(), iter->second.size());
