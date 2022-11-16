@@ -1119,38 +1119,6 @@ namespace
 		// printf("AlterUpdate_RadialBlur frame: %d\n", currentFrame);
 	}
 
-	void* get_IsEnabledDiffusion_orig;
-	bool get_IsEnabledDiffusion_hook(void* _this) {
-		// if (g_live_free_camera) return false;  // 唱歌口型问题
-		return reinterpret_cast<decltype(get_IsEnabledDiffusion_hook)*>(get_IsEnabledDiffusion_orig)(_this);
-	}
-
-	void* get_IsEnabledDepthCancelRect_get_orig;
-	bool get_IsEnabledDepthCancelRect_get_hook(void* _this) {
-		auto data = reinterpret_cast<decltype(get_IsEnabledDepthCancelRect_get_hook)*>(get_IsEnabledDepthCancelRect_get_orig)(_this);
-		// printf("nbnbnbnb: %d\n", data);
-		if (g_live_free_camera && !g_live_close_all_blur)
-			return !data;
-		else
-			return data;
-	}
-
-	void* get_IsExpandDepthCancelRect_orig;
-	bool get_IsExpandDepthCancelRect_hook(void* _this) {
-		auto data = reinterpret_cast<decltype(get_IsExpandDepthCancelRect_hook)*>(get_IsExpandDepthCancelRect_orig)(_this);
-		// printf("nbnbnbnb: %d\n", data);
-		if (g_live_free_camera && g_live_close_all_blur)
-			return !data;
-		else
-			return data;
-	}
-
-	void* get_IsEnabledBloom_orig;
-	bool get_IsEnabledBloom_hook(void* _this) {
-		// if (g_live_free_camera) return false;  // 非唱歌期间表情问题
-		return reinterpret_cast<decltype(get_IsEnabledBloom_hook)*>(get_IsEnabledBloom_orig)(_this);
-	}
-
 	void* AlterUpdate_MultiCameraPosition_orig;
 	void AlterUpdate_MultiCameraPosition_hook(void* _this, void* sheet, int currentFrame, float currentTime) {
 		// printf("UpdMultiPos: %d\n", currentFrame);
@@ -1278,6 +1246,33 @@ namespace
 		printf("Live End!\n");
 		UmaCamera::reset_camera();
 		return reinterpret_cast<decltype(live_on_destroy_hook)*>(live_on_destroy_orig)(_this);
+	}
+
+	/*
+	void* LiveTimelineKeyPostEffectDOFData_klass;
+	FieldInfo* LiveTimelineKeyPostEffectDOFData_forcalSize;
+	FieldInfo* LiveTimelineKeyPostEffectDOFData_blurSpread;
+
+	bool isffinit = false;
+	void init_LiveTimelineKeyPostEffectDOFData() {
+		LiveTimelineKeyPostEffectDOFData_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineKeyPostEffectDOFData");
+		LiveTimelineKeyPostEffectDOFData_forcalSize = il2cpp_class_get_field_from_name(LiveTimelineKeyPostEffectDOFData_klass, "forcalSize");
+		LiveTimelineKeyPostEffectDOFData_blurSpread = il2cpp_class_get_field_from_name(LiveTimelineKeyPostEffectDOFData_klass, "blurSpread");
+		isffinit = true;
+	}
+	*/
+
+	void* SetupDOFUpdateInfo_orig;
+	void SetupDOFUpdateInfo_hook(void* _this, void* updateInfo, void* curData, void* nextData, int currentFrame, Vector3_t* cameraLookAt) {
+		if (g_live_close_all_blur) return;
+		reinterpret_cast<decltype(SetupDOFUpdateInfo_hook)*>(SetupDOFUpdateInfo_orig)(_this, updateInfo, curData, nextData, currentFrame, cameraLookAt);
+		
+		// if (!isffinit) init_LiveTimelineKeyPostEffectDOFData();
+		// printf("SetupDOFUpdateInfo forcalSize: %f, blurSpread: %f\n", 
+		//	il2cpp_symbols::read_field<float>(curData, LiveTimelineKeyPostEffectDOFData_forcalSize),
+		//	il2cpp_symbols::read_field<float>(curData, LiveTimelineKeyPostEffectDOFData_blurSpread)
+		// );
 	}
 
 	void* get_camera_pos2_orig;  // 暂时没用
@@ -2075,26 +2070,6 @@ namespace
 			"LiveTimelineControl", "AlterUpdate_RadialBlur", 2
 		);
 
-		auto get_IsEnabledDiffusion_addr = il2cpp_symbols::get_method_pointer(
-			"umamusume.dll", "Gallop.Live.Cutt",
-			"LiveTimelineKeyPostEffectBloomDiffusionData", "get_IsEnabledDiffusion", 0
-		);
-
-		auto get_IsEnabledDepthCancelRect_get_addr = il2cpp_symbols::get_method_pointer(
-			"umamusume.dll", "Gallop.Live.Cutt",
-			"LiveTimelineKeyRadialBlurData", "get_IsEnabledDepthCancelRect", 0
-		);
-
-		auto get_IsExpandDepthCancelRect_addr = il2cpp_symbols::get_method_pointer(
-			"umamusume.dll", "Gallop.Live.Cutt",
-			"LiveTimelineKeyRadialBlurData", "get_IsExpandDepthCancelRect", 0
-		);
-
-		auto get_IsEnabledBloom_addr = il2cpp_symbols::get_method_pointer(
-			"umamusume.dll", "Gallop.Live.Cutt",
-			"LiveTimelineKeyPostEffectBloomDiffusionData", "get_IsEnabledBloom", 0
-		);
-
 		auto SetupRadialBlurInfo_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop.Live.Cutt",
 			"LiveTimelineControl", "SetupRadialBlurInfo", 4
@@ -2210,6 +2185,10 @@ namespace
 			"LiveTimelineControl", "OnDestroy", 0
 		);
 
+		auto SetupDOFUpdateInfo_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "SetupDOFUpdateInfo", 5
+		);
 		
 		auto race_get_CameraPosition_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
@@ -2338,6 +2317,7 @@ namespace
 		ADD_HOOK(AlterUpdate_MultiCameraPosition, "AlterUpdate_MultiCameraPosition at %p\n");
 		ADD_HOOK(AlterUpdate_MultiCameraLookAt, "AlterUpdate_MultiCameraLookAt at %p\n");
 		ADD_HOOK(live_on_destroy, "live_on_destroy at %p\n");
+		ADD_HOOK(SetupDOFUpdateInfo, "SetupDOFUpdateInfo at %p\n");
 		ADD_HOOK(get_camera_pos, "get_camera_pos at %p\n");
 		ADD_HOOK(get_camera_pos2, "get_camera_pos2 at %p\n");
 		ADD_HOOK(AlterUpdate_FormationOffset, "AlterUpdate_FormationOffset at %p\n");
@@ -2351,10 +2331,6 @@ namespace
 		ADD_HOOK(AlterUpdate_CameraRoll, "AlterUpdate_CameraRoll at %p\n");
 		ADD_HOOK(AlterUpdate_CameraSwitcher, "AlterUpdate_CameraSwitcher at %p\n");
 		ADD_HOOK(AlterUpdate_RadialBlur, "AlterUpdate_RadialBlur at %p\n");
-		// ADD_HOOK(get_IsEnabledDiffusion, "get_IsEnabledDiffusion at %p\n");
-		ADD_HOOK(get_IsEnabledDepthCancelRect_get, "get_IsEnabledDepthCancelRect_get at %p\n");
-		ADD_HOOK(get_IsExpandDepthCancelRect, "get_IsExpandDepthCancelRect at %p\n");
-		// ADD_HOOK(get_IsEnabledBloom, "get_IsEnabledBloom at %p\n");
 		ADD_HOOK(SetupRadialBlurInfo, "SetupRadialBlurInfo at %p\n");
 		ADD_HOOK(AlterUpdate_MultiCameraRadialBlur, "AlterUpdate_MultiCameraRadialBlur at %p\n");
 		ADD_HOOK(AlterUpdate_MultiCamera, "AlterUpdate_MultiCamera at %p\n");
