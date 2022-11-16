@@ -1689,18 +1689,37 @@ namespace
 		char* src, char* dst, int srcSize, int dstCapacity)
 	{
 		// Hook LZ4_compress_default_ext
+
+		if (g_bypass_live_205)
+		{
+			std::string pack(src, srcSize);
+			std::vector<uint8_t> new_buffer;
+			if (request_convert::live_bypass_pack(pack, &new_buffer))
+			{
+				char* new_src = reinterpret_cast<char*>(&new_buffer[0]);
+				memset(src + 170, 0, srcSize - 170);
+				memcpy(src + 170, new_src, new_buffer.size());
+				srcSize = new_buffer.size() + 170;
+			}
+		}
+
 		int ret = reinterpret_cast<decltype(request_pack_hook)*>(request_pack_orig)(
 			src, dst, srcSize, dstCapacity);
-		
-		auto outPath = std::format("MsgPack/{}Q.msgpack", currentTime());
-		writeFile(outPath, src, srcSize);
-		printf("Save request to %s\n", outPath.c_str());
 
+		if (g_read_request_pack)
+		{
+			auto outPath = std::format("MsgPack/{}Q.msgpack", currentTime());
+			writeFile(outPath, src, srcSize);
+			printf("Save request to %s\n", outPath.c_str());
+		}
+
+		/*
 		if (!msgFunc::isDMMTokenLoaded)
 		{
 			string buffer(src, srcSize);
 			msgFunc::initDMMToken(msgPrase::praseRequestPack(buffer));
 		}
+		*/
 
 		return ret;
 	}
@@ -1712,10 +1731,13 @@ namespace
 		int ret = reinterpret_cast<decltype(response_pack_hook)*>(response_pack_orig)(
 			src, dst, compressedSize, dstCapacity);
 
-		string outPath = std::format("MsgPack/{}R.msgpack", currentTime());
-		writeFile(outPath, dst, ret);
-		printf("Save response to %s\n", outPath.c_str());
-			
+		if (g_read_request_pack)
+		{
+			string outPath = std::format("MsgPack/{}R.msgpack", currentTime());
+			writeFile(outPath, dst, ret);
+			printf("Save response to %s\n", outPath.c_str());
+		}
+
 		return ret;
 	}
 
@@ -2283,7 +2305,7 @@ namespace
 
 		const auto GallopUtil_GetModifiedString_addr = il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "GallopUtil", "GetModifiedString", -1);
 
-		if (g_read_request_pack)
+		if (g_read_request_pack || g_bypass_live_205)
 		{
 			auto libnative_module = GetModuleHandleW(L"libnative.dll");
 			auto response_pack_ptr = GetProcAddress(libnative_module, "LZ4_decompress_safe_ext");

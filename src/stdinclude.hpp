@@ -33,9 +33,11 @@
 #include "logger/logger.hpp"
 #include "auto_update/auto_update.hpp"
 #include "msgpack/msgpack.hpp"
+#include "requestConvert/request_conv.hpp"
 
 #include "camera/camera.hpp"
 #include "umadb/umadb.hpp"
+#include <nlohmann/json.hpp>
 
 extern bool g_dump_entries;
 extern bool g_enable_logger;
@@ -118,3 +120,4 @@ extern std::unordered_map<int, std::pair<int, int>> g_global_char_replace;
 extern std::unordered_map<int, std::pair<int, int>> g_global_mini_char_replace;
 extern std::unordered_set<std::size_t> trans_off_textData;
 extern CloseTrans closeTrans;
+extern bool g_bypass_live_205;

@@ -66,6 +66,8 @@ bool g_enable_global_char_replace = false;
 std::unordered_map<int, std::pair<int, int>> g_global_char_replace{};
 std::unordered_map<int, std::pair<int, int>> g_global_mini_char_replace{};
 
+bool g_bypass_live_205 = false;
+
 std::string g_text_data_dict_path;
 std::string g_character_system_text_dict_path;
 std::string g_race_jikkyo_comment_dict_path;
@@ -589,6 +591,11 @@ namespace
 						);
 					}
 				}
+			}
+
+			if (document.HasMember("bypass_live_205"))
+			{
+				g_bypass_live_205 = document["bypass_live_205"].GetBool();
 			}
 
 			// Looks like not working for now
