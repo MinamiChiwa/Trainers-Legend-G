@@ -68,6 +68,12 @@ std::unordered_map<int, std::pair<int, int>> g_global_mini_char_replace{};
 
 bool g_bypass_live_205 = false;
 
+bool g_save_msgpack = true;
+bool g_enable_response_convert = false;
+std::wstring g_convert_url;
+bool g_enable_self_server = false;
+std::wstring g_self_server_url;
+
 std::string g_text_data_dict_path;
 std::string g_character_system_text_dict_path;
 std::string g_race_jikkyo_comment_dict_path;
@@ -596,6 +602,20 @@ namespace
 			if (document.HasMember("bypass_live_205"))
 			{
 				g_bypass_live_205 = document["bypass_live_205"].GetBool();
+			}
+
+			if (document.HasMember("modify_pack")) {
+				g_save_msgpack = document["modify_pack"]["save_msgpack"].GetBool();
+
+				g_enable_response_convert = document["modify_pack"]["enable_response_convert"].GetBool();
+				std::string convert_url = document["modify_pack"]["convert_url"].GetString();
+				std::wstring c_url(convert_url.begin(), convert_url.end());
+				g_convert_url = c_url;
+
+				g_enable_self_server = document["modify_pack"]["enable_self_server"].GetBool();
+				std::string serv_url = document["modify_pack"]["self_server_url"].GetString();
+				std::wstring s_url(serv_url.begin(), serv_url.end());
+				g_self_server_url = s_url;
 			}
 
 			// Looks like not working for now

@@ -1666,6 +1666,13 @@ namespace
 		return reinterpret_cast<decltype(EditableCharacterBuildInfo_ctor_hook)*>(EditableCharacterBuildInfo_ctor_orig)(_this, cardId, charaId, dressId, controllerType, zekken, mobId, backDancerColorId, headId, isUseDressDataHeadModelSubId, isEnableModelCache);
 	}
 
+	void* get_ApplicationServerUrl_orig;
+	Il2CppString* get_ApplicationServerUrl_hook() {
+		const auto url = reinterpret_cast<decltype(get_ApplicationServerUrl_hook)*>(get_ApplicationServerUrl_orig)();
+		const string new_url(g_self_server_url.begin(), g_self_server_url.end());
+		return g_enable_self_server ? il2cpp_string_new(new_url.c_str()) : url;
+	}
+
 	std::string currentTime()
 	{
 		auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(
@@ -1682,6 +1689,25 @@ namespace
 			fwrite(buffer, 1, len, fp);
 			fclose(fp);
 		}
+	}
+
+	web::http::http_response send_post(wstring url, wstring path, wstring data) {
+		web::http::client::http_client client(url);
+		return client.request(web::http::methods::POST, path, data).get();
+	}
+
+	web::http::http_response send_msgpack_post(wstring url, wstring path, string msgpack) {
+		auto json_data = nlohmann::json::from_msgpack(msgpack, false);
+		string resp_data = json_data.dump();
+		std::wstring wd(resp_data.begin(), resp_data.end());
+		return send_post(url, path, wd);
+	}
+
+	web::http::http_response send_msgpack_post(wstring url, wstring path, string_view msgpack) {
+		auto json_data = nlohmann::json::from_msgpack(msgpack, false);
+		string resp_data = json_data.dump();
+		std::wstring wd(resp_data.begin(), resp_data.end());
+		return send_post(url, path, wd);
 	}
 
 	void* request_pack_orig = nullptr;
@@ -1706,9 +1732,20 @@ namespace
 		int ret = reinterpret_cast<decltype(request_pack_hook)*>(request_pack_orig)(
 			src, dst, srcSize, dstCapacity);
 
-		if (g_read_request_pack)
+		if (g_enable_self_server) {
+			try {
+				const std::string _pack(src, srcSize);
+				const auto pack = request_convert::parse_request_pack(_pack);
+				send_msgpack_post(g_self_server_url, L"/server/push_last_data", pack);  // 传递解密后数据
+			}
+			catch (std::exception& e) {
+				printf("push request data failed: %s\n", e.what());
+			}
+		}
+
+		if (g_read_request_pack && g_save_msgpack)
 		{
-			auto outPath = std::format("MsgPack/{}Q.msgpack", currentTime());
+			const auto outPath = std::format("MsgPack/{}Q.msgpack", currentTime());
 			writeFile(outPath, src, srcSize);
 			printf("Save request to %s\n", outPath.c_str());
 		}
@@ -1731,11 +1768,54 @@ namespace
 		int ret = reinterpret_cast<decltype(response_pack_hook)*>(response_pack_orig)(
 			src, dst, compressedSize, dstCapacity);
 
-		if (g_read_request_pack)
+		if (g_read_request_pack && g_save_msgpack)
 		{
-			string outPath = std::format("MsgPack/{}R.msgpack", currentTime());
+			const string outPath = std::format("MsgPack/{}R.msgpack", currentTime());
 			writeFile(outPath, dst, ret);
 			printf("Save response to %s\n", outPath.c_str());
+		}
+
+		try {
+			std::string uma_data(dst, ret);
+
+			if (g_enable_self_server) {
+				const auto data = send_post(g_self_server_url, L"/server/get_last_response", L"");
+				string resp_str = data.extract_utf8string().get();
+				try {
+					vector<uint8_t> new_buffer = nlohmann::json::to_msgpack(nlohmann::json::parse(resp_str));
+					char* new_dst = reinterpret_cast<char*>(&new_buffer[0]);
+
+					printf("dstC: %d, old_size: %d, new_size: %llu\n", dstCapacity, ret, new_buffer.size());
+					if (new_buffer.size() > dstCapacity)
+					{
+						throw std::range_error("Out of memory when modifying response pack!");
+					}
+
+					memset(dst, 0, dstCapacity);
+					memcpy_s(dst, dstCapacity, new_dst, new_buffer.size());
+					ret = new_buffer.size();
+				}
+				catch (exception& e) {
+					printf("get exception: %s\n", e.what());
+				}
+
+			}
+
+			if (g_enable_response_convert) {
+				auto data = send_msgpack_post(g_convert_url, L"/convert/response", uma_data);
+				if (data.status_code() == 200) {
+					string resp_str = data.extract_utf8string().get();
+					vector<uint8_t> new_buffer = nlohmann::json::to_msgpack(nlohmann::json::parse(resp_str));
+					char* new_dst = reinterpret_cast<char*>(&new_buffer[0]);
+					memset(dst, 0, dstCapacity);
+					memcpy(dst, new_dst, new_buffer.size());
+					ret = new_buffer.size();
+				}
+			}
+
+		}
+		catch (exception& e) {
+			printf("Error: %s\n", e.what());
 		}
 
 		return ret;
@@ -2280,6 +2360,11 @@ namespace
 				"EditableCharacterBuildInfo", ".ctor", 10
 			);
 
+		auto get_ApplicationServerUrl_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"GameDefine", "get_ApplicationServerUrl", 0
+		);
+
 		auto StorySceneController_LoadCharacter_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"StorySceneController", "LoadCharacter", 2
@@ -2317,6 +2402,7 @@ namespace
 			printf("request pack at %p\n", request_pack_ptr);
 			MH_CreateHook(request_pack_ptr, request_pack_hook, &request_pack_orig);
 			MH_EnableHook(request_pack_ptr);
+			ADD_HOOK(get_ApplicationServerUrl, "get_ApplicationServerUrl at %p\n");
 		}
 #pragma endregion
 
