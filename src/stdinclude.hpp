@@ -15,9 +15,14 @@
 #include <string>
 #include <thread>
 #include <unordered_map>
+#include <unordered_set>
 #include <map>
 #include <thread>
 #include <variant>
+
+#include <exception>
+#include <vector>
+#include <regex>
 
 #include <MinHook.h>
 
@@ -32,7 +37,6 @@
 #include "local/local.hpp"
 #include "logger/logger.hpp"
 #include "auto_update/auto_update.hpp"
-#include "msgpack/msgpack.hpp"
 #include "requestConvert/request_conv.hpp"
 
 #include "camera/camera.hpp"

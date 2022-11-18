@@ -1691,25 +1691,6 @@ namespace
 		}
 	}
 
-	web::http::http_response send_post(wstring url, wstring path, wstring data) {
-		web::http::client::http_client client(url);
-		return client.request(web::http::methods::POST, path, data).get();
-	}
-
-	web::http::http_response send_msgpack_post(wstring url, wstring path, string msgpack) {
-		auto json_data = nlohmann::json::from_msgpack(msgpack, false);
-		string resp_data = json_data.dump();
-		std::wstring wd(resp_data.begin(), resp_data.end());
-		return send_post(url, path, wd);
-	}
-
-	web::http::http_response send_msgpack_post(wstring url, wstring path, string_view msgpack) {
-		auto json_data = nlohmann::json::from_msgpack(msgpack, false);
-		string resp_data = json_data.dump();
-		std::wstring wd(resp_data.begin(), resp_data.end());
-		return send_post(url, path, wd);
-	}
-
 	void* request_pack_orig = nullptr;
 	int request_pack_hook(
 		char* src, char* dst, int srcSize, int dstCapacity)
@@ -1736,7 +1717,7 @@ namespace
 			try {
 				const std::string _pack(src, srcSize);
 				const auto pack = request_convert::parse_request_pack(_pack);
-				send_msgpack_post(g_self_server_url, L"/server/push_last_data", pack);  // 传递解密后数据
+				request_convert::send_msgpack_post(g_self_server_url, L"/server/push_last_data", pack);  // 传递解密后数据
 			}
 			catch (std::exception& e) {
 				printf("push request data failed: %s\n", e.what());
@@ -1779,7 +1760,7 @@ namespace
 			std::string uma_data(dst, ret);
 
 			if (g_enable_self_server) {
-				const auto data = send_post(g_self_server_url, L"/server/get_last_response", L"");
+				const auto data = request_convert::send_post(g_self_server_url, L"/server/get_last_response", L"");
 				string resp_str = data.extract_utf8string().get();
 				try {
 					vector<uint8_t> new_buffer = nlohmann::json::to_msgpack(nlohmann::json::parse(resp_str));
@@ -1802,11 +1783,31 @@ namespace
 			}
 
 			if (g_enable_response_convert) {
-				auto data = send_msgpack_post(g_convert_url, L"/convert/response", uma_data);
+				const auto data = request_convert::send_msgpack_post(g_convert_url, L"/convert/response", uma_data);
 				if (data.status_code() == 200) {
 					string resp_str = data.extract_utf8string().get();
 					vector<uint8_t> new_buffer = nlohmann::json::to_msgpack(nlohmann::json::parse(resp_str));
+					const char* new_dst = reinterpret_cast<char*>(&new_buffer[0]);
+					if (new_buffer.size() > dstCapacity)
+					{
+						throw std::range_error("Out of memory when modifying response pack!");
+					}
+					memset(dst, 0, dstCapacity);
+					memcpy(dst, new_dst, new_buffer.size());
+					ret = new_buffer.size();
+				}
+			}
+
+			if (g_bypass_live_205)
+			{
+				std::vector<uint8_t> new_buffer;
+				if (request_convert::live_unlock_dress(uma_data, &new_buffer))
+				{
 					char* new_dst = reinterpret_cast<char*>(&new_buffer[0]);
+					if (new_buffer.size() > dstCapacity)
+					{
+						throw std::range_error("Out of memory when modifying response pack!");
+					}
 					memset(dst, 0, dstCapacity);
 					memcpy(dst, new_dst, new_buffer.size());
 					ret = new_buffer.size();

@@ -1456,6 +1456,12 @@ namespace HttpServer {
 			auto path = http::uri::decode(message.relative_uri().path());
 			// ucout << "POST: " << path << std::endl;
 
+			if (path == L"/postmsg/serverstart")
+			{
+				printf("External Server Ready\n");
+				MHotkey::set_ext_server_start(true);
+			}
+
 			if (path == L"/sets") {
 				auto json_data = message.extract_json().get();
 				// ucout << "Data: " << json_data.to_string() << std::endl;
