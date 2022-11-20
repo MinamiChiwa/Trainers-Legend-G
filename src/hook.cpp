@@ -1119,38 +1119,6 @@ namespace
 		// printf("AlterUpdate_RadialBlur frame: %d\n", currentFrame);
 	}
 
-	void* get_IsEnabledDiffusion_orig;
-	bool get_IsEnabledDiffusion_hook(void* _this) {
-		// if (g_live_free_camera) return false;  // 唱歌口型问题
-		return reinterpret_cast<decltype(get_IsEnabledDiffusion_hook)*>(get_IsEnabledDiffusion_orig)(_this);
-	}
-
-	void* get_IsEnabledDepthCancelRect_get_orig;
-	bool get_IsEnabledDepthCancelRect_get_hook(void* _this) {
-		auto data = reinterpret_cast<decltype(get_IsEnabledDepthCancelRect_get_hook)*>(get_IsEnabledDepthCancelRect_get_orig)(_this);
-		// printf("nbnbnbnb: %d\n", data);
-		if (g_live_free_camera && !g_live_close_all_blur)
-			return !data;
-		else
-			return data;
-	}
-
-	void* get_IsExpandDepthCancelRect_orig;
-	bool get_IsExpandDepthCancelRect_hook(void* _this) {
-		auto data = reinterpret_cast<decltype(get_IsExpandDepthCancelRect_hook)*>(get_IsExpandDepthCancelRect_orig)(_this);
-		// printf("nbnbnbnb: %d\n", data);
-		if (g_live_free_camera && g_live_close_all_blur)
-			return !data;
-		else
-			return data;
-	}
-
-	void* get_IsEnabledBloom_orig;
-	bool get_IsEnabledBloom_hook(void* _this) {
-		// if (g_live_free_camera) return false;  // 非唱歌期间表情问题
-		return reinterpret_cast<decltype(get_IsEnabledBloom_hook)*>(get_IsEnabledBloom_orig)(_this);
-	}
-
 	void* AlterUpdate_MultiCameraPosition_orig;
 	void AlterUpdate_MultiCameraPosition_hook(void* _this, void* sheet, int currentFrame, float currentTime) {
 		// printf("UpdMultiPos: %d\n", currentFrame);
@@ -1278,6 +1246,33 @@ namespace
 		printf("Live End!\n");
 		UmaCamera::reset_camera();
 		return reinterpret_cast<decltype(live_on_destroy_hook)*>(live_on_destroy_orig)(_this);
+	}
+
+	/*
+	void* LiveTimelineKeyPostEffectDOFData_klass;
+	FieldInfo* LiveTimelineKeyPostEffectDOFData_forcalSize;
+	FieldInfo* LiveTimelineKeyPostEffectDOFData_blurSpread;
+
+	bool isffinit = false;
+	void init_LiveTimelineKeyPostEffectDOFData() {
+		LiveTimelineKeyPostEffectDOFData_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineKeyPostEffectDOFData");
+		LiveTimelineKeyPostEffectDOFData_forcalSize = il2cpp_class_get_field_from_name(LiveTimelineKeyPostEffectDOFData_klass, "forcalSize");
+		LiveTimelineKeyPostEffectDOFData_blurSpread = il2cpp_class_get_field_from_name(LiveTimelineKeyPostEffectDOFData_klass, "blurSpread");
+		isffinit = true;
+	}
+	*/
+
+	void* SetupDOFUpdateInfo_orig;
+	void SetupDOFUpdateInfo_hook(void* _this, void* updateInfo, void* curData, void* nextData, int currentFrame, Vector3_t* cameraLookAt) {
+		if (g_live_close_all_blur) return;
+		reinterpret_cast<decltype(SetupDOFUpdateInfo_hook)*>(SetupDOFUpdateInfo_orig)(_this, updateInfo, curData, nextData, currentFrame, cameraLookAt);
+		
+		// if (!isffinit) init_LiveTimelineKeyPostEffectDOFData();
+		// printf("SetupDOFUpdateInfo forcalSize: %f, blurSpread: %f\n", 
+		//	il2cpp_symbols::read_field<float>(curData, LiveTimelineKeyPostEffectDOFData_forcalSize),
+		//	il2cpp_symbols::read_field<float>(curData, LiveTimelineKeyPostEffectDOFData_blurSpread)
+		// );
 	}
 
 	void* get_camera_pos2_orig;  // 暂时没用
@@ -1671,6 +1666,13 @@ namespace
 		return reinterpret_cast<decltype(EditableCharacterBuildInfo_ctor_hook)*>(EditableCharacterBuildInfo_ctor_orig)(_this, cardId, charaId, dressId, controllerType, zekken, mobId, backDancerColorId, headId, isUseDressDataHeadModelSubId, isEnableModelCache);
 	}
 
+	void* get_ApplicationServerUrl_orig;
+	Il2CppString* get_ApplicationServerUrl_hook() {
+		const auto url = reinterpret_cast<decltype(get_ApplicationServerUrl_hook)*>(get_ApplicationServerUrl_orig)();
+		const string new_url(g_self_server_url.begin(), g_self_server_url.end());
+		return g_enable_self_server ? il2cpp_string_new(new_url.c_str()) : url;
+	}
+
 	std::string currentTime()
 	{
 		auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(
@@ -1694,18 +1696,48 @@ namespace
 		char* src, char* dst, int srcSize, int dstCapacity)
 	{
 		// Hook LZ4_compress_default_ext
+
+		if (g_bypass_live_205)
+		{
+			std::string pack(src, srcSize);
+			std::vector<uint8_t> new_buffer;
+			if (request_convert::live_bypass_pack(pack, &new_buffer))
+			{
+				char* new_src = reinterpret_cast<char*>(&new_buffer[0]);
+				memset(src + 170, 0, srcSize - 170);
+				memcpy(src + 170, new_src, new_buffer.size());
+				srcSize = new_buffer.size() + 170;
+			}
+		}
+
 		int ret = reinterpret_cast<decltype(request_pack_hook)*>(request_pack_orig)(
 			src, dst, srcSize, dstCapacity);
-		
-		auto outPath = std::format("MsgPack/{}Q.msgpack", currentTime());
-		writeFile(outPath, src, srcSize);
-		printf("Save request to %s\n", outPath.c_str());
 
+		if (g_enable_self_server) {
+			try {
+				const std::string _pack(src, srcSize);
+				const auto pack = request_convert::parse_request_pack(_pack);
+				request_convert::send_msgpack_post(g_self_server_url, L"/server/push_last_data", pack);  // 传递解密后数据
+			}
+			catch (std::exception& e) {
+				printf("push request data failed: %s\n", e.what());
+			}
+		}
+
+		if (g_read_request_pack && g_save_msgpack)
+		{
+			const auto outPath = std::format("MsgPack/{}Q.msgpack", currentTime());
+			writeFile(outPath, src, srcSize);
+			printf("Save request to %s\n", outPath.c_str());
+		}
+
+		/*
 		if (!msgFunc::isDMMTokenLoaded)
 		{
 			string buffer(src, srcSize);
 			msgFunc::initDMMToken(msgPrase::praseRequestPack(buffer));
 		}
+		*/
 
 		return ret;
 	}
@@ -1717,10 +1749,76 @@ namespace
 		int ret = reinterpret_cast<decltype(response_pack_hook)*>(response_pack_orig)(
 			src, dst, compressedSize, dstCapacity);
 
-		string outPath = std::format("MsgPack/{}R.msgpack", currentTime());
-		writeFile(outPath, dst, ret);
-		printf("Save response to %s\n", outPath.c_str());
-			
+		if (g_read_request_pack && g_save_msgpack)
+		{
+			const string outPath = std::format("MsgPack/{}R.msgpack", currentTime());
+			writeFile(outPath, dst, ret);
+			printf("Save response to %s\n", outPath.c_str());
+		}
+
+		try {
+			std::string uma_data(dst, ret);
+
+			if (g_enable_self_server) {
+				const auto data = request_convert::send_post(g_self_server_url, L"/server/get_last_response", L"");
+				string resp_str = data.extract_utf8string().get();
+				try {
+					vector<uint8_t> new_buffer = nlohmann::json::to_msgpack(nlohmann::json::parse(resp_str));
+					char* new_dst = reinterpret_cast<char*>(&new_buffer[0]);
+
+					printf("dstC: %d, old_size: %d, new_size: %llu\n", dstCapacity, ret, new_buffer.size());
+					if (new_buffer.size() > dstCapacity)
+					{
+						throw std::range_error("Out of memory when modifying response pack!");
+					}
+
+					memset(dst, 0, dstCapacity);
+					memcpy_s(dst, dstCapacity, new_dst, new_buffer.size());
+					ret = new_buffer.size();
+				}
+				catch (exception& e) {
+					printf("get exception: %s\n", e.what());
+				}
+
+			}
+
+			if (g_enable_response_convert) {
+				const auto data = request_convert::send_msgpack_post(g_convert_url, L"/convert/response", uma_data);
+				if (data.status_code() == 200) {
+					string resp_str = data.extract_utf8string().get();
+					vector<uint8_t> new_buffer = nlohmann::json::to_msgpack(nlohmann::json::parse(resp_str));
+					const char* new_dst = reinterpret_cast<char*>(&new_buffer[0]);
+					if (new_buffer.size() > dstCapacity)
+					{
+						throw std::range_error("Out of memory when modifying response pack!");
+					}
+					memset(dst, 0, dstCapacity);
+					memcpy(dst, new_dst, new_buffer.size());
+					ret = new_buffer.size();
+				}
+			}
+
+			if (g_bypass_live_205)
+			{
+				std::vector<uint8_t> new_buffer;
+				if (request_convert::live_unlock_dress(uma_data, &new_buffer))
+				{
+					char* new_dst = reinterpret_cast<char*>(&new_buffer[0]);
+					if (new_buffer.size() > dstCapacity)
+					{
+						throw std::range_error("Out of memory when modifying response pack!");
+					}
+					memset(dst, 0, dstCapacity);
+					memcpy(dst, new_dst, new_buffer.size());
+					ret = new_buffer.size();
+				}
+			}
+
+		}
+		catch (exception& e) {
+			printf("Error: %s\n", e.what());
+		}
+
 		return ret;
 	}
 
@@ -2075,26 +2173,6 @@ namespace
 			"LiveTimelineControl", "AlterUpdate_RadialBlur", 2
 		);
 
-		auto get_IsEnabledDiffusion_addr = il2cpp_symbols::get_method_pointer(
-			"umamusume.dll", "Gallop.Live.Cutt",
-			"LiveTimelineKeyPostEffectBloomDiffusionData", "get_IsEnabledDiffusion", 0
-		);
-
-		auto get_IsEnabledDepthCancelRect_get_addr = il2cpp_symbols::get_method_pointer(
-			"umamusume.dll", "Gallop.Live.Cutt",
-			"LiveTimelineKeyRadialBlurData", "get_IsEnabledDepthCancelRect", 0
-		);
-
-		auto get_IsExpandDepthCancelRect_addr = il2cpp_symbols::get_method_pointer(
-			"umamusume.dll", "Gallop.Live.Cutt",
-			"LiveTimelineKeyRadialBlurData", "get_IsExpandDepthCancelRect", 0
-		);
-
-		auto get_IsEnabledBloom_addr = il2cpp_symbols::get_method_pointer(
-			"umamusume.dll", "Gallop.Live.Cutt",
-			"LiveTimelineKeyPostEffectBloomDiffusionData", "get_IsEnabledBloom", 0
-		);
-
 		auto SetupRadialBlurInfo_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop.Live.Cutt",
 			"LiveTimelineControl", "SetupRadialBlurInfo", 4
@@ -2210,6 +2288,10 @@ namespace
 			"LiveTimelineControl", "OnDestroy", 0
 		);
 
+		auto SetupDOFUpdateInfo_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "SetupDOFUpdateInfo", 5
+		);
 		
 		auto race_get_CameraPosition_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
@@ -2279,6 +2361,11 @@ namespace
 				"EditableCharacterBuildInfo", ".ctor", 10
 			);
 
+		auto get_ApplicationServerUrl_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"GameDefine", "get_ApplicationServerUrl", 0
+		);
+
 		auto StorySceneController_LoadCharacter_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"StorySceneController", "LoadCharacter", 2
@@ -2304,7 +2391,7 @@ namespace
 
 		const auto GallopUtil_GetModifiedString_addr = il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "GallopUtil", "GetModifiedString", -1);
 
-		if (g_read_request_pack)
+		if (g_read_request_pack || g_bypass_live_205)
 		{
 			auto libnative_module = GetModuleHandleW(L"libnative.dll");
 			auto response_pack_ptr = GetProcAddress(libnative_module, "LZ4_decompress_safe_ext");
@@ -2316,6 +2403,7 @@ namespace
 			printf("request pack at %p\n", request_pack_ptr);
 			MH_CreateHook(request_pack_ptr, request_pack_hook, &request_pack_orig);
 			MH_EnableHook(request_pack_ptr);
+			ADD_HOOK(get_ApplicationServerUrl, "get_ApplicationServerUrl at %p\n");
 		}
 #pragma endregion
 
@@ -2338,6 +2426,7 @@ namespace
 		ADD_HOOK(AlterUpdate_MultiCameraPosition, "AlterUpdate_MultiCameraPosition at %p\n");
 		ADD_HOOK(AlterUpdate_MultiCameraLookAt, "AlterUpdate_MultiCameraLookAt at %p\n");
 		ADD_HOOK(live_on_destroy, "live_on_destroy at %p\n");
+		ADD_HOOK(SetupDOFUpdateInfo, "SetupDOFUpdateInfo at %p\n");
 		ADD_HOOK(get_camera_pos, "get_camera_pos at %p\n");
 		ADD_HOOK(get_camera_pos2, "get_camera_pos2 at %p\n");
 		ADD_HOOK(AlterUpdate_FormationOffset, "AlterUpdate_FormationOffset at %p\n");
@@ -2351,10 +2440,6 @@ namespace
 		ADD_HOOK(AlterUpdate_CameraRoll, "AlterUpdate_CameraRoll at %p\n");
 		ADD_HOOK(AlterUpdate_CameraSwitcher, "AlterUpdate_CameraSwitcher at %p\n");
 		ADD_HOOK(AlterUpdate_RadialBlur, "AlterUpdate_RadialBlur at %p\n");
-		// ADD_HOOK(get_IsEnabledDiffusion, "get_IsEnabledDiffusion at %p\n");
-		ADD_HOOK(get_IsEnabledDepthCancelRect_get, "get_IsEnabledDepthCancelRect_get at %p\n");
-		ADD_HOOK(get_IsExpandDepthCancelRect, "get_IsExpandDepthCancelRect at %p\n");
-		// ADD_HOOK(get_IsEnabledBloom, "get_IsEnabledBloom at %p\n");
 		ADD_HOOK(SetupRadialBlurInfo, "SetupRadialBlurInfo at %p\n");
 		ADD_HOOK(AlterUpdate_MultiCameraRadialBlur, "AlterUpdate_MultiCameraRadialBlur at %p\n");
 		ADD_HOOK(AlterUpdate_MultiCamera, "AlterUpdate_MultiCamera at %p\n");

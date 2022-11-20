@@ -18,9 +18,19 @@ namespace MHotkey{
         bool openPluginSuccess = false;
         DWORD pluginPID = -1;
         int tlgport = 43215;
+        bool ext_server_start = false;
 
         std::function<void(int, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD)> mKeyBoardCallBack = nullptr;
         bool hotKeyThreadStarted = false;
+    }
+
+    bool get_is_plugin_open() {
+        return openPluginSuccess && ext_server_start;
+    }
+
+    void set_ext_server_start(const bool status)
+    {
+        ext_server_start = status;
     }
 
     void SetKeyCallBack(std::function<void(int, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD)> callbackfun) {
@@ -76,6 +86,7 @@ namespace MHotkey{
                 printf("Open external plugin failed.\n");
             }
             openPluginSuccess = false;
+            ext_server_start = false;
         }).detach();
     }
 
