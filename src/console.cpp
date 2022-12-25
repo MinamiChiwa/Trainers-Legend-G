@@ -45,10 +45,6 @@ namespace
 				auto&& [textData, characterSystemTextData, raceJikkyoCommentData, raceJikkyoMessageData] = LoadDicts();
 				local::reload_textdb(&dicts, ensure_latest_static_cache(g_static_dict_path), std::move(storyDict), std::move(raceDict), std::move(textData), std::move(characterSystemTextData), std::move(raceJikkyoCommentData), std::move(raceJikkyoMessageData));
 			}
-			else if (line == "reboot")
-			{
-				msgFunc::fastReboot();
-			}
 		}
 	}
 }

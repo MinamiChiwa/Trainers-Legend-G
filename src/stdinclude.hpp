@@ -15,9 +15,14 @@
 #include <string>
 #include <thread>
 #include <unordered_map>
+#include <unordered_set>
 #include <map>
 #include <thread>
 #include <variant>
+
+#include <exception>
+#include <vector>
+#include <regex>
 
 #include <MinHook.h>
 
@@ -32,10 +37,11 @@
 #include "local/local.hpp"
 #include "logger/logger.hpp"
 #include "auto_update/auto_update.hpp"
-#include "msgpack/msgpack.hpp"
+#include "requestConvert/request_conv.hpp"
 
 #include "camera/camera.hpp"
 #include "umadb/umadb.hpp"
+#include <nlohmann/json.hpp>
 
 extern bool g_dump_entries;
 extern bool g_enable_logger;
@@ -66,6 +72,18 @@ struct UseCustomFont
 enum CameraType {
 	CAMERA_LIVE = 0,
 	CAMERA_RACE = 1
+};
+
+struct CloseTrans {
+	bool all = false;
+	bool textData = false;
+	bool storyTextData = false;
+	bool raceTextData = false;
+	bool characterSystemTextData = false;
+	bool raceJikkyoCommentData = false;
+	bool raceJikkyoMessageData = false;
+	bool staticAndHashTextData = false;
+	bool hashTextData = false;
 };
 
 extern std::variant<UseOriginalFont, UseDefaultFont, UseCustomFont> g_replace_font;
@@ -104,3 +122,11 @@ extern std::unordered_map<int, std::pair<int, int>> g_home_char_replace;
 extern bool g_enable_global_char_replace;
 extern std::unordered_map<int, std::pair<int, int>> g_global_char_replace;
 extern std::unordered_map<int, std::pair<int, int>> g_global_mini_char_replace;
+extern bool g_save_msgpack;
+extern bool g_enable_response_convert;
+extern std::wstring g_convert_url;
+extern bool g_enable_self_server;
+extern std::wstring g_self_server_url;
+extern std::unordered_set<std::size_t> trans_off_textData;
+extern CloseTrans closeTrans;
+extern bool g_bypass_live_205;
