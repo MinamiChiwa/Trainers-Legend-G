@@ -123,7 +123,7 @@
             "additionalProperties": false
         },
         "race_camera": {
-            "description": "比賽相機設定",
+            "description": "比賽相機設定（已失效）",
             "type": "object",
             "properties": {
                 "free_camera": {
@@ -272,7 +272,7 @@
             }
         },
         "replaceHomeStandChar": {
-            "description": "替換首頁角色",
+            "description": "替換首頁角色（暫時失效）",
             "type": "object",
             "properties": {
                 "enable": {
@@ -303,7 +303,7 @@
             }
         },
         "replaceGlobalChar": {
-            "description": "全域角色替換\n  （暫時無法替換 預覽 和 育成角色）",
+            "description": "全域角色替換\n  （暫時失效）",
             "type": "object",
             "properties": {
                 "enable": {
