@@ -123,7 +123,7 @@
             "additionalProperties": false
         },
         "race_camera": {
-            "description": "Race Camera Settings",
+            "description": "Race Camera Settings (Not working.)",
             "type": "object",
             "properties": {
                 "free_camera": {
@@ -272,7 +272,7 @@
             }
         },
         "replaceHomeStandChar": {
-            "description": "Replace Home Character",
+            "description": "Replace Home Character (Not working)",
             "type": "object",
             "properties": {
                 "enable": {
@@ -303,7 +303,7 @@
             }
         },
         "replaceGlobalChar": {
-            "description": "Replace Global Character\n  (Can't replace simple and training character now.)",
+            "description": "Replace Global Character\n  (Not working)",
             "type": "object",
             "properties": {
                 "enable": {
