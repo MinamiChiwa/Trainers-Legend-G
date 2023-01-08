@@ -42,11 +42,13 @@
             "properties": {
                 "w": {
                     "description": "The longer side",
-                    "type": "number"
+                    "type": "number",
+                    "default": 16.0
                 },
                 "h": {
                     "description": "The shorter side",
-                    "type": "number"
+                    "type": "number",
+                    "default": 9.0
                 }
             }
         },

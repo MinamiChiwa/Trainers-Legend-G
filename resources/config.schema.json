@@ -38,11 +38,13 @@
             "properties": {
                 "w": {
                     "description": "长边",
-                    "type": "number"
+                    "type": "number",
+                    "default": 16.0
                 },
                 "h": {
                     "description": "短边",
-                    "type": "number"
+                    "type": "number",
+                    "default": 9.0
                 }
             }
         },

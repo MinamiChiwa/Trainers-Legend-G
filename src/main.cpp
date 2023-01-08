@@ -543,7 +543,7 @@ namespace
 				auto& asp = document["aspect_ratio_new"];
 				auto asp_w = asp["w"].GetFloat();
 				auto asp_h = asp["h"].GetFloat();
-				if (!(asp_w == 0.f && asp_h == 0.f)) {
+				if (asp_h > 0 && asp_w > asp_h) {
 					g_aspect_ratio = asp_w / asp_h;
 				}
 			}

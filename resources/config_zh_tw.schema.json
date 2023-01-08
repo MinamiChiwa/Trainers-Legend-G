@@ -42,11 +42,13 @@
             "properties": {
                 "w": {
                     "description": "長邊",
-                    "type": "number"
+                    "type": "number",
+                    "default": 16.0
                 },
                 "h": {
                     "description": "短邊",
-                    "type": "number"
+                    "type": "number",
+                    "default": 9.0
                 }
             }
         },
