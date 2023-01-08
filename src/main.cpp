@@ -65,6 +65,7 @@ std::unordered_map<int, std::pair<int, int>> g_global_char_replace{};
 std::unordered_map<int, std::pair<int, int>> g_global_mini_char_replace{};
 
 bool g_bypass_live_205 = false;
+bool g_load_finished = false;
 
 bool g_save_msgpack = true;
 bool g_enable_response_convert = false;
@@ -545,6 +546,11 @@ namespace
 				auto asp_h = asp["h"].GetFloat();
 				if (asp_h > 0 && asp_w > asp_h) {
 					g_aspect_ratio = asp_w / asp_h;
+				}
+				else {
+					int x = GetSystemMetrics(SM_CXSCREEN);
+					int y = GetSystemMetrics(SM_CYSCREEN);
+					g_aspect_ratio = (float)std::max(x, y) / (float)std::min(x, y);
 				}
 			}
 			else if (document.HasMember("aspect_ratio")) {
@@ -1658,7 +1664,7 @@ int __stdcall DllMain(HINSTANCE dllModule, DWORD reason, LPVOID)
 				_ = freopen("CONOUT$", "w", stderr);
 				_ = freopen("CONIN$", "r", stdin);
 			}
-
+			g_load_finished = true;
 			HttpServer::start_http_server(true);  // 启动HTTP服务器
 			UmaDatabase::executeQueryRes();
 

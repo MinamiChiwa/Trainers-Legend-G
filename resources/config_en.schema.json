@@ -32,12 +32,8 @@
             "description": "Allow to use the resolution higher than `1080p`",
             "type": "boolean"
         },
-        "uiScale": {
-            "description": "Customize the scale of ui (set 0.8 if you find your game windows can't show all the graphic)",
-            "type": "number"
-        },
         "aspect_ratio_new": {
-            "description": "Set UI aspect ratio. Default 16:9",
+            "description": "Set UI aspect ratio. Default 16:9\nIf the value is set to - 1, the game UI scale will adapt to your screen scale\nIf the UI display is incomplete, you can set \"Customize UI scale\" below\nNeed restart the game after modification.",
             "type": "object",
             "properties": {
                 "w": {
@@ -51,6 +47,10 @@
                     "default": 9.0
                 }
             }
+        },
+        "uiScale": {
+            "description": "Customize the scale of ui",
+            "type": "number"
         },
         "autoFullscreen": {
             "description": "Full screen the game automaticlly",

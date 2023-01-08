@@ -32,12 +32,8 @@
             "description": "允許遊戲使用`1080p`以上的解析度",
             "type": "boolean"
         },
-        "uiScale": {
-            "description": "自定義UI縮放",
-            "type": "number"
-        },
         "aspect_ratio_new": {
-            "description": "設定UI比例，默認16:9",
+            "description": "設定UI比例，默認16:9\n若將值設為-1，遊戲UI比例將會自我調整您的螢幕比例\n若UI顯示不全，可以在下麵設定\"自定義UI縮放\"\n修改後需要重啓遊戲",
             "type": "object",
             "properties": {
                 "w": {
@@ -51,6 +47,10 @@
                     "default": 9.0
                 }
             }
+        },
+        "uiScale": {
+            "description": "自定義UI縮放",
+            "type": "number"
         },
         "autoFullscreen": {
             "description": "在螢幕比例對應時自動設定為全螢幕",

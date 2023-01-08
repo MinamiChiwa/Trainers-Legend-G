@@ -33,7 +33,7 @@
             "type": "boolean"
         },
         "aspect_ratio_new": {
-            "description": "设置UI比例，默认16:9",
+            "description": "设置UI比例，默认16:9\n若将值设为-1，游戏UI比例将会自适应您的屏幕比例\n若UI显示不全，可以在下面设置\"自定义UI缩放\"\n修改后需要重启游戏",
             "type": "object",
             "properties": {
                 "w": {

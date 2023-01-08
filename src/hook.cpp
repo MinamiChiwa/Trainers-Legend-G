@@ -18,6 +18,7 @@ namespace
 	void path_game_assembly();
 	int gallop_get_screenwidth_hook();
 	int gallop_get_screenheight_hook();
+	void set_start_resolution();
 
 	bool mh_inited = false;
 
@@ -567,12 +568,14 @@ namespace
 
 	void* KeepAspectRatio_orig;
 	void KeepAspectRatio_hook(float w, float h) {
-		if (g_unlock_size) return;
+		// printf("KeepAspectRatio_hook: %f, %f\n", w, h);
+		// if (g_unlock_size) return;
 		return reinterpret_cast<decltype(KeepAspectRatio_hook)*>(KeepAspectRatio_orig)(w, h);
 	}
 
 	void* ReshapeAspectRatio_orig;
 	void ReshapeAspectRatio_hook() {
+		// printf("ReshapeAspectRatio_hook\n");
 		if (g_unlock_size) return;
 		return reinterpret_cast<decltype(ReshapeAspectRatio_hook)*>(ReshapeAspectRatio_orig)();
 	}
@@ -670,8 +673,11 @@ namespace
 	bool vert_cache_rect_cache = false;
 
 	void recheck_ratio(bool use_cache = false) {
-		auto window = FindWindow("UnityWndClass", "umamusume");
-		if (window == NULL) return;
+		auto window = FindWindowW(L"UnityWndClass", L"umamusume");
+		if (window == NULL) {
+			printf("window[1]: UnityWndClass - umamusume not found.\n");
+			return;
+		}
 
 		if (use_cache) {
 			bool isVert = is_virt();
@@ -679,7 +685,7 @@ namespace
 			bool is_cache = isVert ? vert_cache_rect_cache : land_cache_rect_cache;
 
 			if (is_cache) {
-				// printf("resizeCache: left: %ld, right: %ld, top: %ld, bottom: %ld\n", newWindowR->left, newWindowR->right, newWindowR->top, newWindowR->bottom);
+				printf("resizeCache: left: %ld, right: %ld, top: %ld, bottom: %ld\n", newWindowR->left, newWindowR->right, newWindowR->top, newWindowR->bottom);
 				SetWindowPos(window, HWND_NOTOPMOST, newWindowR->left, newWindowR->top,
 					newWindowR->right - newWindowR->left, newWindowR->bottom - newWindowR->top, SWP_DEFERERASE);
 				// return;
@@ -1202,7 +1208,7 @@ namespace
 		Resolution_t r;
 		r = *get_resolution(&r);
 		// MessageBoxA(NULL, std::format("window: {}, {}", width, height).c_str(), "TEST", MB_OK);
-		auto hWnd = FindWindow("UnityWndClass", "umamusume");
+		auto hWnd = FindWindowW(L"UnityWndClass", L"umamusume");
 		if (hWnd != NULL) {
 			RECT* now_rect = new RECT();
 			GetWindowRect(hWnd, now_rect);
@@ -1214,6 +1220,9 @@ namespace
 				land_cache_rect = now_rect;
 				land_cache_rect_cache = true;
 			}
+		}
+		else {
+			printf("window[2]: UnityWndClass - umamusume not found.\n");
 		}
 
 		if (width > height) {
@@ -1519,7 +1528,7 @@ namespace
 
 			auto target_height = r.height - 100;
 			if (start_width == -1 && start_height == -1)
-				set_resolution_hook(target_height * 0.5625f, target_height, false);
+				set_resolution_hook(target_height * g_aspect_ratio, target_height, false);
 
 			il2cpp_thread_detach(tr);
 			}).detach();
@@ -2681,11 +2690,35 @@ namespace
 			dump_all_entries();
 		// start_monitor_thread();
 		_set_u_stat(true);
+		set_start_resolution();
 
-		if (start_width != -1 && start_height != -1) {
-			set_resolution_hook(start_width, start_height, false);
-		}
+	}
 
+	void set_start_resolution() {
+		thread([]() {
+			while (!g_load_finished) {
+				Sleep(100);
+			}
+			printf("LOAD FINISHED!\n");
+
+			int new_h, new_w;
+			if (start_width > 0 && start_height > 0) {
+				new_h = start_height;
+				new_w = start_width;
+			}
+			else {
+				Resolution_t r;
+				r = *get_resolution(&r);
+				new_h = r.height - 150;
+				new_w = new_h / g_aspect_ratio;
+			}
+
+			auto window = FindWindowW(L"UnityWndClass", L"umamusume");
+			if (window == NULL) return;
+			RECT* windowR = new RECT();
+			GetWindowRect(window, windowR);
+			setWindowPosOffset(window, HWND_NOTOPMOST, windowR->left, windowR->top, new_w, new_h, SWP_DEFERERASE);
+			}).detach();
 	}
 }
 
