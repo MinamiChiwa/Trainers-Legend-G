@@ -565,8 +565,138 @@ namespace
 		return data;
 	}
 
+	void* KeepAspectRatio_orig;
+	void KeepAspectRatio_hook(float w, float h) {
+		if (g_unlock_size) return;
+		return reinterpret_cast<decltype(KeepAspectRatio_hook)*>(KeepAspectRatio_orig)(w, h);
+	}
+
+	void* ReshapeAspectRatio_orig;
+	void ReshapeAspectRatio_hook() {
+		if (g_unlock_size) return;
+		return reinterpret_cast<decltype(ReshapeAspectRatio_hook)*>(ReshapeAspectRatio_orig)();
+	}
+
+	bool setWindowPosOffset(HWND hWnd, HWND hWndInsertAfter, int X, int Y, int cx, int cy, UINT uFlags) {
+		RECT* windowR = new RECT;
+		RECT* clientR = new RECT;
+		GetWindowRect(hWnd, windowR);
+		GetClientRect(hWnd, clientR);
+
+		return SetWindowPos(hWnd, hWndInsertAfter, X, Y, cx + windowR->right - windowR->left - clientR->right,
+			cy + windowR->bottom - windowR->top - clientR->bottom, uFlags);
+	}
+
 	bool (*is_virt)() = nullptr;
 	int last_height = 0, last_width = 0;
+
+	RECT* updateWindowRatio(HWND hWnd, RECT* modifiedR, WPARAM wParam, bool resize_now) {
+		RECT* windowR = new RECT();
+		RECT* clientR = new RECT();
+		GetWindowRect(hWnd, windowR);
+		GetClientRect(hWnd, clientR);
+
+		float add_w = modifiedR->right - modifiedR->left - (windowR->right - windowR->left);
+		float add_h = modifiedR->bottom - modifiedR->top - (windowR->bottom - windowR->top);
+
+		if (add_h != 0.f) {
+			add_w = add_h * g_aspect_ratio;
+		}
+		else {
+			add_h = add_w / g_aspect_ratio;
+		}
+
+		// printf("windowR: left: %ld, right: %ld, top: %ld, bottom: %ld\n", windowR->left, windowR->right, windowR->top, windowR->bottom);
+		// printf("modifiR: left: %ld, right: %ld, top: %ld, bottom: %ld\n", modifiedR->left, modifiedR->right, modifiedR->top, modifiedR->bottom);
+
+		int X = windowR->left;
+		int Y = windowR->top;
+		int cx = clientR->right;
+		int cy;
+
+		bool isVert = is_virt();
+		if (isVert)
+			cy = cx * g_aspect_ratio;
+		else
+			cy = cx / g_aspect_ratio;
+
+		cx += add_w;
+		cy += add_h;
+
+		float new_width = cx + windowR->right - windowR->left - clientR->right;
+		float new_height = cy + windowR->bottom - windowR->top - clientR->bottom;
+
+		RECT* newWindowR = new RECT();
+		newWindowR->left = X;
+		newWindowR->top = Y;
+		newWindowR->right = X + new_width;
+		newWindowR->bottom = Y + new_height;
+
+		switch (wParam)
+		{
+		case WMSZ_TOP:
+		case WMSZ_TOPLEFT:
+		case WMSZ_TOPRIGHT:
+			newWindowR->top -= add_h;
+			newWindowR->bottom -= add_h;
+			break;
+		default:
+			break;
+		}
+
+		switch (wParam)
+		{
+		case WMSZ_LEFT:
+		case WMSZ_TOPLEFT:
+		case WMSZ_BOTTOMLEFT: {
+			newWindowR->left -= add_w;
+			newWindowR->right -= add_w;
+		}; break;
+		default:
+			break;
+		}
+
+		if (resize_now) {
+			SetWindowPos(hWnd, HWND_NOTOPMOST, newWindowR->left, newWindowR->top, 
+				newWindowR->right - newWindowR->left, newWindowR->bottom - newWindowR->top, SWP_DEFERERASE);
+			// printf("resizeNow: left: %ld, right: %ld, top: %ld, bottom: %ld\n", newWindowR->left, newWindowR->right, newWindowR->top, newWindowR->bottom);
+		}
+		return newWindowR;
+	}
+
+	RECT* land_cache_rect = new RECT();
+	RECT* vert_cache_rect = new RECT();
+	bool land_cache_rect_cache = false;
+	bool vert_cache_rect_cache = false;
+
+	void recheck_ratio(bool use_cache = false) {
+		auto window = FindWindow("UnityWndClass", "umamusume");
+
+		if (use_cache) {
+			bool isVert = is_virt();
+			RECT* newWindowR = isVert ? vert_cache_rect : land_cache_rect;
+			bool is_cache = isVert ? vert_cache_rect_cache : land_cache_rect_cache;
+
+			if (is_cache) {
+				// printf("resizeCache: left: %ld, right: %ld, top: %ld, bottom: %ld\n", newWindowR->left, newWindowR->right, newWindowR->top, newWindowR->bottom);
+				SetWindowPos(window, HWND_NOTOPMOST, newWindowR->left, newWindowR->top,
+					newWindowR->right - newWindowR->left, newWindowR->bottom - newWindowR->top, SWP_DEFERERASE);
+				// return;
+			}
+		}
+
+		RECT* windowR = new RECT();
+		GetWindowRect(window, windowR);
+		windowR->right += 1;
+		updateWindowRatio(window, windowR, WMSZ_RIGHT, true);
+	}
+
+	void recheck_ratio_later(int latertimeMills, bool use_cache = false) {
+		thread([latertimeMills, use_cache]() {
+			Sleep(latertimeMills);
+			recheck_ratio(use_cache);
+			}).detach();
+	}
 
 	void* wndproc_orig = nullptr;
 	LRESULT wndproc_hook(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
@@ -575,7 +705,18 @@ namespace
 			if (uMsg == WM_SIZING)
 			{
 				RECT* rect = reinterpret_cast<RECT*>(lParam);
+
 				bool isVert = is_virt();
+
+				if ((!isVert) || (wParam == WMSZ_LEFT) || (wParam == WMSZ_RIGHT)) {  // 可优化, 但是能用了!
+					RECT* rect = reinterpret_cast<RECT*>(lParam);
+					auto ret = updateWindowRatio(hWnd, rect, wParam, false);
+					rect->left = ret->left;
+					rect->right = ret->right;
+					rect->top = ret->top;
+					rect->bottom = ret->bottom;
+					return TRUE;
+				}
 
 				float ratio = isVert ? 1.f / g_aspect_ratio : g_aspect_ratio;
 				float height = rect->bottom - rect->top;
@@ -583,18 +724,10 @@ namespace
 
 				float new_ratio = width / height;
 
-				// std::cout << std::format("top: {}, bottom: {}, left: {}, right: {}", rect->top, rect->bottom, rect->left, rect->right) << std::endl;
-				// std::cout << std::format("w:{} h: {} new_ra: {}, set_ra: {}, af_offset_ra: {}\n", width, height, new_ratio, ratio, ratio + (isVert ? g_unlock_size_offset_vert : g_unlock_size_offset_land)) << std::endl;
-				float offset_ratio = ratio + (isVert ? g_unlock_size_offset_vert : g_unlock_size_offset_land);
-				if (offset_ratio <= 0) {
-					std::cout << std::format("offset <= 0, value: {} - {} = {}", ratio, (isVert ? g_unlock_size_offset_vert : g_unlock_size_offset_land), offset_ratio) << endl;
-					offset_ratio = ratio;
-				}
-
 				if (new_ratio > ratio && height >= last_height || width < last_width)
-					height = width / offset_ratio;
+					height = width / ratio;
 				else if (new_ratio < ratio && width >= last_width || height < last_height)
-					width = height * offset_ratio;
+					width = height * ratio;
 
 				switch (wParam)
 				{
@@ -622,19 +755,29 @@ namespace
 
 				last_height = height;
 				last_width = width;
+
 				return TRUE;
 			}
 
 		}
-	
 		return reinterpret_cast<decltype(wndproc_hook)*>(wndproc_orig)(hWnd, uMsg, wParam, lParam);
+	}
+
+	void* GetLimitSize_orig;
+	Vector2_t* GetLimitSize_hook() {
+		auto ret = reinterpret_cast<decltype(GetLimitSize_hook)*>(GetLimitSize_orig)();
+		printf("GetLimitSize: %f, %f\n", ret->x, ret->y);
+		if (g_unlock_size) {
+			ret->x = 999999;
+			ret->y = 999999;
+		}
+		return ret;
 	}
 
 	void* get_virt_size_orig = nullptr;
 	Vector3_t* get_virt_size_hook(Vector3_t* pVec3, int width, int height)
 	{
 		auto size = reinterpret_cast<decltype(get_virt_size_hook)*>(get_virt_size_orig)(pVec3, width, height);
-
 		height = width * g_aspect_ratio;
 
 		size->x = width;
@@ -648,7 +791,6 @@ namespace
 	Vector3_t* get_hori_size_hook(Vector3_t* pVec3, int width, int height)
 	{
 		auto size = reinterpret_cast<decltype(get_hori_size_hook)*>(get_hori_size_orig)(pVec3, width, height);
-
 		width = height * g_aspect_ratio;
 
 		size->x = width;
@@ -1063,12 +1205,24 @@ namespace
 		text_set_linespacing(_this, g_custom_font_linespacing);
 	}
 
+
 	void* set_resolution_orig;
 	void set_resolution_hook(int width, int height, bool fullscreen)
 	{
 		Resolution_t r;
 		r = *get_resolution(&r);
 		// MessageBoxA(NULL, std::format("window: {}, {}", width, height).c_str(), "TEST", MB_OK);
+		auto hWnd = FindWindow("UnityWndClass", "umamusume");
+		RECT* now_rect = new RECT();
+		GetWindowRect(hWnd, now_rect);
+		if ((now_rect->right - now_rect->left) < (now_rect->bottom - now_rect->top)) {
+			vert_cache_rect = now_rect;
+			vert_cache_rect_cache = true;
+		}
+		else {
+			land_cache_rect = now_rect;
+			land_cache_rect_cache = true;
+		}
 
 		if (width > height) {
 			_set_u_stat(false);  // false-横屏
@@ -1080,15 +1234,17 @@ namespace
 		}
 
 		bool need_fullscreen = false;
+		auto screen_ratio = r.width / static_cast<double>(r.height);
 
-		if (is_virt() && r.width / static_cast<double>(r.height) == (9.0 / 16.0) && g_auto_fullscreen)
+		if (is_virt() && abs(screen_ratio - (1.f / g_aspect_ratio)) <= 0.001 && g_auto_fullscreen)
 			need_fullscreen = true;
-		else if (!is_virt() && r.width / static_cast<double>(r.height) == (16.0 / 9.0) && g_auto_fullscreen)
+		else if (!is_virt() && abs(screen_ratio - g_aspect_ratio) <= 0.001 && g_auto_fullscreen)
 			need_fullscreen = true;
 
-		return reinterpret_cast<decltype(set_resolution_hook)*>(set_resolution_orig)(
+		reinterpret_cast<decltype(set_resolution_hook)*>(set_resolution_orig)(
 			need_fullscreen ? r.width : width, need_fullscreen ? r.height : height, need_fullscreen
 			);
+		if(!need_fullscreen) recheck_ratio_later(150, true);
 	}
 
 	void* set_shadows_orig;
@@ -1936,6 +2092,11 @@ namespace
 			"StandaloneWindowResize", "WndProc", 4
 		);
 
+		auto GetLimitSize_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"StandaloneWindowResize", "GetLimitSize", 0
+		);
+
 		auto get_virt_size_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"StandaloneWindowResize", "getOptimizedWindowSizeVirt", 2
@@ -2156,6 +2317,16 @@ namespace
 		auto Get3DAntiAliasingLevel_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"GraphicSettings", "Get3DAntiAliasingLevel", 1
+		);
+
+		auto KeepAspectRatio_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"StandaloneWindowResize", "KeepAspectRatio", 2
+		);
+
+		auto ReshapeAspectRatio_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"StandaloneWindowResize", "ReshapeAspectRatio", 0
 		);
 
 		auto on_exit_addr = il2cpp_symbols::get_method_pointer(
@@ -2446,6 +2617,8 @@ namespace
 		ADD_HOOK(set_shadow_resolution, "set_shadow_resolution at %p\n");
 		ADD_HOOK(set_RenderTextureAntiAliasing, "set_RenderTextureAntiAliasing at %p\n");
 		ADD_HOOK(Get3DAntiAliasingLevel, "Get3DAntiAliasingLevel at %p\n");
+		ADD_HOOK(KeepAspectRatio, "KeepAspectRatio at %p\n");
+		ADD_HOOK(ReshapeAspectRatio, "ReshapeAspectRatio at %p\n");
 		ADD_HOOK(set_shadows, "set_shadows at %p\n");
 		ADD_HOOK(race_get_CameraPosition, "race_get_CameraPosition at %p\n");
 		ADD_HOOK(race_get_TargetPosition, "race_get_TargetPosition at %p\n");
@@ -2499,6 +2672,7 @@ namespace
 		// {
 		// break 1080p size limit
 		ADD_HOOK(get_virt_size, "Gallop.StandaloneWindowResize.getOptimizedWindowSizeVirt at %p \n");
+		ADD_HOOK(GetLimitSize, "Gallop.StandaloneWindowResize.GetLimitSize at %p \n");
 		ADD_HOOK(get_hori_size, "Gallop.StandaloneWindowResize.getOptimizedWindowSizeHori at %p \n");
 		ADD_HOOK(wndproc, "Gallop.StandaloneWindowResize.WndProc at %p \n");
 
