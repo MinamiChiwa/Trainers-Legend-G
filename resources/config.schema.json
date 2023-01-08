@@ -47,6 +47,20 @@
             },
             "additionalProperties": false
         },
+        "aspect_ratio_new": {
+            "description": "设置UI比例，默认16:9",
+            "type": "object",
+            "properties": {
+                "w": {
+                    "description": "长边",
+                    "type": "number"
+                },
+                "h": {
+                    "description": "短边",
+                    "type": "number"
+                }
+            }
+        },
         "uiScale": {
             "description": "自定义UI缩放",
             "type": "number"
@@ -255,15 +269,6 @@
             "minItems": 2,
             "maxItems": 2
         },
-        "aspect_ratio": {
-            "description": "设置UI比例",
-            "type": "array",
-            "items": {
-                "type": "number"
-            },
-            "minItems": 2,
-            "maxItems": 2
-        },
         "dicts": {
             "description": "将会读取的字典列表` (相对/绝对路径)，可删除相应字典提取命令。例如删除\"localized_data/Umaname.json\",即可在游戏内显示角色名日文，不影响其他翻译",
             "type": "array",
@@ -358,7 +363,7 @@
         "autoFullscreen",
         "autoChangeLineBreakMode",
         "resolution_start",
-        "aspect_ratio",
+        "aspect_ratio_new",
         "dicts",
         "static_dict"
     ]

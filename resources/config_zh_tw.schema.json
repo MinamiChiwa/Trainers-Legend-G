@@ -51,6 +51,20 @@
             "description": "自定義UI縮放",
             "type": "number"
         },
+        "aspect_ratio_new": {
+            "description": "設定UI比例，默認16:9",
+            "type": "object",
+            "properties": {
+                "w": {
+                    "description": "長邊",
+                    "type": "number"
+                },
+                "h": {
+                    "description": "短邊",
+                    "type": "number"
+                }
+            }
+        },
         "readRequestPack": {
             "description": "是否讀取用戶端發包訊息，開啟此功能可在命令行中輸入reboot快速重啟遊戲",
             "type": "boolean"
@@ -255,15 +269,6 @@
             "minItems": 2,
             "maxItems": 2
         },
-        "aspect_ratio": {
-            "description": "設定UI比例",
-            "type": "array",
-            "items": {
-                "type": "number"
-            },
-            "minItems": 2,
-            "maxItems": 2
-        },
         "dicts": {
             "description": "將會讀取的字典列表` (相對/絕對路徑)，可刪除相應字典提取命令。例如刪除\"localized_data/Umaname.json\",即可在遊戲內顯示角色名日文，不影響其他翻譯",
             "type": "array",
@@ -358,7 +363,7 @@
         "autoFullscreen",
         "autoChangeLineBreakMode",
         "resolution_start",
-        "aspect_ratio",
+        "aspect_ratio_new",
         "dicts",
         "static_dict"
     ]

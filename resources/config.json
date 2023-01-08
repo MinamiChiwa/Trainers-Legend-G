@@ -11,6 +11,10 @@
         "vertical": 0
     },
     "uiScale": 1.0,
+    "aspect_ratio_new": {
+        "w": 16.0,
+        "h": 9.0
+    },
     "readRequestPack": false,
     "extraAssetBundlePath": "localized_data/umamusumelocalify",
     "replaceFont": true,
@@ -49,10 +53,6 @@
     "resolution_start": [
         -1,
         -1
-    ],
-    "aspect_ratio": [
-        16.0,
-        9.0
     ],
     "httpServerPort": 43215,
     "dicts": [

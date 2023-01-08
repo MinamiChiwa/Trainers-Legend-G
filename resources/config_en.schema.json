@@ -51,6 +51,20 @@
             "description": "Customize the scale of ui (set 0.8 if you find your game windows can't show all the graphic)",
             "type": "number"
         },
+        "aspect_ratio_new": {
+            "description": "Set UI aspect ratio. Default 16:9",
+            "type": "object",
+            "properties": {
+                "w": {
+                    "description": "The longer side",
+                    "type": "number"
+                },
+                "h": {
+                    "description": "The shorter side",
+                    "type": "number"
+                }
+            }
+        },
         "readRequestPack": {
             "description": "Read the msgpack sent by game, you can reboot the game quicker by typing 'reboot' in the console if you enable it.",
             "type": "boolean"
@@ -255,15 +269,6 @@
             "minItems": 2,
             "maxItems": 2
         },
-        "aspect_ratio": {
-            "description": "set UI scale",
-            "type": "array",
-            "items": {
-                "type": "number"
-            },
-            "minItems": 2,
-            "maxItems": 2
-        },
         "dicts": {
             "description": "The translation files' path (Absolute/Relative path)",
             "type": "array",
@@ -358,7 +363,7 @@
         "autoFullscreen",
         "autoChangeLineBreakMode",
         "resolution_start",
-        "aspect_ratio",
+        "aspect_ratio_new",
         "dicts",
         "static_dict"
     ]
