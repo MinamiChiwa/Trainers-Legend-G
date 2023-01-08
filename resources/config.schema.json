@@ -46,6 +46,10 @@
                 }
             }
         },
+        "autoFullscreen": {
+            "description": "在屏幕比例对应时自动设置为全屏",
+            "type": "boolean"
+        },
         "uiScale": {
             "description": "自定义UI缩放",
             "type": "number"
@@ -92,10 +96,6 @@
         },
         "assetLoadLog": {
             "description": "是否在debug输出游戏资源调用情况",
-            "type": "boolean"
-        },
-        "autoFullscreen": {
-            "description": "在屏幕比例对应时自动设置为全屏 (true/false)\n- 如屏幕是16:9 并且横屏，将会在横屏播放剧情/live时全屏\n- 如屏幕是9:16，将会在绝大多数情况下全屏",
             "type": "boolean"
         },
         "live": {

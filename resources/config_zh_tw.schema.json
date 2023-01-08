@@ -50,6 +50,10 @@
                 }
             }
         },
+        "autoFullscreen": {
+            "description": "在螢幕比例對應時自動設定為全螢幕",
+            "type": "boolean"
+        },
         "readRequestPack": {
             "description": "是否讀取用戶端發包訊息，開啟此功能可在命令行中輸入reboot快速重啟遊戲",
             "type": "boolean"
@@ -92,10 +96,6 @@
         },
         "assetLoadLog": {
             "description": "是否在debug輸出遊戲素材調用情況",
-            "type": "boolean"
-        },
-        "autoFullscreen": {
-            "description": "在螢幕比例對應時自動設定為全螢幕 (true/false)\n- 如螢幕是16:9 並且橫屏，將會在橫屏播放劇情/live時全螢幕\n- 如螢幕是9:16，將會在絕大多數情況下全螢幕",
             "type": "boolean"
         },
         "live": {

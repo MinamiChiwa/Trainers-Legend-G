@@ -50,6 +50,10 @@
                 }
             }
         },
+        "autoFullscreen": {
+            "description": "Full screen the game automaticlly",
+            "type": "boolean"
+        },
         "readRequestPack": {
             "description": "Read the msgpack sent by game, you can reboot the game quicker by typing 'reboot' in the console if you enable it.",
             "type": "boolean"
@@ -92,10 +96,6 @@
         },
         "assetLoadLog": {
             "description": "Print the asset bundle path of game resource that the game is using",
-            "type": "boolean"
-        },
-        "autoFullscreen": {
-            "description": "Full screen the game automaticlly.\nIf monitor resolution is 16:9, game will be full screened during watching live/story\nIf monitor resolution is 9:16, game will be full screened in most circumstances",
             "type": "boolean"
         },
         "live": {

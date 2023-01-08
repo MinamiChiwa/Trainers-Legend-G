@@ -11,6 +11,7 @@
         "w": 16.0,
         "h": 9.0
     },
+    "autoFullscreen": false,
     "readRequestPack": false,
     "extraAssetBundlePath": "localized_data/umamusumelocalify",
     "replaceFont": true,
@@ -20,7 +21,6 @@
     "customFontLinespacing": 0.9,
     "replaceAssets": true,
     "assetLoadLog": false,
-    "autoFullscreen": false,
     "live": {
         "free_camera": false,
         "force_changeVisibility_false": false,
