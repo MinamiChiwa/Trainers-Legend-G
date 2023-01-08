@@ -32,21 +32,6 @@
             "description": "允许游戏使用`1080p`以上的分辨率",
             "type": "boolean"
         },
-        "unlockSizeOffset": {
-            "description": "unlockSize 偏移率设置. 当出现点击偏移时可以设置",
-            "type": "object",
-            "properties": {
-                "landspace": {
-                    "description": "横屏状态偏移率",
-                    "type": "number"
-                },
-                "vertical": {
-                    "description": "竖屏状态偏移率",
-                    "type": "number"
-                }
-            },
-            "additionalProperties": false
-        },
         "aspect_ratio_new": {
             "description": "设置UI比例，默认16:9",
             "type": "object",

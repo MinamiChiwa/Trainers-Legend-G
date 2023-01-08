@@ -76,7 +76,10 @@
                             - 如屏幕是9:16，将会在绝大多数情况下全屏*/
     "autoChangeLineBreakMode": true, /*根据横竖屏模式自动切换"忽略换行符"模式*/
     "resolution_start": [-1,-1], /*设置启动时的分辨率, 格式: `array[w, h]`（[-1,-1]为默认）*/
-    "aspect_ratio": [16.0,9.0], /*设置UI比例, 格式: `array[w, h]`（没有需求可以不填）*/
+    "aspect_ratio_new": {
+        "w": 16.0,
+        "h": 9.0
+    }, /*设置UI比例，w为长边, h为短边*/
     "httpServerPort": 4321,  /*HTTP服务器端口, 用于外部插件交互*/
     "externalPlugin": {  /*外部插件配置。若没有插件, 可直接删除此配置项*/
         "hotkey": "u", /*启动热键, 按下ctrl+设定值启动*/

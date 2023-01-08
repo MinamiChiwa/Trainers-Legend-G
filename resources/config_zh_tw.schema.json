@@ -32,21 +32,6 @@
             "description": "允許遊戲使用`1080p`以上的解析度",
             "type": "boolean"
         },
-        "unlockSizeOffset": {
-            "description": "unlockSize 偏移率設定. 當出現點擊偏移時可以設定",
-            "type": "object",
-            "properties": {
-                "landspace": {
-                    "description": "橫屏狀態偏移率",
-                    "type": "number"
-                },
-                "vertical": {
-                    "description": "豎屏狀態偏移率",
-                    "type": "number"
-                }
-            },
-            "additionalProperties": false
-        },
         "uiScale": {
             "description": "自定義UI縮放",
             "type": "number"

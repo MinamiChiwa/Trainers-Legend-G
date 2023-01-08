@@ -5,11 +5,7 @@
     "maxFps": 60,
     "highQuality": true,
     "enableVSync": false,
-    "unlockSize": false,
-    "unlockSizeOffset": {
-        "landspace": -0.07144,
-        "vertical": 0
-    },
+    "unlockSize": true,
     "uiScale": 1.0,
     "aspect_ratio_new": {
         "w": 16.0,
