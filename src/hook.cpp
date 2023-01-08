@@ -671,6 +671,7 @@ namespace
 
 	void recheck_ratio(bool use_cache = false) {
 		auto window = FindWindow("UnityWndClass", "umamusume");
+		if (window == NULL) return;
 
 		if (use_cache) {
 			bool isVert = is_virt();
@@ -761,17 +762,6 @@ namespace
 
 		}
 		return reinterpret_cast<decltype(wndproc_hook)*>(wndproc_orig)(hWnd, uMsg, wParam, lParam);
-	}
-
-	void* GetLimitSize_orig;
-	Vector2_t* GetLimitSize_hook() {
-		auto ret = reinterpret_cast<decltype(GetLimitSize_hook)*>(GetLimitSize_orig)();
-		printf("GetLimitSize: %f, %f\n", ret->x, ret->y);
-		if (g_unlock_size) {
-			ret->x = 999999;
-			ret->y = 999999;
-		}
-		return ret;
 	}
 
 	void* get_virt_size_orig = nullptr;
@@ -1213,15 +1203,17 @@ namespace
 		r = *get_resolution(&r);
 		// MessageBoxA(NULL, std::format("window: {}, {}", width, height).c_str(), "TEST", MB_OK);
 		auto hWnd = FindWindow("UnityWndClass", "umamusume");
-		RECT* now_rect = new RECT();
-		GetWindowRect(hWnd, now_rect);
-		if ((now_rect->right - now_rect->left) < (now_rect->bottom - now_rect->top)) {
-			vert_cache_rect = now_rect;
-			vert_cache_rect_cache = true;
-		}
-		else {
-			land_cache_rect = now_rect;
-			land_cache_rect_cache = true;
+		if (hWnd != NULL) {
+			RECT* now_rect = new RECT();
+			GetWindowRect(hWnd, now_rect);
+			if ((now_rect->right - now_rect->left) < (now_rect->bottom - now_rect->top)) {
+				vert_cache_rect = now_rect;
+				vert_cache_rect_cache = true;
+			}
+			else {
+				land_cache_rect = now_rect;
+				land_cache_rect_cache = true;
+			}
 		}
 
 		if (width > height) {
@@ -2092,11 +2084,6 @@ namespace
 			"StandaloneWindowResize", "WndProc", 4
 		);
 
-		auto GetLimitSize_addr = il2cpp_symbols::get_method_pointer(
-			"umamusume.dll", "Gallop",
-			"StandaloneWindowResize", "GetLimitSize", 0
-		);
-
 		auto get_virt_size_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"StandaloneWindowResize", "getOptimizedWindowSizeVirt", 2
@@ -2672,7 +2659,6 @@ namespace
 		// {
 		// break 1080p size limit
 		ADD_HOOK(get_virt_size, "Gallop.StandaloneWindowResize.getOptimizedWindowSizeVirt at %p \n");
-		ADD_HOOK(GetLimitSize, "Gallop.StandaloneWindowResize.GetLimitSize at %p \n");
 		ADD_HOOK(get_hori_size, "Gallop.StandaloneWindowResize.getOptimizedWindowSizeHori at %p \n");
 		ADD_HOOK(wndproc, "Gallop.StandaloneWindowResize.WndProc at %p \n");
 
