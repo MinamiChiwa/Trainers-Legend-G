@@ -32,24 +32,29 @@
             "description": "允許遊戲使用`1080p`以上的解析度",
             "type": "boolean"
         },
-        "unlockSizeOffset": {
-            "description": "unlockSize 偏移率設定. 當出現點擊偏移時可以設定",
+        "aspect_ratio_new": {
+            "description": "設定UI比例，默認16:9\n若將值設為-1，遊戲UI比例將會自我調整您的螢幕比例\n若UI顯示不全，可以在下麵設定\"自定義UI縮放\"\n修改後需要重啓遊戲",
             "type": "object",
             "properties": {
-                "landspace": {
-                    "description": "橫屏狀態偏移率",
-                    "type": "number"
+                "w": {
+                    "description": "長邊",
+                    "type": "number",
+                    "default": 16.0
                 },
-                "vertical": {
-                    "description": "豎屏狀態偏移率",
-                    "type": "number"
+                "h": {
+                    "description": "短邊",
+                    "type": "number",
+                    "default": 9.0
                 }
-            },
-            "additionalProperties": false
+            }
         },
         "uiScale": {
             "description": "自定義UI縮放",
             "type": "number"
+        },
+        "autoFullscreen": {
+            "description": "在螢幕比例對應時自動設定為全螢幕",
+            "type": "boolean"
         },
         "readRequestPack": {
             "description": "是否讀取用戶端發包訊息，開啟此功能可在命令行中輸入reboot快速重啟遊戲",
@@ -93,10 +98,6 @@
         },
         "assetLoadLog": {
             "description": "是否在debug輸出遊戲素材調用情況",
-            "type": "boolean"
-        },
-        "autoFullscreen": {
-            "description": "在螢幕比例對應時自動設定為全螢幕 (true/false)\n- 如螢幕是16:9 並且橫屏，將會在橫屏播放劇情/live時全螢幕\n- 如螢幕是9:16，將會在絕大多數情況下全螢幕",
             "type": "boolean"
         },
         "live": {
@@ -255,15 +256,6 @@
             "minItems": 2,
             "maxItems": 2
         },
-        "aspect_ratio": {
-            "description": "設定UI比例",
-            "type": "array",
-            "items": {
-                "type": "number"
-            },
-            "minItems": 2,
-            "maxItems": 2
-        },
         "dicts": {
             "description": "將會讀取的字典列表` (相對/絕對路徑)，可刪除相應字典提取命令。例如刪除\"localized_data/Umaname.json\",即可在遊戲內顯示角色名日文，不影響其他翻譯",
             "type": "array",
@@ -358,7 +350,7 @@
         "autoFullscreen",
         "autoChangeLineBreakMode",
         "resolution_start",
-        "aspect_ratio",
+        "aspect_ratio_new",
         "dicts",
         "static_dict"
     ]

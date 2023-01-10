@@ -32,20 +32,25 @@
             "description": "允许游戏使用`1080p`以上的分辨率",
             "type": "boolean"
         },
-        "unlockSizeOffset": {
-            "description": "unlockSize 偏移率设置. 当出现点击偏移时可以设置",
+        "aspect_ratio_new": {
+            "description": "设置UI比例，默认16:9\n若将值设为-1，游戏UI比例将会自适应您的屏幕比例\n若UI显示不全，可以在下面设置\"自定义UI缩放\"\n修改后需要重启游戏",
             "type": "object",
             "properties": {
-                "landspace": {
-                    "description": "横屏状态偏移率",
-                    "type": "number"
+                "w": {
+                    "description": "长边",
+                    "type": "number",
+                    "default": 16.0
                 },
-                "vertical": {
-                    "description": "竖屏状态偏移率",
-                    "type": "number"
+                "h": {
+                    "description": "短边",
+                    "type": "number",
+                    "default": 9.0
                 }
-            },
-            "additionalProperties": false
+            }
+        },
+        "autoFullscreen": {
+            "description": "在屏幕比例对应时自动设置为全屏",
+            "type": "boolean"
         },
         "uiScale": {
             "description": "自定义UI缩放",
@@ -93,10 +98,6 @@
         },
         "assetLoadLog": {
             "description": "是否在debug输出游戏资源调用情况",
-            "type": "boolean"
-        },
-        "autoFullscreen": {
-            "description": "在屏幕比例对应时自动设置为全屏 (true/false)\n- 如屏幕是16:9 并且横屏，将会在横屏播放剧情/live时全屏\n- 如屏幕是9:16，将会在绝大多数情况下全屏",
             "type": "boolean"
         },
         "live": {
@@ -255,15 +256,6 @@
             "minItems": 2,
             "maxItems": 2
         },
-        "aspect_ratio": {
-            "description": "设置UI比例",
-            "type": "array",
-            "items": {
-                "type": "number"
-            },
-            "minItems": 2,
-            "maxItems": 2
-        },
         "dicts": {
             "description": "将会读取的字典列表` (相对/绝对路径)，可删除相应字典提取命令。例如删除\"localized_data/Umaname.json\",即可在游戏内显示角色名日文，不影响其他翻译",
             "type": "array",
@@ -358,7 +350,7 @@
         "autoFullscreen",
         "autoChangeLineBreakMode",
         "resolution_start",
-        "aspect_ratio",
+        "aspect_ratio_new",
         "dicts",
         "static_dict"
     ]

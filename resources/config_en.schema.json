@@ -32,24 +32,29 @@
             "description": "Allow to use the resolution higher than `1080p`",
             "type": "boolean"
         },
-        "unlockSizeOffset": {
-            "description": "unlockSize offset",
+        "aspect_ratio_new": {
+            "description": "Set UI aspect ratio. Default 16:9\nIf the value is set to - 1, the game UI scale will adapt to your screen scale\nIf the UI display is incomplete, you can set \"Customize UI scale\" below\nNeed restart the game after modification.",
             "type": "object",
             "properties": {
-                "landspace": {
-                    "description": "landspace offset",
-                    "type": "number"
+                "w": {
+                    "description": "The longer side",
+                    "type": "number",
+                    "default": 16.0
                 },
-                "vertical": {
-                    "description": "vertical offset",
-                    "type": "number"
+                "h": {
+                    "description": "The shorter side",
+                    "type": "number",
+                    "default": 9.0
                 }
-            },
-            "additionalProperties": false
+            }
         },
         "uiScale": {
-            "description": "Customize the scale of ui (set 0.8 if you find your game windows can't show all the graphic)",
+            "description": "Customize the scale of ui",
             "type": "number"
+        },
+        "autoFullscreen": {
+            "description": "Full screen the game automaticlly",
+            "type": "boolean"
         },
         "readRequestPack": {
             "description": "Read the msgpack sent by game, you can reboot the game quicker by typing 'reboot' in the console if you enable it.",
@@ -93,10 +98,6 @@
         },
         "assetLoadLog": {
             "description": "Print the asset bundle path of game resource that the game is using",
-            "type": "boolean"
-        },
-        "autoFullscreen": {
-            "description": "Full screen the game automaticlly.\nIf monitor resolution is 16:9, game will be full screened during watching live/story\nIf monitor resolution is 9:16, game will be full screened in most circumstances",
             "type": "boolean"
         },
         "live": {
@@ -255,15 +256,6 @@
             "minItems": 2,
             "maxItems": 2
         },
-        "aspect_ratio": {
-            "description": "set UI scale",
-            "type": "array",
-            "items": {
-                "type": "number"
-            },
-            "minItems": 2,
-            "maxItems": 2
-        },
         "dicts": {
             "description": "The translation files' path (Absolute/Relative path)",
             "type": "array",
@@ -358,7 +350,7 @@
         "autoFullscreen",
         "autoChangeLineBreakMode",
         "resolution_start",
-        "aspect_ratio",
+        "aspect_ratio_new",
         "dicts",
         "static_dict"
     ]

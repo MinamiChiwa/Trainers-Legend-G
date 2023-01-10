@@ -23,8 +23,6 @@ bool g_enable_logger = false;
 bool g_enable_console = false;
 int g_max_fps = -1;
 bool g_unlock_size = false;
-float g_unlock_size_offset_land = 0.;
-float g_unlock_size_offset_vert = 0.;
 float g_ui_scale = 1.0f;
 float g_aspect_ratio = 16.f / 9.f;
 std::string g_extra_assetbundle_path;
@@ -67,6 +65,7 @@ std::unordered_map<int, std::pair<int, int>> g_global_char_replace{};
 std::unordered_map<int, std::pair<int, int>> g_global_mini_char_replace{};
 
 bool g_bypass_live_205 = false;
+bool g_load_finished = false;
 
 bool g_save_msgpack = true;
 bool g_enable_response_convert = false;
@@ -417,11 +416,6 @@ namespace
 			g_unlock_size = document["unlockSize"].GetBool();
 			g_ui_scale = document["uiScale"].GetFloat();
 
-			if (document.HasMember("unlockSizeOffset")) {
-				g_unlock_size_offset_land = document["unlockSizeOffset"]["landspace"].GetFloat();
-				g_unlock_size_offset_vert = document["unlockSizeOffset"]["vertical"].GetFloat();
-			}
-
 			if (document.HasMember("readRequestPack")) {
 				g_read_request_pack = document["readRequestPack"].GetBool();
 			}
@@ -546,14 +540,29 @@ namespace
 				UmaCamera::loadGlobalData();
 			}
 
-			if (document.HasMember("aspect_ratio")) {
+			if (document.HasMember("aspect_ratio_new")) {
+				auto& asp = document["aspect_ratio_new"];
+				auto asp_w = asp["w"].GetFloat();
+				auto asp_h = asp["h"].GetFloat();
+				if (asp_h > 0 && asp_w > asp_h) {
+					g_aspect_ratio = asp_w / asp_h;
+				}
+				else {
+					int x = GetSystemMetrics(SM_CXSCREEN);
+					int y = GetSystemMetrics(SM_CYSCREEN);
+					g_aspect_ratio = (float)std::max(x, y) / (float)std::min(x, y);
+				}
+			}
+			else if (document.HasMember("aspect_ratio")) {
 				if (document["aspect_ratio"].IsArray()) {
 					auto asp = document["aspect_ratio"].GetArray();
 					if (asp.Size() == 2) {
 						g_aspect_ratio = asp[0].GetFloat() / asp[1].GetFloat();
+						printf("The \"aspect_ratio\" parameter is out of date. Use \"aspect_ratio_new\" instead.\n");
 					}
 				}
 			}
+
 			UmaCamera::initCameraSettings();
 
 			if (document.HasMember("replaceHomeStandChar")) {
@@ -1655,7 +1664,7 @@ int __stdcall DllMain(HINSTANCE dllModule, DWORD reason, LPVOID)
 				_ = freopen("CONOUT$", "w", stderr);
 				_ = freopen("CONIN$", "r", stdin);
 			}
-
+			g_load_finished = true;
 			HttpServer::start_http_server(true);  // 启动HTTP服务器
 			UmaDatabase::executeQueryRes();
 

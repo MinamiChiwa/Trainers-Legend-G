@@ -107,6 +107,34 @@ namespace MHotkey{
             CloseHandle(pi.hProcess);
         }
     }
+
+    bool setWindowPosOffset(HWND hWnd, HWND hWndInsertAfter, int X, int Y, int cx, int cy, UINT uFlags) {
+        RECT* windowR = new RECT;
+        RECT* clientR = new RECT;
+        GetWindowRect(hWnd, windowR);
+        GetClientRect(hWnd, clientR);
+
+        return SetWindowPos(hWnd, hWndInsertAfter, X, Y, cx + windowR->right - windowR->left - clientR->right,
+            cy + windowR->bottom - windowR->top - clientR->bottom, uFlags);
+    }
+
+    void Win32SetWindowPos(bool is_v) {
+        printf("Win32SetWindowPos\n");
+        auto window = FindWindow(NULL, "umamusume");
+
+        RECT* windowR = new RECT;
+        RECT* clientR = new RECT;
+        GetWindowRect(window, windowR);
+        GetClientRect(window, clientR);
+
+        printf("windowR: left: %ld, right: %ld, top: %ld, bottom: %ld\n", windowR->left, windowR->right, windowR->top, windowR->bottom);
+        printf("clientR: left: %ld, right: %ld, top: %ld, bottom: %ld\n", clientR->left, clientR->right, clientR->top, clientR->bottom);
+
+        if (is_v) 
+            setWindowPosOffset(window, HWND_NOTOPMOST, 875, 10, 444, 960, SWP_DEFERERASE);
+        else
+            setWindowPosOffset(window, HWND_NOTOPMOST, 10, 5, 1920, 888, SWP_DEFERERASE);
+    }
     
     __declspec(dllexport) LRESULT CALLBACK KeyboardEvent(int nCode, WPARAM wParam, LPARAM lParam)
     {
@@ -169,6 +197,14 @@ namespace MHotkey{
                 DWORD LEFT_key = 0;
                 DWORD RIGHT_key = 0;
             }
+            /* ¥∞ø⁄…Ë÷√≤‚ ‘¥˙¬Î
+            if (key == 'i') {
+                Win32SetWindowPos(true);
+            }
+            if (key == 'o') {
+                Win32SetWindowPos(false);
+            }
+            */
 
             // printf("lpszKeyName = %s\n", lpszKeyName);
         }

@@ -37,7 +37,10 @@ A plugin for translating Umamusume Pretty Derby (DMM Client) to Chinese.
                             - If monitor resolution is 9:16, game will be full screened in most circumstances*/
     "autoChangeLineBreakMode": true, /*Automatically toggle "Ignore line break" mode based on whether the game is 16:9 or 9:16*/
     "resolution_start": [-1, -1], /*set the game windows size when booting the game (Use [-1, -1] if you don't need it)*/
-    "aspect_ratio": [16.0, 9.0], /*set UI scale*/
+    "aspect_ratio_new": {
+        "w": 16.0,
+        "h": 9.0
+    }, /*Set aspect ratio. w is the longer side, h is the shorter side.*/
     "httpServerPort": 4321,  /*HTTP Server Port*/
     "externalPlugin": {  /*Set external plugin. If no plug-ins are configured, delete this configuration item*/
         "hotkey": "u", /*Hotkey, press ctrl + `the key you set` to open it*/
