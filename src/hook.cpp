@@ -581,23 +581,23 @@ namespace
 	}
 
 	bool setWindowPosOffset(HWND hWnd, HWND hWndInsertAfter, int X, int Y, int cx, int cy, UINT uFlags) {
-		RECT* windowR = new RECT;
-		RECT* clientR = new RECT;
-		GetWindowRect(hWnd, windowR);
-		GetClientRect(hWnd, clientR);
+		std::shared_ptr<RECT> windowR = std::make_shared<RECT>();
+		std::shared_ptr<RECT> clientR = std::make_shared<RECT>();
+		GetWindowRect(hWnd, windowR.get());
+		GetClientRect(hWnd, clientR.get());
 
 		return SetWindowPos(hWnd, hWndInsertAfter, X, Y, cx + windowR->right - windowR->left - clientR->right,
-			cy + windowR->bottom - windowR->top - clientR->bottom, uFlags);
+			cy + windowR->bottom - windowR->top - clientR->bottom, uFlags);;
 	}
 
 	bool (*is_virt)() = nullptr;
 	int last_height = 0, last_width = 0;
 
 	RECT* updateWindowRatio(HWND hWnd, RECT* modifiedR, WPARAM wParam, bool resize_now) {
-		RECT* windowR = new RECT();
-		RECT* clientR = new RECT();
-		GetWindowRect(hWnd, windowR);
-		GetClientRect(hWnd, clientR);
+		std::shared_ptr<RECT> windowR = std::make_shared<RECT>();
+		std::shared_ptr<RECT> clientR = std::make_shared<RECT>();
+		GetWindowRect(hWnd, windowR.get());
+		GetClientRect(hWnd, clientR.get());
 
 		float add_w = modifiedR->right - modifiedR->left - (windowR->right - windowR->left);
 		float add_h = modifiedR->bottom - modifiedR->top - (windowR->bottom - windowR->top);
@@ -692,10 +692,10 @@ namespace
 			}
 		}
 
-		RECT* windowR = new RECT();
-		GetWindowRect(window, windowR);
+		std::shared_ptr<RECT> windowR = std::make_shared<RECT>();
+		GetWindowRect(window, windowR.get());
 		windowR->right += 1;
-		updateWindowRatio(window, windowR, WMSZ_RIGHT, true);
+		updateWindowRatio(window, windowR.get(), WMSZ_RIGHT, true);
 	}
 
 	void recheck_ratio_later(int latertimeMills, bool use_cache = false) {
@@ -722,6 +722,7 @@ namespace
 					rect->right = ret->right;
 					rect->top = ret->top;
 					rect->bottom = ret->bottom;
+					delete ret;
 					return TRUE;
 				}
 
@@ -1201,7 +1202,6 @@ namespace
 		text_set_linespacing(_this, g_custom_font_linespacing);
 	}
 
-
 	void* set_resolution_orig;
 	void set_resolution_hook(int width, int height, bool fullscreen)
 	{
@@ -1211,14 +1211,15 @@ namespace
 		auto hWnd = FindWindowW(L"UnityWndClass", L"umamusume");
 		if (hWnd != NULL) {
 			RECT* now_rect = new RECT();
-			GetWindowRect(hWnd, now_rect);
-			if ((now_rect->right - now_rect->left) < (now_rect->bottom - now_rect->top)) {
-				vert_cache_rect = now_rect;
-				vert_cache_rect_cache = true;
-			}
-			else {
-				land_cache_rect = now_rect;
-				land_cache_rect_cache = true;
+			if (GetWindowRect(hWnd, now_rect)) {
+				if ((now_rect->right - now_rect->left) < (now_rect->bottom - now_rect->top)) {
+					vert_cache_rect = now_rect;
+					vert_cache_rect_cache = true;
+				}
+				else {
+					land_cache_rect = now_rect;
+					land_cache_rect_cache = true;
+				}
 			}
 		}
 		else {
@@ -2715,8 +2716,9 @@ namespace
 
 			auto window = FindWindowW(L"UnityWndClass", L"umamusume");
 			if (window == NULL) return;
-			RECT* windowR = new RECT();
-			GetWindowRect(window, windowR);
+			std::shared_ptr<RECT> windowR = std::make_shared<RECT>();
+
+			GetWindowRect(window, windowR.get());
 			setWindowPosOffset(window, HWND_NOTOPMOST, windowR->left, windowR->top, new_w, new_h, SWP_DEFERERASE);
 			}).detach();
 	}
