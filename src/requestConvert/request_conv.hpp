@@ -4,8 +4,8 @@
 
 namespace request_convert
 {
-	web::http::http_response send_post(std::wstring url, std::wstring path, std::wstring data);
-	web::http::http_response send_post(std::wstring url, std::string path, std::string data);
+	web::http::http_response send_post(std::wstring url, std::wstring path, std::wstring data, int timeout=30);
+	web::http::http_response send_post(std::wstring url, std::string path, std::string data, int timeout=30);
 	web::http::http_response send_msgpack_post(std::wstring url, std::wstring path, std::string msgpack);
 	web::http::http_response send_msgpack_post(std::wstring url, std::wstring path, std::string_view msgpack);
 
