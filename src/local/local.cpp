@@ -339,7 +339,7 @@ namespace local
 					wstring current_str_jp = text_full_jp.substr(0, n);
 					int local_text_offset = text_len_local * ((double)n / (double)text_len_jp);
 					wstring current_str_local = text_full_local.substr(0, local_text_offset);
-					if (current_str_jp == L"" || current_str_local == L"") continue;
+					if (current_str_jp == L"" || current_str_local == L"" || current_str_jp == L"……") continue;
 					hometimelineTextHashData.emplace(std::hash<wstring>{}(current_str_jp), current_str_local);
 				}
 				hometimelineTextHashData.emplace(std::hash<wstring>{}(text_full_jp), text_full_local);
