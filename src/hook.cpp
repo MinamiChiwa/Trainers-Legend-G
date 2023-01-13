@@ -1029,6 +1029,13 @@ namespace
 			});
 	}
 
+	void* AssetBundle_LoadAssetAsync_orig;
+	void* AssetBundle_LoadAssetAsync_hook(void* _this, Il2CppString* name, Il2CppReflectionType* type) {
+		// printf("LoadAssetAsync: %ls\n", name->start_char);
+		return reinterpret_cast<decltype(AssetBundle_LoadAssetAsync_hook)*>(AssetBundle_LoadAssetAsync_orig)(
+			_this, name, type
+			);
+	}
 
 	void* AssetBundle_LoadAsset_orig;
 	void* AssetBundle_LoadAsset_hook(void* _this, Il2CppString* name, Il2CppReflectionType* type)
@@ -1087,7 +1094,12 @@ namespace
 		void* result = reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(_this, name, type);
 		if (result)
 		{
-			if (cls == StoryTimelineDataClass)
+			static const std::wregex storyAndHomePathRe(LR"(assets/_gallopresources/bundle/resources/(story|home)/data/\d+/\d+/(storytimeline_|hometimeline_)(\d|_)+.asset)");
+			static const std::wregex storyracePathRe(LR"(assets/_gallopresources/bundle/resources/race/storyrace/text/storyrace_\d+.asset)");
+			static const std::wregex astRubyPathRe(LR"(assets/_gallopresources/bundle/resources/story/data/\d+/\d+/ast_ruby_\d+.asset)");
+			std::wcmatch matchResult;
+
+			if (std::regex_match(name->start_char, matchResult, storyAndHomePathRe))
 			{
 				const auto assetPath = std::filesystem::path(name->start_char).stem();
 				const std::wstring_view assetName = assetPath.native();
@@ -1103,7 +1115,7 @@ namespace
 					LocalizeStoryTimelineData(result, storyId);
 				}
 			}
-			else if (cls == StoryRaceTextAssetClass)
+			else if (std::regex_match(name->start_char, matchResult, storyracePathRe))
 			{
 				const auto assetPath = std::filesystem::path(name->start_char).stem();
 				const std::wstring_view assetName = assetPath.native();
@@ -1111,7 +1123,7 @@ namespace
 				assert(assetName.starts_with(RacePrefix));
 				LocalizeStoryRaceTextAsset(result, static_cast<std::size_t>(_wtoll(assetName.substr(std::size(RacePrefix) - 1).data())));
 			}
-			else if (cls == TextRubyDataClass) {
+			else if (std::regex_match(name->start_char, matchResult, astRubyPathRe)) {
 				LocalizeStoryTextRubyData(result);
 			}
 		}
@@ -2193,6 +2205,9 @@ namespace
 
 		const auto AssetBundle_LoadAsset_addr =
 			il2cpp_resolve_icall("UnityEngine.AssetBundle::LoadAsset_Internal(System.String,System.Type)");
+
+		const auto AssetBundle_LoadAssetAsync_addr =
+			il2cpp_resolve_icall("UnityEngine.AssetBundle::LoadAssetAsync_Internal(System.String,System.Type)");
 		
 		auto AssetLoader_LoadAssetHandle_addr =
 			il2cpp_symbols::get_method_pointer(
@@ -2652,6 +2667,7 @@ namespace
 		if (g_replace_assets)
 		{
 			ADD_HOOK(AssetBundle_LoadAsset, "AssetBundle.LoadAsset at %p\n");
+			ADD_HOOK(AssetBundle_LoadAssetAsync, "AssetBundle.LoadAsset at %p\n");
 		}
 
 		if (g_max_fps > -1)
