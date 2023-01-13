@@ -335,10 +335,11 @@ namespace local
 				if (text_len_jp == 0) continue;
 				auto text_len_local = text_full_local.length();
 				for (int n = 0; n < text_len_jp; n++) {
-					if (n <= 3) continue;
+					if (n <= 1) continue;
 					wstring current_str_jp = text_full_jp.substr(0, n);
 					int local_text_offset = text_len_local * ((double)n / (double)text_len_jp);
 					wstring current_str_local = text_full_local.substr(0, local_text_offset);
+					if (current_str_jp == L"" || current_str_local == L"") continue;
 					hometimelineTextHashData.emplace(std::hash<wstring>{}(current_str_jp), current_str_local);
 				}
 				hometimelineTextHashData.emplace(std::hash<wstring>{}(text_full_jp), text_full_local);
