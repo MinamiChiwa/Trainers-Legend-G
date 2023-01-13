@@ -4,16 +4,16 @@
 
 namespace request_convert
 {
-	web::http::http_response send_post(std::wstring url, std::wstring path, std::wstring data) {
+	web::http::http_response send_post(std::wstring url, std::wstring path, std::wstring data, int timeout) {
 		web::http::client::http_client_config cfg;
-		cfg.set_timeout(utility::seconds(3));
+		cfg.set_timeout(utility::seconds(timeout));
 		web::http::client::http_client client(url, cfg);
 		return client.request(web::http::methods::POST, path, data).get();
 	}
 
-	web::http::http_response send_post(std::wstring url, std::string path, std::string data) {
+	web::http::http_response send_post(std::wstring url, std::string path, std::string data, int timeout) {
 		web::http::client::http_client_config cfg;
-		cfg.set_timeout(utility::seconds(3));
+		cfg.set_timeout(utility::seconds(30));
 		web::http::client::http_client client(url, cfg);
 		return client.request(web::http::methods::POST, path, data).get();
 	}

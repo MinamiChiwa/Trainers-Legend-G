@@ -60,4 +60,6 @@ namespace local
 	Il2CppString* GetCharacterSystemTextData(std::size_t characterId, std::size_t voiceId);
 	Il2CppString* GetRaceJikkyoCommentData(std::size_t id);
 	Il2CppString* GetRaceJikkyoMessageData(std::size_t id);
-};
+
+	void buildHometimelineHashData();
+}
