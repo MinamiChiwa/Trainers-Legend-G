@@ -334,8 +334,7 @@ namespace local
 				auto text_len_jp = text_full_jp.length();
 				if (text_len_jp == 0) continue;
 				auto text_len_local = text_full_local.length();
-				for (int n = 0; n < text_len_jp; n++) {
-					if (n <= 1) continue;
+				for (int n = 6; n < text_len_jp; n++) {
 					wstring current_str_jp = text_full_jp.substr(0, n);
 					int local_text_offset = text_len_local * ((double)n / (double)text_len_jp);
 					wstring current_str_local = text_full_local.substr(0, local_text_offset);
