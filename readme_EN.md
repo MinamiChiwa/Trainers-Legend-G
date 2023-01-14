@@ -1,20 +1,37 @@
-# Trainer's Legend G
-A plugin for translating Umamusume Pretty Derby (DMM Client) to Chinese.  
+<div align="center">
+
+# Trainers' Legend G
+> A plugin for translating Umamusume Pretty Derby (DMM Client) to Chinese.
+
+[![Download](https://img.shields.io/github/v/release/MinamiChiwa/umamusume-localify-zh-CN?color=orange&logoColor=red&label=Download&logo=DocuSign)](https://github.com/MinamiChiwa/Trainers-Legend-G/releases/latest)
 [![Discord](https://img.shields.io/discord/973208860217200653?color=orange&label=Discord&logo=Discord&logoColor=red)](https://discord.com/invite/TBCSv5hU69)
+
+[Simplified Chinese](https://github.com/MinamiChiwa/Trainers-Legend-G) | [Traditional Chinese (Taiwan)](https://github.com/yotv2000tw/Trainers-Legend-G-TRANS-zh-tw/) | English
+
+</div>
+
+
+# Introduction
+
+- This plugin can give Umamusume Pretty Derby (DMM Client) players from Mainland China a better experience. There's also a folk of [Traditional Chinese (Taiwan) version](https://github.com/yotv2000tw/Trainers-Legend-G-TRANS-zh-tw) .
+- The plugin is forked from [`umamusume-localify`](https://github.com/GEEKiDoS/umamusume-localify) by @GEEKiDoS.
+
+
 # Notice
-- The plugin is forked from [`umamusume-localify`](https://github.com/GEEKiDoS/umamusume-localify) by @GEEKiDoS
+
+- The plugin will modify the game file and **chances are that you may be warned or banned by Cygames because of using the plugin** , though we haven't met any players who use it get restricted.
 - This repo **ONLY** provides Chinese translation. We currently have no plans for translating the game into other languages.
-- However, the plugin itself is **universal**. If you have any motivation to translate the game into other languages, we fully encourage you to set up your own translation repo. If you have any technical problem such as translation files format or how to use the plugin, you can join our discord and contact to our developers.  
-- **The plugin will modify the game file and chances are that you may be warned or banned by Cygames because of using the plugin, though we haven't met any players who use it get restricted.**
+- However, the plugin itself is **universal**. If you have any motivation to translate the game into other languages, we fully encourage you to set up your own translation repo. If you have any technical problem such as translation files format or how to use the plugin, you can join our [Discord](https://discord.com/invite/TBCSv5hU69) and contact to our developers.  
+
 - **The plugin source code follows WTFPL license. Any pull request to the plugin source code is welcomed.**
 
-### Usage
+# Usage
 
 1. Download the zip file from `release` and unzip it at the root of the game (folder such as `X:\Umamusume` , notice that the folder should contains `umamusume.exe`)
 2. Launch the game normally, enjoy.
 
 
-### Plugin Setting(`config.json`)
+# Plugin Setting(`config.json`)
 ```javascript
 {
     "enableConsole": true, /*Show the cmd console (true/false)*/
@@ -109,15 +126,15 @@ A plugin for translating Umamusume Pretty Derby (DMM Client) to Chinese.
 
 
 
-### Free Camera
+# Free Camera
 
 ----
 
-##### Live Free Camera
+## Live Free Camera
 
 - Move: `WSAD`, Down: `Ctrl`, Up: `Space`, Adjust Angle: `↑↓←→`, Reset Camera:`R`
 
-##### Race Free Camera
+## Race Free Camera (Not Working Currently)
 
 - Down: `Ctrl`, Up: `Space`, Adjust FOV: `Q`/`E`, Reset Camera:`R`, Change mode: `F`
 - Follow Umamusume Mode
@@ -127,17 +144,20 @@ A plugin for translating Umamusume Pretty Derby (DMM Client) to Chinese.
 
 
 
-### Already known issues
-
-----
+# Already known issues
 
 Game will create `Player.log` at `%UserProfile%\AppData\LocalLow\Cygames\umamusume` if game crash, which contains the details of it. Report the log file to developers if you met any bugs or problems.
 
-- The characters' eyebow may be locked in live when 'maxFPS' is 0
-- Too intensive shaking of camera when 'maxFPS' is bigger than 60
+- The characters' eyebow may be locked in live when 'maxFPS' is 0.
+- Too intensive shaking of camera when 'maxFPS' is bigger than 60.
 - If you find your game windows can't show all the game graphic, set `uiScale` to 0.8.
 - The `AUTO` mode when viewing the story will broken if 'maxFPS' is bigger than 60.
-- When `autoFullscreen` is true, serverl texts may be left untranslated. Replace the translation file to solve the problem.
 - Chances are that the game will raise errors such as `Memory could not be read` when launching the game, please try to install MS runtime library.
 - Raise `Assertion failed`: Check whether `config.json` is updated or is there any json syntax error in it.
 - Character replace doesn't work properly since v0.89.5.
+
+# Contributors（GitHub）
+
+<a href="https://github.com/MinamiChiwa/Trainers-Legend-G/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=MinamiChiwa/Trainers-Legend-G" />
+</a>
