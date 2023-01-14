@@ -1051,13 +1051,6 @@ namespace
 			}
 		}
 
-		const auto cls = il2cpp_class_from_type(type->type);
-		if (g_asset_load_log)
-		{
-			const auto assetCls = static_cast<Il2CppClassHead*>(cls);
-			std::wprintf(L"AssetBundle.LoadAsset(this = %p, name = %ls, type = %ls)\n", _this, name->start_char, utility::conversions::to_string_t(assetCls->name).c_str());
-		}
-
 		if (g_enable_replaceBuiltInAssets) {
 			auto newAsseetData = UmaDatabase::origPathToNewPath(name->start_char);
 			if (!newAsseetData.first.empty()) {
@@ -1092,14 +1085,17 @@ namespace
 
 
 		void* result = reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(_this, name, type);
+		const auto cls = il2cpp_symbols::get_class_from_instance(result);
+		if (g_asset_load_log)
+		{
+			const auto assetCls = static_cast<Il2CppClassHead*>(cls);
+			std::wprintf(L"AssetBundle.LoadAsset(this = %p, name = %ls, type = %ls)\n", _this, name->start_char, utility::conversions::to_string_t(assetCls->name).c_str());
+		}
+
 		if (result)
 		{
-			static const std::wregex storyAndHomePathRe(LR"(assets/_gallopresources/bundle/resources/(story|home)/data/\d+/\d+/(storytimeline_|hometimeline_)(\d|_)+.asset)");
-			static const std::wregex storyracePathRe(LR"(assets/_gallopresources/bundle/resources/race/storyrace/text/storyrace_\d+.asset)");
-			static const std::wregex astRubyPathRe(LR"(assets/_gallopresources/bundle/resources/story/data/\d+/\d+/ast_ruby_\d+.asset)");
-			std::wcmatch matchResult;
 
-			if (std::regex_match(name->start_char, matchResult, storyAndHomePathRe))
+			if (cls == StoryTimelineDataClass)
 			{
 				const auto assetPath = std::filesystem::path(name->start_char).stem();
 				const std::wstring_view assetName = assetPath.native();
@@ -1115,7 +1111,7 @@ namespace
 					LocalizeStoryTimelineData(result, storyId);
 				}
 			}
-			else if (std::regex_match(name->start_char, matchResult, storyracePathRe))
+			else if (cls == StoryRaceTextAssetClass)
 			{
 				const auto assetPath = std::filesystem::path(name->start_char).stem();
 				const std::wstring_view assetName = assetPath.native();
@@ -1123,7 +1119,7 @@ namespace
 				assert(assetName.starts_with(RacePrefix));
 				LocalizeStoryRaceTextAsset(result, static_cast<std::size_t>(_wtoll(assetName.substr(std::size(RacePrefix) - 1).data())));
 			}
-			else if (std::regex_match(name->start_char, matchResult, astRubyPathRe)) {
+			else if (cls == TextRubyDataClass) {
 				LocalizeStoryTextRubyData(result);
 			}
 		}
