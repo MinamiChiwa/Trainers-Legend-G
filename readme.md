@@ -18,7 +18,7 @@
 - 本插件另有独立发行的繁体中文（台湾）版，见 [`Trainers-Legend-G-TRANS-zh-tw`](https://github.com/yotv2000tw/Trainers-Legend-G-TRANS-zh-tw) 。
 - 本插件在 [`umamusume-localify`](https://github.com/GEEKiDoS/umamusume-localify) （原作者@GEEKiDoS）基础之上开发。
 
-更多关于插件使用的介绍与说明，请查看 [`wiki页面`](https://github.com/MinamiChiwa/Trainers-Legend-G/wiki) 。
+**更多关于插件使用的介绍与说明，请查看 [`wiki页面`](https://github.com/MinamiChiwa/Trainers-Legend-G/wiki) 。**
 
 # 特别说明
 
