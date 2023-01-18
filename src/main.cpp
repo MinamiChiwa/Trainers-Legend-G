@@ -1430,7 +1430,6 @@ extern std::function<void()> g_on_hook_ready;
 void reload_all_data() {
 	read_config();
 	reload_config();
-	local::buildHometimelineHashData();  // 主页日常对话异步加载无法解决的替代方案, 以后如果解决了, 可以删除此方法。
 }
 
 namespace HttpServer {
@@ -1468,7 +1467,6 @@ namespace HttpServer {
 			if (path == L"/postmsg/serverstart")
 			{
 				printf("External Server Ready\n");
-				local::buildHometimelineHashData();  // 主页日常对话异步加载无法解决的替代方案, 以后如果解决了, 可以删除此方法。
 				MHotkey::set_ext_server_start(true);
 			}
 
@@ -1527,11 +1525,6 @@ namespace HttpServer {
 					closeTrans.textData = json_data.at(L"text_data").as_bool();
 				}
 
-				
-			}
-
-			if (path == L"/startBuildHometimelineHashData") {
-				local::buildHometimelineHashData();  // 主页日常对话异步加载无法解决的替代方案, 以后如果解决了, 可以删除此方法。
 			}
 
 			message.reply(status_codes::OK, "OK(〃'▽'〃)");

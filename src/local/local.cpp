@@ -20,8 +20,6 @@ namespace local
 		CharacterSystemTextData CharacterSystemTextDataContent;
 		RaceJikkyoCommentData RaceJikkyoCommentDataContent;
 		RaceJikkyoMessageData RaceJikkyoMessageDataContent;
-
-		std::unordered_map<std::size_t, std::wstring> hometimelineTextHashData{};
 	}
 
 	string wide_u8(wstring str)
@@ -183,11 +181,6 @@ namespace local
 			t_with_lp = il2cpp_string_new(result->data());  // 原文本
 		}
 
-		// printf("current hash: %llu\n", hash_with_lb);
-		if (hometimelineTextHashData.contains(hash_with_lb)) {
-			return il2cpp_string_new(utility::conversions::to_utf8string(hometimelineTextHashData[hash_with_lb]).c_str());
-		}
-
 		if (t_with_lp != NULL && t_without_lp != NULL) {
 			return is_without_lb ? t_without_lp : t_with_lp;
 		}
@@ -298,64 +291,4 @@ namespace local
 
 		return nullptr;
 	}
-
-	void buildHometimelineHashData_bdy() { // 主页日常对话异步加载无法解决的替代方案, 以后如果解决了, 可以删除此方法。
-		// if (!MHotkey::get_is_plugin_open()) return;
-		try {
-			hometimelineTextHashData.clear();
-			printf("start request hometimelineData (port: %d)...\n", http_start_port + 1);
-			auto get_data = request_convert::send_post(std::format(L"http://127.0.0.1:{}", http_start_port + 1),
-				L"/tools/get_stories_text",
-				L"",
-				300
-			);
-			auto data_string = get_data.extract_utf8string().get();
-			if (get_data.status_code() != 200) {
-				printf("Get stories text from external plugin failed: %s\n", data_string.c_str());
-				return;
-			}
-
-			rapidjson::Document document;
-			document.Parse(data_string.c_str());
-			if (document.HasParseError()) {
-				printf("Get stories text from external plugin failed - Json parse failed: %s\n", data_string.c_str());
-				return;
-			}
-			if (!document.IsArray()) {
-				printf("Get stories text from external plugin failed - Json is not an array: %s\n", data_string.c_str());
-				return;
-			}
-
-			auto data_arr = document.GetArray();
-			for (auto& i : data_arr) {
-				if (!i.IsArray()) continue;
-				wstring text_full_jp = utility::conversions::to_string_t(i[0].GetString());
-				wstring text_full_local = utility::conversions::to_string_t(i[1].GetString());
-				auto text_len_jp = text_full_jp.length();
-				if (text_len_jp == 0) continue;
-				auto text_len_local = text_full_local.length();
-				for (int n = 6; n < text_len_jp; n++) {
-					wstring current_str_jp = text_full_jp.substr(0, n);
-					int local_text_offset = text_len_local * ((double)n / (double)text_len_jp);
-					wstring current_str_local = text_full_local.substr(0, local_text_offset);
-					if (current_str_jp == L"" || current_str_local == L"" || current_str_jp == L"……") continue;
-					hometimelineTextHashData.emplace(std::hash<wstring>{}(current_str_jp), current_str_local);
-				}
-				hometimelineTextHashData.emplace(std::hash<wstring>{}(text_full_jp), text_full_local);
-			}
-
-			printf("buildHometimelineDataFinished: %llu\n", hometimelineTextHashData.size());
-		}
-		catch (exception& e) {
-			printf("Get stories text from external plugin failed - Exception Occurred: %s\n", e.what());
-		}
-		
-	}
-
-	void buildHometimelineHashData() { // 主页日常对话异步加载无法解决的替代方案, 以后如果解决了, 可以删除此方法。
-		thread([]() {
-			buildHometimelineHashData_bdy();
-			}).detach();
-	}
-
 }

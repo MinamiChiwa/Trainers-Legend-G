@@ -61,5 +61,4 @@ namespace local
 	Il2CppString* GetRaceJikkyoCommentData(std::size_t id);
 	Il2CppString* GetRaceJikkyoMessageData(std::size_t id);
 
-	void buildHometimelineHashData();
 }
