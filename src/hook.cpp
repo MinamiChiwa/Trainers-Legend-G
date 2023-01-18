@@ -1029,6 +1029,37 @@ namespace
 			});
 	}
 
+	void LocalizeAssets(void* result, Il2CppString* name) {
+		const auto cls = il2cpp_symbols::get_class_from_instance(result);
+		if (cls == StoryTimelineDataClass)
+		{
+			const auto assetPath = std::filesystem::path(name->start_char).stem();
+			const std::wstring_view assetName = assetPath.native();
+			constexpr const wchar_t StoryTimelinePrefix[] = L"storytimeline_";
+			constexpr const wchar_t HomeTimelinePrefix[] = L"hometimeline_";
+			const auto storyId = assetName.starts_with(StoryTimelinePrefix) ? static_cast<std::size_t>(_wtoll(assetName.substr(std::size(StoryTimelinePrefix) - 1).data())) :
+				assetName.starts_with(HomeTimelinePrefix) ? static_cast<std::size_t>(std::stoull([&] {
+				auto range = assetName | std::ranges::views::drop(std::size(HomeTimelinePrefix) - 1) | std::ranges::views::filter([](wchar_t ch) { return ch != L'_'; });
+				return std::wstring(std::ranges::begin(range), std::ranges::end(range));
+					}())) : -1;
+			if (storyId != -1)
+			{
+				LocalizeStoryTimelineData(result, storyId);
+			}
+		}
+		else if (cls == StoryRaceTextAssetClass)
+		{
+			const auto assetPath = std::filesystem::path(name->start_char).stem();
+			const std::wstring_view assetName = assetPath.native();
+			constexpr const wchar_t RacePrefix[] = L"storyrace_";
+			assert(assetName.starts_with(RacePrefix));
+			LocalizeStoryRaceTextAsset(result, static_cast<std::size_t>(_wtoll(assetName.substr(std::size(RacePrefix) - 1).data())));
+		}
+		else if (cls == TextRubyDataClass) {
+			LocalizeStoryTextRubyData(result);
+		}
+	}
+
 	void* AssetBundle_LoadAsset_orig;
 	void* AssetBundle_LoadAsset_hook(void* _this, Il2CppString* name, Il2CppReflectionType* type)
 	{
@@ -1077,43 +1108,17 @@ namespace
 
 
 		void* result = reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(_this, name, type);
-		const auto cls = il2cpp_symbols::get_class_from_instance(result);
+		
 		if (g_asset_load_log)
 		{
+			const auto cls = il2cpp_symbols::get_class_from_instance(result);
 			const auto assetCls = static_cast<Il2CppClassHead*>(cls);
 			std::wprintf(L"AssetBundle.LoadAsset(this = %p, name = %ls, type = %ls)\n", _this, name->start_char, utility::conversions::to_string_t(assetCls->name).c_str());
 		}
 
 		if (result)
 		{
-
-			if (cls == StoryTimelineDataClass)
-			{
-				const auto assetPath = std::filesystem::path(name->start_char).stem();
-				const std::wstring_view assetName = assetPath.native();
-				constexpr const wchar_t StoryTimelinePrefix[] = L"storytimeline_";
-				constexpr const wchar_t HomeTimelinePrefix[] = L"hometimeline_";
-				const auto storyId = assetName.starts_with(StoryTimelinePrefix) ? static_cast<std::size_t>(_wtoll(assetName.substr(std::size(StoryTimelinePrefix) - 1).data())) :
-					assetName.starts_with(HomeTimelinePrefix) ? static_cast<std::size_t>(std::stoull([&] {
-					auto range = assetName | std::ranges::views::drop(std::size(HomeTimelinePrefix) - 1) | std::ranges::views::filter([](wchar_t ch) { return ch != L'_'; });
-					return std::wstring(std::ranges::begin(range), std::ranges::end(range));
-				}())) : -1;
-				if (storyId != -1)
-				{
-					LocalizeStoryTimelineData(result, storyId);
-				}
-			}
-			else if (cls == StoryRaceTextAssetClass)
-			{
-				const auto assetPath = std::filesystem::path(name->start_char).stem();
-				const std::wstring_view assetName = assetPath.native();
-				constexpr const wchar_t RacePrefix[] = L"storyrace_";
-				assert(assetName.starts_with(RacePrefix));
-				LocalizeStoryRaceTextAsset(result, static_cast<std::size_t>(_wtoll(assetName.substr(std::size(RacePrefix) - 1).data())));
-			}
-			else if (cls == TextRubyDataClass) {
-				LocalizeStoryTextRubyData(result);
-			}
+			LocalizeAssets(result, name);
 		}
 		return result;
 	}
@@ -1132,15 +1137,14 @@ namespace
 	void* AssetBundleRequest_GetResult_orig;
 	void* AssetBundleRequest_GetResult_hook(void* _this) {
 		void* result = reinterpret_cast<decltype(AssetBundleRequest_GetResult_hook)*>(AssetBundleRequest_GetResult_orig)(_this);
-		const auto cls = il2cpp_symbols::get_class_from_instance(result);
-		const auto assetCls = static_cast<Il2CppClassHead*>(cls);
 
-		const auto isContains = loadHistory.contains(_this);
 
-		if (isContains) {
+		if (loadHistory.contains(_this)) {
 			const auto name = loadHistory.at(_this);
 			loadHistory.erase(_this);
 
+			const auto cls = il2cpp_symbols::get_class_from_instance(result);
+			
 			if (ExtraAssetBundleHandle)
 			{
 				const auto extraAssetBundle = il2cpp_gchandle_get_target(ExtraAssetBundleHandle);
@@ -1153,34 +1157,12 @@ namespace
 			}
 
 			if (g_enable_logger) {
+				const auto assetCls = static_cast<Il2CppClassHead*>(cls);
 				printf("AssetBundleRequest.GetResult at: %p, type = %ls, name: %ls\n", _this, utility::conversions::to_string_t(assetCls->name).c_str(),
 					name->start_char);
 			}
 
-			if (cls == StoryTimelineDataClass)
-			{
-				const auto assetPath = std::filesystem::path(name->start_char).stem();
-				const std::wstring_view assetName = assetPath.native();
-				constexpr const wchar_t StoryTimelinePrefix[] = L"storytimeline_";
-				constexpr const wchar_t HomeTimelinePrefix[] = L"hometimeline_";
-				const auto storyId = assetName.starts_with(StoryTimelinePrefix) ? static_cast<std::size_t>(_wtoll(assetName.substr(std::size(StoryTimelinePrefix) - 1).data())) :
-					assetName.starts_with(HomeTimelinePrefix) ? static_cast<std::size_t>(std::stoull([&] {
-					auto range = assetName | std::ranges::views::drop(std::size(HomeTimelinePrefix) - 1) | std::ranges::views::filter([](wchar_t ch) { return ch != L'_'; });
-					return std::wstring(std::ranges::begin(range), std::ranges::end(range));
-						}())) : -1;
-				if (storyId != -1)
-				{
-					LocalizeStoryTimelineData(result, storyId);
-				}
-			}
-			else if (cls == StoryRaceTextAssetClass)
-			{
-				const auto assetPath = std::filesystem::path(name->start_char).stem();
-				const std::wstring_view assetName = assetPath.native();
-				constexpr const wchar_t RacePrefix[] = L"storyrace_";
-				assert(assetName.starts_with(RacePrefix));
-				LocalizeStoryRaceTextAsset(result, static_cast<std::size_t>(_wtoll(assetName.substr(std::size(RacePrefix) - 1).data())));
-			}
+			LocalizeAssets(result, name);
 		}
 
 		return result;
