@@ -7,7 +7,7 @@
 [![Chat](https://img.shields.io/badge/Join-QQ%E9%A2%91%E9%81%93-blue?logo=tencent-qq&logoColor=white)](https://qun.qq.com/qqweb/qunpro/share?_wv=3&_wwv=128&inviteCode=1olqdK&from=246610&biz=ka)
 [![Discord](https://img.shields.io/discord/973208860217200653?color=blue&label=Discord&logo=Discord&logoColor=white)](https://discord.com/invite/TBCSv5hU69)
 
-简体中文 | [繁體中文（台灣）](https://github.com/yotv2000tw/Trainers-Legend-G-TRANS-zh-tw/) | [English](readme_EN.md)
+简体中文 | [繁體中文](https://github.com/yotv2000tw/Trainers-Legend-G-TRANS-zh-tw/) | [English](readme_EN.md)
 
 </div>
  
@@ -15,7 +15,7 @@
 # 简介
 
 - 本插件旨在提升简中区赛马娘 Pretty Derby（DMM版）玩家游戏体验，提供文本汉化、帧率与分辨率限制解锁、替换图片资源与字体、Live自由镜头等多种拓展功能。
-- 本插件另有独立发行的繁体中文（台湾）版，见 [`Trainers-Legend-G-TRANS-zh-tw`](https://github.com/yotv2000tw/Trainers-Legend-G-TRANS-zh-tw) 。
+- 本插件另有独立发行的繁体中文版，见 [`Trainers-Legend-G-TRANS-zh-tw`](https://github.com/yotv2000tw/Trainers-Legend-G-TRANS-zh-tw) 。
 - 本插件在 [`umamusume-localify`](https://github.com/GEEKiDoS/umamusume-localify) （原作者@GEEKiDoS）基础之上开发。
 
 **更多关于插件使用的介绍与说明，请查看 [`wiki页面`](https://github.com/MinamiChiwa/Trainers-Legend-G/wiki) 。**
