@@ -1156,7 +1156,7 @@ namespace
 				}
 			}
 
-			if (g_enable_logger) {
+			if (g_asset_load_log) {
 				const auto assetCls = static_cast<Il2CppClassHead*>(cls);
 				printf("AssetBundleRequest.GetResult at: %p, type = %ls, name: %ls\n", _this, utility::conversions::to_string_t(assetCls->name).c_str(),
 					name->start_char);
