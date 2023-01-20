@@ -1123,7 +1123,7 @@ namespace
 		return result;
 	}
 
-	std::unordered_map<void*, Il2CppString*> loadHistory{};
+	std::map<void*, Il2CppString*> loadHistory{};
 
 	void* AssetBundle_LoadAssetAsync_orig;
 	void* AssetBundle_LoadAssetAsync_hook(void* _this, Il2CppString* name, Il2CppReflectionType* type) {
@@ -1138,31 +1138,34 @@ namespace
 	void* AssetBundleRequest_GetResult_hook(void* _this) {
 		void* result = reinterpret_cast<decltype(AssetBundleRequest_GetResult_hook)*>(AssetBundleRequest_GetResult_orig)(_this);
 
+		for (const auto& data : loadHistory) {
+			const auto savePtr = data.first;
+			if (savePtr == _this) {
+				loadHistory.erase(_this);
+				
+				const auto name = data.second;
+				const auto cls = il2cpp_symbols::get_class_from_instance(result);
 
-		if (loadHistory.contains(_this)) {
-			const auto name = loadHistory.at(_this);
-			loadHistory.erase(_this);
-
-			const auto cls = il2cpp_symbols::get_class_from_instance(result);
-			
-			if (ExtraAssetBundleHandle)
-			{
-				const auto extraAssetBundle = il2cpp_gchandle_get_target(ExtraAssetBundleHandle);
-				if (ExtraAssetBundleAssetPaths.contains(std::wstring_view(name->start_char)))
+				if (ExtraAssetBundleHandle)
 				{
-					printf("async_extra: %ls\n", name->start_char);
-					return reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(extraAssetBundle, name, 
-						static_cast<Il2CppReflectionType*>(il2cpp_class_get_type(cls)));
+					const auto extraAssetBundle = il2cpp_gchandle_get_target(ExtraAssetBundleHandle);
+					if (ExtraAssetBundleAssetPaths.contains(std::wstring_view(name->start_char)))
+					{
+						printf("async_extra: %ls\n", name->start_char);
+						return reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(extraAssetBundle, name,
+							static_cast<Il2CppReflectionType*>(il2cpp_class_get_type(cls)));
+					}
 				}
-			}
 
-			if (g_enable_logger) {
-				const auto assetCls = static_cast<Il2CppClassHead*>(cls);
-				printf("AssetBundleRequest.GetResult at: %p, type = %ls, name: %ls\n", _this, utility::conversions::to_string_t(assetCls->name).c_str(),
-					name->start_char);
-			}
+				if (g_enable_logger) {
+					const auto assetCls = static_cast<Il2CppClassHead*>(cls);
+					printf("AssetBundleRequest.GetResult at: %p, type = %ls, name: %ls\n", _this, utility::conversions::to_string_t(assetCls->name).c_str(),
+						name->start_char);
+				}
 
-			LocalizeAssets(result, name);
+				LocalizeAssets(result, name);
+				break;
+			}
 		}
 
 		return result;
