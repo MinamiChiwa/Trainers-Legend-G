@@ -1029,12 +1029,35 @@ namespace
 			});
 	}
 
-	void* AssetBundle_LoadAssetAsync_orig;
-	void* AssetBundle_LoadAssetAsync_hook(void* _this, Il2CppString* name, Il2CppReflectionType* type) {
-		// printf("LoadAssetAsync: %ls\n", name->start_char);
-		return reinterpret_cast<decltype(AssetBundle_LoadAssetAsync_hook)*>(AssetBundle_LoadAssetAsync_orig)(
-			_this, name, type
-			);
+	void LocalizeAssets(void* result, Il2CppString* name) {
+		const auto cls = il2cpp_symbols::get_class_from_instance(result);
+		if (cls == StoryTimelineDataClass)
+		{
+			const auto assetPath = std::filesystem::path(name->start_char).stem();
+			const std::wstring_view assetName = assetPath.native();
+			constexpr const wchar_t StoryTimelinePrefix[] = L"storytimeline_";
+			constexpr const wchar_t HomeTimelinePrefix[] = L"hometimeline_";
+			const auto storyId = assetName.starts_with(StoryTimelinePrefix) ? static_cast<std::size_t>(_wtoll(assetName.substr(std::size(StoryTimelinePrefix) - 1).data())) :
+				assetName.starts_with(HomeTimelinePrefix) ? static_cast<std::size_t>(std::stoull([&] {
+				auto range = assetName | std::ranges::views::drop(std::size(HomeTimelinePrefix) - 1) | std::ranges::views::filter([](wchar_t ch) { return ch != L'_'; });
+				return std::wstring(std::ranges::begin(range), std::ranges::end(range));
+					}())) : -1;
+			if (storyId != -1)
+			{
+				LocalizeStoryTimelineData(result, storyId);
+			}
+		}
+		else if (cls == StoryRaceTextAssetClass)
+		{
+			const auto assetPath = std::filesystem::path(name->start_char).stem();
+			const std::wstring_view assetName = assetPath.native();
+			constexpr const wchar_t RacePrefix[] = L"storyrace_";
+			assert(assetName.starts_with(RacePrefix));
+			LocalizeStoryRaceTextAsset(result, static_cast<std::size_t>(_wtoll(assetName.substr(std::size(RacePrefix) - 1).data())));
+		}
+		else if (cls == TextRubyDataClass) {
+			LocalizeStoryTextRubyData(result);
+		}
 	}
 
 	void* AssetBundle_LoadAsset_orig;
@@ -1085,46 +1108,77 @@ namespace
 
 
 		void* result = reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(_this, name, type);
-		const auto cls = il2cpp_symbols::get_class_from_instance(result);
+		
 		if (g_asset_load_log)
 		{
+			const auto cls = il2cpp_symbols::get_class_from_instance(result);
 			const auto assetCls = static_cast<Il2CppClassHead*>(cls);
 			std::wprintf(L"AssetBundle.LoadAsset(this = %p, name = %ls, type = %ls)\n", _this, name->start_char, utility::conversions::to_string_t(assetCls->name).c_str());
 		}
 
 		if (result)
 		{
-
-			if (cls == StoryTimelineDataClass)
-			{
-				const auto assetPath = std::filesystem::path(name->start_char).stem();
-				const std::wstring_view assetName = assetPath.native();
-				constexpr const wchar_t StoryTimelinePrefix[] = L"storytimeline_";
-				constexpr const wchar_t HomeTimelinePrefix[] = L"hometimeline_";
-				const auto storyId = assetName.starts_with(StoryTimelinePrefix) ? static_cast<std::size_t>(_wtoll(assetName.substr(std::size(StoryTimelinePrefix) - 1).data())) :
-					assetName.starts_with(HomeTimelinePrefix) ? static_cast<std::size_t>(std::stoull([&] {
-					auto range = assetName | std::ranges::views::drop(std::size(HomeTimelinePrefix) - 1) | std::ranges::views::filter([](wchar_t ch) { return ch != L'_'; });
-					return std::wstring(std::ranges::begin(range), std::ranges::end(range));
-				}())) : -1;
-				if (storyId != -1)
-				{
-					LocalizeStoryTimelineData(result, storyId);
-				}
-			}
-			else if (cls == StoryRaceTextAssetClass)
-			{
-				const auto assetPath = std::filesystem::path(name->start_char).stem();
-				const std::wstring_view assetName = assetPath.native();
-				constexpr const wchar_t RacePrefix[] = L"storyrace_";
-				assert(assetName.starts_with(RacePrefix));
-				LocalizeStoryRaceTextAsset(result, static_cast<std::size_t>(_wtoll(assetName.substr(std::size(RacePrefix) - 1).data())));
-			}
-			else if (cls == TextRubyDataClass) {
-				LocalizeStoryTextRubyData(result);
-			}
+			LocalizeAssets(result, name);
 		}
 		return result;
 	}
+
+	std::unordered_map<void*, Il2CppString*> loadHistory{};
+
+	void* AssetBundle_LoadAssetAsync_orig;
+	void* AssetBundle_LoadAssetAsync_hook(void* _this, Il2CppString* name, Il2CppReflectionType* type) {
+		auto ret = reinterpret_cast<decltype(AssetBundle_LoadAssetAsync_hook)*>(AssetBundle_LoadAssetAsync_orig)(
+			_this, name, type
+			);
+		loadHistory.emplace(ret, name);
+		return ret;
+	}
+
+	void* AssetBundleRequest_GetResult_orig;
+	void* AssetBundleRequest_GetResult_hook(void* _this) {
+		void* result = reinterpret_cast<decltype(AssetBundleRequest_GetResult_hook)*>(AssetBundleRequest_GetResult_orig)(_this);
+
+		if (const auto iter = loadHistory.find(_this); iter != loadHistory.end())
+		{
+			const auto name = iter->second;
+			loadHistory.erase(iter);
+				
+			const auto cls = il2cpp_symbols::get_class_from_instance(result);
+
+			if (ExtraAssetBundleHandle)
+			{
+				const auto extraAssetBundle = il2cpp_gchandle_get_target(ExtraAssetBundleHandle);
+				if (ExtraAssetBundleAssetPaths.contains(std::wstring_view(name->start_char)))
+				{
+					printf("async_extra: %ls\n", name->start_char);
+					return reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(extraAssetBundle, name,
+						static_cast<Il2CppReflectionType*>(il2cpp_class_get_type(cls)));
+				}
+			}
+
+			if (g_asset_load_log) {
+				const auto assetCls = static_cast<Il2CppClassHead*>(cls);
+				printf("AssetBundleRequest.GetResult at: %p, type = %ls, name: %ls\n", _this, utility::conversions::to_string_t(assetCls->name).c_str(),
+					name->start_char);
+			}
+
+			LocalizeAssets(result, name);
+		}
+		
+		return result;
+	}
+
+	void* AssetBundleRequest_get_allAssets_orig;
+	void* AssetBundleRequest_get_allAssets_hook(void* _this) {
+		void* ret = reinterpret_cast<decltype(AssetBundleRequest_get_allAssets_hook)*>(AssetBundleRequest_get_allAssets_orig)(_this);
+
+		il2cpp_symbols::iterate_IEnumerable(ret, [&](void* data) {
+			printf("get_allAssets at: %p\n", data);
+			});
+
+		return ret;
+	}
+
 
 	void* AssetLoader_LoadAssetHandle_orig;
 	void* AssetLoader_LoadAssetHandle_hook(void* _this, Il2CppString* path, bool isLowerCase) {
@@ -2204,6 +2258,11 @@ namespace
 
 		const auto AssetBundle_LoadAssetAsync_addr =
 			il2cpp_resolve_icall("UnityEngine.AssetBundle::LoadAssetAsync_Internal(System.String,System.Type)");
+
+		const auto AssetBundleRequest_get_allAssets_addr = 
+			il2cpp_resolve_icall("UnityEngine.AssetBundleRequest::get_allAssets()");
+		const auto AssetBundleRequest_GetResult_addr = 
+			il2cpp_resolve_icall("UnityEngine.AssetBundleRequest::GetResult()");
 		
 		auto AssetLoader_LoadAssetHandle_addr =
 			il2cpp_symbols::get_method_pointer(
@@ -2664,6 +2723,8 @@ namespace
 		{
 			ADD_HOOK(AssetBundle_LoadAsset, "AssetBundle.LoadAsset at %p\n");
 			ADD_HOOK(AssetBundle_LoadAssetAsync, "AssetBundle.LoadAsset at %p\n");
+			ADD_HOOK(AssetBundleRequest_get_allAssets, "AssetBundleRequest_get_allAssets at %p\n");
+			ADD_HOOK(AssetBundleRequest_GetResult, "AssetBundleRequest_GetResult at %p\n");
 		}
 
 		if (g_max_fps > -1)
