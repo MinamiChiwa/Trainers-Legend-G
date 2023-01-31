@@ -106,6 +106,7 @@ namespace logger
 
 		auto u8str = local::wide_u8(text);
 		replaceAll(u8str, "\n", "\\n");
+		replaceAll(u8str, "\r", "\\r");
 		replaceAll(u8str, "\"", "\\\"");
 
 		log_file << "\"" << hash << "\": \"" << u8str << "\",\n";
