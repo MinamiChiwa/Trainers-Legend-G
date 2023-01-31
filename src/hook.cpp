@@ -982,7 +982,13 @@ namespace
 								StoryTimelineTextClipDataClass_ChoiceDataClass_TextField = il2cpp_class_get_field_from_name(StoryTimelineTextClipDataClass_ChoiceDataClass, "Text");
 							}
 
-							il2cpp_symbols::write_field(choiceData, StoryTimelineTextClipDataClass_ChoiceDataClass_TextField, il2cpp_symbols::NewWStr(clip->ChoiceDataList[j]));
+							if (j < clip->ChoiceDataList.size()) {
+								il2cpp_symbols::write_field(choiceData, StoryTimelineTextClipDataClass_ChoiceDataClass_TextField, il2cpp_symbols::NewWStr(clip->ChoiceDataList[j]));
+							}
+							else {
+								printf("[ERROR] Exception occurred while loading story text in ChoiceDataList. storyId: %llu, block: %d, listIndex: %d\n", storyId, i, j);
+								printf("The text content may be changed by Cygames, and the localized content may not display properly. Please report to the project maintainer.\n");
+							}
 						});
 					}
 					const auto colorTextInfoList = il2cpp_symbols::read_field(clipData, StoryTimelineTextClipDataClass_ColorTextInfoListField);
@@ -995,7 +1001,13 @@ namespace
 								StoryTimelineTextClipDataClass_ColorTextInfoClass_TextField = il2cpp_class_get_field_from_name(StoryTimelineTextClipDataClass_ColorTextInfoClass, "Text");
 							}
 
-							il2cpp_symbols::write_field(colorTextInfo, StoryTimelineTextClipDataClass_ColorTextInfoClass_TextField, il2cpp_symbols::NewWStr(clip->ColorTextInfoList[j]));
+							if (j < clip->ColorTextInfoList.size()) {
+								il2cpp_symbols::write_field(colorTextInfo, StoryTimelineTextClipDataClass_ColorTextInfoClass_TextField, il2cpp_symbols::NewWStr(clip->ColorTextInfoList[j]));
+							}
+							else {
+								printf("[ERROR] Exception occurred while loading story text in ChoiceDataList. storyId: %llu, block: %d, listIndex: %d\n", storyId, i, j);
+								printf("The text content may be changed by Cygames, and the localized content may not display properly. Please report to the project maintainer.\n");
+							}
 						});
 					}
 				}
