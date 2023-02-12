@@ -119,6 +119,11 @@
                 "close_all_blur": {
                     "description": "Disable all blur",
                     "type": "boolean"
+                },
+                "setLiveFovAsGlobal": {
+                    "description": "Set live FOV to global",
+                    "type": "boolean",
+                    "default": false
                 }
             },
             "additionalProperties": false

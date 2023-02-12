@@ -1420,8 +1420,28 @@ namespace
 		return pos;
 	}
 
+	bool isLiveStart = false;
+
+	void* Unity_get_fieldOfView_orig;
+	float Unity_get_fieldOfView_hook(void* _this) {
+		if (g_set_live_fov_as_global || (isLiveStart && g_live_free_camera)) {
+			return UmaCamera::getLiveCamFov();
+		}
+		const auto ret = reinterpret_cast<decltype(Unity_get_fieldOfView_hook)*>(Unity_get_fieldOfView_orig)(_this);
+		// printf("get_fov: %f\n", ret);
+		return ret;
+	}
+
+	void* UpdateEnvironemntStageFovShift_orig;
+	void UpdateEnvironemntStageFovShift_hook(void* _this, void* updateInfo) {
+		return reinterpret_cast<decltype(UpdateEnvironemntStageFovShift_hook)*>(UpdateEnvironemntStageFovShift_orig)(
+			_this, updateInfo);
+	}
+
 	void* alterupdate_camera_lookat_orig;
 	void alterupdate_camera_lookat_hook(void* _this, Il2CppObject* sheet, int currentFrame, float currentTime, Vector3_t* outLookAt) {
+		isLiveStart = true;
+		UmaCamera::setLiveStart(true);
 		if (!g_live_free_camera) {
 			 return reinterpret_cast<decltype(alterupdate_camera_lookat_hook)*>(alterupdate_camera_lookat_orig)(
 				_this, sheet, currentFrame, currentTime, outLookAt);
@@ -1476,6 +1496,8 @@ namespace
 	void* live_on_destroy_orig;
 	void live_on_destroy_hook(void* _this) {
 		printf("Live End!\n");
+		isLiveStart = false;
+		UmaCamera::setLiveStart(g_set_live_fov_as_global);
 		UmaCamera::reset_camera();
 		return reinterpret_cast<decltype(live_on_destroy_hook)*>(live_on_destroy_orig)(_this);
 	}
@@ -2503,6 +2525,13 @@ namespace
 			"LiveTimelineControl", "AlterUpdate_CameraLookAt", 4
 		);
 
+		auto UpdateEnvironemntStageFovShift_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live",
+			"StageController", "UpdateEnvironemntStageFovShift", 1
+		);
+		
+		auto Unity_get_fieldOfView_addr = il2cpp_resolve_icall("UnityEngine.Camera::get_fieldOfView()");
+
 		auto AlterUpdate_CameraSwitcher_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop.Live.Cutt",
 			"LiveTimelineControl", "AlterUpdate_CameraSwitcher", 2
@@ -2670,6 +2699,8 @@ namespace
 		ADD_HOOK(Plugin_sqlite3_step, "Plugin_sqlite3_step at %p\n");
 		ADD_HOOK(AlterUpdate_CameraPos, "AlterUpdate_CameraPos at %p\n");
 		ADD_HOOK(alterupdate_camera_lookat, "alterupdate_camera_lookat at %p\n");
+		// ADD_HOOK(UpdateEnvironemntStageFovShift, "UpdateEnvironemntStageFovShift at %p\n");
+		ADD_HOOK(Unity_get_fieldOfView, "Unity_get_fieldOfView at %p\n");
 		ADD_HOOK(AlterUpdate_MonitorCameraLookAt, "AlterUpdate_MonitorCameraLookAt at %p\n");
 		ADD_HOOK(LiveTimelineEasing, "LiveTimelineEasing at %p\n");
 		ADD_HOOK(AlterUpdate_EyeCameraLookAt, "AlterUpdate_EyeCameraLookAt at %p\n");

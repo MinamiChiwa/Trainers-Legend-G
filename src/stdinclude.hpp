@@ -106,6 +106,7 @@ extern bool g_live_free_camera;
 extern bool g_live_force_changeVisibility_false;
 extern bool g_live_close_all_blur;
 extern float g_live_move_step;
+extern bool g_set_live_fov_as_global;
 extern float g_race_move_step;
 extern bool g_race_free_camera;
 extern bool g_race_freecam_lookat_umamusume;

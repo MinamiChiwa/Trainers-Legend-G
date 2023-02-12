@@ -47,6 +47,7 @@ bool g_live_free_camera = false;
 bool g_live_force_changeVisibility_false = false;
 bool g_live_close_all_blur = false;
 float g_live_move_step = 0.2;
+bool g_set_live_fov_as_global = false;
 
 bool g_race_free_camera = false;
 float g_race_move_step = 5;
@@ -523,6 +524,10 @@ namespace
 				auto moveStep = document["live"]["moveStep"].GetFloat();
 				g_live_move_step = moveStep;
 				UmaCamera::setMoveStep(moveStep);
+				if (document["live"].HasMember("setLiveFovAsGlobal")) {
+					g_set_live_fov_as_global = document["live"]["setLiveFovAsGlobal"].GetBool();
+					UmaCamera::setLiveStart(g_set_live_fov_as_global);
+				}
 			}
 
 			if (document.HasMember("race_camera")) {

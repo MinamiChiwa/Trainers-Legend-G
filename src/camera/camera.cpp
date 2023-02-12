@@ -30,6 +30,9 @@ namespace UmaCamera {
 		float verticalAngle = 0;  // 垂直方向角度
 
 		float raceDefaultFOV = 12;
+		float liveDefaultFOV = 60;
+		bool isLiveStart = false;
+
 		int smoothLevel = 5;
 		unsigned long sleepTime = 2;
 		Vector3_t cameraPos{ 0.093706, 0.467159, 9.588791 };
@@ -148,6 +151,14 @@ namespace UmaCamera {
 		return raceDefaultFOV;
 	}
 
+	float getLiveCamFov() {
+		return liveDefaultFOV;
+	}
+
+	void setLiveStart(bool value) {
+		isLiveStart = value;
+	}
+
 	void reset_camera() {
 		if (cameraType == CAMERA_RACE) {
 			cameraPos = Vector3_t{ -51.72, 7.91, 108.57 };
@@ -165,6 +176,7 @@ namespace UmaCamera {
 		};
 		orig_g_race_freecam_follow_umamusume_distance = g_race_freecam_follow_umamusume_distance;
 		g_race_freecam_follow_umamusume = -1;
+		liveDefaultFOV = 60;
 	}
 
 	void setUmaCameraType(int value) {
@@ -407,10 +419,16 @@ namespace UmaCamera {
 		}
 	}
 
-	void changeRaceCameraFOV(float value) {
-		if (!(cameraType == CAMERA_RACE)) return;
-		raceDefaultFOV += value;
-		printf("Race camera FOV has been changed to %f\n", raceDefaultFOV);
+	void changeCameraFOV(float value) {
+		if (cameraType == CAMERA_RACE) {
+			raceDefaultFOV += value;
+			printf("Race camera FOV has been changed to %f\n", raceDefaultFOV);
+		}
+		else {
+			if (!isLiveStart) return;
+			liveDefaultFOV += value;
+			printf("Live camera FOV has been changed to %f\n", liveDefaultFOV);
+		}
 	}
 
 	void changeFollowTargetState() {
@@ -447,9 +465,9 @@ namespace UmaCamera {
 			case KEY_R:
 				reset_camera(); break;
 			case 'Q':
-				changeRaceCameraFOV(0.5f); break;
+				changeCameraFOV(0.5f); break;
 			case 'E':
-				changeRaceCameraFOV(-0.5f); break;
+				changeCameraFOV(-0.5f); break;
 			case 'F':
 				changeFollowTargetState(); break;
 			case KEY_LEFT:

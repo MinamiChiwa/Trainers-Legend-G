@@ -11,6 +11,8 @@ namespace UmaCamera {
 
 	void setRaceCamFOV(float value);
 	float getRaceCamFov();
+	float getLiveCamFov();
+	void setLiveStart(bool value);
 
 	void reset_camera();
 	void camera_forward();

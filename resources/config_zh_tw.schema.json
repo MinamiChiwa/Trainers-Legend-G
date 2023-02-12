@@ -119,6 +119,11 @@
                 "close_all_blur": {
                     "description": "關閉所有模糊鏡頭",
                     "type": "boolean"
+                },
+                "setLiveFovAsGlobal": {
+                    "description": "將 Live 的 FOV 應用到遊戲全域",
+                    "type": "boolean",
+                    "default": false
                 }
             },
             "additionalProperties": false

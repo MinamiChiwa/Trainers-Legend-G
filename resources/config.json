@@ -25,7 +25,8 @@
         "free_camera": false,
         "force_changeVisibility_false": false,
         "moveStep": 0.1,
-        "close_all_blur": false
+        "close_all_blur": false,
+        "setLiveFovAsGlobal": false
     },
     "race_camera": {
         "free_camera": false,
