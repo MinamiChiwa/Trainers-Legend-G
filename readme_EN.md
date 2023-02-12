@@ -132,7 +132,7 @@
 
 ## Live Free Camera
 
-- Move: `WSAD`, Down: `Ctrl`, Up: `Space`, Adjust Angle: `↑↓←→`, Reset Camera:`R`
+- Move: `WSAD`, Down: `Ctrl`, Up: `Space`, Adjust Angle: `↑↓←→`, Adjust FOV: `Q`/`E`, Reset Camera:`R`
 
 ## Race Free Camera (Not Working Currently)
 
