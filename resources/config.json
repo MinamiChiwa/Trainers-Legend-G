@@ -28,6 +28,9 @@
         "close_all_blur": false,
         "setLiveFovAsGlobal": false
     },
+    "homeSettings": {
+        "free_camera": false
+    },
     "race_camera": {
         "free_camera": false,
         "moveStep": 5,

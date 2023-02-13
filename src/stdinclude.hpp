@@ -130,3 +130,4 @@ extern std::unordered_set<std::size_t> trans_off_textData;
 extern CloseTrans closeTrans;
 extern bool g_bypass_live_205;
 extern bool g_load_finished;
+extern bool g_home_free_camera;

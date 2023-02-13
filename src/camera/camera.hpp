@@ -3,11 +3,13 @@
 
 namespace UmaCamera {
 	Vector3_t getCameraPos();
+	Vector3_t getHomeCameraPos();
 	Vector3_t getCameraLookat();
 	void loadGlobalData();
 	void setMoveStep(float value);
 	void setUmaCameraType(int value);
 	void updateFollowUmaPos(Vector3_t lastFrame, Vector3_t thisFrame, Vector3_t* setPos);
+	void setHomeCameraAngle(float value);
 
 	void setRaceCamFOV(float value);
 	float getRaceCamFov();

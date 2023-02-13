@@ -1432,6 +1432,48 @@ namespace
 		return ret;
 	}
 
+	void* cacheCont = nullptr;
+	bool changeIn = false;
+
+	void* ChangeCameraWithImmediate_orig;
+	void ChangeCameraWithImmediate_hook(void* _this, int nextPos) {
+		cacheCont = _this;
+		changeIn = true;
+		reinterpret_cast<decltype(ChangeCameraWithImmediate_hook)*>(ChangeCameraWithImmediate_orig)(_this, nextPos);
+		changeIn = false;
+	}
+
+	void* Unity_set_pos_injected_orig;
+	void Unity_set_pos_injected_hook(void* _this, Vector3_t* ret) {
+		if (g_home_free_camera && cacheCont == _this) {
+			// printf("set_position_Injected: %f, %f, %f\n", ret->x, ret->y, ret->z);
+			auto cam = UmaCamera::getHomeCameraPos();
+			ret->x = cam.x;
+			ret->y = cam.y;
+			ret->z = cam.z;
+		}
+		if (changeIn) {
+			cacheCont = _this;
+			printf("set_position_Injected_c at: %p (%f, %f, %f)\n", _this, ret->x, ret->y, ret->z);
+		}
+		return reinterpret_cast<decltype(Unity_set_pos_injected_hook)*>(Unity_set_pos_injected_orig)(_this, ret);
+	}
+
+	void* HomeClampAngle_orig;
+	float HomeClampAngle_hook(float value, float min, float max) {
+		auto ret = reinterpret_cast<decltype(HomeClampAngle_hook)*>(HomeClampAngle_orig)(
+			value, g_home_free_camera ? -180 : min, g_home_free_camera ? 180 : max
+			);
+		UmaCamera::setHomeCameraAngle(-ret);
+		return ret;
+	}
+
+	void* FinishDragFreeCamera_orig;
+	void FinishDragFreeCamera_hook(void* _this) {
+		if (g_home_free_camera) return;
+		return reinterpret_cast<decltype(FinishDragFreeCamera_hook)*>(FinishDragFreeCamera_orig)(_this);
+	}
+
 	void* UpdateEnvironemntStageFovShift_orig;
 	void UpdateEnvironemntStageFovShift_hook(void* _this, void* updateInfo) {
 		return reinterpret_cast<decltype(UpdateEnvironemntStageFovShift_hook)*>(UpdateEnvironemntStageFovShift_orig)(
@@ -2531,6 +2573,22 @@ namespace
 		);
 		
 		auto Unity_get_fieldOfView_addr = il2cpp_resolve_icall("UnityEngine.Camera::get_fieldOfView()");
+		auto Unity_set_pos_injected_addr = il2cpp_resolve_icall("UnityEngine.Transform::set_position_Injected(UnityEngine.Vector3&)");
+		
+		auto HomeClampAngle_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"HomeCameraSwitcher", "ClampAngle", 3
+		);
+
+		auto FinishDragFreeCamera_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"HomeCameraSwitcher", "FinishDragFreeCamera", 0
+		);
+
+		auto ChangeCameraWithImmediate_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"HomeCameraSwitcher", "ChangeCameraWithImmediate", 1
+		);
 
 		auto AlterUpdate_CameraSwitcher_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop.Live.Cutt",
@@ -2701,6 +2759,10 @@ namespace
 		ADD_HOOK(alterupdate_camera_lookat, "alterupdate_camera_lookat at %p\n");
 		// ADD_HOOK(UpdateEnvironemntStageFovShift, "UpdateEnvironemntStageFovShift at %p\n");
 		ADD_HOOK(Unity_get_fieldOfView, "Unity_get_fieldOfView at %p\n");
+		ADD_HOOK(Unity_set_pos_injected, "Unity_set_pos_injected at %p\n");
+		ADD_HOOK(HomeClampAngle, "HomeClampAngle at %p\n");
+		ADD_HOOK(FinishDragFreeCamera, "FinishDragFreeCamera at %p\n");
+		ADD_HOOK(ChangeCameraWithImmediate, "ChangeCameraWithImmediate at %p\n");
 		ADD_HOOK(AlterUpdate_MonitorCameraLookAt, "AlterUpdate_MonitorCameraLookAt at %p\n");
 		ADD_HOOK(LiveTimelineEasing, "LiveTimelineEasing at %p\n");
 		ADD_HOOK(AlterUpdate_EyeCameraLookAt, "AlterUpdate_EyeCameraLookAt at %p\n");

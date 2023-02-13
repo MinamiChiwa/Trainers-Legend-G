@@ -48,6 +48,7 @@ bool g_live_force_changeVisibility_false = false;
 bool g_live_close_all_blur = false;
 float g_live_move_step = 0.2;
 bool g_set_live_fov_as_global = false;
+bool g_home_free_camera = false;
 
 bool g_race_free_camera = false;
 float g_race_move_step = 5;
@@ -630,6 +631,12 @@ namespace
 				std::string serv_url = document["modify_pack"]["self_server_url"].GetString();
 				std::wstring s_url(serv_url.begin(), serv_url.end());
 				g_self_server_url = s_url;
+			}
+
+			if (document.HasMember("homeSettings")) {
+				if (document["homeSettings"].HasMember("free_camera")) {
+					g_home_free_camera = document["homeSettings"]["free_camera"].GetBool();
+				}
 			}
 
 			// Looks like not working for now

@@ -128,6 +128,17 @@
             },
             "additionalProperties": false
         },
+        "homeSettings": {
+            "description": "主頁設定",
+            "type": "object",
+            "properties": {
+              "free_camera": {
+                  "description": "啟用主頁自由視角",
+                  "type": "boolean",
+                  "default": false
+              }
+            }  
+        },
         "race_camera": {
             "description": "比賽相機設定（已失效）",
             "type": "object",

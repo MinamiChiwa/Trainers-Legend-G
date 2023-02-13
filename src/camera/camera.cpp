@@ -28,6 +28,7 @@ namespace UmaCamera {
 
 		float horizontalAngle = 0;  // 水平方向角度
 		float verticalAngle = 0;  // 垂直方向角度
+		float homeCameraAngle = 0; // 主页相机角度
 
 		float raceDefaultFOV = 12;
 		float liveDefaultFOV = 60;
@@ -36,6 +37,7 @@ namespace UmaCamera {
 		int smoothLevel = 5;
 		unsigned long sleepTime = 2;
 		Vector3_t cameraPos{ 0.093706, 0.467159, 9.588791 };
+		Vector3_t homeCameraPos{ 0.0, 1.047159, -4.811181 };
 		Vector3_t cameraLookAt{ cameraPos.x, cameraPos.y, cameraPos.z - look_radius };
 		bool orig_lookat_target = g_race_freecam_lookat_umamusume;
 		float orig_g_race_freecam_follow_umamusume_distance = g_race_freecam_follow_umamusume_distance;
@@ -159,6 +161,10 @@ namespace UmaCamera {
 		isLiveStart = value;
 	}
 
+	void setHomeCameraAngle(float value) {
+		homeCameraAngle = value;
+	}
+
 	void reset_camera() {
 		if (cameraType == CAMERA_RACE) {
 			cameraPos = Vector3_t{ -51.72, 7.91, 108.57 };
@@ -167,6 +173,7 @@ namespace UmaCamera {
 			cameraPos = Vector3_t{ 0.093706, 0.467159, 9.588791 };
 		}
 		cameraLookAt = Vector3_t{ cameraPos.x, cameraPos.y, cameraPos.z - look_radius };
+		homeCameraPos = Vector3_t{ 0.0, 1.047159, -4.811181 };
 		horizontalAngle = 0;
 		verticalAngle = 0;
 		g_race_freecam_follow_umamusume_offset = Vector3_t{
@@ -198,6 +205,10 @@ namespace UmaCamera {
 		return cameraPos;
 	}
 
+	Vector3_t getHomeCameraPos() {
+		return homeCameraPos;
+	}
+
 	Vector3_t getCameraLookat() {
 		return cameraLookAt;
 	}
@@ -214,6 +225,14 @@ namespace UmaCamera {
 			cameraLookAt.x += l_step;
 			Sleep(sleepTime);
 		}
+	}
+
+	void set_homecam_lon_move(float degree) {  // 主页相机前后移动
+		auto radian = degree * 3.14159 / 180;
+		auto f_step = cos(radian) * moveStep;  // ↑↓
+		auto l_step = sin(radian) * moveStep;  // ←→
+		homeCameraPos.z += f_step;
+		homeCameraPos.x -= l_step;
 	}
 
 	void chechAndUpdateRaceRet(Vector3_t* setPos) {
@@ -262,6 +281,7 @@ namespace UmaCamera {
 			return;
 		}
 		set_lon_move(verticalAngle);
+		set_homecam_lon_move(homeCameraAngle);
 	}
 
 	void camera_back() {  // 后退
@@ -270,6 +290,7 @@ namespace UmaCamera {
 			return;
 		}
 		set_lon_move(verticalAngle + 180);
+		set_homecam_lon_move(homeCameraAngle + 180);
 	}
 
 	void camera_left() {  // 向左
@@ -278,6 +299,7 @@ namespace UmaCamera {
 			return;
 		}
 		set_lon_move(verticalAngle + 90);
+		set_homecam_lon_move(homeCameraAngle + 90);
 	}
 
 	void camera_right() {  // 向右
@@ -286,6 +308,7 @@ namespace UmaCamera {
 			return;
 		}
 		set_lon_move(verticalAngle - 90);
+		set_homecam_lon_move(homeCameraAngle - 90);
 	}
 
 	void camera_down() {  // 向下
@@ -302,6 +325,7 @@ namespace UmaCamera {
 			preStep = moveStep / smoothLevel;
 		}
 
+		homeCameraPos.y -= moveStep;
 		for (int i = 0; i < smoothLevel; i++) {
 			cameraPos.y -= preStep;
 			cameraLookAt.y -= preStep;
@@ -323,6 +347,7 @@ namespace UmaCamera {
 			preStep = moveStep / smoothLevel;
 		}
 
+		homeCameraPos.y += moveStep;
 		for (int i = 0; i < smoothLevel; i++) {
 			cameraPos.y += preStep;
 			cameraLookAt.y += preStep;
