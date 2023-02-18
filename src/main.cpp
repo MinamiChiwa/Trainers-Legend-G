@@ -49,6 +49,7 @@ bool g_live_close_all_blur = false;
 float g_live_move_step = 0.2;
 bool g_set_live_fov_as_global = false;
 bool g_home_free_camera = false;
+int g_home_walk_chara_id = -1;
 
 bool g_race_free_camera = false;
 float g_race_move_step = 5;
@@ -636,6 +637,9 @@ namespace
 			if (document.HasMember("homeSettings")) {
 				if (document["homeSettings"].HasMember("free_camera")) {
 					g_home_free_camera = document["homeSettings"]["free_camera"].GetBool();
+				}
+				if (document["homeSettings"].HasMember("homeWalkMotionCharaId")) {
+					g_home_walk_chara_id = document["homeSettings"]["homeWalkMotionCharaId"].GetInt();
 				}
 			}
 

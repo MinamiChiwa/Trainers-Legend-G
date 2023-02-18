@@ -136,6 +136,11 @@
                   "description": "啟用主頁自由視角",
                   "type": "boolean",
                   "default": false
+              },
+              "homeWalkMotionCharaId": {
+                "description": "主頁走路姿勢同化\n(填寫4位數角色ID, -1為不設定)",
+                "type": "integer",
+                "default": -1
               }
             }  
         },

@@ -1468,6 +1468,17 @@ namespace
 		return ret;
 	}
 
+	void* MasterCharaType_Get_orig;
+	void* MasterCharaType_Get_hook(void* _this, int charaId, int targetScene, int targetCut, int targetType) {
+		// printf("MasterCharaType_Get, charaId: %d, targetScene: %d, targetCut: %d, targetType: %d\n", charaId, targetScene, targetCut, targetType);
+		if (targetScene + targetCut + targetType == 0) {
+			if (g_home_walk_chara_id > 0) {
+				charaId = g_home_walk_chara_id;
+			}
+		}
+		return reinterpret_cast<decltype(MasterCharaType_Get_hook)*>(MasterCharaType_Get_orig)(_this, charaId, targetScene, targetCut, targetType);;
+	}
+
 	void* FinishDragFreeCamera_orig;
 	void FinishDragFreeCamera_hook(void* _this) {
 		if (g_home_free_camera) return;
@@ -2580,6 +2591,11 @@ namespace
 			"HomeCameraSwitcher", "ClampAngle", 3
 		);
 
+		auto MasterCharaType_Get_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"MasterCharaType", "Get", 4
+		);
+
 		auto FinishDragFreeCamera_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"HomeCameraSwitcher", "FinishDragFreeCamera", 0
@@ -2761,6 +2777,7 @@ namespace
 		ADD_HOOK(Unity_get_fieldOfView, "Unity_get_fieldOfView at %p\n");
 		ADD_HOOK(Unity_set_pos_injected, "Unity_set_pos_injected at %p\n");
 		ADD_HOOK(HomeClampAngle, "HomeClampAngle at %p\n");
+		ADD_HOOK(MasterCharaType_Get, "MasterCharaType_Get at %p\n");
 		ADD_HOOK(FinishDragFreeCamera, "FinishDragFreeCamera at %p\n");
 		ADD_HOOK(ChangeCameraWithImmediate, "ChangeCameraWithImmediate at %p\n");
 		ADD_HOOK(AlterUpdate_MonitorCameraLookAt, "AlterUpdate_MonitorCameraLookAt at %p\n");

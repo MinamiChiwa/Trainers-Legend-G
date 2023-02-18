@@ -136,6 +136,11 @@
                   "description": "Enable home free camera",
                   "type": "boolean",
                   "default": false
+              },
+              "homeWalkMotionCharaId": {
+                "description": "Home walk motion character id\n(4-digit chara id, fill in -1 to not set)",
+                "type": "integer",
+                "default": -1
               }
             }  
         },

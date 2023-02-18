@@ -96,7 +96,7 @@ namespace MHotkey{
             return;
         }
         if (openPluginSuccess && pluginPID != -1) {
-            std::string cmdLine = std::format("taskkill /F /T /PID {}", pluginPID);
+            std::string cmdLine = std::format("taskkill /T /PID {}", pluginPID);
             char* commandLine = new char[255];
             strcpy(commandLine, cmdLine.c_str());
             STARTUPINFOA startupInfo{ .cb = sizeof(STARTUPINFOA) };
