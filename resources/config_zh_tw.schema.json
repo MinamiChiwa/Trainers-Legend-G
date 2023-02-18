@@ -138,7 +138,7 @@
                   "default": false
               },
               "homeWalkMotionCharaId": {
-                "description": "主頁走路姿勢同化\n(填寫4位數角色ID, -1為不設定)",
+                "description": "主頁走路姿勢修改\n(填寫4位數角色ID, -1為不設定)",
                 "type": "integer",
                 "default": -1
               }
