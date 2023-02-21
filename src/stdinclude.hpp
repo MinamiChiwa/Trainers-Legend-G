@@ -41,6 +41,7 @@
 
 #include "camera/camera.hpp"
 #include "umadb/umadb.hpp"
+#include "pluginLoader/pluginLoader.hpp"
 #include <nlohmann/json.hpp>
 
 extern bool g_dump_entries;

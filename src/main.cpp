@@ -634,6 +634,14 @@ namespace
 				g_self_server_url = s_url;
 			}
 
+			if (document.HasMember("loadDll")) {
+				if (document["loadDll"].IsArray()) {
+					for (const auto& fr : document["loadDll"].GetArray()) {
+						PluginLoader::loadDll(fr.GetString());
+					}
+				}
+			}
+
 			if (document.HasMember("homeSettings")) {
 				if (document["homeSettings"].HasMember("free_camera")) {
 					g_home_free_camera = document["homeSettings"]["free_camera"].GetBool();
@@ -1499,6 +1507,52 @@ namespace HttpServer {
 						reload_all_data();
 					}
 				}
+			}
+
+			if (path == L"/plugin/load") {
+				const auto pluginName = message.extract_utf16string().get();
+				const auto isSuccess = PluginLoader::loadDll(pluginName);
+				if (isSuccess) {
+					printf("Load plugin success: %ls\n", pluginName.c_str());
+					message.reply(status_codes::OK, "OK(〃'▽'〃)");
+				}
+				else {
+					printf("Load plugin failed: %ls\n", pluginName.c_str());
+					message.reply(status_codes::BadRequest, "failed");
+				}
+				return;
+			}
+
+			if (path == L"/plugin/unload") {
+				const auto pluginName = message.extract_utf16string().get();
+				const auto isSuccess = PluginLoader::freeDll(pluginName);
+				if (isSuccess) {
+					printf("Unload plugin success: %ls\n", pluginName.c_str());
+					message.reply(status_codes::OK, "OK(〃'▽'〃)");
+				}
+				else {
+					printf("Unload plugin failed: %ls\n", pluginName.c_str());
+					message.reply(status_codes::BadRequest, "failed");
+				}
+				return;
+			}
+
+			if (path == L"/plugin/loaddata") {
+				const auto data = PluginLoader::getLoadedDll();
+				rapidjson::Document ret;
+				auto& v = ret.SetArray();
+				for (const auto& vl : data) {
+					rapidjson::Value add;
+					const auto st = utility::conversions::to_utf8string(vl.first);
+					add.SetString(st.c_str(), st.size());
+					ret.PushBack(add, ret.GetAllocator());
+				}
+				
+				rapidjson::StringBuffer buffer;
+				rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+				ret.Accept(writer);
+				message.reply(status_codes::OK, buffer.GetString(), "application/json");
+				return;
 			}
 
 			if (path == L"/set_untrans") {
