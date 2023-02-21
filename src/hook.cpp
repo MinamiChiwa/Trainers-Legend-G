@@ -1454,7 +1454,7 @@ namespace
 		}
 		if (changeIn) {
 			cacheCont = _this;
-			printf("set_position_Injected_c at: %p (%f, %f, %f)\n", _this, ret->x, ret->y, ret->z);
+			// printf("set_position_Injected_c at: %p (%f, %f, %f)\n", _this, ret->x, ret->y, ret->z);
 		}
 		return reinterpret_cast<decltype(Unity_set_pos_injected_hook)*>(Unity_set_pos_injected_orig)(_this, ret);
 	}

@@ -120,7 +120,8 @@
                 "replaceMini": false
             }
         ]
-    }
+    },
+    "loadDll": []  /*Load other dll plugins. (path string array)*/
 }
 ```
 

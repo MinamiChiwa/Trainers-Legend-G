@@ -350,6 +350,13 @@
                     }
                 }
             }
+        },
+        "loadDll": {
+            "description": "Load other oll plugins",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
         }
     },
     "additionalProperties": false,

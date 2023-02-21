@@ -350,6 +350,13 @@
                     }
                 }
             }
+        },
+        "loadDll": {
+            "description": "加载其它DLL插件",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
         }
     },
     "additionalProperties": false,

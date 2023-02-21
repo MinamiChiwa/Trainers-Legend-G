@@ -85,5 +85,6 @@
     "replaceGlobalChar": {
         "enable": false,
         "data": []
-    }
+    },
+    "loadDll": []
 }

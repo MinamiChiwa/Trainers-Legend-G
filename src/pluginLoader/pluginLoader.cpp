@@ -9,9 +9,11 @@ namespace PluginLoader {
 	bool loadDll(std::wstring dllName) {
 		if (loadedDll.contains(dllName)) return false;
 
+		printf("Loading DLL: %ls ...\n", dllName.c_str());
 		const auto dllPtr = LoadLibraryW(dllName.c_str());
 		const auto isSuccess = dllPtr != NULL;
 		if (isSuccess) loadedDll.emplace(dllName, dllPtr);
+		printf("Load DLL: %ls %s.\n", dllName.c_str(), isSuccess ? "success" : "failed");
 		return isSuccess;
 	}
 

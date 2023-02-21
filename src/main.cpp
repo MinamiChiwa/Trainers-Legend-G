@@ -69,6 +69,7 @@ std::unordered_map<int, std::pair<int, int>> g_global_mini_char_replace{};
 
 bool g_bypass_live_205 = false;
 bool g_load_finished = false;
+std::vector<std::string> loadDllList{};
 
 bool g_save_msgpack = true;
 bool g_enable_response_convert = false;
@@ -112,6 +113,8 @@ using namespace http;
 using namespace utility;
 using namespace http::experimental::listener;
 
+const auto CONSOLE_TITLE = L"Umamusume - Debug Console - 此插件为免费下载, 若您是付费购买此插件请立刻举报店家! QQ频道: foramghl97";
+
 namespace
 {
 	void create_debug_console()
@@ -123,7 +126,7 @@ namespace
 		_ = freopen("CONOUT$", "w", stderr);
 		_ = freopen("CONIN$", "r", stdin);
 
-		SetConsoleTitleW(L"Umamusume - Debug Console - 此插件为免费下载, 若您是付费购买此插件请立刻举报店家! QQ频道: foramghl97");
+		SetConsoleTitleW(CONSOLE_TITLE);
 
 		// set this to avoid turn japanese texts into question mark
 		SetConsoleOutputCP(65001);
@@ -636,8 +639,11 @@ namespace
 
 			if (document.HasMember("loadDll")) {
 				if (document["loadDll"].IsArray()) {
+					loadDllList.clear();
 					for (const auto& fr : document["loadDll"].GetArray()) {
-						PluginLoader::loadDll(fr.GetString());
+						if (fr.IsString()) {
+							loadDllList.push_back(fr.GetString());
+						}
 					}
 				}
 			}
@@ -1744,6 +1750,10 @@ int __stdcall DllMain(HINSTANCE dllModule, DWORD reason, LPVOID)
 			auto&& [storyDict, raceDict] = LoadStories();
 			auto&& [textData, characterSystemTextData, raceJikkyoCommentData, raceJikkyoMessageData] = LoadDicts();
 			local::load_textdb(&dicts, std::move(staticDictCache), std::move(storyDict), std::move(raceDict), std::move(textData), std::move(characterSystemTextData), std::move(raceJikkyoCommentData), std::move(raceJikkyoMessageData));
+			for (const auto& dllName : loadDllList) {  // 加载外部dll
+				PluginLoader::loadDll(dllName);
+			}
+			SetConsoleTitleW(CONSOLE_TITLE);  // 保持控制台标题
 			auto_update();
 			});
 		init_thread.detach();
