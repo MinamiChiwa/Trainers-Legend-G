@@ -1620,7 +1620,7 @@ namespace HttpServer {
 		std::thread([port, openExternalPlugin] {
 			try
 			{
-				utility::string_t address = std::format(L"http://*:{}", port);
+				utility::string_t address = std::format(L"http://127.0.0.1:{}", port);
 				uri_builder uri(address);
 				auto addr = uri.to_uri().to_string();
 				CommandHandler handler(addr);
