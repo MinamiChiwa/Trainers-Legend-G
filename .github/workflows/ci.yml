@@ -39,7 +39,7 @@ jobs:
           submodules: true
       - name: install-dependencies
         run: |
-          pip3 install --upgrade conan requests
+          pip3 install --upgrade conan==1.59.0 requests
           conan profile new default --detect
           conan config init
       - name: configure-msbuild-env
