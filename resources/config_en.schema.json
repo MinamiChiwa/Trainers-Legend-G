@@ -285,7 +285,7 @@
             }
         },
         "replaceHomeStandChar": {
-            "description": "Replace Home Character (Not working)",
+            "description": "Replace Home Character",
             "type": "object",
             "properties": {
                 "enable": {
@@ -316,7 +316,7 @@
             }
         },
         "replaceGlobalChar": {
-            "description": "Replace Global Character\n  (Not working)",
+            "description": "Replace Global Character\n(Race and training parts cannot be replaced)",
             "type": "object",
             "properties": {
                 "enable": {

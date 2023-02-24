@@ -1813,7 +1813,7 @@ namespace
 	}
 
 	std::unordered_set<int> otherReplaceTypes{
-		0x1, 0x2, 0x4, 0x8, 0x9, 0xe, 0x5, 0xd, 0x1919810  //, 0xa, 0x3
+		0x2, 0x3, 0x4, 0x5, 0x9, 0xb, 0xe, 0x1919810  // 0xd, 0x1, 0x8
 	};
 	// 0xa: SingleRace, 0xb: Simple, 0x3: EventTimeline
 	bool enableLoadCharLog = false;
@@ -1971,6 +1971,47 @@ namespace
 		if (enableLoadCharLog) printf("CharacterBuildInfo_ctor_1 cardId: %d, charaId: %d, dressId: %d, headId: %d, audienceId: %d, motionDressId: %d, controllerType: 0x%x\n", cardId, charaId, dressId, headId, audienceId, motionDressId, controllerType);
 		replaceCharController(&charaId, &dressId, &headId, controllerType);
 		return reinterpret_cast<decltype(CharacterBuildInfo_ctor_1_hook)*>(CharacterBuildInfo_ctor_1_orig)(_this, cardId, charaId, dressId, controllerType, headId, zekken, mobId, backDancerColorId, overrideClothCategory, isUseDressDataHeadModelSubId, audienceId, motionDressId, isEnableModelCache);
+	}
+
+	void* CharacterBuildInfo_Rebuild_orig;
+	void CharacterBuildInfo_Rebuild_hook(void* _this) {
+		void* this_klass = il2cpp_symbols::get_class_from_instance(_this);
+		FieldInfo* charaIdField = il2cpp_class_get_field_from_name(this_klass, "_charaId");
+		FieldInfo* dressIdField = il2cpp_class_get_field_from_name(this_klass, "_dressId");
+		FieldInfo* controllerTypeField = il2cpp_class_get_field_from_name(this_klass, "_controllerType");
+		FieldInfo* headModelSubIdField = il2cpp_class_get_field_from_name(this_klass, "_headModelSubId");
+		/*
+		FieldInfo* zekkenField = il2cpp_class_get_field_from_name(this_klass, "_zekken");
+		FieldInfo* mobIdField = il2cpp_class_get_field_from_name(this_klass, "_mobId");
+		FieldInfo* backDancerColorIdField = il2cpp_class_get_field_from_name(this_klass, "_backDancerColorId");
+		FieldInfo* isUseDressDataHeadModelSubIdField = il2cpp_class_get_field_from_name(this_klass, "_isUseDressDataHeadModelSubId");
+		FieldInfo* audienceIdField = il2cpp_class_get_field_from_name(this_klass, "_audienceId");
+		FieldInfo* motionDressIdField = il2cpp_class_get_field_from_name(this_klass, "_motionDressId");
+		FieldInfo* isEnableModelCacheField = il2cpp_class_get_field_from_name(this_klass, "_isEnableModelCache");
+		*/
+
+		auto charaId = il2cpp_symbols::read_field<int>(_this, charaIdField);
+		auto dressId = il2cpp_symbols::read_field<int>(_this, dressIdField);
+		auto controllerType = il2cpp_symbols::read_field<int>(_this, controllerTypeField);
+		auto headModelSub = il2cpp_symbols::read_field<int>(_this, headModelSubIdField);
+		/*
+		auto zekken = il2cpp_symbols::read_field<int>(_this, zekkenField);
+		auto mobId = il2cpp_symbols::read_field<int>(_this, mobIdField);
+		auto backDancerColorId = il2cpp_symbols::read_field<int>(_this, backDancerColorIdField);
+		auto isUseDressDataHeadModelSubId = il2cpp_symbols::read_field<bool>(_this, isUseDressDataHeadModelSubIdField);
+		auto audienceId = il2cpp_symbols::read_field<int>(_this, audienceIdField);
+		auto motionDressId = il2cpp_symbols::read_field<int>(_this, motionDressIdField);
+		auto isEnableModelCache = il2cpp_symbols::read_field<bool>(_this, isEnableModelCacheField);
+		*/
+
+		replaceCharController(&charaId, &dressId, &headModelSub, controllerType);
+		il2cpp_symbols::write_field(_this, charaIdField, charaId);
+		il2cpp_symbols::write_field(_this, dressIdField, dressId);
+		il2cpp_symbols::write_field(_this, headModelSubIdField, headModelSub);
+
+		// printf("ReBuild controllerType: 0x%x\n", controllerType);
+
+		return reinterpret_cast<decltype(CharacterBuildInfo_Rebuild_hook)*>(CharacterBuildInfo_Rebuild_orig)(_this);
 	}
 
 	void* EditableCharacterBuildInfo_ctor_orig;
@@ -2720,6 +2761,12 @@ namespace
 				"CharacterBuildInfo", ".ctor", 13
 			);
 
+		auto CharacterBuildInfo_Rebuild_addr =
+			il2cpp_symbols::get_method_pointer(
+				"umamusume.dll", "Gallop",
+				"CharacterBuildInfo", "Rebuild", 0
+			);
+
 		auto EditableCharacterBuildInfo_ctor_addr =
 			il2cpp_symbols::get_method_pointer(
 				"umamusume.dll", "Gallop",
@@ -2833,9 +2880,10 @@ namespace
 		ADD_HOOK(race_GetTargetRotation, "GetTargetRotation at %p\n");
 		ADD_HOOK(race_OnDestroy, "race_OnDestroy at %p\n");
 		ADD_HOOK(AssetLoader_LoadAssetHandle, "AssetLoader_LoadAssetHandle at %p\n");
-		ADD_HOOK(CharacterBuildInfo_ctor_0, "CharacterBuildInfo_ctor_0 at %p\n");
-		ADD_HOOK(CharacterBuildInfo_ctor_1, "CharacterBuildInfo_ctor_1 at %p\n");
-		ADD_HOOK(EditableCharacterBuildInfo_ctor, "EditableCharacterBuildInfo_ctor at %p\n");
+		// ADD_HOOK(CharacterBuildInfo_ctor_0, "CharacterBuildInfo_ctor_0 at %p\n");
+		// ADD_HOOK(CharacterBuildInfo_ctor_1, "CharacterBuildInfo_ctor_1 at %p\n");
+		// ADD_HOOK(EditableCharacterBuildInfo_ctor, "EditableCharacterBuildInfo_ctor at %p\n");
+		ADD_HOOK(CharacterBuildInfo_Rebuild, "CharacterBuildInfo_Rebuild at %p\n");  // 上面三个改成 Rebuild
 		// ADD_HOOK(StorySceneController_LoadCharacter, "StorySceneController_LoadCharacter at %p\n");
 		ADD_HOOK(StoryCharacter3D_LoadModel, "StoryCharacter3D_LoadModel at %p\n");
 		ADD_HOOK(SingleModeSceneController_CreateModel, "SingleModeSceneController_CreateModel at %p\n");

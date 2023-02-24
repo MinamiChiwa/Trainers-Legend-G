@@ -285,7 +285,7 @@
             }
         },
         "replaceHomeStandChar": {
-            "description": "替换主页角色（暂时失效）",
+            "description": "替换主页角色",
             "type": "object",
             "properties": {
                 "enable": {
@@ -316,7 +316,7 @@
             }
         },
         "replaceGlobalChar": {
-            "description": "全局角色替换\n （暂时失效）",
+            "description": "全局角色替换\n（比赛、训练部分无法替换）",
             "type": "object",
             "properties": {
                 "enable": {
