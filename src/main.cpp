@@ -52,6 +52,7 @@ bool g_home_free_camera = false;
 int g_home_walk_chara_id = -1;
 
 bool g_race_free_camera = false;
+float g_free_camera_mouse_speed = 100;
 float g_race_move_step = 5;
 bool g_race_freecam_lookat_umamusume = false;
 bool g_race_freecam_follow_umamusume = false;
@@ -524,6 +525,10 @@ namespace
 
 				if (document["live"].HasMember("close_all_blur")) {
 					g_live_close_all_blur = document["live"]["close_all_blur"].GetBool();
+				}
+
+				if (document["live"].HasMember("mouseSpeed")) {
+					g_free_camera_mouse_speed = document["live"]["mouseSpeed"].GetFloat();
 				}
 
 				auto moveStep = document["live"]["moveStep"].GetFloat();

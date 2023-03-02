@@ -108,6 +108,11 @@
                     "description": "Enable free camera",
                     "type": "boolean"
                 },
+                "mouseSpeed": {
+                    "description": "Mouse speed",
+                    "type": "number",
+                    "default": 100.0
+                },
                 "force_changeVisibility_false": {
                     "description": "Force disable character visibility changing",
                     "type": "boolean"

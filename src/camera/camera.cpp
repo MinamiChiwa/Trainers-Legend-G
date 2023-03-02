@@ -1,4 +1,5 @@
 #include "stdinclude.hpp"
+#include <corecrt_math_defines.h>
 
 #define KEY_W  87
 #define KEY_S  83
@@ -23,8 +24,8 @@ namespace UmaCamera {
 	namespace {
 		int cameraType = CAMERA_LIVE;
 		float moveStep = 0.1;
-		float look_radius = 0.5;  // 转向半径
-		float moveAngel = 3.5;  // 转向角度
+		float look_radius = 5;  // 转向半径
+		float moveAngel = 1.5;  // 转向角度
 
 		float horizontalAngle = 0;  // 水平方向角度
 		float verticalAngle = 0;  // 垂直方向角度
@@ -34,8 +35,8 @@ namespace UmaCamera {
 		float liveDefaultFOV = 60;
 		bool isLiveStart = false;
 
-		int smoothLevel = 5;
-		unsigned long sleepTime = 2;
+		int smoothLevel = 1;
+		unsigned long sleepTime = 0;
 		Vector3_t cameraPos{ 0.093706, 0.467159, 9.588791 };
 		Vector3_t homeCameraPos{ 0.0, 1.047159, -4.811181 };
 		Vector3_t cameraLookAt{ cameraPos.x, cameraPos.y, cameraPos.z - look_radius };
@@ -48,6 +49,10 @@ namespace UmaCamera {
 		};
 		Vector3_t cacheLastRacePos{};
 		bool lookAtUmaReverse = false;
+
+		bool mouseLockThreadStart = false;
+		bool lookVertRunning, lookHoriRunning = false;
+		bool rMousePressFlg = false;
 
 		typedef struct Point
 		{
@@ -63,6 +68,12 @@ namespace UmaCamera {
 				y = yy;
 			}
 		}SDPoint;
+
+		enum LonMoveHState {
+			LonMoveLeftAndRight,
+			LonMoveForward,
+			LonMoveBack
+		};
 	}
 
 	void loadGlobalData() {
@@ -213,22 +224,35 @@ namespace UmaCamera {
 		return cameraLookAt;
 	}
 
-	void set_lon_move(float degree) {  // 前后移动
-		auto radian = degree * 3.14159 / 180;
-		auto f_step = cos(radian) * moveStep / smoothLevel;  // ↑↓
-		auto l_step = sin(radian) * moveStep / smoothLevel;  // ←→
+	void set_lon_move(float vertangle, LonMoveHState moveState=LonMoveLeftAndRight) {  // 前后移动
+		auto radian = vertangle * M_PI / 180;
+		auto radianH = (double)horizontalAngle * M_PI / 180;
+		
+		auto f_step = cos(radian) * moveStep * cos(radianH) / smoothLevel;  // ↑↓
+		auto l_step = sin(radian) * moveStep * cos(radianH) / smoothLevel;  // ←→
+		// auto h_step = tan(radianH) * sqrt(pow(f_step, 2) + pow(l_step, 2));
+		auto h_step = sin(radianH) * moveStep / smoothLevel;
+
+		switch (moveState)
+		{
+			case LonMoveForward: break;
+			case LonMoveBack: h_step = -h_step; break;
+			default: h_step = 0; break;
+		}
 
 		for (int i = 0; i < smoothLevel; i++) {
 			cameraPos.z -= f_step;
 			cameraLookAt.z -= f_step;
 			cameraPos.x += l_step;
 			cameraLookAt.x += l_step;
+			cameraPos.y += h_step;
+			cameraLookAt.y += h_step;
 			Sleep(sleepTime);
 		}
 	}
 
 	void set_homecam_lon_move(float degree) {  // 主页相机前后移动
-		auto radian = degree * 3.14159 / 180;
+		auto radian = degree * M_PI / 180;
 		auto f_step = cos(radian) * moveStep;  // ↑↓
 		auto l_step = sin(radian) * moveStep;  // ←→
 		homeCameraPos.z += f_step;
@@ -280,7 +304,7 @@ namespace UmaCamera {
 			g_race_freecam_follow_umamusume_offset.z -= moveStep / 2;
 			return;
 		}
-		set_lon_move(verticalAngle);
+		set_lon_move(verticalAngle, LonMoveForward);
 		set_homecam_lon_move(homeCameraAngle);
 	}
 
@@ -289,7 +313,7 @@ namespace UmaCamera {
 			g_race_freecam_follow_umamusume_offset.z += moveStep / 2;
 			return;
 		}
-		set_lon_move(verticalAngle + 180);
+		set_lon_move(verticalAngle + 180, LonMoveBack);
 		set_homecam_lon_move(homeCameraAngle + 180);
 	}
 
@@ -355,9 +379,11 @@ namespace UmaCamera {
 		}
 	}
 
-	void setVertLook(float angle1, float angle2) {  // 上+
-		auto radian = angle1 * 3.14159 / 180;
-		auto radian2 = ((double)angle2 - 90) * 3.14159 / 180;  // 日
+	void setVertLook(float vertangle, float horiangle) {  // 上+
+		if (lookVertRunning) return;
+		lookVertRunning = true;
+		auto radian = vertangle * M_PI / 180;
+		auto radian2 = ((double)horiangle - 90) * M_PI / 180;  // 日
 
 		auto stepX1 = look_radius * sin(radian2) * cos(radian) / smoothLevel;
 		auto stepX2 = look_radius * sin(radian2) * sin(radian) / smoothLevel;
@@ -369,58 +395,65 @@ namespace UmaCamera {
 			cameraLookAt.x = cameraPos.x - stepX2;
 			Sleep(sleepTime);
 		}
-
+		lookVertRunning = false;
 	}
 
-	void setHoriLook(float degree) {  // 左+
-		auto radian = degree * 3.14159 / 180;
-		auto stepBt = cos(radian) * look_radius / smoothLevel;
-		auto stepHi = sin(radian) * look_radius / smoothLevel;
+	void setHoriLook(float vertangle) {  // 左+
+		if (lookHoriRunning) return;
+		lookHoriRunning = true;
+		auto radian = vertangle * M_PI / 180;
+		auto radian2 = horizontalAngle * M_PI / 180;
+
+		auto stepBt = cos(radian) * look_radius * cos(radian2) / smoothLevel;
+		auto stepHi = sin(radian) * look_radius * cos(radian2) / smoothLevel;
+		auto stepY = sin(radian2) * look_radius / smoothLevel;
 
 		for (int i = 0; i < smoothLevel; i++) {
 			cameraLookAt.x = cameraPos.x + stepHi;
 			cameraLookAt.z = cameraPos.z - stepBt;
+			cameraLookAt.y = cameraPos.y + stepY;
 			Sleep(sleepTime);
 		}
+		lookHoriRunning = false;
 	}
 
-	void cameraLookat_up() {
+	void cameraLookat_up(float mAngel) {
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
 			g_race_freecam_follow_umamusume_distance += 0.2;
 			return;
 		}
 
-		horizontalAngle += moveAngel;
+		horizontalAngle += mAngel;
 		if (horizontalAngle >= 90) horizontalAngle = 89.99;
 		setVertLook(verticalAngle, horizontalAngle);
 	}
 
-	void cameraLookat_down() {
+	void cameraLookat_down(float mAngel) {
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
 			g_race_freecam_follow_umamusume_distance -= 0.2;
 			return;
 		}
 
-		horizontalAngle -= moveAngel;
+		horizontalAngle -= mAngel;
 		if (horizontalAngle <= -90) horizontalAngle = -89.99;
 		setVertLook(verticalAngle, horizontalAngle);
 	}
 
-	void cameraLookat_left() {
+	void cameraLookat_left(float mAngel) {
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
 			return;
 		}
-		verticalAngle += moveAngel;
-		if (verticalAngle >= 360) verticalAngle = 0;
+		verticalAngle += mAngel;
+		if (verticalAngle >= 360) verticalAngle = -360;
 		setHoriLook(verticalAngle);
 	}
 
-	void cameraLookat_right() {
+	void cameraLookat_right(float mAngel) {
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
 			return;
 		}
-		verticalAngle -= moveAngel;
-		if (verticalAngle <= -360) verticalAngle = 0;
+		verticalAngle -= mAngel;
+		if (verticalAngle <= -360) verticalAngle = 360;
 		setHoriLook(verticalAngle);
 	}
 
@@ -470,29 +503,117 @@ namespace UmaCamera {
 		}
 	}
 
+
+	void mouseMove(LONG moveX, LONG moveY, int mouseEventType) {
+		if (mouseEventType == 1) {  // down
+			rMousePressFlg = true;
+			ShowCursor(false);
+		}
+		else if (mouseEventType == 2) {  // up
+			rMousePressFlg = false;
+			ShowCursor(true);
+		}
+		else if (mouseEventType == 3) {  // move
+			std::thread([moveX, moveY]() {
+				if (!rMousePressFlg) return;
+				if (moveX > 0) {
+					cameraLookat_right(moveX * g_free_camera_mouse_speed / 100.0);
+				}
+				else if (moveX < 0) {
+					cameraLookat_left(-moveX * g_free_camera_mouse_speed / 100.0);
+				}
+				if (moveY > 0) {
+					cameraLookat_down(moveY * g_free_camera_mouse_speed / 100.0);
+				}
+				else if (moveY < 0) {
+					cameraLookat_up(-moveY * g_free_camera_mouse_speed / 100.0);
+				}
+				// printf("move x: %d, y: %d\n", moveX, moveY);
+				}).detach();
+		}
+	}
+
+	struct CameraMoveState {
+		bool w = false;
+		bool s = false;
+		bool a = false;
+		bool d = false;
+		bool ctrl = false;
+		bool space = false;
+		bool up = false;
+		bool down = false;
+		bool left = false;
+		bool right = false;
+		bool q = false;
+		bool e = false;
+		bool threadRunning = false;
+	} cameraMoveState;
+
+	void cameraRawInputThread() {
+		std::thread([]() {
+			if (cameraMoveState.threadRunning) return;
+			cameraMoveState.threadRunning = true;
+			while (true) {
+				if (cameraMoveState.w) camera_forward();
+				if (cameraMoveState.s) camera_back();
+				if (cameraMoveState.a) camera_left();
+				if (cameraMoveState.d) camera_right();
+				if (cameraMoveState.ctrl) camera_down();
+				if (cameraMoveState.space) camera_up();
+				if (cameraMoveState.up) cameraLookat_up(moveAngel);
+				if (cameraMoveState.down) cameraLookat_down(moveAngel);
+				if (cameraMoveState.left) cameraLookat_left(moveAngel);
+				if (cameraMoveState.right) cameraLookat_right(moveAngel);
+				if (cameraMoveState.q) changeCameraFOV(0.5f);
+				if (cameraMoveState.e) changeCameraFOV(-0.5f);
+				Sleep(10);
+			}
+			}).detach();
+	}
+
+	void on_cam_rawinput_keyboard(int message, int key) {
+		if (message == WM_KEYDOWN || message == WM_KEYUP) {
+			switch (key) {
+			case KEY_W:
+				cameraMoveState.w = message == WM_KEYDOWN ? true : false; break;
+			case KEY_S:
+				cameraMoveState.s = message == WM_KEYDOWN ? true : false; break;
+			case KEY_A:
+				cameraMoveState.a = message == WM_KEYDOWN ? true : false; break;
+			case KEY_D:
+				cameraMoveState.d = message == WM_KEYDOWN ? true : false; break;
+			case KEY_CTRL:
+				cameraMoveState.ctrl = message == WM_KEYDOWN ? true : false; break;
+			case KEY_SPACE:
+				cameraMoveState.space = message == WM_KEYDOWN ? true : false; break;
+			case KEY_UP:
+				cameraMoveState.up = message == WM_KEYDOWN ? true : false; break;
+			case KEY_DOWN:
+				cameraMoveState.down = message == WM_KEYDOWN ? true : false; break;
+			case KEY_LEFT:
+				cameraMoveState.left = message == WM_KEYDOWN ? true : false; break;
+			case KEY_RIGHT:
+				cameraMoveState.right = message == WM_KEYDOWN ? true : false; break;
+			case 'Q':
+				cameraMoveState.q = message == WM_KEYDOWN ? true : false; break;
+			case 'E':
+				cameraMoveState.e = message == WM_KEYDOWN ? true : false; break;
+			default: break;
+			}
+		}
+	}
+
 	void on_keyboard_down(int key, DWORD shift, DWORD ctrl, DWORD alt, DWORD space, DWORD up, DWORD down, DWORD left, DWORD right) {
-		bool ctrl_down = (key == KEY_CTRL) || (ctrl != 0);
-		bool space_down = (key == KEY_SPACE) || (space != 0);
-		bool up_down = (key == KEY_UP) || (up != 0);
-		bool down_down = (key == KEY_DOWN) || (down != 0);
-		bool left_down = (key == KEY_LEFT) || (left != 0);
-		bool right_down = (key == KEY_RIGHT) || (right != 0);
+		// bool ctrl_down = (key == KEY_CTRL) || (ctrl != 0);
+		// bool space_down = (key == KEY_SPACE) || (space != 0);
+		// bool up_down = (key == KEY_UP) || (up != 0);
+		// bool down_down = (key == KEY_DOWN) || (down != 0);
+		// bool left_down = (key == KEY_LEFT) || (left != 0);
+		// bool right_down = (key == KEY_RIGHT) || (right != 0);
 
 		switch (key) {
-			case KEY_W: 
-				camera_forward(); break;
-			case KEY_S:
-				camera_back(); break;
-			case KEY_A:
-				camera_left(); break;
-			case KEY_D:
-				camera_right(); break;
 			case KEY_R:
 				reset_camera(); break;
-			case 'Q':
-				changeCameraFOV(0.5f); break;
-			case 'E':
-				changeCameraFOV(-0.5f); break;
 			case 'F':
 				changeFollowTargetState(); break;
 			case KEY_LEFT:
@@ -505,17 +626,19 @@ namespace UmaCamera {
 				break;
 		}
 
-		if (ctrl_down) camera_down();
-		if (space_down) camera_up();
-		if (up_down) cameraLookat_up();
-		if (down_down) cameraLookat_down();
-		if (left_down) cameraLookat_left();
-		if (right_down) cameraLookat_right();
+		// if (ctrl_down) camera_down();
+		// if (space_down) camera_up();
+		// if (up_down) cameraLookat_up(moveAngel);
+		// if (down_down) cameraLookat_down(moveAngel);
+		// if (left_down) cameraLookat_left(moveAngel);
+		// if (right_down) cameraLookat_right(moveAngel);
 
 	}
 
 	void initCameraSettings() {
 		reset_camera();
+		cameraRawInputThread();
+		MHotkey::setMKeyBoardRawCallBack(on_cam_rawinput_keyboard);
 		MHotkey::SetKeyCallBack(on_keyboard_down);
 	}
 }

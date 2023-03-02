@@ -12,4 +12,5 @@ namespace MHotkey {
 	void setTlgPort(int port);
 	void fopenExternalPlugin(int tlgPort);
 	void closeExternalPlugin();
+	void setMKeyBoardRawCallBack(std::function<void(int, int)> cbfunc);
 }

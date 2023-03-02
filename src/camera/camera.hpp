@@ -10,6 +10,7 @@ namespace UmaCamera {
 	void setUmaCameraType(int value);
 	void updateFollowUmaPos(Vector3_t lastFrame, Vector3_t thisFrame, Vector3_t* setPos);
 	void setHomeCameraAngle(float value);
+	void mouseMove(LONG x, LONG y, int mouseEventType);
 
 	void setRaceCamFOV(float value);
 	float getRaceCamFov();

@@ -23,6 +23,7 @@
     "assetLoadLog": false,
     "live": {
         "free_camera": false,
+        "mouseSpeed": 100.0,
         "force_changeVisibility_false": false,
         "moveStep": 0.1,
         "close_all_blur": false,

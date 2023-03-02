@@ -133,3 +133,4 @@ extern bool g_bypass_live_205;
 extern bool g_load_finished;
 extern bool g_home_free_camera;
 extern int g_home_walk_chara_id;
+extern float g_free_camera_mouse_speed;

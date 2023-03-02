@@ -108,6 +108,11 @@
                     "description": "启用自由视角",
                     "type": "boolean"
                 },
+                "mouseSpeed": {
+                    "description": "鼠标视角移动速度",
+                    "type": "number",
+                    "default": 100.0
+                },
                 "force_changeVisibility_false": {
                     "description": "禁用改变角色可见性",
                     "type": "boolean"

@@ -708,6 +708,30 @@ namespace
 	void* wndproc_orig = nullptr;
 	LRESULT wndproc_hook(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	{
+		if (uMsg == WM_INPUT)
+		{
+			RAWINPUT rawInput;
+			UINT size = sizeof(RAWINPUT);
+			if (GetRawInputData((HRAWINPUT)lParam, RID_INPUT, &rawInput, &size, sizeof(RAWINPUTHEADER)) == size)
+			{
+				if (rawInput.header.dwType == RIM_TYPEMOUSE)
+				{
+					switch (rawInput.data.mouse.ulButtons) {
+					case 0: {  // move
+						UmaCamera::mouseMove(rawInput.data.mouse.lLastX, rawInput.data.mouse.lLastY, 3);
+					}; break;
+					case 4: {  // press
+						UmaCamera::mouseMove(0, 0, 1);
+					}; break;
+					case 8: {  // release
+						UmaCamera::mouseMove(0, 0, 2);
+					}; break;
+					default: break;
+					}
+				}
+			}
+		}
+
 		if (g_unlock_size) {
 			if (uMsg == WM_SIZING)
 			{
