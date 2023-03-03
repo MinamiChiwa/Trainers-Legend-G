@@ -108,6 +108,11 @@
                     "description": "啟用自由視角",
                     "type": "boolean"
                 },
+                "mouseSpeed": {
+                    "description": "滑鼠視角移動速度",
+                    "type": "number",
+                    "default": 100.0
+                },
                 "force_changeVisibility_false": {
                     "description": "禁用改變角色可見性",
                     "type": "boolean"
@@ -119,9 +124,30 @@
                 "close_all_blur": {
                     "description": "關閉所有模糊鏡頭",
                     "type": "boolean"
+                },
+                "setLiveFovAsGlobal": {
+                    "description": "將 Live 的 FOV 應用到遊戲全域",
+                    "type": "boolean",
+                    "default": false
                 }
             },
             "additionalProperties": false
+        },
+        "homeSettings": {
+            "description": "主頁設定",
+            "type": "object",
+            "properties": {
+              "free_camera": {
+                  "description": "啟用主頁自由視角",
+                  "type": "boolean",
+                  "default": false
+              },
+              "homeWalkMotionCharaId": {
+                "description": "主頁走路姿勢修改\n(填寫4位數角色ID, -1為不設定)",
+                "type": "integer",
+                "default": -1
+              }
+            }  
         },
         "race_camera": {
             "description": "比賽相機設定（已失效）",
@@ -264,7 +290,7 @@
             }
         },
         "replaceHomeStandChar": {
-            "description": "替換首頁角色（暫時失效）",
+            "description": "替換首頁角色",
             "type": "object",
             "properties": {
                 "enable": {
@@ -295,7 +321,7 @@
             }
         },
         "replaceGlobalChar": {
-            "description": "全域角色替換\n  （暫時失效）",
+            "description": "全域角色替換\n（比賽、訓練部分無法替換）",
             "type": "object",
             "properties": {
                 "enable": {
@@ -328,6 +354,13 @@
                         }
                     }
                 }
+            }
+        },
+        "loadDll": {
+            "description": "加載其它DLL挿件",
+            "type": "array",
+            "items": {
+                "type": "string"
             }
         }
     },

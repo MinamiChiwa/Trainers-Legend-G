@@ -708,6 +708,30 @@ namespace
 	void* wndproc_orig = nullptr;
 	LRESULT wndproc_hook(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	{
+		if (uMsg == WM_INPUT)
+		{
+			RAWINPUT rawInput;
+			UINT size = sizeof(RAWINPUT);
+			if (GetRawInputData((HRAWINPUT)lParam, RID_INPUT, &rawInput, &size, sizeof(RAWINPUTHEADER)) == size)
+			{
+				if (rawInput.header.dwType == RIM_TYPEMOUSE)
+				{
+					switch (rawInput.data.mouse.ulButtons) {
+					case 0: {  // move
+						UmaCamera::mouseMove(rawInput.data.mouse.lLastX, rawInput.data.mouse.lLastY, 3);
+					}; break;
+					case 4: {  // press
+						UmaCamera::mouseMove(0, 0, 1);
+					}; break;
+					case 8: {  // release
+						UmaCamera::mouseMove(0, 0, 2);
+					}; break;
+					default: break;
+					}
+				}
+			}
+		}
+
 		if (g_unlock_size) {
 			if (uMsg == WM_SIZING)
 			{
@@ -982,7 +1006,13 @@ namespace
 								StoryTimelineTextClipDataClass_ChoiceDataClass_TextField = il2cpp_class_get_field_from_name(StoryTimelineTextClipDataClass_ChoiceDataClass, "Text");
 							}
 
-							il2cpp_symbols::write_field(choiceData, StoryTimelineTextClipDataClass_ChoiceDataClass_TextField, il2cpp_symbols::NewWStr(clip->ChoiceDataList[j]));
+							if (j < clip->ChoiceDataList.size()) {
+								il2cpp_symbols::write_field(choiceData, StoryTimelineTextClipDataClass_ChoiceDataClass_TextField, il2cpp_symbols::NewWStr(clip->ChoiceDataList[j]));
+							}
+							else {
+								printf("[ERROR] Exception occurred while loading story text in ChoiceDataList. storyId: %llu, block: %d, listIndex: %d\n", storyId, i, j);
+								printf("The text content may be changed by Cygames, and the localized content may not display properly. Please report to the project maintainer.\n");
+							}
 						});
 					}
 					const auto colorTextInfoList = il2cpp_symbols::read_field(clipData, StoryTimelineTextClipDataClass_ColorTextInfoListField);
@@ -995,7 +1025,13 @@ namespace
 								StoryTimelineTextClipDataClass_ColorTextInfoClass_TextField = il2cpp_class_get_field_from_name(StoryTimelineTextClipDataClass_ColorTextInfoClass, "Text");
 							}
 
-							il2cpp_symbols::write_field(colorTextInfo, StoryTimelineTextClipDataClass_ColorTextInfoClass_TextField, il2cpp_symbols::NewWStr(clip->ColorTextInfoList[j]));
+							if (j < clip->ColorTextInfoList.size()) {
+								il2cpp_symbols::write_field(colorTextInfo, StoryTimelineTextClipDataClass_ColorTextInfoClass_TextField, il2cpp_symbols::NewWStr(clip->ColorTextInfoList[j]));
+							}
+							else {
+								printf("[ERROR] Exception occurred while loading story text in ChoiceDataList. storyId: %llu, block: %d, listIndex: %d\n", storyId, i, j);
+								printf("The text content may be changed by Cygames, and the localized content may not display properly. Please report to the project maintainer.\n");
+							}
 						});
 					}
 				}
@@ -1408,8 +1444,88 @@ namespace
 		return pos;
 	}
 
+	bool isLiveStart = false;
+
+	void* Unity_get_fieldOfView_orig;
+	float Unity_get_fieldOfView_hook(void* _this) {
+		if (g_set_live_fov_as_global || (isLiveStart && g_live_free_camera)) {
+			return UmaCamera::getLiveCamFov();
+		}
+		const auto ret = reinterpret_cast<decltype(Unity_get_fieldOfView_hook)*>(Unity_get_fieldOfView_orig)(_this);
+		// printf("get_fov: %f\n", ret);
+		return ret;
+	}
+
+	void* cacheCont = nullptr;
+	bool changeIn = false;
+
+	void* ChangeCameraWithImmediate_orig;
+	void ChangeCameraWithImmediate_hook(void* _this, int nextPos) {
+		cacheCont = _this;
+		changeIn = true;
+		reinterpret_cast<decltype(ChangeCameraWithImmediate_hook)*>(ChangeCameraWithImmediate_orig)(_this, nextPos);
+		changeIn = false;
+	}
+
+	void* Unity_set_pos_injected_orig;
+	void Unity_set_pos_injected_hook(void* _this, Vector3_t* ret) {
+		if (g_home_free_camera && cacheCont == _this) {
+			// printf("set_position_Injected: %f, %f, %f\n", ret->x, ret->y, ret->z);
+			auto cam = UmaCamera::getHomeCameraPos();
+			ret->x = cam.x;
+			ret->y = cam.y;
+			ret->z = cam.z;
+		}
+		if (changeIn) {
+			cacheCont = _this;
+			// printf("set_position_Injected_c at: %p (%f, %f, %f)\n", _this, ret->x, ret->y, ret->z);
+		}
+		return reinterpret_cast<decltype(Unity_set_pos_injected_hook)*>(Unity_set_pos_injected_orig)(_this, ret);
+	}
+
+	void* HomeClampAngle_orig;
+	float HomeClampAngle_hook(float value, float min, float max) {
+		auto ret = reinterpret_cast<decltype(HomeClampAngle_hook)*>(HomeClampAngle_orig)(
+			value, g_home_free_camera ? -180 : min, g_home_free_camera ? 180 : max
+			);
+		UmaCamera::setHomeCameraAngle(-ret);
+		return ret;
+	}
+
+	void* MasterCharaType_Get_orig;
+	void* MasterCharaType_Get_hook(void* _this, int charaId, int targetScene, int targetCut, int targetType) {
+		// printf("MasterCharaType_Get, charaId: %d, targetScene: %d, targetCut: %d, targetType: %d\n", charaId, targetScene, targetCut, targetType);
+		if (targetScene + targetCut + targetType == 0) {
+			if (g_home_walk_chara_id > 0) {
+				charaId = g_home_walk_chara_id;
+			}
+		}
+		return reinterpret_cast<decltype(MasterCharaType_Get_hook)*>(MasterCharaType_Get_orig)(_this, charaId, targetScene, targetCut, targetType);;
+	}
+
+	void* CreateMiniCharacter_orig;
+	void CreateMiniCharacter_hook(void* _this) {
+		if (g_bypass_live_205) return;
+		return reinterpret_cast<decltype(CreateMiniCharacter_hook)*>(CreateMiniCharacter_orig)(_this);
+
+	}
+
+	void* FinishDragFreeCamera_orig;
+	void FinishDragFreeCamera_hook(void* _this) {
+		if (g_home_free_camera) return;
+		return reinterpret_cast<decltype(FinishDragFreeCamera_hook)*>(FinishDragFreeCamera_orig)(_this);
+	}
+
+	void* UpdateEnvironemntStageFovShift_orig;
+	void UpdateEnvironemntStageFovShift_hook(void* _this, void* updateInfo) {
+		return reinterpret_cast<decltype(UpdateEnvironemntStageFovShift_hook)*>(UpdateEnvironemntStageFovShift_orig)(
+			_this, updateInfo);
+	}
+
 	void* alterupdate_camera_lookat_orig;
 	void alterupdate_camera_lookat_hook(void* _this, Il2CppObject* sheet, int currentFrame, float currentTime, Vector3_t* outLookAt) {
+		isLiveStart = true;
+		UmaCamera::setLiveStart(true);
 		if (!g_live_free_camera) {
 			 return reinterpret_cast<decltype(alterupdate_camera_lookat_hook)*>(alterupdate_camera_lookat_orig)(
 				_this, sheet, currentFrame, currentTime, outLookAt);
@@ -1464,6 +1580,8 @@ namespace
 	void* live_on_destroy_orig;
 	void live_on_destroy_hook(void* _this) {
 		printf("Live End!\n");
+		isLiveStart = false;
+		UmaCamera::setLiveStart(g_set_live_fov_as_global);
 		UmaCamera::reset_camera();
 		return reinterpret_cast<decltype(live_on_destroy_hook)*>(live_on_destroy_orig)(_this);
 	}
@@ -1719,7 +1837,7 @@ namespace
 	}
 
 	std::unordered_set<int> otherReplaceTypes{
-		0x1, 0x2, 0x4, 0x8, 0x9, 0xe, 0x5, 0xd, 0x1919810  //, 0xa, 0x3
+		0x2, 0x3, 0x4, 0x5, 0x9, 0xb, 0xe, 0x1919810  // 0xd, 0x1, 0x8
 	};
 	// 0xa: SingleRace, 0xb: Simple, 0x3: EventTimeline
 	bool enableLoadCharLog = false;
@@ -1877,6 +1995,47 @@ namespace
 		if (enableLoadCharLog) printf("CharacterBuildInfo_ctor_1 cardId: %d, charaId: %d, dressId: %d, headId: %d, audienceId: %d, motionDressId: %d, controllerType: 0x%x\n", cardId, charaId, dressId, headId, audienceId, motionDressId, controllerType);
 		replaceCharController(&charaId, &dressId, &headId, controllerType);
 		return reinterpret_cast<decltype(CharacterBuildInfo_ctor_1_hook)*>(CharacterBuildInfo_ctor_1_orig)(_this, cardId, charaId, dressId, controllerType, headId, zekken, mobId, backDancerColorId, overrideClothCategory, isUseDressDataHeadModelSubId, audienceId, motionDressId, isEnableModelCache);
+	}
+
+	void* CharacterBuildInfo_Rebuild_orig;
+	void CharacterBuildInfo_Rebuild_hook(void* _this) {
+		void* this_klass = il2cpp_symbols::get_class_from_instance(_this);
+		FieldInfo* charaIdField = il2cpp_class_get_field_from_name(this_klass, "_charaId");
+		FieldInfo* dressIdField = il2cpp_class_get_field_from_name(this_klass, "_dressId");
+		FieldInfo* controllerTypeField = il2cpp_class_get_field_from_name(this_klass, "_controllerType");
+		FieldInfo* headModelSubIdField = il2cpp_class_get_field_from_name(this_klass, "_headModelSubId");
+		/*
+		FieldInfo* zekkenField = il2cpp_class_get_field_from_name(this_klass, "_zekken");
+		FieldInfo* mobIdField = il2cpp_class_get_field_from_name(this_klass, "_mobId");
+		FieldInfo* backDancerColorIdField = il2cpp_class_get_field_from_name(this_klass, "_backDancerColorId");
+		FieldInfo* isUseDressDataHeadModelSubIdField = il2cpp_class_get_field_from_name(this_klass, "_isUseDressDataHeadModelSubId");
+		FieldInfo* audienceIdField = il2cpp_class_get_field_from_name(this_klass, "_audienceId");
+		FieldInfo* motionDressIdField = il2cpp_class_get_field_from_name(this_klass, "_motionDressId");
+		FieldInfo* isEnableModelCacheField = il2cpp_class_get_field_from_name(this_klass, "_isEnableModelCache");
+		*/
+
+		auto charaId = il2cpp_symbols::read_field<int>(_this, charaIdField);
+		auto dressId = il2cpp_symbols::read_field<int>(_this, dressIdField);
+		auto controllerType = il2cpp_symbols::read_field<int>(_this, controllerTypeField);
+		auto headModelSub = il2cpp_symbols::read_field<int>(_this, headModelSubIdField);
+		/*
+		auto zekken = il2cpp_symbols::read_field<int>(_this, zekkenField);
+		auto mobId = il2cpp_symbols::read_field<int>(_this, mobIdField);
+		auto backDancerColorId = il2cpp_symbols::read_field<int>(_this, backDancerColorIdField);
+		auto isUseDressDataHeadModelSubId = il2cpp_symbols::read_field<bool>(_this, isUseDressDataHeadModelSubIdField);
+		auto audienceId = il2cpp_symbols::read_field<int>(_this, audienceIdField);
+		auto motionDressId = il2cpp_symbols::read_field<int>(_this, motionDressIdField);
+		auto isEnableModelCache = il2cpp_symbols::read_field<bool>(_this, isEnableModelCacheField);
+		*/
+
+		replaceCharController(&charaId, &dressId, &headModelSub, controllerType);
+		il2cpp_symbols::write_field(_this, charaIdField, charaId);
+		il2cpp_symbols::write_field(_this, dressIdField, dressId);
+		il2cpp_symbols::write_field(_this, headModelSubIdField, headModelSub);
+
+		// printf("ReBuild controllerType: 0x%x\n", controllerType);
+
+		return reinterpret_cast<decltype(CharacterBuildInfo_Rebuild_hook)*>(CharacterBuildInfo_Rebuild_orig)(_this);
 	}
 
 	void* EditableCharacterBuildInfo_ctor_orig;
@@ -2491,6 +2650,39 @@ namespace
 			"LiveTimelineControl", "AlterUpdate_CameraLookAt", 4
 		);
 
+		auto UpdateEnvironemntStageFovShift_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live",
+			"StageController", "UpdateEnvironemntStageFovShift", 1
+		);
+		
+		auto Unity_get_fieldOfView_addr = il2cpp_resolve_icall("UnityEngine.Camera::get_fieldOfView()");
+		auto Unity_set_pos_injected_addr = il2cpp_resolve_icall("UnityEngine.Transform::set_position_Injected(UnityEngine.Vector3&)");
+		
+		auto HomeClampAngle_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"HomeCameraSwitcher", "ClampAngle", 3
+		);
+
+		auto MasterCharaType_Get_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"MasterCharaType", "Get", 4
+		);
+
+		auto CreateMiniCharacter_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"NowLoading", "CreateMiniCharacter", 0
+		);
+
+		auto FinishDragFreeCamera_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"HomeCameraSwitcher", "FinishDragFreeCamera", 0
+		);
+
+		auto ChangeCameraWithImmediate_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"HomeCameraSwitcher", "ChangeCameraWithImmediate", 1
+		);
+
 		auto AlterUpdate_CameraSwitcher_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop.Live.Cutt",
 			"LiveTimelineControl", "AlterUpdate_CameraSwitcher", 2
@@ -2593,6 +2785,12 @@ namespace
 				"CharacterBuildInfo", ".ctor", 13
 			);
 
+		auto CharacterBuildInfo_Rebuild_addr =
+			il2cpp_symbols::get_method_pointer(
+				"umamusume.dll", "Gallop",
+				"CharacterBuildInfo", "Rebuild", 0
+			);
+
 		auto EditableCharacterBuildInfo_ctor_addr =
 			il2cpp_symbols::get_method_pointer(
 				"umamusume.dll", "Gallop",
@@ -2658,6 +2856,14 @@ namespace
 		ADD_HOOK(Plugin_sqlite3_step, "Plugin_sqlite3_step at %p\n");
 		ADD_HOOK(AlterUpdate_CameraPos, "AlterUpdate_CameraPos at %p\n");
 		ADD_HOOK(alterupdate_camera_lookat, "alterupdate_camera_lookat at %p\n");
+		// ADD_HOOK(UpdateEnvironemntStageFovShift, "UpdateEnvironemntStageFovShift at %p\n");
+		ADD_HOOK(Unity_get_fieldOfView, "Unity_get_fieldOfView at %p\n");
+		ADD_HOOK(Unity_set_pos_injected, "Unity_set_pos_injected at %p\n");
+		ADD_HOOK(HomeClampAngle, "HomeClampAngle at %p\n");
+		ADD_HOOK(MasterCharaType_Get, "MasterCharaType_Get at %p\n");
+		ADD_HOOK(CreateMiniCharacter, "CreateMiniCharacter at %p\n");
+		ADD_HOOK(FinishDragFreeCamera, "FinishDragFreeCamera at %p\n");
+		ADD_HOOK(ChangeCameraWithImmediate, "ChangeCameraWithImmediate at %p\n");
 		ADD_HOOK(AlterUpdate_MonitorCameraLookAt, "AlterUpdate_MonitorCameraLookAt at %p\n");
 		ADD_HOOK(LiveTimelineEasing, "LiveTimelineEasing at %p\n");
 		ADD_HOOK(AlterUpdate_EyeCameraLookAt, "AlterUpdate_EyeCameraLookAt at %p\n");
@@ -2698,9 +2904,10 @@ namespace
 		ADD_HOOK(race_GetTargetRotation, "GetTargetRotation at %p\n");
 		ADD_HOOK(race_OnDestroy, "race_OnDestroy at %p\n");
 		ADD_HOOK(AssetLoader_LoadAssetHandle, "AssetLoader_LoadAssetHandle at %p\n");
-		ADD_HOOK(CharacterBuildInfo_ctor_0, "CharacterBuildInfo_ctor_0 at %p\n");
-		ADD_HOOK(CharacterBuildInfo_ctor_1, "CharacterBuildInfo_ctor_1 at %p\n");
-		ADD_HOOK(EditableCharacterBuildInfo_ctor, "EditableCharacterBuildInfo_ctor at %p\n");
+		// ADD_HOOK(CharacterBuildInfo_ctor_0, "CharacterBuildInfo_ctor_0 at %p\n");
+		// ADD_HOOK(CharacterBuildInfo_ctor_1, "CharacterBuildInfo_ctor_1 at %p\n");
+		// ADD_HOOK(EditableCharacterBuildInfo_ctor, "EditableCharacterBuildInfo_ctor at %p\n");
+		ADD_HOOK(CharacterBuildInfo_Rebuild, "CharacterBuildInfo_Rebuild at %p\n");  // 上面三个改成 Rebuild
 		// ADD_HOOK(StorySceneController_LoadCharacter, "StorySceneController_LoadCharacter at %p\n");
 		ADD_HOOK(StoryCharacter3D_LoadModel, "StoryCharacter3D_LoadModel at %p\n");
 		ADD_HOOK(SingleModeSceneController_CreateModel, "SingleModeSceneController_CreateModel at %p\n");

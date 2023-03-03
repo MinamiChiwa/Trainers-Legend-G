@@ -120,7 +120,8 @@
                 "replaceMini": false
             }
         ]
-    }
+    },
+    "loadDll": []  /*Load other dll plugins. (path string array)*/
 }
 ```
 
@@ -132,7 +133,8 @@
 
 ## Live Free Camera
 
-- Move: `WSAD`, Down: `Ctrl`, Up: `Space`, Adjust Angle: `↑↓←→`, Reset Camera:`R`
+- Move: `WSAD`, Down: `Ctrl`, Up: `Space`, Adjust FOV: `Q`/`E`, Reset Camera:`R`
+- Adjust Angle: `↑↓←→` or hold down the right mouse.
 
 ## Race Free Camera (Not Working Currently)
 

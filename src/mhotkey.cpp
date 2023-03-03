@@ -21,6 +21,7 @@ namespace MHotkey{
         bool ext_server_start = false;
 
         std::function<void(int, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD)> mKeyBoardCallBack = nullptr;
+        std::function<void(int, int)> mKeyBoardRawCallBack = nullptr;
         bool hotKeyThreadStarted = false;
     }
 
@@ -96,7 +97,7 @@ namespace MHotkey{
             return;
         }
         if (openPluginSuccess && pluginPID != -1) {
-            std::string cmdLine = std::format("taskkill /F /T /PID {}", pluginPID);
+            std::string cmdLine = std::format("taskkill /T /PID {}", pluginPID);
             char* commandLine = new char[255];
             strcpy(commandLine, cmdLine.c_str());
             STARTUPINFOA startupInfo{ .cb = sizeof(STARTUPINFOA) };
@@ -116,6 +117,10 @@ namespace MHotkey{
 
         return SetWindowPos(hWnd, hWndInsertAfter, X, Y, cx + windowR->right - windowR->left - clientR->right,
             cy + windowR->bottom - windowR->top - clientR->bottom, uFlags);
+    }
+
+    void setMKeyBoardRawCallBack(std::function<void(int, int)> cbfunc) {
+        mKeyBoardRawCallBack = cbfunc;
     }
 
     void Win32SetWindowPos(bool is_v) {
@@ -147,66 +152,63 @@ namespace MHotkey{
         DWORD LEFT_key = 0;
         DWORD RIGHT_key = 0;
 
-        if ((nCode == HC_ACTION) && ((wParam == WM_SYSKEYDOWN) || (wParam == WM_KEYDOWN)))
+
+        if (nCode == HC_ACTION)
         {
-
-            KBDLLHOOKSTRUCT hooked_key = *((KBDLLHOOKSTRUCT*)lParam);
-            DWORD dwMsg = 1;
-            dwMsg += hooked_key.scanCode << 16;
-            dwMsg += hooked_key.flags << 24;
-            char lpszKeyName[1024] = { 0 };
-            lpszKeyName[0] = '[';
-
-            int i = GetKeyNameText(dwMsg, (lpszKeyName + 1), 0xFF) + 1;
-            lpszKeyName[i] = ']';
-
-            int key = hooked_key.vkCode;
-
-            SHIFT_key = GetAsyncKeyState(VK_SHIFT);
-            CTRL_key = GetAsyncKeyState(VK_CONTROL);
-            ALT_key = GetAsyncKeyState(VK_MENU);
-            SPACE_key = GetAsyncKeyState(VK_SPACE);
-
-            UP_key = GetAsyncKeyState(VK_UP);
-            DOWN_key = GetAsyncKeyState(VK_DOWN);
-            LEFT_key = GetAsyncKeyState(VK_LEFT);
-            RIGHT_key = GetAsyncKeyState(VK_RIGHT);
-
-            if (mKeyBoardCallBack != nullptr) {
-                mKeyBoardCallBack(key, SHIFT_key, CTRL_key, ALT_key, SPACE_key, UP_key, DOWN_key, LEFT_key, RIGHT_key);
+            if ((wParam == WM_SYSKEYUP) || wParam == WM_KEYUP) {
+                KBDLLHOOKSTRUCT hooked_key = *((KBDLLHOOKSTRUCT*)lParam);
+                int key = hooked_key.vkCode;
+                if (mKeyBoardRawCallBack != nullptr) mKeyBoardRawCallBack(wParam, key);
             }
+            else if ((wParam == WM_SYSKEYDOWN) || (wParam == WM_KEYDOWN)) {
+                KBDLLHOOKSTRUCT hooked_key = *((KBDLLHOOKSTRUCT*)lParam);
+                DWORD dwMsg = 1;
+                dwMsg += hooked_key.scanCode << 16;
+                dwMsg += hooked_key.flags << 24;
+                char lpszKeyName[1024] = { 0 };
+                lpszKeyName[0] = '[';
 
-            if (key >= 'A' && key <= 'Z')
-            {
+                int i = GetKeyNameText(dwMsg, (lpszKeyName + 1), 0xFF) + 1;
+                lpszKeyName[i] = ']';
 
-                if (GetAsyncKeyState(VK_SHIFT) >= 0) key += 32;
+                int key = hooked_key.vkCode;
 
-                if (CTRL_key != 0 && key == hotk)
-                {
-                    fopenExternalPlugin(tlgport);
+                if (mKeyBoardRawCallBack != nullptr) mKeyBoardRawCallBack(wParam, key);
+                SHIFT_key = GetAsyncKeyState(VK_SHIFT);
+                CTRL_key = GetAsyncKeyState(VK_CONTROL);
+                ALT_key = GetAsyncKeyState(VK_MENU);
+                SPACE_key = GetAsyncKeyState(VK_SPACE);
+
+                UP_key = GetAsyncKeyState(VK_UP);
+                DOWN_key = GetAsyncKeyState(VK_DOWN);
+                LEFT_key = GetAsyncKeyState(VK_LEFT);
+                RIGHT_key = GetAsyncKeyState(VK_RIGHT);
+
+                if (mKeyBoardCallBack != nullptr) {
+                    mKeyBoardCallBack(key, SHIFT_key, CTRL_key, ALT_key, SPACE_key, UP_key, DOWN_key, LEFT_key, RIGHT_key);
                 }
 
-                // printf("key = %c\n", key);
+                if (key >= 'A' && key <= 'Z')
+                {
 
-                SHIFT_key = 0;
-                CTRL_key = 0;
-                ALT_key = 0;
-                SPACE_key = 0;
-                DWORD UP_key = 0;
-                DWORD DOWN_key = 0;
-                DWORD LEFT_key = 0;
-                DWORD RIGHT_key = 0;
-            }
-            /* ´°¿ÚÉèÖÃ²âÊÔ´úÂë
-            if (key == 'i') {
-                Win32SetWindowPos(true);
-            }
-            if (key == 'o') {
-                Win32SetWindowPos(false);
-            }
-            */
+                    if (GetAsyncKeyState(VK_SHIFT) >= 0) key += 32;
 
-            // printf("lpszKeyName = %s\n", lpszKeyName);
+                    if (CTRL_key != 0 && key == hotk)
+                    {
+                        fopenExternalPlugin(tlgport);
+                    }
+
+                    SHIFT_key = 0;
+                    CTRL_key = 0;
+                    ALT_key = 0;
+                    SPACE_key = 0;
+                    DWORD UP_key = 0;
+                    DWORD DOWN_key = 0;
+                    DWORD LEFT_key = 0;
+                    DWORD RIGHT_key = 0;
+                }
+            }
+
         }
         return CallNextHookEx(hKeyboardHook, nCode, wParam, lParam);
     }

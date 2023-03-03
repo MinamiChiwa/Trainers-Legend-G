@@ -108,6 +108,11 @@
                     "description": "Enable free camera",
                     "type": "boolean"
                 },
+                "mouseSpeed": {
+                    "description": "Mouse speed",
+                    "type": "number",
+                    "default": 100.0
+                },
                 "force_changeVisibility_false": {
                     "description": "Force disable character visibility changing",
                     "type": "boolean"
@@ -119,9 +124,30 @@
                 "close_all_blur": {
                     "description": "Disable all blur",
                     "type": "boolean"
+                },
+                "setLiveFovAsGlobal": {
+                    "description": "Set live FOV to global",
+                    "type": "boolean",
+                    "default": false
                 }
             },
             "additionalProperties": false
+        },
+        "homeSettings": {
+            "description": "Home Settings",
+            "type": "object",
+            "properties": {
+              "free_camera": {
+                  "description": "Enable home free camera",
+                  "type": "boolean",
+                  "default": false
+              },
+              "homeWalkMotionCharaId": {
+                "description": "Home walk motion character id\n(4-digit chara id, fill in -1 to not set)",
+                "type": "integer",
+                "default": -1
+              }
+            }  
         },
         "race_camera": {
             "description": "Race Camera Settings (Not working.)",
@@ -264,7 +290,7 @@
             }
         },
         "replaceHomeStandChar": {
-            "description": "Replace Home Character (Not working)",
+            "description": "Replace Home Character",
             "type": "object",
             "properties": {
                 "enable": {
@@ -295,7 +321,7 @@
             }
         },
         "replaceGlobalChar": {
-            "description": "Replace Global Character\n  (Not working)",
+            "description": "Replace Global Character\n(Race and training parts cannot be replaced)",
             "type": "object",
             "properties": {
                 "enable": {
@@ -328,6 +354,13 @@
                         }
                     }
                 }
+            }
+        },
+        "loadDll": {
+            "description": "Load other oll plugins",
+            "type": "array",
+            "items": {
+                "type": "string"
             }
         }
     },

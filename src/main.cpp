@@ -47,8 +47,12 @@ bool g_live_free_camera = false;
 bool g_live_force_changeVisibility_false = false;
 bool g_live_close_all_blur = false;
 float g_live_move_step = 0.2;
+bool g_set_live_fov_as_global = false;
+bool g_home_free_camera = false;
+int g_home_walk_chara_id = -1;
 
 bool g_race_free_camera = false;
+float g_free_camera_mouse_speed = 100;
 float g_race_move_step = 5;
 bool g_race_freecam_lookat_umamusume = false;
 bool g_race_freecam_follow_umamusume = false;
@@ -66,6 +70,7 @@ std::unordered_map<int, std::pair<int, int>> g_global_mini_char_replace{};
 
 bool g_bypass_live_205 = false;
 bool g_load_finished = false;
+std::vector<std::string> loadDllList{};
 
 bool g_save_msgpack = true;
 bool g_enable_response_convert = false;
@@ -109,6 +114,8 @@ using namespace http;
 using namespace utility;
 using namespace http::experimental::listener;
 
+const auto CONSOLE_TITLE = L"Umamusume - Debug Console - 此插件为免费下载, 若您是付费购买此插件请立刻举报店家! QQ频道: foramghl97";
+
 namespace
 {
 	void create_debug_console()
@@ -120,7 +127,7 @@ namespace
 		_ = freopen("CONOUT$", "w", stderr);
 		_ = freopen("CONIN$", "r", stdin);
 
-		SetConsoleTitleW(L"Umamusume - Debug Console - 此插件为免费下载, 若您是付费购买此插件请立刻举报店家! QQ频道: foramghl97");
+		SetConsoleTitleW(CONSOLE_TITLE);
 
 		// set this to avoid turn japanese texts into question mark
 		SetConsoleOutputCP(65001);
@@ -520,9 +527,17 @@ namespace
 					g_live_close_all_blur = document["live"]["close_all_blur"].GetBool();
 				}
 
+				if (document["live"].HasMember("mouseSpeed")) {
+					g_free_camera_mouse_speed = document["live"]["mouseSpeed"].GetFloat();
+				}
+
 				auto moveStep = document["live"]["moveStep"].GetFloat();
 				g_live_move_step = moveStep;
 				UmaCamera::setMoveStep(moveStep);
+				if (document["live"].HasMember("setLiveFovAsGlobal")) {
+					g_set_live_fov_as_global = document["live"]["setLiveFovAsGlobal"].GetBool();
+					UmaCamera::setLiveStart(g_set_live_fov_as_global);
+				}
 			}
 
 			if (document.HasMember("race_camera")) {
@@ -625,6 +640,26 @@ namespace
 				std::string serv_url = document["modify_pack"]["self_server_url"].GetString();
 				std::wstring s_url(serv_url.begin(), serv_url.end());
 				g_self_server_url = s_url;
+			}
+
+			if (document.HasMember("loadDll")) {
+				if (document["loadDll"].IsArray()) {
+					loadDllList.clear();
+					for (const auto& fr : document["loadDll"].GetArray()) {
+						if (fr.IsString()) {
+							loadDllList.push_back(fr.GetString());
+						}
+					}
+				}
+			}
+
+			if (document.HasMember("homeSettings")) {
+				if (document["homeSettings"].HasMember("free_camera")) {
+					g_home_free_camera = document["homeSettings"]["free_camera"].GetBool();
+				}
+				if (document["homeSettings"].HasMember("homeWalkMotionCharaId")) {
+					g_home_walk_chara_id = document["homeSettings"]["homeWalkMotionCharaId"].GetInt();
+				}
 			}
 
 			// Looks like not working for now
@@ -1485,6 +1520,52 @@ namespace HttpServer {
 				}
 			}
 
+			if (path == L"/plugin/load") {
+				const auto pluginName = message.extract_utf16string().get();
+				const auto isSuccess = PluginLoader::loadDll(pluginName);
+				if (isSuccess) {
+					printf("Load plugin success: %ls\n", pluginName.c_str());
+					message.reply(status_codes::OK, "OK(〃'▽'〃)");
+				}
+				else {
+					printf("Load plugin failed: %ls\n", pluginName.c_str());
+					message.reply(status_codes::BadRequest, "failed");
+				}
+				return;
+			}
+
+			if (path == L"/plugin/unload") {
+				const auto pluginName = message.extract_utf16string().get();
+				const auto isSuccess = PluginLoader::freeDll(pluginName);
+				if (isSuccess) {
+					printf("Unload plugin success: %ls\n", pluginName.c_str());
+					message.reply(status_codes::OK, "OK(〃'▽'〃)");
+				}
+				else {
+					printf("Unload plugin failed: %ls\n", pluginName.c_str());
+					message.reply(status_codes::BadRequest, "failed");
+				}
+				return;
+			}
+
+			if (path == L"/plugin/loaddata") {
+				const auto data = PluginLoader::getLoadedDll();
+				rapidjson::Document ret;
+				auto& v = ret.SetArray();
+				for (const auto& vl : data) {
+					rapidjson::Value add;
+					const auto st = utility::conversions::to_utf8string(vl.first);
+					add.SetString(st.c_str(), st.size());
+					ret.PushBack(add, ret.GetAllocator());
+				}
+				
+				rapidjson::StringBuffer buffer;
+				rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+				ret.Accept(writer);
+				message.reply(status_codes::OK, buffer.GetString(), "application/json");
+				return;
+			}
+
 			if (path == L"/set_untrans") {
 				auto json_data = message.extract_json().get();
 				if (json_data.has_boolean_field(L"closeAll")) {
@@ -1544,7 +1625,7 @@ namespace HttpServer {
 		std::thread([port, openExternalPlugin] {
 			try
 			{
-				utility::string_t address = std::format(L"http://*:{}", port);
+				utility::string_t address = std::format(L"http://127.0.0.1:{}", port);
 				uri_builder uri(address);
 				auto addr = uri.to_uri().to_string();
 				CommandHandler handler(addr);
@@ -1674,6 +1755,10 @@ int __stdcall DllMain(HINSTANCE dllModule, DWORD reason, LPVOID)
 			auto&& [storyDict, raceDict] = LoadStories();
 			auto&& [textData, characterSystemTextData, raceJikkyoCommentData, raceJikkyoMessageData] = LoadDicts();
 			local::load_textdb(&dicts, std::move(staticDictCache), std::move(storyDict), std::move(raceDict), std::move(textData), std::move(characterSystemTextData), std::move(raceJikkyoCommentData), std::move(raceJikkyoMessageData));
+			for (const auto& dllName : loadDllList) {  // 加载外部dll
+				PluginLoader::loadDll(dllName);
+			}
+			SetConsoleTitleW(CONSOLE_TITLE);  // 保持控制台标题
 			auto_update();
 			});
 		init_thread.detach();
