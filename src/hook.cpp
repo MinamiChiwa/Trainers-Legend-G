@@ -705,28 +705,32 @@ namespace
 			}).detach();
 	}
 
+	bool isLiveStart = false;
 	void* wndproc_orig = nullptr;
+
 	LRESULT wndproc_hook(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	{
 		if (uMsg == WM_INPUT)
 		{
-			RAWINPUT rawInput;
-			UINT size = sizeof(RAWINPUT);
-			if (GetRawInputData((HRAWINPUT)lParam, RID_INPUT, &rawInput, &size, sizeof(RAWINPUTHEADER)) == size)
-			{
-				if (rawInput.header.dwType == RIM_TYPEMOUSE)
+			if (isLiveStart) {
+				RAWINPUT rawInput;
+				UINT size = sizeof(RAWINPUT);
+				if (GetRawInputData((HRAWINPUT)lParam, RID_INPUT, &rawInput, &size, sizeof(RAWINPUTHEADER)) == size)
 				{
-					switch (rawInput.data.mouse.ulButtons) {
-					case 0: {  // move
-						UmaCamera::mouseMove(rawInput.data.mouse.lLastX, rawInput.data.mouse.lLastY, 3);
-					}; break;
-					case 4: {  // press
-						UmaCamera::mouseMove(0, 0, 1);
-					}; break;
-					case 8: {  // release
-						UmaCamera::mouseMove(0, 0, 2);
-					}; break;
-					default: break;
+					if (rawInput.header.dwType == RIM_TYPEMOUSE)
+					{
+						switch (rawInput.data.mouse.ulButtons) {
+						case 0: {  // move
+							UmaCamera::mouseMove(rawInput.data.mouse.lLastX, rawInput.data.mouse.lLastY, 3);
+						}; break;
+						case 4: {  // press
+							UmaCamera::mouseMove(0, 0, 1);
+						}; break;
+						case 8: {  // release
+							UmaCamera::mouseMove(0, 0, 2);
+						}; break;
+						default: break;
+						}
 					}
 				}
 			}
@@ -971,7 +975,12 @@ namespace
 				StoryTimelineBlockDataClass = il2cpp_symbols::get_class_from_instance(blockData);
 				StoryTimelineBlockDataClass_TextTrackField = il2cpp_class_get_field_from_name(StoryTimelineBlockDataClass, "TextTrack");
 			}
-
+			
+			if (i >= localizedStoryData->TextBlockList.size()) {
+				printf("[ERROR] Exception occurred while loading story text in TextBlockList. storyId: %llu, block: %d\n", storyId, i);
+				printf("The text content may be changed by Cygames, and the localized content may not display properly. Please report to the project maintainer.\n");
+				return;
+			}
 			const auto& clip = localizedStoryData->TextBlockList[i];
 			if (!clip)
 			{
@@ -1443,8 +1452,6 @@ namespace
 		// printf("pos: %f, %f, %f\n", pos->x, pos->y, pos->z);
 		return pos;
 	}
-
-	bool isLiveStart = false;
 
 	void* Unity_get_fieldOfView_orig;
 	float Unity_get_fieldOfView_hook(void* _this) {

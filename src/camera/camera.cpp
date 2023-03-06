@@ -507,11 +507,19 @@ namespace UmaCamera {
 	void mouseMove(LONG moveX, LONG moveY, int mouseEventType) {
 		if (mouseEventType == 1) {  // down
 			rMousePressFlg = true;
-			ShowCursor(false);
+			int fCount = 0;
+			while (ShowCursor(false) >= 0) {
+				if (fCount >= 5) break;
+				fCount++;
+			}
 		}
 		else if (mouseEventType == 2) {  // up
 			rMousePressFlg = false;
-			ShowCursor(true);
+			int fCount = 0;
+			while (ShowCursor(true) < 0) {
+				if (fCount >= 5) break;
+				fCount++;
+			}
 		}
 		else if (mouseEventType == 3) {  // move
 			std::thread([moveX, moveY]() {
