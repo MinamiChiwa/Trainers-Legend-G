@@ -60,12 +60,12 @@
             "description": "Read the msgpack sent by game, you can reboot the game quicker by typing 'reboot' in the console if you enable it.",
             "type": "boolean"
         },
-        "extraAssetBundlePath": {
+        "extraAssetBundlePaths": {
             "description": "The location of asset bundle that is used to replace the original asset file of the game (Do not change it if you don't understand what it is)",
-            "type": [
-                "string",
-                "null"
-            ]
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
         },
         "replaceFont": {
             "description": "Use system default font to show the Chinese characters that is not contained in the orignal game font",
@@ -372,7 +372,7 @@
         "maxFps",
         "unlockSize",
         "uiScale",
-        "extraAssetBundlePath",
+        "extraAssetBundlePaths",
         "replaceFont",
         "customFontPath",
         "customFontSizeOffset",

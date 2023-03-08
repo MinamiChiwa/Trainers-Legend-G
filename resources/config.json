@@ -13,7 +13,7 @@
     },
     "autoFullscreen": false,
     "readRequestPack": false,
-    "extraAssetBundlePath": "localized_data/umamusumelocalify",
+    "extraAssetBundlePaths": ["localized_data/umamusumelocalify"],
     "replaceFont": true,
     "customFontPath": "assets/bundledassets/umamusumelocalify/fonts/MSYH.TTC",
     "customFontSizeOffset": -4,

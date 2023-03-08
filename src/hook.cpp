@@ -896,11 +896,14 @@ namespace
 		using is_transparent = void;
 	};
 
-	std::unordered_set<std::wstring, TransparentStringHash, std::equal_to<void>> ExtraAssetBundleAssetPaths;
+	// std::unordered_set<std::wstring, TransparentStringHash, std::equal_to<void>> ExtraAssetBundleAssetPaths;
+	typedef std::unordered_set<std::wstring, TransparentStringHash, std::equal_to<void>> AssetPathsType;
+	std::map<string, AssetPathsType> CustomAssetBundleAssetPaths;
 	void* (*AssetBundle_LoadFromFile)(Il2CppString* path);
 	void (*AssetBundle_Unload)(void* _this, bool unloadAllLoadedObjects);
 
-	uint32_t ExtraAssetBundleHandle;
+	// uint32_t ExtraAssetBundleHandle;
+	unordered_map<string, uint32_t> CustomAssetBundleHandleMap{};
 
 	void* StoryTimelineDataClass;
 	FieldInfo* StoryTimelineDataClass_StoryIdField;
@@ -930,6 +933,20 @@ namespace
 	FieldInfo* RubyDataClass_CharX;
 	FieldInfo* RubyDataClass_CharY;
 	FieldInfo* RubyDataClass_RubyText;
+
+	uint32_t GetBundleHandleByAssetName(wstring assetName) {
+		for (const auto& i : CustomAssetBundleAssetPaths) {
+			if (i.second.contains(wstring_view(assetName))) {
+				const auto& bundleName = i.first;
+				return CustomAssetBundleHandleMap.at(bundleName);
+			}
+		}
+		return NULL;
+	}
+
+	uint32_t GetBundleHandleByAssetName(string assetName) {
+		return GetBundleHandleByAssetName(utility::conversions::to_string_t(assetName));
+	}
 
 	void LocalizeStoryTextRubyData(void* textRuby) {
 		const auto textRubyDataArr = il2cpp_symbols::read_field(textRuby, TextRubyDataClass_DataArray);
@@ -1110,13 +1127,11 @@ namespace
 	{
 		UmaDatabase::setBundleHandleTargetCache(name->start_char, _this);
 		//const auto stackTrace = environment_get_stacktrace();
-		if (ExtraAssetBundleHandle)
+		const auto& bundleHandle = GetBundleHandleByAssetName(name->start_char);
+		if (bundleHandle)
 		{
-			const auto extraAssetBundle = il2cpp_gchandle_get_target(ExtraAssetBundleHandle);
-			if (ExtraAssetBundleAssetPaths.contains(std::wstring_view(name->start_char)))
-			{
-				return reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(extraAssetBundle, name, type);
-			}
+			const auto extraAssetBundle = il2cpp_gchandle_get_target(bundleHandle);
+			return reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(extraAssetBundle, name, type);
 		}
 
 		if (g_enable_replaceBuiltInAssets) {
@@ -1190,15 +1205,14 @@ namespace
 				
 			const auto cls = il2cpp_symbols::get_class_from_instance(result);
 
-			if (ExtraAssetBundleHandle)
+			const auto& bundleHandle = GetBundleHandleByAssetName(name->start_char);
+			if (bundleHandle)
 			{
-				const auto extraAssetBundle = il2cpp_gchandle_get_target(ExtraAssetBundleHandle);
-				if (ExtraAssetBundleAssetPaths.contains(std::wstring_view(name->start_char)))
-				{
-					printf("async_extra: %ls\n", name->start_char);
-					return reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(extraAssetBundle, name,
-						static_cast<Il2CppReflectionType*>(il2cpp_class_get_type(cls)));
-				}
+				const auto extraAssetBundle = il2cpp_gchandle_get_target(bundleHandle);
+				printf("async_extra: %ls\n", name->start_char);
+				return reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(extraAssetBundle, name,
+					static_cast<Il2CppReflectionType*>(il2cpp_class_get_type(cls)));
+				
 			}
 
 			if (g_asset_load_log) {
@@ -1259,7 +1273,8 @@ namespace
 		reinterpret_cast<decltype(TextCommon_Awake_hook)*>(TextCommon_Awake_orig)(_this);
 
 		void* replaceFont{};
-		if (std::holds_alternative<UseCustomFont>(g_replace_font) && ExtraAssetBundleHandle)
+		const auto& bundleHandle = GetBundleHandleByAssetName(std::get<UseCustomFont>(g_replace_font).FontPath);
+		if (std::holds_alternative<UseCustomFont>(g_replace_font) && bundleHandle)
 		{
 			if (ReplaceFontHandle)
 			{
@@ -1276,7 +1291,8 @@ namespace
 					il2cpp_gchandle_free(std::exchange(ReplaceFontHandle, 0));
 				}
 			}
-			const auto extraAssetBundle = il2cpp_gchandle_get_target(ExtraAssetBundleHandle);
+
+			const auto extraAssetBundle = il2cpp_gchandle_get_target(bundleHandle);
 			replaceFont = reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(extraAssetBundle, il2cpp_string_new(std::get<UseCustomFont>(g_replace_font).FontPath.c_str()), Font_Type);
 			if (replaceFont)
 			{
@@ -3011,6 +3027,64 @@ namespace
 	}
 }
 
+void LoadExtraAssetBundle()
+{
+	if (g_extra_assetbundle_paths.empty())
+	{
+		return;
+	}
+	// CustomAssetBundleHandleMap.clear();
+	// CustomAssetBundleAssetPaths.clear();
+	// assert(!ExtraAssetBundleHandle && ExtraAssetBundleAssetPaths.empty());
+
+	const auto AssetBundle_GetAllAssetNames = reinterpret_cast<void* (*)(void*)>(
+		il2cpp_symbols::get_method_pointer(
+			"UnityEngine.AssetBundleModule.dll", "UnityEngine",
+			"AssetBundle", "GetAllAssetNames", 0
+		)
+		);
+
+	for (const auto& i : g_extra_assetbundle_paths) {
+		if (CustomAssetBundleHandleMap.contains(i)) continue;
+
+		const auto extraAssetBundle = AssetBundle_LoadFromFile(il2cpp_string_new(i.c_str()));
+		if (extraAssetBundle)
+		{
+			const auto allAssetPaths = AssetBundle_GetAllAssetNames(extraAssetBundle);
+			AssetPathsType assetPath{};
+			il2cpp_symbols::iterate_IEnumerable<Il2CppString*>(allAssetPaths, [&assetPath](Il2CppString* path)
+				{
+					// ExtraAssetBundleAssetPaths.emplace(path->start_char);
+					assetPath.emplace(path->start_char);
+				});
+			CustomAssetBundleAssetPaths.emplace(i, assetPath);
+			CustomAssetBundleHandleMap.emplace(i, il2cpp_gchandle_new(extraAssetBundle, false));
+		}
+		else
+		{
+			printf("Cannot load asset bundle: %s\n", i.c_str());
+		}
+	}
+}
+
+void UnloadExtraAssetBundle()
+{	
+	CustomAssetBundleAssetPaths.clear();
+	for (const auto& i : CustomAssetBundleHandleMap) {
+		if (i.second)
+		{
+			AssetBundle_Unload(il2cpp_gchandle_get_target(i.second), true);
+			il2cpp_gchandle_free(i.second);
+			// i.second = 0;
+		}
+	}
+
+}
+
+void reloadAssetBundle() {
+	// UnloadExtraAssetBundle();
+	LoadExtraAssetBundle();
+}
 
 bool init_hook()
 {
@@ -3021,54 +3095,12 @@ bool init_hook()
 		return false;
 
 	mh_inited = true;
+	onPluginReload.push_back(reloadAssetBundle);
 
 	MH_CreateHook(LoadLibraryW, load_library_w_hook, &load_library_w_orig);
 	MH_EnableHook(LoadLibraryW);
 
 	return true;
-}
-
-void LoadExtraAssetBundle()
-{
-	if (g_extra_assetbundle_path.empty())
-	{
-		return;
-	}
-
-	assert(!ExtraAssetBundleHandle && ExtraAssetBundleAssetPaths.empty());
-
-	const auto AssetBundle_GetAllAssetNames = reinterpret_cast<void* (*)(void*)>(
-		il2cpp_symbols::get_method_pointer(
-			"UnityEngine.AssetBundleModule.dll", "UnityEngine",
-			"AssetBundle", "GetAllAssetNames", 0
-		)
-		);
-
-	const auto extraAssetBundle = AssetBundle_LoadFromFile(il2cpp_string_new(g_extra_assetbundle_path.c_str()));
-	if (extraAssetBundle)
-	{
-		const auto allAssetPaths = AssetBundle_GetAllAssetNames(extraAssetBundle);
-		il2cpp_symbols::iterate_IEnumerable<Il2CppString*>(allAssetPaths, [](Il2CppString* path)
-			{
-				ExtraAssetBundleAssetPaths.emplace(path->start_char);
-			});
-		ExtraAssetBundleHandle = il2cpp_gchandle_new(extraAssetBundle, false);
-	}
-	else
-	{
-		std::wprintf(L"Cannot load asset bundle\n");
-	}
-}
-
-void UnloadExtraAssetBundle()
-{
-	if (ExtraAssetBundleHandle)
-	{
-		ExtraAssetBundleAssetPaths.clear();
-		AssetBundle_Unload(il2cpp_gchandle_get_target(ExtraAssetBundleHandle), true);
-		il2cpp_gchandle_free(ExtraAssetBundleHandle);
-		ExtraAssetBundleHandle = 0;
-	}
 }
 
 void uninit_hook()

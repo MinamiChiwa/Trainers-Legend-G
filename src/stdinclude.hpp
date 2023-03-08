@@ -53,7 +53,8 @@ extern float g_ui_scale;
 extern float g_aspect_ratio;
 extern bool g_read_request_pack;
 
-extern std::string g_extra_assetbundle_path;
+// extern std::string g_extra_assetbundle_path;
+extern std::list<std::string> g_extra_assetbundle_paths;
 
 struct UseOriginalFont
 {
@@ -134,3 +135,4 @@ extern bool g_load_finished;
 extern bool g_home_free_camera;
 extern int g_home_walk_chara_id;
 extern float g_free_camera_mouse_speed;
+extern std::list<std::function<void(void)>> onPluginReload;

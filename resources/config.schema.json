@@ -60,12 +60,12 @@
             "description": "是否读取客户端发送包信息，开启此功能可在命令行中输入reboot快速重启游戏",
             "type": "boolean"
         },
-        "extraAssetBundlePath": {
+        "extraAssetBundlePaths": {
             "description": "图片等资源替换包的路径（需要用unity打包，一般情况下请不要改动此项）",
-            "type": [
-                "string",
-                "null"
-            ]
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
         },
         "replaceFont": {
             "description": "替换字体，true:用系统默认字体或自定义字体替换；false：使用游戏原字体",
@@ -372,7 +372,7 @@
         "maxFps",
         "unlockSize",
         "uiScale",
-        "extraAssetBundlePath",
+        "extraAssetBundlePaths",
         "replaceFont",
         "customFontPath",
         "customFontSizeOffset",
