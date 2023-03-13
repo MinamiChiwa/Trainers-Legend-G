@@ -2328,10 +2328,7 @@ namespace
 				"umamusume.dll", "Gallop",
 				"GraphicSettings", "ApplyGraphicsQuality", 2);
 
-		auto set_vsync_count_addr = il2cpp_symbols::get_method_pointer(
-			"UnityEngine.CoreModule.dll", "UnityEngine",
-			"QualitySettings", "set_vSyncCount", 1
-		);
+		auto set_vsync_count_addr = il2cpp_resolve_icall("UnityEngine.QualitySettings::set_vSyncCount(System.Int32)");
 
 		auto wndproc_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
