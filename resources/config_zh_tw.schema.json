@@ -60,12 +60,12 @@
             "description": "是否讀取用戶端發包訊息，開啟此功能可在命令行中輸入reboot快速重啟遊戲",
             "type": "boolean"
         },
-        "extraAssetBundlePath": {
+        "extraAssetBundlePaths": {
             "description": "圖片等素材替換包的路徑（需要用unity打包，一般情況下請不要改動此項）",
-            "type": [
-                "string",
-                "null"
-            ]
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
         },
         "replaceFont": {
             "description": "替換字型，true:用系統默認字型或自定義字型替換；false：使用遊戲原字型",
@@ -372,7 +372,7 @@
         "maxFps",
         "unlockSize",
         "uiScale",
-        "extraAssetBundlePath",
+        "extraAssetBundlePaths",
         "replaceFont",
         "customFontPath",
         "customFontSizeOffset",

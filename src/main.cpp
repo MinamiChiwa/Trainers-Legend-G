@@ -25,7 +25,8 @@ int g_max_fps = -1;
 bool g_unlock_size = false;
 float g_ui_scale = 1.0f;
 float g_aspect_ratio = 16.f / 9.f;
-std::string g_extra_assetbundle_path;
+// std::string g_extra_assetbundle_path;
+std::list<std::string> g_extra_assetbundle_paths{};
 std::variant<UseOriginalFont, UseDefaultFont, UseCustomFont> g_replace_font;
 int g_custom_font_size_offset;
 int g_custom_font_style;
@@ -82,6 +83,7 @@ std::string g_text_data_dict_path;
 std::string g_character_system_text_dict_path;
 std::string g_race_jikkyo_comment_dict_path;
 std::string g_race_jikkyo_message_dict_path;
+std::list<std::function<void(void)>> onPluginReload{};
 
 constexpr const char LocalizedDataPath[] = "localized_data";
 constexpr const char OldLocalizedDataPath[] = "old_localized_data";
@@ -431,11 +433,26 @@ namespace
 				http_start_port = document["httpServerPort"].GetInt();
 			}
 
-			const auto& extraAssetBundlePath = document["extraAssetBundlePath"];
-			if (extraAssetBundlePath.IsString())
-			{
-				g_extra_assetbundle_path = extraAssetBundlePath.GetString();
+			g_extra_assetbundle_paths.clear();
+
+			if (document.HasMember("extraAssetBundlePath")) {
+				const auto& extraAssetBundlePath = document["extraAssetBundlePath"];
+				if (extraAssetBundlePath.IsString())
+				{
+					g_extra_assetbundle_paths.push_back(extraAssetBundlePath.GetString());
+				}
 			}
+
+			if (document.HasMember("extraAssetBundlePaths")) {
+				const auto& extraAssetBundlePaths = document["extraAssetBundlePaths"];
+				if (extraAssetBundlePaths.IsArray())
+				{
+					for (const auto& i : document["extraAssetBundlePaths"].GetArray()) {
+						g_extra_assetbundle_paths.push_back(i.GetString());
+					}
+				}
+			}
+
 
 			const auto& replaceFont = document["replaceFont"];
 			if (replaceFont.GetBool())
@@ -443,7 +460,7 @@ namespace
 				const auto& customFontPath = document["customFontPath"];
 				if (customFontPath.IsString())
 				{
-					assert(!g_extra_assetbundle_path.empty() && "extraAssetBundlePath should be specified to use custom font");
+					// assert(!g_extra_assetbundle_paths.empty() && "extraAssetBundlePath should be specified to use custom font");
 					g_replace_font = UseCustomFont{ .FontPath = customFontPath.GetString() };
 				}
 				else
@@ -1465,6 +1482,9 @@ extern std::function<void()> g_on_hook_ready;
 void reload_all_data() {
 	read_config();
 	reload_config();
+	for (const auto& i : onPluginReload) {
+		i();
+	}
 }
 
 namespace HttpServer {
