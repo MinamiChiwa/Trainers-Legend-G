@@ -15,6 +15,51 @@
 #define KEY_ALT  164
 #define KEY_SPACE  32
 
+template<typename T>
+class UmaEnum {
+private:
+	std::vector<std::string> names;
+	std::vector<T> values;
+	int nowIndex = 0;
+
+public:
+	UmaEnum(std::vector<std::string> names, std::vector<T> values) {
+		if (names.size() != values.size()) return;
+		assert(names.size() > 0);
+		this->names = names;
+		this->values = values;
+	}
+
+	std::string GetCurrentName() {
+		return names[nowIndex];
+	}
+
+	T GetCurrentValue() {
+		return values[nowIndex];
+	}
+
+	std::pair<std::string, T> GetNowValue() {
+		return std::make_pair(GetCurrentName(), GetCurrentValue());
+	}
+
+	std::pair<std::string, T> Next() {
+		int cIndex = nowIndex;
+		cIndex++;
+		if (cIndex >= names.size()) cIndex = 0;
+		nowIndex = cIndex;
+		return GetNowValue();
+	}
+
+	std::pair<std::string, T> Last() {
+		int cIndex = nowIndex;
+		cIndex--;
+		if (cIndex < 0) cIndex = names.size() - 1;
+		nowIndex = cIndex;
+		return GetNowValue();
+	}
+
+};
+
 /*
 坐标:
   ↑y
@@ -23,6 +68,7 @@ x← ↘z
 namespace UmaCamera {
 	namespace {
 		int cameraType = CAMERA_LIVE;
+		int liveCameraType = LiveCamera_FREE;
 		float moveStep = 0.1;
 		float look_radius = 5;  // 转向半径
 		float moveAngel = 1.5;  // 转向角度
@@ -48,6 +94,7 @@ namespace UmaCamera {
 			g_race_freecam_follow_umamusume_offset.z
 		};
 		Vector3_t cacheLastRacePos{};
+		Vector3_t liveFollowCameraOffset{ 0, 0, -2 };
 		bool lookAtUmaReverse = false;
 
 		bool mouseLockThreadStart = false;
@@ -74,6 +121,28 @@ namespace UmaCamera {
 			LonMoveForward,
 			LonMoveBack
 		};
+
+		UmaEnum liveCharaPositionFlag(
+			std::vector<std::string>{ "Place01", "Place02", "Place03", "Place04", "Place05", "Place06", "Place07", 
+				"Place08", "Place09", "Place10", "Place11", "Place12", "Place13", "Place14", "Place15", "Place16", 
+				"Place17", "Place18", "Center", "Left", "Right", "Side", "Back", "Other", "All"
+			},
+			std::vector<int32_t>{ 0x1, 0x2, 0x4, 0x8, 0x10, 0x20, 0x40, 0x80, 0x100, 0x200, 0x400, 0x800, 0x1000, 0x2000,
+				0x4000, 0x8000, 0x10000, 0x20000, 0x1, 0x2, 0x4, 0x6, 0x3fff8, 0x3fffe, 0x3ffff
+			}
+		);
+
+		UmaEnum liveCameraCharaParts(
+			std::vector<std::string>{ "Face", "Waist", "LeftHandWrist", "RightHandAttach", "Chest", "Foot", "InitFaceHeight",
+				"InitWaistHeight", "InitChestHeight", "RightHandWrist", "LeftHandAttach", "ConstFaceHeight", "ConstChestHeight",
+				"ConstWaistHeight", "ConstFootHeight", "Position", "PositionWithoutOffset", "InitialHeightFace", 
+				"InitialHeightChest", "InitialHeightWaist", "Max"
+			},
+			std::vector<int32_t>{ 0x0, 0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x9, 0xa, 0xb, 0xc, 0xd, 0xe, 0xf, 0x10, 0x11, 
+				0x12, 0x13, 0x14
+			}
+		);
+
 	}
 
 	void loadGlobalData() {
@@ -151,6 +220,29 @@ namespace UmaCamera {
 		return TRUE;
 	}
 
+	void SetCameraPos(float x, float y, float z) {
+		cameraPos.x = x;
+		cameraPos.y = y;
+		cameraPos.z = z;
+	}
+
+	void updateFollowCameraPosByLookatAndOffset() {
+		auto nowAngel = liveFollowCameraOffset.x * M_PI / 180;
+
+		cameraPos.x = cameraLookAt.x - sin(nowAngel) * liveFollowCameraOffset.z;
+		cameraPos.z = cameraLookAt.z - cos(nowAngel) * liveFollowCameraOffset.z;
+		cameraPos.y = cameraLookAt.y + liveFollowCameraOffset.y;
+	}
+
+	void SetCameraLookat(float x, float y, float z) {
+		cameraLookAt.x = x;
+		cameraLookAt.y = y;
+		cameraLookAt.z = z;
+	}
+
+	int GetLiveCameraType() {
+		return liveCameraType;
+	}
 
 	void setMoveStep(float value) {
 		moveStep = value;
@@ -195,6 +287,7 @@ namespace UmaCamera {
 		orig_g_race_freecam_follow_umamusume_distance = g_race_freecam_follow_umamusume_distance;
 		g_race_freecam_follow_umamusume = -1;
 		liveDefaultFOV = 60;
+		liveFollowCameraOffset = Vector3_t{ 0,0,-2 };
 	}
 
 	void setUmaCameraType(int value) {
@@ -304,6 +397,11 @@ namespace UmaCamera {
 			g_race_freecam_follow_umamusume_offset.z -= moveStep / 2;
 			return;
 		}
+		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
+			liveFollowCameraOffset.z -= moveStep / 2;
+			return;
+		}
+
 		set_lon_move(verticalAngle, LonMoveForward);
 		set_homecam_lon_move(homeCameraAngle);
 	}
@@ -313,6 +411,11 @@ namespace UmaCamera {
 			g_race_freecam_follow_umamusume_offset.z += moveStep / 2;
 			return;
 		}
+		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
+			liveFollowCameraOffset.z += moveStep / 2;
+			return;
+		}
+
 		set_lon_move(verticalAngle + 180, LonMoveBack);
 		set_homecam_lon_move(homeCameraAngle + 180);
 	}
@@ -322,6 +425,12 @@ namespace UmaCamera {
 			g_race_freecam_follow_umamusume_offset.x += moveStep / 2;
 			return;
 		}
+		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
+			if (liveFollowCameraOffset.x > 360) liveFollowCameraOffset.x = 0;
+			liveFollowCameraOffset.x += moveStep * 5;
+			return;
+		}
+
 		set_lon_move(verticalAngle + 90);
 		set_homecam_lon_move(homeCameraAngle + 90);
 	}
@@ -331,6 +440,12 @@ namespace UmaCamera {
 			g_race_freecam_follow_umamusume_offset.x -= moveStep / 2;
 			return;
 		}
+		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
+			if (liveFollowCameraOffset.x < 0) liveFollowCameraOffset.x = 360;
+			liveFollowCameraOffset.x -= moveStep * 5;
+			return;
+		}
+
 		set_lon_move(verticalAngle - 90);
 		set_homecam_lon_move(homeCameraAngle - 90);
 	}
@@ -338,6 +453,10 @@ namespace UmaCamera {
 	void camera_down() {  // 向下
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
 			g_race_freecam_follow_umamusume_offset.y -= 0.2;
+			return;
+		}
+		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
+			liveFollowCameraOffset.y -= moveStep / 2;
 			return;
 		}
 
@@ -360,6 +479,10 @@ namespace UmaCamera {
 	void camera_up() {  // 向上
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
 			g_race_freecam_follow_umamusume_offset.y += 0.2;
+			return;
+		}
+		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
+			liveFollowCameraOffset.y += moveStep / 2;
 			return;
 		}
 
@@ -423,6 +546,8 @@ namespace UmaCamera {
 			return;
 		}
 
+		if (cameraType == CAMERA_LIVE && liveCameraType != LiveCamera_FREE) return;
+
 		horizontalAngle += mAngel;
 		if (horizontalAngle >= 90) horizontalAngle = 89.99;
 		setVertLook(verticalAngle, horizontalAngle);
@@ -434,6 +559,8 @@ namespace UmaCamera {
 			return;
 		}
 
+		if (cameraType == CAMERA_LIVE && liveCameraType != LiveCamera_FREE) return;
+
 		horizontalAngle -= mAngel;
 		if (horizontalAngle <= -90) horizontalAngle = -89.99;
 		setVertLook(verticalAngle, horizontalAngle);
@@ -443,6 +570,9 @@ namespace UmaCamera {
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
 			return;
 		}
+
+		if (cameraType == CAMERA_LIVE && liveCameraType != LiveCamera_FREE) return;
+
 		verticalAngle += mAngel;
 		if (verticalAngle >= 360) verticalAngle = -360;
 		setHoriLook(verticalAngle);
@@ -452,6 +582,9 @@ namespace UmaCamera {
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
 			return;
 		}
+
+		if (cameraType == CAMERA_LIVE && liveCameraType != LiveCamera_FREE) return;
+
 		verticalAngle -= mAngel;
 		if (verticalAngle <= -360) verticalAngle = 360;
 		setHoriLook(verticalAngle);
@@ -490,19 +623,56 @@ namespace UmaCamera {
 	}
 
 	void changeFollowTargetState() {
-		if (!(cameraType == CAMERA_RACE)) return;
-		if (g_race_freecam_follow_umamusume) {
-			g_race_freecam_follow_umamusume = false;
-			g_race_freecam_lookat_umamusume = orig_lookat_target;
-			printf("Free Camera!\n");
+		if (cameraType == CAMERA_RACE) {
+			if (g_race_freecam_follow_umamusume) {
+				g_race_freecam_follow_umamusume = false;
+				g_race_freecam_lookat_umamusume = orig_lookat_target;
+				printf("Free Camera!\n");
+			}
+			else {
+				g_race_freecam_follow_umamusume = true;
+				g_race_freecam_lookat_umamusume = true;
+				printf("Follow Umamusume!\n");
+			}
 		}
-		else {
-			g_race_freecam_follow_umamusume = true;
-			g_race_freecam_lookat_umamusume = true;
-			printf("Follow Umamusume!\n");
+		else if (cameraType == CAMERA_LIVE) {
+			if (!isLiveStart) return;
+
+			if (liveCameraType == LiveCamera_FREE) {
+				liveCameraType = LiveCamera_FOLLOW_UMA;
+				printf("LIVE Free Camera\n");
+			}
+			else {
+				liveCameraType = LiveCamera_FREE;
+				printf("LIVE Follow Umamusume\n");
+			}
 		}
+
 	}
 
+	int GetLiveCharaPositionFlag() {
+		return liveCharaPositionFlag.GetCurrentValue();
+	}
+
+	int GetLiveCameraCharaParts() {
+		return liveCameraCharaParts.GetCurrentValue();
+	}
+
+	void changeLiveCameraLockChara(int changeIndex) {
+		if (cameraType != CAMERA_LIVE) return;
+		if (liveCameraType != LiveCamera_FOLLOW_UMA) return;
+
+		const auto changedData = changeIndex > 0 ? liveCharaPositionFlag.Next() : liveCharaPositionFlag.Last();
+		printf("Live look position flag: %s (0x%x)\n", changedData.first.c_str(), changedData.second);
+	}
+
+	void changeLiveCameraLockPosition(int changeIndex) {
+		if (cameraType != CAMERA_LIVE) return;
+		if (liveCameraType != LiveCamera_FOLLOW_UMA) return;
+
+		const auto changedData = changeIndex > 0 ? liveCameraCharaParts.Next() : liveCameraCharaParts.Last();
+		printf("Live look chara parts: %s (0x%x)\n", changedData.first.c_str(), changedData.second);
+	}
 
 	void mouseMove(LONG moveX, LONG moveY, int mouseEventType) {
 		if (mouseEventType == 1) {  // down
@@ -526,15 +696,27 @@ namespace UmaCamera {
 				if (!rMousePressFlg) return;
 				if (moveX > 0) {
 					cameraLookat_right(moveX * g_free_camera_mouse_speed / 100.0);
+					if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
+						liveFollowCameraOffset.x += moveX * g_free_camera_mouse_speed / 50.0;
+					}
 				}
 				else if (moveX < 0) {
 					cameraLookat_left(-moveX * g_free_camera_mouse_speed / 100.0);
+					if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
+						liveFollowCameraOffset.x += moveX * g_free_camera_mouse_speed / 50.0;
+					}
 				}
 				if (moveY > 0) {
 					cameraLookat_down(moveY * g_free_camera_mouse_speed / 100.0);
+					if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
+						liveFollowCameraOffset.y += moveY * g_free_camera_mouse_speed / 800.0;
+					}
 				}
 				else if (moveY < 0) {
 					cameraLookat_up(-moveY * g_free_camera_mouse_speed / 100.0);
+					if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
+						liveFollowCameraOffset.y += moveY * g_free_camera_mouse_speed / 800.0;
+					}
 				}
 				// printf("move x: %d, y: %d\n", moveX, moveY);
 				}).detach();
@@ -614,10 +796,10 @@ namespace UmaCamera {
 	void on_keyboard_down(int key, DWORD shift, DWORD ctrl, DWORD alt, DWORD space, DWORD up, DWORD down, DWORD left, DWORD right) {
 		// bool ctrl_down = (key == KEY_CTRL) || (ctrl != 0);
 		// bool space_down = (key == KEY_SPACE) || (space != 0);
-		// bool up_down = (key == KEY_UP) || (up != 0);
-		// bool down_down = (key == KEY_DOWN) || (down != 0);
-		// bool left_down = (key == KEY_LEFT) || (left != 0);
-		// bool right_down = (key == KEY_RIGHT) || (right != 0);
+		bool up_down = (key == KEY_UP);
+		bool down_down = (key == KEY_DOWN);
+		bool left_down = (key == KEY_LEFT);
+		bool right_down = (key == KEY_RIGHT);
 
 		switch (key) {
 			case KEY_R:
@@ -636,10 +818,10 @@ namespace UmaCamera {
 
 		// if (ctrl_down) camera_down();
 		// if (space_down) camera_up();
-		// if (up_down) cameraLookat_up(moveAngel);
-		// if (down_down) cameraLookat_down(moveAngel);
-		// if (left_down) cameraLookat_left(moveAngel);
-		// if (right_down) cameraLookat_right(moveAngel);
+		if (up_down) changeLiveCameraLockPosition(1);
+		if (down_down) changeLiveCameraLockPosition(-1);
+		if (left_down) changeLiveCameraLockChara(-1);
+		if (right_down) changeLiveCameraLockChara(1);
 
 	}
 

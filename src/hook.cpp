@@ -1208,10 +1208,10 @@ namespace
 			const auto& bundleHandle = GetBundleHandleByAssetName(name->start_char);
 			if (bundleHandle)
 			{
-				const auto extraAssetBundle = il2cpp_gchandle_get_target(bundleHandle);
-				printf("async_extra: %ls\n", name->start_char);
-				return reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(extraAssetBundle, name,
-					static_cast<Il2CppReflectionType*>(il2cpp_class_get_type(cls)));
+				// const auto extraAssetBundle = il2cpp_gchandle_get_target(bundleHandle);
+				printf("async_extra: %ls\n", name->start_char);  // TODO 加载报错
+				// return reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(extraAssetBundle, name,
+				//	static_cast<Il2CppReflectionType*>(il2cpp_class_get_type(cls)));
 				
 			}
 
@@ -1649,6 +1649,33 @@ namespace
 		pos->y = setPos.y;
 		pos->z = setPos.z;
 		return pos;
+	}
+
+	void* GetCharacterWorldPos_orig;
+	Vector3_t* GetCharacterWorldPos_hook(void* _this, void* timelineControl, int posFlag, int charaParts, Vector3_t* charaPos, Vector3_t* offset) {
+		const bool isFollowUma = (UmaCamera::GetLiveCameraType() == LiveCamera_FOLLOW_UMA) && g_live_free_camera;
+		
+		if (isFollowUma) {
+			charaParts = UmaCamera::GetLiveCameraCharaParts();
+			posFlag = UmaCamera::GetLiveCharaPositionFlag();
+			offset->x = 0;
+			offset->y = 0;
+			offset->z = 0;
+			charaPos->x = 0;
+			charaPos->y = 0;
+			charaPos->z = 0;
+		}
+
+		auto ret = reinterpret_cast<decltype(GetCharacterWorldPos_hook)*>(GetCharacterWorldPos_orig)(_this, timelineControl, posFlag, charaParts, charaPos, offset);
+		
+		if (isFollowUma) {
+			// printf("GetCharacterWorldPos: %d (%f, %f, %f)\n", posFlag, ret->x, ret->y, ret->z);
+			UmaCamera::SetCameraLookat(ret->x, ret->y, ret->z);
+			// UmaCamera::SetCameraPos(ret->x, ret->y, ret->z + 2.0f, true);
+			UmaCamera::updateFollowCameraPosByLookatAndOffset();
+		}
+
+		return ret;
 	}
 
 	void* AlterUpdate_CameraLayer_orig;
@@ -2615,6 +2642,11 @@ namespace
 			"LiveTimelineKeyCameraPositionData", "GetValue", 2
 		);
 
+		auto GetCharacterWorldPos_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineKeyCameraLookAtData", "GetCharacterWorldPos", 5
+		);
+
 		auto AlterUpdate_FormationOffset_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop.Live.Cutt",
 			"LiveTimelineControl", "AlterUpdate_FormationOffset", 4
@@ -2893,6 +2925,7 @@ namespace
 		ADD_HOOK(SetupDOFUpdateInfo, "SetupDOFUpdateInfo at %p\n");
 		ADD_HOOK(get_camera_pos, "get_camera_pos at %p\n");
 		ADD_HOOK(get_camera_pos2, "get_camera_pos2 at %p\n");
+		ADD_HOOK(GetCharacterWorldPos, "GetCharacterWorldPos at %p\n");
 		ADD_HOOK(AlterUpdate_FormationOffset, "AlterUpdate_FormationOffset at %p\n");
 		ADD_HOOK(AlterUpdate_PostEffect_BloomDiffusion, "AlterUpdate_PostEffect_BloomDiffusion at %p\n");
 		ADD_HOOK(alterupdate_eye_camera_pos, "alterupdate_eye_camera_pos at %p\n");

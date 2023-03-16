@@ -74,6 +74,11 @@ enum CameraType {
 	CAMERA_RACE = 1
 };
 
+enum LiveCameraType {
+	LiveCamera_FREE = 0,
+	LiveCamera_FOLLOW_UMA = 1
+};
+
 struct CloseTrans {
 	bool all = false;
 	bool textData = false;
