@@ -232,6 +232,10 @@ namespace UmaCamera {
 		cameraPos.x = cameraLookAt.x - sin(nowAngel) * liveFollowCameraOffset.z;
 		cameraPos.z = cameraLookAt.z - cos(nowAngel) * liveFollowCameraOffset.z;
 		cameraPos.y = cameraLookAt.y + liveFollowCameraOffset.y;
+
+		if (liveCameraCharaParts.GetCurrentValue() == 0x10) {
+			cameraLookAt.y = cameraPos.y;
+		}
 	}
 
 	void SetCameraLookat(float x, float y, float z) {
