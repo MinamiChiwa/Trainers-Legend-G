@@ -936,9 +936,13 @@ namespace
 
 	uint32_t GetBundleHandleByAssetName(wstring assetName) {
 		for (const auto& i : CustomAssetBundleAssetPaths) {
-			if (i.second.contains(wstring_view(assetName))) {
-				const auto& bundleName = i.first;
-				return CustomAssetBundleHandleMap.at(bundleName);
+			for (const auto& m : i.second) {
+				if (std::equal(m.begin(), m.end(), assetName.begin(), assetName.end(),
+					[](wchar_t c1, wchar_t c2) {
+						return std::tolower(c1, std::locale()) == std::tolower(c2, std::locale());
+					})) {
+					return CustomAssetBundleHandleMap.at(i.first);
+				}
 			}
 		}
 		return NULL;
