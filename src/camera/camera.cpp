@@ -644,11 +644,11 @@ namespace UmaCamera {
 
 			if (liveCameraType == LiveCamera_FREE) {
 				liveCameraType = LiveCamera_FOLLOW_UMA;
-				printf("LIVE Free Camera\n");
+				printf("LIVE Follow Umamusume\n");
 			}
 			else {
 				liveCameraType = LiveCamera_FREE;
-				printf("LIVE Follow Umamusume\n");
+				printf("LIVE Free Camera\n");
 			}
 		}
 
