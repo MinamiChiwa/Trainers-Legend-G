@@ -133,8 +133,28 @@
 
 ## Live Free Camera
 
-- Move: `WSAD`, Down: `Ctrl`, Up: `Space`, Adjust FOV: `Q`/`E`, Reset Camera:`R`
+- Adjust FOV: `Q`/`E`, Reset Camera:`R`, Change mode: `F`
+
+
+
+### Free Camera Mode (Default)
+
+- Move: `WSAD`, Down: `Ctrl`, Up: `Space`, 
 - Adjust Angle: `↑↓←→` or hold down the right mouse.
+
+
+
+### Follow Umamusume Mode
+
+ - Pulling out/pulling in distance:`W`/`S` 
+ - Switch Lock Position: `↑`/`↓` 
+ - Switch Lock Character`←`/`→` 
+ - Adjust Angle:
+   - Note: In the case of `Follow Umamusume Mode`, adjusting the viewing angle directly adds or subtracts the coordinate axis and does not adapt the direction according to the line of sight angle.
+   - Use Mouse: Hold down the right mouse. (**Adjust Only `CameraPosition`**)
+   - Use Keyboard: `A`/`D`/`CTRL`/`SPACE`. (**Adjust `CameraPosition` and `CameraLookAt Position` **)
+
+
 
 ## Race Free Camera (Not Working Currently)
 
