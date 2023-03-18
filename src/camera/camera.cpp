@@ -95,6 +95,7 @@ namespace UmaCamera {
 		};
 		Vector3_t cacheLastRacePos{};
 		Vector3_t liveFollowCameraOffset{ 0, 0, -2 };
+		Vector3_t liveFollowCameraLookatOffset{ 0, 0, 0 };
 		bool lookAtUmaReverse = false;
 
 		bool mouseLockThreadStart = false;
@@ -233,15 +234,18 @@ namespace UmaCamera {
 		cameraPos.z = cameraLookAt.z - cos(nowAngel) * liveFollowCameraOffset.z;
 		cameraPos.y = cameraLookAt.y + liveFollowCameraOffset.y;
 
-		if (liveCameraCharaParts.GetCurrentValue() == 0x10) {
-			cameraLookAt.y = cameraPos.y;
-		}
 	}
 
 	void SetCameraLookat(float x, float y, float z) {
+		if (isLiveStart && (liveCameraType == LiveCamera_FOLLOW_UMA)) {
+			x += liveFollowCameraLookatOffset.x;
+			y += liveFollowCameraLookatOffset.y;
+			z += liveFollowCameraLookatOffset.z;
+		}
 		cameraLookAt.x = x;
 		cameraLookAt.y = y;
 		cameraLookAt.z = z;
+
 	}
 
 	int GetLiveCameraType() {
@@ -292,6 +296,7 @@ namespace UmaCamera {
 		g_race_freecam_follow_umamusume = -1;
 		liveDefaultFOV = 60;
 		liveFollowCameraOffset = Vector3_t{ 0,0,-2 };
+		liveFollowCameraLookatOffset = Vector3_t{ 0,0,0 };
 	}
 
 	void setUmaCameraType(int value) {
@@ -430,8 +435,9 @@ namespace UmaCamera {
 			return;
 		}
 		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
-			if (liveFollowCameraOffset.x > 360) liveFollowCameraOffset.x = 0;
-			liveFollowCameraOffset.x += moveStep * 5;
+			liveFollowCameraLookatOffset.x += moveStep;
+			// if (liveFollowCameraOffset.x > 360) liveFollowCameraOffset.x = 0;
+			// liveFollowCameraOffset.x += moveStep * 5;
 			return;
 		}
 
@@ -445,8 +451,9 @@ namespace UmaCamera {
 			return;
 		}
 		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
-			if (liveFollowCameraOffset.x < 0) liveFollowCameraOffset.x = 360;
-			liveFollowCameraOffset.x -= moveStep * 5;
+			liveFollowCameraLookatOffset.x -= moveStep;
+			// if (liveFollowCameraOffset.x < 0) liveFollowCameraOffset.x = 360;
+			// liveFollowCameraOffset.x -= moveStep * 5;
 			return;
 		}
 
@@ -460,7 +467,8 @@ namespace UmaCamera {
 			return;
 		}
 		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
-			liveFollowCameraOffset.y -= moveStep / 2;
+			liveFollowCameraLookatOffset.y -= moveStep / 2;
+			// liveFollowCameraOffset.y -= moveStep / 2;
 			return;
 		}
 
@@ -486,7 +494,8 @@ namespace UmaCamera {
 			return;
 		}
 		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
-			liveFollowCameraOffset.y += moveStep / 2;
+			liveFollowCameraLookatOffset.y += moveStep / 2;
+			// liveFollowCameraOffset.y += moveStep / 2;
 			return;
 		}
 
