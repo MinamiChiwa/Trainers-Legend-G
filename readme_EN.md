@@ -146,6 +146,8 @@
 
 ### Follow Umamusume Mode
 
+- **Note: The plugin cannot hook some LIVE character locations. You need to click `external plugin - More - Make Live All Character Position Hookable`. This will modify the LIVE files.**
+
  - Pulling out/pulling in distance:`W`/`S` 
  - Switch Lock Position: `↑`/`↓` 
  - Switch Lock Character`←`/`→` 
