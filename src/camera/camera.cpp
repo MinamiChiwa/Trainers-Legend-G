@@ -687,6 +687,18 @@ namespace UmaCamera {
 		printf("Live look chara parts: %s (0x%x)\n", changedData.first.c_str(), changedData.second);
 	}
 
+	void changeLiveFollowCameraOffsetX(float value) {
+		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
+			liveFollowCameraOffset.x += value;
+		}
+	}	
+	
+	void changeLiveFollowCameraOffsetY(float value) {
+		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
+			liveFollowCameraOffset.y += value;
+		}
+	}
+
 	void mouseMove(LONG moveX, LONG moveY, int mouseEventType) {
 		if (mouseEventType == 1) {  // down
 			rMousePressFlg = true;
@@ -709,27 +721,19 @@ namespace UmaCamera {
 				if (!rMousePressFlg) return;
 				if (moveX > 0) {
 					cameraLookat_right(moveX * g_free_camera_mouse_speed / 100.0);
-					if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
-						liveFollowCameraOffset.x += moveX * g_free_camera_mouse_speed / 50.0;
-					}
+					changeLiveFollowCameraOffsetX(moveX * g_free_camera_mouse_speed / 50.0);
 				}
 				else if (moveX < 0) {
 					cameraLookat_left(-moveX * g_free_camera_mouse_speed / 100.0);
-					if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
-						liveFollowCameraOffset.x += moveX * g_free_camera_mouse_speed / 50.0;
-					}
+					changeLiveFollowCameraOffsetX(moveX * g_free_camera_mouse_speed / 50.0);
 				}
 				if (moveY > 0) {
 					cameraLookat_down(moveY * g_free_camera_mouse_speed / 100.0);
-					if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
-						liveFollowCameraOffset.y += moveY * g_free_camera_mouse_speed / 800.0;
-					}
+					changeLiveFollowCameraOffsetY(moveY * g_free_camera_mouse_speed / 800.0);
 				}
 				else if (moveY < 0) {
 					cameraLookat_up(-moveY * g_free_camera_mouse_speed / 100.0);
-					if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
-						liveFollowCameraOffset.y += moveY * g_free_camera_mouse_speed / 800.0;
-					}
+					changeLiveFollowCameraOffsetY(moveY * g_free_camera_mouse_speed / 800.0);
 				}
 				// printf("move x: %d, y: %d\n", moveX, moveY);
 				}).detach();
@@ -749,6 +753,10 @@ namespace UmaCamera {
 		bool right = false;
 		bool q = false;
 		bool e = false;
+		bool i = false;
+		bool k = false;
+		bool j = false;
+		bool l = false;
 		bool threadRunning = false;
 	} cameraMoveState;
 
@@ -769,6 +777,10 @@ namespace UmaCamera {
 				if (cameraMoveState.right) cameraLookat_right(moveAngel);
 				if (cameraMoveState.q) changeCameraFOV(0.5f);
 				if (cameraMoveState.e) changeCameraFOV(-0.5f);
+				if (cameraMoveState.i) changeLiveFollowCameraOffsetY(moveStep / 3);
+				if (cameraMoveState.k) changeLiveFollowCameraOffsetY(-moveStep / 3);
+				if (cameraMoveState.j) changeLiveFollowCameraOffsetX(moveStep * 10);
+				if (cameraMoveState.l) changeLiveFollowCameraOffsetX(-moveStep * 10);
 				Sleep(10);
 			}
 			}).detach();
@@ -801,6 +813,14 @@ namespace UmaCamera {
 				cameraMoveState.q = message == WM_KEYDOWN ? true : false; break;
 			case 'E':
 				cameraMoveState.e = message == WM_KEYDOWN ? true : false; break;
+			case 'I':
+				cameraMoveState.i = message == WM_KEYDOWN ? true : false; break;
+			case 'K':
+				cameraMoveState.k = message == WM_KEYDOWN ? true : false; break;
+			case 'J':
+				cameraMoveState.j = message == WM_KEYDOWN ? true : false; break;
+			case 'L':
+				cameraMoveState.l = message == WM_KEYDOWN ? true : false; break;
 			default: break;
 			}
 		}

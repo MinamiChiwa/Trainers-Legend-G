@@ -154,7 +154,9 @@
  - Adjust Angle:
    - Note: In the case of `Follow Umamusume Mode`, adjusting the viewing angle directly adds or subtracts the coordinate axis and does not adapt the direction according to the line of sight angle.
    - Use Mouse: Hold down the right mouse. (**Adjust Only `CameraPosition`**)
-   - Use Keyboard: `A`/`D`/`CTRL`/`SPACE`. (**Adjust `CameraPosition` and `CameraLookAt Position`**)
+   - Use Keyboard:
+     - `I`/`K`/`J`/`L` (**Adjust Only `CameraPosition`**)
+     -  `A`/`D`/`CTRL`/`SPACE`. (**Adjust `CameraPosition` and `CameraLookAt Position`**)
 
 
 
