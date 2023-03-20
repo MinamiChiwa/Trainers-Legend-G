@@ -2049,7 +2049,15 @@ namespace
 		printf("Race End!\n");
 		umaRaceData.clear();
 		// updateRaceGUIData(umaRaceData);
-		if (raceInfoTabAttachToGame) SetShowRaceWnd(false);
+		if (raceInfoTabAttachToGame)
+			SetShowRaceWnd(false);
+		else {
+			if (closeWhenRaceEnd) {
+				SetShowRaceWnd(false);
+				SetGuiDone(true);
+			}
+		}
+
 		UmaCamera::reset_camera();
 		targetPosLastCache = Vector3_t{};
 		targetPosCache = Vector3_t{};

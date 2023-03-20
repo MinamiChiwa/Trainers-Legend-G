@@ -19,6 +19,10 @@ void CleanupRenderTarget();
 LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 bool guiDone = true;
 bool showRaceWnd = true;
+bool closeWhenRaceEnd = false;
+
+HWND hwnd;
+RECT cacheRect{ 100, 100, 1250, 600 };
 
 std::map<void*, UmaGUiShowData::UmaRaceMotionData> umaRaceData{};
 
@@ -32,6 +36,30 @@ void SetShowRaceWnd(bool value) {
 
 void updateRaceGUIData(std::map<void*, UmaGUiShowData::UmaRaceMotionData>& data) {
     umaRaceData = data;
+}
+
+void SetWindowTop()
+{
+    ::SetWindowPos(hwnd, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE);
+}
+
+void CancelWindowTop()
+{
+    ::SetWindowPos(hwnd, HWND_NOTOPMOST, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE);
+}
+
+bool lastTopStat = false;
+bool nowTopStat = false;
+void changeTopState() {
+    if (lastTopStat == nowTopStat) return;
+    lastTopStat = nowTopStat;
+    if (nowTopStat) {
+        SetWindowTop();
+    }
+    else {
+        CancelWindowTop();
+    }
+
 }
 
 typedef std::pair<void*, UmaGUiShowData::UmaRaceMotionData> UmaDataPair;
@@ -168,8 +196,8 @@ void imguiRaceMainLoop() {
             {
                 ImGui::BeginTooltip();
                 ImGui::Text(
-                    "MinSpeed: %f\nRaceBaseSpeed: %f\nStartDashSpeedThreshold: %f\nBaseSpeed/RawSpeed: %.4f / %d\n \
-BaseStamina/RawStamina: %.4f / %d\nBasePow/RawPow: %.4f / %d\nBaseGuts/RawGuts: %.4f / %d\n \
+                    "MinSpeed: %f\nRaceBaseSpeed: %f\nStartDashSpeedThreshold: %f\nBaseSpeed/RawSpeed: %.4f / %d\n\
+BaseStamina/RawStamina: %.4f / %d\nBasePow/RawPow: %.4f / %d\nBaseGuts/RawGuts: %.4f / %d\n\
 BaseWiz/RawWiz: %.4f / %d\n",
 umaData.MinSpeed, umaData.RaceBaseSpeed, umaData.StartDashSpeedThreshold, umaData.BaseSpeed, umaData.RawSpeed,
 umaData.BaseStamina, umaData.RawStamina, umaData.BasePow, umaData.RawPow, umaData.BaseGuts, umaData.RawGuts,
@@ -277,6 +305,17 @@ umaData.BaseWiz, umaData.RawWiz
         ImGui::EndTable();
     }
 
+    ImGui::Text("Keep Top");
+    ImGui::SameLine();
+    ImGui::Checkbox("###top", &nowTopStat);    
+    ImGui::SameLine();
+    ImGui::Spacing();
+    ImGui::SameLine();
+    ImGui::Text("Auto Close Window");
+    ImGui::SameLine();
+    ImGui::Checkbox("###autoclose", &closeWhenRaceEnd);
+    changeTopState();
+
     ImGui::End();
 }
 
@@ -284,7 +323,6 @@ umaData.BaseWiz, umaData.RawWiz
 void guimain()
 {
     guiDone = false;
-    HWND hwnd;
     WNDCLASSW wc;
     RECT WindowRectangle;
     HWND GameHwnd;
@@ -296,7 +334,9 @@ void guimain()
     if (!raceInfoTabAttachToGame) {
         WNDCLASSEXW wc = { sizeof(wc), CS_CLASSDC, WndProc, 0L, 0L, GetModuleHandle(NULL), NULL, NULL, NULL, NULL, L"Trainers Legend G", NULL };
         ::RegisterClassExW(&wc);
-        hwnd = ::CreateWindowW(wc.lpszClassName, L"TLG GUI", WS_OVERLAPPEDWINDOW, 100, 100, 1000, 600, NULL, NULL, wc.hInstance, NULL);
+        hwnd = ::CreateWindowW(wc.lpszClassName, L"TLG GUI", WS_OVERLAPPEDWINDOW, cacheRect.left, cacheRect.top,
+            cacheRect.right - cacheRect.left, cacheRect.bottom - cacheRect.top, NULL, NULL, wc.hInstance, NULL);
+        if (nowTopStat) SetWindowTop();
     }
     else {
         // 注册窗体类
@@ -328,13 +368,14 @@ void guimain()
         lWinStyleEx = lWinStyleEx | WS_EX_LAYERED;
 
         SetWindowLong(hwnd, GWL_EXSTYLE, lWinStyleEx);
-        SetLayeredWindowAttributes(hwnd, 0, RGB(40, 40, 40), LWA_ALPHA);
+        SetLayeredWindowAttributes(hwnd, 0, 0, LWA_ALPHA);
         // 去掉标题栏及边框
         LONG_PTR Style = GetWindowLongPtr(hwnd, GWL_STYLE);
         Style = Style & ~WS_CAPTION & ~WS_SYSMENU & ~WS_SIZEBOX;
         SetWindowLongPtr(hwnd, GWL_STYLE, Style);
         // 至顶层窗口 最大化
         SetWindowPos(hwnd, HWND_TOPMOST, 0, 0, WindowWide, WindowHeight, SWP_SHOWWINDOW);
+        SetWindowPos(hwnd, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE);
         // 设置窗体可穿透鼠标
         // SetWindowLong(hwnd, GWL_EXSTYLE, WS_EX_TRANSPARENT | WS_EX_LAYERED);
 
@@ -351,8 +392,8 @@ void guimain()
 
     if (raceInfoTabAttachToGame) {
         // Show the window
-        SetLayeredWindowAttributes(hwnd, 0, RGB(0, 0, 0), LWA_ALPHA);
-        SetLayeredWindowAttributes(hwnd, 0, RGB(0, 0, 0), LWA_COLORKEY);
+        SetLayeredWindowAttributes(hwnd, 0, 0, LWA_ALPHA);
+        SetLayeredWindowAttributes(hwnd, 0, 0, LWA_COLORKEY);
     }
 
     ::ShowWindow(hwnd, SW_SHOW);
@@ -532,6 +573,13 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
             CreateRenderTarget();
         }
         return 0;
+    case WM_SIZING: {
+        RECT* rect = reinterpret_cast<RECT*>(lParam);
+        cacheRect.left = rect->left;
+        cacheRect.right = rect->right;
+        cacheRect.top = rect->top;
+        cacheRect.bottom = rect->bottom;
+    }; break;
     case WM_SYSCOMMAND:
         if ((wParam & 0xfff0) == SC_KEYMENU) // Disable ALT application menu
             return 0;
