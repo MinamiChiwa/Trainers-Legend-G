@@ -93,7 +93,7 @@ namespace UmaCmp{
     }
 
     bool compareRSpeed(const UmaDataPair& a, const UmaDataPair& b) {
-        return cmpTwo(a.second.speed, b.second.speed);
+        return cmpTwo(a.second.MoveDistance, b.second.MoveDistance);
     }
 
     bool compareRate(const UmaDataPair& a, const UmaDataPair& b) {
@@ -136,9 +136,10 @@ bool getUmaGuiDone() {
 
 auto cmp_func = UmaCmp::compareGateNo;
 
-void imguiRaceMainLoop() {
+void imguiRaceMainLoop(ImGuiIO& io) {
     if (!showRaceWnd) return;
 
+    static bool showKmH = false;
     std::vector<UmaDataPair> sortedData(umaRaceData.begin(), umaRaceData.end());
     std::sort(sortedData.begin(), sortedData.end(), UmaCmp::compareDistanceDesc);
     int rank = 1;
@@ -151,7 +152,7 @@ void imguiRaceMainLoop() {
     if (ImGui::Begin("Race Info")) {
 
         static std::vector<const char*> tableTitle{
-            "GateNo", "Rank/Distance", "CharaName", "Speed", "Rate", "HP Left" ,"LastSpeed", "Speed", "Stamina", "Pow", "Guts", "Wiz"
+            "GateNo", "Rank/Distance", "CharaName", "InstantSpeed", "Rate", "HP Left" ,"LastSpeed", "Speed", "Stamina", "Pow", "Guts", "Wiz"
         };
 
         const int num_rows = sortedData.size();
@@ -210,7 +211,22 @@ umaData.BaseWiz, umaData.RawWiz
             }
 
             ImGui::TableSetColumnIndex(3);
-            ImGui::Text("%f", umaData.speed);
+            if (showKmH) {
+                ImGui::Text("%.2f km/h", umaData.MoveDistance / umaData.deltatime * 3.6);
+            }
+            else {
+                ImGui::Text("%.2f m/s", umaData.MoveDistance / umaData.deltatime);
+            }
+            
+            if (ImGui::IsItemHovered())
+            {
+                ImGui::BeginTooltip();
+                ImGui::Text(
+                    "RunMotionSpeed: %.4f\nMoveDistance: %.4f",
+                    umaData.speed, umaData.MoveDistance
+                );
+                ImGui::EndTooltip();
+            }
 
             ImGui::TableSetColumnIndex(4);
             ImGui::Text("%f", umaData.rate);
@@ -317,6 +333,13 @@ umaData.BaseWiz, umaData.RawWiz
     ImGui::Text("Auto Close Window");
     ImGui::SameLine();
     ImGui::Checkbox("###autoclose", &closeWhenRaceEnd);
+    ImGui::SameLine();
+    ImGui::Spacing();
+    ImGui::SameLine();
+    ImGui::Text("Show km/h");
+    ImGui::SameLine();
+    ImGui::Checkbox("###showkmh", &showKmH);
+
     changeTopState();
 
     ImGui::End();
@@ -474,7 +497,7 @@ void guimain()
         ImGui_ImplWin32_NewFrame();
 
         ImGui::NewFrame();
-        imguiRaceMainLoop();
+        imguiRaceMainLoop(io);
 
         ImGui::Render();
         const float clear_color_with_alpha[4] = { clear_color.x * clear_color.w, clear_color.y * clear_color.w, clear_color.z * clear_color.w, clear_color.w };

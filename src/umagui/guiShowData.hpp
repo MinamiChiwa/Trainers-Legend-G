@@ -40,13 +40,14 @@ namespace UmaGUiShowData {
 		float MoveDistance = 0.0f;
 		float distance = 0.0f;
 		int rank = 0;
+		float deltatime;
 
 		UmaRaceMotionData(int gateNo, std::wstring charaName, std::wstring trainerName);
 		void UpdateMotionData(float speed, float rate, float RaceBaseSpeed, float MinSpeed, float StartDashSpeedThreshold,
 			bool IsOverRun, float Hp, float MaxHp, float HpPer, int NearHorseCount, float CongestionTime, int RawSpeed,
 			float BaseSpeed, float Speed, int RawStamina, float BaseStamina, float Stamina, int RawPow, float BasePow, float Pow,
 			int RawGuts, float BaseGuts, float Guts, int RawWiz, float BaseWiz, float Wiz, bool IsStartDash, int ActivateSkillCount,
-			float lastSpeed, float MoveDistance, float distance);
+			float lastSpeed, float MoveDistance, float distance, float deltatime);
 
 		void setRank(int rank);
 

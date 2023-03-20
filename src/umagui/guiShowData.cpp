@@ -13,7 +13,7 @@ void UmaGUiShowData::UmaRaceMotionData::UpdateMotionData(float speed, float rate
 	bool IsOverRun, float Hp, float MaxHp, float HpPer, int NearHorseCount, float CongestionTime, int RawSpeed,
 	float BaseSpeed, float Speed, int RawStamina, float BaseStamina, float Stamina, int RawPow, float BasePow, float Pow,
 	int RawGuts, float BaseGuts, float Guts, int RawWiz, float BaseWiz, float Wiz, bool IsStartDash, int ActivateSkillCount,
-	float lastSpeed, float MoveDistance, float distance)
+	float lastSpeed, float MoveDistance, float distance, float deltatime)
 {
 	this->speed = speed;
 	this->rate = rate;
@@ -45,6 +45,7 @@ void UmaGUiShowData::UmaRaceMotionData::UpdateMotionData(float speed, float rate
 	this->ActivateSkillCount = ActivateSkillCount;
 	this->lastSpeed = lastSpeed;
 	this->MoveDistance = MoveDistance;
+	this->deltatime = deltatime;
 	if (!IsOverRun) {
 		this->distance = distance;
 	}

@@ -1683,8 +1683,8 @@ namespace
 		return ret;
 	}
 
-	template<typename T>
-	void convertPtrType(T* cvtTarget, uintptr_t func_ptr) {
+	template<typename T, typename TF>
+	void convertPtrType(T* cvtTarget, TF func_ptr) {
 		*cvtTarget = reinterpret_cast<T>(func_ptr);
 	}
 
@@ -1719,6 +1719,7 @@ namespace
 	int(*get_RawWiz)(void*);
 	float(*get_BaseWiz)(void*);
 	float(*get_Wiz)(void*);
+	float(*get_DeltaTime)();
 	bool(*get_IsStartDash)(void*);
 	int(*GetActivateSkillCount)(void*);
 	// int(*CalcChallengeMatchPointTotal)(void*);
@@ -1774,6 +1775,7 @@ namespace
 		convertPtrType(&get_IsStartDash, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_IsStartDash", 0));
 		convertPtrType(&GetActivateSkillCount, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "GetActivateSkillCount", 0));
 		convertPtrType(&get_MoveDistance, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_MoveDistance", 0));
+		convertPtrType(&get_DeltaTime, il2cpp_resolve_icall("UnityEngine.Time::get_unscaledDeltaTime()"));
 
 		HorseRaceInfo_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop", "HorseRaceInfo");
 		HorseRaceInfo_baseSpeedAdjusted = il2cpp_class_get_field_from_name(HorseRaceInfo_klass, "_baseSpeedAdjusted");
@@ -1806,7 +1808,8 @@ namespace
 					il2cpp_symbols::read_field<float>(_this, HorseRaceInfo_baseWizAdjusted),
 					get_Wiz(_this), get_IsStartDash(_this), GetActivateSkillCount(_this),
 					il2cpp_symbols::read_field<float>(_this, HorseRaceInfo_lastSpeed),
-					get_MoveDistance(_this), il2cpp_symbols::read_field<float>(_this, HorseRaceInfo_distance));
+					get_MoveDistance(_this), il2cpp_symbols::read_field<float>(_this, HorseRaceInfo_distance),
+					get_DeltaTime());
 			}
 		}
 		return ret;
