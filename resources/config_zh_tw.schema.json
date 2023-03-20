@@ -150,11 +150,11 @@
             }  
         },
         "raceInfoTab": {
-            "description": "比賽實时資訊顯示",
+            "description": "比賽即時資訊顯示",
             "type": "object",
             "properties": {
               "enableRaceInfoTab": {
-                  "description": "啟用比賽實时資訊顯示視窗",
+                  "description": "啟用比賽即時資訊顯示視窗",
                   "type": "boolean",
                   "default": false
               },
