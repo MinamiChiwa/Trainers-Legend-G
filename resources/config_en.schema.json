@@ -149,6 +149,22 @@
               }
             }  
         },
+        "raceInfoTab": {
+            "description": "Race real time info tab",
+            "type": "object",
+            "properties": {
+              "enableRaceInfoTab": {
+                  "description": "Enable race real time info tab",
+                  "type": "boolean",
+                  "default": false
+              },
+              "raceInfoTabAttachToGame": {
+                "description": "Attach window to game",
+                "type": "boolean",
+                "default": false
+              }
+            }  
+        },
         "race_camera": {
             "description": "Race Camera Settings (Not working.)",
             "type": "object",

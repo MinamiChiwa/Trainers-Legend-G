@@ -1,6 +1,7 @@
 #include <stdinclude.hpp>
 #include <unordered_set>
 #include <ranges>
+#include "umagui/umaguiMain.hpp"
 
 using namespace std;
 std::function<void()> g_on_hook_ready;
@@ -1682,6 +1683,167 @@ namespace
 		return ret;
 	}
 
+	template<typename T>
+	void convertPtrType(T* cvtTarget, uintptr_t func_ptr) {
+		*cvtTarget = reinterpret_cast<T>(func_ptr);
+	}
+
+	int(*HorseData_get_GateNo)(void*);
+	float(*get_RunMotionRate)(void*);
+	int(*get_RaceMotion)(void*);
+	int(*get_SingleModeTeamRank)(void*);
+	Il2CppString*(*get_TrainerName)(void*);
+	void(*InitTrainerName)(void*);
+	Il2CppString*(*get_charaName)(void*);
+	float(*get_RaceBaseSpeed)(void*);
+	float(*get_MinSpeed)(void*);
+	float(*get_StartDashSpeedThreshold)(void*);
+	bool(*get_IsOverRun)(void*);
+	float(*GetHp)(void*);
+	float(*GetMaxHp)(void*);
+	float(*GetHpPer)(void*);
+	int(*get_NearHorseCount)(void*);
+	float(*get_CongestionTime)(void*);
+	int(*get_RawSpeed)(void*);
+	int(*get_BaseSpeed)(void*);
+	float(*get_Speed)(void*);
+	int(*get_RawStamina)(void*);
+	float(*get_BaseStamina)(void*);
+	float(*get_Stamina)(void*);
+	int(*get_RawPow)(void*);
+	float(*get_BasePow)(void*);
+	float(*get_Pow)(void*);
+	int(*get_RawGuts)(void*);
+	float(*get_BaseGuts)(void*);
+	float(*get_Guts)(void*);
+	int(*get_RawWiz)(void*);
+	float(*get_BaseWiz)(void*);
+	float(*get_Wiz)(void*);
+	bool(*get_IsStartDash)(void*);
+	int(*GetActivateSkillCount)(void*);
+	// int(*CalcChallengeMatchPointTotal)(void*);
+	float(*get_MoveDistance)(void*);
+	void* HorseRaceInfo_klass;
+	FieldInfo* HorseRaceInfo_baseSpeedAdjusted;
+	FieldInfo* HorseRaceInfo_baseStaminaAdjusted;
+	FieldInfo* HorseRaceInfo_basePowAdjusted;
+	FieldInfo* HorseRaceInfo_baseGutsAdjusted;
+	FieldInfo* HorseRaceInfo_baseWizAdjusted;
+	FieldInfo* HorseRaceInfo_lastSpeed;
+	FieldInfo* HorseRaceInfo_distance;
+
+	bool initHorseDataFuncInited = false;
+
+	void initHorseDataFunc() {
+		if (initHorseDataFuncInited) return;
+		initHorseDataFuncInited = true;
+
+		convertPtrType(&HorseData_get_GateNo, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseData", "get_GateNo", 0));
+		convertPtrType(&get_SingleModeTeamRank, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseData", "get_SingleModeTeamRank", 0));
+		convertPtrType(&get_TrainerName, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseData", "get_TrainerName", 0));
+		convertPtrType(&InitTrainerName, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseData", "InitTrainerName", 0));
+		convertPtrType(&get_charaName, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseData", "get_charaName", 0));
+		convertPtrType(&get_RunMotionRate, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfoReplay", "get_RunMotionRate", 0));
+		convertPtrType(&get_RaceMotion, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfoReplay", "get_RaceMotion", 0));
+		// convertPtrType(&CalcChallengeMatchPointTotal, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfoReplay", "CalcChallengeMatchPointTotal", 0));
+		
+		convertPtrType(&get_RaceBaseSpeed, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_RaceBaseSpeed", 0));
+		convertPtrType(&get_MinSpeed, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_MinSpeed", 0));
+		convertPtrType(&get_StartDashSpeedThreshold, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_StartDashSpeedThreshold", 0));
+		convertPtrType(&get_IsOverRun, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_IsOverRun", 0));
+		convertPtrType(&GetHp, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "GetHp", 0));
+		convertPtrType(&GetMaxHp, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "GetMaxHp", 0));
+		convertPtrType(&GetHpPer, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "GetHpPer", 0));
+		convertPtrType(&get_NearHorseCount, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_NearHorseCount", 0));
+		convertPtrType(&get_CongestionTime, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_CongestionTime", 0));
+		convertPtrType(&get_RawSpeed, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_RawSpeed", 0));
+		convertPtrType(&get_BaseSpeed, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_BaseSpeed", 0));
+		convertPtrType(&get_Speed, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_Speed", 0));
+		convertPtrType(&get_RawStamina, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_RawStamina", 0));
+		convertPtrType(&get_BaseStamina, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_BaseStamina", 0));
+		convertPtrType(&get_Stamina, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_Stamina", 0));
+		convertPtrType(&get_RawPow, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_RawPow", 0));
+		convertPtrType(&get_BasePow, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_BasePow", 0));
+		convertPtrType(&get_Pow, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_Pow", 0));
+		convertPtrType(&get_RawGuts, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_RawGuts", 0));
+		convertPtrType(&get_BaseGuts, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_BaseGuts", 0));
+		convertPtrType(&get_Guts, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_Guts", 0));
+		convertPtrType(&get_RawWiz, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_RawWiz", 0));
+		convertPtrType(&get_BaseWiz, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_BaseWiz", 0));
+		convertPtrType(&get_Wiz, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_Wiz", 0));
+		convertPtrType(&get_IsStartDash, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_IsStartDash", 0));
+		convertPtrType(&GetActivateSkillCount, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "GetActivateSkillCount", 0));
+		convertPtrType(&get_MoveDistance, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_MoveDistance", 0));
+
+		HorseRaceInfo_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop", "HorseRaceInfo");
+		HorseRaceInfo_baseSpeedAdjusted = il2cpp_class_get_field_from_name(HorseRaceInfo_klass, "_baseSpeedAdjusted");
+		HorseRaceInfo_baseStaminaAdjusted = il2cpp_class_get_field_from_name(HorseRaceInfo_klass, "_baseStaminaAdjusted");
+		HorseRaceInfo_basePowAdjusted = il2cpp_class_get_field_from_name(HorseRaceInfo_klass, "_basePowAdjusted");
+		HorseRaceInfo_baseGutsAdjusted = il2cpp_class_get_field_from_name(HorseRaceInfo_klass, "_baseGutsAdjusted");
+		HorseRaceInfo_baseWizAdjusted = il2cpp_class_get_field_from_name(HorseRaceInfo_klass, "_baseWizAdjusted");
+		HorseRaceInfo_lastSpeed = il2cpp_class_get_field_from_name(HorseRaceInfo_klass, "_lastSpeed");
+		HorseRaceInfo_distance = il2cpp_class_get_field_from_name(HorseRaceInfo_klass, "_distance");
+	}
+
+	void* get_RunMotionSpeed_orig;
+	float get_RunMotionSpeed_hook(void* _this) {
+		auto ret = reinterpret_cast<decltype(get_RunMotionSpeed_hook)*>(get_RunMotionSpeed_orig)(_this);
+		if (enableRaceInfoTab) {
+			initHorseDataFunc();
+			if (const auto iter = umaRaceData.find(_this); iter != umaRaceData.end())
+			{
+				iter->second.UpdateMotionData(ret, get_RunMotionRate(_this), get_RaceBaseSpeed(_this), get_MinSpeed(_this),
+					get_StartDashSpeedThreshold(_this), get_IsOverRun(_this), GetHp(_this), GetMaxHp(_this), GetHpPer(_this),
+					get_NearHorseCount(_this), get_CongestionTime(_this), get_RawSpeed(_this),
+					il2cpp_symbols::read_field<float>(_this, HorseRaceInfo_baseSpeedAdjusted),
+					get_Speed(_this),
+					get_RawStamina(_this), il2cpp_symbols::read_field<float>(_this, HorseRaceInfo_baseStaminaAdjusted),
+					get_Stamina(_this), get_RawPow(_this),
+					il2cpp_symbols::read_field<float>(_this, HorseRaceInfo_basePowAdjusted),
+					get_Pow(_this), get_RawGuts(_this),
+					il2cpp_symbols::read_field<float>(_this, HorseRaceInfo_baseGutsAdjusted),
+					get_Guts(_this), get_RawWiz(_this),
+					il2cpp_symbols::read_field<float>(_this, HorseRaceInfo_baseWizAdjusted),
+					get_Wiz(_this), get_IsStartDash(_this), GetActivateSkillCount(_this),
+					il2cpp_symbols::read_field<float>(_this, HorseRaceInfo_lastSpeed),
+					get_MoveDistance(_this), il2cpp_symbols::read_field<float>(_this, HorseRaceInfo_distance));
+			}
+		}
+		return ret;
+	}
+
+	bool guiStarting = false;
+	void startUmaGui() {
+		if (guiStarting) return;
+		guiStarting = true;
+		thread([]() {
+			printf("GUI START\n");
+			guimain();
+			guiStarting = false;
+			printf("GUI END\n");
+			}).detach();
+	}
+
+	void* HorseRaceInfoReplay_ctor_orig;
+	void HorseRaceInfoReplay_ctor_hook(void* _this, void* data, void* reader) {
+		reinterpret_cast<decltype(HorseRaceInfoReplay_ctor_hook)*>(HorseRaceInfoReplay_ctor_orig)(_this, data, reader);
+
+		if (enableRaceInfoTab) {
+			initHorseDataFunc();
+			SetShowRaceWnd(true);
+			if (getUmaGuiDone()) {
+				startUmaGui();
+			}
+			InitTrainerName(data);
+			auto tName = get_TrainerName(data);
+			auto umadata = UmaGUiShowData::UmaRaceMotionData(
+				HorseData_get_GateNo(data), get_charaName(data)->start_char, tName ? tName->start_char : L""
+			);
+			umaRaceData.emplace(_this, umadata);
+		}
+
+	}
+
 	void* AlterUpdate_CameraLayer_orig;
 	void AlterUpdate_CameraLayer_hook(void* _this, void* sheet, int currentFrame, Vector3_t* offsetMaxPosition, Vector3_t* offsetMinPosition) {
 		if (g_live_free_camera) return;
@@ -1885,6 +2047,9 @@ namespace
 	void race_OnDestroy_hook(void* _this) {
 		reinterpret_cast<decltype(race_OnDestroy_hook)*>(race_OnDestroy_orig)(_this);
 		printf("Race End!\n");
+		umaRaceData.clear();
+		// updateRaceGUIData(umaRaceData);
+		if (raceInfoTabAttachToGame) SetShowRaceWnd(false);
 		UmaCamera::reset_camera();
 		targetPosLastCache = Vector3_t{};
 		targetPosCache = Vector3_t{};
@@ -2651,6 +2816,16 @@ namespace
 			"LiveTimelineKeyCameraLookAtData", "GetCharacterWorldPos", 5
 		);
 
+		auto get_RunMotionSpeed_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"HorseRaceInfoReplay", "get_RunMotionSpeed", 0
+		);
+
+		auto HorseRaceInfoReplay_ctor_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"HorseRaceInfoReplay", ".ctor", 2
+		);
+
 		auto AlterUpdate_FormationOffset_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop.Live.Cutt",
 			"LiveTimelineControl", "AlterUpdate_FormationOffset", 4
@@ -2930,6 +3105,8 @@ namespace
 		ADD_HOOK(get_camera_pos, "get_camera_pos at %p\n");
 		ADD_HOOK(get_camera_pos2, "get_camera_pos2 at %p\n");
 		ADD_HOOK(GetCharacterWorldPos, "GetCharacterWorldPos at %p\n");
+		ADD_HOOK(get_RunMotionSpeed, "get_RunMotionSpeed at %p\n");
+		ADD_HOOK(HorseRaceInfoReplay_ctor, "HorseRaceInfoReplay_ctor at %p\n");
 		ADD_HOOK(AlterUpdate_FormationOffset, "AlterUpdate_FormationOffset at %p\n");
 		ADD_HOOK(AlterUpdate_PostEffect_BloomDiffusion, "AlterUpdate_PostEffect_BloomDiffusion at %p\n");
 		ADD_HOOK(alterupdate_eye_camera_pos, "alterupdate_eye_camera_pos at %p\n");
@@ -3029,7 +3206,6 @@ namespace
 		// start_monitor_thread();
 		_set_u_stat(true);
 		set_start_resolution();
-
 	}
 
 	void set_start_resolution() {
@@ -3133,7 +3309,6 @@ bool init_hook()
 
 	MH_CreateHook(LoadLibraryW, load_library_w_hook, &load_library_w_orig);
 	MH_EnableHook(LoadLibraryW);
-
 	return true;
 }
 

@@ -149,6 +149,22 @@
               }
             }  
         },
+        "raceInfoTab": {
+            "description": "比賽實时資訊顯示",
+            "type": "object",
+            "properties": {
+              "enableRaceInfoTab": {
+                  "description": "啟用比賽實时資訊顯示視窗",
+                  "type": "boolean",
+                  "default": false
+              },
+              "raceInfoTabAttachToGame": {
+                "description": "將視窗附加到遊戲中，不單獨彈窗",
+                "type": "boolean",
+                "default": false
+              }
+            }  
+        },
         "race_camera": {
             "description": "比賽相機設定（已失效）",
             "type": "object",
