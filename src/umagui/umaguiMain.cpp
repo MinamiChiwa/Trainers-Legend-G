@@ -77,10 +77,16 @@ namespace UmaCmp{
     }
 
     bool compareDistance(const UmaDataPair& a, const UmaDataPair& b) {
+        if ((a.second.finallyRank != -1) || b.second.finallyRank != -1) {
+            cmpTwo(b.second.finallyRank, a.second.finallyRank);
+        }
         return cmpTwo(a.second.distance, b.second.distance);
     }
 
     bool compareDistanceDesc(const UmaDataPair& a, const UmaDataPair& b) {
+        if ((a.second.finallyRank != -1) || b.second.finallyRank != -1) {
+            a.second.finallyRank < b.second.finallyRank;
+        }
         return a.second.distance > b.second.distance;
     }
 
@@ -128,6 +134,10 @@ namespace UmaCmp{
         return cmpTwo(a.second.Wiz, b.second.Wiz);
     }
 
+    bool compareDistFront(const UmaDataPair& a, const UmaDataPair& b) {
+        return cmpTwo(a.second.distanceFront, b.second.distanceFront);
+    }
+
 }
 
 bool getUmaGuiDone() {
@@ -143,16 +153,28 @@ void imguiRaceMainLoop(ImGuiIO& io) {
     std::vector<UmaDataPair> sortedData(umaRaceData.begin(), umaRaceData.end());
     std::sort(sortedData.begin(), sortedData.end(), UmaCmp::compareDistanceDesc);
     int rank = 1;
+    float firstDst = 0.0f;
+    float lastDst = 0.0f;
     for (auto& i : sortedData) {
         umaRaceData.at(i.first).setRank(rank);
         i.second.setRank(rank);
+        if (rank == 1) {
+            umaRaceData.at(i.first).setFrontAndFirstDist(0, 0);
+            i.second.setFrontAndFirstDist(0, 0);
+            firstDst = i.second.distance;
+        }
+        else {
+            umaRaceData.at(i.first).setFrontAndFirstDist(lastDst - i.second.distance, firstDst - i.second.distance);
+            i.second.setFrontAndFirstDist(lastDst - i.second.distance, firstDst - i.second.distance);
+        }
+        lastDst = i.second.distance;
         rank++;
     }
 
     if (ImGui::Begin("Race Info")) {
 
         static std::vector<const char*> tableTitle{
-            "GateNo", "Rank/Distance", "CharaName", "InstantSpeed", "Rate", "HP Left" ,"LastSpeed", "Speed", "Stamina", "Pow", "Guts", "Wiz"
+            "GateNo/CharaName", "Rank/Distance", "DistanceFrom Front/First", "InstantSpeed", "Rate", "HP Left" ,"LastSpeed", "Speed", "Stamina", "Pow", "Guts", "Wiz"
         };
 
         const int num_rows = sortedData.size();
@@ -173,14 +195,87 @@ void imguiRaceMainLoop(ImGuiIO& io) {
         }
         ImGui::TableHeadersRow();
 
-        // 绘制表格内容
-        for (const auto& i : sortedData)
-        {
-            ImGui::TableNextRow();
+        static auto rgbaToImVec4 = [](float r, float g, float b, float a) {
+            return ImVec4(r / 255.0f, g / 255.0f, b / 255.0f, a / 255.0f);
+        };
+        static std::map<int, std::pair<int, ImVec4>> highlightGates{};
+        static std::vector<ImVec4> colors{ 
+            rgbaToImVec4(0xff, 0x6f, 0x00, 255),  // 橙
+            rgbaToImVec4(0x14, 0xd1, 0x00, 255),  // 绿
+            rgbaToImVec4(0x11, 0x44, 0xaa, 255),
+            rgbaToImVec4(0x5d, 0xce, 0xc6, 255),
+            rgbaToImVec4(0x9f, 0x3e, 0xd5, 255),
+            rgbaToImVec4(0x71, 0x09, 0xaa, 255),
+            rgbaToImVec4(0xcd, 0x00, 0x74, 255),
+            rgbaToImVec4(0xff, 0x07, 0x00, 255),
+            rgbaToImVec4(0x84, 0xb2, 0x2d, 255),
+            rgbaToImVec4(0xff, 0x5c, 0x00, 255),
+            rgbaToImVec4(0xff, 0x9c, 0x00, 255),
+            rgbaToImVec4(0xed, 0x00, 0x2f, 255),
+            rgbaToImVec4(0x00, 0xa7, 0x70, 255),
+            rgbaToImVec4(0x00, 0xc1, 0x2b, 255),
+            rgbaToImVec4(0xDE, 0x00, 0x52, 255),
+            rgbaToImVec4(0xFF, 0x0D, 0x00, 255),
+            rgbaToImVec4(0x07, 0x76, 0xA0, 255),
+            rgbaToImVec4(0x00, 0xA6, 0x7C, 255),
+            rgbaToImVec4(0x00, 0xBF, 0x32, 255),
+        };
+        static int lastColorIndex = colors.size() - 1;
+        static auto selectNextColor = []() {
+            if (highlightGates.size() >= colors.size()) return -1;
 
+            lastColorIndex++;
+            if (lastColorIndex >= colors.size()) {
+                lastColorIndex = 0;
+            }
+            while (highlightGates.contains(lastColorIndex)) {
+                if (lastColorIndex >= colors.size()) {
+                    lastColorIndex = -1;
+                }
+                lastColorIndex++;
+            }
+            return lastColorIndex;
+        };
+
+        // 绘制表格内容
+        for (const auto& i : sortedData) {
+            ImGui::TableNextRow();
             ImGui::TableSetColumnIndex(0);
             const auto& umaData = i.second;
-            ImGui::Text("%d", umaData.gateNo);
+
+            auto fColor = ImVec4(1.0f, 1.0f, 1.0f, 1.0f);
+
+            if (const auto iter = highlightGates.find(umaData.gateNo); iter != highlightGates.end()) {
+                fColor = iter->second.second;
+            }
+            ImGui::PushStyleColor(ImGuiCol_Text, fColor);
+
+            ImGui::Text("%d. %s%s", umaData.gateNo, umaData.charaName.c_str(), umaData.trainerName.empty() ? "" : std::format(" ({})", umaData.trainerName).c_str());
+            
+            if (ImGui::IsItemClicked()) {
+                if (highlightGates.contains(umaData.gateNo)) {
+                    highlightGates.erase(umaData.gateNo);
+                }
+                else {
+                    auto nextColorIndex = selectNextColor();
+                    if (nextColorIndex != -1) {
+                        highlightGates.emplace(umaData.gateNo, std::make_pair(nextColorIndex, colors[nextColorIndex]));
+                    }
+                }
+            }
+            
+            if (ImGui::IsItemHovered()) {
+                ImGui::BeginTooltip();
+                ImGui::Text(
+                    "MinSpeed: %f\nRaceBaseSpeed: %f\nStartDashSpeedThreshold: %f\nBaseSpeed/RawSpeed: %.4f / %d\n\
+BaseStamina/RawStamina: %.4f / %d\nBasePow/RawPow: %.4f / %d\nBaseGuts/RawGuts: %.4f / %d\n\
+BaseWiz/RawWiz: %.4f / %d\n",
+umaData.MinSpeed, umaData.RaceBaseSpeed, umaData.StartDashSpeedThreshold, umaData.BaseSpeed, umaData.RawSpeed,
+umaData.BaseStamina, umaData.RawStamina, umaData.BasePow, umaData.RawPow, umaData.BaseGuts, umaData.RawGuts,
+umaData.BaseWiz, umaData.RawWiz
+);
+                ImGui::EndTooltip();
+            }
 
             ImGui::TableSetColumnIndex(1);
             ImGui::Text("%d / %.4f", umaData.rank, umaData.distance);
@@ -195,28 +290,46 @@ void imguiRaceMainLoop(ImGuiIO& io) {
             }
 
             ImGui::TableSetColumnIndex(2);
-            ImGui::Text("%s%s", umaData.charaName.c_str(), umaData.trainerName.empty() ? "" : std::format(" ({})", umaData.trainerName).c_str());
-            if (ImGui::IsItemHovered())
-            {
-                ImGui::BeginTooltip();
-                ImGui::Text(
-                    "MinSpeed: %f\nRaceBaseSpeed: %f\nStartDashSpeedThreshold: %f\nBaseSpeed/RawSpeed: %.4f / %d\n\
-BaseStamina/RawStamina: %.4f / %d\nBasePow/RawPow: %.4f / %d\nBaseGuts/RawGuts: %.4f / %d\n\
-BaseWiz/RawWiz: %.4f / %d\n",
-umaData.MinSpeed, umaData.RaceBaseSpeed, umaData.StartDashSpeedThreshold, umaData.BaseSpeed, umaData.RawSpeed,
-umaData.BaseStamina, umaData.RawStamina, umaData.BasePow, umaData.RawPow, umaData.BaseGuts, umaData.RawGuts,
-umaData.BaseWiz, umaData.RawWiz
-);
-                ImGui::EndTooltip();
-            }
-
-            ImGui::TableSetColumnIndex(3);
-            if (showKmH) {
-                ImGui::Text("%.2f km/h", umaData.MoveDistance / umaData.deltatime * 3.6);
+            if (umaData.rank == 1) {
+                ImGui::PushStyleColor(ImGuiCol_Text, fColor);
             }
             else {
-                ImGui::Text("%.2f m/s", umaData.MoveDistance / umaData.deltatime);
+                if (umaData.distanceFront < 0.5)
+                    ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xfe, 0x36, 0x01, 255));
+                else if (umaData.distanceFront < 1.0)
+                    ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xFF, 0xc5, 0x45, 255));
+                else
+                    ImGui::PushStyleColor(ImGuiCol_Text, fColor);
             }
+            ImGui::Text("%.2f / %.2f", umaData.distanceFront, umaData.distanceFirst);
+
+            ImGui::PopStyleColor();
+
+            ImGui::TableSetColumnIndex(3);
+            const auto speedMpers = umaData.MoveDistance / umaData.deltatime;
+
+            if (speedMpers <= 16.67)
+                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0x00, 0xb9, 0x45, 255));
+            else if (speedMpers <= 19.44)
+                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0x64, 0xb4, 0xcf, 255));
+            else if (speedMpers <= 22.22)
+                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xb7, 0x6f, 0xea, 255));
+            else if (speedMpers <= 23.61)
+                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xc9, 0x37, 0xd3, 255));
+            else if (speedMpers <= 25)
+                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xe8, 0x3a, 0x95, 255));
+            else if (speedMpers <= 26.38)
+                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xe7, 0x00, 0x3e, 255));
+            else
+                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xff, 0x31, 0x00, 255));
+
+            if (showKmH) {
+                ImGui::Text("%.2f km/h", speedMpers * 3.6);
+            }
+            else {
+                ImGui::Text("%.2f m/s", speedMpers);
+            }
+            ImGui::PopStyleColor();
             
             if (ImGui::IsItemHovered())
             {
@@ -229,10 +342,35 @@ umaData.BaseWiz, umaData.RawWiz
             }
 
             ImGui::TableSetColumnIndex(4);
+            if (umaData.rate < 1.0)
+                ImGui::PushStyleColor(ImGuiCol_Text, fColor);
+            else if (umaData.rate <= 1.2)
+                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0x64, 0xb4, 0xcf, 255));
+            else if (umaData.rate <= 1.35)
+                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0x92, 0x40, 0xd5, 255));
+            else if (umaData.rate <= 1.4)
+                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xc9, 0x37, 0xd3, 255));
+            else if (umaData.rate <= 1.5)
+                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xe7, 0x00, 0x3e, 255));
+            else
+                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xff, 0x31, 0x00, 255));
+
             ImGui::Text("%f", umaData.rate);
 
+            ImGui::PopStyleColor();
+
             ImGui::TableSetColumnIndex(5);
+            if (umaData.HpPer <= 0.001) 
+                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xea, 0x00, 0x37, 255));
+            else if (umaData.HpPer <= 0.06) 
+                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xff, 0x35, 0x00, 255));
+            else if (umaData.HpPer <= 0.12) 
+                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xff, 0xe8, 0x00, 255));
+            else
+                ImGui::PushStyleColor(ImGuiCol_Text, fColor);
+
             ImGui::Text("%.1f (%.2f%s) / %.4f", umaData.Hp, umaData.HpPer * 100, "%", umaData.MaxHp);
+            ImGui::PopStyleColor();
 
             ImGui::TableSetColumnIndex(6);
             ImGui::Text("%.4f", umaData.lastSpeed);
@@ -297,6 +435,7 @@ umaData.BaseWiz, umaData.RawWiz
                 ImGui::EndTooltip();
             }
             ImGui::NextColumn();
+            ImGui::PopStyleColor();
         }
 
         // 指定排序规则
@@ -307,7 +446,7 @@ umaData.BaseWiz, umaData.RawWiz
                 switch (sorts_specs->Specs[0].ColumnIndex) {
                 case 0: cmp_func = UmaCmp::compareGateNo; break;
                 case 1: cmp_func = UmaCmp::compareDistance; break;
-                case 2: cmp_func = UmaCmp::compareName; break;
+                case 2: cmp_func = UmaCmp::compareDistFront; break;
                 case 3: cmp_func = UmaCmp::compareRSpeed; break;
                 case 4: cmp_func = UmaCmp::compareRate; break;
                 case 5: cmp_func = UmaCmp::compareHp; break;

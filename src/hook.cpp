@@ -1787,6 +1787,20 @@ namespace
 		HorseRaceInfo_distance = il2cpp_class_get_field_from_name(HorseRaceInfo_klass, "_distance");
 	}
 
+	void updateUmaRaceRankByFinished(void* ptr) {
+		int finishedCount = 0;
+		for (const auto& i : umaRaceData) {
+			if (i.first == ptr) continue;
+			if (i.second.IsOverRun) {
+				finishedCount++;
+			}
+		}
+		if (const auto iter = umaRaceData.find(ptr); iter != umaRaceData.end())
+		{
+			iter->second.setFinallyRank(finishedCount + 1);
+		}
+	}
+
 	void* get_RunMotionSpeed_orig;
 	float get_RunMotionSpeed_hook(void* _this) {
 		auto ret = reinterpret_cast<decltype(get_RunMotionSpeed_hook)*>(get_RunMotionSpeed_orig)(_this);
@@ -1794,8 +1808,9 @@ namespace
 			initHorseDataFunc();
 			if (const auto iter = umaRaceData.find(_this); iter != umaRaceData.end())
 			{
+				bool isFinished = get_IsOverRun(_this);
 				iter->second.UpdateMotionData(ret, get_RunMotionRate(_this), get_RaceBaseSpeed(_this), get_MinSpeed(_this),
-					get_StartDashSpeedThreshold(_this), get_IsOverRun(_this), GetHp(_this), GetMaxHp(_this), GetHpPer(_this),
+					get_StartDashSpeedThreshold(_this), isFinished, GetHp(_this), GetMaxHp(_this), GetHpPer(_this),
 					get_NearHorseCount(_this), get_CongestionTime(_this), get_RawSpeed(_this),
 					il2cpp_symbols::read_field<float>(_this, HorseRaceInfo_baseSpeedAdjusted),
 					get_Speed(_this),
@@ -1810,8 +1825,10 @@ namespace
 					il2cpp_symbols::read_field<float>(_this, HorseRaceInfo_lastSpeed),
 					get_MoveDistance(_this), il2cpp_symbols::read_field<float>(_this, HorseRaceInfo_distance),
 					get_DeltaTime());
+				if (isFinished) updateUmaRaceRankByFinished(_this);
 			}
 		}
+
 		return ret;
 	}
 

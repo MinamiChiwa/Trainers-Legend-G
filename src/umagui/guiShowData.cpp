@@ -54,3 +54,12 @@ void UmaGUiShowData::UmaRaceMotionData::UpdateMotionData(float speed, float rate
 void UmaGUiShowData::UmaRaceMotionData::setRank(int rank) {
 	this->rank = rank;
 }
+
+void UmaGUiShowData::UmaRaceMotionData::setFrontAndFirstDist(float distanceFront, float distanceFirst) {
+	this->distanceFront = distanceFront;
+	this->distanceFirst = distanceFirst;
+}
+
+void UmaGUiShowData::UmaRaceMotionData::setFinallyRank(int rank) {
+	this->finallyRank = rank;
+}
