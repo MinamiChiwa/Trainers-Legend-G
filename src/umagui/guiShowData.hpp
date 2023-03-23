@@ -1,6 +1,8 @@
 #pragma once
 #include "stdinclude.hpp"
 
+extern bool ignoreNegativeSpeed;
+
 namespace UmaGUiShowData {
 
 	class UmaRaceMotionData {

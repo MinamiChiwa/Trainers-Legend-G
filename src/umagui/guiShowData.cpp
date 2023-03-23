@@ -1,6 +1,7 @@
 #include "stdinclude.hpp"
 #include "umagui/guiShowData.hpp"
 
+bool ignoreNegativeSpeed = false;
 
 
 UmaGUiShowData::UmaRaceMotionData::UmaRaceMotionData(int gateNo, std::wstring charaName, std::wstring trainerName) {
@@ -44,7 +45,9 @@ void UmaGUiShowData::UmaRaceMotionData::UpdateMotionData(float speed, float rate
 	this->IsStartDash = IsStartDash;
 	this->ActivateSkillCount = ActivateSkillCount;
 	this->lastSpeed = lastSpeed;
-	this->MoveDistance = MoveDistance;
+	if (!(ignoreNegativeSpeed && (MoveDistance < 0))) {
+		this->MoveDistance = MoveDistance;
+	}
 	this->deltatime = deltatime;
 	if (!IsOverRun) {
 		this->distance = distance;
@@ -65,7 +68,6 @@ void UmaGUiShowData::UmaRaceMotionData::setFrontAndFirstDist(float distanceFront
 void UmaGUiShowData::UmaRaceMotionData::setFinallyRank(int rank) {
 	this->finallyRank = rank;
 }
-
 
 
 UmaGUiShowData::SkillEventData::SkillEventData(int skillLevel, std::string horseName, std::string tName, int currGateNo, 

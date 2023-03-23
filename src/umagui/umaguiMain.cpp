@@ -4,6 +4,7 @@
 #include <d3d11.h>
 #include <tchar.h>
 #include "stdinclude.hpp"
+#include "umagui/guiLanguage.hpp"
 
 #pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "d3dcompiler.lib")
@@ -25,10 +26,11 @@ bool showRaceWnd = true;
 bool closeWhenRaceEnd = false;
 
 HWND hwnd;
-RECT cacheRect{ 100, 100, 1250, 600 };
+RECT cacheRect{ 100, 100, 1250, 1000 };
 
 std::map<void*, UmaGUiShowData::UmaRaceMotionData> umaRaceData{};
 std::vector<UmaGUiShowData::SkillEventData> umaUsedSkillList{};
+using namespace GuiTrans;
 
 void SetGuiDone(bool isDone) {
     guiDone = isDone;
@@ -183,8 +185,10 @@ void imguiRaceMainLoop(ImGuiIO& io) {
 
     if (ImGui::Begin("Race Info")) {
 
-        static std::vector<const char*> tableTitle{
-            "GateNo/CharaName", "Rank/Distance", "DistanceFrom Front/First", "InstantSpeed", "Rate", "HP Left", "IsLastSpurt/Start Distance", "LastSpeed", "Speed", "Stamina", "Pow", "Guts", "Wiz"
+        std::vector<const char*> tableTitle{
+            GetTrans("GateNo/CharaName"), GetTrans("Rank/Distance"), GetTrans("DistanceFrom Front/First"),
+            GetTrans("InstantSpeed"), GetTrans("Rate"), GetTrans("HP Left"), GetTrans("IsLastSpurt/Start Distance"),
+            GetTrans("LastSpeed"), GetTrans("Speed"), GetTrans("Stamina"), GetTrans("Pow"), GetTrans("Guts"), GetTrans("Wiz")
         };
 
         const int num_rows = sortedData.size();
@@ -274,9 +278,11 @@ void imguiRaceMainLoop(ImGuiIO& io) {
             if (ImGui::IsItemHovered()) {
                 ImGui::BeginTooltip();
                 ImGui::Text(
-                    "MinSpeed: %f\nRaceBaseSpeed: %f\nStartDashSpeedThreshold: %f\nBaseSpeed/RawSpeed: %.4f / %d\n\
-BaseStamina/RawStamina: %.4f / %d\nBasePow/RawPow: %.4f / %d\nBaseGuts/RawGuts: %.4f / %d\n\
-BaseWiz/RawWiz: %.4f / %d\n",
+                    std::format("{}: %f\n{}: %f\n{}: %f\n{}/{}: %.4f / %d\n{}/{}: %.4f / %d\n{}/{}: %.4f / %d\n{}/{}: %.4f / %d\n\
+{}/{}: %.4f / %d\n", GetTrans("MinSpeed"), GetTrans("RaceBaseSpeed"), GetTrans("StartDashSpeedThreshold"),
+GetTrans("BaseSpeed"), GetTrans("RawSpeed"), GetTrans("BaseStamina"), GetTrans("RawStamina"), 
+GetTrans("BasePow"), GetTrans("RawPow"), GetTrans("BaseGuts"), GetTrans("RawGuts"),
+GetTrans("BaseWiz"), GetTrans("RawWiz")).c_str(),
 umaData.MinSpeed, umaData.RaceBaseSpeed, umaData.StartDashSpeedThreshold, umaData.BaseSpeed, umaData.RawSpeed,
 umaData.BaseStamina, umaData.RawStamina, umaData.BasePow, umaData.RawPow, umaData.BaseGuts, umaData.RawGuts,
 umaData.BaseWiz, umaData.RawWiz
@@ -290,7 +296,7 @@ umaData.BaseWiz, umaData.RawWiz
             {
                 ImGui::BeginTooltip();
                 ImGui::Text(
-                    "MoveDistance: %.4f",
+                    std::format("{}: %.4f", GetTrans("MoveDistance")).c_str(),
                     umaData.MoveDistance
                 );
                 ImGui::EndTooltip();
@@ -342,7 +348,7 @@ umaData.BaseWiz, umaData.RawWiz
             {
                 ImGui::BeginTooltip();
                 ImGui::Text(
-                    "RunMotionSpeed: %.4f\nMoveDistance: %.4f",
+                    std::format("{}: %.4f\n{}: %.4f", GetTrans("RunMotionSpeed"), GetTrans("MoveDistance")).c_str(),
                     umaData.speed, umaData.MoveDistance
                 );
                 ImGui::EndTooltip();
@@ -399,7 +405,8 @@ umaData.BaseWiz, umaData.RawWiz
             {
                 ImGui::BeginTooltip();
                 ImGui::Text(
-                    "MinSpeed: %f\nRaceBaseSpeed: %f\nBaseSpeed: %.4f\nRawSpeed: %d",
+                    std::format("{}: %f\n{}: %f\n{}: %.4f\n{}: %d",
+                        GetTrans("MinSpeed"), GetTrans("RaceBaseSpeed"), GetTrans("BaseSpeed"), GetTrans("RawSpeed")).c_str(),
                     umaData.MinSpeed, umaData.RaceBaseSpeed, umaData.BaseSpeed, umaData.RawSpeed
                 );
                 ImGui::EndTooltip();
@@ -411,7 +418,7 @@ umaData.BaseWiz, umaData.RawWiz
             {
                 ImGui::BeginTooltip();
                 ImGui::Text(
-                    "BaseStamina:%.4f\nRawStamina: %d",
+                    std::format("{}:%.4f\n{}: %d", GetTrans("BaseStamina"), GetTrans("RawStamina")).c_str(),
                     umaData.BaseStamina, umaData.RawStamina
                 );
                 ImGui::EndTooltip();
@@ -423,7 +430,7 @@ umaData.BaseWiz, umaData.RawWiz
             {
                 ImGui::BeginTooltip();
                 ImGui::Text(
-                    "BasePow:%.4f\nRawPow: %d",
+                    std::format("{}:%.4f\n{}: %d", GetTrans("BasePow"), GetTrans("RawPow")).c_str(),
                     umaData.BasePow, umaData.RawPow
                 );
                 ImGui::EndTooltip();
@@ -435,7 +442,7 @@ umaData.BaseWiz, umaData.RawWiz
             {
                 ImGui::BeginTooltip();
                 ImGui::Text(
-                    "BaseGuts:%.4f\nRawGuts: %d",
+                    std::format("{}:%.4f\n{}: %d", GetTrans("BaseGuts"), GetTrans("RawGuts")).c_str(),
                     umaData.BaseGuts, umaData.RawGuts
                 );
                 ImGui::EndTooltip();
@@ -447,7 +454,7 @@ umaData.BaseWiz, umaData.RawWiz
             {
                 ImGui::BeginTooltip();
                 ImGui::Text(
-                    "BaseWiz: %.4f\nRawWiz: %d",
+                    std::format("{}: %.4f\n{}: %d", GetTrans("BaseWiz"), GetTrans("RawWiz")).c_str(),
                     umaData.BaseWiz, umaData.RawWiz
                 );
                 ImGui::EndTooltip();
@@ -482,29 +489,49 @@ umaData.BaseWiz, umaData.RawWiz
         ImGui::EndTable();
     }
 
-    ImGui::Text("Keep Top");
+    ImGui::Text(GetTrans("Keep Top"));
     ImGui::SameLine();
     ImGui::Checkbox("###top", &nowTopStat);    
     ImGui::SameLine();
     ImGui::Spacing();
     ImGui::SameLine();
-    ImGui::Text("Auto Close Window");
+    ImGui::Text(GetTrans("Auto Close Window"));
     ImGui::SameLine();
     ImGui::Checkbox("###autoclose", &closeWhenRaceEnd);
     ImGui::SameLine();
     ImGui::Spacing();
     ImGui::SameLine();
-    ImGui::Text("Show km/h");
+    ImGui::Text(GetTrans("Show km/h"));
     ImGui::SameLine();
-    ImGui::Checkbox("###showkmh", &showKmH);
+    ImGui::Checkbox("###showkmh", &showKmH);    
+    ImGui::SameLine();
+    ImGui::Spacing();
+    ImGui::SameLine();
+    ImGui::Text(GetTrans("Ignore Negative Speed"));
+    ImGui::SameLine();
+    ImGui::Checkbox("###ignoreNegativeSpeed", &ignoreNegativeSpeed);
+
+    static const char* items[] = { "English", "简体中文", "繁體中文" };
+    static int current_item = checkDefaultLang();
+
+    ImGui::Text("Language");
+    ImGui::SameLine();
+    ImGui::Combo("##", &current_item, items, IM_ARRAYSIZE(items));
+    switch (current_item) {
+    case 0:
+        GuiLanguage = GUILangType::ENGLISH; break;    
+    case 1:
+        GuiLanguage = GUILangType::SCHINESE; break;    
+    case 2:
+        GuiLanguage = GUILangType::TCHINESE; break;
+    }
 
     changeTopState();
-
     ImGui::End();
 }
 
 std::unordered_map<int, std::string> abilityTypes{
-    {0x0, "None"},
+    { 0x0, "None" },
     { 0x1, "Speed" },
     { 0x2, "Stamina" },
     { 0x3, "Power" },
@@ -551,15 +578,16 @@ std::unordered_map<int, std::string> abilityTypes{
 
 std::string transSkillAbilityType(int abilityType) {
     if (const auto iter = abilityTypes.find(abilityType); iter != abilityTypes.end()) {
-        return iter->second;
+        return GetTrans(iter->second.c_str());
     }
     return std::format("0x{:x}", abilityType);
 }
 
 void imGuiRaceSkillInfoMainLoop() {
     if (ImGui::Begin("Race Skills")) {
-        static std::vector<const char*> tableTitle{
-            "Gate/Name", "Level/Skill", "AbilityType", "Value", "Targets", "CoolDownTime"
+        std::vector<const char*> tableTitle{
+            GetTrans("Gate/Name"), GetTrans("Skill"), GetTrans("AbilityType"), 
+            GetTrans("Value"), GetTrans("Targets"), GetTrans("CoolDownTime")
         };
 
         const int num_rows = umaUsedSkillList.size();
@@ -580,8 +608,8 @@ void imGuiRaceSkillInfoMainLoop() {
                 ImGui::BeginTooltip();
                 ImGui::Text(std::format("{} (Rarity: {} Lv.{})", it.skillName, it.rarity, it.skillLevel).c_str());
 
-                static std::vector<const char*> skillTableTitle{
-                    "AbilityType", "Value", "Targets"
+                std::vector<const char*> skillTableTitle{
+                    GetTrans("AbilityType"), GetTrans("Value"), GetTrans("Targets")
                 };
 
                 const int numRows = it.skillAbilities.size();
