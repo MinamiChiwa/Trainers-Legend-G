@@ -2,6 +2,7 @@
 #include "stdinclude.hpp"
 
 extern std::map<void*, UmaGUiShowData::UmaRaceMotionData> umaRaceData;
+extern std::vector<UmaGUiShowData::SkillEventData> umaUsedSkillList;
 extern bool closeWhenRaceEnd;
 
 void SetGuiDone(bool isDone);

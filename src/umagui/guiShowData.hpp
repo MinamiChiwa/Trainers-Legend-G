@@ -46,17 +46,51 @@ namespace UmaGUiShowData {
 		float distanceFirst = 0.0f;
 		int finallyRank = -1;
 
+		float LastSpurtStartDistance;
+		bool isLastSpurt = false;
+
 		UmaRaceMotionData(int gateNo, std::wstring charaName, std::wstring trainerName);
 		void UpdateMotionData(float speed, float rate, float RaceBaseSpeed, float MinSpeed, float StartDashSpeedThreshold,
 			bool IsOverRun, float Hp, float MaxHp, float HpPer, int NearHorseCount, float CongestionTime, int RawSpeed,
 			float BaseSpeed, float Speed, int RawStamina, float BaseStamina, float Stamina, int RawPow, float BasePow, float Pow,
 			int RawGuts, float BaseGuts, float Guts, int RawWiz, float BaseWiz, float Wiz, bool IsStartDash, int ActivateSkillCount,
-			float lastSpeed, float MoveDistance, float distance, float deltatime);
+			float lastSpeed, float MoveDistance, float distance, float deltatime, float LastSpurtStartDistance, bool isLastSpurt);
 
 		void setRank(int rank);
 		void setFrontAndFirstDist(float distanceFront, float distanceFirst);
 		void setFinallyRank(int rank);
 
+	};
+
+	class SkillAbility {
+	public:
+		int abilityType;
+		float effValue;
+		std::vector<UmaRaceMotionData> targets;
+
+		SkillAbility(int abilityType, float effValue);
+		void addTargets(UmaRaceMotionData target);
+
+	};
+
+	class SkillEventData {
+	public:
+		int skillLevel;
+		int rarity;
+		int gradeValue;
+		float cooldownTime = 0.0f;
+		std::string skillName = "";
+		std::vector<SkillAbility> skillAbilities;
+
+		std::string horseName;
+		std::string tName;
+		int currGateNo;
+
+		SkillEventData(int skillLevel, std::string horseName, std::string tName, int currGateNo, int rarity, int gradeValue);
+
+		void updateCoolDownTime(float cooldownTime);
+		void addSkillAbilities(SkillAbility skillAbility);
+		void SetSkillName(std::string skillName);
 	};
 
 }

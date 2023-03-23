@@ -137,7 +137,7 @@ namespace
 		SetConsoleOutputCP(65001);
 		std::locale::global(std::locale(""));
 
-		wprintf(L"\u30a6\u30de\u5a18 Localify Patch Loaded! - By GEEKiDoS\n");
+		wprintf(L"\u30a6\u30de\u5a18 Localify Patch Loaded! - By GEEKiDoS & akemimadoka & chinosk\n");
 	}
 
 	std::string get_current_version()

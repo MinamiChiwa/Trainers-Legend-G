@@ -28,6 +28,7 @@ HWND hwnd;
 RECT cacheRect{ 100, 100, 1250, 600 };
 
 std::map<void*, UmaGUiShowData::UmaRaceMotionData> umaRaceData{};
+std::vector<UmaGUiShowData::SkillEventData> umaUsedSkillList{};
 
 void SetGuiDone(bool isDone) {
     guiDone = isDone;
@@ -78,14 +79,14 @@ namespace UmaCmp{
 
     bool compareDistance(const UmaDataPair& a, const UmaDataPair& b) {
         if ((a.second.finallyRank != -1) || b.second.finallyRank != -1) {
-            cmpTwo(b.second.finallyRank, a.second.finallyRank);
+            return cmpTwo(b.second.finallyRank, a.second.finallyRank);
         }
         return cmpTwo(a.second.distance, b.second.distance);
     }
 
     bool compareDistanceDesc(const UmaDataPair& a, const UmaDataPair& b) {
         if ((a.second.finallyRank != -1) || b.second.finallyRank != -1) {
-            a.second.finallyRank < b.second.finallyRank;
+            return a.second.finallyRank < b.second.finallyRank;
         }
         return a.second.distance > b.second.distance;
     }
@@ -138,11 +139,20 @@ namespace UmaCmp{
         return cmpTwo(a.second.distanceFront, b.second.distanceFront);
     }
 
+    bool compareLastSpurtStartDistance(const UmaDataPair& a, const UmaDataPair& b) {
+        return cmpTwo(a.second.LastSpurtStartDistance, b.second.LastSpurtStartDistance);
+    }
+
 }
 
 bool getUmaGuiDone() {
     return guiDone;
 }
+
+ImVec4 rgbaToImVec4 (float r, float g, float b, float a) {
+    return ImVec4(r / 255.0f, g / 255.0f, b / 255.0f, a / 255.0f);
+};
+
 
 auto cmp_func = UmaCmp::compareGateNo;
 
@@ -174,17 +184,17 @@ void imguiRaceMainLoop(ImGuiIO& io) {
     if (ImGui::Begin("Race Info")) {
 
         static std::vector<const char*> tableTitle{
-            "GateNo/CharaName", "Rank/Distance", "DistanceFrom Front/First", "InstantSpeed", "Rate", "HP Left" ,"LastSpeed", "Speed", "Stamina", "Pow", "Guts", "Wiz"
+            "GateNo/CharaName", "Rank/Distance", "DistanceFrom Front/First", "InstantSpeed", "Rate", "HP Left", "IsLastSpurt/Start Distance", "LastSpeed", "Speed", "Stamina", "Pow", "Guts", "Wiz"
         };
 
         const int num_rows = sortedData.size();
-        const int num_columns = tableTitle.size();  // ¡– ˝
+        const int num_columns = tableTitle.size();  // ÂàóÊï∞
 
         ImGui::BeginTable("UmaRaceInfo", num_columns, ImGuiTableFlags_Sortable | ImGuiTableFlags_Resizable | ImGuiTableFlags_SizingFixedFit);
 
         std::sort(sortedData.begin(), sortedData.end(), cmp_func);
 
-        // ªÊ÷∆±ÌÕ∑
+        // ÁªòÂà∂Ë°®Â§¥
         auto headLine = 0;
         for (const auto& i : tableTitle) {
             if (headLine == 0)
@@ -195,13 +205,10 @@ void imguiRaceMainLoop(ImGuiIO& io) {
         }
         ImGui::TableHeadersRow();
 
-        static auto rgbaToImVec4 = [](float r, float g, float b, float a) {
-            return ImVec4(r / 255.0f, g / 255.0f, b / 255.0f, a / 255.0f);
-        };
         static std::map<int, std::pair<int, ImVec4>> highlightGates{};
         static std::vector<ImVec4> colors{ 
-            rgbaToImVec4(0xff, 0x6f, 0x00, 255),  // ≥»
-            rgbaToImVec4(0x14, 0xd1, 0x00, 255),  // ¬Ã
+            rgbaToImVec4(0xff, 0x6f, 0x00, 255),  // Ê©ô
+            rgbaToImVec4(0x14, 0xd1, 0x00, 255),  // Áªø
             rgbaToImVec4(0x11, 0x44, 0xaa, 255),
             rgbaToImVec4(0x5d, 0xce, 0xc6, 255),
             rgbaToImVec4(0x9f, 0x3e, 0xd5, 255),
@@ -237,7 +244,7 @@ void imguiRaceMainLoop(ImGuiIO& io) {
             return lastColorIndex;
         };
 
-        // ªÊ÷∆±Ì∏Òƒ⁄»›
+        // ÁªòÂà∂Ë°®Ê†ºÂÜÖÂÆπ
         for (const auto& i : sortedData) {
             ImGui::TableNextRow();
             ImGui::TableSetColumnIndex(0);
@@ -317,9 +324,9 @@ umaData.BaseWiz, umaData.RawWiz
             else if (speedMpers <= 23.61)
                 ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xc9, 0x37, 0xd3, 255));
             else if (speedMpers <= 25)
-                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xe8, 0x3a, 0x95, 255));
+                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xf3, 0x6b, 0xb3, 255));
             else if (speedMpers <= 26.38)
-                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xe7, 0x00, 0x3e, 255));
+                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xf3, 0x3f, 0x6e, 255));
             else
                 ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xff, 0x31, 0x00, 255));
 
@@ -360,11 +367,11 @@ umaData.BaseWiz, umaData.RawWiz
             ImGui::PopStyleColor();
 
             ImGui::TableSetColumnIndex(5);
-            if (umaData.HpPer <= 0.001) 
+            if (umaData.HpPer <= 0.001)
                 ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xea, 0x00, 0x37, 255));
-            else if (umaData.HpPer <= 0.06) 
+            else if (umaData.HpPer <= 0.06)
                 ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xff, 0x35, 0x00, 255));
-            else if (umaData.HpPer <= 0.12) 
+            else if (umaData.HpPer <= 0.12)
                 ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xff, 0xe8, 0x00, 255));
             else
                 ImGui::PushStyleColor(ImGuiCol_Text, fColor);
@@ -373,9 +380,20 @@ umaData.BaseWiz, umaData.RawWiz
             ImGui::PopStyleColor();
 
             ImGui::TableSetColumnIndex(6);
-            ImGui::Text("%.4f", umaData.lastSpeed);
+            if (umaData.isLastSpurt)
+                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xfe, 0x95, 0x9a, 255));
+            else
+                ImGui::PushStyleColor(ImGuiCol_Text, fColor);
+
+            ImGui::Text("%s", umaData.isLastSpurt ? "Yes" : "No");
+            ImGui::PopStyleColor();
+            ImGui::SameLine();
+            ImGui::Text("/ %.4f", umaData.LastSpurtStartDistance);
 
             ImGui::TableSetColumnIndex(7);
+            ImGui::Text("%.4f", umaData.lastSpeed);
+
+            ImGui::TableSetColumnIndex(8);
             ImGui::Text("%.4f", umaData.Speed);
             if (ImGui::IsItemHovered())
             {
@@ -387,7 +405,7 @@ umaData.BaseWiz, umaData.RawWiz
                 ImGui::EndTooltip();
             }
 
-            ImGui::TableSetColumnIndex(8);
+            ImGui::TableSetColumnIndex(9);
             ImGui::Text("%.4f", umaData.Stamina);
             if (ImGui::IsItemHovered())
             {
@@ -399,7 +417,7 @@ umaData.BaseWiz, umaData.RawWiz
                 ImGui::EndTooltip();
             }
 
-            ImGui::TableSetColumnIndex(9);
+            ImGui::TableSetColumnIndex(10);
             ImGui::Text("%.4f", umaData.Pow);
             if (ImGui::IsItemHovered())
             {
@@ -411,7 +429,7 @@ umaData.BaseWiz, umaData.RawWiz
                 ImGui::EndTooltip();
             }
 
-            ImGui::TableSetColumnIndex(10);
+            ImGui::TableSetColumnIndex(11);
             ImGui::Text("%.4f", umaData.Guts);
             if (ImGui::IsItemHovered())
             {
@@ -423,7 +441,7 @@ umaData.BaseWiz, umaData.RawWiz
                 ImGui::EndTooltip();
             }
 
-            ImGui::TableSetColumnIndex(11);
+            ImGui::TableSetColumnIndex(12);
             ImGui::Text("%.4f", umaData.Wiz);
             if (ImGui::IsItemHovered())
             {
@@ -434,11 +452,11 @@ umaData.BaseWiz, umaData.RawWiz
                 );
                 ImGui::EndTooltip();
             }
-            ImGui::NextColumn();
+            // ImGui::NextColumn();
             ImGui::PopStyleColor();
         }
 
-        // ÷∏∂®≈≈–ÚπÊ‘Ú
+        // ÊåáÂÆöÊéíÂ∫èËßÑÂàô
         ImGuiTableSortSpecs* sorts_specs = ImGui::TableGetSortSpecs();
         if (sorts_specs) {
             if (sorts_specs->SpecsCount > 0) {
@@ -450,12 +468,13 @@ umaData.BaseWiz, umaData.RawWiz
                 case 3: cmp_func = UmaCmp::compareRSpeed; break;
                 case 4: cmp_func = UmaCmp::compareRate; break;
                 case 5: cmp_func = UmaCmp::compareHp; break;
-                case 6: cmp_func = UmaCmp::compareLastspeed; break;
-                case 7: cmp_func = UmaCmp::compareSpeed; break;
-                case 8: cmp_func = UmaCmp::compareStamina; break;
-                case 9: cmp_func = UmaCmp::comparePow; break;
-                case 10: cmp_func = UmaCmp::compareGuts; break;
-                case 11: cmp_func = UmaCmp::compareWiz; break;
+                case 6: cmp_func = UmaCmp::compareLastSpurtStartDistance; break;
+                case 7: cmp_func = UmaCmp::compareLastspeed; break;
+                case 8: cmp_func = UmaCmp::compareSpeed; break;
+                case 9: cmp_func = UmaCmp::compareStamina; break;
+                case 10: cmp_func = UmaCmp::comparePow; break;
+                case 11: cmp_func = UmaCmp::compareGuts; break;
+                case 12: cmp_func = UmaCmp::compareWiz; break;
                 }
             }
         }
@@ -484,6 +503,188 @@ umaData.BaseWiz, umaData.RawWiz
     ImGui::End();
 }
 
+std::unordered_map<int, std::string> abilityTypes{
+    {0x0, "None"},
+    { 0x1, "Speed" },
+    { 0x2, "Stamina" },
+    { 0x3, "Power" },
+    { 0x4, "Guts" },
+    { 0x5, "Wiz" },
+    { 0x6, "RunningStyleExOonige" },
+    { 0x7, "HpDecRate" },
+    { 0x8, "VisibleDistance" },
+    { 0x9, "HpRate" },
+    { 0xa, "StartDash" },
+    { 0xb, "ForceOvertakeIn" },
+    { 0xc, "ForceOvertakeOut" },
+    { 0xd, "TemptationEndTime" },
+    { 0xe, "StartDelayFix" },
+    { 0xf, "NOUSE_13" },
+    { 0x10, "NOUSE_14" },
+    { 0x11, "NOUSE" },
+    { 0x12, "NOUSE_3" },
+    { 0x13, "NOUSE_21" },
+    { 0x14, "NOUSE_8" },
+    { 0x15, "CurrentSpeed" },
+    { 0x16, "CurrentSpeedWithNaturalDeceleration" },
+    { 0x17, "NOUSE_2" },
+    { 0x18, "NOUSE_4" },
+    { 0x19, "NOUSE_7" },
+    { 0x1a, "NOUSE_5" },
+    { 0x1b, "TargetSpeed" },
+    { 0x1c, "LaneMoveSpeed" },
+    { 0x1d, "TemptationPer" },
+    { 0x1e, "PushPer" },
+    { 0x1f, "Accel" },
+    { 0x20, "AllStatus" },
+    { 0x21, "NOUSE_10" },
+    { 0x22, "NOUSE_20" },
+    { 0x23, "TargetLane" },
+    { 0x24, "ActivateRandomNormalAndRareSkill" },
+    { 0x25, "ActivateRandomRareSkill" },
+    { 0x26, "NOUSE_17" },
+    { 0x27, "NOUSE_18" },
+    { 0x1f5, "ChallengeMatchBonus_Old" },
+    { 0x1f6, "ChallengeMatchBonusStatus" },
+    { 0x1f7, "ChallengeMatchBonusMotivation" }
+};
+
+std::string transSkillAbilityType(int abilityType) {
+    if (const auto iter = abilityTypes.find(abilityType); iter != abilityTypes.end()) {
+        return iter->second;
+    }
+    return std::format("0x{:x}", abilityType);
+}
+
+void imGuiRaceSkillInfoMainLoop() {
+    if (ImGui::Begin("Race Skills")) {
+        static std::vector<const char*> tableTitle{
+            "Gate/Name", "Level/Skill", "AbilityType", "Value", "Targets", "CoolDownTime"
+        };
+
+        const int num_rows = umaUsedSkillList.size();
+        const int num_columns = tableTitle.size();  // ÂàóÊï∞
+        const std::vector thisLoopList(umaUsedSkillList.rbegin(), umaUsedSkillList.rend());
+
+        ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(2, 18));
+        ImGui::BeginTable("UmaRaceSkills", num_columns, ImGuiTableFlags_Resizable | ImGuiTableFlags_SizingFixedFit);
+
+        for (const auto& i : tableTitle) {
+            ImGui::TableSetupColumn(i, ImGuiTableColumnFlags_WidthFixed);
+        }
+        ImGui::TableHeadersRow();
+
+
+        for (auto& it : thisLoopList) {
+            static auto showSkillInfo = [](UmaGUiShowData::SkillEventData it) {
+                ImGui::BeginTooltip();
+                ImGui::Text(std::format("{} (Rarity: {} Lv.{})", it.skillName, it.rarity, it.skillLevel).c_str());
+
+                static std::vector<const char*> skillTableTitle{
+                    "AbilityType", "Value", "Targets"
+                };
+
+                const int numRows = it.skillAbilities.size();
+                const int numColumns = skillTableTitle.size();  // ÂàóÊï∞
+
+                ImGui::BeginTable("UmaRaceSkillInfo", numColumns);
+                for (const auto& iTitle : skillTableTitle) {
+                    ImGui::TableSetupColumn(iTitle, ImGuiTableColumnFlags_WidthFixed);
+                }
+                ImGui::TableHeadersRow();
+
+                for (const auto& ability : it.skillAbilities) {
+                    ImGui::TableNextRow();
+                    ImGui::TableSetColumnIndex(0);
+                    ImGui::Text("%s", transSkillAbilityType(ability.abilityType).c_str());
+
+                    ImGui::TableSetColumnIndex(1);
+                    ImGui::Text("%.6f", ability.effValue);
+
+                    ImGui::TableSetColumnIndex(2);
+                    
+                    std::stringstream ss;
+                    int fCount = 0;
+                    for (const auto& target : ability.targets) {
+                        ss << std::format("{}. {}{} ", target.gateNo, target.charaName, 
+                            target.trainerName.empty() ? "" : std::format(" ({})", target.trainerName));
+                        fCount++;
+                        if (fCount >= 3) {
+                            fCount = 0;
+                            ss << "\n";
+                        }
+                    }
+                    ImGui::Text("%s", ss.str().c_str());
+                }
+
+                ImGui::EndTable();
+
+                ImGui::EndTooltip();
+            };
+
+            ImGui::TableNextRow();
+
+            if (it.rarity == 1)  // ÁôΩ
+                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xff, 0xff, 0xff, 255));
+            else if (it.rarity == 2)  // Èáë
+                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xff, 0xee, 0x40, 255));
+            else if (it.rarity == 5 || it.rarity == 4)  // Âõ∫Êúâ
+                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xf0, 0x6c, 0x98, 255));
+            else if (it.rarity == 6)  // ÈáëÊäÄËÉΩÂçáÁ∫ß
+                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xfd, 0x95, 0x9c, 255));
+            else
+                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xff, 0xff, 0xff, 255));
+
+            ImGui::TableSetColumnIndex(0);
+            ImGui::Text(std::format("{}. {}{}", it.currGateNo, it.horseName, it.tName).c_str());
+            if (ImGui::IsItemHovered()) showSkillInfo(it);
+
+            ImGui::TableSetColumnIndex(1);
+            ImGui::Text("%s (Rarity: %d Lv.%d)", it.skillName.c_str(), it.rarity, it.skillLevel);
+            if (ImGui::IsItemHovered()) showSkillInfo(it);
+
+            ImGui::TableSetColumnIndex(2);
+            std::stringstream ss;
+            for (const auto& iab : it.skillAbilities) {
+                ss << transSkillAbilityType(iab.abilityType) << "\n";
+            }
+            ImGui::Text(ss.str().c_str());
+            ss.str("");
+            if (ImGui::IsItemHovered()) showSkillInfo(it);
+
+            ImGui::TableSetColumnIndex(3);
+            for (const auto& iab : it.skillAbilities) {
+                ss << iab.effValue << "\n";
+            }
+            ImGui::Text(ss.str().c_str());
+            ss.str("");
+            if (ImGui::IsItemHovered()) showSkillInfo(it);
+
+            ImGui::TableSetColumnIndex(4);
+            for (const auto& iab : it.skillAbilities) {
+                for (const auto& target : iab.targets) {
+                    ss << std::format("{}. {}{} ", target.gateNo, target.charaName,
+                        target.trainerName.empty() ? "" : std::format(" ({})", target.trainerName));
+                }
+                ss << "\n";
+            }
+            ImGui::Text(ss.str().c_str());
+            ss.str("");
+            if (ImGui::IsItemHovered()) showSkillInfo(it);
+
+            ImGui::TableSetColumnIndex(5);
+            ImGui::Text("%f", it.cooldownTime);
+            if (ImGui::IsItemHovered()) showSkillInfo(it);
+
+            ImGui::PopStyleColor();
+        }
+
+        ImGui::EndTable();
+        ImGui::PopStyleVar();
+    }
+    ImGui::End();
+}
+
 // Main code
 void guimain()
 {
@@ -504,8 +705,8 @@ void guimain()
         if (nowTopStat) SetWindowTop();
     }
     else {
-        // ◊¢≤·¥∞ÃÂ¿‡
-        // ∏Ωº”µΩ÷∏∂®¥∞ÃÂ…œ
+        // Ê≥®ÂÜåÁ™ó‰ΩìÁ±ª
+        // ÈôÑÂä†Âà∞ÊåáÂÆöÁ™ó‰Ωì‰∏ä
         wc.cbClsExtra = NULL;
         wc.cbWndExtra = NULL;
         wc.hbrBackground = (HBRUSH)CreateSolidBrush(RGB(0, 0, 0));
@@ -519,14 +720,14 @@ void guimain()
 
         RegisterClassW(&wc);
 
-        // µ√µΩ¥∞ø⁄æ‰±˙
+        // ÂæóÂà∞Á™óÂè£Âè•ÊüÑ
         WindowRectangle;
         GameHwnd = FindWindowW(L"UnityWndClass", L"umamusume");
         GetWindowRect(GameHwnd, &WindowRectangle);
         WindowWide = WindowRectangle.right - WindowRectangle.left;
         WindowHeight = WindowRectangle.bottom - WindowRectangle.top;
 
-        // ¥¥Ω®¥∞ÃÂ
+        // ÂàõÂª∫Á™ó‰Ωì
        //  HWND hwnd = ::CreateWindowW(WS_EX_TOPMOST | WS_EX_LAYERED | WS_EX_TOOLWINDOW, L" ", L" ", WS_POPUP, 1, 1, WindowWide, WindowHeight, 0, 0, wc.hInstance, 0);
         hwnd = ::CreateWindowW(wc.lpszClassName, L"", WS_EX_TOOLWINDOW | WS_EX_TOPMOST | WS_EX_LAYERED | WS_POPUP, 1, 1, WindowWide, WindowHeight, NULL, NULL, wc.hInstance, NULL);
         LONG lWinStyleEx = GetWindowLong(hwnd, GWL_EXSTYLE);
@@ -534,14 +735,14 @@ void guimain()
 
         SetWindowLong(hwnd, GWL_EXSTYLE, lWinStyleEx);
         SetLayeredWindowAttributes(hwnd, 0, 0, LWA_ALPHA);
-        // »•µÙ±ÍÃ‚¿∏º∞±ﬂøÚ
+        // ÂéªÊéâÊ†áÈ¢òÊ†èÂèäËæπÊ°Ü
         LONG_PTR Style = GetWindowLongPtr(hwnd, GWL_STYLE);
         Style = Style & ~WS_CAPTION & ~WS_SYSMENU & ~WS_SIZEBOX;
         SetWindowLongPtr(hwnd, GWL_STYLE, Style);
-        // ÷¡∂•≤„¥∞ø⁄ ◊Ó¥ÛªØ
+        // Ëá≥È°∂Â±ÇÁ™óÂè£ ÊúÄÂ§ßÂåñ
         SetWindowPos(hwnd, HWND_TOPMOST, 0, 0, WindowWide, WindowHeight, SWP_SHOWWINDOW);
         SetWindowPos(hwnd, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE);
-        // …Ë÷√¥∞ÃÂø…¥©Õ∏ Û±Í
+        // ËÆæÁΩÆÁ™ó‰ΩìÂèØÁ©øÈÄèÈº†Ê†á
         // SetWindowLong(hwnd, GWL_EXSTYLE, WS_EX_TRANSPARENT | WS_EX_LAYERED);
 
     }
@@ -585,6 +786,9 @@ void guimain()
     builder.AddRanges(io.Fonts->GetGlyphRangesJapanese());
     builder.AddRanges(io.Fonts->GetGlyphRangesChineseSimplifiedCommon());
     builder.AddRanges(io.Fonts->GetGlyphRangesChineseFull());
+    builder.AddRanges(io.Fonts->GetGlyphRangesKorean());
+    builder.AddRanges(io.Fonts->GetGlyphRangesDefault());
+    builder.AddText("‚óã‚óé‚ñ≥√ó‚òÜ");
     ImVector<ImWchar> glyphRanges;
     builder.BuildRanges(&glyphRanges);
     config.GlyphRanges = glyphRanges.Data;
@@ -615,7 +819,7 @@ void guimain()
 
 
         if (raceInfoTabAttachToGame) {
-            // √ø¥Œ∂ºΩ´¥∞ÃÂ÷√∂•≤¢∏˙ÀÊ”Œœ∑¥∞ÃÂ“∆∂Ø
+            // ÊØèÊ¨°ÈÉΩÂ∞ÜÁ™ó‰ΩìÁΩÆÈ°∂Âπ∂Ë∑üÈöèÊ∏∏ÊàèÁ™ó‰ΩìÁßªÂä®
             GetWindowRect(GameHwnd, &WindowRectangle);
             WindowWide = (WindowRectangle.right) - (WindowRectangle.left);
             WindowHeight = (WindowRectangle.bottom) - (WindowRectangle.top);
@@ -626,7 +830,7 @@ void guimain()
                 WindowHeight -= 23;
             }
 
-            // ∏˙ÀÊ¥∞ø⁄“∆∂Ø
+            // Ë∑üÈöèÁ™óÂè£ÁßªÂä®
             MoveWindow(hwnd, WindowRectangle.left + 9, WindowRectangle.top + 9, WindowWide - 18, WindowHeight - 18, true);
 
         }
@@ -637,6 +841,7 @@ void guimain()
 
         ImGui::NewFrame();
         imguiRaceMainLoop(io);
+        imGuiRaceSkillInfoMainLoop();
 
         ImGui::Render();
         const float clear_color_with_alpha[4] = { clear_color.x * clear_color.w, clear_color.y * clear_color.w, clear_color.z * clear_color.w, clear_color.w };

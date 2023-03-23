@@ -13,7 +13,7 @@ void UmaGUiShowData::UmaRaceMotionData::UpdateMotionData(float speed, float rate
 	bool IsOverRun, float Hp, float MaxHp, float HpPer, int NearHorseCount, float CongestionTime, int RawSpeed,
 	float BaseSpeed, float Speed, int RawStamina, float BaseStamina, float Stamina, int RawPow, float BasePow, float Pow,
 	int RawGuts, float BaseGuts, float Guts, int RawWiz, float BaseWiz, float Wiz, bool IsStartDash, int ActivateSkillCount,
-	float lastSpeed, float MoveDistance, float distance, float deltatime)
+	float lastSpeed, float MoveDistance, float distance, float deltatime, float LastSpurtStartDistance, bool isLastSpurt)
 {
 	this->speed = speed;
 	this->rate = rate;
@@ -49,6 +49,8 @@ void UmaGUiShowData::UmaRaceMotionData::UpdateMotionData(float speed, float rate
 	if (!IsOverRun) {
 		this->distance = distance;
 	}
+	this->LastSpurtStartDistance = LastSpurtStartDistance;
+	this->isLastSpurt = isLastSpurt;
 }
 
 void UmaGUiShowData::UmaRaceMotionData::setRank(int rank) {
@@ -62,4 +64,40 @@ void UmaGUiShowData::UmaRaceMotionData::setFrontAndFirstDist(float distanceFront
 
 void UmaGUiShowData::UmaRaceMotionData::setFinallyRank(int rank) {
 	this->finallyRank = rank;
+}
+
+
+
+UmaGUiShowData::SkillEventData::SkillEventData(int skillLevel, std::string horseName, std::string tName, int currGateNo, 
+		int rarity, int gradeValue) {
+	this->skillLevel = skillLevel;
+	this->horseName = horseName;
+	this->tName = tName;
+	this->currGateNo = currGateNo;
+	this->rarity = rarity;
+	this->gradeValue = gradeValue;
+}
+
+void UmaGUiShowData::SkillEventData::updateCoolDownTime(float cooldownTime) {
+	if (cooldownTime != 0.0f) {
+		this->cooldownTime = cooldownTime;
+	}
+}
+
+void UmaGUiShowData::SkillEventData::addSkillAbilities(SkillAbility skillAbility) {
+	this->skillAbilities.push_back(skillAbility);
+}
+
+void UmaGUiShowData::SkillEventData::SetSkillName(std::string skillName) {
+	this->skillName = skillName;
+}
+
+
+UmaGUiShowData::SkillAbility::SkillAbility(int abilityType, float effValue) {
+	this->abilityType = abilityType;
+	this->effValue = effValue;
+}
+
+void UmaGUiShowData::SkillAbility::addTargets(UmaRaceMotionData target) {
+	this->targets.emplace_back(target);
 }
