@@ -584,6 +584,8 @@ std::string transSkillAbilityType(int abilityType) {
 }
 
 void imGuiRaceSkillInfoMainLoop() {
+    if (!showRaceWnd) return;
+
     if (ImGui::Begin("Race Skills")) {
         std::vector<const char*> tableTitle{
             GetTrans("Gate/Name"), GetTrans("Skill"), GetTrans("AbilityType"), 
