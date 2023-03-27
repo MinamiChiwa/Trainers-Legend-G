@@ -66,6 +66,107 @@ public:
 x← ↘z
 */
 namespace UmaCamera {
+	namespace CameraCalc {
+		struct Quaternion
+		{
+			float w, x, y, z;
+
+			Quaternion(float _w, float _x, float _y, float _z)
+			{
+				w = _w;
+				x = _x;
+				y = _y;
+				z = _z;
+			}
+
+			Quaternion operator*(const Quaternion& q) const
+			{
+				float nw = w * q.w - x * q.x - y * q.y - z * q.z;
+				float nx = w * q.x + x * q.w + y * q.z - z * q.y;
+				float ny = w * q.y - x * q.z + y * q.w + z * q.x;
+				float nz = w * q.z + x * q.y - y * q.x + z * q.w;
+				return Quaternion(nw, nx, ny, nz);
+			}
+
+			Quaternion Conjugate() const
+			{
+				return Quaternion(w, -x, -y, -z);
+			}
+		};
+
+		struct Vector3
+		{
+			float x, y, z;
+
+			Vector3(float _x, float _y, float _z)
+			{
+				x = _x;
+				y = _y;
+				z = _z;
+			}
+
+			Vector3 operator+(const Vector3& v) const
+			{
+				return Vector3(x + v.x, y + v.y, z + v.z);
+			}
+
+			Vector3 operator*(float s) const
+			{
+				return Vector3(x * s, y * s, z * s);
+			}
+		};
+
+		Quaternion RotateQuaternion(const Quaternion& q, float angle_degrees, const Vector3& axis)
+		{
+			float angle_radians = angle_degrees * M_PI / 180.0f;
+			float half_angle = angle_radians * 0.5f;
+			float s = sin(half_angle);
+			Quaternion q1(cos(half_angle), axis.x * s, axis.y * s, axis.z * s);
+			Quaternion q2 = q * q1;
+			return q2;
+		}
+
+		Quaternion ToQuaternion(float yaw, float pitch, float roll)
+		{
+			float cy = std::cos(yaw * 0.5f);
+			float sy = std::sin(yaw * 0.5f);
+			float cp = std::cos(pitch * 0.5f);
+			float sp = std::sin(pitch * 0.5f);
+			float cr = std::cos(roll * 0.5f);
+			float sr = std::sin(roll * 0.5f);
+
+			float qw = cr * cp * cy + sr * sp * sy;
+			float qx = sr * cp * cy - cr * sp * sy;
+			float qy = cr * sp * cy + sr * cp * sy;
+			float qz = cr * cp * sy - sr * sp * cy;
+
+			return Quaternion(qw, qx, qy, qz);
+		}
+
+		Vector3 RotateVector(const Quaternion& q, const Vector3& v)
+		{
+			Quaternion p(0, v.x, v.y, v.z);
+			Quaternion q_inv = q.Conjugate();
+			Quaternion rotated = q * p * q_inv;
+			return Vector3(rotated.x, rotated.y, rotated.z);
+		}
+
+		Vector3 GetFrontPos(const Vector3& pos, const Quaternion& rot, float distance)
+		{
+			Vector3 v(0, 0, distance);
+			Vector3 v_rotated = RotateVector(rot, v);
+			Vector3 pos_front = pos + v_rotated;
+			return pos_front;
+		}
+
+		Vector3_t GetFrontPos(const Vector3_t& pos, const Quaternion_t& rot, float distance) {
+			Vector3 vPos(pos.x, pos.y, pos.z);
+			Quaternion vQos(rot.w, rot.x, rot.y, rot.z);
+			const auto ret = GetFrontPos(vPos, vQos, distance);
+			return Vector3_t{ ret.x, ret.y, ret.z };
+		}
+	}
+
 	namespace {
 		int cameraType = CAMERA_LIVE;
 		int liveCameraType = LiveCamera_FREE;
@@ -96,6 +197,7 @@ namespace UmaCamera {
 		Vector3_t cacheLastRacePos{};
 		Vector3_t liveFollowCameraOffset{ 0, 0, -2 };
 		Vector3_t liveFollowCameraLookatOffset{ 0, 0, 0 };
+		Vector2_t raceFollowLookatOffset{ 0, 0 };
 		bool lookAtUmaReverse = false;
 
 		bool mouseLockThreadStart = false;
@@ -297,6 +399,7 @@ namespace UmaCamera {
 		liveDefaultFOV = 60;
 		liveFollowCameraOffset = Vector3_t{ 0,0,-2 };
 		liveFollowCameraLookatOffset = Vector3_t{ 0,0,0 };
+		raceFollowLookatOffset = Vector2_t{ 0,0 };
 	}
 
 	void setUmaCameraType(int value) {
@@ -366,21 +469,42 @@ namespace UmaCamera {
 		float diff_z = setPos->z - cacheLastRacePos.z;
 
 		if (abs(diff_x) >= 0.3) {
-			setPos->x -= diff_x / 2;
+			//setPos->x -= diff_x / 2;
 		}
 		if (abs(diff_z) >= 0.3) {
-			setPos->z -= diff_z / 2;
+			//setPos->z -= diff_z / 2;
 		}
 
 		cacheLastRacePos = Vector3_t{ setPos->x, setPos->y, setPos->z };
 	}
 
-	void updateFollowUmaPos(Vector3_t lastFrame, Vector3_t thisFrame, Vector3_t* setPos) {
+	void updateFollowUmaPos(Vector3_t lastFrame, Vector3_t thisFrame, Quaternion_t currQuat, Vector3_t* setPos) {
+
+		auto q2 = CameraCalc::RotateQuaternion(CameraCalc::Quaternion(currQuat.w, currQuat.x, currQuat.y, currQuat.z), 
+			raceFollowLookatOffset.x,
+			CameraCalc::Vector3(0, 1, 0)
+		);
+		currQuat.w = q2.w;
+		currQuat.x = q2.x;
+		currQuat.y = q2.y;
+		currQuat.z = q2.z;
+
+		auto frontPosOffset = CameraCalc::GetFrontPos(thisFrame, currQuat, g_race_freecam_follow_umamusume_distance < 0 ? -1 : 1);
+
+		auto frontPos = CameraCalc::GetFrontPos(frontPosOffset, currQuat, -g_race_freecam_follow_umamusume_distance);
+		setPos->x = frontPos.x;
+		setPos->y = frontPos.y + g_race_freecam_follow_umamusume_offset.y;
+		setPos->z = frontPos.z;
+
+
+		SetCameraLookat(frontPosOffset.x, frontPosOffset.y + raceFollowLookatOffset.y, frontPosOffset.z);
+		return;
+
 		SDPoint pt1{thisFrame.x, thisFrame.z};
 		SDPoint pt2{lastFrame.x, lastFrame.z};
 		SDPoint ptOut{};
 		if (lookAtUmaReverse) {
-			ExPandLine(pt2, pt1, g_race_freecam_follow_umamusume_distance, ptOut);  // 从前面看, 嘿嘿...马娘娇羞的神态...嘿嘿...
+			ExPandLine(pt2, pt1, g_race_freecam_follow_umamusume_distance, ptOut);
 		}
 		else {
 			ExPandLine(pt1, pt2, g_race_freecam_follow_umamusume_distance, ptOut);
@@ -388,13 +512,15 @@ namespace UmaCamera {
 		
 		setPos->x = ptOut.x + g_race_freecam_follow_umamusume_offset.x;
 		setPos->z = ptOut.y + g_race_freecam_follow_umamusume_offset.z;
-		setPos->y = ceil((lastFrame.y + thisFrame.y) / 2) + g_race_freecam_follow_umamusume_offset.y;
+		// setPos->y = ceil((lastFrame.y + thisFrame.y) / 2) + g_race_freecam_follow_umamusume_offset.y;
+		setPos->y = thisFrame.y + g_race_freecam_follow_umamusume_offset.y;
 		// printf("calc: %f, %f  last: %f, %f  this: %f, %f\n", setPos->x, setPos->z, pt2.x, pt2.y, pt1.x, pt1.y);
 		chechAndUpdateRaceRet(setPos);
 	}
 
 	void setReverseLookatUma() {
 		lookAtUmaReverse = !lookAtUmaReverse;
+		g_race_freecam_follow_umamusume_distance = -g_race_freecam_follow_umamusume_distance;
 		if (lookAtUmaReverse)
 			printf("Race camera ahead.\n");
 		else
@@ -404,6 +530,7 @@ namespace UmaCamera {
 	void camera_forward() {  // 向前
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume){
 			g_race_freecam_follow_umamusume_offset.z -= moveStep / 2;
+			g_race_freecam_follow_umamusume_distance += moveStep / 2;
 			return;
 		}
 		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
@@ -418,6 +545,7 @@ namespace UmaCamera {
 	void camera_back() {  // 后退
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
 			g_race_freecam_follow_umamusume_offset.z += moveStep / 2;
+			g_race_freecam_follow_umamusume_distance -= moveStep / 2;
 			return;
 		}
 		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
@@ -432,6 +560,7 @@ namespace UmaCamera {
 	void camera_left() {  // 向左
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
 			g_race_freecam_follow_umamusume_offset.x += moveStep / 2;
+			raceFollowLookatOffset.x -= moveStep * 2;
 			return;
 		}
 		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
@@ -448,6 +577,7 @@ namespace UmaCamera {
 	void camera_right() {  // 向右
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
 			g_race_freecam_follow_umamusume_offset.x -= moveStep / 2;
+			raceFollowLookatOffset.x += moveStep * 2;
 			return;
 		}
 		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
@@ -463,7 +593,7 @@ namespace UmaCamera {
 
 	void camera_down() {  // 向下
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
-			g_race_freecam_follow_umamusume_offset.y -= 0.2;
+			g_race_freecam_follow_umamusume_offset.y -= moveStep / 8;
 			return;
 		}
 		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
@@ -490,11 +620,11 @@ namespace UmaCamera {
 	
 	void camera_up() {  // 向上
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
-			g_race_freecam_follow_umamusume_offset.y += 0.2;
+			g_race_freecam_follow_umamusume_offset.y += moveStep / 8;
 			return;
 		}
 		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
-			liveFollowCameraLookatOffset.y += moveStep / 2;
+			liveFollowCameraLookatOffset.y += moveStep / 3;
 			// liveFollowCameraOffset.y += moveStep / 2;
 			return;
 		}
@@ -553,8 +683,9 @@ namespace UmaCamera {
 		lookHoriRunning = false;
 	}
 
-	void cameraLookat_up(float mAngel) {
+	void cameraLookat_up(float mAngel, bool mouse = false) {
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
+			if (mouse) return;
 			g_race_freecam_follow_umamusume_distance += 0.2;
 			return;
 		}
@@ -566,8 +697,9 @@ namespace UmaCamera {
 		setVertLook(verticalAngle, horizontalAngle);
 	}
 
-	void cameraLookat_down(float mAngel) {
+	void cameraLookat_down(float mAngel, bool mouse = false) {
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
+			if (mouse) return;
 			g_race_freecam_follow_umamusume_distance -= 0.2;
 			return;
 		}
@@ -689,13 +821,20 @@ namespace UmaCamera {
 
 	void changeLiveFollowCameraOffsetX(float value) {
 		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
-			liveFollowCameraOffset.x += value;
+			liveFollowCameraOffset.x += value * 2;
+		}
+		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
+			raceFollowLookatOffset.x -= value;
 		}
 	}	
 	
-	void changeLiveFollowCameraOffsetY(float value) {
+	void changeLiveFollowCameraOffsetY(float value, bool mouse = false) {
 		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
 			liveFollowCameraOffset.y += value;
+		}
+		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
+			raceFollowLookatOffset.y += value / 2;
+			if (mouse) g_race_freecam_follow_umamusume_offset.y += value / 2;
 		}
 	}
 
@@ -728,12 +867,12 @@ namespace UmaCamera {
 					changeLiveFollowCameraOffsetX(moveX * g_free_camera_mouse_speed / 50.0);
 				}
 				if (moveY > 0) {
-					cameraLookat_down(moveY * g_free_camera_mouse_speed / 100.0);
-					changeLiveFollowCameraOffsetY(moveY * g_free_camera_mouse_speed / 800.0);
+					cameraLookat_down(moveY * g_free_camera_mouse_speed / 100.0, true);
+					changeLiveFollowCameraOffsetY(moveY * g_free_camera_mouse_speed / 800.0, true);
 				}
 				else if (moveY < 0) {
-					cameraLookat_up(-moveY * g_free_camera_mouse_speed / 100.0);
-					changeLiveFollowCameraOffsetY(moveY * g_free_camera_mouse_speed / 800.0);
+					cameraLookat_up(-moveY * g_free_camera_mouse_speed / 100.0, true);
+					changeLiveFollowCameraOffsetY(moveY * g_free_camera_mouse_speed / 800.0, true);
 				}
 				// printf("move x: %d, y: %d\n", moveX, moveY);
 				}).detach();

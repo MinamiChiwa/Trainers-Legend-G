@@ -709,11 +709,13 @@ namespace
 	bool isLiveStart = false;
 	void* wndproc_orig = nullptr;
 
+	bool raceStart = false;
+
 	LRESULT wndproc_hook(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	{
 		if (uMsg == WM_INPUT)
 		{
-			if (isLiveStart) {
+			if (isLiveStart || (g_race_free_camera && raceStart)) {
 				RAWINPUT rawInput;
 				UINT size = sizeof(RAWINPUT);
 				if (GetRawInputData((HRAWINPUT)lParam, RID_INPUT, &rawInput, &size, sizeof(RAWINPUTHEADER)) == size)
@@ -1474,11 +1476,18 @@ namespace
 		return pos;
 	}
 
+	bool getCharaPos = false;
+
 	void* Unity_get_fieldOfView_orig;
 	float Unity_get_fieldOfView_hook(void* _this) {
 		if (g_set_live_fov_as_global || (isLiveStart && g_live_free_camera)) {
 			return UmaCamera::getLiveCamFov();
 		}
+
+		if (g_race_free_camera && raceStart) {
+			return UmaCamera::getRaceCamFov();
+		}
+
 		const auto ret = reinterpret_cast<decltype(Unity_get_fieldOfView_hook)*>(Unity_get_fieldOfView_orig)(_this);
 		// printf("get_fov: %f\n", ret);
 		return ret;
@@ -1486,6 +1495,12 @@ namespace
 
 	void* cacheCont = nullptr;
 	bool changeIn = false;
+	bool updateRaceCame = false;
+
+	void* Unity_set_fieldOfView_orig;
+	void Unity_set_fieldOfView_hook(void* _this, void* single) {
+		return reinterpret_cast<decltype(Unity_set_fieldOfView_hook)*>(Unity_set_fieldOfView_orig)(_this, single);
+	}
 
 	void* ChangeCameraWithImmediate_orig;
 	void ChangeCameraWithImmediate_hook(void* _this, int nextPos) {
@@ -1493,6 +1508,14 @@ namespace
 		changeIn = true;
 		reinterpret_cast<decltype(ChangeCameraWithImmediate_hook)*>(ChangeCameraWithImmediate_orig)(_this, nextPos);
 		changeIn = false;
+	}
+
+	void race_get_CameraPosition(void* _this, Vector3_t* data);
+	void updateTargetPos(Vector3_t* data, Quaternion_t* quat);
+
+	void* Unity_get_pos_injected_orig;
+	void Unity_get_pos_injected_hook(void* _this, Vector3_t* data) {
+		reinterpret_cast<decltype(Unity_get_pos_injected_hook)*>(Unity_get_pos_injected_orig)(_this, data);
 	}
 
 	void* Unity_set_pos_injected_orig;
@@ -1508,8 +1531,94 @@ namespace
 			cacheCont = _this;
 			// printf("set_position_Injected_c at: %p (%f, %f, %f)\n", _this, ret->x, ret->y, ret->z);
 		}
+		if (updateRaceCame) {
+			UmaCamera::setUmaCameraType(CAMERA_RACE);
+
+			auto pos = UmaCamera::getCameraPos();
+			ret->x = pos.x;
+			ret->y = pos.y;
+			ret->z = pos.z;
+			race_get_CameraPosition(_this, ret);
+			// printf("set_position_Injected_c at: %p (%f, %f, %f)\n", _this, ret->x, ret->y, ret->z);
+		}
+
 		return reinterpret_cast<decltype(Unity_set_pos_injected_hook)*>(Unity_set_pos_injected_orig)(_this, ret);
 	}
+
+	void* Unity_set_localpos_injected_orig;
+	void Unity_set_localpos_injected_hook(void* _this, Vector3_t* ret) {
+		if (updateRaceCame) {
+			auto pos = UmaCamera::getCameraPos();
+			ret->x = pos.x;
+			ret->y = pos.y;
+			ret->z = pos.z;
+			// printf("set_position_Injected_c at: %p (%f, %f, %f)\n", _this, ret->x, ret->y, ret->z);
+		}
+		return reinterpret_cast<decltype(Unity_set_localpos_injected_hook)*>(Unity_set_localpos_injected_orig)(_this, ret);
+	}
+
+	void* Unity_LookAt_Injected_orig;
+	void Unity_LookAt_Injected_hook(void* _this, Vector3_t* worldPosition, Vector3_t* worldUp) {
+		if (updateRaceCame) {
+			auto pos = UmaCamera::getCameraLookat();
+			worldPosition->x = pos.x;
+			worldPosition->y = pos.y;
+			worldPosition->z = pos.z;
+		}
+		return reinterpret_cast<decltype(Unity_LookAt_Injected_hook)*>(Unity_LookAt_Injected_orig)(_this, worldPosition, worldUp);
+	}
+
+	void* Unity_set_localRotation_Injected_orig;
+	void Unity_set_localRotation_Injected_hook(void* _this, Quaternion_t* value) {
+		if (updateRaceCame) {
+			return;
+		}
+
+		return reinterpret_cast<decltype(Unity_set_localRotation_Injected_hook)*>(Unity_set_localRotation_Injected_orig)(_this, value);
+	}
+
+	void* Unity_set_nearClipPlane_orig;
+	void Unity_set_nearClipPlane_hook(void* _this, float single) {
+		if (g_race_free_camera && raceStart) {
+			return;
+		}
+		return reinterpret_cast<decltype(Unity_set_nearClipPlane_hook)*>(Unity_set_nearClipPlane_orig)(_this, 0.1f);
+	}
+
+	void* Unity_get_nearClipPlane_orig;
+	float Unity_get_nearClipPlane_hook(void* _this) {
+		auto ret = reinterpret_cast<decltype(Unity_get_nearClipPlane_hook)*>(Unity_get_nearClipPlane_orig)(_this);
+		if (updateRaceCame) {
+			ret = 0.1f;
+		}
+		return ret;
+	}
+
+	void* Unity_set_cullingMask_orig;
+	void Unity_set_cullingMask_hook(void* _this, int value) {
+		// if (updateRaceCame) printf("set_cullingMask: %d\n", value);
+		reinterpret_cast<decltype(Unity_set_cullingMask_hook)*>(Unity_set_cullingMask_orig)(_this, value);
+	}
+
+
+	void* Unity_get_farClipPlane_orig;
+	float Unity_get_farClipPlane_hook(void* _this) {
+		auto ret = reinterpret_cast<decltype(Unity_get_farClipPlane_hook)*>(Unity_get_farClipPlane_orig)(_this);
+		if (updateRaceCame) {
+			printf("farClipPlane: %f\n", ret);
+			ret = 1500.0f;
+		}
+		return ret;
+	}
+
+	void* Unity_set_farClipPlane_orig;
+	void Unity_set_farClipPlane_hook(void* _this, float value) {
+		if (g_race_free_camera && raceStart) {
+			return;
+		}
+		reinterpret_cast<decltype(Unity_set_farClipPlane_hook)*>(Unity_set_farClipPlane_orig)(_this, 2500.0f);
+	}
+
 
 	void* HomeClampAngle_orig;
 	float HomeClampAngle_hook(float value, float min, float max) {
@@ -1737,6 +1846,8 @@ namespace
 	FieldInfo* HorseRaceInfo_baseWizAdjusted;
 	FieldInfo* HorseRaceInfo_lastSpeed;
 	FieldInfo* HorseRaceInfo_distance;
+	FieldInfo* HorseRaceInfo_position;
+	FieldInfo* HorseRaceInfo_rotationOnLane;
 
 	bool initHorseDataFuncInited = false;
 
@@ -1793,12 +1904,15 @@ namespace
 		HorseRaceInfo_baseWizAdjusted = il2cpp_class_get_field_from_name(HorseRaceInfo_klass, "_baseWizAdjusted");
 		HorseRaceInfo_lastSpeed = il2cpp_class_get_field_from_name(HorseRaceInfo_klass, "_lastSpeed");
 		HorseRaceInfo_distance = il2cpp_class_get_field_from_name(HorseRaceInfo_klass, "_distance");
+		HorseRaceInfo_position = il2cpp_class_get_field_from_name(HorseRaceInfo_klass, "_position");
+		HorseRaceInfo_rotationOnLane = il2cpp_class_get_field_from_name(HorseRaceInfo_klass, "_rotationOnLane");  // _rotationFacingFront
 	}
 
 	void* get_RunMotionSpeed_orig;
 	float get_RunMotionSpeed_hook(void* _this) {
+		raceStart = true;
 		auto ret = reinterpret_cast<decltype(get_RunMotionSpeed_hook)*>(get_RunMotionSpeed_orig)(_this);
-		if (enableRaceInfoTab) {
+		if (enableRaceInfoTab || (g_race_free_camera && g_race_freecam_follow_umamusume)) {
 			initHorseDataFunc();
 			if (const auto iter = umaRaceData.find(_this); iter != umaRaceData.end())
 			{
@@ -1820,6 +1934,19 @@ namespace
 					get_MoveDistance(_this), il2cpp_symbols::read_field<float>(_this, HorseRaceInfo_distance),
 					get_DeltaTime(), get_LastSpurtStartDistance(_this), get_IsLastSpurt(_this));
 				if (isFinished) iter->second.setFinallyRank(get_FinishOrder(_this) + 1);
+
+				if (g_race_free_camera && g_race_freecam_follow_umamusume) {
+					if (iter->second.gateNo == g_race_freecam_follow_umamusume_index + 1) {
+						const auto fieldPtr = static_cast<std::byte*>(_this) + HorseRaceInfo_position->offset;
+						auto cameraPos = reinterpret_cast<Vector3_t*>(fieldPtr);
+
+						const auto qFieldPtr = static_cast<std::byte*>(_this) + HorseRaceInfo_rotationOnLane->offset;
+						auto cameraRot = reinterpret_cast<Quaternion_t*>(qFieldPtr);
+						// printf("cameraRot: w: %f, x: %f, y: %f, z: %f\n", cameraRot->w, cameraRot->x, cameraRot->y, cameraRot->z);
+						
+						updateTargetPos(cameraPos, cameraRot);
+					}
+				}
 			}
 		}
 
@@ -1843,10 +1970,10 @@ namespace
 		// data: Gallop.HorseData, reader: Gallop.RaceSimulateReader
 		reinterpret_cast<decltype(HorseRaceInfoReplay_ctor_hook)*>(HorseRaceInfoReplay_ctor_orig)(_this, data, reader);
 
-		if (enableRaceInfoTab) {
+		if (enableRaceInfoTab || (g_race_free_camera && g_race_freecam_follow_umamusume)) {
 			initHorseDataFunc();
 			SetShowRaceWnd(true);
-			if (getUmaGuiDone()) {
+			if (enableRaceInfoTab && getUmaGuiDone()) {
 				startUmaGui();
 			}
 			InitTrainerName(data);
@@ -2060,46 +2187,27 @@ namespace
 
 	Vector3_t targetPosLastCache{};
 	Vector3_t targetPosCache{};
-	void* race_get_CameraPosition_orig;
-	Vector3_t* race_get_CameraPosition_hook(void* _this) {
-		auto data = reinterpret_cast<decltype(race_get_CameraPosition_hook)*>(race_get_CameraPosition_orig)(_this);
-		if (!g_race_free_camera) return data;
-		// printf("race: %f, %f, %f\n", data->x, data->y, data->z);
+	Quaternion_t currentQuat{};
+	void race_get_CameraPosition(void* _this, Vector3_t* data) {
 		UmaCamera::setUmaCameraType(CAMERA_RACE);
 
 		if (g_race_freecam_follow_umamusume) {
-			UmaCamera::updateFollowUmaPos(targetPosLastCache, targetPosCache, data);
-			return data;
+			UmaCamera::updateFollowUmaPos(targetPosLastCache, targetPosCache, currentQuat, data);
+			return;
 		}
-
+		/*
 		auto pos = UmaCamera::getCameraPos();
 		data->x = pos.x;
 		data->y = pos.y;
 		data->z = pos.z;
-		return data;
+		*/
 	}
 
-
-	void* race_get_TargetPosition_orig;
-	Vector3_t* race_get_TargetPosition_hook(void* _this) {
-		auto data = reinterpret_cast<decltype(race_get_TargetPosition_hook)*>(race_get_TargetPosition_orig)(_this);
-		if (!g_race_free_camera) return data;
-		// printf("racePrev: %f, %f, %f\n", data->x, data->y, data->z);
-		if (g_race_freecam_follow_umamusume) {
-			if ((targetPosCache.x != data->x) || (targetPosCache.z != data->z)) {
-				targetPosLastCache = Vector3_t{ targetPosCache.x, targetPosCache.y, targetPosCache.z };
-			}
-			targetPosCache = Vector3_t{ data->x, data->y, data->z };
-		}
-
-		if (g_race_freecam_lookat_umamusume) return data;
-
-		auto target = UmaCamera::getCameraLookat();
-		UmaCamera::setUmaCameraType(CAMERA_RACE);
-		data->x = target.x;
-		data->y = target.y;
-		data->z = target.z;
-		return data;
+	void* RaceCameraManager_AlterLateUpdate_orig;
+	void RaceCameraManager_AlterLateUpdate_hook(void* _this) {
+		updateRaceCame = true && g_race_free_camera;
+		reinterpret_cast<decltype(RaceCameraManager_AlterLateUpdate_hook)*>(RaceCameraManager_AlterLateUpdate_orig)(_this);
+		updateRaceCame = false;
 	}
 
 	void* race_ChangeCameraMode_orig;
@@ -2140,14 +2248,15 @@ namespace
 		return data;
 	}
 
-	void* race_GetTargetHorseIndex_orig;
-	int race_GetTargetHorseIndex_hook(void* _this, void* info, int type, int targetIndex) {
-		if (g_race_free_camera && g_race_freecam_follow_umamusume && (g_race_freecam_follow_umamusume_index >= 0)) {
-			return g_race_freecam_follow_umamusume_index;
+	void updateTargetPos(Vector3_t* data, Quaternion_t* quat) {
+		auto y = data->y + 1;
+		currentQuat = Quaternion_t(*quat);
+		if (g_race_freecam_follow_umamusume) {
+			if ((targetPosCache.x != data->x) || (targetPosCache.z != data->z)) {
+				targetPosLastCache = Vector3_t{ targetPosCache.x, targetPosCache.y, targetPosCache.z };
+			}
+			targetPosCache = Vector3_t{ data->x, y, data->z };
 		}
-		return reinterpret_cast<decltype(race_GetTargetHorseIndex_hook)*>(race_GetTargetHorseIndex_orig)(
-			_this, info, type, targetIndex
-		);
 	}
 
 	void* race_GetTargetRotation_orig;
@@ -2167,6 +2276,7 @@ namespace
 	void race_OnDestroy_hook(void* _this) {
 		reinterpret_cast<decltype(race_OnDestroy_hook)*>(race_OnDestroy_orig)(_this);
 		printf("Race End!\n");
+		raceStart = false;
 		umaRaceData.clear();
 		umaUsedSkillList.clear();
 		// updateRaceGUIData(umaRaceData);
@@ -3021,7 +3131,17 @@ namespace
 		);
 		
 		auto Unity_get_fieldOfView_addr = il2cpp_resolve_icall("UnityEngine.Camera::get_fieldOfView()");
+		auto Unity_set_fieldOfView_addr = il2cpp_resolve_icall("UnityEngine.Camera::set_fieldOfView(System.Single)");
 		auto Unity_set_pos_injected_addr = il2cpp_resolve_icall("UnityEngine.Transform::set_position_Injected(UnityEngine.Vector3&)");
+		auto Unity_get_pos_injected_addr = il2cpp_resolve_icall("UnityEngine.Transform::get_position_Injected(UnityEngine.Vector3&)");
+		auto Unity_set_localpos_injected_addr = il2cpp_resolve_icall("UnityEngine.Transform::set_localPosition_Injected(UnityEngine.Vector3&)");
+		auto Unity_LookAt_Injected_addr = il2cpp_resolve_icall("UnityEngine.Transform::Internal_LookAt_Injected(UnityEngine.Vector3&,UnityEngine.Vector3&)");
+		auto Unity_set_localRotation_Injected_addr = il2cpp_resolve_icall("UnityEngine.Transform::set_localRotation_Injected(UnityEngine.Quaternion&)");
+		auto Unity_set_nearClipPlane_addr = il2cpp_resolve_icall("UnityEngine.Camera::set_nearClipPlane(System.Single)");
+		auto Unity_get_nearClipPlane_addr = il2cpp_resolve_icall("UnityEngine.Camera::get_nearClipPlane()");
+		auto Unity_get_farClipPlane_addr = il2cpp_resolve_icall("UnityEngine.Camera::get_farClipPlane()");
+		auto Unity_set_farClipPlane_addr = il2cpp_resolve_icall("UnityEngine.Camera::set_farClipPlane(System.Single)");
+		auto Unity_set_cullingMask_addr = il2cpp_resolve_icall("UnityEngine.Camera::set_cullingMask(System.Int32)");
 		
 		auto HomeClampAngle_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
@@ -3087,15 +3207,20 @@ namespace
 			"umamusume.dll", "Gallop.Live.Cutt",
 			"LiveTimelineControl", "SetupDOFUpdateInfo", 5
 		);
-		
-		auto race_get_CameraPosition_addr = il2cpp_symbols::get_method_pointer(
+
+		auto RaceCameraManager_AlterLateUpdate_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
-			"RaceCameraEventBase", "get_CameraPosition", 0
+			"RaceCameraManager", "AlterLateUpdate", 0
 		);
 
-		auto race_get_TargetPosition_addr = il2cpp_symbols::get_method_pointer(
+		auto RaceCameraManager_UpdateMultiCamera_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
-			"RaceCameraEventBase", "get_TargetPosition", 0
+			"RaceCameraManager", "UpdateMultiCamera", 0
+		);
+
+		auto RaceCourseCameraEvent_ApplyMultiCamera_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"RaceCourseCameraEvent", "ApplyMultiCamera", 1
 		);
 
 		auto race_ChangeCameraMode_addr = il2cpp_symbols::get_method_pointer(
@@ -3121,11 +3246,6 @@ namespace
 		auto race_get_CameraShakeTargetOffset_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"RaceCameraEventBase", "get_CameraShakeTargetOffset", 0
-		);
-
-		auto race_GetTargetHorseIndex_addr = il2cpp_symbols::get_method_pointer(
-			"umamusume.dll", "Gallop",
-			"RaceCameraEventBase", "GetTargetHorseIndex", 3
 		);
 
 		auto race_GetTargetRotation_addr = il2cpp_symbols::get_method_pointer(
@@ -3223,7 +3343,17 @@ namespace
 		ADD_HOOK(alterupdate_camera_lookat, "alterupdate_camera_lookat at %p\n");
 		// ADD_HOOK(UpdateEnvironemntStageFovShift, "UpdateEnvironemntStageFovShift at %p\n");
 		ADD_HOOK(Unity_get_fieldOfView, "Unity_get_fieldOfView at %p\n");
+		ADD_HOOK(Unity_set_fieldOfView, "Unity_set_fieldOfView at %p\n");
 		ADD_HOOK(Unity_set_pos_injected, "Unity_set_pos_injected at %p\n");
+		ADD_HOOK(Unity_get_pos_injected, "Unity_get_pos_injected at %p\n");
+		ADD_HOOK(Unity_set_localpos_injected, "Unity_set_localpos_injected at %p\n");
+		ADD_HOOK(Unity_LookAt_Injected, "Unity_LookAt_Injected at %p\n");
+		ADD_HOOK(Unity_set_localRotation_Injected, "Unity_set_localRotation_Injected at %p\n");
+		ADD_HOOK(Unity_set_nearClipPlane, "Unity_set_nearClipPlane at %p\n");
+		ADD_HOOK(Unity_get_nearClipPlane, "Unity_get_nearClipPlane at %p\n");
+		ADD_HOOK(Unity_set_cullingMask, "Unity_set_cullingMask at %p\n");
+		ADD_HOOK(Unity_get_farClipPlane, "Unity_get_farClipPlane at %p\n");
+		ADD_HOOK(Unity_set_farClipPlane, "Unity_set_farClipPlane at %p\n");
 		ADD_HOOK(HomeClampAngle, "HomeClampAngle at %p\n");
 		ADD_HOOK(MasterCharaType_Get, "MasterCharaType_Get at %p\n");
 		ADD_HOOK(CreateMiniCharacter, "CreateMiniCharacter at %p\n");
@@ -3262,14 +3392,14 @@ namespace
 		ADD_HOOK(KeepAspectRatio, "KeepAspectRatio at %p\n");
 		ADD_HOOK(ReshapeAspectRatio, "ReshapeAspectRatio at %p\n");
 		ADD_HOOK(set_shadows, "set_shadows at %p\n");
-		ADD_HOOK(race_get_CameraPosition, "race_get_CameraPosition at %p\n");
-		ADD_HOOK(race_get_TargetPosition, "race_get_TargetPosition at %p\n");
+		ADD_HOOK(RaceCameraManager_AlterLateUpdate, "RaceCameraManager_AlterLateUpdate at %p\n");
+		// ADD_HOOK(RaceCameraManager_UpdateMultiCamera, "RaceCameraManager_UpdateMultiCamera at %p\n");
+		// ADD_HOOK(RaceCourseCameraEvent_ApplyMultiCamera, "RaceCourseCameraEvent_ApplyMultiCamera at %p\n");
 		ADD_HOOK(race_ChangeCameraMode, "race_ChangeCameraMode at %p\n");
 		ADD_HOOK(race_get_CameraFov, "race_get_CameraFov at %p\n");
 		ADD_HOOK(race_PlayEventCamera, "race_PlayEventCamera at %p\n");
 		ADD_HOOK(race_UpdateCameraDistanceBlendRate, "race_UpdateCameraDistanceBlendRate at %p\n");
 		ADD_HOOK(race_get_CameraShakeTargetOffset, "get_CameraShakePositionOffset at %p\n");
-		ADD_HOOK(race_GetTargetHorseIndex, "CalcScoreTargetHorsePos at %p\n");
 		ADD_HOOK(race_GetTargetRotation, "GetTargetRotation at %p\n");
 		ADD_HOOK(race_OnDestroy, "race_OnDestroy at %p\n");
 		ADD_HOOK(AssetLoader_LoadAssetHandle, "AssetLoader_LoadAssetHandle at %p\n");
