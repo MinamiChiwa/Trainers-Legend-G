@@ -84,6 +84,8 @@ std::string g_character_system_text_dict_path;
 std::string g_race_jikkyo_comment_dict_path;
 std::string g_race_jikkyo_message_dict_path;
 std::list<std::function<void(void)>> onPluginReload{};
+bool enableRaceInfoTab = false;
+bool raceInfoTabAttachToGame = false;
 
 constexpr const char LocalizedDataPath[] = "localized_data";
 constexpr const char OldLocalizedDataPath[] = "old_localized_data";
@@ -135,7 +137,7 @@ namespace
 		SetConsoleOutputCP(65001);
 		std::locale::global(std::locale(""));
 
-		wprintf(L"\u30a6\u30de\u5a18 Localify Patch Loaded! - By GEEKiDoS\n");
+		wprintf(L"\u30a6\u30de\u5a18 Localify Patch Loaded! - By GEEKiDoS & akemimadoka & chinosk\n");
 	}
 
 	std::string get_current_version()
@@ -677,6 +679,11 @@ namespace
 				if (document["homeSettings"].HasMember("homeWalkMotionCharaId")) {
 					g_home_walk_chara_id = document["homeSettings"]["homeWalkMotionCharaId"].GetInt();
 				}
+			}
+
+			if (document.HasMember("raceInfoTab")) {
+				enableRaceInfoTab = document["raceInfoTab"]["enableRaceInfoTab"].GetBool();
+				raceInfoTabAttachToGame = document["raceInfoTab"]["raceInfoTabAttachToGame"].GetBool();
 			}
 
 			// Looks like not working for now
@@ -1482,6 +1489,7 @@ extern std::function<void()> g_on_hook_ready;
 void reload_all_data() {
 	read_config();
 	reload_config();
+	SetGuiDone(true);
 	for (const auto& i : onPluginReload) {
 		i();
 	}

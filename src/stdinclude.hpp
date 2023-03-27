@@ -43,6 +43,8 @@
 #include "umadb/umadb.hpp"
 #include "pluginLoader/pluginLoader.hpp"
 #include <nlohmann/json.hpp>
+#include "umagui/guiShowData.hpp"
+#include "umagui/umaguiMain.hpp"
 
 extern bool g_dump_entries;
 extern bool g_enable_logger;
@@ -72,6 +74,11 @@ struct UseCustomFont
 enum CameraType {
 	CAMERA_LIVE = 0,
 	CAMERA_RACE = 1
+};
+
+enum LiveCameraType {
+	LiveCamera_FREE = 0,
+	LiveCamera_FOLLOW_UMA = 1
 };
 
 struct CloseTrans {
@@ -136,3 +143,5 @@ extern bool g_home_free_camera;
 extern int g_home_walk_chara_id;
 extern float g_free_camera_mouse_speed;
 extern std::list<std::function<void(void)>> onPluginReload;
+extern bool enableRaceInfoTab;
+extern bool raceInfoTabAttachToGame;
