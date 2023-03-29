@@ -2521,12 +2521,18 @@ namespace
 
 				}
 
-
 				Quaternion_t* rot = reinterpret_cast<Quaternion_t*>(il2cpp_object_new(Quaternion_klass));
 				Vector3_t* pos = reinterpret_cast<Vector3_t*>(il2cpp_object_new(Vector3_klass));
 
 				getTransformPosition(headTransform, pos);
-				getTransformRotation(headTransform, rot);
+				if (raceFollowUmaFirstPersionEnableRoll) {
+					getTransformRotation(headTransform, rot);
+				}
+				else {
+					auto headPTransform = Race_get_HeadTransform(modelController);
+					getTransformRotation(headPTransform, rot);
+				}
+				
 				raceCacheTransform = rot;
 
 				// printf("pos: %f, %f, %f; rot: %f, %f, %f, %f\n", pos->x, pos->y, pos->z, rot->w, rot->x, rot->y, rot->z);

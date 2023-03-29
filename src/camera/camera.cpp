@@ -576,17 +576,16 @@ namespace UmaCamera {
 				raceFollowUmaFirstPersion = true;
 				raceFollowUmaFirstPersionEnableRoll = true;
 				printf("Race first persion. Enable roll.\n");
-				// raceFollowStat++;
-				raceFollowStat = 0;
+				raceFollowStat++;
 			}; break;
-			/*
+			
 			case 3: {
 				raceFollowUmaFirstPersion = true;
 				raceFollowUmaFirstPersionEnableRoll = false;
 				printf("Race first persion. Disable roll.\n");
 				raceFollowStat = 0;
 			}; break;
-			*/
+			
 			default: {
 				raceFollowUmaFirstPersion = false;
 				raceFollowStat = 0;
