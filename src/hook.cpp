@@ -1575,7 +1575,7 @@ namespace
 	void Unity_LookAt_Injected_hook(void* _this, Vector3_t* worldPosition, Vector3_t* worldUp) {
 		if (updateRaceCame) {
 			if (g_race_free_camera && g_race_freecam_follow_umamusume && raceFollowUmaFirstPersion) {
-				if (raceFollowUmaFirstPersionEnableRoll && (raceCacheTransform != nullptr)) {
+				if (raceCacheTransform != nullptr) {
 					Unity_set_rotation_Injected_hook(_this, raceCacheTransform);
 					return;
 				}
@@ -2527,16 +2527,18 @@ namespace
 				getTransformPosition(headTransform, pos);
 				if (raceFollowUmaFirstPersionEnableRoll) {
 					getTransformRotation(headTransform, rot);
+					UmaCamera::updatePosAndLookatByRotation(*pos, *rot);
 				}
 				else {
-					auto headPTransform = Race_get_HeadTransform(modelController);
-					getTransformRotation(headPTransform, rot);
+					auto newRot = UmaCamera::updatePosAndLookatByRotationStable(*pos, currentQuat);
+					rot->w = newRot.w;
+					rot->x = newRot.x;
+					rot->y = newRot.y;
+					rot->z = newRot.z;
 				}
-				
+
 				raceCacheTransform = rot;
 
-				// printf("pos: %f, %f, %f; rot: %f, %f, %f, %f\n", pos->x, pos->y, pos->z, rot->w, rot->x, rot->y, rot->z);
-				UmaCamera::updatePosAndLookatByRotation(*pos, *rot);
 				// UmaCamera::SetCameraPos(pos->x, pos->y, pos->z);
 			}
 		}

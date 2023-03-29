@@ -83,6 +83,13 @@ namespace UmaCamera {
 				z = _z;
 			}
 
+			Quaternion(Quaternion_t& quat) {
+				w = quat.w;
+				x = quat.x;
+				y = quat.y;
+				z = quat.z;
+			}
+
 			Quaternion operator*(const Quaternion& q) const
 			{
 				float nw = w * q.w - x * q.x - y * q.y - z * q.z;
@@ -107,6 +114,12 @@ namespace UmaCamera {
 				x = _x;
 				y = _y;
 				z = _z;
+			}
+
+			Vector3(Vector3_t& vec) {
+				x = vec.x;
+				y = vec.y;
+				z = vec.z;
 			}
 
 			Vector3 operator+(const Vector3& v) const
@@ -169,7 +182,64 @@ namespace UmaCamera {
 			const auto ret = GetFrontPos(vPos, vQos, distance);
 			return Vector3_t{ ret.x, ret.y, ret.z };
 		}
+
+		// 将Quaternion转换为欧拉角
+		inline Vector3 QuaternionToEuler(const Quaternion& rotation) {
+			float qw = rotation.w;
+			float qx = rotation.x;
+			float qy = rotation.y;
+			float qz = rotation.z;
+
+			float sinr_cosp = 2.0f * (qw * qx + qy * qz);
+			float cosr_cosp = 1.0f - 2.0f * (qx * qx + qy * qy);
+			float roll = std::atan2(sinr_cosp, cosr_cosp);
+
+			float sinp = 2.0f * (qw * qy - qz * qx);
+			float pitch;
+			if (std::abs(sinp) >= 1.0f) {
+				pitch = std::copysign(M_PI / 2.0f, sinp);
+			}
+			else {
+				pitch = std::asin(sinp);
+			}
+
+			float siny_cosp = 2.0f * (qw * qz + qx * qy);
+			float cosy_cosp = 1.0f - 2.0f * (qy * qy + qz * qz);
+			float yaw = std::atan2(siny_cosp, cosy_cosp);
+
+			return Vector3(pitch, yaw, roll);
+		}
+
+		// 将欧拉角转换为Quaternion
+		inline Quaternion EulerToQuaternion(const Vector3& euler) {
+			float cy = std::cos(euler.y * 0.5f);
+			float sy = std::sin(euler.y * 0.5f);
+			float cp = std::cos(euler.x * 0.5f);
+			float sp = std::sin(euler.x * 0.5f);
+			float cr = std::cos(euler.z * 0.5f);
+			float sr = std::sin(euler.z * 0.5f);
+
+			float qw = cy * cp * cr + sy * sp * sr;
+			float qx = cy * sp * cr + sy * cp * sr;
+			float qy = sy * cp * cr - cy * sp * sr;
+			float qz = cy * cp * sr - sy * sp * cr;
+
+			return Quaternion(qw, qx, qy, qz);
+		}
+
+		inline Quaternion ReducePitch(const Quaternion& rotation, float angle) {
+			// 将Quaternion转换为欧拉角
+			Vector3 euler = QuaternionToEuler(rotation);
+
+			// 减小Pitch值
+			euler.x -= angle;
+
+			// 将修改后的欧拉角转换回Quaternion
+			return EulerToQuaternion(euler);
+		}
+
 	}
+
 
 	namespace {
 		int cameraType = CAMERA_LIVE;
@@ -501,6 +571,13 @@ namespace UmaCamera {
 		cameraPos.y= pos.y;
 		cameraPos.z = pos.z;
 		updateLookatByRotation(rot);
+	}
+
+	Quaternion_t updatePosAndLookatByRotationStable(Vector3_t pos, Quaternion_t rot) {
+		auto rotateQuat = CameraCalc::RotateQuaternion(rot, 180, CameraCalc::Vector3(0, 1, 0));
+		auto ret = Quaternion_t{ rotateQuat.w, rotateQuat.x, rotateQuat.y, rotateQuat.z };
+		updatePosAndLookatByRotation(pos, ret);
+		return ret;
 	}
 
 	void updateFollowUmaPos(Vector3_t lastFrame, Vector3_t thisFrame, Quaternion_t currQuat, Vector3_t* setPos) {
