@@ -38,6 +38,10 @@ public:
 		return values[nowIndex];
 	}
 
+	int GetCurrentIndex() {
+		return nowIndex;
+	}
+
 	std::pair<std::string, T> GetNowValue() {
 		return std::make_pair(GetCurrentName(), GetCurrentValue());
 	}
@@ -198,6 +202,7 @@ namespace UmaCamera {
 		Vector3_t liveFollowCameraOffset{ 0, 0, -2 };
 		Vector3_t liveFollowCameraLookatOffset{ 0, 0, 0 };
 		Vector2_t raceFollowLookatOffset{ 0, 0 };
+		Vector3_t liveFirstPersonOffset{ 0, 0.075, 0.015 };
 		bool lookAtUmaReverse = false;
 
 		bool mouseLockThreadStart = false;
@@ -400,6 +405,8 @@ namespace UmaCamera {
 		liveFollowCameraOffset = Vector3_t{ 0,0,-2 };
 		liveFollowCameraLookatOffset = Vector3_t{ 0,0,0 };
 		raceFollowLookatOffset = Vector2_t{ 0,0 };
+		
+		liveFirstPersonOffset = Vector3_t{ 0, 0.075, 0.015 };
 	}
 
 	void setUmaCameraType(int value) {
@@ -478,6 +485,24 @@ namespace UmaCamera {
 		cacheLastRacePos = Vector3_t{ setPos->x, setPos->y, setPos->z };
 	}
 
+	void updateLookatByRotation(Quaternion_t rot) {
+		auto frontPos = CameraCalc::GetFrontPos(cameraPos, rot, look_radius);
+		cameraLookAt.x = frontPos.x;
+		cameraLookAt.y = frontPos.y;
+		cameraLookAt.z = frontPos.z;
+	}
+
+	void updatePosAndLookatByRotation(Vector3_t pos, Quaternion_t rot) {
+		if ((liveCameraType == LiveCamera_FIRST_PERSION) || raceFollowUmaFirstPersion) {
+			pos = CameraCalc::GetFrontPos(pos, rot, liveFirstPersonOffset.z);
+			pos.y += liveFirstPersonOffset.y;
+		}
+		cameraPos.x = pos.x;
+		cameraPos.y= pos.y;
+		cameraPos.z = pos.z;
+		updateLookatByRotation(rot);
+	}
+
 	void updateFollowUmaPos(Vector3_t lastFrame, Vector3_t thisFrame, Quaternion_t currQuat, Vector3_t* setPos) {
 
 		auto q2 = CameraCalc::RotateQuaternion(CameraCalc::Quaternion(currQuat.w, currQuat.x, currQuat.y, currQuat.z), 
@@ -499,7 +524,7 @@ namespace UmaCamera {
 
 		SetCameraLookat(frontPosOffset.x, frontPosOffset.y + raceFollowLookatOffset.y, frontPosOffset.z);
 		return;
-
+		/*
 		SDPoint pt1{thisFrame.x, thisFrame.z};
 		SDPoint pt2{lastFrame.x, lastFrame.z};
 		SDPoint ptOut{};
@@ -516,25 +541,80 @@ namespace UmaCamera {
 		setPos->y = thisFrame.y + g_race_freecam_follow_umamusume_offset.y;
 		// printf("calc: %f, %f  last: %f, %f  this: %f, %f\n", setPos->x, setPos->z, pt2.x, pt2.y, pt1.x, pt1.y);
 		chechAndUpdateRaceRet(setPos);
+		*/
 	}
 
+	int raceFollowStat = 0;
 	void setReverseLookatUma() {
-		lookAtUmaReverse = !lookAtUmaReverse;
+		liveFirstPersonEnableRoll = !liveFirstPersonEnableRoll;
 		g_race_freecam_follow_umamusume_distance = -g_race_freecam_follow_umamusume_distance;
-		if (lookAtUmaReverse)
-			printf("Race camera ahead.\n");
-		else
-			printf("Race camera behind.\n");
+		if (cameraType == CAMERA_LIVE) {
+			if (liveFirstPersonEnableRoll) {
+				printf("Live first person camera enable roll.\n");
+			}
+			else {
+				printf("Live first person camera disable roll.\n");
+			}
+		}
+		else {
+			switch (raceFollowStat) {
+			case 0: {
+				lookAtUmaReverse = !lookAtUmaReverse;
+				raceFollowUmaFirstPersion = false;
+				raceFollowUmaFirstPersionEnableRoll = false;
+				printf(lookAtUmaReverse ? "Race camera ahead.\n" : "Race camera behind.\n");
+				raceFollowStat++;
+			}; break;
+			case 1: {
+				lookAtUmaReverse = !lookAtUmaReverse;
+				raceFollowUmaFirstPersion = false;
+				raceFollowUmaFirstPersionEnableRoll = false;
+				printf(lookAtUmaReverse ? "Race camera ahead.\n" : "Race camera behind.\n");
+				raceFollowStat++;
+			}; break;
+			case 2: {
+				raceFollowUmaFirstPersion = true;
+				raceFollowUmaFirstPersionEnableRoll = true;
+				printf("Race first persion. Enable roll.\n");
+				// raceFollowStat++;
+				raceFollowStat = 0;
+			}; break;
+			/*
+			case 3: {
+				raceFollowUmaFirstPersion = true;
+				raceFollowUmaFirstPersionEnableRoll = false;
+				printf("Race first persion. Disable roll.\n");
+				raceFollowStat = 0;
+			}; break;
+			*/
+			default: {
+				raceFollowUmaFirstPersion = false;
+				raceFollowStat = 0;
+			}; break;
+			}
+		}
+
+		
 	}
 
 	void camera_forward() {  // 向前
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume){
-			g_race_freecam_follow_umamusume_offset.z -= moveStep / 2;
-			g_race_freecam_follow_umamusume_distance += moveStep / 2;
+			if (raceFollowUmaFirstPersion) {
+				liveFirstPersonOffset.z += 0.005;
+			}
+			else {
+				g_race_freecam_follow_umamusume_offset.z -= moveStep / 2;
+				g_race_freecam_follow_umamusume_distance += moveStep / 2;
+			}
 			return;
 		}
 		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
 			liveFollowCameraOffset.z -= moveStep / 2;
+			return;
+		}		
+		
+		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FIRST_PERSION) {
+			liveFirstPersonOffset.z += 0.005;
 			return;
 		}
 
@@ -544,12 +624,21 @@ namespace UmaCamera {
 
 	void camera_back() {  // 后退
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
-			g_race_freecam_follow_umamusume_offset.z += moveStep / 2;
-			g_race_freecam_follow_umamusume_distance -= moveStep / 2;
+			if (raceFollowUmaFirstPersion) {
+				liveFirstPersonOffset.z -= 0.005;
+			}
+			else {
+				g_race_freecam_follow_umamusume_offset.z += moveStep / 2;
+				g_race_freecam_follow_umamusume_distance -= moveStep / 2;
+			}
 			return;
 		}
 		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
 			liveFollowCameraOffset.z += moveStep / 2;
+			return;
+		}
+		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FIRST_PERSION) {
+			liveFirstPersonOffset.z -= 0.005;
 			return;
 		}
 
@@ -593,12 +682,21 @@ namespace UmaCamera {
 
 	void camera_down() {  // 向下
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
-			g_race_freecam_follow_umamusume_offset.y -= moveStep / 8;
+			if (raceFollowUmaFirstPersion) {
+				liveFirstPersonOffset.y -= 0.005;
+			}
+			else {
+				g_race_freecam_follow_umamusume_offset.y -= moveStep / 8;
+			}
 			return;
 		}
 		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
 			liveFollowCameraLookatOffset.y -= moveStep / 2;
 			// liveFollowCameraOffset.y -= moveStep / 2;
+			return;
+		}
+		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FIRST_PERSION) {
+			liveFirstPersonOffset.y -= 0.005;
 			return;
 		}
 
@@ -620,12 +718,21 @@ namespace UmaCamera {
 	
 	void camera_up() {  // 向上
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
-			g_race_freecam_follow_umamusume_offset.y += moveStep / 8;
+			if (raceFollowUmaFirstPersion) {
+				liveFirstPersonOffset.y += 0.005;
+			}
+			else {
+				g_race_freecam_follow_umamusume_offset.y += moveStep / 8;
+			}
 			return;
 		}
 		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
 			liveFollowCameraLookatOffset.y += moveStep / 3;
 			// liveFollowCameraOffset.y += moveStep / 2;
+			return;
+		}
+		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FIRST_PERSION) {
+			liveFirstPersonOffset.y += 0.005;
 			return;
 		}
 
@@ -787,6 +894,10 @@ namespace UmaCamera {
 				liveCameraType = LiveCamera_FOLLOW_UMA;
 				printf("LIVE Follow Umamusume\n");
 			}
+			else if (liveCameraType == LiveCamera_FOLLOW_UMA) {
+				liveCameraType = LiveCamera_FIRST_PERSION;
+				printf("LIVE First Persion\n");
+			}
 			else {
 				liveCameraType = LiveCamera_FREE;
 				printf("LIVE Free Camera\n");
@@ -798,6 +909,10 @@ namespace UmaCamera {
 	int GetLiveCharaPositionFlag() {
 		return liveCharaPositionFlag.GetCurrentValue();
 	}
+	
+	int GetLiveCharaPositionIndex() {
+		return liveCharaPositionFlag.GetCurrentIndex();
+	}
 
 	int GetLiveCameraCharaParts() {
 		return liveCameraCharaParts.GetCurrentValue();
@@ -805,7 +920,7 @@ namespace UmaCamera {
 
 	void changeLiveCameraLockChara(int changeIndex) {
 		if (cameraType != CAMERA_LIVE) return;
-		if (liveCameraType != LiveCamera_FOLLOW_UMA) return;
+		if ((liveCameraType != LiveCamera_FOLLOW_UMA) && (liveCameraType != LiveCamera_FIRST_PERSION)) return;
 
 		const auto changedData = changeIndex > 0 ? liveCharaPositionFlag.Next() : liveCharaPositionFlag.Last();
 		printf("Live look position flag: %s (0x%x)\n", changedData.first.c_str(), changedData.second);

@@ -78,7 +78,8 @@ enum CameraType {
 
 enum LiveCameraType {
 	LiveCamera_FREE = 0,
-	LiveCamera_FOLLOW_UMA = 1
+	LiveCamera_FOLLOW_UMA = 1,
+	LiveCamera_FIRST_PERSION = 2
 };
 
 struct CloseTrans {
@@ -145,3 +146,6 @@ extern float g_free_camera_mouse_speed;
 extern std::list<std::function<void(void)>> onPluginReload;
 extern bool enableRaceInfoTab;
 extern bool raceInfoTabAttachToGame;
+extern bool liveFirstPersonEnableRoll;
+extern bool raceFollowUmaFirstPersion;
+extern bool raceFollowUmaFirstPersionEnableRoll;

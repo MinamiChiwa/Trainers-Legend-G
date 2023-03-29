@@ -2,9 +2,13 @@
 #include <unordered_set>
 #include <ranges>
 #include "umagui/umaguiMain.hpp"
+#include <set>
 
 using namespace std;
 std::function<void()> g_on_hook_ready;
+bool liveFirstPersonEnableRoll = false;
+bool raceFollowUmaFirstPersion = false;
+bool raceFollowUmaFirstPersionEnableRoll = false;
 
 void _set_u_stat(bool s) {
 	if (autoChangeLineBreakMode) {
@@ -1394,7 +1398,7 @@ namespace
 	void* AlterUpdate_CameraPos_orig;
 	void AlterUpdate_CameraPos_hook(void* _this, Il2CppObject* sheet, int currentFrame, float currentTime, int sheetIndex, bool isUseCameraMotion) {
 		// printf("frame: %d, index: %d, motion: %s\n", currentFrame, sheetIndex, isUseCameraMotion ? "true" : "false");
-		return reinterpret_cast<decltype(AlterUpdate_CameraPos_hook)*>(AlterUpdate_CameraPos_orig)(
+		reinterpret_cast<decltype(AlterUpdate_CameraPos_hook)*>(AlterUpdate_CameraPos_orig)(
 			_this, sheet, g_live_free_camera ? 0 : currentFrame, currentTime, sheetIndex, isUseCameraMotion);
 	}
 
@@ -1496,6 +1500,7 @@ namespace
 	void* cacheCont = nullptr;
 	bool changeIn = false;
 	bool updateRaceCame = false;
+	bool updateLiveCameraPos = false;
 
 	void* Unity_set_fieldOfView_orig;
 	void Unity_set_fieldOfView_hook(void* _this, void* single) {
@@ -1517,6 +1522,27 @@ namespace
 	void Unity_get_pos_injected_hook(void* _this, Vector3_t* data) {
 		reinterpret_cast<decltype(Unity_get_pos_injected_hook)*>(Unity_get_pos_injected_orig)(_this, data);
 	}
+
+	void* Unity_set_localpos_injected_orig;
+	void Unity_set_localpos_injected_hook(void* _this, Vector3_t* ret) {
+		if (updateRaceCame) {
+			auto pos = UmaCamera::getCameraPos();
+			ret->x = pos.x;
+			ret->y = pos.y;
+			ret->z = pos.z;
+			// printf("set_position_Injected_c at: %p (%f, %f, %f)\n", _this, ret->x, ret->y, ret->z);
+		}
+		return reinterpret_cast<decltype(Unity_set_localpos_injected_hook)*>(Unity_set_localpos_injected_orig)(_this, ret);
+	}
+
+	void* Unity_set_rotation_Injected_orig;
+	void Unity_set_rotation_Injected_hook(void* _this, Quaternion_t* value) {
+		return reinterpret_cast<decltype(Unity_set_rotation_Injected_hook)*>(Unity_set_rotation_Injected_orig)(_this, value);
+	}
+
+	Quaternion_t* liveCacheTransform = nullptr;
+	Quaternion_t* raceCacheTransform = nullptr;
+	void* liveLookCameraCachePtr = nullptr;
 
 	void* Unity_set_pos_injected_orig;
 	void Unity_set_pos_injected_hook(void* _this, Vector3_t* ret) {
@@ -1545,26 +1571,32 @@ namespace
 		return reinterpret_cast<decltype(Unity_set_pos_injected_hook)*>(Unity_set_pos_injected_orig)(_this, ret);
 	}
 
-	void* Unity_set_localpos_injected_orig;
-	void Unity_set_localpos_injected_hook(void* _this, Vector3_t* ret) {
-		if (updateRaceCame) {
-			auto pos = UmaCamera::getCameraPos();
-			ret->x = pos.x;
-			ret->y = pos.y;
-			ret->z = pos.z;
-			// printf("set_position_Injected_c at: %p (%f, %f, %f)\n", _this, ret->x, ret->y, ret->z);
-		}
-		return reinterpret_cast<decltype(Unity_set_localpos_injected_hook)*>(Unity_set_localpos_injected_orig)(_this, ret);
-	}
-
 	void* Unity_LookAt_Injected_orig;
 	void Unity_LookAt_Injected_hook(void* _this, Vector3_t* worldPosition, Vector3_t* worldUp) {
 		if (updateRaceCame) {
-			auto pos = UmaCamera::getCameraLookat();
-			worldPosition->x = pos.x;
-			worldPosition->y = pos.y;
-			worldPosition->z = pos.z;
+			if (g_race_free_camera && g_race_freecam_follow_umamusume && raceFollowUmaFirstPersion) {
+				if (raceFollowUmaFirstPersionEnableRoll && (raceCacheTransform != nullptr)) {
+					Unity_set_rotation_Injected_hook(_this, raceCacheTransform);
+					return;
+				}
+			}
+			else {
+				auto pos = UmaCamera::getCameraLookat();
+				worldPosition->x = pos.x;
+				worldPosition->y = pos.y;
+				worldPosition->z = pos.z;
+			}
 		}
+
+		if (updateLiveCameraPos && liveFirstPersonEnableRoll) {
+			if (liveCacheTransform != nullptr) {
+				if (g_live_free_camera && (UmaCamera::GetLiveCameraType() == LiveCamera_FIRST_PERSION)) {
+					// Unity_set_rotation_Injected_hook(_this, liveCacheTransform);
+					liveLookCameraCachePtr = _this;
+				}
+			}
+		}
+
 		return reinterpret_cast<decltype(Unity_LookAt_Injected_hook)*>(Unity_LookAt_Injected_orig)(_this, worldPosition, worldUp);
 	}
 
@@ -1598,6 +1630,15 @@ namespace
 	void Unity_set_cullingMask_hook(void* _this, int value) {
 		// if (updateRaceCame) printf("set_cullingMask: %d\n", value);
 		reinterpret_cast<decltype(Unity_set_cullingMask_hook)*>(Unity_set_cullingMask_orig)(_this, value);
+	}
+
+	void* Unity_get_rotation_Injected_orig;
+	void Unity_get_rotation_Injected_hook(void* _this, Quaternion_t* ret) {
+		reinterpret_cast<decltype(Unity_get_rotation_Injected_hook)*>(Unity_get_rotation_Injected_orig)(_this, ret);
+	}
+	void* Unity_get_local_rotation_Injected_orig;
+	void Unity_get_local_rotation_Injected_hook(void* _this, Quaternion_t* ret) {
+		reinterpret_cast<decltype(Unity_get_local_rotation_Injected_hook)*>(Unity_get_local_rotation_Injected_orig)(_this, ret);
 	}
 
 
@@ -1668,6 +1709,8 @@ namespace
 				_this, sheet, currentFrame, currentTime, outLookAt);
 		}
 
+		if (g_live_free_camera && (UmaCamera::GetLiveCameraType() == LiveCamera_FIRST_PERSION) && liveFirstPersonEnableRoll) return;
+
 		auto setLookat = UmaCamera::getCameraLookat();
 		UmaCamera::setUmaCameraType(CAMERA_LIVE);
 		outLookAt->x = setLookat.x;
@@ -1714,12 +1757,15 @@ namespace
 		}
 	}
 
+	std::unordered_map<int, std::set<void*>> liveDisabledObj{};
+
 	void* live_on_destroy_orig;
 	void live_on_destroy_hook(void* _this) {
 		printf("Live End!\n");
 		isLiveStart = false;
 		UmaCamera::setLiveStart(g_set_live_fov_as_global);
 		UmaCamera::reset_camera();
+		liveDisabledObj.clear();
 		return reinterpret_cast<decltype(live_on_destroy_hook)*>(live_on_destroy_orig)(_this);
 	}
 
@@ -1768,7 +1814,7 @@ namespace
 	void* GetCharacterWorldPos_orig;
 	Vector3_t* GetCharacterWorldPos_hook(void* _this, void* timelineControl, int posFlag, int charaParts, Vector3_t* charaPos, Vector3_t* offset) {
 		const bool isFollowUma = (UmaCamera::GetLiveCameraType() == LiveCamera_FOLLOW_UMA) && g_live_free_camera;
-		
+
 		if (isFollowUma) {
 			charaParts = UmaCamera::GetLiveCameraCharaParts();
 			posFlag = UmaCamera::GetLiveCharaPositionFlag();
@@ -1792,10 +1838,166 @@ namespace
 		return ret;
 	}
 
+	void* (*SetActive)(void*, bool);
+	void initRaceView();
+
+	void emplaceIntoDisabledObj(std::unordered_map<int, std::set<void*>>& disabledObj, int index, void* part) {
+		if (auto iter = disabledObj.find(index); iter != disabledObj.end()) {
+			iter->second.emplace(part);
+		}
+		else {
+			disabledObj.emplace(index, std::set{ part });
+		}
+	}
+
+	void restoreDisableObj(std::unordered_map<int, std::set<void*>>& disabledObj, int currentIndex, bool forceAll) {
+		initRaceView();
+		std::set<int> restoredIndex{};
+
+		for (auto& i : disabledObj) {
+			if ((i.first == currentIndex) && !forceAll) continue;
+			for (auto& obj : i.second) {
+				if (Object_IsNativeObjectAlive(obj)) {
+					SetActive(obj, true);
+				}
+			}
+			restoredIndex.emplace(i.first);
+		}
+		for (auto& i : restoredIndex) {
+			disabledObj.erase(i);
+		}
+	}
+
 	template<typename T, typename TF>
 	void convertPtrType(T* cvtTarget, TF func_ptr) {
 		*cvtTarget = reinterpret_cast<T>(func_ptr);
 	}
+
+	void*(*GetCharacterObjectFromPositionId)(void*, int);
+	void*(*get_CharacterObjectList)(void*);
+	void*(*get_LiveModelControllerArray)(void*);
+	void*(*get_HeadTransform)(void*);
+	void(*getTransformPosition)(void*, Vector3_t*);
+	void(*getTransformRotation)(void*, Quaternion_t*);
+	void(*getTransformLocalRotation)(void*, Quaternion_t*);
+	void* (*get_OwnerObject)(void*);
+	void* (*get_ObjectTransform)(void*);
+	Il2CppString* (*get_ObjectName)(void*);
+	int (*get_TransformChildCount)(void*);
+	void* (*get_TransformChild)(void*, int);
+	void* (*get_TransformGameObject)(void*);
+	Vector3_t*(*get_liveCharaHeadPosition)(void*);
+	Quaternion_t*(*Quaternion_get_identity)();
+
+	void* CharacterObject_klass;
+	void* LiveModelController_klass;
+	void* Quaternion_klass;
+	void* Vector3_klass;
+	FieldInfo* CharaObject_liveModelControllerArray;
+	FieldInfo* CharaObject_activeModelIndex;
+	FieldInfo* CharaObject_liveCharaInitialPosition;
+	FieldInfo* LiveModelController_HeadTransform;
+	bool isInitLiveChara = false;
+
+	void initLiveChara() {
+		if (isInitLiveChara) return;
+		isInitLiveChara = true;
+		convertPtrType(&GetCharacterObjectFromPositionId, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop.Live", "Director", "GetCharacterObjectFromPositionId", 1));
+		convertPtrType(&get_CharacterObjectList, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop.Live", "Director", "get_CharacterObjectList", 0));
+		convertPtrType(&getTransformPosition, il2cpp_resolve_icall("UnityEngine.Transform::get_position_Injected(UnityEngine.Vector3&)"));
+		convertPtrType(&getTransformRotation, il2cpp_resolve_icall("UnityEngine.Transform::get_rotation_Injected(UnityEngine.Quaternion&)"));
+		convertPtrType(&getTransformLocalRotation, il2cpp_resolve_icall("UnityEngine.Transform::get_localRotation_Injected(UnityEngine.Quaternion&)"));
+		convertPtrType(&get_LiveModelControllerArray, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop.Live", "CharacterObject", "get_LiveModelControllerArray", 0));
+		convertPtrType(&get_liveCharaHeadPosition, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop.Live", "CharacterObject", "get_liveCharaHeadPosition", 0));
+		convertPtrType(&get_HeadTransform, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "LiveModelController", "get_HeadTransform", 0));
+		convertPtrType(&get_OwnerObject, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "ModelController", "get_OwnerObject", 0));
+		
+		convertPtrType(&get_ObjectTransform, il2cpp_resolve_icall("UnityEngine.GameObject::get_transform()"));
+		convertPtrType(&get_TransformChildCount, il2cpp_resolve_icall("UnityEngine.Transform::get_childCount()"));
+		convertPtrType(&get_TransformChild, il2cpp_resolve_icall("UnityEngine.Transform::GetChild(System.Int32)"));
+		convertPtrType(&get_TransformGameObject, il2cpp_resolve_icall("UnityEngine.Component::get_gameObject()"));
+		convertPtrType(&get_ObjectName, il2cpp_resolve_icall("UnityEngine.Object::GetName(UnityEngine.Object)"));
+		convertPtrType(&SetActive, il2cpp_resolve_icall("UnityEngine.GameObject::SetActive(System.Boolean)"));
+		CharacterObject_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop.Live", "CharacterObject");
+		CharaObject_liveModelControllerArray = il2cpp_class_get_field_from_name(CharacterObject_klass, "_liveModelControllerArray");
+		CharaObject_activeModelIndex = il2cpp_class_get_field_from_name(CharacterObject_klass, "_activeModelIndex");
+		CharaObject_liveCharaInitialPosition = il2cpp_class_get_field_from_name(CharacterObject_klass, "_liveCharaInitialPosition");
+		LiveModelController_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop", "LiveModelController");
+		LiveModelController_HeadTransform = il2cpp_class_get_field_from_name(LiveModelController_klass, "<HeadTransform>k__BackingField");
+		Quaternion_klass = il2cpp_symbols::get_class("UnityEngine.CoreModule.dll", "UnityEngine", "Quaternion");
+		Vector3_klass = il2cpp_symbols::get_class("UnityEngine.CoreModule.dll", "UnityEngine", "Vector3");
+	}
+
+	void* Director_AlterUpdate_orig;
+	void Director_AlterUpdate_hook(void* _this) {
+		const bool isFirstPersion = (UmaCamera::GetLiveCameraType() == LiveCamera_FIRST_PERSION) && g_live_free_camera;
+		reinterpret_cast<decltype(Director_AlterUpdate_hook)*>(Director_AlterUpdate_orig)(_this);
+
+		if (!liveDisabledObj.empty()) {
+			restoreDisableObj(liveDisabledObj, 0, true);
+		}
+
+		if (!isFirstPersion) return;
+
+		initLiveChara();
+		int objCount = 0;
+		il2cpp_symbols::iterate_list(get_CharacterObjectList(_this), [&](int32_t i, void* charaObj) {
+			objCount++;
+			});
+
+		auto currentFlag = UmaCamera::GetLiveCharaPositionIndex();
+		if (currentFlag >= objCount) {
+			currentFlag = objCount - 1;
+		}
+
+		auto charaObject = GetCharacterObjectFromPositionId(_this, currentFlag);  // Gallop.Live.CharacterObject
+		auto liveModelControllerArr = reinterpret_cast<void*>(static_cast<std::byte*>(charaObject) + CharaObject_liveModelControllerArray->offset);  // LiveModelController[]
+		auto liveModelControllerArray = get_LiveModelControllerArray(charaObject);  // LiveModelController[]
+		auto activeModelIndex = il2cpp_symbols::read_field<int>(charaObject, CharaObject_activeModelIndex);
+
+		auto currIndex = 0;
+		il2cpp_symbols::iterate_IEnumerable(liveModelControllerArray, [&](void* modelController) {  // Gallop.LiveModelController
+			if (!modelController) return;
+
+			// auto headTransform = reinterpret_cast<void**>(static_cast<unsigned char*>(modelController) + LiveModelController_HeadTransform->offset);  // UnityEngine.Transform
+			auto headTransform = get_HeadTransform(modelController); // UnityEngine.Transform
+			
+			if (currIndex == 0) {
+				Quaternion_t* rot = reinterpret_cast<Quaternion_t*>(il2cpp_object_new(Quaternion_klass));
+				Vector3_t* pos = reinterpret_cast<Vector3_t*>(il2cpp_object_new(Vector3_klass));
+
+				liveCacheTransform = rot;
+				getTransformPosition(headTransform, pos);
+				getTransformRotation(headTransform, rot);
+				UmaCamera::updatePosAndLookatByRotation(*pos, *rot);
+
+				// 隐藏头部
+				auto ownerObj = get_OwnerObject(modelController);  // UnityEngine.GameObject
+				auto objTransform = get_ObjectTransform(ownerObj);  // UnityEngine.Transform
+				auto childTransformCount = get_TransformChildCount(objTransform);
+				for (int i = 0; i < childTransformCount; i++) {
+					auto child = get_TransformChild(objTransform, i);  // UnityEngine.Transform
+					auto gameObj = get_TransformGameObject(child);  // UnityEngine.GameObject
+					if (gameObj) {
+						std::wstring_view objName = get_ObjectName(gameObj)->start_char;
+						if (objName.compare(L"M_Hair") == 0) {
+							emplaceIntoDisabledObj(liveDisabledObj, currentFlag, gameObj);
+							SetActive(gameObj, false);
+						}
+						else if (objName.compare(L"M_Face") == 0) {
+							emplaceIntoDisabledObj(liveDisabledObj, currentFlag, gameObj);
+							SetActive(gameObj, false);
+						}
+					}
+				}
+
+			}
+			currIndex++;
+			});
+		restoreDisableObj(liveDisabledObj, currentFlag, false);
+
+	}
+
 
 	int(*HorseData_get_GateNo)(void*);
 	float(*get_RunMotionRate)(void*);
@@ -2146,6 +2348,18 @@ namespace
 		return true;
 	}
 
+	void* LiveTimelineControl_AlterLateUpdate_orig;
+	void LiveTimelineControl_AlterLateUpdate_hook(void* _this) {
+		updateLiveCameraPos = true;
+		reinterpret_cast<decltype(LiveTimelineControl_AlterLateUpdate_hook)*>(LiveTimelineControl_AlterLateUpdate_orig)(_this);
+		updateLiveCameraPos = false;
+		if (g_live_free_camera && liveFirstPersonEnableRoll && (UmaCamera::GetLiveCameraType() == LiveCamera_FIRST_PERSION)) {
+			if ((liveLookCameraCachePtr != nullptr) && (liveCacheTransform != nullptr)) {
+				Unity_set_rotation_Injected_hook(liveLookCameraCachePtr, liveCacheTransform);
+			}
+		}
+	}
+
 	void* AlterUpdate_MultiCamera_orig;
 	bool AlterUpdate_MultiCamera_hook(void* _this, Il2CppObject* sheet, int currentFrame, float currentTime) {
 		if (!g_live_free_camera) {
@@ -2191,7 +2405,7 @@ namespace
 	void race_get_CameraPosition(void* _this, Vector3_t* data) {
 		UmaCamera::setUmaCameraType(CAMERA_RACE);
 
-		if (g_race_freecam_follow_umamusume) {
+		if (g_race_freecam_follow_umamusume && !raceFollowUmaFirstPersion) {
 			UmaCamera::updateFollowUmaPos(targetPosLastCache, targetPosCache, currentQuat, data);
 			return;
 		}
@@ -2237,6 +2451,93 @@ namespace
 		// printf("UpdateCameraDistanceBlendRate\n");
 	}
 
+	void* (*RaceViewBase_GetModelController)(void*, int);
+	void* (*Race_get_HeadTransform)(void*);
+	void* (*GetPrefabAttachTransform)(void*, int);
+	void* (*get_HeadObject)(void*);
+	void* (*GetCancelTransform)(void*, int);
+	void (*getTransformLocalPosition)(void*, Vector3_t*);
+	bool raceViewInited = false;
+
+	void initRaceView() {
+		if (raceViewInited) return;
+		raceViewInited = true;
+
+		Quaternion_klass = il2cpp_symbols::get_class("UnityEngine.CoreModule.dll", "UnityEngine", "Quaternion");
+		Vector3_klass = il2cpp_symbols::get_class("UnityEngine.CoreModule.dll", "UnityEngine", "Vector3");
+
+		convertPtrType(&RaceViewBase_GetModelController, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "RaceViewBase", "GetModelController", 1));
+		convertPtrType(&Race_get_HeadTransform, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "RaceModelController", "get_HeadTransform", 0));
+		convertPtrType(&GetPrefabAttachTransform, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "RaceModelController", "GetPrefabAttachTransform", 1));
+		convertPtrType(&get_HeadObject, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "RaceModelController", "get_HeadObject", 0));
+		convertPtrType(&get_OwnerObject, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "ModelController", "get_OwnerObject", 0));
+		convertPtrType(&GetCancelTransform, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "RaceModelController", "GetCancelTransform", 1));
+		convertPtrType(&getTransformPosition, il2cpp_resolve_icall("UnityEngine.Transform::get_position_Injected(UnityEngine.Vector3&)"));
+		convertPtrType(&getTransformRotation, il2cpp_resolve_icall("UnityEngine.Transform::get_rotation_Injected(UnityEngine.Quaternion&)"));
+		convertPtrType(&getTransformLocalRotation, il2cpp_resolve_icall("UnityEngine.Transform::get_localRotation_Injected(UnityEngine.Quaternion&)"));
+		convertPtrType(&getTransformLocalPosition, il2cpp_resolve_icall("UnityEngine.Transform::get_localPosition_Injected(UnityEngine.Vector3&)"));
+		convertPtrType(&SetActive, il2cpp_resolve_icall("UnityEngine.GameObject::SetActive(System.Boolean)"));
+		convertPtrType(&get_ObjectTransform, il2cpp_resolve_icall("UnityEngine.GameObject::get_transform()"));
+		convertPtrType(&get_TransformChildCount, il2cpp_resolve_icall("UnityEngine.Transform::get_childCount()"));
+		convertPtrType(&get_TransformChild, il2cpp_resolve_icall("UnityEngine.Transform::GetChild(System.Int32)"));
+		convertPtrType(&get_TransformGameObject, il2cpp_resolve_icall("UnityEngine.Component::get_gameObject()"));
+		convertPtrType(&get_ObjectName, il2cpp_resolve_icall("UnityEngine.Object::GetName(UnityEngine.Object)"));
+	}
+
+	std::unordered_map<int, std::set<void*>> raceDisabledObj{};
+
+	void* RaceViewBase_LateUpdateView_orig;
+	void RaceViewBase_LateUpdateView_hook(void* _this) {
+		int currentIndex = g_race_freecam_follow_umamusume_index;
+
+		if (g_race_free_camera && g_race_freecam_follow_umamusume && raceFollowUmaFirstPersion) {
+			initRaceView();
+			auto modelController = RaceViewBase_GetModelController(_this, currentIndex);
+			if (modelController) {
+				// auto headTransform = Race_get_HeadTransform(modelController);  // 并不能获取完整的Head Transform
+				auto headTransform = GetPrefabAttachTransform(modelController, 0x6);
+				// auto headTransform = GetCancelTransform(modelController, 0x3);
+				// 
+				// auto headObject = get_HeadObject(modelController);  // UnityEngine.GameObject
+				// SetActive(headObject, false);
+
+				auto ownerObj = get_OwnerObject(modelController);  // UnityEngine.GameObject
+				auto objTransform = get_ObjectTransform(ownerObj);  // UnityEngine.Transform
+				auto childTransformCount = get_TransformChildCount(objTransform);
+				for (int i = 0; i < childTransformCount; i++) {
+					auto child = get_TransformChild(objTransform, i);  // UnityEngine.Transform
+					auto gameObj = get_TransformGameObject(child);  // UnityEngine.GameObject
+					if (gameObj) {
+						std::wstring_view objName = get_ObjectName(gameObj)->start_char;
+						if (objName.compare(L"M_Hair") == 0) {
+							emplaceIntoDisabledObj(raceDisabledObj, currentIndex, gameObj);
+							SetActive(gameObj, false);
+						}
+						else if (objName.compare(L"M_Face") == 0) {
+							emplaceIntoDisabledObj(raceDisabledObj, currentIndex, gameObj);
+							SetActive(gameObj, false);
+						}
+					}
+
+				}
+
+
+				Quaternion_t* rot = reinterpret_cast<Quaternion_t*>(il2cpp_object_new(Quaternion_klass));
+				Vector3_t* pos = reinterpret_cast<Vector3_t*>(il2cpp_object_new(Vector3_klass));
+
+				getTransformPosition(headTransform, pos);
+				getTransformRotation(headTransform, rot);
+				raceCacheTransform = rot;
+
+				// printf("pos: %f, %f, %f; rot: %f, %f, %f, %f\n", pos->x, pos->y, pos->z, rot->w, rot->x, rot->y, rot->z);
+				UmaCamera::updatePosAndLookatByRotation(*pos, *rot);
+				// UmaCamera::SetCameraPos(pos->x, pos->y, pos->z);
+			}
+		}
+		restoreDisableObj(raceDisabledObj, currentIndex, !raceFollowUmaFirstPersion);
+		reinterpret_cast<decltype(RaceViewBase_LateUpdateView_hook)*>(RaceViewBase_LateUpdateView_orig)(_this);
+	}
+
 	void* race_get_CameraShakeTargetOffset_orig;
 	Vector3_t* race_get_CameraShakeTargetOffset_hook(void* _this) {
 		auto data = reinterpret_cast<decltype(race_get_CameraShakeTargetOffset_hook)*>(race_get_CameraShakeTargetOffset_orig)(_this);
@@ -2279,6 +2580,7 @@ namespace
 		raceStart = false;
 		umaRaceData.clear();
 		umaUsedSkillList.clear();
+		raceDisabledObj.clear();
 		// updateRaceGUIData(umaRaceData);
 		if (raceInfoTabAttachToGame)
 			SetShowRaceWnd(false);
@@ -3055,6 +3357,11 @@ namespace
 			"LiveTimelineKeyCameraLookAtData", "GetCharacterWorldPos", 5
 		);
 
+		auto Director_AlterUpdate_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live",
+			"Director", "AlterUpdate", 0
+		);
+
 		auto get_RunMotionSpeed_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"HorseRaceInfoReplay", "get_RunMotionSpeed", 0
@@ -3115,6 +3422,11 @@ namespace
 			"LiveTimelineControl", "AlterUpdate_CameraRoll", 2
 		);
 
+		auto LiveTimelineControl_AlterLateUpdate_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "AlterLateUpdate", 0
+		);
+
 		auto AlterUpdate_MultiCamera_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop.Live.Cutt",
 			"LiveTimelineControl", "AlterUpdate_MultiCamera", 3
@@ -3142,6 +3454,9 @@ namespace
 		auto Unity_get_farClipPlane_addr = il2cpp_resolve_icall("UnityEngine.Camera::get_farClipPlane()");
 		auto Unity_set_farClipPlane_addr = il2cpp_resolve_icall("UnityEngine.Camera::set_farClipPlane(System.Single)");
 		auto Unity_set_cullingMask_addr = il2cpp_resolve_icall("UnityEngine.Camera::set_cullingMask(System.Int32)");
+		auto Unity_get_rotation_Injected_addr = il2cpp_resolve_icall("UnityEngine.Transform::get_rotation_Injected(UnityEngine.Quaternion&)");
+		auto Unity_set_rotation_Injected_addr = il2cpp_resolve_icall("UnityEngine.Transform::set_rotation_Injected(UnityEngine.Quaternion&)");
+		auto Unity_get_local_rotation_Injected_addr = il2cpp_resolve_icall("UnityEngine.Transform::get_localRotation_Injected(UnityEngine.Quaternion&)");
 		
 		auto HomeClampAngle_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
@@ -3241,6 +3556,11 @@ namespace
 		auto race_UpdateCameraDistanceBlendRate_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"RaceModelController", "UpdateCameraDistanceBlendRate", 3
+		);
+
+		auto RaceViewBase_LateUpdateView_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"RaceViewBase", "LateUpdateView", 0
 		);
 
 		auto race_get_CameraShakeTargetOffset_addr = il2cpp_symbols::get_method_pointer(
@@ -3352,6 +3672,9 @@ namespace
 		ADD_HOOK(Unity_set_nearClipPlane, "Unity_set_nearClipPlane at %p\n");
 		ADD_HOOK(Unity_get_nearClipPlane, "Unity_get_nearClipPlane at %p\n");
 		ADD_HOOK(Unity_set_cullingMask, "Unity_set_cullingMask at %p\n");
+		ADD_HOOK(Unity_get_rotation_Injected, "Unity_get_rotation_Injected at %p\n");
+		ADD_HOOK(Unity_set_rotation_Injected, "Unity_set_rotation_Injected at %p\n");
+		ADD_HOOK(Unity_get_local_rotation_Injected, "Unity_get_local_rotation_Injected at %p\n");
 		ADD_HOOK(Unity_get_farClipPlane, "Unity_get_farClipPlane at %p\n");
 		ADD_HOOK(Unity_set_farClipPlane, "Unity_set_farClipPlane at %p\n");
 		ADD_HOOK(HomeClampAngle, "HomeClampAngle at %p\n");
@@ -3369,6 +3692,7 @@ namespace
 		ADD_HOOK(get_camera_pos, "get_camera_pos at %p\n");
 		ADD_HOOK(get_camera_pos2, "get_camera_pos2 at %p\n");
 		ADD_HOOK(GetCharacterWorldPos, "GetCharacterWorldPos at %p\n");
+		ADD_HOOK(Director_AlterUpdate, "Director_AlterUpdate at %p\n");
 		ADD_HOOK(get_RunMotionSpeed, "get_RunMotionSpeed at %p\n");
 		ADD_HOOK(HorseRaceInfoReplay_ctor, "HorseRaceInfoReplay_ctor at %p\n");
 		ADD_HOOK(AddUsedSkillId, "AddUsedSkillId at %p\n");
@@ -3381,6 +3705,7 @@ namespace
 		ADD_HOOK(AlterLateUpdate_CameraMotion, "AlterLateUpdate_CameraMotion at %p\n");
 		ADD_HOOK(AlterUpdate_CameraFov, "AlterUpdate_CameraFov at %p\n");
 		ADD_HOOK(AlterUpdate_CameraRoll, "AlterUpdate_CameraRoll at %p\n");
+		ADD_HOOK(LiveTimelineControl_AlterLateUpdate, "LiveTimelineControl_AlterLateUpdate at %p\n");
 		ADD_HOOK(AlterUpdate_CameraSwitcher, "AlterUpdate_CameraSwitcher at %p\n");
 		ADD_HOOK(AlterUpdate_RadialBlur, "AlterUpdate_RadialBlur at %p\n");
 		ADD_HOOK(SetupRadialBlurInfo, "SetupRadialBlurInfo at %p\n");
@@ -3399,6 +3724,7 @@ namespace
 		ADD_HOOK(race_get_CameraFov, "race_get_CameraFov at %p\n");
 		ADD_HOOK(race_PlayEventCamera, "race_PlayEventCamera at %p\n");
 		ADD_HOOK(race_UpdateCameraDistanceBlendRate, "race_UpdateCameraDistanceBlendRate at %p\n");
+		ADD_HOOK(RaceViewBase_LateUpdateView, "RaceViewBase_LateUpdateView at %p\n");
 		ADD_HOOK(race_get_CameraShakeTargetOffset, "get_CameraShakePositionOffset at %p\n");
 		ADD_HOOK(race_GetTargetRotation, "GetTargetRotation at %p\n");
 		ADD_HOOK(race_OnDestroy, "race_OnDestroy at %p\n");

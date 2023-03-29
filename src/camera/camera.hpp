@@ -14,9 +14,12 @@ namespace UmaCamera {
 	void updateFollowUmaPos(Vector3_t lastFrame, Vector3_t thisFrame, Quaternion_t currQuat, Vector3_t* setPos);
 	void setHomeCameraAngle(float value);
 	void mouseMove(LONG x, LONG y, int mouseEventType);
+	void updateLookatByRotation(Quaternion_t rot);
+	void updatePosAndLookatByRotation(Vector3_t pos, Quaternion_t rot);
 
 	int GetLiveCharaPositionFlag();
 	int GetLiveCameraCharaParts();
+	int GetLiveCharaPositionIndex();
 	int GetLiveCameraType();
 
 	void setRaceCamFOV(float value);
