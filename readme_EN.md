@@ -160,13 +160,22 @@
 
 
 
-## Race Free Camera (Not Working Currently)
+### First Person Mode
+
+- Change camera offset: `W`/`S`/`ctrl`/`Space`
+
+
+
+## Race Free Camera
 
 - Down: `Ctrl`, Up: `Space`, Adjust FOV: `Q`/`E`, Reset Camera:`R`, Change mode: `F`
 - Follow Umamusume Mode
   - Change Offset: `WSAD`, Adjust Distance: `↑↓`, Switching observation targets: `←→`, Switching front and back views: `V`
 - Free Camera Mode
   - Move: `WSAD`, Adjust Angle: `↑↓←→`
+- First Person Mode:
+  - Change camera offset: `W`/`S`/`ctrl`/`Space`
+
 
 
 
