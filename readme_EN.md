@@ -163,6 +163,7 @@
 ### First Person Mode
 
 - Change camera offset: `W`/`S`/`ctrl`/`Space`
+- Change with/without character roll: `V`
 
 
 
