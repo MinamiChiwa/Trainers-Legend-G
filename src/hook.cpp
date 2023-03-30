@@ -1611,8 +1611,8 @@ namespace
 
 	void* Unity_set_nearClipPlane_orig;
 	void Unity_set_nearClipPlane_hook(void* _this, float single) {
-		if (g_race_free_camera && raceStart) {
-			single = 0.1f;
+		if ((g_live_free_camera && isLiveStart) || (g_race_free_camera && raceStart)) {
+			single = 0.05f;
 		}
 		return reinterpret_cast<decltype(Unity_set_nearClipPlane_hook)*>(Unity_set_nearClipPlane_orig)(_this, single);
 	}
@@ -1621,7 +1621,7 @@ namespace
 	float Unity_get_nearClipPlane_hook(void* _this) {
 		auto ret = reinterpret_cast<decltype(Unity_get_nearClipPlane_hook)*>(Unity_get_nearClipPlane_orig)(_this);
 		if (updateRaceCame) {
-			ret = 0.1f;
+			ret = 0.05f;
 		}
 		return ret;
 	}
@@ -1646,14 +1646,14 @@ namespace
 	float Unity_get_farClipPlane_hook(void* _this) {
 		auto ret = reinterpret_cast<decltype(Unity_get_farClipPlane_hook)*>(Unity_get_farClipPlane_orig)(_this);
 		if (updateRaceCame) {
-			ret = 1500.0f;
+			ret = 2500.0f;
 		}
 		return ret;
 	}
 
 	void* Unity_set_farClipPlane_orig;
 	void Unity_set_farClipPlane_hook(void* _this, float value) {
-		if (g_race_free_camera && raceStart) {
+		if ((g_live_free_camera && isLiveStart) || (g_race_free_camera && raceStart)) {
 			value = 2500.0f;
 		}
 		reinterpret_cast<decltype(Unity_set_farClipPlane_hook)*>(Unity_set_farClipPlane_orig)(_this, value);
