@@ -1612,9 +1612,9 @@ namespace
 	void* Unity_set_nearClipPlane_orig;
 	void Unity_set_nearClipPlane_hook(void* _this, float single) {
 		if (g_race_free_camera && raceStart) {
-			return;
+			single = 0.1f;
 		}
-		return reinterpret_cast<decltype(Unity_set_nearClipPlane_hook)*>(Unity_set_nearClipPlane_orig)(_this, 0.1f);
+		return reinterpret_cast<decltype(Unity_set_nearClipPlane_hook)*>(Unity_set_nearClipPlane_orig)(_this, single);
 	}
 
 	void* Unity_get_nearClipPlane_orig;
@@ -1646,7 +1646,6 @@ namespace
 	float Unity_get_farClipPlane_hook(void* _this) {
 		auto ret = reinterpret_cast<decltype(Unity_get_farClipPlane_hook)*>(Unity_get_farClipPlane_orig)(_this);
 		if (updateRaceCame) {
-			printf("farClipPlane: %f\n", ret);
 			ret = 1500.0f;
 		}
 		return ret;
@@ -1655,9 +1654,9 @@ namespace
 	void* Unity_set_farClipPlane_orig;
 	void Unity_set_farClipPlane_hook(void* _this, float value) {
 		if (g_race_free_camera && raceStart) {
-			return;
+			value = 2500.0f;
 		}
-		reinterpret_cast<decltype(Unity_set_farClipPlane_hook)*>(Unity_set_farClipPlane_orig)(_this, 2500.0f);
+		reinterpret_cast<decltype(Unity_set_farClipPlane_hook)*>(Unity_set_farClipPlane_orig)(_this, value);
 	}
 
 
@@ -1758,11 +1757,12 @@ namespace
 	}
 
 	std::unordered_map<int, std::set<void*>> liveDisabledObj{};
-
+	 
 	void* live_on_destroy_orig;
 	void live_on_destroy_hook(void* _this) {
 		printf("Live End!\n");
 		isLiveStart = false;
+		liveLookCameraCachePtr = nullptr;
 		UmaCamera::setLiveStart(g_set_live_fov_as_global);
 		UmaCamera::reset_camera();
 		liveDisabledObj.clear();
@@ -2525,12 +2525,12 @@ namespace
 				Vector3_t* pos = reinterpret_cast<Vector3_t*>(il2cpp_object_new(Vector3_klass));
 
 				getTransformPosition(headTransform, pos);
+				getTransformRotation(headTransform, rot);
 				if (raceFollowUmaFirstPersionEnableRoll) {
-					getTransformRotation(headTransform, rot);
 					UmaCamera::updatePosAndLookatByRotation(*pos, *rot);
 				}
 				else {
-					auto newRot = UmaCamera::updatePosAndLookatByRotationStable(*pos, currentQuat);
+					auto newRot = UmaCamera::updatePosAndLookatByRotationStable(*pos, *rot, currentQuat);
 					rot->w = newRot.w;
 					rot->x = newRot.x;
 					rot->y = newRot.y;
@@ -3673,18 +3673,19 @@ namespace
 		ADD_HOOK(Unity_get_fieldOfView, "Unity_get_fieldOfView at %p\n");
 		ADD_HOOK(Unity_set_fieldOfView, "Unity_set_fieldOfView at %p\n");
 		ADD_HOOK(Unity_set_pos_injected, "Unity_set_pos_injected at %p\n");
-		ADD_HOOK(Unity_get_pos_injected, "Unity_get_pos_injected at %p\n");
+		ADD_HOOK(Unity_get_local_rotation_Injected, "Unity_get_local_rotation_Injected at %p\n");
 		ADD_HOOK(Unity_set_localpos_injected, "Unity_set_localpos_injected at %p\n");
-		ADD_HOOK(Unity_LookAt_Injected, "Unity_LookAt_Injected at %p\n");
 		ADD_HOOK(Unity_set_localRotation_Injected, "Unity_set_localRotation_Injected at %p\n");
-		ADD_HOOK(Unity_set_nearClipPlane, "Unity_set_nearClipPlane at %p\n");
-		ADD_HOOK(Unity_get_nearClipPlane, "Unity_get_nearClipPlane at %p\n");
 		ADD_HOOK(Unity_set_cullingMask, "Unity_set_cullingMask at %p\n");
 		ADD_HOOK(Unity_get_rotation_Injected, "Unity_get_rotation_Injected at %p\n");
 		ADD_HOOK(Unity_set_rotation_Injected, "Unity_set_rotation_Injected at %p\n");
-		ADD_HOOK(Unity_get_local_rotation_Injected, "Unity_get_local_rotation_Injected at %p\n");
+		ADD_HOOK(Unity_get_pos_injected, "Unity_get_pos_injected at %p\n");
+		ADD_HOOK(Unity_LookAt_Injected, "Unity_LookAt_Injected at %p\n");
+		ADD_HOOK(Unity_set_nearClipPlane, "Unity_set_nearClipPlane at %p\n");
+		ADD_HOOK(Unity_get_nearClipPlane, "Unity_get_nearClipPlane at %p\n");
 		ADD_HOOK(Unity_get_farClipPlane, "Unity_get_farClipPlane at %p\n");
 		ADD_HOOK(Unity_set_farClipPlane, "Unity_set_farClipPlane at %p\n");
+		
 		ADD_HOOK(HomeClampAngle, "HomeClampAngle at %p\n");
 		ADD_HOOK(MasterCharaType_Get, "MasterCharaType_Get at %p\n");
 		ADD_HOOK(CreateMiniCharacter, "CreateMiniCharacter at %p\n");

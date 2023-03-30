@@ -16,7 +16,7 @@ namespace UmaCamera {
 	void mouseMove(LONG x, LONG y, int mouseEventType);
 	void updateLookatByRotation(Quaternion_t rot);
 	void updatePosAndLookatByRotation(Vector3_t pos, Quaternion_t rot);
-	Quaternion_t updatePosAndLookatByRotationStable(Vector3_t pos, Quaternion_t rot);
+	Quaternion_t updatePosAndLookatByRotationStable(Vector3_t pos, Quaternion_t rot, Quaternion_t nowRot);
 
 	int GetLiveCharaPositionFlag();
 	int GetLiveCameraCharaParts();
