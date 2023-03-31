@@ -1612,7 +1612,7 @@ namespace
 	void* Unity_set_nearClipPlane_orig;
 	void Unity_set_nearClipPlane_hook(void* _this, float single) {
 		if ((g_live_free_camera && isLiveStart) || (g_race_free_camera && raceStart)) {
-			single = 0.05f;
+			single = 0.001f;
 		}
 		return reinterpret_cast<decltype(Unity_set_nearClipPlane_hook)*>(Unity_set_nearClipPlane_orig)(_this, single);
 	}
@@ -1620,8 +1620,8 @@ namespace
 	void* Unity_get_nearClipPlane_orig;
 	float Unity_get_nearClipPlane_hook(void* _this) {
 		auto ret = reinterpret_cast<decltype(Unity_get_nearClipPlane_hook)*>(Unity_get_nearClipPlane_orig)(_this);
-		if (updateRaceCame) {
-			ret = 0.05f;
+		if (updateRaceCame || (g_race_free_camera && raceStart)) {
+			ret = 0.001f;
 		}
 		return ret;
 	}
@@ -1645,7 +1645,7 @@ namespace
 	void* Unity_get_farClipPlane_orig;
 	float Unity_get_farClipPlane_hook(void* _this) {
 		auto ret = reinterpret_cast<decltype(Unity_get_farClipPlane_hook)*>(Unity_get_farClipPlane_orig)(_this);
-		if (updateRaceCame) {
+		if (updateRaceCame || (g_race_free_camera && raceStart)) {
 			ret = 2500.0f;
 		}
 		return ret;
@@ -2495,7 +2495,9 @@ namespace
 			auto modelController = RaceViewBase_GetModelController(_this, currentIndex);
 			if (modelController) {
 				// auto headTransform = Race_get_HeadTransform(modelController);  // 并不能获取完整的Head Transform
-				auto headTransform = GetPrefabAttachTransform(modelController, 0x6);
+				// auto headTransform = GetPrefabAttachTransform(modelController, 0x6);
+				auto eyeLTransform = GetPrefabAttachTransform(modelController, 0x7);
+				auto eyeRTransform = GetPrefabAttachTransform(modelController, 0x8);
 				// auto headTransform = GetCancelTransform(modelController, 0x3);
 				// 
 				// auto headObject = get_HeadObject(modelController);  // UnityEngine.GameObject
@@ -2523,20 +2525,34 @@ namespace
 
 				Quaternion_t* rot = reinterpret_cast<Quaternion_t*>(il2cpp_object_new(Quaternion_klass));
 				Vector3_t* pos = reinterpret_cast<Vector3_t*>(il2cpp_object_new(Vector3_klass));
+				Quaternion_t* rot2 = reinterpret_cast<Quaternion_t*>(il2cpp_object_new(Quaternion_klass));
+				Vector3_t* pos2 = reinterpret_cast<Vector3_t*>(il2cpp_object_new(Vector3_klass));
 
-				getTransformPosition(headTransform, pos);
-				getTransformRotation(headTransform, rot);
+				getTransformPosition(eyeLTransform, pos);
+				getTransformRotation(eyeLTransform, rot);
+				getTransformPosition(eyeRTransform, pos2);
+				getTransformRotation(eyeRTransform, rot2);
+				pos->x = (pos2->x + pos->x) / 2;
+				pos->y = (pos2->y + pos->y) / 2;
+				pos->z = (pos2->z + pos->z) / 2;
+				auto newSRot = UmaCamera::slerpTwo(*rot, *rot2, 0.5f);
+				rot->w = newSRot.w;
+				rot->x = newSRot.x;
+				rot->y = newSRot.y;
+				rot->z = newSRot.z;
+
+				Quaternion_t newRot;
 				if (raceFollowUmaFirstPersionEnableRoll) {
-					UmaCamera::updatePosAndLookatByRotation(*pos, *rot);
+					newRot = UmaCamera::updatePosAndLookatByRotation(*pos, *rot);
 				}
 				else {
-					auto newRot = UmaCamera::updatePosAndLookatByRotationStable(*pos, *rot, currentQuat);
-					rot->w = newRot.w;
-					rot->x = newRot.x;
-					rot->y = newRot.y;
-					rot->z = newRot.z;
+					newRot = UmaCamera::updatePosAndLookatByRotationStable(*pos, *rot, currentQuat);
 				}
 
+				rot->w = newRot.w;
+				rot->x = newRot.x;
+				rot->y = newRot.y;
+				rot->z = newRot.z;
 				raceCacheTransform = rot;
 
 				// UmaCamera::SetCameraPos(pos->x, pos->y, pos->z);
