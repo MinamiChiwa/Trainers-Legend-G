@@ -9,6 +9,7 @@ std::function<void()> g_on_hook_ready;
 bool liveFirstPersonEnableRoll = false;
 bool raceFollowUmaFirstPersion = false;
 bool raceFollowUmaFirstPersionEnableRoll = false;
+std::function<void(Il2CppString* title, Il2CppString* content, int buttonCount, int button1Text, int button2Text, int button3Text, int btn_type)> showDialog = nullptr;
 
 void _set_u_stat(bool s) {
 	if (autoChangeLineBreakMode) {
@@ -2679,6 +2680,95 @@ namespace
 		return false;
 	}
 
+	void* (*PushDialog)(void*);  // arg: class Data data  return: class Gallop.DialogCommon
+	void* (*SetSimpleNoButtonMessage)(void*, Il2CppString*, Il2CppString*);  // DialogCommon.Data
+	void* (*PushErrorCommon)(Il2CppString*, Il2CppString*, void* onCloseButtonPushed, int popupType);
+	void* (*SetSimpleOneButtonMessage)(void*, Il2CppString*, Il2CppString*, void* onClickCenterButton, int closeTextId, int dialogFormType);
+	void* (*SetSimpleTwoButtonMessage)(void*, Il2CppString*, Il2CppString*, void* onRight, int leftTextId, int rightTextId, void* onLeft, int dialogFormType);
+	void* (*SetSimpleThreeButtonMessage)(void*, Il2CppString*, Il2CppString*, void* onRight, int rightTextId, void* onCenter, int centerTextId, void* onLeft, int leftTextId, int dialogFormType);
+	void* (*MainThreadDispatcher_get_Instance)();
+	void* (*MainThreadDispatcher_EnqueEvent)(void*, void*);
+	void (*Data_ctor)(void*);
+	void* Data_klass;
+	bool dialogInited = false;
+
+	void initDialog() {
+		if (dialogInited) return;
+		dialogInited = true;
+		convertPtrType(&PushDialog, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "DialogManager", "PushDialog", 1));
+		convertPtrType(&PushErrorCommon, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "DialogManager", "PushErrorCommon", 4));
+		convertPtrType(&MainThreadDispatcher_get_Instance, il2cpp_symbols::get_method_pointer("Cute.Core.Assembly.dll", "Cute.Core", "MainThreadEventDispatcher", "get_Instance", 0));
+		convertPtrType(&MainThreadDispatcher_EnqueEvent, il2cpp_symbols::get_method_pointer("Cute.Core.Assembly.dll", "Cute.Core", "MainThreadEventDispatcher", "EnqueEvent", 1));
+		
+		void* DialogCommon_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop", "DialogCommon");
+		Data_klass = il2cpp_symbols::find_nested_class_from_name(DialogCommon_klass, "Data");
+		convertPtrType(&SetSimpleNoButtonMessage, il2cpp_class_get_method_from_name(Data_klass, "SetSimpleNoButtonMessage", 2)->methodPointer);
+		convertPtrType(&SetSimpleOneButtonMessage, il2cpp_class_get_method_from_name(Data_klass, "SetSimpleOneButtonMessage", 5)->methodPointer);
+		convertPtrType(&SetSimpleTwoButtonMessage, il2cpp_class_get_method_from_name(Data_klass, "SetSimpleTwoButtonMessage", 7)->methodPointer);
+		convertPtrType(&SetSimpleThreeButtonMessage, il2cpp_class_get_method_from_name(Data_klass, "SetSimpleThreeButtonMessage", 9)->methodPointer);
+		convertPtrType(&Data_ctor, il2cpp_class_get_method_from_name(Data_klass, ".ctor", 0)->methodPointer);
+	
+	}
+
+
+	void showDialogf(Il2CppString* title, Il2CppString* content, int buttonCount, int button1Text, int button2Text, int button3Text, int btn_type = -1) {
+		initDialog();
+		
+		static auto func = [](Il2CppString* title, Il2CppString* content, int buttonCount, int button1Text, int button2Text, int button3Text, int btn_type = -1) {
+			auto data_instance = il2cpp_object_new(Data_klass);
+			Data_ctor(data_instance);
+			switch (buttonCount) {
+			case 0: {
+				SetSimpleNoButtonMessage(data_instance, title, content);
+			}; break;
+			case 1: {
+				SetSimpleOneButtonMessage(data_instance, title, content, nullptr, button1Text, btn_type == -1 ? 0x1 : btn_type);
+			}; break;
+			case 2: {
+				SetSimpleTwoButtonMessage(data_instance, title, content, nullptr, button1Text, button2Text, nullptr, btn_type == -1 ? 0x2 : btn_type);
+			}; break;
+			case 3: {
+				SetSimpleThreeButtonMessage(data_instance, title, content, nullptr, button1Text, nullptr, button2Text, nullptr, button3Text, btn_type == -1 ? 0x3 : btn_type);
+			}; break;
+			default: {
+				PushErrorCommon(title, content, NULL, btn_type == -1 ? 0 : btn_type);
+			}; break;
+			}
+			// auto method = il2cpp_class_get_method_from_name(Data_klass, ".ctor", 0);
+			// il2cpp_runtime_invoke(method, data_instance, NULL, NULL);
+			PushDialog(data_instance);
+		};
+
+		SchedulingFuncs<void, Il2CppString*, Il2CppString*, int, int, int, int, int>::addToDispatcher(func, title, content, buttonCount, button1Text, button2Text, button3Text, btn_type);
+
+		/*
+		auto call_func = []() {
+			auto data_instance = il2cpp_object_new(Data_klass);
+			Data_ctor(data_instance);
+			// auto method = il2cpp_class_get_method_from_name(Data_klass, ".ctor", 0);
+			// il2cpp_runtime_invoke(method, data_instance, NULL, NULL);
+			auto data = SetSimpleNoButtonMessage(data_instance, il2cpp_string_new("你好"), il2cpp_string_new("哈哈哈"));
+			PushDialog(data_instance);
+		};
+		
+		auto inst = MainThreadDispatcher_get_Instance();
+		printf("inst at %p\n", inst);
+
+		void* params[2]{ nullptr, &call_func };
+		auto Action_ctor_method = il2cpp_symbols::get_method("mscorlib.dll", "System", "Action", ".ctor", 2);
+		auto aKlass = il2cpp_symbols::get_class("mscorlib.dll", "System", "Action");
+		auto actionInstance = il2cpp_object_new(aKlass);
+		il2cpp_runtime_invoke(Action_ctor_method, actionInstance, params, NULL);
+		MainThreadDispatcher_EnqueEvent(inst, actionInstance);
+		*/
+	}
+
+	void* UpdateDispatcher_orig;
+	void UpdateDispatcher_hook(void* _this) {
+		SchedulingFuncs<void, Il2CppString*, Il2CppString*, int, int, int, int, int>::callAllFunctions();
+		return reinterpret_cast<decltype(UpdateDispatcher_hook)*>(UpdateDispatcher_orig)(_this);
+	}
+
 	/*
 	void* TimelineCharaBuildInfo_klass;
 	FieldInfo* TimelineCharaBuildInfo_CharaId;
@@ -3636,6 +3726,11 @@ namespace
 			"StorySceneController", "LoadCharacter", 2
 		);
 
+		auto UpdateDispatcher_addr = il2cpp_symbols::get_method_pointer(
+			"Cute.Core.Assembly.dll", "Cute.Core",
+			"UpdateDispatcher", "Update", 0
+		);
+
 		auto StoryCharacter3D_LoadModel_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"StoryCharacter3D", "LoadModel", 16
@@ -3759,6 +3854,7 @@ namespace
 		// ADD_HOOK(EditableCharacterBuildInfo_ctor, "EditableCharacterBuildInfo_ctor at %p\n");
 		ADD_HOOK(CharacterBuildInfo_Rebuild, "CharacterBuildInfo_Rebuild at %p\n");  // 上面三个改成 Rebuild
 		// ADD_HOOK(StorySceneController_LoadCharacter, "StorySceneController_LoadCharacter at %p\n");
+		ADD_HOOK(UpdateDispatcher, "UpdateDispatcher at %p\n");
 		ADD_HOOK(StoryCharacter3D_LoadModel, "StoryCharacter3D_LoadModel at %p\n");
 		ADD_HOOK(SingleModeSceneController_CreateModel, "SingleModeSceneController_CreateModel at %p\n");
 
@@ -3822,6 +3918,8 @@ namespace
 		// start_monitor_thread();
 		_set_u_stat(true);
 		set_start_resolution();
+		showDialog = showDialogf;
+		request_convert::startUpdateNotice();
 	}
 
 	void set_start_resolution() {
