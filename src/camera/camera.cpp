@@ -398,6 +398,7 @@ namespace UmaCamera {
 		Vector3_t liveFirstPersonOffset{ 0, 0.075, 0.015 };
 		Vector3_t raceFirstPersonLookAtOffset{ 0, 0, 0 };
 		bool lookAtUmaReverse = false;
+		float raceFirstShakeStrength = 0;
 
 		bool mouseLockThreadStart = false;
 		bool lookVertRunning, lookHoriRunning = false;
@@ -602,6 +603,7 @@ namespace UmaCamera {
 		
 		liveFirstPersonOffset = Vector3_t{ 0, 0.075, 0.015 };
 		raceFirstPersonLookAtOffset = Vector3_t{ 0, 0, 0 };
+		raceFirstShakeStrength = 0;
 	}
 
 	void setUmaCameraType(int value) {
@@ -708,15 +710,26 @@ namespace UmaCamera {
 		return updateLookatByRotation(rot);
 	}
 
-	// CameraCalc::Vector3 lastEuler = Vector3(0, 0, 0);
+	CameraCalc::Vector3 lastPos(0, 0, 0);
+
 	CameraCalc::Quaternion lastRot = CameraCalc::Quaternion(1, 1, 1, 1);
 	Quaternion_t updatePosAndLookatByRotationStable(Vector3_t pos, Quaternion_t rot, Quaternion_t nowRot) {
 		auto rotateQuat = CameraCalc::Quaternion(rot);
 		CameraCalc::SmoothQuaternion(rotateQuat, lastRot, 0.01f);
+
+		auto newRt = CameraCalc::RotateQuaternion(rotateQuat, 
+			pos.y - lastPos.y > 0 ? -raceFirstShakeStrength : raceFirstShakeStrength, CameraCalc::Vector3(1, 0, 0));
+		rotateQuat.w = newRt.w;
+		rotateQuat.x = newRt.x;
+		rotateQuat.y = newRt.y;
+		rotateQuat.z = newRt.z;
+
 		lastRot.w = rotateQuat.w;
 		lastRot.x = rotateQuat.x;
 		lastRot.y = rotateQuat.y;
 		lastRot.z = rotateQuat.z;
+
+		lastPos = pos;
 		return updatePosAndLookatByRotation(pos, rotateQuat);
 		/*
 		// 下方为原版
@@ -1202,6 +1215,28 @@ namespace UmaCamera {
 		}
 	}
 
+	void onMouseScroll(LONG value) {
+		if (value > 0) {  // up
+			if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
+				if (!raceFollowUmaFirstPersionEnableRoll && raceFollowUmaFirstPersion) {
+					if (raceFirstShakeStrength >= 1.0f) return;
+					raceFirstShakeStrength += 0.05;
+					printf("raceFirstShakeStrength: %.2f\n", raceFirstShakeStrength);
+				}
+			}
+		}
+		else {  // down
+			if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
+				if (!raceFollowUmaFirstPersionEnableRoll && raceFollowUmaFirstPersion) {
+					if (raceFirstShakeStrength <= -1.0f) return;
+					raceFirstShakeStrength -= 0.05;
+					printf("raceFirstShakeStrength: %.2f\n", raceFirstShakeStrength);
+				}
+			}
+		}
+
+	}
+
 	void mouseMove(LONG moveX, LONG moveY, int mouseEventType) {
 		if (mouseEventType == 1) {  // down
 			rMousePressFlg = true;
@@ -1240,6 +1275,9 @@ namespace UmaCamera {
 				}
 				// printf("move x: %d, y: %d\n", moveX, moveY);
 				}).detach();
+		}
+		else if (mouseEventType == 4) {  // scroll
+			onMouseScroll(moveY);
 		}
 	}
 

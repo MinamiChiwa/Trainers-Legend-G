@@ -725,6 +725,7 @@ namespace
 				UINT size = sizeof(RAWINPUT);
 				if (GetRawInputData((HRAWINPUT)lParam, RID_INPUT, &rawInput, &size, sizeof(RAWINPUTHEADER)) == size)
 				{
+					
 					if (rawInput.header.dwType == RIM_TYPEMOUSE)
 					{
 						switch (rawInput.data.mouse.ulButtons) {
@@ -739,6 +740,16 @@ namespace
 						}; break;
 						default: break;
 						}
+
+						if (rawInput.data.mouse.usButtonFlags == RI_MOUSE_WHEEL) {
+							if (rawInput.data.mouse.usButtonData == 120) {
+								UmaCamera::mouseMove(0, 1, 4);
+							}
+							else {
+								UmaCamera::mouseMove(0, -1, 4);
+							}
+						}
+
 					}
 				}
 			}
@@ -2689,8 +2700,30 @@ namespace
 	void* (*MainThreadDispatcher_get_Instance)();
 	void* (*MainThreadDispatcher_EnqueEvent)(void*, void*);
 	void (*Data_ctor)(void*);
+	void (*WebViewManager_open)(void*, Il2CppString* url, void* dialogData, void* onLoadedCallback, void* onErrorCallback, bool isDirect);
+	void (*WebViewManager_ctor)(void*);
+	void (*WebViewManager_OpenWebView)(void*, Il2CppString* url, void* onLoadedCallback);
+	void* WebViewManager_klass;
 	void* Data_klass;
 	bool dialogInited = false;
+
+	std::wstring nextLocal1675 = L"";
+	int nextLocal1675Btn1 = -1;
+	int nextLocal1675Btn2 = -1;
+	bool WebViewManager_opening = false;
+
+	void* SetSimpleTwoButtonMessagef_orig;
+	void* SetSimpleTwoButtonMessagef_hook(void* _this, Il2CppString* title, Il2CppString* content, void* onRight, int leftTextId, int rightTextId, void* onLeft, int dialogFormType) {
+		if (WebViewManager_opening) {
+			if (!nextLocal1675.empty()) {
+				content = il2cpp_symbols::NewWStr(nextLocal1675);
+				nextLocal1675 = L"";
+			}
+			leftTextId = nextLocal1675Btn1 == -1 ? leftTextId : nextLocal1675Btn1;
+			rightTextId = nextLocal1675Btn2 == -1 ? rightTextId : nextLocal1675Btn2;
+		}
+		return reinterpret_cast<decltype(SetSimpleTwoButtonMessagef_hook)*>(SetSimpleTwoButtonMessagef_orig)(_this, title, content, onRight, leftTextId, rightTextId, onLeft, dialogFormType);
+	}
 
 	void initDialog() {
 		if (dialogInited) return;
@@ -2699,6 +2732,10 @@ namespace
 		convertPtrType(&PushErrorCommon, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "DialogManager", "PushErrorCommon", 4));
 		convertPtrType(&MainThreadDispatcher_get_Instance, il2cpp_symbols::get_method_pointer("Cute.Core.Assembly.dll", "Cute.Core", "MainThreadEventDispatcher", "get_Instance", 0));
 		convertPtrType(&MainThreadDispatcher_EnqueEvent, il2cpp_symbols::get_method_pointer("Cute.Core.Assembly.dll", "Cute.Core", "MainThreadEventDispatcher", "EnqueEvent", 1));
+		convertPtrType(&WebViewManager_open, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "WebViewManager", "Open", 5));
+		convertPtrType(&WebViewManager_ctor, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "WebViewManager", ".ctor", 0));
+		convertPtrType(&WebViewManager_OpenWebView, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "WebViewManager", "OpenWebView", 2));
+		WebViewManager_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop", "WebViewManager");
 		
 		void* DialogCommon_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop", "DialogCommon");
 		Data_klass = il2cpp_symbols::find_nested_class_from_name(DialogCommon_klass, "Data");
@@ -2717,6 +2754,28 @@ namespace
 		static auto func = [](Il2CppString* title, Il2CppString* content, int buttonCount, int button1Text, int button2Text, int button3Text, int btn_type = -1) {
 			auto data_instance = il2cpp_object_new(Data_klass);
 			Data_ctor(data_instance);
+
+			std::wstring s = content->start_char;
+			std::wregex pattern(L"<tlgURL>(.*?)</tlgURL>");
+			std::wsmatch result;
+			if (std::regex_search(s, result, pattern)) {
+				std::wstring url = result[1].str();
+				s = std::regex_replace(s, pattern, L"");
+				content = il2cpp_symbols::NewWStr(s);
+				nextLocal1675 = s;
+				nextLocal1675Btn1 = button1Text;
+				nextLocal1675Btn2 = button2Text;
+
+				SetSimpleTwoButtonMessage(data_instance, title, content, nullptr, button1Text, button2Text, nullptr, 0x2);
+				auto webview_instance = il2cpp_object_new(WebViewManager_klass);
+				WebViewManager_ctor(webview_instance);
+				WebViewManager_opening = true;
+				WebViewManager_open(webview_instance, il2cpp_symbols::NewWStr(url), data_instance, nullptr, nullptr, false);
+				WebViewManager_opening = false;
+				// WebViewManager_OpenWebView(webview_instance, il2cpp_string_new("https://umamusume.jp"), nullptr);
+				return;
+			}
+
 			switch (buttonCount) {
 			case 0: {
 				SetSimpleNoButtonMessage(data_instance, title, content);
@@ -3730,6 +3789,17 @@ namespace
 			"Cute.Core.Assembly.dll", "Cute.Core",
 			"UpdateDispatcher", "Update", 0
 		);
+		
+		void* DialogCommon_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop", "DialogCommon");
+		Data_klass = il2cpp_symbols::find_nested_class_from_name(DialogCommon_klass, "Data");
+		auto twoButtonFunc = il2cpp_class_get_method_from_name(Data_klass, "SetSimpleTwoButtonMessage", 7);
+		void* SetSimpleTwoButtonMessagef_addr;
+		if (twoButtonFunc) {
+			SetSimpleTwoButtonMessagef_addr = (void*)twoButtonFunc->methodPointer;
+		}
+		else {
+			printf("\n\nSetSimpleTwoButtonMessage get failed!\n\n");
+		}
 
 		auto StoryCharacter3D_LoadModel_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
@@ -3855,6 +3925,7 @@ namespace
 		ADD_HOOK(CharacterBuildInfo_Rebuild, "CharacterBuildInfo_Rebuild at %p\n");  // 上面三个改成 Rebuild
 		// ADD_HOOK(StorySceneController_LoadCharacter, "StorySceneController_LoadCharacter at %p\n");
 		ADD_HOOK(UpdateDispatcher, "UpdateDispatcher at %p\n");
+		ADD_HOOK(SetSimpleTwoButtonMessagef, "SetSimpleTwoButtonMessagef at %p\n");
 		ADD_HOOK(StoryCharacter3D_LoadModel, "StoryCharacter3D_LoadModel at %p\n");
 		ADD_HOOK(SingleModeSceneController_CreateModel, "SingleModeSceneController_CreateModel at %p\n");
 
