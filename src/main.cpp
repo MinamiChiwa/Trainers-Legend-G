@@ -25,6 +25,7 @@ int g_max_fps = -1;
 bool g_unlock_size = false;
 float g_ui_scale = 1.0f;
 float g_aspect_ratio = 16.f / 9.f;
+float orig_aspect_ratio = g_aspect_ratio;
 // std::string g_extra_assetbundle_path;
 std::list<std::string> g_extra_assetbundle_paths{};
 std::variant<UseOriginalFont, UseDefaultFont, UseCustomFont> g_replace_font;
@@ -596,6 +597,8 @@ namespace
 					}
 				}
 			}
+
+			orig_aspect_ratio = g_aspect_ratio;
 
 			UmaCamera::initCameraSettings();
 
