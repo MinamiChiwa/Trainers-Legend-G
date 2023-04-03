@@ -175,10 +175,10 @@
   - Change Offset: `WSAD`, Adjust Distance: `↑↓`, Switching observation targets: `←→`, Switching front / back views or first persion: `V`
     - First Person Mode:
       - Change camera offset: `W`/`S`/`ctrl`/`Space`
+      - First person mode has two mode. `Enable Roll` uses the native camera, while `Disable Roll` uses a stabilized camera. In `Disable Roll` mode, scrolling the mouse wheel adjusts the amplitude.
   
 - Free Camera Mode
-  - Move: `WSAD`, Adjust Angle: `↑↓←→`
-  
+  - Move: `WSAD`, Adjust Angle: `↑↓←→` or hold down right mouse button.
   
 
 
