@@ -268,6 +268,8 @@ typedef uint32_t (*il2cpp_gchandle_new_t)(void* obj, bool pinned);
 typedef void (*il2cpp_gchandle_free_t)(uint32_t gchandle);
 typedef void* (*il2cpp_gchandle_get_target_t)(uint32_t gchandle);
 typedef void* (*il2cpp_class_from_type_t)(const Il2CppType* type);
+typedef void (*il2cpp_runtime_class_init_t)(void* klass);
+typedef void* (*il2cpp_runtime_invoke_t)(MethodInfo* method, void* obj, void** params, Il2CppObject** exc);
 
 // function defines
 extern il2cpp_string_new_utf16_t il2cpp_string_new_utf16;
@@ -294,6 +296,8 @@ extern il2cpp_gchandle_new_t il2cpp_gchandle_new;
 extern il2cpp_gchandle_free_t il2cpp_gchandle_free;
 extern il2cpp_gchandle_get_target_t il2cpp_gchandle_get_target;
 extern il2cpp_class_from_type_t il2cpp_class_from_type;
+extern il2cpp_runtime_class_init_t il2cpp_runtime_class_init;
+extern il2cpp_runtime_invoke_t il2cpp_runtime_invoke;
 
 char* il2cpp_array_addr_with_size(void* arr, int32_t size, uintptr_t idx);
 

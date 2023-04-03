@@ -38,6 +38,10 @@ public:
 		return values[nowIndex];
 	}
 
+	int GetCurrentIndex() {
+		return nowIndex;
+	}
+
 	std::pair<std::string, T> GetNowValue() {
 		return std::make_pair(GetCurrentName(), GetCurrentValue());
 	}
@@ -66,6 +70,300 @@ public:
 x← ↘z
 */
 namespace UmaCamera {
+	namespace CameraCalc {
+		struct Vector3
+		{
+			float x, y, z;
+
+			Vector3(float _x, float _y, float _z)
+			{
+				x = _x;
+				y = _y;
+				z = _z;
+			}
+
+			Vector3(Vector3_t& vec) {
+				x = vec.x;
+				y = vec.y;
+				z = vec.z;
+			}
+
+			Vector3 operator+(const Vector3& v) const
+			{
+				return Vector3(x + v.x, y + v.y, z + v.z);
+			}
+
+			Vector3 operator-(const Vector3& other) const {
+				return Vector3(x - other.x, y - other.y, z - other.z);
+			}
+
+			Vector3 operator*(float s) const
+			{
+				return Vector3(x * s, y * s, z * s);
+			}
+
+			Vector3 normalized() const {
+				float n = norm();
+				return Vector3(x / n, y / n, z / n);
+			}
+
+			float norm() const {
+				return std::sqrt(x * x + y * y + z * z);
+			}
+
+			static Vector3 cross(const Vector3& a, const Vector3& b) {
+				return Vector3(a.y * b.z - a.z * b.y,
+					a.z * b.x - a.x * b.z,
+					a.x * b.y - a.y * b.x);
+			}
+		};
+
+
+		struct Quaternion
+		{
+			float w, x, y, z;
+
+			Quaternion(float _w, float _x, float _y, float _z)
+			{
+				w = _w;
+				x = _x;
+				y = _y;
+				z = _z;
+			}
+
+			Quaternion(Quaternion_t& quat) {
+				w = quat.w;
+				x = quat.x;
+				y = quat.y;
+				z = quat.z;
+			}
+
+			operator Quaternion_t() const {
+				return Quaternion_t{ w,x,y,z };
+			}
+
+			Quaternion operator*(const Quaternion& q) const
+			{
+				float nw = w * q.w - x * q.x - y * q.y - z * q.z;
+				float nx = w * q.x + x * q.w + y * q.z - z * q.y;
+				float ny = w * q.y - x * q.z + y * q.w + z * q.x;
+				float nz = w * q.z + x * q.y - y * q.x + z * q.w;
+				return Quaternion(nw, nx, ny, nz);
+			}
+
+			Quaternion operator *(const float& rhs) const {
+				return Quaternion(w * rhs, x * rhs, y * rhs, z * rhs);
+			}
+
+			Quaternion operator +(const Quaternion& rhs) const {
+				return Quaternion(w + rhs.w, x + rhs.x, y + rhs.y, z + rhs.z);
+			}
+
+			Quaternion operator -(const Quaternion& rhs) const {
+				return Quaternion(w - rhs.w, x - rhs.x, y - rhs.y, z - rhs.z);
+			}
+
+			Quaternion operator -() const {
+				return Quaternion(-w , -x, -y, -z);
+			}
+
+			float norm() const {
+				return std::sqrt(w * w + x * x + y * y + z * z);
+			}
+
+			Quaternion normalized() const {
+				float n = norm();
+				return Quaternion(w / n, x / n, y / n, z / n);
+			}
+
+			Quaternion Conjugate() const
+			{
+				return Quaternion(w, -x, -y, -z);
+			}
+
+			//  roll, pitch, yaw
+			Vector3 ToEuler() {
+				Vector3 euler(0, 0, 0);
+				// 计算 roll (x-axis rotation)
+				double sinr = 2.0 * (w * x + y * z);
+				double cosr = 1.0 - 2.0 * (x * x + y * y);
+				euler.x = atan2(sinr, cosr);
+
+				// 计算 pitch (y-axis rotation)
+				double sinp = 2.0 * (w * y - z * x);
+				if (fabs(sinp) >= 1) {
+					euler.y = copysign(M_PI / 2, sinp); // use 90 degrees if out of range
+				}
+				else {
+					euler.y = asin(sinp);
+				}
+
+				// 计算 yaw (z-axis rotation)
+				double siny = 2.0 * (w * z + x * y);
+				double cosy = 1.0 - 2.0 * (y * y + z * z);
+				euler.z = atan2(siny, cosy);
+
+				return euler;
+			}
+
+			static Quaternion FromEuler(Vector3 euler) {
+				double cy = cos(euler.z * 0.5);
+				double sy = sin(euler.z * 0.5);
+				double cp = cos(euler.y * 0.5);
+				double sp = sin(euler.y * 0.5);
+				double cr = cos(euler.x * 0.5);
+				double sr = sin(euler.x * 0.5);
+
+				Quaternion q(0, 0, 0, 0);
+				q.w = cr * cp * cy + sr * sp * sy;
+				q.x = sr * cp * cy - cr * sp * sy;
+				q.y = cr * sp * cy + sr * cp * sy;
+				q.z = cr * cp * sy - sr * sp * cy;
+				return q;
+			}
+
+			static float Dot(const Quaternion& q1, const Quaternion& q2) {
+				return q1.w * q2.w + q1.x * q2.x + q1.y * q2.y + q1.z * q2.z;
+			}
+
+			// 计算夹角
+			static float Acos(const float x) {
+				if (x < -1.0f) {
+					return M_PI;
+				}
+				else if (x > 1.0f) {
+					return 0.0f;
+				}
+				else {
+					return std::acos(x);
+				}
+			}
+
+			// Slerp方法
+			static Quaternion Slerp(const Quaternion& q1, const Quaternion& q2, const float t) {
+				Quaternion q3(0, 0, 0, 0);
+				float dot = Quaternion::Dot(q1, q2);
+				if (dot < 0.0f) {
+					dot = -dot;
+					q3.w = -q2.w;
+					q3.x = -q2.x;
+					q3.y = -q2.y;
+					q3.z = -q2.z;
+				}
+				else {
+					q3 = q2;
+				}
+				if (dot < 0.95f) {
+					const float angle = 2.0f * Quaternion::Acos(dot);
+					const float sinAngle = std::sinf(angle);
+					const float sin1 = std::sinf((1.0f - t) * angle) / sinAngle;
+					const float sin2 = std::sinf(t * angle) / sinAngle;
+					q3.w = (q1.w * sin1 + q3.w * sin2);
+					q3.x = (q1.x * sin1 + q3.x * sin2);
+					q3.y = (q1.y * sin1 + q3.y * sin2);
+					q3.z = (q1.z * sin1 + q3.z * sin2);
+				}
+				else {
+					q3.w = q1.w + t * (q3.w - q1.w);
+					q3.x = q1.x + t * (q3.x - q1.x);
+					q3.y = q1.y + t * (q3.y - q1.y);
+					q3.z = q1.z + t * (q3.z - q1.z);
+				}
+				return q3;
+			}
+		};
+
+		void SmoothQuaternion(Quaternion& q0, Quaternion& q1, const float threshold) {
+			float angle = 2.0f * Quaternion::Acos(Quaternion::Dot(q0, q1));
+			int forCount = 0;
+			while (angle > threshold) {
+				float t = threshold / angle;
+				Quaternion q2 = Quaternion::Slerp(q0, q1, t);
+				q0 = q2;
+				angle = 2.0f * Quaternion::Acos(Quaternion::Dot(q0, q1));
+				forCount++;
+				if (forCount > 50) break;
+			}
+		}
+
+		Quaternion LookRotation(const Vector3& forward, const Vector3& upwards = Vector3(0, 1, 0)) {
+			Vector3 right = Vector3::cross(upwards, forward).normalized();
+			Vector3 up = Vector3::cross(forward, right).normalized();
+			float m[4][4] = {
+				{right.x, up.x, forward.x, 0},
+				{right.y, up.y, forward.y, 0},
+				{right.z, up.z, forward.z, 0},
+				{0, 0, 0, 1}
+			};
+			float tr = m[0][0] + m[1][1] + m[2][2];
+			float qw, qx, qy, qz;
+			if (tr > 0) {
+				float S = sqrt(tr + 1.0f) * 2;
+				qw = 0.25f * S;
+				qx = (m[2][1] - m[1][2]) / S;
+				qy = (m[0][2] - m[2][0]) / S;
+				qz = (m[1][0] - m[0][1]) / S;
+			}
+			else if ((m[0][0] > m[1][1]) && (m[0][0] > m[2][2])) {
+				float S = sqrt(1.0f + m[0][0] - m[1][1] - m[2][2]) * 2;
+				qw = (m[2][1] - m[1][2]) / S;
+				qx = 0.25f * S;
+				qy = (m[0][1] + m[1][0]) / S;
+				qz = (m[0][2] + m[2][0]) / S;
+			}
+			else if (m[1][1] > m[2][2]) {
+				float S = sqrt(1.0f + m[1][1] - m[0][0] - m[2][2]) * 2;
+				qw = (m[0][2] - m[2][0]) / S;
+				qx = (m[0][1] + m[1][0]) / S;
+				qy = 0.25f * S;
+				qz = (m[1][2] + m[2][1]) / S;
+			}
+			else {
+				float S = sqrt(1.0f + m[2][2] - m[0][0] - m[1][1]) * 2;
+				qw = (m[1][0] - m[0][1]) / S;
+				qx = (m[0][2] + m[2][0]) / S;
+				qy = (m[1][2] + m[2][1]) / S;
+				qz = 0.25f * S;
+			}
+			return Quaternion(qx, qy, qz, qw);
+		}
+
+		Quaternion RotateQuaternion(const Quaternion& q, float angle_degrees, const Vector3& axis) {
+			float angle_radians = angle_degrees * M_PI / 180.0f;
+			float half_angle = angle_radians * 0.5f;
+			float s = sin(half_angle);
+			Vector3 normalized_axis = axis.normalized();
+			Quaternion q1(cos(half_angle), normalized_axis.x * s, normalized_axis.y * s, normalized_axis.z * s);
+			Quaternion q2 = q * q1;
+			return q2;
+		}
+
+		Vector3 RotateVector(const Quaternion& q, const Vector3& v)
+		{
+			Quaternion p(0, v.x, v.y, v.z);
+			Quaternion q_inv = q.Conjugate();
+			Quaternion rotated = q * p * q_inv;
+			return Vector3(rotated.x, rotated.y, rotated.z);
+		}
+
+		Vector3 GetFrontPos(const Vector3& pos, const Quaternion& rot, float distance)
+		{
+			Vector3 v(0, 0, distance);
+			Vector3 v_rotated = RotateVector(rot, v);
+			Vector3 pos_front = pos + v_rotated;
+			return pos_front;
+		}
+
+		Vector3_t GetFrontPos(const Vector3_t& pos, const Quaternion_t& rot, float distance) {
+			Vector3 vPos(pos.x, pos.y, pos.z);
+			Quaternion vQos(rot.w, rot.x, rot.y, rot.z);
+			const auto ret = GetFrontPos(vPos, vQos, distance);
+			return Vector3_t{ ret.x, ret.y, ret.z };
+		}
+
+	}
+
+
 	namespace {
 		int cameraType = CAMERA_LIVE;
 		int liveCameraType = LiveCamera_FREE;
@@ -96,7 +394,11 @@ namespace UmaCamera {
 		Vector3_t cacheLastRacePos{};
 		Vector3_t liveFollowCameraOffset{ 0, 0, -2 };
 		Vector3_t liveFollowCameraLookatOffset{ 0, 0, 0 };
+		Vector2_t raceFollowLookatOffset{ 0, 0 };
+		Vector3_t liveFirstPersonOffset{ 0, 0.075, 0.015 };
+		Vector3_t raceFirstPersonLookAtOffset{ 0, 0, 0 };
 		bool lookAtUmaReverse = false;
+		float raceFirstShakeStrength = 0;
 
 		bool mouseLockThreadStart = false;
 		bool lookVertRunning, lookHoriRunning = false;
@@ -297,6 +599,11 @@ namespace UmaCamera {
 		liveDefaultFOV = 60;
 		liveFollowCameraOffset = Vector3_t{ 0,0,-2 };
 		liveFollowCameraLookatOffset = Vector3_t{ 0,0,0 };
+		raceFollowLookatOffset = Vector2_t{ 0,0 };
+		
+		liveFirstPersonOffset = Vector3_t{ 0, 0.075, 0.015 };
+		raceFirstPersonLookAtOffset = Vector3_t{ 0, 0, 0 };
+		raceFirstShakeStrength = 0;
 	}
 
 	void setUmaCameraType(int value) {
@@ -366,21 +673,106 @@ namespace UmaCamera {
 		float diff_z = setPos->z - cacheLastRacePos.z;
 
 		if (abs(diff_x) >= 0.3) {
-			setPos->x -= diff_x / 2;
+			//setPos->x -= diff_x / 2;
 		}
 		if (abs(diff_z) >= 0.3) {
-			setPos->z -= diff_z / 2;
+			//setPos->z -= diff_z / 2;
 		}
 
 		cacheLastRacePos = Vector3_t{ setPos->x, setPos->y, setPos->z };
 	}
 
-	void updateFollowUmaPos(Vector3_t lastFrame, Vector3_t thisFrame, Vector3_t* setPos) {
+	Quaternion_t slerpTwo(Quaternion_t& rot, Quaternion_t& rot2, float t) {
+		return CameraCalc::Quaternion::Slerp(rot, rot2, t);
+	}
+
+	Quaternion_t updateLookatByRotation(Quaternion_t rot) {
+		if (g_race_freecam_follow_umamusume && raceFollowUmaFirstPersion) {
+			auto newRot = CameraCalc::RotateQuaternion(rot, raceFirstPersonLookAtOffset.y, CameraCalc::Vector3(1, 0, 0));
+			rot = CameraCalc::RotateQuaternion(newRot, raceFirstPersonLookAtOffset.x, CameraCalc::Vector3(0, 1, 0));
+		}
+
+		auto frontPos = CameraCalc::GetFrontPos(cameraPos, rot, look_radius);
+		cameraLookAt.x = frontPos.x;
+		cameraLookAt.y = frontPos.y;
+		cameraLookAt.z = frontPos.z;
+		return rot;
+	}
+
+	Quaternion_t updatePosAndLookatByRotation(Vector3_t pos, Quaternion_t rot) {
+		if ((liveCameraType == LiveCamera_FIRST_PERSION) || raceFollowUmaFirstPersion) {
+			pos = CameraCalc::GetFrontPos(pos, rot, liveFirstPersonOffset.z);
+			pos.y += liveFirstPersonOffset.y;
+		}
+		cameraPos.x = pos.x;
+		cameraPos.y= pos.y;
+		cameraPos.z = pos.z;
+		return updateLookatByRotation(rot);
+	}
+
+	CameraCalc::Vector3 lastPos(0, 0, 0);
+
+	CameraCalc::Quaternion lastRot = CameraCalc::Quaternion(1, 1, 1, 1);
+	Quaternion_t updatePosAndLookatByRotationStable(Vector3_t pos, Quaternion_t rot, Quaternion_t nowRot) {
+		auto rotateQuat = CameraCalc::Quaternion(rot);
+		CameraCalc::SmoothQuaternion(rotateQuat, lastRot, 0.01f);
+
+		auto newRt = CameraCalc::RotateQuaternion(rotateQuat, 
+			pos.y - lastPos.y > 0 ? -raceFirstShakeStrength : raceFirstShakeStrength, CameraCalc::Vector3(1, 0, 0));
+		rotateQuat.w = newRt.w;
+		rotateQuat.x = newRt.x;
+		rotateQuat.y = newRt.y;
+		rotateQuat.z = newRt.z;
+
+		lastRot.w = rotateQuat.w;
+		lastRot.x = rotateQuat.x;
+		lastRot.y = rotateQuat.y;
+		lastRot.z = rotateQuat.z;
+
+		lastPos = pos;
+		return updatePosAndLookatByRotation(pos, rotateQuat);
+		/*
+		// 下方为原版
+		auto rotateQuat = CameraCalc::Quaternion(rot);
+		CameraCalc::SmoothQuaternion(rotateQuat, lastRot, 0.01f);
+		lastRot.w = rotateQuat.w;
+		lastRot.x = rotateQuat.x;
+		lastRot.y = rotateQuat.y;
+		lastRot.z = rotateQuat.z;
+		// printf("orig: %f, %f, %f, %f; new: %f, %f, %f, %f\n", rot.w, rot.x, rot.y, rot.z, rotateQuat.w, rotateQuat.x, rotateQuat.y, rotateQuat.z);
+		// auto rotateQuat = CameraCalc::RotateQuaternion(nowRot, 180, CameraCalc::Vector3(0, 1, 0));
+		auto ret = Quaternion_t{ rotateQuat.w, rotateQuat.x, rotateQuat.y, rotateQuat.z };
+		return updatePosAndLookatByRotation(pos, ret);
+		*/
+	}
+
+	void updateFollowUmaPos(Vector3_t lastFrame, Vector3_t thisFrame, Quaternion_t currQuat, Vector3_t* setPos) {
+
+		auto q2 = CameraCalc::RotateQuaternion(CameraCalc::Quaternion(currQuat.w, currQuat.x, currQuat.y, currQuat.z), 
+			raceFollowLookatOffset.x,
+			CameraCalc::Vector3(0, 1, 0)
+		);
+		currQuat.w = q2.w;
+		currQuat.x = q2.x;
+		currQuat.y = q2.y;
+		currQuat.z = q2.z;
+
+		auto frontPosOffset = CameraCalc::GetFrontPos(thisFrame, currQuat, g_race_freecam_follow_umamusume_distance < 0 ? -1 : 1);
+
+		auto frontPos = CameraCalc::GetFrontPos(frontPosOffset, currQuat, -g_race_freecam_follow_umamusume_distance);
+		setPos->x = frontPos.x;
+		setPos->y = frontPos.y + g_race_freecam_follow_umamusume_offset.y;
+		setPos->z = frontPos.z;
+
+
+		SetCameraLookat(frontPosOffset.x, frontPosOffset.y + raceFollowLookatOffset.y, frontPosOffset.z);
+		return;
+		/*
 		SDPoint pt1{thisFrame.x, thisFrame.z};
 		SDPoint pt2{lastFrame.x, lastFrame.z};
 		SDPoint ptOut{};
 		if (lookAtUmaReverse) {
-			ExPandLine(pt2, pt1, g_race_freecam_follow_umamusume_distance, ptOut);  // 从前面看, 嘿嘿...马娘娇羞的神态...嘿嘿...
+			ExPandLine(pt2, pt1, g_race_freecam_follow_umamusume_distance, ptOut);
 		}
 		else {
 			ExPandLine(pt1, pt2, g_race_freecam_follow_umamusume_distance, ptOut);
@@ -388,26 +780,83 @@ namespace UmaCamera {
 		
 		setPos->x = ptOut.x + g_race_freecam_follow_umamusume_offset.x;
 		setPos->z = ptOut.y + g_race_freecam_follow_umamusume_offset.z;
-		setPos->y = ceil((lastFrame.y + thisFrame.y) / 2) + g_race_freecam_follow_umamusume_offset.y;
+		// setPos->y = ceil((lastFrame.y + thisFrame.y) / 2) + g_race_freecam_follow_umamusume_offset.y;
+		setPos->y = thisFrame.y + g_race_freecam_follow_umamusume_offset.y;
 		// printf("calc: %f, %f  last: %f, %f  this: %f, %f\n", setPos->x, setPos->z, pt2.x, pt2.y, pt1.x, pt1.y);
 		chechAndUpdateRaceRet(setPos);
+		*/
 	}
 
+	int raceFollowStat = 0;
 	void setReverseLookatUma() {
-		lookAtUmaReverse = !lookAtUmaReverse;
-		if (lookAtUmaReverse)
-			printf("Race camera ahead.\n");
-		else
-			printf("Race camera behind.\n");
+		liveFirstPersonEnableRoll = !liveFirstPersonEnableRoll;
+		g_race_freecam_follow_umamusume_distance = -g_race_freecam_follow_umamusume_distance;
+		if (cameraType == CAMERA_LIVE) {
+			if (liveFirstPersonEnableRoll) {
+				printf("Live first person camera enable roll.\n");
+			}
+			else {
+				printf("Live first person camera disable roll.\n");
+			}
+		}
+		else {
+			switch (raceFollowStat) {
+			case 0: {
+				lookAtUmaReverse = !lookAtUmaReverse;
+				raceFollowUmaFirstPersion = false;
+				raceFollowUmaFirstPersionEnableRoll = false;
+				printf(lookAtUmaReverse ? "Race camera ahead.\n" : "Race camera behind.\n");
+				raceFollowStat++;
+			}; break;
+			case 1: {
+				lookAtUmaReverse = !lookAtUmaReverse;
+				raceFollowUmaFirstPersion = false;
+				raceFollowUmaFirstPersionEnableRoll = false;
+				printf(lookAtUmaReverse ? "Race camera ahead.\n" : "Race camera behind.\n");
+				raceFollowStat++;
+			}; break;
+			case 2: {
+				raceFollowUmaFirstPersion = true;
+				raceFollowUmaFirstPersionEnableRoll = true;
+				printf("Race first persion. Enable roll.\n");
+				raceFollowStat++;
+			}; break;
+			
+			case 3: {
+				raceFollowUmaFirstPersion = true;
+				raceFollowUmaFirstPersionEnableRoll = false;
+				printf("Race first persion. Disable roll.\n");
+				raceFollowStat = 0;
+			}; break;
+			
+			default: {
+				raceFollowUmaFirstPersion = false;
+				raceFollowStat = 0;
+			}; break;
+			}
+		}
+
+		
 	}
 
 	void camera_forward() {  // 向前
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume){
-			g_race_freecam_follow_umamusume_offset.z -= moveStep / 2;
+			if (raceFollowUmaFirstPersion) {
+				liveFirstPersonOffset.z += 0.005;
+			}
+			else {
+				g_race_freecam_follow_umamusume_offset.z -= moveStep / 2;
+				g_race_freecam_follow_umamusume_distance += moveStep / 2;
+			}
 			return;
 		}
 		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
 			liveFollowCameraOffset.z -= moveStep / 2;
+			return;
+		}		
+		
+		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FIRST_PERSION) {
+			liveFirstPersonOffset.z += 0.005;
 			return;
 		}
 
@@ -417,11 +866,21 @@ namespace UmaCamera {
 
 	void camera_back() {  // 后退
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
-			g_race_freecam_follow_umamusume_offset.z += moveStep / 2;
+			if (raceFollowUmaFirstPersion) {
+				liveFirstPersonOffset.z -= 0.005;
+			}
+			else {
+				g_race_freecam_follow_umamusume_offset.z += moveStep / 2;
+				g_race_freecam_follow_umamusume_distance -= moveStep / 2;
+			}
 			return;
 		}
 		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
 			liveFollowCameraOffset.z += moveStep / 2;
+			return;
+		}
+		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FIRST_PERSION) {
+			liveFirstPersonOffset.z -= 0.005;
 			return;
 		}
 
@@ -432,6 +891,7 @@ namespace UmaCamera {
 	void camera_left() {  // 向左
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
 			g_race_freecam_follow_umamusume_offset.x += moveStep / 2;
+			raceFollowLookatOffset.x -= moveStep * 2;
 			return;
 		}
 		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
@@ -448,6 +908,7 @@ namespace UmaCamera {
 	void camera_right() {  // 向右
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
 			g_race_freecam_follow_umamusume_offset.x -= moveStep / 2;
+			raceFollowLookatOffset.x += moveStep * 2;
 			return;
 		}
 		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
@@ -463,12 +924,21 @@ namespace UmaCamera {
 
 	void camera_down() {  // 向下
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
-			g_race_freecam_follow_umamusume_offset.y -= 0.2;
+			if (raceFollowUmaFirstPersion) {
+				liveFirstPersonOffset.y -= 0.005;
+			}
+			else {
+				g_race_freecam_follow_umamusume_offset.y -= moveStep / 8;
+			}
 			return;
 		}
 		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
 			liveFollowCameraLookatOffset.y -= moveStep / 2;
 			// liveFollowCameraOffset.y -= moveStep / 2;
+			return;
+		}
+		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FIRST_PERSION) {
+			liveFirstPersonOffset.y -= 0.005;
 			return;
 		}
 
@@ -490,12 +960,21 @@ namespace UmaCamera {
 	
 	void camera_up() {  // 向上
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
-			g_race_freecam_follow_umamusume_offset.y += 0.2;
+			if (raceFollowUmaFirstPersion) {
+				liveFirstPersonOffset.y += 0.005;
+			}
+			else {
+				g_race_freecam_follow_umamusume_offset.y += moveStep / 8;
+			}
 			return;
 		}
 		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
-			liveFollowCameraLookatOffset.y += moveStep / 2;
+			liveFollowCameraLookatOffset.y += moveStep / 3;
 			// liveFollowCameraOffset.y += moveStep / 2;
+			return;
+		}
+		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FIRST_PERSION) {
+			liveFirstPersonOffset.y += 0.005;
 			return;
 		}
 
@@ -553,8 +1032,9 @@ namespace UmaCamera {
 		lookHoriRunning = false;
 	}
 
-	void cameraLookat_up(float mAngel) {
+	void cameraLookat_up(float mAngel, bool mouse = false) {
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
+			if (mouse) return;
 			g_race_freecam_follow_umamusume_distance += 0.2;
 			return;
 		}
@@ -566,8 +1046,9 @@ namespace UmaCamera {
 		setVertLook(verticalAngle, horizontalAngle);
 	}
 
-	void cameraLookat_down(float mAngel) {
+	void cameraLookat_down(float mAngel, bool mouse = false) {
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
+			if (mouse) return;
 			g_race_freecam_follow_umamusume_distance -= 0.2;
 			return;
 		}
@@ -655,6 +1136,10 @@ namespace UmaCamera {
 				liveCameraType = LiveCamera_FOLLOW_UMA;
 				printf("LIVE Follow Umamusume\n");
 			}
+			else if (liveCameraType == LiveCamera_FOLLOW_UMA) {
+				liveCameraType = LiveCamera_FIRST_PERSION;
+				printf("LIVE First Persion\n");
+			}
 			else {
 				liveCameraType = LiveCamera_FREE;
 				printf("LIVE Free Camera\n");
@@ -666,6 +1151,10 @@ namespace UmaCamera {
 	int GetLiveCharaPositionFlag() {
 		return liveCharaPositionFlag.GetCurrentValue();
 	}
+	
+	int GetLiveCharaPositionIndex() {
+		return liveCharaPositionFlag.GetCurrentIndex();
+	}
 
 	int GetLiveCameraCharaParts() {
 		return liveCameraCharaParts.GetCurrentValue();
@@ -673,7 +1162,7 @@ namespace UmaCamera {
 
 	void changeLiveCameraLockChara(int changeIndex) {
 		if (cameraType != CAMERA_LIVE) return;
-		if (liveCameraType != LiveCamera_FOLLOW_UMA) return;
+		if ((liveCameraType != LiveCamera_FOLLOW_UMA) && (liveCameraType != LiveCamera_FIRST_PERSION)) return;
 
 		const auto changedData = changeIndex > 0 ? liveCharaPositionFlag.Next() : liveCharaPositionFlag.Last();
 		printf("Live look position flag: %s (0x%x)\n", changedData.first.c_str(), changedData.second);
@@ -687,16 +1176,65 @@ namespace UmaCamera {
 		printf("Live look chara parts: %s (0x%x)\n", changedData.first.c_str(), changedData.second);
 	}
 
-	void changeLiveFollowCameraOffsetX(float value) {
+	void changeLiveFollowCameraOffsetX(float value, bool mouse = false) {
 		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
-			liveFollowCameraOffset.x += value;
+			liveFollowCameraOffset.x += value * 2;
+		}
+		if (cameraType == CAMERA_RACE) {
+			if (g_race_freecam_follow_umamusume) {
+				if (raceFollowUmaFirstPersion) {
+					if (mouse)
+						raceFirstPersonLookAtOffset.x -= value;
+					else
+						raceFirstPersonLookAtOffset.x += value;
+				}
+				else {
+					raceFollowLookatOffset.x -= value;
+				}
+			}
 		}
 	}	
 	
-	void changeLiveFollowCameraOffsetY(float value) {
+	void changeLiveFollowCameraOffsetY(float value, bool mouse = false) {
 		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FOLLOW_UMA) {
 			liveFollowCameraOffset.y += value;
 		}
+		if (cameraType == CAMERA_RACE) {
+			if (g_race_freecam_follow_umamusume) {
+				if (raceFollowUmaFirstPersion) {
+					if (mouse)
+						raceFirstPersonLookAtOffset.y -= value * 16;
+					else
+						raceFirstPersonLookAtOffset.y += value * 16;
+				}
+				else {
+					raceFollowLookatOffset.y += value / 2;
+					if (mouse) g_race_freecam_follow_umamusume_offset.y += value / 2;
+				}
+			}
+		}
+	}
+
+	void onMouseScroll(LONG value) {
+		if (value > 0) {  // up
+			if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
+				if (!raceFollowUmaFirstPersionEnableRoll && raceFollowUmaFirstPersion) {
+					if (raceFirstShakeStrength >= 1.0f) return;
+					raceFirstShakeStrength += 0.05;
+					printf("raceFirstShakeStrength: %.2f\n", raceFirstShakeStrength);
+				}
+			}
+		}
+		else {  // down
+			if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
+				if (!raceFollowUmaFirstPersionEnableRoll && raceFollowUmaFirstPersion) {
+					if (raceFirstShakeStrength <= -1.0f) return;
+					raceFirstShakeStrength -= 0.05;
+					printf("raceFirstShakeStrength: %.2f\n", raceFirstShakeStrength);
+				}
+			}
+		}
+
 	}
 
 	void mouseMove(LONG moveX, LONG moveY, int mouseEventType) {
@@ -721,22 +1259,25 @@ namespace UmaCamera {
 				if (!rMousePressFlg) return;
 				if (moveX > 0) {
 					cameraLookat_right(moveX * g_free_camera_mouse_speed / 100.0);
-					changeLiveFollowCameraOffsetX(moveX * g_free_camera_mouse_speed / 50.0);
+					changeLiveFollowCameraOffsetX(moveX * g_free_camera_mouse_speed / 50.0, true);
 				}
 				else if (moveX < 0) {
 					cameraLookat_left(-moveX * g_free_camera_mouse_speed / 100.0);
-					changeLiveFollowCameraOffsetX(moveX * g_free_camera_mouse_speed / 50.0);
+					changeLiveFollowCameraOffsetX(moveX * g_free_camera_mouse_speed / 50.0, true);
 				}
 				if (moveY > 0) {
-					cameraLookat_down(moveY * g_free_camera_mouse_speed / 100.0);
-					changeLiveFollowCameraOffsetY(moveY * g_free_camera_mouse_speed / 800.0);
+					cameraLookat_down(moveY * g_free_camera_mouse_speed / 100.0, true);
+					changeLiveFollowCameraOffsetY(moveY * g_free_camera_mouse_speed / 800.0, true);
 				}
 				else if (moveY < 0) {
-					cameraLookat_up(-moveY * g_free_camera_mouse_speed / 100.0);
-					changeLiveFollowCameraOffsetY(moveY * g_free_camera_mouse_speed / 800.0);
+					cameraLookat_up(-moveY * g_free_camera_mouse_speed / 100.0, true);
+					changeLiveFollowCameraOffsetY(moveY * g_free_camera_mouse_speed / 800.0, true);
 				}
 				// printf("move x: %d, y: %d\n", moveX, moveY);
 				}).detach();
+		}
+		else if (mouseEventType == 4) {  // scroll
+			onMouseScroll(moveY);
 		}
 	}
 

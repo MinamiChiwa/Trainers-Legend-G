@@ -36,6 +36,7 @@ bool g_replace_assets;
 bool g_asset_load_log;
 bool g_auto_fullscreen = true;
 std::unique_ptr<AutoUpdate::IAutoUpdateService> g_auto_update_service{};
+std::string g_autoupdateUrl;
 std::string g_static_dict_path;
 bool g_no_static_dict_cache;
 std::string g_stories_path;
@@ -713,15 +714,16 @@ namespace
 			g_race_jikkyo_message_dict_path = document["race_jikkyo_message_dict"].GetString();
 
 			if (document.HasMember("enableBuiltinAutoUpdate")) {
-				if (document["enableBuiltinAutoUpdate"].GetBool()) {
-					if (document.HasMember("autoUpdate"))
-					{
+				if (document.HasMember("autoUpdate"))
+				{
+					if (document["enableBuiltinAutoUpdate"].GetBool()) {
 						const auto& autoUpdate = document["autoUpdate"];
 						const auto& source = autoUpdate["source"];
 						const auto& path = autoUpdate["path"];
 
 						g_auto_update_service = AutoUpdate::CreateAutoUpdateService(source.GetString(), path.GetString());
 					}
+					g_autoupdateUrl = document["autoUpdate"]["path"].GetString();
 				}
 			}
 
@@ -1595,6 +1597,21 @@ namespace HttpServer {
 				ret.Accept(writer);
 				message.reply(status_codes::OK, buffer.GetString(), "application/json");
 				return;
+			}
+
+			if (path == L"/game/showdialog") {
+				auto json_data = message.extract_json().get();
+				auto& title = json_data.at(L"title").as_string();
+				auto& content = json_data.at(L"content").as_string();
+				auto btnCount = json_data.at(L"btnCount").as_integer();
+				auto btn1Text = json_data.at(L"btn1Text").as_integer();
+				auto btn2Text = json_data.at(L"btn2Text").as_integer();
+				auto btn3Text = json_data.at(L"btn3Text").as_integer();
+				auto btnType = json_data.at(L"btnType").as_integer();
+				if (showDialog != nullptr) {
+					showDialog(il2cpp_symbols::NewWStr(title), il2cpp_symbols::NewWStr(content),
+						btnCount, btn1Text, btn2Text, btn3Text, btnType);
+				}
 			}
 
 			if (path == L"/set_untrans") {

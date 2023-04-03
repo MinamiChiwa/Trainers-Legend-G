@@ -24,6 +24,8 @@ il2cpp_gchandle_new_t il2cpp_gchandle_new;
 il2cpp_gchandle_free_t il2cpp_gchandle_free;
 il2cpp_gchandle_get_target_t il2cpp_gchandle_get_target;
 il2cpp_class_from_type_t il2cpp_class_from_type;
+il2cpp_runtime_class_init_t il2cpp_runtime_class_init;
+il2cpp_runtime_invoke_t il2cpp_runtime_invoke;
 
 char* il2cpp_array_addr_with_size(void* array, int32_t size, uintptr_t idx)
 {
@@ -62,6 +64,8 @@ namespace il2cpp_symbols
 		RESOLVE_IMPORT(il2cpp_gchandle_free);
 		RESOLVE_IMPORT(il2cpp_gchandle_get_target);
 		RESOLVE_IMPORT(il2cpp_class_from_type);
+		RESOLVE_IMPORT(il2cpp_runtime_class_init);
+		RESOLVE_IMPORT(il2cpp_runtime_invoke);
 
 		il2cpp_domain = il2cpp_domain_get();
 	}

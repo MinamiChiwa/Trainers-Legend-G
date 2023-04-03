@@ -80,7 +80,8 @@ enum CameraType {
 
 enum LiveCameraType {
 	LiveCamera_FREE = 0,
-	LiveCamera_FOLLOW_UMA = 1
+	LiveCamera_FOLLOW_UMA = 1,
+	LiveCamera_FIRST_PERSION = 2
 };
 
 struct CloseTrans {
@@ -94,6 +95,33 @@ struct CloseTrans {
 	bool staticAndHashTextData = false;
 	bool hashTextData = false;
 };
+
+template<typename T, typename... Args>
+class SchedulingFuncs {
+public:
+	struct FunctionInfo {
+		T(*function)(Args...);
+		std::tuple<Args...> args;
+	};
+
+	static std::vector<FunctionInfo> schedulingFuncList;
+
+	static void addToDispatcher(T(*t)(Args...), Args... args) {
+		schedulingFuncList.push_back({ t, std::make_tuple(args...) });
+	}
+
+	static void callAllFunctions() {
+		bool isCall = false;
+		for (const auto& funcInfo : schedulingFuncList) {
+			std::apply(funcInfo.function, funcInfo.args);
+			isCall = true;
+		}
+		if (isCall) schedulingFuncList.clear();
+	}
+};
+
+template<typename T, typename... Args>
+std::vector<typename SchedulingFuncs<T, Args...>::FunctionInfo> SchedulingFuncs<T, Args...>::schedulingFuncList{};
 
 extern std::variant<UseOriginalFont, UseDefaultFont, UseCustomFont> g_replace_font;
 extern int g_custom_font_size_offset;
@@ -147,3 +175,8 @@ extern float g_free_camera_mouse_speed;
 extern std::list<std::function<void(void)>> onPluginReload;
 extern bool enableRaceInfoTab;
 extern bool raceInfoTabAttachToGame;
+extern bool liveFirstPersonEnableRoll;
+extern bool raceFollowUmaFirstPersion;
+extern bool raceFollowUmaFirstPersionEnableRoll;
+extern std::string g_autoupdateUrl;
+extern std::function<void(Il2CppString* title, Il2CppString* content, int buttonCount, int button1Text, int button2Text, int button3Text, int btn_type)> showDialog;

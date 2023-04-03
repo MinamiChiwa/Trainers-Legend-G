@@ -160,14 +160,26 @@
 
 
 
-## Race Free Camera (Not Working Currently)
+### First Person Mode
+
+- Change camera offset: `W`/`S`/`ctrl`/`Space`
+- Change with/without character roll: `V`
+
+
+
+## Race Free Camera
 
 - Down: `Ctrl`, Up: `Space`, Adjust FOV: `Q`/`E`, Reset Camera:`R`, Change mode: `F`
+
 - Follow Umamusume Mode
-  - Change Offset: `WSAD`, Adjust Distance: `↑↓`, Switching observation targets: `←→`, Switching front and back views: `V`
+  - Change Offset: `WSAD`, Adjust Distance: `↑↓`, Switching observation targets: `←→`, Switching front / back views or first persion: `V`
+    - First Person Mode:
+      - Change camera offset: `W`/`S`/`ctrl`/`Space`
+  
 - Free Camera Mode
   - Move: `WSAD`, Adjust Angle: `↑↓←→`
-
+  
+  
 
 
 # Already known issues
