@@ -166,7 +166,7 @@
             }  
         },
         "race_camera": {
-            "description": "比赛相机设置（已失效）",
+            "description": "比赛相机设置",
             "type": "object",
             "properties": {
                 "free_camera": {

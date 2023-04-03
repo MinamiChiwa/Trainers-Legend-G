@@ -166,7 +166,7 @@
             }  
         },
         "race_camera": {
-            "description": "Race Camera Settings (Not working.)",
+            "description": "Race Camera Settings",
             "type": "object",
             "properties": {
                 "free_camera": {

@@ -1,6 +1,9 @@
 #include <stdinclude.hpp>
 #include <msgpack.hpp>
 
+bool isNoticeUrlRight = true;
+bool noticeThreadStart = false;
+int pingFailedCount = 0;
 
 namespace request_convert
 {
@@ -98,4 +101,118 @@ namespace request_convert
 		return false;
 	}
 
+	void updateNotice() {
+		try
+		{
+			if (!isNoticeUrlRight) return;
+			if (showDialog == nullptr) return;
+
+			std::regex pattern("(http|https)://[^/]+");
+			std::string autoupdateUrl;
+			std::smatch match;
+			if (std::regex_search(g_autoupdateUrl, match, pattern)) {
+				autoupdateUrl = match[0];
+			}
+			else {
+				return;
+			}
+			auto pingResult = send_post(utility::conversions::to_string_t(autoupdateUrl).c_str(), L"/api/notice/ping", L"");
+			if (pingResult.status_code() != 200) {
+				pingFailedCount++;
+				if (pingFailedCount > 3) {
+					isNoticeUrlRight = false;
+				}
+				return;
+			}
+			pingFailedCount = 0;
+			std::vector<int> readedNotices{};
+			std::string versionStr = "";
+			nlohmann::json externalPluginData;
+			if (std::filesystem::exists("epconf.json")) {
+				std::ifstream ifs("epconf.json");
+				std::string content((std::istreambuf_iterator<char>(ifs)),
+					std::istreambuf_iterator<char>());
+				externalPluginData = nlohmann::json::parse(content);
+				if (externalPluginData.contains("more_settings_data")) {
+					if (externalPluginData["more_settings_data"].contains("readedNotices")) {
+						readedNotices = externalPluginData["more_settings_data"]["readedNotices"].get<std::vector<int>>();
+					}
+					else {
+						externalPluginData["more_settings_data"].emplace("readedNotices", nlohmann::json::array());
+					}
+				}
+				else {
+					externalPluginData.emplace("more_settings_data", nlohmann::json::object());
+					externalPluginData["more_settings_data"].emplace("readedNotices", nlohmann::json::array());
+				}
+			}
+			if (std::filesystem::exists("version.txt")) {
+				std::ifstream ifs("version.txt");
+				std::string content((std::istreambuf_iterator<char>(ifs)),
+					std::istreambuf_iterator<char>());
+				versionStr = content;
+			}
+
+
+			nlohmann::json postJson;
+			postJson["is_first"] = readedNotices.empty();
+			postJson["readed"] = readedNotices;
+			postJson["area"] = GetUserDefaultUILanguage();
+			postJson["version"] = versionStr.c_str();
+
+
+			auto noticeResp = send_post(utility::conversions::to_string_t(autoupdateUrl).c_str(), 
+										L"/api/notice/get", 
+										utility::conversions::to_string_t(postJson.dump()));
+			std::string resp_str = noticeResp.extract_utf8string().get();
+			nlohmann::json getNotice = nlohmann::json::parse(resp_str);
+			if (getNotice.contains("msg")) {
+				if (getNotice["msg"].empty()) {
+					return;
+				}
+
+				for (auto& i : getNotice["msg"]) {
+					std::string title = i["title"];
+					std::string content = i["content"];
+					int btn1Text = i["btn1Text"];
+					int btn2Text = i["btn2Text"];
+					int btn3Text = i["btn3Text"];
+					int btnCount = i["btnCount"];
+					int btnType = i["btnType"];
+
+					int noticeId = i["noticeid"];
+					readedNotices.push_back(noticeId);
+					showDialog(il2cpp_string_new(title.c_str()), il2cpp_string_new(content.c_str()),
+						btnCount, btn1Text, btn2Text, btn3Text, btnType);
+				}
+			}
+
+			externalPluginData["more_settings_data"]["readedNotices"] = readedNotices;
+			std::string output = externalPluginData.dump(4);
+			std::ofstream ofs("epconf.json");
+			ofs << output;
+			ofs.close();
+		}
+		catch (std::exception& e)
+		{
+			printf("Exception occurred while getting notice: %s\n", e.what());
+		}
+	}
+
+	void startUpdateNotice() {
+		if (noticeThreadStart) return;
+		std::thread([]() {
+			noticeThreadStart = true;
+			Sleep(20 * 1000);
+			while (true) {
+				if (!noticeThreadStart) break;
+				updateNotice();
+				Sleep(180 * 1000);
+			}
+			}).detach();
+	}
+
+	void stopUpdateNotice() {
+		noticeThreadStart = false;
+	}
 }
