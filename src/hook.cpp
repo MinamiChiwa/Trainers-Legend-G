@@ -1384,6 +1384,20 @@ namespace
 		bool need_fullscreen = false;
 		auto screen_ratio = r.width / static_cast<double>(r.height);
 
+		if (g_auto_fullscreen)
+		{
+			float aspect_ratio = g_aspect_ratio;
+
+			if (!is_virt() && r.width > r.height)
+				aspect_ratio = static_cast<float>(r.width) / r.height;
+			else if (is_virt() && r.width < r.height)
+				aspect_ratio = static_cast<float>(r.height) / r.width;
+			else
+				aspect_ratio = orig_aspect_ratio;
+
+			g_aspect_ratio = aspect_ratio;
+		}
+
 		if (is_virt() && abs(screen_ratio - (1.f / g_aspect_ratio)) <= 0.001 && g_auto_fullscreen)
 			need_fullscreen = true;
 		else if (!is_virt() && abs(screen_ratio - g_aspect_ratio) <= 0.001 && g_auto_fullscreen)

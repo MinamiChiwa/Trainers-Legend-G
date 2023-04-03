@@ -55,6 +55,8 @@ extern float g_ui_scale;
 extern float g_aspect_ratio;
 extern bool g_read_request_pack;
 
+extern float orig_aspect_ratio;
+
 // extern std::string g_extra_assetbundle_path;
 extern std::list<std::string> g_extra_assetbundle_paths;
 
