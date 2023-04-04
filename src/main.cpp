@@ -26,6 +26,7 @@ bool g_unlock_size = false;
 float g_ui_scale = 1.0f;
 float g_aspect_ratio = 16.f / 9.f;
 float orig_aspect_ratio = g_aspect_ratio;
+bool g_force_landscape = false;
 // std::string g_extra_assetbundle_path;
 std::list<std::string> g_extra_assetbundle_paths{};
 std::variant<UseOriginalFont, UseDefaultFont, UseCustomFont> g_replace_font;
@@ -580,13 +581,17 @@ namespace
 				auto& asp = document["aspect_ratio_new"];
 				auto asp_w = asp["w"].GetFloat();
 				auto asp_h = asp["h"].GetFloat();
-				if (asp_h > 0 && asp_w > asp_h) {
+				// if (asp_h > 0 && asp_w > asp_h) {
+				if (asp_h > 0) {
 					g_aspect_ratio = asp_w / asp_h;
 				}
 				else {
 					int x = GetSystemMetrics(SM_CXSCREEN);
 					int y = GetSystemMetrics(SM_CYSCREEN);
 					g_aspect_ratio = (float)std::max(x, y) / (float)std::min(x, y);
+				}
+				if (asp.HasMember("forceLandscape")) {
+					g_force_landscape = asp["forceLandscape"].GetBool();
 				}
 			}
 			else if (document.HasMember("aspect_ratio")) {

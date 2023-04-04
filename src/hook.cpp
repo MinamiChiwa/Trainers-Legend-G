@@ -596,8 +596,44 @@ namespace
 			cy + windowR->bottom - windowR->top - clientR->bottom, uFlags);;
 	}
 
-	bool (*is_virt)() = nullptr;
+	bool (*is_virt_o)() = nullptr;
 	int last_height = 0, last_width = 0;
+
+	bool is_virt() {
+		if (g_force_landscape) return false;
+		return is_virt_o();
+	}
+
+	bool firstTimeScreen = true;
+	void set_resolution_hook(int width, int height, bool fullscreen);
+	// void recheck_ratio(bool use_cache = false);
+
+	void* InvokeMoveNext_orig;
+	void InvokeMoveNext_hook(void* enumerator, void* returnValueAddress) {
+		if (g_force_landscape) {
+			auto klass = il2cpp_symbols::get_class_from_instance(enumerator);
+			std::string_view klassName = static_cast<Il2CppClassHead*>(klass)->name;
+			// printf("klassName: %s\n", klassName.data());
+			if (klassName.find("ChangeScreenOrientationPortraitAsync") != std::string_view::npos) {
+				if (firstTimeScreen) {
+					firstTimeScreen = false;
+					if ((start_width == -1) || (start_height == -1)) {
+						start_height = 800;
+						start_width = g_aspect_ratio * start_height;
+					}
+					const auto isNowVert = start_width < start_height;
+					if (!(isNowVert && is_virt())) {
+						const auto cw = start_width;
+						start_width = start_height;
+						start_height = cw;
+					}
+					set_resolution_hook(start_width, start_height, false);
+				}
+				return;
+			}
+		}
+		return reinterpret_cast<decltype(InvokeMoveNext_hook)*>(InvokeMoveNext_orig)(enumerator, returnValueAddress);
+	}
 
 	RECT* updateWindowRatio(HWND hWnd, RECT* modifiedR, WPARAM wParam, bool resize_now) {
 		std::shared_ptr<RECT> windowR = std::make_shared<RECT>();
@@ -1351,6 +1387,14 @@ namespace
 	void* set_resolution_orig;
 	void set_resolution_hook(int width, int height, bool fullscreen)
 	{
+		if (g_force_landscape) {
+			if (width < height) {
+				const int thd = width;
+				width = height;
+				height = thd;
+			}
+		}
+
 		Resolution_t r;
 		r = *get_resolution(&r);
 		// MessageBoxA(NULL, std::format("window: {}, {}", width, height).c_str(), "TEST", MB_OK);
@@ -3269,11 +3313,17 @@ namespace
 			"StandaloneWindowResize", "getOptimizedWindowSizeHori", 2
 		);
 
-		is_virt = reinterpret_cast<bool(*)()>(
+		is_virt_o = reinterpret_cast<bool(*)()>(
 			il2cpp_symbols::get_method_pointer(
 				"umamusume.dll", "Gallop",
 				"StandaloneWindowResize", "get_IsVirt", 0
 			));
+
+		auto InvokeMoveNext_addr = il2cpp_symbols::get_method_pointer(
+			"UnityEngine.CoreModule.dll", "UnityEngine",
+			"SetupCoroutine", "InvokeMoveNext", 2
+		);
+
 
 		get_resolution = reinterpret_cast<Resolution_t * (*)(Resolution_t*)>(
 			il2cpp_symbols::get_method_pointer(
@@ -3981,6 +4031,7 @@ namespace
 		// break 1080p size limit
 		ADD_HOOK(get_virt_size, "Gallop.StandaloneWindowResize.getOptimizedWindowSizeVirt at %p \n");
 		ADD_HOOK(get_hori_size, "Gallop.StandaloneWindowResize.getOptimizedWindowSizeHori at %p \n");
+		ADD_HOOK(InvokeMoveNext, "InvokeMoveNext at %p \n");
 		ADD_HOOK(wndproc, "Gallop.StandaloneWindowResize.WndProc at %p \n");
 
 		// remove fixed 1080p render resolution
