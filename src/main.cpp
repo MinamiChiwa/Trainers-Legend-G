@@ -582,7 +582,7 @@ namespace
 				auto asp_w = asp["w"].GetFloat();
 				auto asp_h = asp["h"].GetFloat();
 				// if (asp_h > 0 && asp_w > asp_h) {
-				if (asp_h > 0) {
+				if (asp_h > 0 && asp_w > 0) {
 					g_aspect_ratio = asp_w / asp_h;
 				}
 				else {
