@@ -635,6 +635,34 @@ namespace
 		return reinterpret_cast<decltype(InvokeMoveNext_hook)*>(InvokeMoveNext_orig)(enumerator, returnValueAddress);
 	}
 
+	void* CoroutineExecutor_klass;
+	FieldInfo* CoroutineExecutor_targetCoroutine;
+	bool CoroutineExecutor_inited = false;
+
+	void initCoroutineExecutor() {
+		if (CoroutineExecutor_inited) return;
+		CoroutineExecutor_inited = true;
+		CoroutineExecutor_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop", "CoroutineExecutor");
+		CoroutineExecutor_targetCoroutine = il2cpp_class_get_field_from_name(CoroutineExecutor_klass, "_targetCoroutine");
+	}
+
+	void* UpdateCoroutine_orig;
+	bool UpdateCoroutine_hook(void* _this) {
+		if (g_force_landscape) {
+			initCoroutineExecutor();
+			auto targetCoroutine = il2cpp_symbols::read_field(_this, CoroutineExecutor_targetCoroutine);
+			if (targetCoroutine) {
+				auto klass = il2cpp_symbols::get_class_from_instance(targetCoroutine);
+				std::string_view klassName = static_cast<Il2CppClassHead*>(klass)->name;
+				// printf("UpdateCoroutine: %s\n", klassName.data());
+				if (klassName.find("ChangeScreenOrientationPortraitAsync") != std::string_view::npos) {
+					return true;
+				}
+			}
+		}
+		return reinterpret_cast<decltype(UpdateCoroutine_hook)*>(UpdateCoroutine_orig)(_this);
+	}
+
 	RECT* updateWindowRatio(HWND hWnd, RECT* modifiedR, WPARAM wParam, bool resize_now) {
 		std::shared_ptr<RECT> windowR = std::make_shared<RECT>();
 		std::shared_ptr<RECT> clientR = std::make_shared<RECT>();
@@ -3324,6 +3352,10 @@ namespace
 			"SetupCoroutine", "InvokeMoveNext", 2
 		);
 
+		auto UpdateCoroutine_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"CoroutineExecutor", "UpdateCoroutine", 0
+		);
 
 		get_resolution = reinterpret_cast<Resolution_t * (*)(Resolution_t*)>(
 			il2cpp_symbols::get_method_pointer(
@@ -4032,6 +4064,7 @@ namespace
 		ADD_HOOK(get_virt_size, "Gallop.StandaloneWindowResize.getOptimizedWindowSizeVirt at %p \n");
 		ADD_HOOK(get_hori_size, "Gallop.StandaloneWindowResize.getOptimizedWindowSizeHori at %p \n");
 		ADD_HOOK(InvokeMoveNext, "InvokeMoveNext at %p \n");
+		ADD_HOOK(UpdateCoroutine, "UpdateCoroutine at %p \n");
 		ADD_HOOK(wndproc, "Gallop.StandaloneWindowResize.WndProc at %p \n");
 
 		// remove fixed 1080p render resolution
