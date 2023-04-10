@@ -45,6 +45,11 @@
                     "description": "The shorter side",
                     "type": "number",
                     "default": 9.0
+                },
+                "forceLandscape": {
+                    "description": "Force landscape",
+                    "type": "boolean",
+                    "default": false
                 }
             }
         },
