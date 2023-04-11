@@ -1709,7 +1709,8 @@ namespace
 
 	void* Unity_set_nearClipPlane_orig;
 	void Unity_set_nearClipPlane_hook(void* _this, float single) {
-		if ((g_live_free_camera && isLiveStart) || (g_race_free_camera && raceStart)) {
+		if ((g_live_free_camera && isLiveStart && UmaCamera::GetLiveCameraType() == LiveCamera_FIRST_PERSION) ||
+			(g_race_free_camera && raceStart)) {
 			single = 0.001f;
 		}
 		return reinterpret_cast<decltype(Unity_set_nearClipPlane_hook)*>(Unity_set_nearClipPlane_orig)(_this, single);
