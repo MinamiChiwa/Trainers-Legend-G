@@ -67,3 +67,7 @@ jobs:
         with:
           name: trainers-legend-g
           path: package
+      - uses: actions/upload-artifact@v2
+        with:
+          name: trainers-legend-g-dll
+          path: package/version.dll
