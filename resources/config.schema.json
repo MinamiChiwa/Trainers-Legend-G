@@ -342,12 +342,17 @@
             }
         },
         "replaceGlobalChar": {
-            "description": "全局角色替换\n（比赛、训练部分无法替换）",
+            "description": "全局角色替换",
             "type": "object",
             "properties": {
                 "enable": {
                     "description": "启用全局角色替换",
                     "type": "boolean"
+                },
+                "replaceUniversal": {
+                    "description": "将通用服装也替换为指定服装",
+                    "type": "boolean",
+                    "default": true
                 },
                 "data": {
                     "description": "全局角色替换设置",
