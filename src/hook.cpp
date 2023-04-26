@@ -2719,19 +2719,50 @@ namespace
 		targetPosCache = Vector3_t{};
 	}
 
-	std::unordered_set<int> otherReplaceTypes{
-		0x2, 0x3, 0x4, 0x5, 0x9, 0xb, 0xe, 0x1919810, 0xa, 0x8, 0x1, 0xd
+	enum class UmaControllerType {
+		Default = 0x0,
+		Race = 0x1,
+		Training = 0x2,
+		EventTimeline = 0x3,
+		Live = 0x4,
+		LiveTheater = 0x5,
+		HomeStand = 0x6,
+		HomeTalk = 0x7,
+		HomeWalk = 0x8,
+		CutIn = 0x9,
+		TrainingTop = 0xa,
+		SingleRace = 0xb,
+		Simple = 0xc,
+		Mini = 0xd,
+		Paddock = 0xe,
+		Champions = 0xf,
+		ORIG = 0x1919810
 	};
-	// 0xa: SingleRace, 0xb: Simple, 0x3: EventTimeline
+
+	std::unordered_set<UmaControllerType> otherReplaceTypes {
+		UmaControllerType::Training, 
+		UmaControllerType::EventTimeline, 
+		UmaControllerType::Live, 
+		UmaControllerType::LiveTheater,
+		UmaControllerType::HomeStand,
+		UmaControllerType::TrainingTop,
+		UmaControllerType::Simple,
+		UmaControllerType::Champions,
+		UmaControllerType::SingleRace,
+		UmaControllerType::CutIn,
+		UmaControllerType::Race,
+		UmaControllerType::Paddock,
+		UmaControllerType::ORIG
+	};
 	bool enableLoadCharLog = false;
 
-	bool replaceCharController(int *charaId, int *dressId, int* headId, int controllerType) {
+	bool replaceCharController(int *charaId, int *dressId, int* headId, UmaControllerType controllerType) {
 		bool replaceDress = true;
 		if ((*dressId < 100000) && !g_global_char_replace_Universal) {
 			replaceDress = false;
 		}
 
-		if (g_enable_home_char_replace && (controllerType == 0x5)) {  // HomeStand
+		if (g_enable_home_char_replace && (controllerType == UmaControllerType::HomeStand)) {  // HomeStand
 			if (*charaId == 9001) {  // Can't replace this at home now.
 				return false;
 			}
@@ -2744,7 +2775,7 @@ namespace
 			}
 		}
 
-		if (g_enable_global_char_replace && (controllerType == 0xc)) {  // mini
+		if (g_enable_global_char_replace && (controllerType == UmaControllerType::Mini)) {  // mini
 			if (g_global_mini_char_replace.contains(*charaId)) {
 				auto* replaceChar = &g_global_mini_char_replace.at(*charaId);
 				if (UmaDatabase::get_dress_have_mini(replaceChar->second)) {
@@ -2761,7 +2792,7 @@ namespace
 		}
 
 		if (g_enable_global_char_replace && otherReplaceTypes.contains(controllerType)) {
-			if ((*charaId == 9001) && (controllerType == 0x5)) {  // Can't replace this at home now.
+			if ((*charaId == 9001) && (controllerType == UmaControllerType::HomeStand)) {  // Can't replace this at home now.
 				return false;
 			}
 			if (g_global_char_replace.contains(*charaId)) {
@@ -2775,7 +2806,7 @@ namespace
 		return false;
 	}
 
-	bool replaceCharController(int *cardId, int *charaId, int *dressId, int* headId, int controllerType) {
+	bool replaceCharController(int *cardId, int *charaId, int *dressId, int* headId, UmaControllerType controllerType) {
 		if (otherReplaceTypes.contains(controllerType)) {
 			if (replaceCharController(charaId, dressId, headId, controllerType)) {
 				if (*cardId >= 1000) {
@@ -2984,7 +3015,7 @@ namespace
 		if (enableLoadCharLog) printf("StoryCharacter3D_LoadModel CardId: %d charaId: %d DressId: %d DressColorId: %d HeadId: %d MobId: %d ZekkenNumber: %d\n",
 			cardId, charaId, clothId, dressColorId, headId, mobId, zekkenNumber);
 
-		 replaceCharController(&cardId, &charaId, &clothId, &headId, 0x1919810);
+		 replaceCharController(&cardId, &charaId, &clothId, &headId, UmaControllerType::ORIG);
 
 		return reinterpret_cast<decltype(StoryCharacter3D_LoadModel_hook)*>(StoryCharacter3D_LoadModel_orig)(
 			charaId, cardId, clothId, zekkenNumber, headId, isWet,
@@ -3005,7 +3036,7 @@ namespace
 		int motionDressId, bool isEnableModelCache)
 	{
 		if (enableLoadCharLog) printf("CharacterBuildInfo_ctor_0 charaId: %d, dressId: %d, headId: %d, controllerType: 0x%x\n", charaId, dressId, headId, controllerType);
-		replaceCharController(&charaId, &dressId, &headId, controllerType);
+		replaceCharController(&charaId, &dressId, &headId, (UmaControllerType)controllerType);
 		return reinterpret_cast<decltype(CharacterBuildInfo_ctor_0_hook)*>(CharacterBuildInfo_ctor_0_orig)(_this, charaId, dressId, controllerType, headId, zekken, mobId, backDancerColorId, isUseDressDataHeadModelSubId, audienceId, motionDressId, isEnableModelCache);
 	}
 
@@ -3015,7 +3046,7 @@ namespace
 		bool isUseDressDataHeadModelSubId, int audienceId, int motionDressId, bool isEnableModelCache)
 	{
 		if (enableLoadCharLog) printf("CharacterBuildInfo_ctor_1 cardId: %d, charaId: %d, dressId: %d, headId: %d, audienceId: %d, motionDressId: %d, controllerType: 0x%x\n", cardId, charaId, dressId, headId, audienceId, motionDressId, controllerType);
-		replaceCharController(&charaId, &dressId, &headId, controllerType);
+		replaceCharController(&charaId, &dressId, &headId, (UmaControllerType)controllerType);
 		return reinterpret_cast<decltype(CharacterBuildInfo_ctor_1_hook)*>(CharacterBuildInfo_ctor_1_orig)(_this, cardId, charaId, dressId, controllerType, headId, zekken, mobId, backDancerColorId, overrideClothCategory, isUseDressDataHeadModelSubId, audienceId, motionDressId, isEnableModelCache);
 	}
 
@@ -3059,7 +3090,7 @@ namespace
 
 		// printf("ReBuild charaId: %d (%d), card: %d, head: %d, controllerType: 0x%x, zekken: %d, mobId: %d, audienceId: %d, isEnableModelCache: %d\n", charaId,
 		//	dressId, cardId, headModelSub, controllerType, zekken, mobId, audienceId, isEnableModelCache);
-		if (replaceCharController(&charaId, &dressId, &headModelSub, controllerType)) {
+		if (replaceCharController(&charaId, &dressId, &headModelSub, (UmaControllerType)controllerType)) {
 			il2cpp_symbols::write_field(_this, charaIdField, charaId);
 			il2cpp_symbols::write_field(_this, dressIdField, dressId);
 			il2cpp_symbols::write_field(_this, headModelSubIdField, headModelSub);
@@ -3085,7 +3116,7 @@ namespace
 				}
 				int newDressId = ret;
 				int newHeadId = 0;
-				if (replaceCharController(&charaId, &newDressId, &newHeadId, 0x1919810)) {
+				if (replaceCharController(&charaId, &newDressId, &newHeadId, UmaControllerType::ORIG)) {
 					return newDressId;
 				}
 			}
@@ -3114,7 +3145,7 @@ namespace
 	void* EditableCharacterBuildInfo_ctor_orig;
 	void EditableCharacterBuildInfo_ctor_hook(void* _this, int cardId, int charaId, int dressId, int controllerType, int zekken, int mobId, int backDancerColorId, int headId, bool isUseDressDataHeadModelSubId, bool isEnableModelCache) {
 		if (enableLoadCharLog) printf("EditableCharacterBuildInfo_ctor cardId: %d, charaId: %d, dressId: %d, headId: %d, controllerType: 0x%x\n", cardId, charaId, dressId, headId, controllerType);
-		replaceCharController(&cardId, &charaId, &dressId, &headId, controllerType);
+		replaceCharController(&cardId, &charaId, &dressId, &headId, (UmaControllerType)controllerType);
 		return reinterpret_cast<decltype(EditableCharacterBuildInfo_ctor_hook)*>(EditableCharacterBuildInfo_ctor_orig)(_this, cardId, charaId, dressId, controllerType, zekken, mobId, backDancerColorId, headId, isUseDressDataHeadModelSubId, isEnableModelCache);
 	}
 
