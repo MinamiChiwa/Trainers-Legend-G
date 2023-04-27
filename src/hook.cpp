@@ -2789,6 +2789,11 @@ namespace
 					return false;
 				}
 			}
+			if (!UmaDatabase::get_dress_have_mini(*dressId)) {
+				printf("dressId: %d does not have mini character! Replace to 2.\n", *dressId);
+				*dressId = 2;
+				return true;
+			}
 		}
 
 		if (g_enable_global_char_replace && otherReplaceTypes.contains(controllerType)) {
