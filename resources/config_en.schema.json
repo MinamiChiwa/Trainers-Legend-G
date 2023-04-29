@@ -383,6 +383,13 @@
             "items": {
                 "type": "string"
             }
+        },
+        "dumpGameAssemblyPath": {
+            "description": "Dump GameAssembly.dll to the indicated path, null to disable",
+            "type": [
+                "string",
+                "null"
+            ]
         }
     },
     "additionalProperties": false,

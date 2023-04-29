@@ -92,5 +92,6 @@
     "raceInfoTab": {
         "enableRaceInfoTab": false,
         "raceInfoTabAttachToGame": false
-    }
+    },
+    "dumpGameAssemblyPath": null
 }
