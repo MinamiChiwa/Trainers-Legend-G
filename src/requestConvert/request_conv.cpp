@@ -4,6 +4,8 @@
 bool isNoticeUrlRight = true;
 bool noticeThreadStart = false;
 int pingFailedCount = 0;
+bool pinged = false;
+std::unordered_set<int> globalReadedNotices{};
 
 namespace request_convert
 {
@@ -116,15 +118,19 @@ namespace request_convert
 			else {
 				return;
 			}
-			auto pingResult = send_post(utility::conversions::to_string_t(autoupdateUrl).c_str(), L"/api/notice/ping", L"");
-			if (pingResult.status_code() != 200) {
-				pingFailedCount++;
-				if (pingFailedCount > 3) {
-					isNoticeUrlRight = false;
+			if (!pinged) {
+				auto pingResult = send_post(utility::conversions::to_string_t(autoupdateUrl).c_str(), L"/api/notice/ping", L"");
+				if (pingResult.status_code() != 200) {
+					pingFailedCount++;
+					if (pingFailedCount > 3) {
+						isNoticeUrlRight = false;
+					}
+					return;
 				}
-				return;
+				pingFailedCount = 0;
+				pinged = true;
 			}
-			pingFailedCount = 0;
+
 			std::vector<int> readedNotices{};
 			std::string versionStr = "";
 			nlohmann::json externalPluginData;
@@ -182,8 +188,15 @@ namespace request_convert
 
 					int noticeId = i["noticeid"];
 					readedNotices.push_back(noticeId);
-					showDialog(il2cpp_string_new(title.c_str()), il2cpp_string_new(content.c_str()),
-						btnCount, btn1Text, btn2Text, btn3Text, btnType);
+
+					if (globalReadedNotices.contains(noticeId)) {
+						printf("WARNING: Readed notice: %d, ignore.\n", noticeId);
+					}
+					else {
+						showDialog(il2cpp_string_new(title.c_str()), il2cpp_string_new(content.c_str()),
+							btnCount, btn1Text, btn2Text, btn3Text, btnType);
+						globalReadedNotices.emplace(noticeId);
+					}
 				}
 			}
 
@@ -195,6 +208,7 @@ namespace request_convert
 		}
 		catch (std::exception& e)
 		{
+			pinged = false;
 			printf("Exception occurred while getting notice: %s\n", e.what());
 		}
 	}

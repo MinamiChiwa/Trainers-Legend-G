@@ -180,3 +180,4 @@ extern bool raceFollowUmaFirstPersion;
 extern bool raceFollowUmaFirstPersionEnableRoll;
 extern std::string g_autoupdateUrl;
 extern std::function<void(Il2CppString* title, Il2CppString* content, int buttonCount, int button1Text, int button2Text, int button3Text, int btn_type)> showDialog;
+extern bool g_force_landscape;

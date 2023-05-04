@@ -45,6 +45,11 @@
                     "description": "短边",
                     "type": "number",
                     "default": 9.0
+                },
+                "forceLandscape": {
+                    "description": "强制启用横屏模式",
+                    "type": "boolean",
+                    "default": false
                 }
             }
         },

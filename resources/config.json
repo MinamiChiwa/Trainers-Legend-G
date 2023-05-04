@@ -9,7 +9,8 @@
     "uiScale": 1.0,
     "aspect_ratio_new": {
         "w": 16.0,
-        "h": 9.0
+        "h": 9.0,
+        "forceLandscape": false
     },
     "autoFullscreen": false,
     "readRequestPack": false,
