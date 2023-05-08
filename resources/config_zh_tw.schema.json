@@ -142,33 +142,33 @@
             "description": "主頁設定",
             "type": "object",
             "properties": {
-              "free_camera": {
-                  "description": "啟用主頁自由視角",
-                  "type": "boolean",
-                  "default": false
-              },
-              "homeWalkMotionCharaId": {
-                "description": "主頁走路姿勢修改\n(填寫4位數角色ID, -1為不設定)",
-                "type": "integer",
-                "default": -1
-              }
-            }  
+                "free_camera": {
+                    "description": "啟用主頁自由視角",
+                    "type": "boolean",
+                    "default": false
+                },
+                "homeWalkMotionCharaId": {
+                    "description": "主頁走路姿勢修改\n(填寫4位數角色ID, -1為不設定)",
+                    "type": "integer",
+                    "default": -1
+                }
+            }
         },
         "raceInfoTab": {
             "description": "比賽即時資訊顯示",
             "type": "object",
             "properties": {
-              "enableRaceInfoTab": {
-                  "description": "啟用比賽即時資訊顯示視窗",
-                  "type": "boolean",
-                  "default": false
-              },
-              "raceInfoTabAttachToGame": {
-                "description": "將視窗附加到遊戲中，不單獨彈窗",
-                "type": "boolean",
-                "default": false
-              }
-            }  
+                "enableRaceInfoTab": {
+                    "description": "啟用比賽即時資訊顯示視窗",
+                    "type": "boolean",
+                    "default": false
+                },
+                "raceInfoTabAttachToGame": {
+                    "description": "將視窗附加到遊戲中，不單獨彈窗",
+                    "type": "boolean",
+                    "default": false
+                }
+            }
         },
         "race_camera": {
             "description": "比賽相機設定",
@@ -383,6 +383,13 @@
             "items": {
                 "type": "string"
             }
+        },
+        "dumpGameAssemblyPath": {
+            "description": "Dump GameAssembly.dll 到指定地址，設置為 null 關閉",
+            "type": [
+                "string",
+                "null"
+            ]
         }
     },
     "additionalProperties": false,

@@ -110,6 +110,8 @@ CloseTrans closeTrans{false};
 
 std::unordered_set<std::size_t> trans_off_textData{};
 
+std::string dumpGameAssemblyPath;
+
 // #pragma comment(lib, "cpprest_2_10_18.lib")
 // #pragma comment(lib, "bcrypt.lib")
 // #pragma comment(lib, "crypt32.lib")
@@ -304,7 +306,7 @@ namespace
 		writer.StartObject();
 
 		// 足够容纳 std::uint64_t 的最大值
-		char idBuffer[21];
+		char idBuffer[std::numeric_limits<std::uint64_t>::digits10 + 1];
 		for (const auto& [id, content] : staticCache)
 		{
 			const auto [end, ec] = std::to_chars(std::begin(idBuffer), std::end(idBuffer), id);
@@ -742,6 +744,14 @@ namespace
 			else {
 				g_enable_replaceBuiltInAssets = false;
 			}
+
+			if (document.HasMember("dumpGameAssemblyPath"))
+			{
+				if (const auto& value = document["dumpGameAssemblyPath"]; value.IsString())
+				{
+					dumpGameAssemblyPath = document["dumpGameAssemblyPath"].GetString();
+				}
+			}
 		}
 
 		config_stream.close();
@@ -815,9 +825,9 @@ std::pair<std::unordered_map<std::size_t, local::StoryTextData>, std::unordered_
 				const auto storyId = isStoryTimeline ?
 					static_cast<std::size_t>(_wtoll(stem.c_str() + std::size(StoryTimelinePrefix) - 1)) :
 					static_cast<std::size_t>(std::stoull([&] {
-						auto range = stemNative | std::ranges::views::drop(std::size(HomeTimelinePrefix) - 1) | std::ranges::views::filter([](wchar_t ch) { return ch != L'_'; });
-						return std::wstring(std::ranges::begin(range), std::ranges::end(range));
-					}()));
+					auto range = stemNative | std::ranges::views::drop(std::size(HomeTimelinePrefix) - 1) | std::ranges::views::filter([](wchar_t ch) { return ch != L'_'; });
+					return std::wstring(std::ranges::begin(range), std::ranges::end(range));
+						}()));
 				result.first.emplace(storyId, std::move(data));
 			}
 			else if (stemNative.starts_with(StoryRacePrefix))
@@ -1596,7 +1606,7 @@ namespace HttpServer {
 					add.SetString(st.c_str(), st.size());
 					ret.PushBack(add, ret.GetAllocator());
 				}
-				
+
 				rapidjson::StringBuffer buffer;
 				rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
 				ret.Accept(writer);

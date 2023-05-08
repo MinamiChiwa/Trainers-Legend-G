@@ -3,6 +3,7 @@
 #include <ranges>
 #include "umagui/umaguiMain.hpp"
 #include <set>
+#include <Psapi.h>
 
 using namespace std;
 std::function<void()> g_on_hook_ready;
@@ -3255,6 +3256,35 @@ namespace
 
 		// load il2cpp exported functions
 		il2cpp_symbols::init(il2cpp_module);
+
+		if (!dumpGameAssemblyPath.empty())
+		{
+			// 在 hook 之前 dump，避免破坏内容
+			std::printf("Trying to dump GameAssembly.dll...\n");
+			std::ofstream out(dumpGameAssemblyPath, std::ios_base::binary);
+			MODULEINFO info;
+			if (out && GetModuleInformation(GetCurrentProcess(), il2cpp_module, &info, sizeof(info)))
+			{
+				const auto header = static_cast<const IMAGE_DOS_HEADER*>(info.lpBaseOfDll);
+				const auto ntHeader = reinterpret_cast<const IMAGE_NT_HEADERS*>(
+					static_cast<const std::byte*>(info.lpBaseOfDll) + header->e_lfanew);
+				const auto sections = IMAGE_FIRST_SECTION(ntHeader);
+
+				out.write(static_cast<const char*>(info.lpBaseOfDll),
+					reinterpret_cast<const char*>(sections) +
+					ntHeader->FileHeader.NumberOfSections * sizeof(IMAGE_SECTION_HEADER) -
+					static_cast<const char*>(info.lpBaseOfDll));
+
+				for (std::size_t i = 0; i < ntHeader->FileHeader.NumberOfSections; ++i)
+				{
+					const auto& section = sections[i];
+
+					out.seekp(section.PointerToRawData);
+					out.write(static_cast<const char*>(info.lpBaseOfDll) + section.VirtualAddress,
+						section.SizeOfRawData);
+				}
+			}
+		}
 
 #pragma region HOOK_MACRO
 #define ADD_HOOK(_name_, _fmt_) \
