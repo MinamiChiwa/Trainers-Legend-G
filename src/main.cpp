@@ -71,6 +71,7 @@ std::unordered_map<int, std::pair<int, int>> g_home_char_replace{};
 bool g_enable_global_char_replace = false;
 std::unordered_map<int, std::pair<int, int>> g_global_char_replace{};
 std::unordered_map<int, std::pair<int, int>> g_global_mini_char_replace{};
+bool g_global_char_replace_Universal = true;
 
 bool g_bypass_live_205 = false;
 bool g_load_finished = false;
@@ -627,6 +628,10 @@ namespace
 				g_global_char_replace.clear();
 				g_global_mini_char_replace.clear();
 				auto& globalChar = document["replaceGlobalChar"];
+				if (globalChar.HasMember("replaceUniversal")) {
+					g_global_char_replace_Universal = globalChar["replaceUniversal"].GetBool();
+				}
+
 				g_enable_global_char_replace = globalChar["enable"].GetBool();
 				auto dataList = globalChar["data"].GetArray();
 				for (auto& i : dataList) {

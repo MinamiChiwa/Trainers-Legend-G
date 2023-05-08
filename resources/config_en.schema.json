@@ -349,6 +349,11 @@
                     "description": "Enable global character replace",
                     "type": "boolean"
                 },
+                "replaceUniversal": {
+                    "description": "Replace universal dress",
+                    "type": "boolean",
+                    "default": true
+                },
                 "data": {
                     "description": "Global character replace settings",
                     "type": "array",
