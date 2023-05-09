@@ -1884,9 +1884,9 @@ namespace
 	bool guiStarting = false;
 	void startUmaGui();
 
-	void* OnClickScenarioLiveSelect_orig;
-	void OnClickScenarioLiveSelect_hook(void* _this) {
-		reinterpret_cast<decltype(OnClickScenarioLiveSelect_hook)*>(OnClickScenarioLiveSelect_orig)(_this);
+	void* Live_OnClickSettingButton_orig;
+	void Live_OnClickSettingButton_hook(void* _this) {
+		reinterpret_cast<decltype(Live_OnClickSettingButton_hook)*>(Live_OnClickSettingButton_orig)(_this);
 		if (g_enable_live_dof_controller) {
 			SetShowLiveWnd(true);
 			if (getUmaGuiDone()) {
@@ -1895,10 +1895,17 @@ namespace
 		}
 	}
 
+	enum class UpdateDOFType {
+		MainCamera,
+		MuitiCamera,
+		Unknown
+	};
+	UpdateDOFType updateDOFType = UpdateDOFType::Unknown;
+
 	void* SetupDOFUpdateInfo_orig;
 	void SetupDOFUpdateInfo_hook(void* _this, UmaGUiShowData::PostEffectUpdateInfo_DOF* updateInfo, void* curData, void* nextData, int currentFrame, Vector3_t* cameraLookAt) {
 
-		if (g_enable_live_dof_controller && guiStarting && GetShowLiveWnd()) {
+		if (g_enable_live_dof_controller && guiStarting && GetShowLiveWnd() && (updateDOFType == UpdateDOFType::MainCamera)) {
 			init_LiveTimelineKeyPostEffectDOFData();
 
 			auto forcalPosition = reinterpret_cast<Vector3_t*>(
@@ -2465,10 +2472,15 @@ namespace
 	}
 
 	void* AlterUpdate_PostEffect_DOF_orig;
-	void AlterUpdate_PostEffect_DOF_hook(void* _this, Il2CppObject* sheet, int currentFrame, Vector3_t* cameraLookAt) {
-		if (g_live_free_camera) return;
+	void AlterUpdate_PostEffect_DOF_hook(void* _this, void* sheet, int currentFrame, Vector3_t* cameraLookAt) {
+		updateDOFType = UpdateDOFType::MainCamera;
 		return reinterpret_cast<decltype(AlterUpdate_PostEffect_DOF_hook)*>(AlterUpdate_PostEffect_DOF_orig)(_this, sheet, currentFrame, cameraLookAt);
-		// return true;
+	}
+
+	void* AlterUpdate_MultiCameraPostEffect_DOF_orig;
+	void AlterUpdate_MultiCameraPostEffect_DOF_hook(void* _this, Il2CppObject* sheet, int currentFrame) {
+		updateDOFType = UpdateDOFType::MuitiCamera;
+		return reinterpret_cast<decltype(AlterUpdate_MultiCameraPostEffect_DOF_hook)*>(AlterUpdate_MultiCameraPostEffect_DOF_orig)(_this, sheet, currentFrame);
 	}
 
 	void* AlterUpdate_CameraMotion_orig;
@@ -3844,6 +3856,11 @@ namespace
 		auto AlterUpdate_PostEffect_DOF_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop.Live.Cutt",
 			"LiveTimelineControl", "AlterUpdate_PostEffect_DOF", 3
+		);		
+		
+		auto AlterUpdate_MultiCameraPostEffect_DOF_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.Live.Cutt",
+			"LiveTimelineControl", "AlterUpdate_MultiCameraPostEffect_DOF", 2
 		);
 
 		auto AlterUpdate_CameraLayer_addr = il2cpp_symbols::get_method_pointer(
@@ -3967,7 +3984,7 @@ namespace
 			"LiveTimelineControl", "SetupDOFUpdateInfo", 5
 		);
 
-		auto OnClickScenarioLiveSelect_addr = il2cpp_symbols::get_method_pointer(
+		auto Live_OnClickSettingButton_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"LiveTheaterViewController", "OnClickSettingButton", 0
 		);
@@ -4173,7 +4190,7 @@ namespace
 		ADD_HOOK(AlterUpdate_MultiCameraLookAt, "AlterUpdate_MultiCameraLookAt at %p\n");
 		ADD_HOOK(live_on_destroy, "live_on_destroy at %p\n");
 		ADD_HOOK(SetupDOFUpdateInfo, "SetupDOFUpdateInfo at %p\n");
-		ADD_HOOK(OnClickScenarioLiveSelect, "OnClickScenarioLiveSelect at %p\n");
+		ADD_HOOK(Live_OnClickSettingButton, "Live_OnClickSettingButton at %p\n");
 		ADD_HOOK(get_camera_pos, "get_camera_pos at %p\n");
 		ADD_HOOK(get_camera_pos2, "get_camera_pos2 at %p\n");
 		ADD_HOOK(GetCharacterWorldPos, "GetCharacterWorldPos at %p\n");
@@ -4187,6 +4204,8 @@ namespace
 		ADD_HOOK(AlterUpdate_CameraMotion, "AlterUpdate_CameraMotion at %p\n");
 		ADD_HOOK(AlterUpdate_TiltShift, "AlterUpdate_TiltShift at %p\n");
 		ADD_HOOK(AlterUpdate_CameraLayer, "AlterUpdate_CameraLayer at %p\n");
+		ADD_HOOK(AlterUpdate_PostEffect_DOF, "AlterUpdate_PostEffect_DOF at %p\n");
+		ADD_HOOK(AlterUpdate_MultiCameraPostEffect_DOF, "AlterUpdate_MultiCameraPostEffect_DOF at %p\n");
 		ADD_HOOK(AlterLateUpdate_CameraMotion, "AlterLateUpdate_CameraMotion at %p\n");
 		ADD_HOOK(AlterUpdate_CameraFov, "AlterUpdate_CameraFov at %p\n");
 		ADD_HOOK(AlterUpdate_CameraRoll, "AlterUpdate_CameraRoll at %p\n");
