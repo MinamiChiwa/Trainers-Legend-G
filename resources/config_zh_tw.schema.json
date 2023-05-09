@@ -126,6 +126,11 @@
                     "description": "相機移動步幅",
                     "type": "number"
                 },
+                "enableLiveDofController": {
+                    "description": "啟用景深控制（點擊LIVE設定按鈕開啟）",
+                    "type": "boolean",
+                    "default": false
+                },
                 "close_all_blur": {
                     "description": "關閉所有模糊鏡頭",
                     "type": "boolean"
@@ -388,13 +393,6 @@
             "items": {
                 "type": "string"
             }
-        },
-        "dumpGameAssemblyPath": {
-            "description": "Dump GameAssembly.dll 到指定地址，設置為 null 關閉",
-            "type": [
-                "string",
-                "null"
-            ]
         }
     },
     "additionalProperties": false,
