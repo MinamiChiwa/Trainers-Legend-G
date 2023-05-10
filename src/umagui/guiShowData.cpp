@@ -2,7 +2,12 @@
 #include "umagui/guiShowData.hpp"
 
 bool ignoreNegativeSpeed = false;
-
+Vector3_t UmaGUiShowData::liveDOFForcalPosition { .0f, 1.72f, 1.0f };
+UmaGUiShowData::PostEffectUpdateInfo_DOF UmaGUiShowData::postEffectUpdateInfo_DOF {
+	false, 5.0f, 1.6f, DofQuality::OnlyBackground, DofBlur::Mixed,
+	1.72, 1.0, 0.5, false, 3.25, 0.5, 0.4, -0.67, 0
+};
+bool UmaGUiShowData::dofColtrollerFollowGame = false;
 
 UmaGUiShowData::UmaRaceMotionData::UmaRaceMotionData(int gateNo, std::wstring charaName, std::wstring trainerName) {
 	this->gateNo = gateNo;

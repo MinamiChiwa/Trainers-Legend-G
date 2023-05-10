@@ -130,6 +130,11 @@
                     "description": "关闭所有模糊镜头",
                     "type": "boolean"
                 },
+                "enableLiveDofController": {
+                    "description": "启用景深控制（点击 LIVE 设置按钮开启）",
+                    "type": "boolean",
+                    "default": false
+                },
                 "setLiveFovAsGlobal": {
                     "description": "将 Live 的 FOV 应用到游戏全局",
                     "type": "boolean",
@@ -388,13 +393,6 @@
             "items": {
                 "type": "string"
             }
-        },
-        "dumpGameAssemblyPath": {
-            "description": "Dump GameAssembly.dll 到指定地址，设置为 null 关闭",
-            "type": [
-                "string",
-                "null"
-            ]
         }
     },
     "additionalProperties": false,

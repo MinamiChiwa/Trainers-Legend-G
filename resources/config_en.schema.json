@@ -126,6 +126,11 @@
                     "description": "Camera move step",
                     "type": "number"
                 },
+                "enableLiveDofController": {
+                    "description": "Enable DOF control (click LIVE setting button)",
+                    "type": "boolean",
+                    "default": false
+                },
                 "close_all_blur": {
                     "description": "Disable all blur",
                     "type": "boolean"
@@ -388,13 +393,6 @@
             "items": {
                 "type": "string"
             }
-        },
-        "dumpGameAssemblyPath": {
-            "description": "Dump GameAssembly.dll to the indicated path, null to disable",
-            "type": [
-                "string",
-                "null"
-            ]
         }
     },
     "additionalProperties": false,

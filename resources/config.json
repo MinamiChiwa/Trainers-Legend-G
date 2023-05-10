@@ -27,6 +27,7 @@
         "mouseSpeed": 100.0,
         "force_changeVisibility_false": false,
         "moveStep": 0.1,
+        "enableLiveDofController": false,
         "close_all_blur": false,
         "setLiveFovAsGlobal": false
     },
@@ -93,6 +94,5 @@
     "raceInfoTab": {
         "enableRaceInfoTab": false,
         "raceInfoTabAttachToGame": false
-    },
-    "dumpGameAssemblyPath": null
+    }
 }

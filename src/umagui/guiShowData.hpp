@@ -95,4 +95,37 @@ namespace UmaGUiShowData {
 		void SetSkillName(std::string skillName);
 	};
 
+	enum class DofQuality {
+		OnlyBackground = 0x1,
+		BackgroundAndForeground = 0x5
+	};
+
+	enum class DofBlur {
+		Horizon = 0x0,
+		Mixed = 0x1,
+		Disc = 0x2,
+		BallBlur = 0x3,
+	};
+
+	struct PostEffectUpdateInfo_DOF {
+		bool IsEnableDOF;
+		float forcalSize;
+		float blurSpread;
+		// Vector3_t* forcalPosition;
+		DofQuality dofQuality;
+		DofBlur dofBlurType;
+		float dofForegroundSize;
+		float dofFocalPoint;
+		float dofSoomthness;
+		bool isUseFocalPoint;
+		float BallBlurCurveFactor;
+		float BallBlurBrightnessThreshhold;
+		float BallBlurBrightnessIntensity;
+		float BallBlurSpread;
+		bool IsPointBallBlur;
+	};
+
+	extern Vector3_t liveDOFForcalPosition;
+	extern PostEffectUpdateInfo_DOF postEffectUpdateInfo_DOF;
+	extern bool dofColtrollerFollowGame;
 }

@@ -90,6 +90,7 @@ std::string g_race_jikkyo_message_dict_path;
 std::list<std::function<void(void)>> onPluginReload{};
 bool enableRaceInfoTab = false;
 bool raceInfoTabAttachToGame = false;
+bool g_enable_live_dof_controller = false;
 
 constexpr const char LocalizedDataPath[] = "localized_data";
 constexpr const char OldLocalizedDataPath[] = "old_localized_data";
@@ -554,6 +555,10 @@ namespace
 
 				if (document["live"].HasMember("mouseSpeed")) {
 					g_free_camera_mouse_speed = document["live"]["mouseSpeed"].GetFloat();
+				}
+
+				if (document["live"].HasMember("enableLiveDofController")) {
+					g_enable_live_dof_controller = document["live"]["enableLiveDofController"].GetBool();
 				}
 
 				auto moveStep = document["live"]["moveStep"].GetFloat();

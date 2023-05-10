@@ -22,7 +22,8 @@ void CreateRenderTarget();
 void CleanupRenderTarget();
 LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 bool guiDone = true;
-bool showRaceWnd = true;
+bool showRaceWnd = false;
+bool showLiveWnd = false;
 bool closeWhenRaceEnd = false;
 
 HWND hwnd;
@@ -38,6 +39,14 @@ void SetGuiDone(bool isDone) {
 
 void SetShowRaceWnd(bool value) {
     showRaceWnd = value;
+}
+
+void SetShowLiveWnd(bool value) {
+    showLiveWnd = value;
+}
+
+bool GetShowLiveWnd() {
+    return showLiveWnd;
 }
 
 void updateRaceGUIData(std::map<void*, UmaGUiShowData::UmaRaceMotionData>& data) {
@@ -711,8 +720,71 @@ void imGuiRaceSkillInfoMainLoop() {
 
         ImGui::EndTable();
         ImGui::PopStyleVar();
+        ImGui::End();
     }
-    ImGui::End();
+    
+}
+
+void imGuiLiveDOFMainLoop() {
+    if (!showLiveWnd) return;
+    
+    if (ImGui::Begin("Live DOF")) {
+        ImGui::Checkbox("Use Game DOF Settings", &UmaGUiShowData::dofColtrollerFollowGame);
+        ImGui::Checkbox("Enable DOF", &UmaGUiShowData::postEffectUpdateInfo_DOF.IsEnableDOF);
+
+        static float inputFloatWidth = 70.0f;
+
+        ImGui::SetNextItemWidth(inputFloatWidth);
+        ImGui::InputFloat("##Focal Size Input", &UmaGUiShowData::postEffectUpdateInfo_DOF.forcalSize);
+        ImGui::SameLine();
+        ImGui::SliderFloat("Focal Size", &UmaGUiShowData::postEffectUpdateInfo_DOF.forcalSize, -60.00f, 60.00f);
+        ImGui::SetNextItemWidth(inputFloatWidth);
+        ImGui::InputFloat("##Blur Spread Input", &UmaGUiShowData::postEffectUpdateInfo_DOF.blurSpread);
+        ImGui::SameLine();
+        ImGui::SliderFloat("Blur Spread", &UmaGUiShowData::postEffectUpdateInfo_DOF.blurSpread, -60.00f, 60.00f);
+
+        const char* dofBlurTypeItems[] = { "Horizon", "Mixed", "Disc", "BallBlur" };
+        ImGui::Combo("DOF Blur Type", (int*)&UmaGUiShowData::postEffectUpdateInfo_DOF.dofBlurType, dofBlurTypeItems, 4);
+
+        const char* dofQualityItems[] = { "Only Background", "Background and Foreground" };
+        int dofQualityIndex = UmaGUiShowData::postEffectUpdateInfo_DOF.dofQuality == UmaGUiShowData::DofQuality::OnlyBackground ? 0 : 1;
+        ImGui::Combo("DOF Quality", &dofQualityIndex, dofQualityItems, 2);
+        UmaGUiShowData::postEffectUpdateInfo_DOF.dofQuality = (UmaGUiShowData::DofQuality)(dofQualityIndex == 0 ? UmaGUiShowData::DofQuality::OnlyBackground : UmaGUiShowData::DofQuality::BackgroundAndForeground);
+
+        ImGui::SetNextItemWidth(inputFloatWidth);
+        ImGui::InputFloat("##DOF Foreground Size Input", &UmaGUiShowData::postEffectUpdateInfo_DOF.dofForegroundSize);
+        ImGui::SameLine();
+        ImGui::SliderFloat("DOF Foreground Size", &UmaGUiShowData::postEffectUpdateInfo_DOF.dofForegroundSize, -60.00f, 60.00f);
+        ImGui::SetNextItemWidth(inputFloatWidth);
+        ImGui::InputFloat("##DOF Focal Point Input", &UmaGUiShowData::postEffectUpdateInfo_DOF.dofFocalPoint);
+        ImGui::SameLine();
+        ImGui::SliderFloat("DOF Focal Point", &UmaGUiShowData::postEffectUpdateInfo_DOF.dofFocalPoint, -60.00f, 60.00f);
+        ImGui::SetNextItemWidth(inputFloatWidth);
+        ImGui::InputFloat("##DOF Smoothness Input", &UmaGUiShowData::postEffectUpdateInfo_DOF.dofSoomthness);
+        ImGui::SameLine();
+        ImGui::SliderFloat("DOF Smoothness", &UmaGUiShowData::postEffectUpdateInfo_DOF.dofSoomthness, -60.00f, 60.00f);
+        ImGui::Checkbox("Use Focal Point", &UmaGUiShowData::postEffectUpdateInfo_DOF.isUseFocalPoint);
+        ImGui::SetNextItemWidth(inputFloatWidth);
+        ImGui::InputFloat("##Ball Blur Curve Factor Input", &UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurCurveFactor);
+        ImGui::SameLine();
+        ImGui::SliderFloat("Ball Blur Curve Factor", &UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurCurveFactor, -60.00f, 60.00f);
+        ImGui::SetNextItemWidth(inputFloatWidth);
+        ImGui::InputFloat("##Ball Blur Brightness Threshhold Input", &UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurBrightnessThreshhold);
+        ImGui::SameLine();
+        ImGui::SliderFloat("Ball Blur Brightness Threshhold", &UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurBrightnessThreshhold, -60.00f, 60.00f);
+        ImGui::SetNextItemWidth(inputFloatWidth);
+        ImGui::InputFloat("##Ball Blur Brightness Intensity Input", &UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurBrightnessIntensity);
+        ImGui::SameLine();
+        ImGui::SliderFloat("Ball Blur Brightness Intensity", &UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurBrightnessIntensity, -60.00f, 60.00f);
+        ImGui::SetNextItemWidth(inputFloatWidth);
+        ImGui::InputFloat("##all Blur Spread", &UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurSpread);
+        ImGui::SameLine();
+        ImGui::SliderFloat("Ball Blur Spread", &UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurSpread, -60.00f, 60.00f);
+        ImGui::Checkbox("Point Ball Blur", &UmaGUiShowData::postEffectUpdateInfo_DOF.IsPointBallBlur);
+
+        ImGui::InputFloat3("Focal Position (x, y, z)", &UmaGUiShowData::liveDOFForcalPosition.x);
+        ImGui::End();
+    }
 }
 
 // Main code
@@ -872,6 +944,7 @@ void guimain()
         ImGui::NewFrame();
         imguiRaceMainLoop(io);
         imGuiRaceSkillInfoMainLoop();
+        imGuiLiveDOFMainLoop();
 
         ImGui::Render();
         const float clear_color_with_alpha[4] = { clear_color.x * clear_color.w, clear_color.y * clear_color.w, clear_color.z * clear_color.w, clear_color.w };
