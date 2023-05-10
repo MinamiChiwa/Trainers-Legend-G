@@ -1902,6 +1902,16 @@ namespace
 	};
 	UpdateDOFType updateDOFType = UpdateDOFType::Unknown;
 
+	template <typename T>
+	void changeValueByType(T* p1, T* p2, bool condition) {
+		if (condition) {
+			*p1 = *p2;
+		}
+		else {
+			*p2 = *p1;
+		}
+	}
+
 	void* SetupDOFUpdateInfo_orig;
 	void SetupDOFUpdateInfo_hook(void* _this, UmaGUiShowData::PostEffectUpdateInfo_DOF* updateInfo, void* curData, void* nextData, int currentFrame, Vector3_t* cameraLookAt) {
 
@@ -1914,44 +1924,24 @@ namespace
 
 			if (UmaGUiShowData::dofColtrollerFollowGame) {
 				reinterpret_cast<decltype(SetupDOFUpdateInfo_hook)*>(SetupDOFUpdateInfo_orig)(_this, updateInfo, curData, nextData, currentFrame, cameraLookAt);
-				
-				UmaGUiShowData::postEffectUpdateInfo_DOF.IsEnableDOF = updateInfo->IsEnableDOF;
-				UmaGUiShowData::postEffectUpdateInfo_DOF.forcalSize = updateInfo->forcalSize;
-				UmaGUiShowData::postEffectUpdateInfo_DOF.blurSpread = updateInfo->blurSpread;
-				UmaGUiShowData::liveDOFForcalPosition.x = forcalPosition->x;
-				UmaGUiShowData::liveDOFForcalPosition.y = forcalPosition->y;
-				UmaGUiShowData::liveDOFForcalPosition.z = forcalPosition->z;
-				UmaGUiShowData::postEffectUpdateInfo_DOF.dofQuality = updateInfo->dofQuality;
-				UmaGUiShowData::postEffectUpdateInfo_DOF.dofBlurType = updateInfo->dofBlurType;
-				UmaGUiShowData::postEffectUpdateInfo_DOF.dofForegroundSize = updateInfo->dofForegroundSize;
-				UmaGUiShowData::postEffectUpdateInfo_DOF.dofFocalPoint = updateInfo->dofFocalPoint;
-				UmaGUiShowData::postEffectUpdateInfo_DOF.dofSoomthness = updateInfo->dofSoomthness;
-				UmaGUiShowData::postEffectUpdateInfo_DOF.isUseFocalPoint = updateInfo->isUseFocalPoint;
-				UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurCurveFactor = updateInfo->BallBlurCurveFactor;
-				UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurBrightnessThreshhold = updateInfo->BallBlurBrightnessThreshhold;
-				UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurBrightnessIntensity = updateInfo->BallBlurBrightnessIntensity;
-				UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurSpread = updateInfo->BallBlurSpread;
-				UmaGUiShowData::postEffectUpdateInfo_DOF.IsPointBallBlur = updateInfo->IsPointBallBlur;
 			}
-			else {
-				updateInfo->IsEnableDOF = UmaGUiShowData::postEffectUpdateInfo_DOF.IsEnableDOF;
-				updateInfo->forcalSize = UmaGUiShowData::postEffectUpdateInfo_DOF.forcalSize;
-				updateInfo->blurSpread = UmaGUiShowData::postEffectUpdateInfo_DOF.blurSpread;
-				forcalPosition->x = UmaGUiShowData::liveDOFForcalPosition.x;
-				forcalPosition->y = UmaGUiShowData::liveDOFForcalPosition.y;
-				forcalPosition->z = UmaGUiShowData::liveDOFForcalPosition.z;
-				updateInfo->dofQuality = UmaGUiShowData::postEffectUpdateInfo_DOF.dofQuality;
-				updateInfo->dofBlurType = UmaGUiShowData::postEffectUpdateInfo_DOF.dofBlurType;
-				updateInfo->dofForegroundSize = UmaGUiShowData::postEffectUpdateInfo_DOF.dofForegroundSize;
-				updateInfo->dofFocalPoint = UmaGUiShowData::postEffectUpdateInfo_DOF.dofFocalPoint;
-				updateInfo->dofSoomthness = UmaGUiShowData::postEffectUpdateInfo_DOF.dofSoomthness;
-				updateInfo->isUseFocalPoint = UmaGUiShowData::postEffectUpdateInfo_DOF.isUseFocalPoint;
-				updateInfo->BallBlurCurveFactor = UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurCurveFactor;
-				updateInfo->BallBlurBrightnessThreshhold = UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurBrightnessThreshhold;
-				updateInfo->BallBlurBrightnessIntensity = UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurBrightnessIntensity;
-				updateInfo->BallBlurSpread = UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurSpread;
-				updateInfo->IsPointBallBlur = UmaGUiShowData::postEffectUpdateInfo_DOF.IsPointBallBlur;
-			}
+			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.IsEnableDOF, &updateInfo->IsEnableDOF, UmaGUiShowData::dofColtrollerFollowGame);
+			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.forcalSize, &updateInfo->forcalSize, UmaGUiShowData::dofColtrollerFollowGame);
+			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.blurSpread, &updateInfo->blurSpread, UmaGUiShowData::dofColtrollerFollowGame);
+			changeValueByType(&UmaGUiShowData::liveDOFForcalPosition.x, &forcalPosition->x, UmaGUiShowData::dofColtrollerFollowGame);
+			changeValueByType(&UmaGUiShowData::liveDOFForcalPosition.y, &forcalPosition->y, UmaGUiShowData::dofColtrollerFollowGame);
+			changeValueByType(&UmaGUiShowData::liveDOFForcalPosition.z, &forcalPosition->z, UmaGUiShowData::dofColtrollerFollowGame);
+			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.dofQuality, &updateInfo->dofQuality, UmaGUiShowData::dofColtrollerFollowGame);
+			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.dofBlurType, &updateInfo->dofBlurType, UmaGUiShowData::dofColtrollerFollowGame);
+			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.dofForegroundSize, &updateInfo->dofForegroundSize, UmaGUiShowData::dofColtrollerFollowGame);
+			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.dofFocalPoint, &updateInfo->dofFocalPoint, UmaGUiShowData::dofColtrollerFollowGame);
+			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.dofSoomthness, &updateInfo->dofSoomthness, UmaGUiShowData::dofColtrollerFollowGame);
+			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.isUseFocalPoint, &updateInfo->isUseFocalPoint, UmaGUiShowData::dofColtrollerFollowGame);
+			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurCurveFactor, &updateInfo->BallBlurCurveFactor, UmaGUiShowData::dofColtrollerFollowGame);
+			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurBrightnessThreshhold, &updateInfo->BallBlurBrightnessThreshhold, UmaGUiShowData::dofColtrollerFollowGame);
+			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurBrightnessIntensity, &updateInfo->BallBlurBrightnessIntensity, UmaGUiShowData::dofColtrollerFollowGame);
+			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurSpread, &updateInfo->BallBlurSpread, UmaGUiShowData::dofColtrollerFollowGame);
+			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.IsPointBallBlur, &updateInfo->IsPointBallBlur, UmaGUiShowData::dofColtrollerFollowGame);
 			return;
 		}
 
