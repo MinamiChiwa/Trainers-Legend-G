@@ -720,8 +720,8 @@ void imGuiRaceSkillInfoMainLoop() {
 
         ImGui::EndTable();
         ImGui::PopStyleVar();
-        ImGui::End();
     }
+    ImGui::End();
     
 }
 
@@ -783,8 +783,8 @@ void imGuiLiveDOFMainLoop() {
         ImGui::Checkbox("Point Ball Blur", &UmaGUiShowData::postEffectUpdateInfo_DOF.IsPointBallBlur);
 
         ImGui::InputFloat3("Focal Position (x, y, z)", &UmaGUiShowData::liveDOFForcalPosition.x);
-        ImGui::End();
     }
+    ImGui::End();
 }
 
 // Main code
