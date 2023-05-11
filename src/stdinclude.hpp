@@ -184,3 +184,4 @@ extern std::function<void(Il2CppString* title, Il2CppString* content, int button
 extern bool g_force_landscape;
 extern std::string dumpGameAssemblyPath;
 extern bool g_enable_live_dof_controller;
+extern bool guiStarting;

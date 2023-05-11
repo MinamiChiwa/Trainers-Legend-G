@@ -2,6 +2,7 @@
 #include <unordered_set>
 #include <ranges>
 #include "umagui/umaguiMain.hpp"
+#include "umaHook/liveHook.hpp"
 #include <set>
 #include <Psapi.h>
 
@@ -11,6 +12,7 @@ bool liveFirstPersonEnableRoll = false;
 bool raceFollowUmaFirstPersion = false;
 bool raceFollowUmaFirstPersionEnableRoll = false;
 std::function<void(Il2CppString* title, Il2CppString* content, int buttonCount, int button1Text, int button2Text, int button3Text, int btn_type)> showDialog = nullptr;
+bool guiStarting = false;
 
 void _set_u_stat(bool s) {
 	if (autoChangeLineBreakMode) {
@@ -1870,18 +1872,6 @@ namespace
 	}
 
 	
-	void* PostEffectUpdateInfo_DOF_klass;
-	FieldInfo* PostEffectUpdateInfo_DOF_forcalPosition;
-
-	bool isffinit = false;
-	void init_LiveTimelineKeyPostEffectDOFData() {
-		if (isffinit) return;
-		PostEffectUpdateInfo_DOF_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop.Live.Cutt", "PostEffectUpdateInfo_DOF");
-		PostEffectUpdateInfo_DOF_forcalPosition = il2cpp_class_get_field_from_name(PostEffectUpdateInfo_DOF_klass, "forcalPosition");
-		isffinit = true;
-	}
-	
-	bool guiStarting = false;
 	void startUmaGui();
 
 	void* Live_OnClickSettingButton_orig;
@@ -1893,60 +1883,6 @@ namespace
 				startUmaGui();
 			}
 		}
-	}
-
-	enum class UpdateDOFType {
-		MainCamera,
-		MuitiCamera,
-		Unknown
-	};
-	UpdateDOFType updateDOFType = UpdateDOFType::Unknown;
-
-	template <typename T>
-	void changeValueByType(T* p1, T* p2, bool condition) {
-		if (condition) {
-			*p1 = *p2;
-		}
-		else {
-			*p2 = *p1;
-		}
-	}
-
-	void* SetupDOFUpdateInfo_orig;
-	void SetupDOFUpdateInfo_hook(void* _this, UmaGUiShowData::PostEffectUpdateInfo_DOF* updateInfo, void* curData, void* nextData, int currentFrame, Vector3_t* cameraLookAt) {
-
-		if (g_enable_live_dof_controller && guiStarting && GetShowLiveWnd() && (updateDOFType == UpdateDOFType::MainCamera)) {
-			init_LiveTimelineKeyPostEffectDOFData();
-
-			auto forcalPosition = reinterpret_cast<Vector3_t*>(
-				static_cast<std::byte*>(reinterpret_cast<void*>(updateInfo)) + PostEffectUpdateInfo_DOF_forcalPosition->offset
-				);
-
-			if (UmaGUiShowData::dofColtrollerFollowGame) {
-				reinterpret_cast<decltype(SetupDOFUpdateInfo_hook)*>(SetupDOFUpdateInfo_orig)(_this, updateInfo, curData, nextData, currentFrame, cameraLookAt);
-			}
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.IsEnableDOF, &updateInfo->IsEnableDOF, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.forcalSize, &updateInfo->forcalSize, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.blurSpread, &updateInfo->blurSpread, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::liveDOFForcalPosition.x, &forcalPosition->x, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::liveDOFForcalPosition.y, &forcalPosition->y, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::liveDOFForcalPosition.z, &forcalPosition->z, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.dofQuality, &updateInfo->dofQuality, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.dofBlurType, &updateInfo->dofBlurType, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.dofForegroundSize, &updateInfo->dofForegroundSize, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.dofFocalPoint, &updateInfo->dofFocalPoint, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.dofSoomthness, &updateInfo->dofSoomthness, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.isUseFocalPoint, &updateInfo->isUseFocalPoint, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurCurveFactor, &updateInfo->BallBlurCurveFactor, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurBrightnessThreshhold, &updateInfo->BallBlurBrightnessThreshhold, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurBrightnessIntensity, &updateInfo->BallBlurBrightnessIntensity, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurSpread, &updateInfo->BallBlurSpread, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.IsPointBallBlur, &updateInfo->IsPointBallBlur, UmaGUiShowData::dofColtrollerFollowGame);
-			return;
-		}
-
-		if (g_live_close_all_blur) return;
-		reinterpret_cast<decltype(SetupDOFUpdateInfo_hook)*>(SetupDOFUpdateInfo_orig)(_this, updateInfo, curData, nextData, currentFrame, cameraLookAt);
 	}
 
 	void* get_camera_pos2_orig;  // 暂时没用
@@ -2459,18 +2395,6 @@ namespace
 		if (g_live_free_camera) return;
 		return reinterpret_cast<decltype(AlterUpdate_TiltShift_hook)*>(AlterUpdate_TiltShift_orig)(_this, sheet, currentFrame);
 		// return true;
-	}
-
-	void* AlterUpdate_PostEffect_DOF_orig;
-	void AlterUpdate_PostEffect_DOF_hook(void* _this, void* sheet, int currentFrame, Vector3_t* cameraLookAt) {
-		updateDOFType = UpdateDOFType::MainCamera;
-		return reinterpret_cast<decltype(AlterUpdate_PostEffect_DOF_hook)*>(AlterUpdate_PostEffect_DOF_orig)(_this, sheet, currentFrame, cameraLookAt);
-	}
-
-	void* AlterUpdate_MultiCameraPostEffect_DOF_orig;
-	void AlterUpdate_MultiCameraPostEffect_DOF_hook(void* _this, Il2CppObject* sheet, int currentFrame) {
-		updateDOFType = UpdateDOFType::MuitiCamera;
-		return reinterpret_cast<decltype(AlterUpdate_MultiCameraPostEffect_DOF_hook)*>(AlterUpdate_MultiCameraPostEffect_DOF_orig)(_this, sheet, currentFrame);
 	}
 
 	void* AlterUpdate_CameraMotion_orig;
@@ -3843,16 +3767,6 @@ namespace
 			"LiveTimelineControl", "AlterUpdate_TiltShift", 2
 		);
 
-		auto AlterUpdate_PostEffect_DOF_addr = il2cpp_symbols::get_method_pointer(
-			"umamusume.dll", "Gallop.Live.Cutt",
-			"LiveTimelineControl", "AlterUpdate_PostEffect_DOF", 3
-		);		
-		
-		auto AlterUpdate_MultiCameraPostEffect_DOF_addr = il2cpp_symbols::get_method_pointer(
-			"umamusume.dll", "Gallop.Live.Cutt",
-			"LiveTimelineControl", "AlterUpdate_MultiCameraPostEffect_DOF", 2
-		);
-
 		auto AlterUpdate_CameraLayer_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop.Live.Cutt",
 			"LiveTimelineControl", "AlterUpdate_CameraLayer", 4
@@ -3967,11 +3881,6 @@ namespace
 		auto live_on_destroy_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop.Live.Cutt",
 			"LiveTimelineControl", "OnDestroy", 0
-		);
-
-		auto SetupDOFUpdateInfo_addr = il2cpp_symbols::get_method_pointer(
-			"umamusume.dll", "Gallop.Live.Cutt",
-			"LiveTimelineControl", "SetupDOFUpdateInfo", 5
 		);
 
 		auto Live_OnClickSettingButton_addr = il2cpp_symbols::get_method_pointer(
@@ -4179,7 +4088,6 @@ namespace
 		ADD_HOOK(AlterUpdate_MultiCameraPosition, "AlterUpdate_MultiCameraPosition at %p\n");
 		ADD_HOOK(AlterUpdate_MultiCameraLookAt, "AlterUpdate_MultiCameraLookAt at %p\n");
 		ADD_HOOK(live_on_destroy, "live_on_destroy at %p\n");
-		ADD_HOOK(SetupDOFUpdateInfo, "SetupDOFUpdateInfo at %p\n");
 		ADD_HOOK(Live_OnClickSettingButton, "Live_OnClickSettingButton at %p\n");
 		ADD_HOOK(get_camera_pos, "get_camera_pos at %p\n");
 		ADD_HOOK(get_camera_pos2, "get_camera_pos2 at %p\n");
@@ -4194,8 +4102,6 @@ namespace
 		ADD_HOOK(AlterUpdate_CameraMotion, "AlterUpdate_CameraMotion at %p\n");
 		ADD_HOOK(AlterUpdate_TiltShift, "AlterUpdate_TiltShift at %p\n");
 		ADD_HOOK(AlterUpdate_CameraLayer, "AlterUpdate_CameraLayer at %p\n");
-		ADD_HOOK(AlterUpdate_PostEffect_DOF, "AlterUpdate_PostEffect_DOF at %p\n");
-		ADD_HOOK(AlterUpdate_MultiCameraPostEffect_DOF, "AlterUpdate_MultiCameraPostEffect_DOF at %p\n");
 		ADD_HOOK(AlterLateUpdate_CameraMotion, "AlterLateUpdate_CameraMotion at %p\n");
 		ADD_HOOK(AlterUpdate_CameraFov, "AlterUpdate_CameraFov at %p\n");
 		ADD_HOOK(AlterUpdate_CameraRoll, "AlterUpdate_CameraRoll at %p\n");
@@ -4288,6 +4194,7 @@ namespace
 
 		ADD_HOOK(set_resolution, "UnityEngine.Screen.SetResolution(int, int, bool) at %p\n");
 		ADD_HOOK(GallopUtil_GetModifiedString, "GallopUtil_GetModifiedString at %p\n");
+		UmaLiveHook::regHookMain();
 		if (g_auto_fullscreen)
 		{
 			adjust_size();
