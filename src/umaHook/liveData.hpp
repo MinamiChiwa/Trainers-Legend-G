@@ -160,7 +160,6 @@ namespace LiveData {
 			localData = &UmaGUiShowData::postFilmUpdateInfo[index];
 			this->updateInfo = updateInfo;
 			this->condition = condition;
-			myType = LiveDelegateType::OnUpdateVolumeLight;
 
 			_filmOffsetParam = &UmaGUiShowData::filmOffsetParam[index];
 			_FilmScale = &UmaGUiShowData::FilmScale[index];
