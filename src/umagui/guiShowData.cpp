@@ -7,7 +7,19 @@ UmaGUiShowData::PostEffectUpdateInfo_DOF UmaGUiShowData::postEffectUpdateInfo_DO
 	false, 5.0f, 1.6f, DofQuality::OnlyBackground, DofBlur::Mixed,
 	1.72, 1.0, 0.5, false, 3.25, 0.5, 0.4, -0.67, 0
 };
-bool UmaGUiShowData::dofColtrollerFollowGame = false;
+bool UmaGUiShowData::dofColtrollerFollowGame = true;
+
+Vector2_t UmaGUiShowData::filmOffsetParam[3]{};
+Vector4_t UmaGUiShowData::filmOptionParam[3]{};
+Color_t UmaGUiShowData::filmcolor0[3]{};
+Color_t UmaGUiShowData::filmcolor1[3]{};
+Color_t UmaGUiShowData::filmcolor2[3]{};
+Color_t UmaGUiShowData::filmcolor3[3]{};
+Vector2_t UmaGUiShowData::FilmScale[3]{};
+UmaGUiShowData::PostFilmUpdateInfo UmaGUiShowData::postFilmUpdateInfo[3]{};
+bool UmaGUiShowData::livePostFilmFollowGame[3] = { true , true , true };
+int UmaGUiShowData::filmIndex = 0;
+
 
 UmaGUiShowData::UmaRaceMotionData::UmaRaceMotionData(int gateNo, std::wstring charaName, std::wstring trainerName) {
 	this->gateNo = gateNo;

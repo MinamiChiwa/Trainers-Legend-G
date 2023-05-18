@@ -38,6 +38,13 @@ public:
 	float z;
 };
 
+struct Vector4_t {
+	float w;
+	float x;
+	float y;
+	float z;
+};
+
 // UnityEngine.Quaternion
 struct Quaternion_t
 {

@@ -125,7 +125,71 @@ namespace UmaGUiShowData {
 		bool IsPointBallBlur;
 	};
 
+	enum class PostFilmMode {
+		None = 0x0,
+		Lerp = 0x1,
+		Add = 0x2,
+		Mul = 0x3,
+		VignetteLerp = 0x4,
+		VignetteAdd = 0x5,
+		VignetteMul = 0x6,
+		Monochrome = 0x7,
+		ScreenBlend = 0x8,
+		VignetteScreenBlend = 0x9
+	};
+
+	enum class PostColorType {
+		ColorAll = 0x0,
+		Color2TopBottom = 0x1,
+		Color2LeftRight = 0x2,
+		Color4 = 0x3
+	};
+
+	enum class LayerMode {
+		Color = 0x0,
+		UVMovie = 0x1
+	};
+
+	enum class ColorBlend {
+		None = 0x0,
+		Lerp = 0x1,
+		Additive = 0x2,
+		Multiply = 0x3,
+	};
+
+	struct PostFilmUpdateInfo {
+		PostFilmMode filmMode;
+		PostColorType colorType;
+		float filmPower;
+		float depthPower;
+		float DepthClip;
+		LayerMode layerMode;
+		ColorBlend colorBlend;
+		bool inverseVignette;
+		float colorBlendFactor;
+		int movieResId;
+		int movieFrameOffset;
+		float movieTime;
+		bool movieReverse;
+		float RollAngle;
+	};
+
+	// PostEffectUpdateInfo_DOF
 	extern Vector3_t liveDOFForcalPosition;
 	extern PostEffectUpdateInfo_DOF postEffectUpdateInfo_DOF;
 	extern bool dofColtrollerFollowGame;
+
+
+	// VolumeLightUpdateInfo
+	extern PostFilmUpdateInfo postFilmUpdateInfo[3];
+	extern bool livePostFilmFollowGame[3];
+
+	extern Vector2_t filmOffsetParam[3];
+	extern Vector4_t filmOptionParam[3];
+	extern Color_t filmcolor0[3];
+	extern Color_t filmcolor1[3];
+	extern Color_t filmcolor2[3];
+	extern Color_t filmcolor3[3];
+	extern Vector2_t FilmScale[3];
+	extern int filmIndex;
 }

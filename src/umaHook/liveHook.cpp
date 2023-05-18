@@ -1,4 +1,5 @@
 #include "stdinclude.hpp"
+#include "liveData.hpp"
 
 #define CREATE_HOOK(assemblyName, namespaze, klassName, fname, argsCount, _name_) \
 	auto _name_##_addr = reinterpret_cast<void*>(il2cpp_symbols::get_method_pointer(assemblyName, namespaze, klassName, fname, argsCount)); \
@@ -10,105 +11,98 @@
 
 
 namespace UmaLiveHook {
-	namespace {
-		enum class UpdateDOFType {
-			MainCamera,
-			MuitiCamera,
-			Unknown
-		};
-		UpdateDOFType updateDOFType = UpdateDOFType::Unknown;
+	Il2CppString* (*environment_get_stacktrace)();
 
-		template <typename T>
-		void changeValueByType(T* p1, T* p2, bool condition) {
-			if (condition) {
-				*p1 = *p2;
-			}
-			else {
-				*p2 = *p1;
+	void* DOFUpdateInfoDelegate_orig;
+	void DOFUpdateInfoDelegate_hook(void* _this, UmaGUiShowData::PostEffectUpdateInfo_DOF* updateInfo) {
+
+		if (g_live_close_all_blur) {
+			updateInfo->IsEnableDOF = false;
+		}
+
+		if (g_enable_live_dof_controller && guiStarting && GetShowLiveWnd()) {
+			if (LiveData::checkDelegate(LiveDelegateType::OnUpdatePostEffect_DOF, _this)) {
+				if (UmaGUiShowData::dofColtrollerFollowGame) {
+					CAST_FUNC(DOFUpdateInfoDelegate)(_this, updateInfo);
+				}
+
+				LiveData::PostEffectUpdateInfo_DOF(updateInfo, UmaGUiShowData::dofColtrollerFollowGame).updateData();
 			}
 		}
+
+		return CAST_FUNC(DOFUpdateInfoDelegate)(_this, updateInfo);
 	}
 
-	void* SetupBloomDiffusionUpdateInfo_orig;
-	void SetupBloomDiffusionUpdateInfo_hook(void* _this, void* updateInfo, void* curData, void* nextData, int currentFrame) {
-		return CAST_FUNC(SetupBloomDiffusionUpdateInfo)(_this, updateInfo, curData, nextData, currentFrame);
-	}
+	bool updatePostFilm = false;
 
 	void* SetupPostFilmUpdateDataInfo_orig;
-	void SetupPostFilmUpdateDataInfo_hook(void* _this, void* updateInfo, void* curData, void* nextData, int currentFrame) {
+	void SetupPostFilmUpdateDataInfo_hook(void* _this, UmaGUiShowData::PostFilmUpdateInfo* updateInfo, void* curData, void* nextData, int currentFrame) {
+		if (g_enable_live_dof_controller && updatePostFilm && guiStarting && GetShowLiveWnd()) {
+			if (UmaGUiShowData::livePostFilmFollowGame[UmaGUiShowData::filmIndex]) {
+				CAST_FUNC(SetupPostFilmUpdateDataInfo)(_this, updateInfo, curData, nextData, currentFrame);
+			}
+			LiveData::PostFilmUpdateInfo(updateInfo, UmaGUiShowData::livePostFilmFollowGame[UmaGUiShowData::filmIndex],
+				UmaGUiShowData::filmIndex).updateData();
+		}
 		return CAST_FUNC(SetupPostFilmUpdateDataInfo)(_this, updateInfo, curData, nextData, currentFrame);
 	}
 
-	void* PostEffectUpdateInfo_DOF_klass;
-	FieldInfo* PostEffectUpdateInfo_DOF_forcalPosition;
+	FieldInfo* OnUpdatePostFilm_field;
+	FieldInfo* OnUpdatePostFilm2_field;
+	FieldInfo* OnUpdatePostFilm3_field;
 
-	bool isffinit = false;
-	void init_LiveTimelineKeyPostEffectDOFData() {
-		if (isffinit) return;
-		PostEffectUpdateInfo_DOF_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop.Live.Cutt", "PostEffectUpdateInfo_DOF");
-		PostEffectUpdateInfo_DOF_forcalPosition = il2cpp_class_get_field_from_name(PostEffectUpdateInfo_DOF_klass, "forcalPosition");
-		isffinit = true;
-	}
-
-	void* SetupDOFUpdateInfo_orig;
-	void SetupDOFUpdateInfo_hook(void* _this, UmaGUiShowData::PostEffectUpdateInfo_DOF* updateInfo, void* curData, void* nextData, int currentFrame, Vector3_t* cameraLookAt) {
-
-		if (g_enable_live_dof_controller && guiStarting && GetShowLiveWnd() && (updateDOFType == UpdateDOFType::MainCamera)) {
-			init_LiveTimelineKeyPostEffectDOFData();
-
-			auto forcalPosition = reinterpret_cast<Vector3_t*>(
-				static_cast<std::byte*>(reinterpret_cast<void*>(updateInfo)) + PostEffectUpdateInfo_DOF_forcalPosition->offset
-				);
-
-			if (UmaGUiShowData::dofColtrollerFollowGame) {
-				reinterpret_cast<decltype(SetupDOFUpdateInfo_hook)*>(SetupDOFUpdateInfo_orig)(_this, updateInfo, curData, nextData, currentFrame, cameraLookAt);
-			}
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.IsEnableDOF, &updateInfo->IsEnableDOF, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.forcalSize, &updateInfo->forcalSize, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.blurSpread, &updateInfo->blurSpread, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::liveDOFForcalPosition.x, &forcalPosition->x, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::liveDOFForcalPosition.y, &forcalPosition->y, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::liveDOFForcalPosition.z, &forcalPosition->z, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.dofQuality, &updateInfo->dofQuality, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.dofBlurType, &updateInfo->dofBlurType, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.dofForegroundSize, &updateInfo->dofForegroundSize, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.dofFocalPoint, &updateInfo->dofFocalPoint, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.dofSoomthness, &updateInfo->dofSoomthness, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.isUseFocalPoint, &updateInfo->isUseFocalPoint, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurCurveFactor, &updateInfo->BallBlurCurveFactor, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurBrightnessThreshhold, &updateInfo->BallBlurBrightnessThreshhold, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurBrightnessIntensity, &updateInfo->BallBlurBrightnessIntensity, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurSpread, &updateInfo->BallBlurSpread, UmaGUiShowData::dofColtrollerFollowGame);
-			changeValueByType(&UmaGUiShowData::postEffectUpdateInfo_DOF.IsPointBallBlur, &updateInfo->IsPointBallBlur, UmaGUiShowData::dofColtrollerFollowGame);
-			return;
+	void* AlterUpdate_PostFilm_orig;
+	void AlterUpdate_PostFilm_hook(void* _this, void* postFilmKeys, int currentFrame, void* fnUpdatePostFilm) {
+		updatePostFilm = true;
+		if (il2cpp_symbols::read_field(_this, OnUpdatePostFilm_field) == fnUpdatePostFilm) {
+			UmaGUiShowData::filmIndex = 0;
 		}
-
-		if (g_live_close_all_blur) return;
-		reinterpret_cast<decltype(SetupDOFUpdateInfo_hook)*>(SetupDOFUpdateInfo_orig)(_this, updateInfo, curData, nextData, currentFrame, cameraLookAt);
+		else if (il2cpp_symbols::read_field(_this, OnUpdatePostFilm2_field) == fnUpdatePostFilm) {
+			UmaGUiShowData::filmIndex = 1;
+		}
+		else if (il2cpp_symbols::read_field(_this, OnUpdatePostFilm3_field) == fnUpdatePostFilm) {
+			UmaGUiShowData::filmIndex = 2;
+		}
+		CAST_FUNC(AlterUpdate_PostFilm)(_this, postFilmKeys, currentFrame, fnUpdatePostFilm);
+		updatePostFilm = false;
 	}
 
-	void* AlterUpdate_PostEffect_DOF_orig;
-	void AlterUpdate_PostEffect_DOF_hook(void* _this, void* sheet, int currentFrame, Vector3_t* cameraLookAt) {
-		updateDOFType = UpdateDOFType::MainCamera;
-		return reinterpret_cast<decltype(AlterUpdate_PostEffect_DOF_hook)*>(AlterUpdate_PostEffect_DOF_orig)(_this, sheet, currentFrame, cameraLookAt);
+	void* SetupLiveTimelineControl_orig;
+	void SetupLiveTimelineControl_hook(void* _this, void* liveTimelineControl) {
+		CAST_FUNC(SetupLiveTimelineControl)(_this, liveTimelineControl);
+		
+		if (g_enable_live_dof_controller) {
+			auto liveTimelineControl_klass = il2cpp_symbols::get_class_from_instance(liveTimelineControl);
+			FieldInfo* OnUpdatePostEffect_DOF_field = il2cpp_class_get_field_from_name(liveTimelineControl_klass, "OnUpdatePostEffect_DOF");
+			auto OnUpdatePostEffect_DOF = il2cpp_symbols::read_field(liveTimelineControl, OnUpdatePostEffect_DOF_field);
+
+			OnUpdatePostFilm_field = il2cpp_class_get_field_from_name(liveTimelineControl_klass, "OnUpdatePostFilm");
+			OnUpdatePostFilm2_field = il2cpp_class_get_field_from_name(liveTimelineControl_klass, "OnUpdatePostFilm2");
+			OnUpdatePostFilm3_field = il2cpp_class_get_field_from_name(liveTimelineControl_klass, "OnUpdatePostFilm3");
+
+			LiveData::LiveUpdateInfoDelegates.clear();
+			LiveData::LiveUpdateInfoDelegates.emplace(LiveDelegateType::OnUpdatePostEffect_DOF, OnUpdatePostEffect_DOF);
+		}
 	}
 
-	void* AlterUpdate_MultiCameraPostEffect_DOF_orig;
-	void AlterUpdate_MultiCameraPostEffect_DOF_hook(void* _this, Il2CppObject* sheet, int currentFrame) {
-		updateDOFType = UpdateDOFType::MuitiCamera;
-		return CAST_FUNC(AlterUpdate_MultiCameraPostEffect_DOF)(_this, sheet, currentFrame);
+	void initUpdateInfoDelegateInvoke() {
+		LiveData::LiveUpdateInfoDelegatesInvoke.emplace(LiveDelegateType::OnUpdatePostEffect_DOF,
+			std::make_pair(DOFUpdateInfoDelegate_orig, std::make_pair("Gallop.Live.Cutt", "PostEffectUpdateInfo_DOF")));
 	}
 
 	void regHookMain() {
-		CREATE_HOOK("umamusume.dll", "Gallop.Live.Cutt", "LiveTimelineControl", "SetupBloomDiffusionUpdateInfo", 4, 
-			SetupBloomDiffusionUpdateInfo);		
-		CREATE_HOOK("umamusume.dll", "Gallop.Live.Cutt", "LiveTimelineControl", "SetupPostFilmUpdateDataInfo", 4, 
+		environment_get_stacktrace = reinterpret_cast<decltype(environment_get_stacktrace)>(il2cpp_symbols::get_method_pointer("mscorlib.dll", "System", "Environment", "get_StackTrace", 0));
+
+		CREATE_HOOK("umamusume.dll", "Gallop.Live.Cutt", "DOFUpdateInfoDelegate", "Invoke", 1,
+			DOFUpdateInfoDelegate);
+		CREATE_HOOK("umamusume.dll", "Gallop.Live.Cutt", "LiveTimelineControl", "SetupPostFilmUpdateDataInfo", 4,
 			SetupPostFilmUpdateDataInfo);
-		CREATE_HOOK("umamusume.dll", "Gallop.Live.Cutt", "LiveTimelineControl", "SetupDOFUpdateInfo", 5,
-			SetupDOFUpdateInfo);
-		CREATE_HOOK("umamusume.dll", "Gallop.Live.Cutt", "LiveTimelineControl", "AlterUpdate_MultiCameraPostEffect_DOF", 2,
-			AlterUpdate_MultiCameraPostEffect_DOF);
-		CREATE_HOOK("umamusume.dll", "Gallop.Live.Cutt", "LiveTimelineControl", "AlterUpdate_PostEffect_DOF", 3,
-			AlterUpdate_PostEffect_DOF);
+		CREATE_HOOK("umamusume.dll", "Gallop.Live.Cutt", "LiveTimelineControl", "AlterUpdate_PostFilm", 3,
+			AlterUpdate_PostFilm);
+
+		CREATE_HOOK("umamusume.dll", "Gallop.Live", "StageController", "SetupLiveTimelineControl", 1,
+			SetupLiveTimelineControl);
+
+		initUpdateInfoDelegateInvoke();  // HOOK 完成之后再调用此函数
 	}
 }
