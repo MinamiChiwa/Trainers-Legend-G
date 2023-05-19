@@ -5,7 +5,9 @@
 enum class LiveDelegateType {
 	UNSET,
 	OnUpdatePostEffect_DOF,
-	OnUpdateVolumeLight
+	OnUpdatePostFilm1,
+	OnUpdatePostFilm2,
+	OnUpdatePostFilm3
 };
 
 namespace LiveData {
@@ -22,13 +24,31 @@ namespace LiveData {
 	}
 
 	std::unordered_map<LiveDelegateType, void*> LiveUpdateInfoDelegates{};
+	std::unordered_map<void*, LiveDelegateType> LiveUpdateInfoDelegatesToType{};
 	std::unordered_map<LiveDelegateType, std::pair<void*, std::pair<const char*, const char*>>> LiveUpdateInfoDelegatesInvoke{};
+
+	void LiveUpdateInfoDelegates_emplace(LiveDelegateType type, void* ptr) {
+		LiveUpdateInfoDelegates.emplace(type, ptr);
+		LiveUpdateInfoDelegatesToType.emplace(ptr, type);
+	}
+
+	void LiveUpdateInfoDelegates_clear() {
+		LiveUpdateInfoDelegates.clear();
+		LiveUpdateInfoDelegatesToType.clear();
+	}
 
 	void* getDelegate(LiveDelegateType type) {
 		if (const auto iter = LiveUpdateInfoDelegates.find(type); iter != LiveUpdateInfoDelegates.end()) {
 			return iter->second;
 		}
 		return NULL;
+	}
+
+	LiveDelegateType getDelegateType(void* ptr) {
+		if (const auto iter = LiveUpdateInfoDelegatesToType.find(ptr); iter != LiveUpdateInfoDelegatesToType.end()) {
+			return iter->second;
+		}
+		return LiveDelegateType::UNSET;
 	}
 
 	bool checkDelegate(LiveDelegateType type, void* ptr) {

@@ -11,60 +11,53 @@
 
 
 namespace UmaLiveHook {
+	namespace {
+		FieldInfo* OnUpdatePostFilm_field;
+		FieldInfo* OnUpdatePostFilm2_field;
+		FieldInfo* OnUpdatePostFilm3_field;
+	}
+
 	Il2CppString* (*environment_get_stacktrace)();
 
 	void* DOFUpdateInfoDelegate_orig;
-	void DOFUpdateInfoDelegate_hook(void* _this, UmaGUiShowData::PostEffectUpdateInfo_DOF* updateInfo) {
+	void DOFUpdateInfoDelegate_hook(void* _this, void* updateInfo) {
 
 		if (g_live_close_all_blur) {
-			updateInfo->IsEnableDOF = false;
+			if (LiveData::checkDelegate(LiveDelegateType::OnUpdatePostEffect_DOF, _this)) {
+				static_cast<UmaGUiShowData::PostEffectUpdateInfo_DOF*>(updateInfo)->IsEnableDOF = false;
+			}
 		}
 
 		if (g_enable_live_dof_controller && guiStarting && GetShowLiveWnd()) {
-			if (LiveData::checkDelegate(LiveDelegateType::OnUpdatePostEffect_DOF, _this)) {
+			switch (LiveData::getDelegateType(_this)) {
+			case LiveDelegateType::OnUpdatePostEffect_DOF: {
+				if (g_live_close_all_blur) {
+					static_cast<UmaGUiShowData::PostEffectUpdateInfo_DOF*>(updateInfo)->IsEnableDOF = false;
+				}
 				if (UmaGUiShowData::dofColtrollerFollowGame) {
 					CAST_FUNC(DOFUpdateInfoDelegate)(_this, updateInfo);
 				}
 
-				LiveData::PostEffectUpdateInfo_DOF(updateInfo, UmaGUiShowData::dofColtrollerFollowGame).updateData();
+				LiveData::PostEffectUpdateInfo_DOF(static_cast<UmaGUiShowData::PostEffectUpdateInfo_DOF*>(updateInfo),
+					UmaGUiShowData::dofColtrollerFollowGame).updateData();
+			}; break;
+
+			case LiveDelegateType::OnUpdatePostFilm1: UmaGUiShowData::filmIndex = 0; goto UpdatePostFilm;
+			case LiveDelegateType::OnUpdatePostFilm2: UmaGUiShowData::filmIndex = 1; goto UpdatePostFilm;
+			case LiveDelegateType::OnUpdatePostFilm3: {
+				UmaGUiShowData::filmIndex = 2;
+				UpdatePostFilm:
+				if (UmaGUiShowData::livePostFilmFollowGame[UmaGUiShowData::filmIndex]) {
+					CAST_FUNC(DOFUpdateInfoDelegate)(_this, updateInfo);
+				}
+				LiveData::PostFilmUpdateInfo(static_cast<UmaGUiShowData::PostFilmUpdateInfo*>(updateInfo),
+					UmaGUiShowData::livePostFilmFollowGame[UmaGUiShowData::filmIndex],
+					UmaGUiShowData::filmIndex).updateData();
+			}; break;
+			default: break;
 			}
 		}
-
 		return CAST_FUNC(DOFUpdateInfoDelegate)(_this, updateInfo);
-	}
-
-	bool updatePostFilm = false;
-
-	void* SetupPostFilmUpdateDataInfo_orig;
-	void SetupPostFilmUpdateDataInfo_hook(void* _this, UmaGUiShowData::PostFilmUpdateInfo* updateInfo, void* curData, void* nextData, int currentFrame) {
-		if (g_enable_live_dof_controller && updatePostFilm && guiStarting && GetShowLiveWnd()) {
-			if (UmaGUiShowData::livePostFilmFollowGame[UmaGUiShowData::filmIndex]) {
-				CAST_FUNC(SetupPostFilmUpdateDataInfo)(_this, updateInfo, curData, nextData, currentFrame);
-			}
-			LiveData::PostFilmUpdateInfo(updateInfo, UmaGUiShowData::livePostFilmFollowGame[UmaGUiShowData::filmIndex],
-				UmaGUiShowData::filmIndex).updateData();
-		}
-		return CAST_FUNC(SetupPostFilmUpdateDataInfo)(_this, updateInfo, curData, nextData, currentFrame);
-	}
-
-	FieldInfo* OnUpdatePostFilm_field;
-	FieldInfo* OnUpdatePostFilm2_field;
-	FieldInfo* OnUpdatePostFilm3_field;
-
-	void* AlterUpdate_PostFilm_orig;
-	void AlterUpdate_PostFilm_hook(void* _this, void* postFilmKeys, int currentFrame, void* fnUpdatePostFilm) {
-		updatePostFilm = true;
-		if (il2cpp_symbols::read_field(_this, OnUpdatePostFilm_field) == fnUpdatePostFilm) {
-			UmaGUiShowData::filmIndex = 0;
-		}
-		else if (il2cpp_symbols::read_field(_this, OnUpdatePostFilm2_field) == fnUpdatePostFilm) {
-			UmaGUiShowData::filmIndex = 1;
-		}
-		else if (il2cpp_symbols::read_field(_this, OnUpdatePostFilm3_field) == fnUpdatePostFilm) {
-			UmaGUiShowData::filmIndex = 2;
-		}
-		CAST_FUNC(AlterUpdate_PostFilm)(_this, postFilmKeys, currentFrame, fnUpdatePostFilm);
-		updatePostFilm = false;
 	}
 
 	void* SetupLiveTimelineControl_orig;
@@ -80,8 +73,11 @@ namespace UmaLiveHook {
 			OnUpdatePostFilm2_field = il2cpp_class_get_field_from_name(liveTimelineControl_klass, "OnUpdatePostFilm2");
 			OnUpdatePostFilm3_field = il2cpp_class_get_field_from_name(liveTimelineControl_klass, "OnUpdatePostFilm3");
 
-			LiveData::LiveUpdateInfoDelegates.clear();
-			LiveData::LiveUpdateInfoDelegates.emplace(LiveDelegateType::OnUpdatePostEffect_DOF, OnUpdatePostEffect_DOF);
+			LiveData::LiveUpdateInfoDelegates_clear();
+			LiveData::LiveUpdateInfoDelegates_emplace(LiveDelegateType::OnUpdatePostEffect_DOF, OnUpdatePostEffect_DOF);
+			LiveData::LiveUpdateInfoDelegates_emplace(LiveDelegateType::OnUpdatePostFilm1, il2cpp_symbols::read_field(liveTimelineControl, OnUpdatePostFilm_field));
+			LiveData::LiveUpdateInfoDelegates_emplace(LiveDelegateType::OnUpdatePostFilm2, il2cpp_symbols::read_field(liveTimelineControl, OnUpdatePostFilm2_field));
+			LiveData::LiveUpdateInfoDelegates_emplace(LiveDelegateType::OnUpdatePostFilm3, il2cpp_symbols::read_field(liveTimelineControl, OnUpdatePostFilm3_field));
 		}
 	}
 
@@ -95,10 +91,6 @@ namespace UmaLiveHook {
 
 		CREATE_HOOK("umamusume.dll", "Gallop.Live.Cutt", "DOFUpdateInfoDelegate", "Invoke", 1,
 			DOFUpdateInfoDelegate);
-		CREATE_HOOK("umamusume.dll", "Gallop.Live.Cutt", "LiveTimelineControl", "SetupPostFilmUpdateDataInfo", 4,
-			SetupPostFilmUpdateDataInfo);
-		CREATE_HOOK("umamusume.dll", "Gallop.Live.Cutt", "LiveTimelineControl", "AlterUpdate_PostFilm", 3,
-			AlterUpdate_PostFilm);
 
 		CREATE_HOOK("umamusume.dll", "Gallop.Live", "StageController", "SetupLiveTimelineControl", 1,
 			SetupLiveTimelineControl);
