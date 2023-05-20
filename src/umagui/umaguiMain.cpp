@@ -792,113 +792,170 @@ using namespace UmaGUiShowData;
 void showPostFilmUpdateInfoMainLoop() {
     if (!showLiveWnd) return;
 
-        for (int loopIndex = 0; loopIndex <= 2; loopIndex++) {
-        const auto currendTitle = std::format("Live PostFilm ({})", loopIndex);
-        if (ImGui::Begin(currendTitle.c_str())) {
-            ImGui::Text(currendTitle.c_str());
+    for (int loopIndex = 0; loopIndex <= 2; loopIndex++) {
+    const auto currendTitle = std::format("Live PostFilm ({})", loopIndex);
+    if (ImGui::Begin(currendTitle.c_str())) {
+        ImGui::Text(currendTitle.c_str());
 
-            static float inputFloatWidth = 70.0f;
-            // livePostFilmFollowGame
-            ImGui::Checkbox("Use Game PostFilm Settings", &livePostFilmFollowGame[loopIndex]);
+        static float inputFloatWidth = 70.0f;
+        // livePostFilmFollowGame
+        ImGui::Checkbox("Use Game PostFilm Settings", &livePostFilmFollowGame[loopIndex]);
 
-            // filmMode
-            static const char* filmModeNames[] = {
-                "None", "Lerp", "Add", "Mul",
-                "VignetteLerp", "VignetteAdd", "VignetteMul",
-                "Monochrome", "ScreenBlend", "VignetteScreenBlend"
-            };
-            int filmModeIndex = static_cast<int>(postFilmUpdateInfo[loopIndex].filmMode);
-            ImGui::Combo("filmMode", &filmModeIndex, filmModeNames, IM_ARRAYSIZE(filmModeNames));
-            postFilmUpdateInfo[loopIndex].filmMode = static_cast<PostFilmMode>(filmModeIndex);
+        // filmMode
+        static const char* filmModeNames[] = {
+            "None", "Lerp", "Add", "Mul",
+            "VignetteLerp", "VignetteAdd", "VignetteMul",
+            "Monochrome", "ScreenBlend", "VignetteScreenBlend"
+        };
+        int filmModeIndex = static_cast<int>(postFilmUpdateInfo[loopIndex].filmMode);
+        ImGui::Combo("filmMode", &filmModeIndex, filmModeNames, IM_ARRAYSIZE(filmModeNames));
+        postFilmUpdateInfo[loopIndex].filmMode = static_cast<PostFilmMode>(filmModeIndex);
 
-            // colorType
-            static const char* colorTypeNames[] = {
-                "ColorAll", "Color2TopBottom", "Color2LeftRight", "Color4"
-            };
-            int colorTypeIndex = static_cast<int>(postFilmUpdateInfo[loopIndex].colorType);
-            ImGui::Combo("colorType", &colorTypeIndex, colorTypeNames, IM_ARRAYSIZE(colorTypeNames));
-            postFilmUpdateInfo[loopIndex].colorType = static_cast<PostColorType>(colorTypeIndex);
+        // colorType
+        static const char* colorTypeNames[] = {
+            "ColorAll", "Color2TopBottom", "Color2LeftRight", "Color4"
+        };
+        int colorTypeIndex = static_cast<int>(postFilmUpdateInfo[loopIndex].colorType);
+        ImGui::Combo("colorType", &colorTypeIndex, colorTypeNames, IM_ARRAYSIZE(colorTypeNames));
+        postFilmUpdateInfo[loopIndex].colorType = static_cast<PostColorType>(colorTypeIndex);
 
-            // filmPower
-            ImGui::SetNextItemWidth(inputFloatWidth);
-            ImGui::InputFloat("##filmPower Input", &postFilmUpdateInfo[loopIndex].filmPower);
-            ImGui::SameLine();
-            ImGui::SliderFloat("filmPower", &postFilmUpdateInfo[loopIndex].filmPower, -10.0f, 10.0f);
+        // filmPower
+        ImGui::SetNextItemWidth(inputFloatWidth);
+        ImGui::InputFloat("##filmPower Input", &postFilmUpdateInfo[loopIndex].filmPower);
+        ImGui::SameLine();
+        ImGui::SliderFloat("filmPower", &postFilmUpdateInfo[loopIndex].filmPower, -10.0f, 10.0f);
 
-            // depthPower
-            ImGui::SetNextItemWidth(inputFloatWidth);
-            ImGui::InputFloat("##depthPower Input", &postFilmUpdateInfo[loopIndex].depthPower);
-            ImGui::SameLine();
-            ImGui::SliderFloat("depthPower", &postFilmUpdateInfo[loopIndex].depthPower, -10.0f, 10.0f);
+        // depthPower
+        ImGui::SetNextItemWidth(inputFloatWidth);
+        ImGui::InputFloat("##depthPower Input", &postFilmUpdateInfo[loopIndex].depthPower);
+        ImGui::SameLine();
+        ImGui::SliderFloat("depthPower", &postFilmUpdateInfo[loopIndex].depthPower, -10.0f, 10.0f);
 
-            // DepthClip
-            ImGui::SetNextItemWidth(inputFloatWidth);
-            ImGui::InputFloat("##DepthClip Input", &postFilmUpdateInfo[loopIndex].DepthClip);
-            ImGui::SameLine();
-            ImGui::SliderFloat("DepthClip", &postFilmUpdateInfo[loopIndex].DepthClip, -10.0f, 10.0f);
+        // DepthClip
+        ImGui::SetNextItemWidth(inputFloatWidth);
+        ImGui::InputFloat("##DepthClip Input", &postFilmUpdateInfo[loopIndex].DepthClip);
+        ImGui::SameLine();
+        ImGui::SliderFloat("DepthClip", &postFilmUpdateInfo[loopIndex].DepthClip, -10.0f, 10.0f);
 
-            // layerMode
-            static const char* layerModeNames[] = { "Color", "UVMovie" };
-            int layerModeIndex = static_cast<int>(postFilmUpdateInfo[loopIndex].layerMode);
-            ImGui::Combo("layerMode", &layerModeIndex, layerModeNames, IM_ARRAYSIZE(layerModeNames));
-            postFilmUpdateInfo[loopIndex].layerMode = static_cast<LayerMode>(layerModeIndex);
+        // layerMode
+        static const char* layerModeNames[] = { "Color", "UVMovie" };
+        int layerModeIndex = static_cast<int>(postFilmUpdateInfo[loopIndex].layerMode);
+        ImGui::Combo("layerMode", &layerModeIndex, layerModeNames, IM_ARRAYSIZE(layerModeNames));
+        postFilmUpdateInfo[loopIndex].layerMode = static_cast<LayerMode>(layerModeIndex);
 
-            // colorBlend
-            static const char* colorBlendNames[] = { "None", "Lerp", "Additive", "Multiply" };
-            int colorBlendIndex = static_cast<int>(postFilmUpdateInfo[loopIndex].colorBlend);
-            ImGui::Combo("colorBlend", &colorBlendIndex, colorBlendNames, IM_ARRAYSIZE(colorBlendNames));
-            postFilmUpdateInfo[loopIndex].colorBlend = static_cast<ColorBlend>(colorBlendIndex);
+        // colorBlend
+        static const char* colorBlendNames[] = { "None", "Lerp", "Additive", "Multiply" };
+        int colorBlendIndex = static_cast<int>(postFilmUpdateInfo[loopIndex].colorBlend);
+        ImGui::Combo("colorBlend", &colorBlendIndex, colorBlendNames, IM_ARRAYSIZE(colorBlendNames));
+        postFilmUpdateInfo[loopIndex].colorBlend = static_cast<ColorBlend>(colorBlendIndex);
 
-            // inverseVignette
-            ImGui::Checkbox("inverseVignette", &postFilmUpdateInfo[loopIndex].inverseVignette);
+        // inverseVignette
+        ImGui::Checkbox("inverseVignette", &postFilmUpdateInfo[loopIndex].inverseVignette);
 
-            // colorBlendFactor
-            ImGui::SetNextItemWidth(inputFloatWidth);
-            ImGui::InputFloat("##colorBlendFactor Input", &postFilmUpdateInfo[loopIndex].colorBlendFactor);
-            ImGui::SameLine();
-            ImGui::SliderFloat("colorBlendFactor", &postFilmUpdateInfo[loopIndex].colorBlendFactor, -10.0f, 10.0f);
+        // colorBlendFactor
+        ImGui::SetNextItemWidth(inputFloatWidth);
+        ImGui::InputFloat("##colorBlendFactor Input", &postFilmUpdateInfo[loopIndex].colorBlendFactor);
+        ImGui::SameLine();
+        ImGui::SliderFloat("colorBlendFactor", &postFilmUpdateInfo[loopIndex].colorBlendFactor, -10.0f, 10.0f);
 
-            // movieResId
-            ImGui::InputInt("movieResId", &postFilmUpdateInfo[loopIndex].movieResId);
+        // movieResId
+        ImGui::InputInt("movieResId", &postFilmUpdateInfo[loopIndex].movieResId);
 
-            // movieFrameOffset
-            ImGui::InputInt("movieFrameOffset", &postFilmUpdateInfo[loopIndex].movieFrameOffset);
+        // movieFrameOffset
+        ImGui::InputInt("movieFrameOffset", &postFilmUpdateInfo[loopIndex].movieFrameOffset);
 
-            // movieTime
-            ImGui::SliderFloat("movieTime", &postFilmUpdateInfo[loopIndex].movieTime, -10.0f, 10.0f);
+        // movieTime
+        ImGui::SliderFloat("movieTime", &postFilmUpdateInfo[loopIndex].movieTime, -10.0f, 10.0f);
 
-            // movieReverse
-            ImGui::Checkbox("movieReverse", &postFilmUpdateInfo[loopIndex].movieReverse);
+        // movieReverse
+        ImGui::Checkbox("movieReverse", &postFilmUpdateInfo[loopIndex].movieReverse);
 
-            // RollAngle
-            ImGui::SliderFloat("RollAngle", &postFilmUpdateInfo[loopIndex].RollAngle, -10.0f, 10.0f);
+        // RollAngle
+        ImGui::SliderFloat("RollAngle", &postFilmUpdateInfo[loopIndex].RollAngle, -10.0f, 10.0f);
 
-            // filmOffsetParam
-            ImGui::InputFloat2("filmOffsetParam", &filmOffsetParam[loopIndex].x);
+        // filmOffsetParam
+        ImGui::InputFloat2("filmOffsetParam", &filmOffsetParam[loopIndex].x);
 
-            // filmOptionParam
-            ImGui::InputFloat4("filmOptionParam", &filmOptionParam[loopIndex].x);
+        // filmOptionParam
+        ImGui::InputFloat4("filmOptionParam", &filmOptionParam[loopIndex].x);
 
-            // filmcolor0
-            ImGui::ColorEdit4("filmcolor0", &filmcolor0[loopIndex].r);
+        // filmcolor0
+        ImGui::ColorEdit4("filmcolor0", &filmcolor0[loopIndex].r);
 
-            // filmcolor1
-            ImGui::ColorEdit4("filmcolor1", &filmcolor1[loopIndex].r);
+        // filmcolor1
+        ImGui::ColorEdit4("filmcolor1", &filmcolor1[loopIndex].r);
 
-            // filmcolor2
-            ImGui::ColorEdit4("filmcolor2", &filmcolor2[loopIndex].r);
+        // filmcolor2
+        ImGui::ColorEdit4("filmcolor2", &filmcolor2[loopIndex].r);
 
-            // filmcolor3
-            ImGui::ColorEdit4("filmcolor3", &filmcolor3[loopIndex].r);
+        // filmcolor3
+        ImGui::ColorEdit4("filmcolor3", &filmcolor3[loopIndex].r);
 
-            // FilmScale
-            ImGui::InputFloat2("FilmScale", &FilmScale[loopIndex].x);
+        // FilmScale
+        ImGui::InputFloat2("FilmScale", &FilmScale[loopIndex].x);
 
-        }
-        ImGui::End();
+    }
+    ImGui::End();
     }
 }
 
+
+void lightProjectionMainLoop() {
+    if (!showLiveWnd) return;
+
+    if (ImGui::Begin("Live Light Projection")) {
+        ImGui::Checkbox("Use Game Light Projection Settings", &liveLightProjectionFollowGame);
+        ImGui::Checkbox("isEnable", &lightProjectionUpdateInfo.isEnable);
+        // TextureId
+        ImGui::SliderInt("TextureId", &lightProjectionUpdateInfo.TextureId, -10, 10);
+        // colorPower
+        ImGui::SliderFloat("colorPower", &lightProjectionUpdateInfo.colorPower, -10.0f, 10.0f);
+        // orthographic
+        ImGui::Checkbox("orthographic", &lightProjectionUpdateInfo.orthographic);
+        // orthographicSize
+        ImGui::SliderFloat("orthographicSize", &lightProjectionUpdateInfo.orthographicSize, -10.0f, 10.0f);
+        // nearClipPlane
+        ImGui::SliderFloat("nearClipPlane", &lightProjectionUpdateInfo.nearClipPlane, -10.0f, 10.0f);
+        // farClipPlane
+        ImGui::SliderFloat("farClipPlane", &lightProjectionUpdateInfo.farClipPlane, -10.0f, 10.0f);
+        // fieldOfView
+        ImGui::SliderFloat("fieldOfView", &lightProjectionUpdateInfo.fieldOfView, -10.0f, 10.0f);
+        // nodeHash
+        ImGui::SliderInt("nodeHash", &lightProjectionUpdateInfo.nodeHash, -10, 10);
+        // CharacterAttachPosition
+        ImGui::SliderInt("CharacterAttachPosition", &lightProjectionUpdateInfo.CharacterAttachPosition, -10, 10);
+        // IsCharacterAttach
+        ImGui::Checkbox("IsCharacterAttach", &lightProjectionUpdateInfo.IsCharacterAttach);
+        // UseMonitorMovie
+        ImGui::Checkbox("UseMonitorMovie", &lightProjectionUpdateInfo.UseMonitorMovie);
+        // AnimationTextureId
+        ImGui::SliderInt("AnimationTextureId", &lightProjectionUpdateInfo.AnimationTextureId, -10, 10);
+        // AnimationDivX
+        ImGui::SliderInt("AnimationDivX", &lightProjectionUpdateInfo.AnimationDivX, -10, 10);
+        // AnimationDivY
+        ImGui::SliderInt("AnimationDivY", &lightProjectionUpdateInfo.AnimationDivY, -10, 10);
+        // AnimationMaxCut
+        ImGui::SliderInt("AnimationMaxCut", &lightProjectionUpdateInfo.AnimationMaxCut, -10, 10);
+        // AnimationTime
+        ImGui::SliderFloat("AnimationTime", &lightProjectionUpdateInfo.AnimationTime, -10.0f, 10.0f);
+        // ProgressTime
+        ImGui::SliderFloat("ProgressTime", &lightProjectionUpdateInfo.ProgressTime, -10.0f, 10.0f);
+        // position
+        ImGui::InputFloat3("position", &lightProjectionUpdateInfo.position.x);
+        // rotation
+        ImGui::InputFloat4("rotation", &lightProjectionUpdateInfo.rotation.x);
+        // scale
+        ImGui::InputFloat3("scale", &lightProjectionUpdateInfo.scale.x);
+        // color
+        ImGui::ColorEdit4("color", &lightProjectionUpdateInfo.color.r);
+        // AnimationScaleUV
+        ImGui::InputFloat2("AnimationScaleUV", &lightProjectionUpdateInfo.AnimationScaleUV.x);
+        // AnimationOffsetUV
+        ImGui::InputFloat2("AnimationOffsetUV", &lightProjectionUpdateInfo.AnimationOffsetUV.x);
+    }
+    ImGui::End();
+
+}
 
 // Main code
 void guimain()
@@ -1059,6 +1116,7 @@ void guimain()
         imGuiRaceSkillInfoMainLoop();
         imGuiLiveDOFMainLoop();
         showPostFilmUpdateInfoMainLoop();
+        lightProjectionMainLoop();
 
         ImGui::Render();
         const float clear_color_with_alpha[4] = { clear_color.x * clear_color.w, clear_color.y * clear_color.w, clear_color.z * clear_color.w, clear_color.w };

@@ -174,6 +174,34 @@ namespace UmaGUiShowData {
 		float RollAngle;
 	};
 
+	struct LightProjectionUpdateInfo {
+		bool isEnable;
+		int TextureId;
+		float colorPower;
+		bool orthographic;
+		float orthographicSize;
+		float nearClipPlane;
+		float farClipPlane;
+		float fieldOfView;
+		int nodeHash;
+		int CharacterAttachPosition;
+		bool IsCharacterAttach;
+		bool UseMonitorMovie;
+		int AnimationTextureId;
+		int AnimationDivX;
+		int AnimationDivY;
+		int AnimationMaxCut;
+		float AnimationTime;
+		float ProgressTime;
+		// 不可直接从 UpdateInfo 访问
+		Vector3_t position;
+		Quaternion_t rotation;
+		Vector3_t scale;
+		Color_t color;
+		Vector2_t AnimationScaleUV;
+		Vector2_t AnimationOffsetUV;
+	};
+
 	// PostEffectUpdateInfo_DOF
 	extern Vector3_t liveDOFForcalPosition;
 	extern PostEffectUpdateInfo_DOF postEffectUpdateInfo_DOF;
@@ -192,4 +220,8 @@ namespace UmaGUiShowData {
 	extern Color_t filmcolor3[3];
 	extern Vector2_t FilmScale[3];
 	extern int filmIndex;
+
+	// LightProjectionUpdateInfo
+	extern LightProjectionUpdateInfo lightProjectionUpdateInfo;
+	extern bool liveLightProjectionFollowGame;
 }

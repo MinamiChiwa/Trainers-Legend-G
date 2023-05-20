@@ -11,12 +11,6 @@
 
 
 namespace UmaLiveHook {
-	namespace {
-		FieldInfo* OnUpdatePostFilm_field;
-		FieldInfo* OnUpdatePostFilm2_field;
-		FieldInfo* OnUpdatePostFilm3_field;
-	}
-
 	Il2CppString* (*environment_get_stacktrace)();
 
 	void* DOFUpdateInfoDelegate_orig;
@@ -37,12 +31,11 @@ namespace UmaLiveHook {
 				if (UmaGUiShowData::dofColtrollerFollowGame) {
 					CAST_FUNC(DOFUpdateInfoDelegate)(_this, updateInfo);
 				}
-
 				LiveData::PostEffectUpdateInfo_DOF(static_cast<UmaGUiShowData::PostEffectUpdateInfo_DOF*>(updateInfo),
 					UmaGUiShowData::dofColtrollerFollowGame).updateData();
 			}; break;
 
-			case LiveDelegateType::OnUpdatePostFilm1: UmaGUiShowData::filmIndex = 0; goto UpdatePostFilm;
+			case LiveDelegateType::OnUpdatePostFilm: UmaGUiShowData::filmIndex = 0; goto UpdatePostFilm;
 			case LiveDelegateType::OnUpdatePostFilm2: UmaGUiShowData::filmIndex = 1; goto UpdatePostFilm;
 			case LiveDelegateType::OnUpdatePostFilm3: {
 				UmaGUiShowData::filmIndex = 2;
@@ -54,6 +47,15 @@ namespace UmaLiveHook {
 					UmaGUiShowData::livePostFilmFollowGame[UmaGUiShowData::filmIndex],
 					UmaGUiShowData::filmIndex).updateData();
 			}; break;
+
+			case LiveDelegateType::OnUpdateLightProjection: {
+				if (UmaGUiShowData::liveLightProjectionFollowGame) {
+					CAST_FUNC(DOFUpdateInfoDelegate)(_this, updateInfo);
+				}
+				LiveData::LightProjectionUpdateInfo(static_cast<UmaGUiShowData::LightProjectionUpdateInfo*>(updateInfo),
+					UmaGUiShowData::liveLightProjectionFollowGame).updateData();
+			}; break;
+
 			default: break;
 			}
 		}
@@ -63,27 +65,27 @@ namespace UmaLiveHook {
 	void* SetupLiveTimelineControl_orig;
 	void SetupLiveTimelineControl_hook(void* _this, void* liveTimelineControl) {
 		CAST_FUNC(SetupLiveTimelineControl)(_this, liveTimelineControl);
-		
+
+#define EmplaceLiveDelegates(_name_) \
+	FieldInfo* _name_##_field = il2cpp_class_get_field_from_name(liveTimelineControl_klass, #_name_); \
+	LiveData::LiveUpdateInfoDelegates_emplace(LiveDelegateType::##_name_, il2cpp_symbols::read_field(liveTimelineControl, _name_##_field))
+
 		if (g_enable_live_dof_controller) {
 			auto liveTimelineControl_klass = il2cpp_symbols::get_class_from_instance(liveTimelineControl);
-			FieldInfo* OnUpdatePostEffect_DOF_field = il2cpp_class_get_field_from_name(liveTimelineControl_klass, "OnUpdatePostEffect_DOF");
-			auto OnUpdatePostEffect_DOF = il2cpp_symbols::read_field(liveTimelineControl, OnUpdatePostEffect_DOF_field);
-
-			OnUpdatePostFilm_field = il2cpp_class_get_field_from_name(liveTimelineControl_klass, "OnUpdatePostFilm");
-			OnUpdatePostFilm2_field = il2cpp_class_get_field_from_name(liveTimelineControl_klass, "OnUpdatePostFilm2");
-			OnUpdatePostFilm3_field = il2cpp_class_get_field_from_name(liveTimelineControl_klass, "OnUpdatePostFilm3");
-
 			LiveData::LiveUpdateInfoDelegates_clear();
-			LiveData::LiveUpdateInfoDelegates_emplace(LiveDelegateType::OnUpdatePostEffect_DOF, OnUpdatePostEffect_DOF);
-			LiveData::LiveUpdateInfoDelegates_emplace(LiveDelegateType::OnUpdatePostFilm1, il2cpp_symbols::read_field(liveTimelineControl, OnUpdatePostFilm_field));
-			LiveData::LiveUpdateInfoDelegates_emplace(LiveDelegateType::OnUpdatePostFilm2, il2cpp_symbols::read_field(liveTimelineControl, OnUpdatePostFilm2_field));
-			LiveData::LiveUpdateInfoDelegates_emplace(LiveDelegateType::OnUpdatePostFilm3, il2cpp_symbols::read_field(liveTimelineControl, OnUpdatePostFilm3_field));
+			EmplaceLiveDelegates(OnUpdatePostEffect_DOF);
+			EmplaceLiveDelegates(OnUpdatePostFilm);
+			EmplaceLiveDelegates(OnUpdatePostFilm2);
+			EmplaceLiveDelegates(OnUpdatePostFilm3);
+			EmplaceLiveDelegates(OnUpdateLightProjection);
 		}
 	}
 
 	void initUpdateInfoDelegateInvoke() {
 		LiveData::LiveUpdateInfoDelegatesInvoke.emplace(LiveDelegateType::OnUpdatePostEffect_DOF,
 			std::make_pair(DOFUpdateInfoDelegate_orig, std::make_pair("Gallop.Live.Cutt", "PostEffectUpdateInfo_DOF")));
+		LiveData::LiveUpdateInfoDelegatesInvoke.emplace(LiveDelegateType::OnUpdateLightProjection,
+			std::make_pair(DOFUpdateInfoDelegate_orig, std::make_pair("Gallop.Live.Cutt", "LightProjectionUpdateInfo")));
 	}
 
 	void regHookMain() {

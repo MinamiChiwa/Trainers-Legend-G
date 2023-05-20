@@ -5,9 +5,10 @@
 enum class LiveDelegateType {
 	UNSET,
 	OnUpdatePostEffect_DOF,
-	OnUpdatePostFilm1,
+	OnUpdatePostFilm,
 	OnUpdatePostFilm2,
-	OnUpdatePostFilm3
+	OnUpdatePostFilm3,
+	OnUpdateLightProjection
 };
 
 namespace LiveData {
@@ -109,6 +110,13 @@ namespace LiveData {
 	FieldInfo* PostFilmUpdateInfo_color2;
 	FieldInfo* PostFilmUpdateInfo_color3;
 	FieldInfo* PostFilmUpdateInfo_FilmScale;
+	void* LightProjectionUpdateInfo_klass;
+	FieldInfo* LightProjectionUpdateInfo_position;
+	FieldInfo* LightProjectionUpdateInfo_rotation;
+	FieldInfo* LightProjectionUpdateInfo_scale;
+	FieldInfo* LightProjectionUpdateInfo_color;
+	FieldInfo* LightProjectionUpdateInfo_AnimationScaleUV;
+	FieldInfo* LightProjectionUpdateInfo_AnimationOffsetUV;
 
 	bool isffinit = false;
 	void init_LiveFieldData() {
@@ -124,6 +132,14 @@ namespace LiveData {
 		PostFilmUpdateInfo_color2 = il2cpp_class_get_field_from_name(PostFilmUpdateInfo_klass, "color2");
 		PostFilmUpdateInfo_color3 = il2cpp_class_get_field_from_name(PostFilmUpdateInfo_klass, "color3");
 		PostFilmUpdateInfo_FilmScale = il2cpp_class_get_field_from_name(PostFilmUpdateInfo_klass, "FilmScale");
+
+		LightProjectionUpdateInfo_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop.Live.Cutt", "LightProjectionUpdateInfo");
+		LightProjectionUpdateInfo_position = il2cpp_class_get_field_from_name(LightProjectionUpdateInfo_klass, "position");
+		LightProjectionUpdateInfo_rotation = il2cpp_class_get_field_from_name(LightProjectionUpdateInfo_klass, "rotation");
+		LightProjectionUpdateInfo_scale = il2cpp_class_get_field_from_name(LightProjectionUpdateInfo_klass, "scale");
+		LightProjectionUpdateInfo_color = il2cpp_class_get_field_from_name(LightProjectionUpdateInfo_klass, "color");
+		LightProjectionUpdateInfo_AnimationScaleUV = il2cpp_class_get_field_from_name(LightProjectionUpdateInfo_klass, "AnimationScaleUV");
+		LightProjectionUpdateInfo_AnimationOffsetUV = il2cpp_class_get_field_from_name(LightProjectionUpdateInfo_klass, "AnimationOffsetUV");
 		isffinit = true;
 	}
 
@@ -255,6 +271,73 @@ namespace LiveData {
 			changeValueByType(&_filmcolor3->g, &color3->g, condition);
 			changeValueByType(&_filmcolor3->b, &color3->b, condition);
 			changeValueByType(&_filmcolor3->a, &color3->a, condition);
+		}
+	};
+
+	class LightProjectionUpdateInfo : public ILiveUpdateInfo<UmaGUiShowData::LightProjectionUpdateInfo> {
+	public:
+		LightProjectionUpdateInfo(UmaGUiShowData::LightProjectionUpdateInfo* updateInfo, bool condition) {
+			localData = &UmaGUiShowData::lightProjectionUpdateInfo;
+			this->updateInfo = updateInfo;
+			this->condition = condition;
+		}
+
+		void updateData() {
+			init_LiveFieldData();
+			changeValueByType(&localData->isEnable, &updateInfo->isEnable, condition);
+			changeValueByType(&localData->TextureId, &updateInfo->TextureId, condition);
+			changeValueByType(&localData->colorPower, &updateInfo->colorPower, condition);
+			changeValueByType(&localData->orthographic, &updateInfo->orthographic, condition);
+			changeValueByType(&localData->orthographicSize, &updateInfo->orthographicSize, condition);
+			changeValueByType(&localData->nearClipPlane, &updateInfo->nearClipPlane, condition);
+			changeValueByType(&localData->farClipPlane, &updateInfo->farClipPlane, condition);
+			changeValueByType(&localData->fieldOfView, &updateInfo->fieldOfView, condition);
+			changeValueByType(&localData->nodeHash, &updateInfo->nodeHash, condition);
+			changeValueByType(&localData->CharacterAttachPosition, &updateInfo->CharacterAttachPosition, condition);
+			changeValueByType(&localData->IsCharacterAttach, &updateInfo->IsCharacterAttach, condition);
+			changeValueByType(&localData->UseMonitorMovie, &updateInfo->UseMonitorMovie, condition);
+			changeValueByType(&localData->AnimationTextureId, &updateInfo->AnimationTextureId, condition);
+			changeValueByType(&localData->AnimationDivX, &updateInfo->AnimationDivX, condition);
+			changeValueByType(&localData->AnimationDivY, &updateInfo->AnimationDivY, condition);
+			changeValueByType(&localData->AnimationMaxCut, &updateInfo->AnimationMaxCut, condition);
+			changeValueByType(&localData->AnimationTime, &updateInfo->AnimationTime, condition);
+			changeValueByType(&localData->ProgressTime, &updateInfo->ProgressTime, condition);
+			auto v_position = reinterpret_cast<Vector3_t*>(
+				static_cast<std::byte*>(reinterpret_cast<void*>(updateInfo)) + LightProjectionUpdateInfo_position->offset
+				);
+			changeValueByType(&localData->position.x, &v_position->x, condition);
+			changeValueByType(&localData->position.y, &v_position->y, condition);
+			changeValueByType(&localData->position.z, &v_position->z, condition);
+			auto v_rotation = reinterpret_cast<Quaternion_t*>(
+				static_cast<std::byte*>(reinterpret_cast<void*>(updateInfo)) + LightProjectionUpdateInfo_rotation->offset
+				);
+			changeValueByType(&localData->rotation.x, &v_rotation->x, condition);
+			changeValueByType(&localData->rotation.y, &v_rotation->y, condition);
+			changeValueByType(&localData->rotation.z, &v_rotation->z, condition);
+			changeValueByType(&localData->rotation.w, &v_rotation->w, condition);
+			auto v_scale = reinterpret_cast<Vector3_t*>(
+				static_cast<std::byte*>(reinterpret_cast<void*>(updateInfo)) + LightProjectionUpdateInfo_scale->offset
+				);
+			changeValueByType(&localData->scale.x, &v_scale->x, condition);
+			changeValueByType(&localData->scale.y, &v_scale->y, condition);
+			changeValueByType(&localData->scale.z, &v_scale->z, condition);
+			auto v_color = reinterpret_cast<Color_t*>(
+				static_cast<std::byte*>(reinterpret_cast<void*>(updateInfo)) + LightProjectionUpdateInfo_color->offset
+				);
+			changeValueByType(&localData->color.r, &v_color->r, condition);
+			changeValueByType(&localData->color.g, &v_color->g, condition);
+			changeValueByType(&localData->color.b, &v_color->b, condition);
+			changeValueByType(&localData->color.a, &v_color->a, condition);
+			auto v_AnimationScaleUV = reinterpret_cast<Vector2_t*>(
+				static_cast<std::byte*>(reinterpret_cast<void*>(updateInfo)) + LightProjectionUpdateInfo_AnimationScaleUV->offset
+				);
+			changeValueByType(&localData->AnimationScaleUV.x, &v_AnimationScaleUV->x, condition);
+			changeValueByType(&localData->AnimationScaleUV.y, &v_AnimationScaleUV->y, condition);
+			auto v_AnimationOffsetUV = reinterpret_cast<Vector2_t*>(
+				static_cast<std::byte*>(reinterpret_cast<void*>(updateInfo)) + LightProjectionUpdateInfo_AnimationOffsetUV->offset
+				);
+			changeValueByType(&localData->AnimationOffsetUV.x, &v_AnimationOffsetUV->x, condition);
+			changeValueByType(&localData->AnimationOffsetUV.y, &v_AnimationOffsetUV->y, condition);
 		}
 	};
 

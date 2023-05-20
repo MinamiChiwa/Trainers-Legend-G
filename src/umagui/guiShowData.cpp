@@ -20,6 +20,9 @@ UmaGUiShowData::PostFilmUpdateInfo UmaGUiShowData::postFilmUpdateInfo[3]{};
 bool UmaGUiShowData::livePostFilmFollowGame[3] = { true , true , true };
 int UmaGUiShowData::filmIndex = 0;
 
+UmaGUiShowData::LightProjectionUpdateInfo UmaGUiShowData::lightProjectionUpdateInfo{};
+bool UmaGUiShowData::liveLightProjectionFollowGame = true;
+
 
 UmaGUiShowData::UmaRaceMotionData::UmaRaceMotionData(int gateNo, std::wstring charaName, std::wstring trainerName) {
 	this->gateNo = gateNo;
