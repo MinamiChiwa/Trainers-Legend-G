@@ -118,7 +118,7 @@ namespace LiveData {
 	FieldInfo* LightProjectionUpdateInfo_AnimationScaleUV;
 	FieldInfo* LightProjectionUpdateInfo_AnimationOffsetUV;
 
-	bool isffinit = false;
+	static bool isffinit = false;
 	void init_LiveFieldData() {
 		if (isffinit) return;
 		PostEffectUpdateInfo_DOF_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop.Live.Cutt", "PostEffectUpdateInfo_DOF");
