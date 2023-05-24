@@ -3,26 +3,27 @@
 
 extern bool showLiveWnd;
 
+
+#define INPUT_AND_SLIDER_FLOAT(label, data, min, max) \
+    ImGui::SetNextItemWidth(inputFloatWidth);\
+    ImGui::InputFloat("##"##label, data);\
+    ImGui::SameLine();\
+    ImGui::SetNextItemWidth(ImGui::CalcItemWidth() - inputFloatWidth - 1.0f);\
+    ImGui::SliderFloat(label, data, min, max)
+    
+
 namespace LiveGUILoops {
+    static float inputFloatWidth = 70.0f;
+
     void postEffectUpdateInfo_DOF_guiLoop() {
         if (!showLiveWnd) return;
 
         if (ImGui::Begin("Live DOF")) {
             ImGui::Checkbox("Use Game DOF Settings", &UmaGUiShowData::dofColtrollerFollowGame);
             ImGui::Checkbox("Enable DOF", &UmaGUiShowData::postEffectUpdateInfo_DOF.IsEnableDOF);
-
-            static float inputFloatWidth = 70.0f;
-
-            ImGui::SetNextItemWidth(inputFloatWidth);
-            ImGui::InputFloat("##Focal Size Input", &UmaGUiShowData::postEffectUpdateInfo_DOF.forcalSize);
-            ImGui::SameLine();
-            ImGui::SetNextItemWidth(ImGui::CalcItemWidth() - inputFloatWidth);
-            ImGui::SliderFloat("Focal Size", &UmaGUiShowData::postEffectUpdateInfo_DOF.forcalSize, -60.00f, 60.00f);
-            ImGui::SetNextItemWidth(inputFloatWidth);
-            ImGui::InputFloat("##Blur Spread Input", &UmaGUiShowData::postEffectUpdateInfo_DOF.blurSpread);
-            ImGui::SameLine();
-            ImGui::SetNextItemWidth(ImGui::CalcItemWidth() - inputFloatWidth);
-            ImGui::SliderFloat("Blur Spread", &UmaGUiShowData::postEffectUpdateInfo_DOF.blurSpread, -60.00f, 60.00f);
+            
+            INPUT_AND_SLIDER_FLOAT("Focal Size", &UmaGUiShowData::postEffectUpdateInfo_DOF.forcalSize, -60.00f, 60.00f);
+            INPUT_AND_SLIDER_FLOAT("Blur Spread", &UmaGUiShowData::postEffectUpdateInfo_DOF.blurSpread, -60.00f, 60.00f);
 
             const char* dofBlurTypeItems[] = { "Horizon", "Mixed", "Disc", "BallBlur" };
             ImGui::Combo("DOF Blur Type", (int*)&UmaGUiShowData::postEffectUpdateInfo_DOF.dofBlurType, dofBlurTypeItems, 4);
@@ -32,42 +33,14 @@ namespace LiveGUILoops {
             ImGui::Combo("DOF Quality", &dofQualityIndex, dofQualityItems, 2);
             UmaGUiShowData::postEffectUpdateInfo_DOF.dofQuality = (UmaGUiShowData::DofQuality)(dofQualityIndex == 0 ? UmaGUiShowData::DofQuality::OnlyBackground : UmaGUiShowData::DofQuality::BackgroundAndForeground);
 
-            ImGui::SetNextItemWidth(inputFloatWidth);
-            ImGui::InputFloat("##DOF Foreground Size Input", &UmaGUiShowData::postEffectUpdateInfo_DOF.dofForegroundSize);
-            ImGui::SameLine();
-            ImGui::SetNextItemWidth(ImGui::CalcItemWidth() - inputFloatWidth);
-            ImGui::SliderFloat("DOF Foreground Size", &UmaGUiShowData::postEffectUpdateInfo_DOF.dofForegroundSize, -60.00f, 60.00f);
-            ImGui::SetNextItemWidth(inputFloatWidth);
-            ImGui::InputFloat("##DOF Focal Point Input", &UmaGUiShowData::postEffectUpdateInfo_DOF.dofFocalPoint);
-            ImGui::SameLine();
-            ImGui::SetNextItemWidth(ImGui::CalcItemWidth() - inputFloatWidth);
-            ImGui::SliderFloat("DOF Focal Point", &UmaGUiShowData::postEffectUpdateInfo_DOF.dofFocalPoint, -60.00f, 60.00f);
-            ImGui::SetNextItemWidth(inputFloatWidth);
-            ImGui::InputFloat("##DOF Smoothness Input", &UmaGUiShowData::postEffectUpdateInfo_DOF.dofSoomthness);
-            ImGui::SameLine();
-            ImGui::SetNextItemWidth(ImGui::CalcItemWidth() - inputFloatWidth);
-            ImGui::SliderFloat("DOF Smoothness", &UmaGUiShowData::postEffectUpdateInfo_DOF.dofSoomthness, -60.00f, 60.00f);
+            INPUT_AND_SLIDER_FLOAT("DOF Foreground Size", &UmaGUiShowData::postEffectUpdateInfo_DOF.dofForegroundSize, -60.00f, 60.00f);
+            INPUT_AND_SLIDER_FLOAT("DOF Focal Point", &UmaGUiShowData::postEffectUpdateInfo_DOF.dofFocalPoint, -60.00f, 60.00f);
+            INPUT_AND_SLIDER_FLOAT("DOF Smoothness", &UmaGUiShowData::postEffectUpdateInfo_DOF.dofSoomthness, -60.00f, 60.00f);
             ImGui::Checkbox("Use Focal Point", &UmaGUiShowData::postEffectUpdateInfo_DOF.isUseFocalPoint);
-            ImGui::SetNextItemWidth(inputFloatWidth);
-            ImGui::InputFloat("##Ball Blur Curve Factor Input", &UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurCurveFactor);
-            ImGui::SameLine();
-            ImGui::SetNextItemWidth(ImGui::CalcItemWidth() - inputFloatWidth);
-            ImGui::SliderFloat("Ball Blur Curve Factor", &UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurCurveFactor, -60.00f, 60.00f);
-            ImGui::SetNextItemWidth(inputFloatWidth);
-            ImGui::InputFloat("##Ball Blur Brightness Threshhold Input", &UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurBrightnessThreshhold);
-            ImGui::SameLine();
-            ImGui::SetNextItemWidth(ImGui::CalcItemWidth() - inputFloatWidth);
-            ImGui::SliderFloat("Ball Blur Brightness Threshhold", &UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurBrightnessThreshhold, -60.00f, 60.00f);
-            ImGui::SetNextItemWidth(inputFloatWidth);
-            ImGui::InputFloat("##Ball Blur Brightness Intensity Input", &UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurBrightnessIntensity);
-            ImGui::SameLine();
-            ImGui::SetNextItemWidth(ImGui::CalcItemWidth() - inputFloatWidth);
-            ImGui::SliderFloat("Ball Blur Brightness Intensity", &UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurBrightnessIntensity, -60.00f, 60.00f);
-            ImGui::SetNextItemWidth(inputFloatWidth);
-            ImGui::InputFloat("##all Blur Spread", &UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurSpread);
-            ImGui::SameLine();
-            ImGui::SetNextItemWidth(ImGui::CalcItemWidth() - inputFloatWidth);
-            ImGui::SliderFloat("Ball Blur Spread", &UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurSpread, -60.00f, 60.00f);
+            INPUT_AND_SLIDER_FLOAT("Ball Blur Curve Factor", &UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurCurveFactor, -60.00f, 60.00f);
+            INPUT_AND_SLIDER_FLOAT("Ball Blur Brightness Threshhold", &UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurBrightnessThreshhold, -60.00f, 60.00f);
+            INPUT_AND_SLIDER_FLOAT("Ball Blur Brightness Intensity", &UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurBrightnessIntensity, -60.00f, 60.00f);
+            INPUT_AND_SLIDER_FLOAT("Ball Blur Spread", &UmaGUiShowData::postEffectUpdateInfo_DOF.BallBlurSpread, -60.00f, 60.00f);
             ImGui::Checkbox("Point Ball Blur", &UmaGUiShowData::postEffectUpdateInfo_DOF.IsPointBallBlur);
 
             ImGui::InputFloat3("Focal Position (x, y, z)", &UmaGUiShowData::liveDOFForcalPosition.x);
@@ -84,8 +57,7 @@ namespace LiveGUILoops {
             const auto currendTitle = std::format("Live PostFilm ({})", loopIndex);
             if (ImGui::Begin(currendTitle.c_str())) {
                 ImGui::Text(currendTitle.c_str());
-
-                static float inputFloatWidth = 70.0f;
+                
                 // livePostFilmFollowGame
                 ImGui::Checkbox("Use Game PostFilm Settings", &livePostFilmFollowGame[loopIndex]);
 
@@ -108,25 +80,13 @@ namespace LiveGUILoops {
                 postFilmUpdateInfo[loopIndex].colorType = static_cast<PostColorType>(colorTypeIndex);
 
                 // filmPower
-                ImGui::SetNextItemWidth(inputFloatWidth);
-                ImGui::InputFloat("##filmPower Input", &postFilmUpdateInfo[loopIndex].filmPower);
-                ImGui::SameLine();
-                ImGui::SetNextItemWidth(ImGui::CalcItemWidth() - inputFloatWidth);
-                ImGui::SliderFloat("filmPower", &postFilmUpdateInfo[loopIndex].filmPower, -10.0f, 10.0f);
+                INPUT_AND_SLIDER_FLOAT("filmPower", &postFilmUpdateInfo[loopIndex].filmPower, -10.0f, 10.0f);
 
                 // depthPower
-                ImGui::SetNextItemWidth(inputFloatWidth);
-                ImGui::InputFloat("##depthPower Input", &postFilmUpdateInfo[loopIndex].depthPower);
-                ImGui::SameLine();
-                ImGui::SetNextItemWidth(ImGui::CalcItemWidth() - inputFloatWidth);
-                ImGui::SliderFloat("depthPower", &postFilmUpdateInfo[loopIndex].depthPower, -10.0f, 10.0f);
+                INPUT_AND_SLIDER_FLOAT("depthPower", &postFilmUpdateInfo[loopIndex].depthPower, -10.0f, 10.0f);
 
                 // DepthClip
-                ImGui::SetNextItemWidth(inputFloatWidth);
-                ImGui::InputFloat("##DepthClip Input", &postFilmUpdateInfo[loopIndex].DepthClip);
-                ImGui::SameLine();
-                ImGui::SetNextItemWidth(ImGui::CalcItemWidth() - inputFloatWidth);
-                ImGui::SliderFloat("DepthClip", &postFilmUpdateInfo[loopIndex].DepthClip, -10.0f, 10.0f);
+                INPUT_AND_SLIDER_FLOAT("DepthClip", &postFilmUpdateInfo[loopIndex].DepthClip, -10.0f, 10.0f);
 
                 // layerMode
                 static const char* layerModeNames[] = { "Color", "UVMovie" };
@@ -144,11 +104,7 @@ namespace LiveGUILoops {
                 ImGui::Checkbox("inverseVignette", &postFilmUpdateInfo[loopIndex].inverseVignette);
 
                 // colorBlendFactor
-                ImGui::SetNextItemWidth(inputFloatWidth);
-                ImGui::InputFloat("##colorBlendFactor Input", &postFilmUpdateInfo[loopIndex].colorBlendFactor);
-                ImGui::SameLine();
-                ImGui::SetNextItemWidth(ImGui::CalcItemWidth() - inputFloatWidth);
-                ImGui::SliderFloat("colorBlendFactor", &postFilmUpdateInfo[loopIndex].colorBlendFactor, -10.0f, 10.0f);
+                INPUT_AND_SLIDER_FLOAT("colorBlendFactor", &postFilmUpdateInfo[loopIndex].colorBlendFactor, -10.0f, 10.0f);
 
                 // movieResId
                 ImGui::InputInt("movieResId", &postFilmUpdateInfo[loopIndex].movieResId);
@@ -157,13 +113,13 @@ namespace LiveGUILoops {
                 ImGui::InputInt("movieFrameOffset", &postFilmUpdateInfo[loopIndex].movieFrameOffset);
 
                 // movieTime
-                ImGui::SliderFloat("movieTime", &postFilmUpdateInfo[loopIndex].movieTime, -10.0f, 10.0f);
+                INPUT_AND_SLIDER_FLOAT("movieTime", &postFilmUpdateInfo[loopIndex].movieTime, -10.0f, 10.0f);
 
                 // movieReverse
                 ImGui::Checkbox("movieReverse", &postFilmUpdateInfo[loopIndex].movieReverse);
 
                 // RollAngle
-                ImGui::SliderFloat("RollAngle", &postFilmUpdateInfo[loopIndex].RollAngle, -10.0f, 10.0f);
+                INPUT_AND_SLIDER_FLOAT("RollAngle", &postFilmUpdateInfo[loopIndex].RollAngle, -10.0f, 10.0f);
 
                 // filmOffsetParam
                 ImGui::InputFloat2("filmOffsetParam", &filmOffsetParam[loopIndex].x);
@@ -195,44 +151,23 @@ namespace LiveGUILoops {
         if (!showLiveWnd) return;
 
         if (ImGui::Begin("Live Light Projection")) {
-            static float inputFloatWidth = 70.0f;
 
             ImGui::Checkbox("Use Game Light Projection Settings", &liveLightProjectionFollowGame);
             ImGui::Checkbox("isEnable", &lightProjectionUpdateInfo.isEnable);
             // TextureId
             ImGui::InputInt("TextureId", &lightProjectionUpdateInfo.TextureId);
             // colorPower
-            ImGui::SetNextItemWidth(inputFloatWidth);
-            ImGui::InputFloat("##colorPower", &lightProjectionUpdateInfo.colorPower);
-            ImGui::SameLine();
-            ImGui::SetNextItemWidth(ImGui::CalcItemWidth() - inputFloatWidth);
-            ImGui::SliderFloat("colorPower", &lightProjectionUpdateInfo.colorPower, -10.0f, 10.0f);
+            INPUT_AND_SLIDER_FLOAT("colorPower", &lightProjectionUpdateInfo.colorPower, -10.0f, 10.0f);
             // orthographic
             ImGui::Checkbox("orthographic", &lightProjectionUpdateInfo.orthographic);
             // orthographicSize
-            ImGui::SetNextItemWidth(inputFloatWidth);
-            ImGui::InputFloat("##orthographicSize", &lightProjectionUpdateInfo.orthographicSize);
-            ImGui::SameLine();
-            ImGui::SetNextItemWidth(ImGui::CalcItemWidth() - inputFloatWidth);
-            ImGui::SliderFloat("orthographicSize", &lightProjectionUpdateInfo.orthographicSize, -10.0f, 10.0f);
+            INPUT_AND_SLIDER_FLOAT("orthographicSize", &lightProjectionUpdateInfo.orthographicSize, -10.0f, 10.0f);
             // nearClipPlane
-            ImGui::SetNextItemWidth(inputFloatWidth);
-            ImGui::InputFloat("##nearClipPlane", &lightProjectionUpdateInfo.nearClipPlane);
-            ImGui::SameLine();
-            ImGui::SetNextItemWidth(ImGui::CalcItemWidth() - inputFloatWidth);
-            ImGui::SliderFloat("nearClipPlane", &lightProjectionUpdateInfo.nearClipPlane, -10.0f, 10.0f);
+            INPUT_AND_SLIDER_FLOAT("nearClipPlane", &lightProjectionUpdateInfo.nearClipPlane, -10.0f, 10.0f);
             // farClipPlane
-            ImGui::SetNextItemWidth(inputFloatWidth);
-            ImGui::InputFloat("##farClipPlane", &lightProjectionUpdateInfo.farClipPlane);
-            ImGui::SameLine();
-            ImGui::SetNextItemWidth(ImGui::CalcItemWidth() - inputFloatWidth);
-            ImGui::SliderFloat("farClipPlane", &lightProjectionUpdateInfo.farClipPlane, -10.0f, 10.0f);
+            INPUT_AND_SLIDER_FLOAT("farClipPlane", &lightProjectionUpdateInfo.farClipPlane, -10.0f, 10.0f);
             // fieldOfView
-            ImGui::SetNextItemWidth(inputFloatWidth);
-            ImGui::InputFloat("##fieldOfView", &lightProjectionUpdateInfo.fieldOfView);
-            ImGui::SameLine();
-            ImGui::SetNextItemWidth(ImGui::CalcItemWidth() - inputFloatWidth);
-            ImGui::SliderFloat("fieldOfView", &lightProjectionUpdateInfo.fieldOfView, -10.0f, 10.0f);
+            INPUT_AND_SLIDER_FLOAT("fieldOfView", &lightProjectionUpdateInfo.fieldOfView, -10.0f, 10.0f);
             // nodeHash
             ImGui::InputInt("nodeHash", &lightProjectionUpdateInfo.nodeHash);
             // CharacterAttachPosition
@@ -250,17 +185,9 @@ namespace LiveGUILoops {
             // AnimationMaxCut
             ImGui::InputInt("AnimationMaxCut", &lightProjectionUpdateInfo.AnimationMaxCut);
             // AnimationTime
-            ImGui::SetNextItemWidth(inputFloatWidth);
-            ImGui::InputFloat("##AnimationTime", &lightProjectionUpdateInfo.AnimationTime);
-            ImGui::SameLine();
-            ImGui::SetNextItemWidth(ImGui::CalcItemWidth() - inputFloatWidth);
-            ImGui::SliderFloat("AnimationTime", &lightProjectionUpdateInfo.AnimationTime, -10.0f, 10.0f);
+            INPUT_AND_SLIDER_FLOAT("AnimationTime", &lightProjectionUpdateInfo.AnimationTime, -10.0f, 10.0f);
             // ProgressTime
-            ImGui::SetNextItemWidth(inputFloatWidth);
-            ImGui::InputFloat("##ProgressTime", &lightProjectionUpdateInfo.ProgressTime);
-            ImGui::SameLine();
-            ImGui::SetNextItemWidth(ImGui::CalcItemWidth() - inputFloatWidth);
-            ImGui::SliderFloat("ProgressTime", &lightProjectionUpdateInfo.ProgressTime, -10.0f, 10.0f);
+            INPUT_AND_SLIDER_FLOAT("ProgressTime", &lightProjectionUpdateInfo.ProgressTime, -10.0f, 10.0f);
             // position
             ImGui::InputFloat3("position (x,y,z)", &lightProjectionUpdateInfo.position.x);
             // rotation
@@ -277,11 +204,59 @@ namespace LiveGUILoops {
         ImGui::End();
     }
 
+    void radialBlurUpdateInfoMainLoop() {
+        if (ImGui::Begin("Live Radial Blur")) {
+            ImGui::Checkbox("Use Game Radial Blur Settings", &liveRadialBlurFollowGame);
+
+            const char* moveBlurTypeNames[] = { "None", "Circle", "Horizontal", "Vertical", "Ellipse", "Roll" };
+            int currentMoveBlurTypeIndex = static_cast<int>(radialBlurUpdateInfo.moveBlurType);
+            ImGui::Combo("MoveBlurType", reinterpret_cast<int*>(&radialBlurUpdateInfo.moveBlurType), moveBlurTypeNames, IM_ARRAYSIZE(moveBlurTypeNames));
+
+            ImGui::InputFloat2("RadialBlurOffset", &radialBlurUpdateInfo.radialBlurOffset.x);
+            ImGui::InputInt("RadialBlurDownsample", &radialBlurUpdateInfo.radialBlurDownsample);
+            INPUT_AND_SLIDER_FLOAT("RadialBlurStartArea", &radialBlurUpdateInfo.radialBlurStartArea, -10.0f, 10.0f);
+            INPUT_AND_SLIDER_FLOAT("RadialBlurEndArea", &radialBlurUpdateInfo.radialBlurEndArea, -10.0f, 10.0f);
+            INPUT_AND_SLIDER_FLOAT("RadialBlurPower", &radialBlurUpdateInfo.radialBlurPower, -10.0f, 10.0f);
+            ImGui::InputInt("RadialBlurIteration", &radialBlurUpdateInfo.radialBlurIteration);
+            ImGui::InputFloat2("RadialBlurEllipseDir", &radialBlurUpdateInfo.radialBlurEllipseDir.x);
+            INPUT_AND_SLIDER_FLOAT("RadialBlurRollEulerAngles", &radialBlurUpdateInfo.radialBlurRollEulerAngles, -10.0f, 10.0f);
+            ImGui::Checkbox("IsEnabledDepth", &radialBlurUpdateInfo.isEnabledDepth);
+            INPUT_AND_SLIDER_FLOAT("DepthPowerFront", &radialBlurUpdateInfo.depthPowerFront, -10.0f, 10.0f);
+            INPUT_AND_SLIDER_FLOAT("DepthPowerBack", &radialBlurUpdateInfo.depthPowerBack, -10.0f, 10.0f);
+            ImGui::Checkbox("IsEnabledDepthCancelRect", &radialBlurUpdateInfo.isEnabledDepthCancelRect);
+            ImGui::InputFloat4("DepthCancelRect", &radialBlurUpdateInfo.depthCancelRect.x);
+            INPUT_AND_SLIDER_FLOAT("DepthCancelBlendLength", &radialBlurUpdateInfo.depthCancelBlendLength, -10.0f, 10.0f);
+            ImGui::Checkbox("IsExpandDepthCancelRect", &radialBlurUpdateInfo.isExpandDepthCancelRect);
+        }
+        ImGui::End();
+    }
+
+    void othersMainLoop() {
+        if (ImGui::Begin("Live Other Settings")) {
+            if (ImGui::CollapsingHeader("Exposure")) {
+                ImGui::Checkbox("Use Game Exposure Settings", &liveExposureFollowGame);
+                ImGui::Checkbox("IsEnable Exposure", &exposureUpdateInfo.IsEnable);
+                ImGui::InputFloat4("ExposureParameter", &exposureUpdateInfo.ExposureParameter.x);
+                INPUT_AND_SLIDER_FLOAT("DepthMask", &exposureUpdateInfo.DepthMask, -3.5f, 7.0f);
+            }
+            if (ImGui::CollapsingHeader("Vortex")) {
+                ImGui::Checkbox("Use Game Vortex Settings", &liveVortexFollowGame);
+                ImGui::Checkbox("IsEnable Vortex", &vortexUpdateInfo.IsEnable);
+                INPUT_AND_SLIDER_FLOAT("RotVolume", &vortexUpdateInfo.RotVolume, -10.0f, 10.0f);
+                INPUT_AND_SLIDER_FLOAT("DepthClip", &vortexUpdateInfo.DepthClip, -10.0f, 10.0f);
+                ImGui::InputFloat4("Area", &vortexUpdateInfo.Area.x);
+            }
+        }
+        ImGui::End();
+    }
+
 
     void AllLoop() {
         postEffectUpdateInfo_DOF_guiLoop();
         postFilmUpdateInfoMainLoop();
         lightProjectionMainLoop();
+        radialBlurUpdateInfoMainLoop();
+        othersMainLoop();
     }
 
 }

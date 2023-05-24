@@ -202,6 +202,48 @@ namespace UmaGUiShowData {
 		Vector2_t AnimationOffsetUV;
 	};
 
+	enum class MoveBlurType {
+		None = 0x0,
+		Circle = 0x1,
+		Horizontal = 0x2,
+		Vertical = 0x3,
+		Ellipse = 0x4,
+		Roll = 0x5
+	};
+
+	struct RadialBlurUpdateInfo {
+		MoveBlurType moveBlurType;
+		Vector2_t radialBlurOffset;
+		int radialBlurDownsample;
+		float radialBlurStartArea;
+		float radialBlurEndArea;
+		float radialBlurPower;
+		int radialBlurIteration;
+		Vector2_t radialBlurEllipseDir;
+		float radialBlurRollEulerAngles;
+		bool isEnabledDepth;
+		float depthPowerFront;
+		float depthPowerBack;
+		bool isEnabledDepthCancelRect;
+		Vector4_t depthCancelRect;
+		float depthCancelBlendLength;
+		bool isExpandDepthCancelRect;
+	};
+
+	struct ExposureUpdateInfo {
+		bool IsEnable;
+		float DepthMask;
+		Vector4_t ExposureParameter;
+	};
+
+	struct VortexUpdateInfo {
+		bool IsEnable;
+		float RotVolume;
+		float DepthClip;
+
+		Vector4_t Area;
+	};
+
 	// PostEffectUpdateInfo_DOF
 	extern Vector3_t liveDOFForcalPosition;
 	extern PostEffectUpdateInfo_DOF postEffectUpdateInfo_DOF;
@@ -224,4 +266,16 @@ namespace UmaGUiShowData {
 	// LightProjectionUpdateInfo
 	extern LightProjectionUpdateInfo lightProjectionUpdateInfo;
 	extern bool liveLightProjectionFollowGame;
+
+	// RadialBlurUpdateInfo
+	extern RadialBlurUpdateInfo radialBlurUpdateInfo;
+	extern bool liveRadialBlurFollowGame;
+
+	// ExposureUpdateInfo
+	extern ExposureUpdateInfo exposureUpdateInfo;
+	extern bool liveExposureFollowGame;
+
+	// VortexUpdateInfo
+	extern VortexUpdateInfo vortexUpdateInfo;
+	extern bool liveVortexFollowGame;
 }

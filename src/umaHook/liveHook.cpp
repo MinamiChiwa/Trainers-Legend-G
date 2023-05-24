@@ -9,6 +9,10 @@
 
 #define CAST_FUNC(_name_) reinterpret_cast<decltype(_name_##_hook)*>(_name_##_orig)
 
+#define CHECK_AND_UPDATE_INFO(followGame, updateInfoClass) if (UmaGUiShowData::followGame) {CAST_FUNC(DOFUpdateInfoDelegate)(_this, updateInfo);}\
+	LiveData::updateInfoClass(static_cast<UmaGUiShowData::updateInfoClass*>(updateInfo),\
+	UmaGUiShowData::followGame).updateData()\
+
 
 namespace UmaLiveHook {
 	Il2CppString* (*environment_get_stacktrace)();
@@ -39,7 +43,7 @@ namespace UmaLiveHook {
 			case LiveDelegateType::OnUpdatePostFilm2: UmaGUiShowData::filmIndex = 1; goto UpdatePostFilm;
 			case LiveDelegateType::OnUpdatePostFilm3: {
 				UmaGUiShowData::filmIndex = 2;
-				UpdatePostFilm:
+			UpdatePostFilm:
 				if (UmaGUiShowData::livePostFilmFollowGame[UmaGUiShowData::filmIndex]) {
 					CAST_FUNC(DOFUpdateInfoDelegate)(_this, updateInfo);
 				}
@@ -49,11 +53,16 @@ namespace UmaLiveHook {
 			}; break;
 
 			case LiveDelegateType::OnUpdateLightProjection: {
-				if (UmaGUiShowData::liveLightProjectionFollowGame) {
-					CAST_FUNC(DOFUpdateInfoDelegate)(_this, updateInfo);
-				}
-				LiveData::LightProjectionUpdateInfo(static_cast<UmaGUiShowData::LightProjectionUpdateInfo*>(updateInfo),
-					UmaGUiShowData::liveLightProjectionFollowGame).updateData();
+				CHECK_AND_UPDATE_INFO(liveLightProjectionFollowGame, LightProjectionUpdateInfo);
+			}; break;
+			case LiveDelegateType::OnUpdateRadialBlur: {
+				CHECK_AND_UPDATE_INFO(liveRadialBlurFollowGame, RadialBlurUpdateInfo);
+			}; break;
+			case LiveDelegateType::OnUpdateExposure: {
+				CHECK_AND_UPDATE_INFO(liveExposureFollowGame, ExposureUpdateInfo);
+			}; break;
+			case LiveDelegateType::OnUpdateVortex: {
+				CHECK_AND_UPDATE_INFO(liveVortexFollowGame, VortexUpdateInfo);
 			}; break;
 
 			default: break;
@@ -78,6 +87,9 @@ namespace UmaLiveHook {
 			EmplaceLiveDelegates(OnUpdatePostFilm2);
 			EmplaceLiveDelegates(OnUpdatePostFilm3);
 			EmplaceLiveDelegates(OnUpdateLightProjection);
+			EmplaceLiveDelegates(OnUpdateRadialBlur);
+			EmplaceLiveDelegates(OnUpdateExposure);
+			EmplaceLiveDelegates(OnUpdateVortex);
 		}
 	}
 
@@ -86,6 +98,12 @@ namespace UmaLiveHook {
 			std::make_pair(DOFUpdateInfoDelegate_orig, std::make_pair("Gallop.Live.Cutt", "PostEffectUpdateInfo_DOF")));
 		LiveData::LiveUpdateInfoDelegatesInvoke.emplace(LiveDelegateType::OnUpdateLightProjection,
 			std::make_pair(DOFUpdateInfoDelegate_orig, std::make_pair("Gallop.Live.Cutt", "LightProjectionUpdateInfo")));
+		LiveData::LiveUpdateInfoDelegatesInvoke.emplace(LiveDelegateType::OnUpdateRadialBlur,
+			std::make_pair(DOFUpdateInfoDelegate_orig, std::make_pair("Gallop.Live.Cutt", "RadialBlurUpdateInfo")));
+		LiveData::LiveUpdateInfoDelegatesInvoke.emplace(LiveDelegateType::OnUpdateExposure,
+			std::make_pair(DOFUpdateInfoDelegate_orig, std::make_pair("Gallop.Live.Cutt", "ExposureUpdateInfo")));
+		LiveData::LiveUpdateInfoDelegatesInvoke.emplace(LiveDelegateType::OnUpdateVortex,
+			std::make_pair(DOFUpdateInfoDelegate_orig, std::make_pair("Gallop.Live.Cutt", "VortexUpdateInfo")));
 	}
 
 	void regHookMain() {

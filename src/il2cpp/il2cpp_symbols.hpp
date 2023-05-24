@@ -39,10 +39,10 @@ public:
 };
 
 struct Vector4_t {
-	float w;
 	float x;
 	float y;
 	float z;
+	float w;
 };
 
 // UnityEngine.Quaternion

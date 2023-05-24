@@ -23,6 +23,15 @@ int UmaGUiShowData::filmIndex = 0;
 UmaGUiShowData::LightProjectionUpdateInfo UmaGUiShowData::lightProjectionUpdateInfo{};
 bool UmaGUiShowData::liveLightProjectionFollowGame = true;
 
+UmaGUiShowData::RadialBlurUpdateInfo UmaGUiShowData::radialBlurUpdateInfo{};
+bool UmaGUiShowData::liveRadialBlurFollowGame = true;
+
+UmaGUiShowData::ExposureUpdateInfo UmaGUiShowData::exposureUpdateInfo;
+bool UmaGUiShowData::liveExposureFollowGame = true;
+
+UmaGUiShowData::VortexUpdateInfo UmaGUiShowData::vortexUpdateInfo;
+bool UmaGUiShowData::liveVortexFollowGame = true;
+
 
 UmaGUiShowData::UmaRaceMotionData::UmaRaceMotionData(int gateNo, std::wstring charaName, std::wstring trainerName) {
 	this->gateNo = gateNo;

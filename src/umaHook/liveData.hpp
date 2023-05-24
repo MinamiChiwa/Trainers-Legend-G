@@ -8,7 +8,10 @@ enum class LiveDelegateType {
 	OnUpdatePostFilm,
 	OnUpdatePostFilm2,
 	OnUpdatePostFilm3,
-	OnUpdateLightProjection
+	OnUpdateLightProjection,
+	OnUpdateRadialBlur,
+	OnUpdateExposure,
+	OnUpdateVortex
 };
 
 namespace LiveData {
@@ -117,6 +120,14 @@ namespace LiveData {
 	FieldInfo* LightProjectionUpdateInfo_color;
 	FieldInfo* LightProjectionUpdateInfo_AnimationScaleUV;
 	FieldInfo* LightProjectionUpdateInfo_AnimationOffsetUV;
+	void* RadialBlurUpdateInfo_klass;
+	FieldInfo* RadialBlurUpdateInfo_radialBlurOffset;
+	FieldInfo* RadialBlurUpdateInfo_radialBlurEllipseDir;
+	FieldInfo* RadialBlurUpdateInfo_depthCancelRect;
+	void* ExposureUpdateInfo_klass;
+	FieldInfo* ExposureUpdateInfo_ExposureParameter;
+	void* VortexUpdateInfo_klass;
+	FieldInfo* VortexUpdateInfo_Area;
 
 	static bool isffinit = false;
 	void init_LiveFieldData() {
@@ -140,6 +151,15 @@ namespace LiveData {
 		LightProjectionUpdateInfo_color = il2cpp_class_get_field_from_name(LightProjectionUpdateInfo_klass, "color");
 		LightProjectionUpdateInfo_AnimationScaleUV = il2cpp_class_get_field_from_name(LightProjectionUpdateInfo_klass, "AnimationScaleUV");
 		LightProjectionUpdateInfo_AnimationOffsetUV = il2cpp_class_get_field_from_name(LightProjectionUpdateInfo_klass, "AnimationOffsetUV");
+		
+		RadialBlurUpdateInfo_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop.Live.Cutt", "RadialBlurUpdateInfo");
+		RadialBlurUpdateInfo_radialBlurOffset = il2cpp_class_get_field_from_name(RadialBlurUpdateInfo_klass, "radialBlurOffset");
+		RadialBlurUpdateInfo_radialBlurEllipseDir = il2cpp_class_get_field_from_name(RadialBlurUpdateInfo_klass, "radialBlurEllipseDir");
+		RadialBlurUpdateInfo_depthCancelRect = il2cpp_class_get_field_from_name(RadialBlurUpdateInfo_klass, "depthCancelRect");
+		ExposureUpdateInfo_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop.Live.Cutt", "ExposureUpdateInfo");
+		ExposureUpdateInfo_ExposureParameter = il2cpp_class_get_field_from_name(ExposureUpdateInfo_klass, "ExposureParameter");
+		VortexUpdateInfo_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop.Live.Cutt", "VortexUpdateInfo");
+		VortexUpdateInfo_Area = il2cpp_class_get_field_from_name(VortexUpdateInfo_klass, "Area");
 		isffinit = true;
 	}
 
@@ -338,6 +358,92 @@ namespace LiveData {
 				);
 			changeValueByType(&localData->AnimationOffsetUV.x, &v_AnimationOffsetUV->x, condition);
 			changeValueByType(&localData->AnimationOffsetUV.y, &v_AnimationOffsetUV->y, condition);
+		}
+	};
+
+	class RadialBlurUpdateInfo : public ILiveUpdateInfo<UmaGUiShowData::RadialBlurUpdateInfo> {
+	public:
+		RadialBlurUpdateInfo(UmaGUiShowData::RadialBlurUpdateInfo* updateInfo, bool condition) {
+			localData = &UmaGUiShowData::radialBlurUpdateInfo;
+			this->updateInfo = updateInfo;
+			this->condition = condition;
+		}
+
+		void updateData() {
+			changeValueByType(&localData->moveBlurType, &updateInfo->moveBlurType, condition);
+			changeValueByType(&localData->radialBlurDownsample, &updateInfo->radialBlurDownsample, condition);
+			changeValueByType(&localData->radialBlurStartArea, &updateInfo->radialBlurStartArea, condition);
+			changeValueByType(&localData->radialBlurEndArea, &updateInfo->radialBlurEndArea, condition);
+			changeValueByType(&localData->radialBlurPower, &updateInfo->radialBlurPower, condition);
+			changeValueByType(&localData->radialBlurIteration, &updateInfo->radialBlurIteration, condition);
+			changeValueByType(&localData->radialBlurRollEulerAngles, &updateInfo->radialBlurRollEulerAngles, condition);
+			changeValueByType(&localData->isEnabledDepth, &updateInfo->isEnabledDepth, condition);
+			changeValueByType(&localData->depthPowerFront, &updateInfo->depthPowerFront, condition);
+			changeValueByType(&localData->depthPowerBack, &updateInfo->depthPowerBack, condition);
+			changeValueByType(&localData->isEnabledDepthCancelRect, &updateInfo->isEnabledDepthCancelRect, condition);
+			changeValueByType(&localData->depthCancelBlendLength, &updateInfo->depthCancelBlendLength, condition);
+			changeValueByType(&localData->isExpandDepthCancelRect, &updateInfo->isExpandDepthCancelRect, condition);
+			auto v_radialBlurOffset = reinterpret_cast<Vector2_t*>(
+				static_cast<std::byte*>(reinterpret_cast<void*>(updateInfo)) + RadialBlurUpdateInfo_radialBlurOffset->offset
+				);
+			changeValueByType(&localData->radialBlurOffset.x, &v_radialBlurOffset->x, condition);
+			changeValueByType(&localData->radialBlurOffset.y, &v_radialBlurOffset->y, condition);
+			auto v_radialBlurEllipseDir = reinterpret_cast<Vector2_t*>(
+				static_cast<std::byte*>(reinterpret_cast<void*>(updateInfo)) + RadialBlurUpdateInfo_radialBlurEllipseDir->offset
+				);
+			changeValueByType(&localData->radialBlurEllipseDir.x, &v_radialBlurEllipseDir->x, condition);
+			changeValueByType(&localData->radialBlurEllipseDir.y, &v_radialBlurEllipseDir->y, condition);
+			auto v_depthCancelRect = reinterpret_cast<Vector4_t*>(
+				static_cast<std::byte*>(reinterpret_cast<void*>(updateInfo)) + RadialBlurUpdateInfo_depthCancelRect->offset
+				);
+			changeValueByType(&localData->depthCancelRect.x, &v_depthCancelRect->x, condition);
+			changeValueByType(&localData->depthCancelRect.y, &v_depthCancelRect->y, condition);
+			changeValueByType(&localData->depthCancelRect.z, &v_depthCancelRect->z, condition);
+			changeValueByType(&localData->depthCancelRect.w, &v_depthCancelRect->w, condition);
+		}
+	};
+
+	class ExposureUpdateInfo : public ILiveUpdateInfo<UmaGUiShowData::ExposureUpdateInfo> {
+	public:
+		ExposureUpdateInfo(UmaGUiShowData::ExposureUpdateInfo* updateInfo, bool condition) {
+			localData = &UmaGUiShowData::exposureUpdateInfo;
+			this->updateInfo = updateInfo;
+			this->condition = condition;
+		}
+
+		void updateData() {
+			changeValueByType(&localData->IsEnable, &updateInfo->IsEnable, condition);
+			changeValueByType(&localData->DepthMask, &updateInfo->DepthMask, condition);
+			auto v_ExposureParameter = reinterpret_cast<Vector4_t*>(
+				static_cast<std::byte*>(reinterpret_cast<void*>(updateInfo)) + ExposureUpdateInfo_ExposureParameter->offset
+				);
+			changeValueByType(&localData->ExposureParameter.x, &v_ExposureParameter->x, condition);
+			changeValueByType(&localData->ExposureParameter.y, &v_ExposureParameter->y, condition);
+			changeValueByType(&localData->ExposureParameter.z, &v_ExposureParameter->z, condition);
+			changeValueByType(&localData->ExposureParameter.w, &v_ExposureParameter->w, condition);
+		}
+	};
+
+	class VortexUpdateInfo : public ILiveUpdateInfo<UmaGUiShowData::VortexUpdateInfo> {
+	public:
+		VortexUpdateInfo(UmaGUiShowData::VortexUpdateInfo* updateInfo, bool condition) {
+			localData = &UmaGUiShowData::vortexUpdateInfo;
+			this->updateInfo = updateInfo;
+			this->condition = condition;
+		}
+
+		void updateData() {
+			changeValueByType(&localData->IsEnable, &updateInfo->IsEnable, condition);
+			changeValueByType(&localData->RotVolume, &updateInfo->RotVolume, condition);
+			changeValueByType(&localData->DepthClip, &updateInfo->DepthClip, condition);
+			auto v_Area = reinterpret_cast<Vector4_t*>(
+				static_cast<std::byte*>(reinterpret_cast<void*>(updateInfo)) + VortexUpdateInfo_Area->offset
+				);
+			changeValueByType(&localData->Area.x, &v_Area->x, condition);
+			changeValueByType(&localData->Area.y, &v_Area->y, condition);
+			changeValueByType(&localData->Area.z, &v_Area->z, condition);
+			changeValueByType(&localData->Area.w, &v_Area->w, condition);
+
 		}
 	};
 
