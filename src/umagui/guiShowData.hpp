@@ -3,6 +3,101 @@
 
 extern bool ignoreNegativeSpeed;
 
+template<typename T>
+class UmaEnum {
+private:
+	std::vector<std::string> names;
+	std::vector<T> values;
+	int nowIndex = 0;
+	int totalSize = -1;
+
+public:
+	UmaEnum(std::vector<std::string> names, std::vector<T> values) {
+		if (names.size() != values.size()) return;
+		assert(names.size() > 0);
+		this->totalSize = names.size();
+		this->names = names;
+		this->values = values;
+	}
+
+	std::vector<std::pair<std::string, T>> GetAllKV() {
+		std::vector<std::pair<std::string, T>> ret{};
+		for (int i = 0; i < names.size(); i++) {
+			ret.push_back(std::make_pair(names[i], values[i]));
+		}
+		return ret;
+	}
+
+	std::string GetCurrentName() {
+		return names[nowIndex];
+	}
+
+	T GetCurrentValue() {
+		return values[nowIndex];
+	}
+
+	int GetCurrentIndex() {
+		return nowIndex;
+	}
+
+	std::pair<std::string, T> GetNowValue() {
+		return std::make_pair(GetCurrentName(), GetCurrentValue());
+	}
+
+	std::pair<std::string, T> Next() {
+		int cIndex = nowIndex;
+		cIndex++;
+		if (cIndex >= names.size()) cIndex = 0;
+		nowIndex = cIndex;
+		return GetNowValue();
+	}
+
+	std::pair<std::string, T> Last() {
+		int cIndex = nowIndex;
+		cIndex--;
+		if (cIndex < 0) cIndex = names.size() - 1;
+		nowIndex = cIndex;
+		return GetNowValue();
+	}
+
+	void SetIndex(int value) {
+		if (value >= names.size()) {
+			value = names.size() - 1;
+		}
+		nowIndex = value;
+	}
+
+	std::vector<std::string> GetNames() {
+		return names;
+	}
+
+	char** GetNames_c() {
+		char** result = new char* [names.size()];
+		for (int i = 0; i < names.size(); i++) {
+			result[i] = new char[names[i].length() + 1]();
+			strcpy(result[i], names[i].c_str());
+
+		}
+		return result;
+	}
+
+	std::vector<T> GetValues() {
+		return values;
+	}
+
+	std::pair<std::string, T> GetValue(int index) {
+		if (index >= names.size()) {
+			index = names.size() - 1;
+		}
+		return std::make_pair(names[index], values[index]);
+	}
+
+	int GetSize() {
+		return totalSize;
+	}
+
+};
+
 namespace UmaGUiShowData {
 
 	class UmaRaceMotionData {
@@ -244,6 +339,40 @@ namespace UmaGUiShowData {
 		Vector4_t Area;
 	};
 
+	struct CharaFootLightUpdateInfo {
+		int CharacterIndex = 0;
+		float hightMax;
+		// 不可直接从 UpdateInfo 访问
+		Color_t lightColor;
+		bool followGame = true;
+	};
+
+
+	extern UmaEnum<int> liveCharaPositionFlag;
+
+	struct GlobalLightUpdateInfo {
+		int flags;  // LiveCharaPositionFlag
+		float globalRimShadowRate;
+		float rimStep;
+		float rimFeather;
+		float rimSpecRate;
+		float RimHorizonOffset;
+		float RimVerticalOffset;
+		float RimHorizonOffset2;
+		float RimVerticalOffset2;
+		float rimStep2;
+		float rimFeather2;
+		float rimSpecRate2;
+		float globalRimShadowRate2;
+
+		Quaternion_t lightRotation;
+		Color_t rimColor;
+		Color_t rimColor2;
+
+		bool followGame = true;
+	};
+
+
 	// PostEffectUpdateInfo_DOF
 	extern Vector3_t liveDOFForcalPosition;
 	extern PostEffectUpdateInfo_DOF postEffectUpdateInfo_DOF;
@@ -278,4 +407,14 @@ namespace UmaGUiShowData {
 	// VortexUpdateInfo
 	extern VortexUpdateInfo vortexUpdateInfo;
 	extern bool liveVortexFollowGame;
+
+	// CharaFootLightUpdateInfo
+	extern CharaFootLightUpdateInfo charaFootLightUpdateInfo[36];
+
+	// GlobalLightUpdateInfo
+	extern std::unordered_map<int, GlobalLightUpdateInfo> globalLightUpdateInfo;
+	extern bool globalLightUpdateInfo_inited;
+
+
+	void initGuiGlobalData();
 }

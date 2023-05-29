@@ -15,55 +15,6 @@
 #define KEY_ALT  164
 #define KEY_SPACE  32
 
-template<typename T>
-class UmaEnum {
-private:
-	std::vector<std::string> names;
-	std::vector<T> values;
-	int nowIndex = 0;
-
-public:
-	UmaEnum(std::vector<std::string> names, std::vector<T> values) {
-		if (names.size() != values.size()) return;
-		assert(names.size() > 0);
-		this->names = names;
-		this->values = values;
-	}
-
-	std::string GetCurrentName() {
-		return names[nowIndex];
-	}
-
-	T GetCurrentValue() {
-		return values[nowIndex];
-	}
-
-	int GetCurrentIndex() {
-		return nowIndex;
-	}
-
-	std::pair<std::string, T> GetNowValue() {
-		return std::make_pair(GetCurrentName(), GetCurrentValue());
-	}
-
-	std::pair<std::string, T> Next() {
-		int cIndex = nowIndex;
-		cIndex++;
-		if (cIndex >= names.size()) cIndex = 0;
-		nowIndex = cIndex;
-		return GetNowValue();
-	}
-
-	std::pair<std::string, T> Last() {
-		int cIndex = nowIndex;
-		cIndex--;
-		if (cIndex < 0) cIndex = names.size() - 1;
-		nowIndex = cIndex;
-		return GetNowValue();
-	}
-
-};
-
 /*
 ×ø±ê:
   ¡üy

@@ -11,7 +11,9 @@ enum class LiveDelegateType {
 	OnUpdateLightProjection,
 	OnUpdateRadialBlur,
 	OnUpdateExposure,
-	OnUpdateVortex
+	OnUpdateVortex,
+	OnUpdateCharaFootLight,
+	OnUpdateGlobalLight
 };
 
 namespace LiveData {
@@ -105,8 +107,12 @@ namespace LiveData {
 
 	void* PostEffectUpdateInfo_DOF_klass;
 	FieldInfo* PostEffectUpdateInfo_DOF_forcalPosition;
+	FieldInfo* PostEffectUpdateInfo_DOF_dofBlurType;
+	FieldInfo* PostEffectUpdateInfo_DOF_dofQuality;
 	void* PostFilmUpdateInfo_klass;
 	FieldInfo* PostFilmUpdateInfo_filmOffsetParam;
+	FieldInfo* PostFilmUpdateInfo_layerMode;
+	FieldInfo* PostFilmUpdateInfo_colorBlend;
 	FieldInfo* PostFilmUpdateInfo_filmOptionParam;
 	FieldInfo* PostFilmUpdateInfo_color0;
 	FieldInfo* PostFilmUpdateInfo_color1;
@@ -122,21 +128,33 @@ namespace LiveData {
 	FieldInfo* LightProjectionUpdateInfo_AnimationOffsetUV;
 	void* RadialBlurUpdateInfo_klass;
 	FieldInfo* RadialBlurUpdateInfo_radialBlurOffset;
+	FieldInfo* RadialBlurUpdateInfo_moveBlurType;
 	FieldInfo* RadialBlurUpdateInfo_radialBlurEllipseDir;
 	FieldInfo* RadialBlurUpdateInfo_depthCancelRect;
 	void* ExposureUpdateInfo_klass;
 	FieldInfo* ExposureUpdateInfo_ExposureParameter;
 	void* VortexUpdateInfo_klass;
 	FieldInfo* VortexUpdateInfo_Area;
+	void* CharaFootLightUpdateInfo_klass;
+	FieldInfo* CharaFootLightUpdateInfo_lightColor;
+	void* GlobalLightUpdateInfo_klass;
+	FieldInfo* GlobalLightUpdateInfo_lightRotation;
+	FieldInfo* GlobalLightUpdateInfo_rimColor;
+	FieldInfo* GlobalLightUpdateInfo_rimColor2;
+	FieldInfo* GlobalLightUpdateInfo_flags;
 
 	static bool isffinit = false;
 	void init_LiveFieldData() {
 		if (isffinit) return;
 		PostEffectUpdateInfo_DOF_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop.Live.Cutt", "PostEffectUpdateInfo_DOF");
 		PostEffectUpdateInfo_DOF_forcalPosition = il2cpp_class_get_field_from_name(PostEffectUpdateInfo_DOF_klass, "forcalPosition");
+		PostEffectUpdateInfo_DOF_dofBlurType = il2cpp_class_get_field_from_name(PostEffectUpdateInfo_DOF_klass, "dofBlurType");
+		PostEffectUpdateInfo_DOF_dofQuality = il2cpp_class_get_field_from_name(PostEffectUpdateInfo_DOF_klass, "dofQuality");
 		
 		PostFilmUpdateInfo_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop.Live.Cutt", "PostFilmUpdateInfo");
 		PostFilmUpdateInfo_filmOffsetParam = il2cpp_class_get_field_from_name(PostFilmUpdateInfo_klass, "filmOffsetParam");
+		PostFilmUpdateInfo_layerMode = il2cpp_class_get_field_from_name(PostFilmUpdateInfo_klass, "layerMode");
+		PostFilmUpdateInfo_colorBlend = il2cpp_class_get_field_from_name(PostFilmUpdateInfo_klass, "colorBlend");
 		PostFilmUpdateInfo_filmOptionParam = il2cpp_class_get_field_from_name(PostFilmUpdateInfo_klass, "filmOptionParam");
 		PostFilmUpdateInfo_color0 = il2cpp_class_get_field_from_name(PostFilmUpdateInfo_klass, "color0");
 		PostFilmUpdateInfo_color1 = il2cpp_class_get_field_from_name(PostFilmUpdateInfo_klass, "color1");
@@ -154,12 +172,22 @@ namespace LiveData {
 		
 		RadialBlurUpdateInfo_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop.Live.Cutt", "RadialBlurUpdateInfo");
 		RadialBlurUpdateInfo_radialBlurOffset = il2cpp_class_get_field_from_name(RadialBlurUpdateInfo_klass, "radialBlurOffset");
+		RadialBlurUpdateInfo_moveBlurType = il2cpp_class_get_field_from_name(RadialBlurUpdateInfo_klass, "moveBlurType");
 		RadialBlurUpdateInfo_radialBlurEllipseDir = il2cpp_class_get_field_from_name(RadialBlurUpdateInfo_klass, "radialBlurEllipseDir");
 		RadialBlurUpdateInfo_depthCancelRect = il2cpp_class_get_field_from_name(RadialBlurUpdateInfo_klass, "depthCancelRect");
 		ExposureUpdateInfo_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop.Live.Cutt", "ExposureUpdateInfo");
 		ExposureUpdateInfo_ExposureParameter = il2cpp_class_get_field_from_name(ExposureUpdateInfo_klass, "ExposureParameter");
 		VortexUpdateInfo_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop.Live.Cutt", "VortexUpdateInfo");
 		VortexUpdateInfo_Area = il2cpp_class_get_field_from_name(VortexUpdateInfo_klass, "Area");
+
+		CharaFootLightUpdateInfo_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop.Live.Cutt", "CharaFootLightUpdateInfo");
+		CharaFootLightUpdateInfo_lightColor = il2cpp_class_get_field_from_name(CharaFootLightUpdateInfo_klass, "lightColor");
+		
+		GlobalLightUpdateInfo_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop.Live.Cutt", "GlobalLightUpdateInfo");
+		GlobalLightUpdateInfo_lightRotation = il2cpp_class_get_field_from_name(GlobalLightUpdateInfo_klass, "lightRotation");
+		GlobalLightUpdateInfo_rimColor = il2cpp_class_get_field_from_name(GlobalLightUpdateInfo_klass, "rimColor");
+		GlobalLightUpdateInfo_rimColor2 = il2cpp_class_get_field_from_name(GlobalLightUpdateInfo_klass, "rimColor2");
+		GlobalLightUpdateInfo_flags = il2cpp_class_get_field_from_name(GlobalLightUpdateInfo_klass, "flags");
 		isffinit = true;
 	}
 
@@ -176,11 +204,17 @@ namespace LiveData {
 			init_LiveFieldData();
 			if (!updateInfo) generateUpdateInfo();
 
+
+			changeValueByType(&localData->dofQuality, &updateInfo->dofQuality, condition);
+			auto cDt_t = reinterpret_cast<CsEnum_t*>(
+				static_cast<std::byte*>(reinterpret_cast<void*>(updateInfo)) + PostEffectUpdateInfo_DOF_dofBlurType->offset
+				);
+			changeValueByType(reinterpret_cast<int*>(&localData->dofBlurType), &cDt_t->value__, condition);
+
 			changeValueByType(&localData->IsEnableDOF, &updateInfo->IsEnableDOF, condition);
 			changeValueByType(&localData->forcalSize, &updateInfo->forcalSize, condition);
 			changeValueByType(&localData->blurSpread, &updateInfo->blurSpread, condition);
-			changeValueByType(&localData->dofQuality, &updateInfo->dofQuality, condition);
-			changeValueByType(&localData->dofBlurType, &updateInfo->dofBlurType, condition);
+			
 			changeValueByType(&localData->dofForegroundSize, &updateInfo->dofForegroundSize, condition);
 			changeValueByType(&localData->dofFocalPoint, &updateInfo->dofFocalPoint, condition);
 			changeValueByType(&localData->dofSoomthness, &updateInfo->dofSoomthness, condition);
@@ -233,8 +267,6 @@ namespace LiveData {
 			changeValueByType(&localData->filmPower, &updateInfo->filmPower, condition);
 			changeValueByType(&localData->depthPower, &updateInfo->depthPower, condition);
 			changeValueByType(&localData->DepthClip, &updateInfo->DepthClip, condition);
-			changeValueByType(&localData->layerMode, &updateInfo->layerMode, condition);
-			changeValueByType(&localData->colorBlend, &updateInfo->colorBlend, condition);
 			changeValueByType(&localData->inverseVignette, &updateInfo->inverseVignette, condition);
 			changeValueByType(&localData->colorBlendFactor, &updateInfo->colorBlendFactor, condition);
 			changeValueByType(&localData->movieResId, &updateInfo->movieResId, condition);
@@ -242,6 +274,16 @@ namespace LiveData {
 			changeValueByType(&localData->movieTime, &updateInfo->movieTime, condition);
 			changeValueByType(&localData->movieReverse, &updateInfo->movieReverse, condition);
 			changeValueByType(&localData->RollAngle, &updateInfo->RollAngle, condition);
+
+			auto layerMode = reinterpret_cast<CsEnum_t*>(
+				static_cast<std::byte*>(reinterpret_cast<void*>(updateInfo)) + PostFilmUpdateInfo_layerMode->offset
+				);
+			changeValueByType(reinterpret_cast<int*>(&localData->layerMode), &layerMode->value__, condition);
+			
+			auto colorBlend = reinterpret_cast<CsEnum_t*>(
+				static_cast<std::byte*>(reinterpret_cast<void*>(updateInfo)) + PostFilmUpdateInfo_colorBlend->offset
+				);
+			changeValueByType(reinterpret_cast<int*>(&localData->colorBlend), &colorBlend->value__, condition);
 			
 			auto filmOffsetParam = reinterpret_cast<Vector2_t*>(
 				static_cast<std::byte*>(reinterpret_cast<void*>(updateInfo)) + PostFilmUpdateInfo_filmOffsetParam->offset
@@ -370,6 +412,7 @@ namespace LiveData {
 		}
 
 		void updateData() {
+			init_LiveFieldData();
 			changeValueByType(&localData->moveBlurType, &updateInfo->moveBlurType, condition);
 			changeValueByType(&localData->radialBlurDownsample, &updateInfo->radialBlurDownsample, condition);
 			changeValueByType(&localData->radialBlurStartArea, &updateInfo->radialBlurStartArea, condition);
@@ -383,6 +426,7 @@ namespace LiveData {
 			changeValueByType(&localData->isEnabledDepthCancelRect, &updateInfo->isEnabledDepthCancelRect, condition);
 			changeValueByType(&localData->depthCancelBlendLength, &updateInfo->depthCancelBlendLength, condition);
 			changeValueByType(&localData->isExpandDepthCancelRect, &updateInfo->isExpandDepthCancelRect, condition);
+
 			auto v_radialBlurOffset = reinterpret_cast<Vector2_t*>(
 				static_cast<std::byte*>(reinterpret_cast<void*>(updateInfo)) + RadialBlurUpdateInfo_radialBlurOffset->offset
 				);
@@ -412,6 +456,7 @@ namespace LiveData {
 		}
 
 		void updateData() {
+			init_LiveFieldData();
 			changeValueByType(&localData->IsEnable, &updateInfo->IsEnable, condition);
 			changeValueByType(&localData->DepthMask, &updateInfo->DepthMask, condition);
 			auto v_ExposureParameter = reinterpret_cast<Vector4_t*>(
@@ -433,6 +478,7 @@ namespace LiveData {
 		}
 
 		void updateData() {
+			init_LiveFieldData();
 			changeValueByType(&localData->IsEnable, &updateInfo->IsEnable, condition);
 			changeValueByType(&localData->RotVolume, &updateInfo->RotVolume, condition);
 			changeValueByType(&localData->DepthClip, &updateInfo->DepthClip, condition);
@@ -446,5 +492,133 @@ namespace LiveData {
 
 		}
 	};
+
+	class CharaFootLightUpdateInfo : public ILiveUpdateInfo<UmaGUiShowData::CharaFootLightUpdateInfo> {
+	public:
+		CharaFootLightUpdateInfo(UmaGUiShowData::CharaFootLightUpdateInfo* updateInfo) {
+			auto charaIndex = updateInfo->CharacterIndex;
+			if (updateInfo->CharacterIndex >= 36) {
+				printf("charaIndex: %d over range.\n", updateInfo->CharacterIndex);
+				charaIndex = 35;
+			}
+			localData = &UmaGUiShowData::charaFootLightUpdateInfo[charaIndex];
+			this->updateInfo = updateInfo;
+			this->condition = localData->followGame;
+		}
+
+		void updateData() {
+			init_LiveFieldData();
+			localData->CharacterIndex = updateInfo->CharacterIndex;
+			changeValueByType(&localData->hightMax, &updateInfo->hightMax, condition);
+			auto v_lightColor = reinterpret_cast<Color_t*>(
+				static_cast<std::byte*>(reinterpret_cast<void*>(updateInfo)) + CharaFootLightUpdateInfo_lightColor->offset
+				);
+			changeValueByType(&localData->lightColor.r, &v_lightColor->r, condition);
+			changeValueByType(&localData->lightColor.g, &v_lightColor->g, condition);
+			changeValueByType(&localData->lightColor.b, &v_lightColor->b, condition);
+			changeValueByType(&localData->lightColor.a, &v_lightColor->a, condition);
+		}
+
+		bool getCondition() {
+			return condition;
+		}
+	};
+
+	class GlobalLightUpdateInfo : public ILiveUpdateInfo<UmaGUiShowData::GlobalLightUpdateInfo> {
+	private:
+		bool isValid = false;
+
+	public:
+		static int cacheFrame;
+		static int frameIndex;
+		static int currentFrame;
+
+		GlobalLightUpdateInfo(UmaGUiShowData::GlobalLightUpdateInfo* updateInfo) {
+			init_LiveFieldData();
+			UmaGUiShowData::initGuiGlobalData();
+			this->updateInfo = updateInfo;
+			auto charaIndex = checkIndex();
+
+			if (const auto iter = UmaGUiShowData::globalLightUpdateInfo.find(charaIndex); iter != UmaGUiShowData::globalLightUpdateInfo.end()) {
+				localData = &iter->second;
+				isValid = true;
+				this->condition = localData->followGame;
+			}
+			else {
+				isValid = false;
+			}
+		}
+
+		int checkIndex() {
+			auto cInd_t = reinterpret_cast<CsEnum_t*>(
+				static_cast<std::byte*>(reinterpret_cast<void*>(updateInfo)) + GlobalLightUpdateInfo_flags->offset
+				);
+			auto charaIndex = cInd_t->value__;
+
+			if (currentFrame == cacheFrame) {
+				frameIndex++;
+			}
+			else {
+				cacheFrame = currentFrame;
+				frameIndex = 0;
+			}
+
+			if (charaIndex == 0x0) {
+				charaIndex = UmaGUiShowData::liveCharaPositionFlag.GetValue(frameIndex).second;
+			}
+			return charaIndex;
+
+		}
+
+		void updateData() {
+			if (!isValid) return;
+
+			auto cInd_t = reinterpret_cast<CsEnum_t*>(
+				static_cast<std::byte*>(reinterpret_cast<void*>(updateInfo)) + GlobalLightUpdateInfo_flags->offset
+				);
+			changeValueByType(&localData->flags, &cInd_t->value__, condition);
+
+			changeValueByType(&localData->globalRimShadowRate, &updateInfo->globalRimShadowRate, condition);
+			changeValueByType(&localData->rimStep, &updateInfo->rimStep, condition);
+			changeValueByType(&localData->rimFeather, &updateInfo->rimFeather, condition);
+			changeValueByType(&localData->rimSpecRate, &updateInfo->rimSpecRate, condition);
+			changeValueByType(&localData->RimHorizonOffset, &updateInfo->RimHorizonOffset, condition);
+			changeValueByType(&localData->RimVerticalOffset, &updateInfo->RimVerticalOffset, condition);
+			changeValueByType(&localData->RimHorizonOffset2, &updateInfo->RimHorizonOffset2, condition);
+			changeValueByType(&localData->RimVerticalOffset2, &updateInfo->RimVerticalOffset2, condition);
+			changeValueByType(&localData->rimStep2, &updateInfo->rimStep2, condition);
+			changeValueByType(&localData->rimFeather2, &updateInfo->rimFeather2, condition);
+			changeValueByType(&localData->rimSpecRate2, &updateInfo->rimSpecRate2, condition);
+			changeValueByType(&localData->globalRimShadowRate2, &updateInfo->globalRimShadowRate2, condition);
+			auto v_lightRotation = reinterpret_cast<Quaternion_t*>(
+				static_cast<std::byte*>(reinterpret_cast<void*>(updateInfo)) + GlobalLightUpdateInfo_lightRotation->offset
+				);
+			changeValueByType(&localData->lightRotation.x, &v_lightRotation->x, condition);
+			changeValueByType(&localData->lightRotation.y, &v_lightRotation->y, condition);
+			changeValueByType(&localData->lightRotation.z, &v_lightRotation->z, condition);
+			changeValueByType(&localData->lightRotation.w, &v_lightRotation->w, condition);
+			auto v_rimColor = reinterpret_cast<Color_t*>(
+				static_cast<std::byte*>(reinterpret_cast<void*>(updateInfo)) + GlobalLightUpdateInfo_rimColor->offset
+				);
+			changeValueByType(&localData->rimColor.r, &v_rimColor->r, condition);
+			changeValueByType(&localData->rimColor.g, &v_rimColor->g, condition);
+			changeValueByType(&localData->rimColor.b, &v_rimColor->b, condition);
+			changeValueByType(&localData->rimColor.a, &v_rimColor->a, condition);
+			auto v_rimColor2 = reinterpret_cast<Color_t*>(
+				static_cast<std::byte*>(reinterpret_cast<void*>(updateInfo)) + GlobalLightUpdateInfo_rimColor2->offset
+				);
+			changeValueByType(&localData->rimColor2.r, &v_rimColor2->r, condition);
+			changeValueByType(&localData->rimColor2.g, &v_rimColor2->g, condition);
+			changeValueByType(&localData->rimColor2.b, &v_rimColor2->b, condition);
+			changeValueByType(&localData->rimColor2.a, &v_rimColor2->a, condition);
+		}
+
+		bool getCondition() {
+			return condition;
+		}
+	};
+	int GlobalLightUpdateInfo::cacheFrame = 0;
+	int GlobalLightUpdateInfo::frameIndex = 0;
+	int GlobalLightUpdateInfo::currentFrame = 0;
 
 }

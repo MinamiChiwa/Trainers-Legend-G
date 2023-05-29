@@ -205,6 +205,8 @@ namespace LiveGUILoops {
     }
 
     void radialBlurUpdateInfoMainLoop() {
+        if (!showLiveWnd) return;
+
         if (ImGui::Begin("Live Radial Blur")) {
             ImGui::Checkbox("Use Game Radial Blur Settings", &liveRadialBlurFollowGame);
 
@@ -231,7 +233,65 @@ namespace LiveGUILoops {
         ImGui::End();
     }
 
+    void charaFootLightMainLoop() {
+       if (!showLiveWnd) return;
+
+       if (ImGui::Begin("Chara Foot Light")) {
+
+            ImGui::Columns(4, nullptr, false);
+
+            for (int i = 0; i < 36; i++) {
+                ImGui::PushID(i);
+
+                ImGui::Text("Index %d", charaFootLightUpdateInfo[i].CharacterIndex);
+
+                ImGui::Checkbox("Follow Game Settings", &charaFootLightUpdateInfo[i].followGame);
+                INPUT_AND_SLIDER_FLOAT("hightMax", &charaFootLightUpdateInfo[i].hightMax, -10.0f, 10.0f);
+                ImGui::ColorEdit4("lightColor", &charaFootLightUpdateInfo[i].lightColor.r);
+                ImGui::PopID();
+                ImGui::NextColumn();
+            }
+            ImGui::Columns(1);
+        }
+       ImGui::End();
+    }
+
+    void globalLightMainLoop() {
+        if (!showLiveWnd) return;
+
+        static int selectedIndex = 0;
+        static auto keyNames = liveCharaPositionFlag.GetNames_c();
+
+        if (ImGui::Begin("Global Light Update Info")) {
+            // Create a dropdown menu to select the key
+            ImGui::Combo("Select Chara", &selectedIndex, keyNames, liveCharaPositionFlag.GetSize());
+            const auto currentCharIndex = liveCharaPositionFlag.GetValue(selectedIndex).second;
+
+            GlobalLightUpdateInfo& info = globalLightUpdateInfo.at(currentCharIndex);
+            ImGui::Text("CharaFlag: 0x%x", info.flags);
+            ImGui::Checkbox("Use Game Global Light Settings", &info.followGame);
+            INPUT_AND_SLIDER_FLOAT("Global Rim Shadow Rate", &info.globalRimShadowRate, -10.0f, 10.0f);
+            INPUT_AND_SLIDER_FLOAT("Rim Step", &info.rimStep, -10.0f, 10.0f);
+            INPUT_AND_SLIDER_FLOAT("Rim Feather", &info.rimFeather, -10.0f, 10.0f);
+            INPUT_AND_SLIDER_FLOAT("Rim Spec Rate", &info.rimSpecRate, -10.0f, 10.0f);
+            INPUT_AND_SLIDER_FLOAT("Rim Horizon Offset", &info.RimHorizonOffset, -10.0f, 10.0f);
+            INPUT_AND_SLIDER_FLOAT("Rim Vertical Offset", &info.RimVerticalOffset, -10.0f, 10.0f);
+            INPUT_AND_SLIDER_FLOAT("Rim Horizon Offset 2", &info.RimHorizonOffset2, -10.0f, 10.0f);
+            INPUT_AND_SLIDER_FLOAT("Rim Vertical Offset 2", &info.RimVerticalOffset2, -10.0f, 10.0f);
+            INPUT_AND_SLIDER_FLOAT("Rim Step 2", &info.rimStep2, -10.0f, 10.0f);
+            INPUT_AND_SLIDER_FLOAT("Rim Feather 2", &info.rimFeather2, -10.0f, 10.0f);
+            INPUT_AND_SLIDER_FLOAT("Rim Spec Rate 2", &info.rimSpecRate2, -10.0f, 10.0f);
+            INPUT_AND_SLIDER_FLOAT("Global Rim Shadow Rate 2", &info.globalRimShadowRate2, -10.0f, 10.0f);
+            ImGui::ColorEdit3("Rim Color", &info.rimColor.r);
+            ImGui::ColorEdit3("Rim Color 2", &info.rimColor2.r);
+        }
+
+        ImGui::End();
+    }
+    
     void othersMainLoop() {
+        if (!showLiveWnd) return;
+
         if (ImGui::Begin("Live Other Settings")) {
             if (ImGui::CollapsingHeader("Exposure")) {
                 ImGui::Checkbox("Use Game Exposure Settings", &liveExposureFollowGame);
@@ -250,13 +310,35 @@ namespace LiveGUILoops {
         ImGui::End();
     }
 
-
     void AllLoop() {
-        postEffectUpdateInfo_DOF_guiLoop();
-        postFilmUpdateInfoMainLoop();
-        lightProjectionMainLoop();
-        radialBlurUpdateInfoMainLoop();
-        othersMainLoop();
+        static bool DOF = true;
+        static bool others = true;
+        static bool postFilm = false;
+        static bool lightProjection = false;
+        static bool radialBlur = false;
+        static bool charaFootLight = false;
+        static bool globalLight = false;
+
+        if (!showLiveWnd) return;
+        UmaGUiShowData::initGuiGlobalData();
+        if (ImGui::Begin("Live Controller Pannel")) {
+            ImGui::Checkbox("DOF", &DOF);
+            ImGui::Checkbox("RadialBlur", &radialBlur);
+            ImGui::Checkbox("Others", &others);
+            ImGui::Checkbox("GlobalLight", &globalLight);
+            ImGui::Checkbox("PostFilm", &postFilm);
+            ImGui::Checkbox("LightProjection", &lightProjection);
+            ImGui::Checkbox("CharaFootLight", &charaFootLight);
+        }
+        ImGui::End();
+
+        if (DOF) postEffectUpdateInfo_DOF_guiLoop();
+        if (postFilm) postFilmUpdateInfoMainLoop();
+        if (lightProjection) lightProjectionMainLoop();
+        if (radialBlur) radialBlurUpdateInfoMainLoop();
+        if (charaFootLight) charaFootLightMainLoop();
+        if (globalLight) globalLightMainLoop();
+        if (others) othersMainLoop();
     }
 
 }

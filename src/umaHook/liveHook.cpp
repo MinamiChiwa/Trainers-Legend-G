@@ -64,11 +64,32 @@ namespace UmaLiveHook {
 			case LiveDelegateType::OnUpdateVortex: {
 				CHECK_AND_UPDATE_INFO(liveVortexFollowGame, VortexUpdateInfo);
 			}; break;
+			case LiveDelegateType::OnUpdateCharaFootLight: {
+				LiveData::CharaFootLightUpdateInfo charaFLUpdate(static_cast<UmaGUiShowData::CharaFootLightUpdateInfo*>(updateInfo));
+				if (charaFLUpdate.getCondition()) {
+					CAST_FUNC(DOFUpdateInfoDelegate)(_this, updateInfo);
+				}
+				charaFLUpdate.updateData();
+			}; break;
+			case LiveDelegateType::OnUpdateGlobalLight: {
+				LiveData::GlobalLightUpdateInfo charaGLUpdate(static_cast<UmaGUiShowData::GlobalLightUpdateInfo*>(updateInfo));
+				if (charaGLUpdate.getCondition()) {
+					CAST_FUNC(DOFUpdateInfoDelegate)(_this, updateInfo);
+				}
+				charaGLUpdate.updateData();
+			}; break;
+			
 
 			default: break;
 			}
 		}
 		return CAST_FUNC(DOFUpdateInfoDelegate)(_this, updateInfo);
+	}
+
+	void* AlterUpdate_GlobalLight_orig;
+	void AlterUpdate_GlobalLight_hook(void* _this, void* sheet, int currentFrame) {
+		LiveData::GlobalLightUpdateInfo::currentFrame = currentFrame;
+		return CAST_FUNC(AlterUpdate_GlobalLight)(_this, sheet, currentFrame);
 	}
 
 	void* SetupLiveTimelineControl_orig;
@@ -90,6 +111,8 @@ namespace UmaLiveHook {
 			EmplaceLiveDelegates(OnUpdateRadialBlur);
 			EmplaceLiveDelegates(OnUpdateExposure);
 			EmplaceLiveDelegates(OnUpdateVortex);
+			EmplaceLiveDelegates(OnUpdateCharaFootLight);
+			EmplaceLiveDelegates(OnUpdateGlobalLight);
 		}
 	}
 
@@ -104,6 +127,10 @@ namespace UmaLiveHook {
 			std::make_pair(DOFUpdateInfoDelegate_orig, std::make_pair("Gallop.Live.Cutt", "ExposureUpdateInfo")));
 		LiveData::LiveUpdateInfoDelegatesInvoke.emplace(LiveDelegateType::OnUpdateVortex,
 			std::make_pair(DOFUpdateInfoDelegate_orig, std::make_pair("Gallop.Live.Cutt", "VortexUpdateInfo")));
+		LiveData::LiveUpdateInfoDelegatesInvoke.emplace(LiveDelegateType::OnUpdateCharaFootLight,
+			std::make_pair(DOFUpdateInfoDelegate_orig, std::make_pair("Gallop.Live.Cutt", "CharaFootLightUpdateInfo")));
+		LiveData::LiveUpdateInfoDelegatesInvoke.emplace(LiveDelegateType::OnUpdateGlobalLight,
+			std::make_pair(DOFUpdateInfoDelegate_orig, std::make_pair("Gallop.Live.Cutt", "GlobalLightUpdateInfo")));
 	}
 
 	void regHookMain() {
@@ -111,6 +138,8 @@ namespace UmaLiveHook {
 
 		CREATE_HOOK("umamusume.dll", "Gallop.Live.Cutt", "DOFUpdateInfoDelegate", "Invoke", 1,
 			DOFUpdateInfoDelegate);
+		CREATE_HOOK("umamusume.dll", "Gallop.Live.Cutt", "LiveTimelineControl", "AlterUpdate_GlobalLight", 2,
+			AlterUpdate_GlobalLight);
 
 		CREATE_HOOK("umamusume.dll", "Gallop.Live", "StageController", "SetupLiveTimelineControl", 1,
 			SetupLiveTimelineControl);

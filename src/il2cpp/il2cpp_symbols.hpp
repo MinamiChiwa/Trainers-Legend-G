@@ -63,6 +63,11 @@ public:
 	int herz;
 };
 
+struct CsEnum_t {
+public:
+	int value__;
+};
+
 // UnityEngine.TextGenerationSettings
 struct TextGenerationSettings_t
 {

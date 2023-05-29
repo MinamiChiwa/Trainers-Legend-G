@@ -32,6 +32,20 @@ bool UmaGUiShowData::liveExposureFollowGame = true;
 UmaGUiShowData::VortexUpdateInfo UmaGUiShowData::vortexUpdateInfo;
 bool UmaGUiShowData::liveVortexFollowGame = true;
 
+UmaGUiShowData::CharaFootLightUpdateInfo UmaGUiShowData::charaFootLightUpdateInfo[36]{};
+
+std::unordered_map<int, UmaGUiShowData::GlobalLightUpdateInfo> UmaGUiShowData::globalLightUpdateInfo{};
+bool UmaGUiShowData::globalLightUpdateInfo_inited = false;
+
+UmaEnum<int> UmaGUiShowData::liveCharaPositionFlag (
+	std::vector<std::string>{ "Place01", "Place02", "Place03", "Place04", "Place05", "Place06", "Place07",
+	"Place08", "Place09", "Place10", "Place11", "Place12", "Place13", "Place14", "Place15", "Place16",
+	"Place17", "Place18", "Center", "Left", "Right", "Side", "Back", "Other", "All", "Default"
+},
+std::vector<int32_t>{ 0x1, 0x2, 0x4, 0x8, 0x10, 0x20, 0x40, 0x80, 0x100, 0x200, 0x400, 0x800, 0x1000, 0x2000,
+0x4000, 0x8000, 0x10000, 0x20000, 0x1, 0x2, 0x4, 0x6, 0x3fff8, 0x3fffe, 0x3ffff, 0x0
+}
+);
 
 UmaGUiShowData::UmaRaceMotionData::UmaRaceMotionData(int gateNo, std::wstring charaName, std::wstring trainerName) {
 	this->gateNo = gateNo;
@@ -131,4 +145,13 @@ UmaGUiShowData::SkillAbility::SkillAbility(int abilityType, float effValue) {
 
 void UmaGUiShowData::SkillAbility::addTargets(UmaRaceMotionData target) {
 	this->targets.emplace_back(target);
+}
+
+void UmaGUiShowData::initGuiGlobalData() {
+	if (!UmaGUiShowData::globalLightUpdateInfo_inited) {
+		UmaGUiShowData::globalLightUpdateInfo_inited = true;
+		for (auto i : UmaGUiShowData::liveCharaPositionFlag.GetValues()) {
+			UmaGUiShowData::globalLightUpdateInfo.emplace(i, UmaGUiShowData::GlobalLightUpdateInfo{i});
+		}
+	}
 }
