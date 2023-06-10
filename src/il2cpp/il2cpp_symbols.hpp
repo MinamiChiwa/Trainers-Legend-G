@@ -38,6 +38,13 @@ public:
 	float z;
 };
 
+struct Vector4_t {
+	float x;
+	float y;
+	float z;
+	float w;
+};
+
 // UnityEngine.Quaternion
 struct Quaternion_t
 {
@@ -54,6 +61,11 @@ public:
 	int width;
 	int height;
 	int herz;
+};
+
+struct CsEnum_t {
+public:
+	int value__;
 };
 
 // UnityEngine.TextGenerationSettings
