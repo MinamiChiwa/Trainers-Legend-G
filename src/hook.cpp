@@ -1604,7 +1604,7 @@ namespace
 	bool updateLiveCameraPos = false;
 
 	void* Unity_set_fieldOfView_orig;
-	void Unity_set_fieldOfView_hook(void* _this, void* single) {
+	void Unity_set_fieldOfView_hook(void* _this, float single) {
 		return reinterpret_cast<decltype(Unity_set_fieldOfView_hook)*>(Unity_set_fieldOfView_orig)(_this, single);
 	}
 
@@ -2017,6 +2017,29 @@ namespace
 		Vector3_klass = il2cpp_symbols::get_class("UnityEngine.CoreModule.dll", "UnityEngine", "Vector3");
 	}
 
+	void hideHead(std::unordered_map<int, std::set<void*>>& disabledObj, void* modelController, int currentFlag) {
+		initLiveChara();
+
+		auto ownerObj = get_OwnerObject(modelController);  // UnityEngine.GameObject
+		auto objTransform = get_ObjectTransform(ownerObj);  // UnityEngine.Transform
+		auto childTransformCount = get_TransformChildCount(objTransform);
+		for (int i = 0; i < childTransformCount; i++) {
+			auto child = get_TransformChild(objTransform, i);  // UnityEngine.Transform
+			auto gameObj = get_TransformGameObject(child);  // UnityEngine.GameObject
+			if (gameObj) {
+				std::wstring_view objName = get_ObjectName(gameObj)->start_char;
+				if (objName.compare(L"M_Hair") == 0) {
+					emplaceIntoDisabledObj(disabledObj, currentFlag, gameObj);
+					SetActive(gameObj, false);
+				}
+				else if (objName.compare(L"M_Face") == 0) {
+					emplaceIntoDisabledObj(disabledObj, currentFlag, gameObj);
+					SetActive(gameObj, false);
+				}
+			}
+		}
+	}
+
 	void* Director_AlterUpdate_orig;
 	void Director_AlterUpdate_hook(void* _this) {
 		const bool isFirstPersion = (UmaCamera::GetLiveCameraType() == LiveCamera_FIRST_PERSION) && g_live_free_camera;
@@ -2061,24 +2084,7 @@ namespace
 				UmaCamera::updatePosAndLookatByRotation(*pos, *rot);
 
 				// 隐藏头部
-				auto ownerObj = get_OwnerObject(modelController);  // UnityEngine.GameObject
-				auto objTransform = get_ObjectTransform(ownerObj);  // UnityEngine.Transform
-				auto childTransformCount = get_TransformChildCount(objTransform);
-				for (int i = 0; i < childTransformCount; i++) {
-					auto child = get_TransformChild(objTransform, i);  // UnityEngine.Transform
-					auto gameObj = get_TransformGameObject(child);  // UnityEngine.GameObject
-					if (gameObj) {
-						std::wstring_view objName = get_ObjectName(gameObj)->start_char;
-						if (objName.compare(L"M_Hair") == 0) {
-							emplaceIntoDisabledObj(liveDisabledObj, currentFlag, gameObj);
-							SetActive(gameObj, false);
-						}
-						else if (objName.compare(L"M_Face") == 0) {
-							emplaceIntoDisabledObj(liveDisabledObj, currentFlag, gameObj);
-							SetActive(gameObj, false);
-						}
-					}
-				}
+				hideHead(liveDisabledObj, modelController, currentFlag);
 
 			}
 			currIndex++;
@@ -2585,25 +2591,7 @@ namespace
 				// auto headObject = get_HeadObject(modelController);  // UnityEngine.GameObject
 				// SetActive(headObject, false);
 
-				auto ownerObj = get_OwnerObject(modelController);  // UnityEngine.GameObject
-				auto objTransform = get_ObjectTransform(ownerObj);  // UnityEngine.Transform
-				auto childTransformCount = get_TransformChildCount(objTransform);
-				for (int i = 0; i < childTransformCount; i++) {
-					auto child = get_TransformChild(objTransform, i);  // UnityEngine.Transform
-					auto gameObj = get_TransformGameObject(child);  // UnityEngine.GameObject
-					if (gameObj) {
-						std::wstring_view objName = get_ObjectName(gameObj)->start_char;
-						if (objName.compare(L"M_Hair") == 0) {
-							emplaceIntoDisabledObj(raceDisabledObj, currentIndex, gameObj);
-							SetActive(gameObj, false);
-						}
-						else if (objName.compare(L"M_Face") == 0) {
-							emplaceIntoDisabledObj(raceDisabledObj, currentIndex, gameObj);
-							SetActive(gameObj, false);
-						}
-					}
-
-				}
+				hideHead(raceDisabledObj, modelController, currentIndex);
 
 				Quaternion_t* rot = reinterpret_cast<Quaternion_t*>(il2cpp_object_new(Quaternion_klass));
 				Vector3_t* pos = reinterpret_cast<Vector3_t*>(il2cpp_object_new(Vector3_klass));
@@ -3141,6 +3129,111 @@ namespace
 		const auto url = reinterpret_cast<decltype(get_ApplicationServerUrl_hook)*>(get_ApplicationServerUrl_orig)();
 		const string new_url(g_self_server_url.begin(), g_self_server_url.end());
 		return g_enable_self_server ? il2cpp_string_new(new_url.c_str()) : url;
+	}
+
+	void* (*CutIn_get_MotionCamera)(void* _this);
+	void* (*CutIn_Camera_get_targetTransform)(void* _this);
+	void* (*CutIn_Camera_get_targetCamera)(void* _this);
+	void* (*CutIn_Camera_get_transformObject)(void* _this);
+	void (*Internal_LookAt_Injected)(void* _this, Vector3_t* pos, Vector3_t* up);
+	void* (*CutIn_GetCharacterModelController)(void* _this, int chraIndex, bool isCheckListCount);
+	void* (*CutIn_GetCharacters)(void* _this, bool isCheckListCount);
+	void* (*GetNoseTransform)(void* _this);
+	void* (*Transform_GetParent)(void* _this);
+	void* (*Transform_SetParent)(void* _this, void*, bool);
+
+	bool is_cutin_inited = false;
+
+	void init_cutin() {
+		if (is_cutin_inited) return;
+		convertPtrType(&CutIn_get_MotionCamera, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop.CutIn.Cutt",
+			"CutInTimelineController", "get_MotionCamera", 0));
+		convertPtrType(&CutIn_Camera_get_targetTransform, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop.CutIn.Cutt",
+			"CutInTimelineMotionCamera", "get_targetTransform", 0));
+		convertPtrType(&CutIn_Camera_get_targetCamera, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop.CutIn.Cutt",
+			"CutInTimelineMotionCamera", "get_targetCamera", 0));
+		convertPtrType(&CutIn_Camera_get_transformObject, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop.CutIn.Cutt",
+			"CutInTimelineMotionCamera", "get_transformObject", 0));
+		convertPtrType(&CutIn_GetCharacterModelController, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop.CutIn.Cutt",
+			"CutInTimelineController", "GetCharacterModelController", 2));
+		convertPtrType(&CutIn_GetCharacters, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop.CutIn.Cutt",
+			"CutInTimelineController", "GetCharacters", 1));
+		convertPtrType(&GetNoseTransform, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop",
+			"ModelController", "GetNoseTransform", 0));
+		convertPtrType(&Internal_LookAt_Injected, il2cpp_resolve_icall("UnityEngine.Transform::Internal_LookAt_Injected(UnityEngine.Vector3&,UnityEngine.Vector3&)"));
+		convertPtrType(&getTransformPosition, il2cpp_resolve_icall("UnityEngine.Transform::get_position_Injected(UnityEngine.Vector3&)"));
+		convertPtrType(&getTransformRotation, il2cpp_resolve_icall("UnityEngine.Transform::get_rotation_Injected(UnityEngine.Quaternion&)"));
+		convertPtrType(&getTransformLocalPosition, il2cpp_resolve_icall("UnityEngine.Transform::get_localPosition_Injected(UnityEngine.Vector3&)"));
+		convertPtrType(&getTransformLocalRotation, il2cpp_resolve_icall("UnityEngine.Transform::get_localRotation_Injected(UnityEngine.Quaternion&)"));
+		convertPtrType(&Transform_GetParent, il2cpp_resolve_icall("UnityEngine.Transform::GetParent()"));
+		convertPtrType(&Transform_SetParent, il2cpp_resolve_icall("UnityEngine.Transform::SetParent(UnityEngine.Transform,System.Boolean)"));
+
+		Quaternion_klass = il2cpp_symbols::get_class("UnityEngine.CoreModule.dll", "UnityEngine", "Quaternion");
+		Vector3_klass = il2cpp_symbols::get_class("UnityEngine.CoreModule.dll", "UnityEngine", "Vector3");
+
+		is_cutin_inited = true;
+	}
+
+	auto getListCount(void* list) {
+		static auto listClass = il2cpp_symbols::get_class_from_instance(list);
+		static auto getCountMethod = reinterpret_cast<int32_t(*)(const void*)>(il2cpp_class_get_method_from_name(listClass, "get_Count", 0)->methodPointer);
+		return getCountMethod(list);
+	}
+
+	std::unordered_map<int, std::set<void*>> cutInDisabledObj{};
+
+	void* CutInTimelineController_AlterLateUpdate_orig;
+	bool CutInTimelineController_AlterLateUpdate_hook(void* _this) {
+		UmaCamera::setUmaCameraType(CAMERA_CUTIN);
+		auto ret = reinterpret_cast<decltype(CutInTimelineController_AlterLateUpdate_hook)*>(CutInTimelineController_AlterLateUpdate_orig)(_this);
+		if (!g_cutin_first_persion) {
+			return ret;
+		}
+		init_cutin();
+
+		auto charaIndex = UmaCamera::get_cutIn_target_index();
+		auto charas = CutIn_GetCharacters(_this, false);
+		auto charaCount = getListCount(charas);
+		if (charaIndex >= charaCount) {
+			if (charaCount <= 0) return ret;
+			charaIndex = 0;
+		}
+		if (!liveDisabledObj.empty()) {
+			restoreDisableObj(liveDisabledObj, 0, true);
+		}
+
+		auto modelController = CutIn_GetCharacterModelController(_this, charaIndex, false);
+		if (modelController) {
+			auto headTransform = GetNoseTransform(modelController);
+
+			auto headrot = reinterpret_cast<Quaternion_t*>(il2cpp_object_new(Quaternion_klass));
+			auto headpos = reinterpret_cast<Vector3_t*>(il2cpp_object_new(Vector3_klass));
+			auto localrot = reinterpret_cast<Quaternion_t*>(il2cpp_object_new(Quaternion_klass));
+			auto localpos = reinterpret_cast<Vector3_t*>(il2cpp_object_new(Vector3_klass));
+			getTransformPosition(headTransform, headpos);
+			getTransformRotation(headTransform, headrot);
+			getTransformLocalPosition(headTransform, localpos);
+			getTransformLocalRotation(headTransform, localrot);
+
+			auto motionCamera = CutIn_get_MotionCamera(_this);  // CutInTimelineMotionCamera
+			if (motionCamera) {
+				auto camera = CutIn_Camera_get_targetCamera(motionCamera);  // UnityEngine.Camera
+				Unity_set_nearClipPlane_hook(camera, 0.001f);
+				Unity_set_fieldOfView_hook(camera, UmaCamera::getLiveCamFov());
+
+				auto cameraTransform = CutIn_Camera_get_targetTransform(motionCamera);
+				auto headParent = Transform_GetParent(headTransform);
+				Transform_SetParent(cameraTransform, headParent, true);
+				Unity_set_localpos_injected_hook(cameraTransform, localpos);
+				Unity_set_localRotation_Injected_hook(cameraTransform, localrot);
+				Unity_set_rotation_Injected_hook(cameraTransform, headrot);
+				Unity_set_pos_injected_hook(cameraTransform, headpos);
+				
+				hideHead(cutInDisabledObj, modelController, charaIndex);
+			}
+			restoreDisableObj(liveDisabledObj, charaIndex, false);
+		}
+		return ret;
 	}
 
 	std::string currentTime()
@@ -3990,6 +4083,11 @@ namespace
 			"GameDefine", "get_ApplicationServerUrl", 0
 		);
 
+		auto CutInTimelineController_AlterLateUpdate_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.CutIn.Cutt",
+			"CutInTimelineController", "AlterLateUpdate", 0
+		);
+
 		auto StorySceneController_LoadCharacter_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"StorySceneController", "LoadCharacter", 2
@@ -4194,6 +4292,7 @@ namespace
 
 		ADD_HOOK(set_resolution, "UnityEngine.Screen.SetResolution(int, int, bool) at %p\n");
 		ADD_HOOK(GallopUtil_GetModifiedString, "GallopUtil_GetModifiedString at %p\n");
+		ADD_HOOK(CutInTimelineController_AlterLateUpdate, "CutInTimelineController_AlterLateUpdate at %p\n");
 		UmaLiveHook::regHookMain();
 		if (g_auto_fullscreen)
 		{

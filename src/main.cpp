@@ -83,6 +83,8 @@ std::wstring g_convert_url;
 bool g_enable_self_server = false;
 std::wstring g_self_server_url;
 
+bool g_cutin_first_persion = false;
+
 std::string g_text_data_dict_path;
 std::string g_character_system_text_dict_path;
 std::string g_race_jikkyo_comment_dict_path;
