@@ -3138,9 +3138,11 @@ namespace
 	void (*Internal_LookAt_Injected)(void* _this, Vector3_t* pos, Vector3_t* up);
 	void* (*CutIn_GetCharacterModelController)(void* _this, int chraIndex, bool isCheckListCount);
 	void* (*CutIn_GetCharacters)(void* _this, bool isCheckListCount);
-	void* (*GetNoseTransform)(void* _this);
+	void* (*GetHeadTransform)(void* _this);
 	void* (*Transform_GetParent)(void* _this);
 	void* (*Transform_SetParent)(void* _this, void*, bool);
+	void* (*Unity_Transform_get_localScale_Injected)(void* _this, Vector3_t*);
+	void* (*Unity_Transform_set_localScale_Injected)(void* _this, Vector3_t*);
 
 	bool is_cutin_inited = false;
 
@@ -3158,8 +3160,8 @@ namespace
 			"CutInTimelineController", "GetCharacterModelController", 2));
 		convertPtrType(&CutIn_GetCharacters, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop.CutIn.Cutt",
 			"CutInTimelineController", "GetCharacters", 1));
-		convertPtrType(&GetNoseTransform, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop",
-			"ModelController", "GetNoseTransform", 0));
+		convertPtrType(&GetHeadTransform, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop",
+			"ModelController", "GetHeadTransform", 0));
 		convertPtrType(&Internal_LookAt_Injected, il2cpp_resolve_icall("UnityEngine.Transform::Internal_LookAt_Injected(UnityEngine.Vector3&,UnityEngine.Vector3&)"));
 		convertPtrType(&getTransformPosition, il2cpp_resolve_icall("UnityEngine.Transform::get_position_Injected(UnityEngine.Vector3&)"));
 		convertPtrType(&getTransformRotation, il2cpp_resolve_icall("UnityEngine.Transform::get_rotation_Injected(UnityEngine.Quaternion&)"));
@@ -3167,6 +3169,8 @@ namespace
 		convertPtrType(&getTransformLocalRotation, il2cpp_resolve_icall("UnityEngine.Transform::get_localRotation_Injected(UnityEngine.Quaternion&)"));
 		convertPtrType(&Transform_GetParent, il2cpp_resolve_icall("UnityEngine.Transform::GetParent()"));
 		convertPtrType(&Transform_SetParent, il2cpp_resolve_icall("UnityEngine.Transform::SetParent(UnityEngine.Transform,System.Boolean)"));
+		convertPtrType(&Unity_Transform_get_localScale_Injected, il2cpp_resolve_icall("UnityEngine.Transform::get_localScale_Injected(UnityEngine.Vector3&)"));
+		convertPtrType(&Unity_Transform_set_localScale_Injected, il2cpp_resolve_icall("UnityEngine.Transform::set_localScale_Injected(UnityEngine.Vector3&)"));
 
 		Quaternion_klass = il2cpp_symbols::get_class("UnityEngine.CoreModule.dll", "UnityEngine", "Quaternion");
 		Vector3_klass = il2cpp_symbols::get_class("UnityEngine.CoreModule.dll", "UnityEngine", "Vector3");
@@ -3198,22 +3202,15 @@ namespace
 			if (charaCount <= 0) return ret;
 			charaIndex = 0;
 		}
-		if (!liveDisabledObj.empty()) {
-			restoreDisableObj(liveDisabledObj, 0, true);
-		}
 
 		auto modelController = CutIn_GetCharacterModelController(_this, charaIndex, false);
 		if (modelController) {
-			auto headTransform = GetNoseTransform(modelController);
+			auto headTransform = GetHeadTransform(modelController);
 
 			auto headrot = reinterpret_cast<Quaternion_t*>(il2cpp_object_new(Quaternion_klass));
 			auto headpos = reinterpret_cast<Vector3_t*>(il2cpp_object_new(Vector3_klass));
-			auto localrot = reinterpret_cast<Quaternion_t*>(il2cpp_object_new(Quaternion_klass));
-			auto localpos = reinterpret_cast<Vector3_t*>(il2cpp_object_new(Vector3_klass));
 			getTransformPosition(headTransform, headpos);
 			getTransformRotation(headTransform, headrot);
-			getTransformLocalPosition(headTransform, localpos);
-			getTransformLocalRotation(headTransform, localrot);
 
 			auto motionCamera = CutIn_get_MotionCamera(_this);  // CutInTimelineMotionCamera
 			if (motionCamera) {
@@ -3223,17 +3220,36 @@ namespace
 
 				auto cameraTransform = CutIn_Camera_get_targetTransform(motionCamera);
 				auto headParent = Transform_GetParent(headTransform);
-				Transform_SetParent(cameraTransform, headParent, true);
-				Unity_set_localpos_injected_hook(cameraTransform, localpos);
-				Unity_set_localRotation_Injected_hook(cameraTransform, localrot);
+				
+				// Transform_SetParent(cameraTransform, headParent, true);
+				auto cameraParent = Transform_GetParent(cameraTransform);
+				auto cameraheadrot = reinterpret_cast<Quaternion_t*>(il2cpp_object_new(Quaternion_klass));
+				auto cameraheadpos = reinterpret_cast<Vector3_t*>(il2cpp_object_new(Vector3_klass));
+				auto cameralocalscale = reinterpret_cast<Vector3_t*>(il2cpp_object_new(Vector3_klass));
+				getTransformPosition(headParent, cameraheadpos);
+				getTransformRotation(headParent, cameraheadrot);
+				Unity_Transform_get_localScale_Injected(headParent, cameralocalscale);
+				Unity_set_rotation_Injected_hook(cameraParent, cameraheadrot);
+				Unity_set_pos_injected_hook(cameraParent, cameraheadpos);
+				Unity_Transform_set_localScale_Injected(cameraParent, cameralocalscale);
+
 				Unity_set_rotation_Injected_hook(cameraTransform, headrot);
+				headpos->y += 0.07;
 				Unity_set_pos_injected_hook(cameraTransform, headpos);
 				
 				hideHead(cutInDisabledObj, modelController, charaIndex);
 			}
-			restoreDisableObj(liveDisabledObj, charaIndex, false);
+			restoreDisableObj(cutInDisabledObj, charaIndex, false);
 		}
 		return ret;
+	}
+
+	void* CutInTimelineController_OnDestroy_orig;
+	void CutInTimelineController_OnDestroy_hook(void* _this) {
+		if (g_cutin_first_persion) {
+			cutInDisabledObj.clear();
+		}
+		return reinterpret_cast<decltype(CutInTimelineController_OnDestroy_hook)*>(CutInTimelineController_OnDestroy_orig)(_this);
 	}
 
 	std::string currentTime()
@@ -4087,6 +4103,10 @@ namespace
 			"umamusume.dll", "Gallop.CutIn.Cutt",
 			"CutInTimelineController", "AlterLateUpdate", 0
 		);
+		auto CutInTimelineController_OnDestroy_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.CutIn.Cutt",
+			"CutInTimelineController", "OnDestroy", 0
+		);
 
 		auto StorySceneController_LoadCharacter_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
@@ -4293,6 +4313,7 @@ namespace
 		ADD_HOOK(set_resolution, "UnityEngine.Screen.SetResolution(int, int, bool) at %p\n");
 		ADD_HOOK(GallopUtil_GetModifiedString, "GallopUtil_GetModifiedString at %p\n");
 		ADD_HOOK(CutInTimelineController_AlterLateUpdate, "CutInTimelineController_AlterLateUpdate at %p\n");
+		ADD_HOOK(CutInTimelineController_OnDestroy, "CutInTimelineController_OnDestroy at %p\n");
 		UmaLiveHook::regHookMain();
 		if (g_auto_fullscreen)
 		{
