@@ -1566,8 +1566,17 @@ namespace
 	}
 
 	void* get_camera_pos_orig;
-	Vector3_t* get_camera_pos_hook(void* _this, Il2CppObject* timelineControl) {
-		auto pos = reinterpret_cast<decltype(get_camera_pos_hook)*>(get_camera_pos_orig)(_this, timelineControl);
+	Vector3_t* get_camera_pos_hook(void* retstr, void* _this, Il2CppObject* timelineControl) {
+		const bool isFollowUma = (UmaCamera::GetLiveCameraType() == LiveCamera_FOLLOW_UMA) && g_live_free_camera;
+		if (isFollowUma) {
+			static auto klass = il2cpp_symbols::get_class_from_instance(_this);
+			static FieldInfo* setType_field = il2cpp_class_get_field_from_name(klass, "setType");
+			if (il2cpp_symbols::read_field<int>(_this, setType_field) != 1) {
+				il2cpp_symbols::write_field(_this, setType_field, 1);
+			}
+		}
+
+		auto pos = reinterpret_cast<decltype(get_camera_pos_hook)*>(get_camera_pos_orig)(retstr, _this, timelineControl);
 		if (!g_live_free_camera) {
 			return pos;
 		}
@@ -1886,7 +1895,7 @@ namespace
 	}
 
 	void* get_camera_pos2_orig;  // 暂时没用
-	Vector3_t* get_camera_pos2_hook(void* _this, Il2CppObject* timelineControl, void* type) {
+	Vector3_t* get_camera_pos2_hook(void* _this, Il2CppObject* timelineControl, int type) {
 		auto pos = reinterpret_cast<decltype(get_camera_pos2_hook)*>(get_camera_pos2_orig)(_this, timelineControl, type);
 		printf("pos2: %f, %f, %f\n", pos->x, pos->y, pos->z);
 		if (!g_live_free_camera) {
@@ -1901,7 +1910,7 @@ namespace
 	}
 
 	void* GetCharacterWorldPos_orig;
-	Vector3_t* GetCharacterWorldPos_hook(void* _this, void* timelineControl, int posFlag, int charaParts, Vector3_t* charaPos, Vector3_t* offset) {
+	Vector3_t* GetCharacterWorldPos_hook(void* retstr, void* timelineControl, int posFlag, int charaParts, Vector3_t* charaPos, Vector3_t* offset) {
 		const bool isFollowUma = (UmaCamera::GetLiveCameraType() == LiveCamera_FOLLOW_UMA) && g_live_free_camera;
 
 		if (isFollowUma) {
@@ -1915,7 +1924,7 @@ namespace
 			charaPos->z = 0;
 		}
 
-		auto ret = reinterpret_cast<decltype(GetCharacterWorldPos_hook)*>(GetCharacterWorldPos_orig)(_this, timelineControl, posFlag, charaParts, charaPos, offset);
+		auto ret = reinterpret_cast<decltype(GetCharacterWorldPos_hook)*>(GetCharacterWorldPos_orig)(retstr, timelineControl, posFlag, charaParts, charaPos, offset);
 		
 		if (isFollowUma) {
 			// printf("GetCharacterWorldPos: %d (%f, %f, %f)\n", posFlag, ret->x, ret->y, ret->z);
