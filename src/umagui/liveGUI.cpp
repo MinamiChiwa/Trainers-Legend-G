@@ -387,7 +387,7 @@ namespace LiveGUILoops {
             ImGui::Checkbox("PostFilm", &postFilm);
             ImGui::Checkbox("LightProjection", &lightProjection);
             ImGui::Checkbox("CharaFootLight", &charaFootLight);
-            ImGui::Checkbox("CharaBone", &charaBone);
+            ImGui::Checkbox("Chara Bone (Global)", &charaBone);
         }
         ImGui::End();
 
