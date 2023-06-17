@@ -342,7 +342,7 @@ namespace LiveGUILoops {
                     CHECKBOX_AND_INPUT_AND_SLIDER_FLOAT(collisionRadius, &it->collisionRadius, -1.0f, 1.0f);
                     ImGui::Checkbox("Emit##check_needEnvCollision", &it->replace_needEnvCollision);
                     ImGui::SameLine();
-                    ImGui::Checkbox("isLimit", &it->needEnvCollision);
+                    ImGui::Checkbox("needEnvCollision", &it->needEnvCollision);
                     CHECKBOX_AND_INPUT_AND_SLIDER_FLOAT(verticalWindRateSlow, &it->verticalWindRateSlow, -1.0f, 1.0f);
                     CHECKBOX_AND_INPUT_AND_SLIDER_FLOAT(horizontalWindRateSlow, &it->horizontalWindRateSlow, -1.0f, 1.0f);
                     CHECKBOX_AND_INPUT_AND_SLIDER_FLOAT(verticalWindRateFast, &it->verticalWindRateFast, -1.0f, 1.0f);
