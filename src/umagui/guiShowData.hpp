@@ -372,6 +372,37 @@ namespace UmaGUiShowData {
 		bool followGame = true;
 	};
 
+	struct UmaBoneData {
+		std::string reg = "";
+		bool enabled = true;
+
+		float stiffnessForce = 550.0f;
+		float dragForce = 480.0f;
+		float gravity = 100.0f;
+
+		float collisionRadius = 0.01f;
+		bool needEnvCollision = false;
+		float verticalWindRateSlow = 0;
+		float horizontalWindRateSlow = 0;
+		float verticalWindRateFast = 0;
+		float horizontalWindRateFast = 0;
+		bool isLimit = true;
+		float MoveSpringApplyRate = 0.8f;
+
+		bool replace_stiffnessForce = false;
+		bool replace_dragForce = false;
+		bool replace_gravity = false;
+		bool replace_collisionRadius = false;
+		bool replace_needEnvCollision = false;
+		bool replace_verticalWindRateSlow = false;
+		bool replace_horizontalWindRateSlow = false;
+		bool replace_verticalWindRateFast = false;
+		bool replace_horizontalWindRateFast = false;
+		bool replace_isLimit = false;
+		bool replace_MoveSpringApplyRate = false;
+
+	};
+
 
 	// PostEffectUpdateInfo_DOF
 	extern Vector3_t liveDOFForcalPosition;
@@ -415,6 +446,8 @@ namespace UmaGUiShowData {
 	extern std::unordered_map<int, GlobalLightUpdateInfo> globalLightUpdateInfo;
 	extern bool globalLightUpdateInfo_inited;
 
+	extern std::list<UmaGUiShowData::UmaBoneData> umaBoneData;
+	extern bool isEnableUmaBone;
 
 	void initGuiGlobalData();
 }
