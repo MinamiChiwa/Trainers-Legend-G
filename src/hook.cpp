@@ -2285,6 +2285,22 @@ namespace
 		reinterpret_cast<decltype(CySpring_CreateBone_hook)*>(CySpring_CreateBone_orig)(_this, boneList, element, legacyScale, windPhaseShift, isAdd);
 	}
 
+	void* CySpringController_UpdateSpringThread_orig;
+	void CySpringController_UpdateSpringThread_hook(void* _this) {
+		if (g_enable_better60fps) {
+			static auto klass = il2cpp_symbols::get_class_from_instance(_this);
+			static auto set_UpdateMode = il2cpp_class_get_method_from_name(klass, "set_UpdateMode", 1);
+			if (set_UpdateMode) {
+				reinterpret_cast<void(*)(void*, int)>(set_UpdateMode->methodPointer)(_this, 1);
+			}
+			else {
+				static FieldInfo* updateModeField = il2cpp_class_get_field_from_name(klass, "<UpdateMode>k__BackingField");
+				il2cpp_symbols::write_field(_this, updateModeField, 1);
+			}
+		}
+		reinterpret_cast<decltype(CySpringController_UpdateSpringThread_hook)*>(CySpringController_UpdateSpringThread_orig)(_this);
+	}
+
 
 	int(*HorseData_get_GateNo)(void*);
 	float(*get_RunMotionRate)(void*);
@@ -4037,6 +4053,11 @@ namespace
 			"CySpring", "CreateBone", 5
 		);
 
+		auto CySpringController_UpdateSpringThread_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"CySpringController", "UpdateSpringThread", 0
+		);
+
 		auto get_RunMotionSpeed_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"HorseRaceInfoReplay", "get_RunMotionSpeed", 0
@@ -4408,6 +4429,7 @@ namespace
 		ADD_HOOK(GetCharacterWorldPos, "GetCharacterWorldPos at %p\n");
 		ADD_HOOK(Director_AlterUpdate, "Director_AlterUpdate at %p\n");
 		ADD_HOOK(CySpring_CreateBone, "CySpring_CreateBone at %p\n");
+		ADD_HOOK(CySpringController_UpdateSpringThread, "CySpringController_UpdateSpringThread at %p\n");
 		ADD_HOOK(get_RunMotionSpeed, "get_RunMotionSpeed at %p\n");
 		ADD_HOOK(HorseRaceInfoReplay_ctor, "HorseRaceInfoReplay_ctor at %p\n");
 		ADD_HOOK(AddUsedSkillId, "AddUsedSkillId at %p\n");

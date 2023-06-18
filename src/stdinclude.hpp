@@ -187,3 +187,4 @@ extern std::string dumpGameAssemblyPath;
 extern bool g_enable_live_dof_controller;
 extern bool guiStarting;
 extern bool g_cutin_first_persion;
+extern bool g_enable_better60fps;

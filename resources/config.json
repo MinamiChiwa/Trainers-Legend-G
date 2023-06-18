@@ -3,6 +3,7 @@
     "enableLogger": false,
     "dumpStaticEntries": false,
     "maxFps": 60,
+    "better60FPS": false,
     "highQuality": true,
     "enableVSync": false,
     "unlockSize": true,
