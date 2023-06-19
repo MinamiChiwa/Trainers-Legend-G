@@ -83,6 +83,8 @@ std::wstring g_convert_url;
 bool g_enable_self_server = false;
 std::wstring g_self_server_url;
 
+bool g_cutin_first_persion = false;
+
 std::string g_text_data_dict_path;
 std::string g_character_system_text_dict_path;
 std::string g_race_jikkyo_comment_dict_path;
@@ -91,6 +93,7 @@ std::list<std::function<void(void)>> onPluginReload{};
 bool enableRaceInfoTab = false;
 bool raceInfoTabAttachToGame = false;
 bool g_enable_live_dof_controller = false;
+bool g_enable_better60fps = false;
 
 constexpr const char LocalizedDataPath[] = "localized_data";
 constexpr const char OldLocalizedDataPath[] = "old_localized_data";
@@ -433,6 +436,10 @@ namespace
 			g_max_fps = document["maxFps"].GetInt();
 			g_unlock_size = document["unlockSize"].GetBool();
 			g_ui_scale = document["uiScale"].GetFloat();
+
+			if (document.HasMember("better60FPS")) {
+				g_enable_better60fps = document["better60FPS"].GetBool();
+			}
 
 			if (document.HasMember("readRequestPack")) {
 				g_read_request_pack = document["readRequestPack"].GetBool();

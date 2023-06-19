@@ -293,18 +293,75 @@ namespace LiveGUILoops {
         if (!showLiveWnd) return;
 
         if (ImGui::Begin("Live Other Settings")) {
-            if (ImGui::CollapsingHeader("Exposure")) {
+            if (ImGui::CollapsingHeader("Exposure", ImGuiTreeNodeFlags_DefaultOpen)) {
                 ImGui::Checkbox("Use Game Exposure Settings", &liveExposureFollowGame);
                 ImGui::Checkbox("IsEnable Exposure", &exposureUpdateInfo.IsEnable);
                 ImGui::InputFloat4("ExposureParameter", &exposureUpdateInfo.ExposureParameter.x);
                 INPUT_AND_SLIDER_FLOAT("DepthMask", &exposureUpdateInfo.DepthMask, -3.5f, 7.0f);
             }
-            if (ImGui::CollapsingHeader("Vortex")) {
+            if (ImGui::CollapsingHeader("Vortex", ImGuiTreeNodeFlags_DefaultOpen)) {
                 ImGui::Checkbox("Use Game Vortex Settings", &liveVortexFollowGame);
                 ImGui::Checkbox("IsEnable Vortex", &vortexUpdateInfo.IsEnable);
                 INPUT_AND_SLIDER_FLOAT("RotVolume", &vortexUpdateInfo.RotVolume, -10.0f, 10.0f);
                 INPUT_AND_SLIDER_FLOAT("DepthClip", &vortexUpdateInfo.DepthClip, -10.0f, 10.0f);
                 ImGui::InputFloat4("Area", &vortexUpdateInfo.Area.x);
+            }
+        }
+        ImGui::End();
+    }
+
+    void umaBoneLoop() {
+#define CHECKBOX_AND_INPUT_AND_SLIDER_FLOAT(label, data, min, max)\
+    ImGui::Checkbox("Emit##check_"###label, &it->replace_##label);\
+    ImGui::SameLine();INPUT_AND_SLIDER_FLOAT(#label, data, min, max)
+
+        if (!showLiveWnd) return;
+        if (ImGui::Begin("Uma Bone Settings")) {
+            ImGui::Checkbox("Enable self bone settings (Non-real-time, requires reload model.)", &isEnableUmaBone);
+            if (ImGui::Button("Add")) {
+                umaBoneData.emplace_back(UmaBoneData{});
+            }
+
+            int forCount = 0;
+            for (auto it = umaBoneData.begin(); it != umaBoneData.end();) {
+                ImGui::PushID(std::format("boneForCount{}", forCount).c_str());
+                auto isRemove = false;
+
+                if (ImGui::CollapsingHeader(std::format("Set{}", forCount).c_str(), ImGuiTreeNodeFlags_DefaultOpen)) {
+                    char buf[256];
+                    strcpy_s(buf, it->reg.c_str());
+                    ImGui::InputText("Regex", buf, 256);
+                    it->reg = buf;
+                    ImGui::SameLine();
+                    isRemove = ImGui::Button("Delete");
+
+                    ImGui::Checkbox("Enable this settings", &it->enabled);
+                    CHECKBOX_AND_INPUT_AND_SLIDER_FLOAT(stiffnessForce, &it->stiffnessForce, -100.0f, 1500.0f);
+                    CHECKBOX_AND_INPUT_AND_SLIDER_FLOAT(dragForce, &it->dragForce, -100.0f, 1500.0f);
+                    CHECKBOX_AND_INPUT_AND_SLIDER_FLOAT(gravity, &it->gravity, -100.0f, 1500.0f);
+                    CHECKBOX_AND_INPUT_AND_SLIDER_FLOAT(collisionRadius, &it->collisionRadius, -1.0f, 1.0f);
+                    ImGui::Checkbox("Emit##check_needEnvCollision", &it->replace_needEnvCollision);
+                    ImGui::SameLine();
+                    ImGui::Checkbox("needEnvCollision", &it->needEnvCollision);
+                    CHECKBOX_AND_INPUT_AND_SLIDER_FLOAT(verticalWindRateSlow, &it->verticalWindRateSlow, -1.0f, 1.0f);
+                    CHECKBOX_AND_INPUT_AND_SLIDER_FLOAT(horizontalWindRateSlow, &it->horizontalWindRateSlow, -1.0f, 1.0f);
+                    CHECKBOX_AND_INPUT_AND_SLIDER_FLOAT(verticalWindRateFast, &it->verticalWindRateFast, -1.0f, 1.0f);
+                    CHECKBOX_AND_INPUT_AND_SLIDER_FLOAT(horizontalWindRateFast, &it->horizontalWindRateFast, -1.0f, 1.0f);
+                    ImGui::Checkbox("Emit##check_isLimit", &it->replace_isLimit);
+                    ImGui::SameLine();
+                    ImGui::Checkbox("isLimit", &it->isLimit);
+                    CHECKBOX_AND_INPUT_AND_SLIDER_FLOAT(MoveSpringApplyRate, &it->MoveSpringApplyRate, -5.0f, 5.0f);
+
+                }
+                ImGui::PopID();
+
+                if (isRemove) {
+                    it = umaBoneData.erase(it);
+                }
+                else {
+                    it++;
+                }
+                forCount++;
             }
         }
         ImGui::End();
@@ -317,6 +374,7 @@ namespace LiveGUILoops {
         static bool lightProjection = false;
         static bool radialBlur = false;
         static bool charaFootLight = false;
+        static bool charaBone = false;
         static bool globalLight = false;
 
         if (!showLiveWnd) return;
@@ -329,6 +387,7 @@ namespace LiveGUILoops {
             ImGui::Checkbox("PostFilm", &postFilm);
             ImGui::Checkbox("LightProjection", &lightProjection);
             ImGui::Checkbox("CharaFootLight", &charaFootLight);
+            ImGui::Checkbox("Chara Bone (Global)", &charaBone);
         }
         ImGui::End();
 
@@ -339,6 +398,7 @@ namespace LiveGUILoops {
         if (charaFootLight) charaFootLightMainLoop();
         if (globalLight) globalLightMainLoop();
         if (others) othersMainLoop();
+        if (charaBone) umaBoneLoop();
     }
 
 }

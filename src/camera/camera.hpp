@@ -23,6 +23,7 @@ namespace UmaCamera {
 	int GetLiveCameraCharaParts();
 	int GetLiveCharaPositionIndex();
 	int GetLiveCameraType();
+	int get_cutIn_target_index();
 
 	void setRaceCamFOV(float value);
 	float getRaceCamFov();

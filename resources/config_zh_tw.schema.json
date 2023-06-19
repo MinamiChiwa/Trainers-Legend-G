@@ -20,6 +20,11 @@
             "type": "integer",
             "minimum": -1
         },
+        "better60FPS": {
+            "description": "開啟60幀優化",
+            "type": "boolean",
+            "default": false
+        },
         "highQuality": {
             "description": "高畫質模式 (抗鋸齒 MSAA x8, 鎖定圖形品質等級到最高)",
             "type": "boolean"

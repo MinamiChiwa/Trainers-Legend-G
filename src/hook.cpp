@@ -5,6 +5,7 @@
 #include "umaHook/liveHook.hpp"
 #include <set>
 #include <Psapi.h>
+#include <boost/regex.hpp>
 
 using namespace std;
 std::function<void()> g_on_hook_ready;
@@ -1566,8 +1567,17 @@ namespace
 	}
 
 	void* get_camera_pos_orig;
-	Vector3_t* get_camera_pos_hook(void* _this, Il2CppObject* timelineControl) {
-		auto pos = reinterpret_cast<decltype(get_camera_pos_hook)*>(get_camera_pos_orig)(_this, timelineControl);
+	Vector3_t* get_camera_pos_hook(void* retstr, void* _this, Il2CppObject* timelineControl) {
+		const bool isFollowUma = (UmaCamera::GetLiveCameraType() == LiveCamera_FOLLOW_UMA) && g_live_free_camera;
+		if (isFollowUma) {
+			static auto klass = il2cpp_symbols::get_class_from_instance(_this);
+			static FieldInfo* setType_field = il2cpp_class_get_field_from_name(klass, "setType");
+			if (il2cpp_symbols::read_field<int>(_this, setType_field) != 1) {
+				il2cpp_symbols::write_field(_this, setType_field, 1);
+			}
+		}
+
+		auto pos = reinterpret_cast<decltype(get_camera_pos_hook)*>(get_camera_pos_orig)(retstr, _this, timelineControl);
 		if (!g_live_free_camera) {
 			return pos;
 		}
@@ -1604,7 +1614,7 @@ namespace
 	bool updateLiveCameraPos = false;
 
 	void* Unity_set_fieldOfView_orig;
-	void Unity_set_fieldOfView_hook(void* _this, void* single) {
+	void Unity_set_fieldOfView_hook(void* _this, float single) {
 		return reinterpret_cast<decltype(Unity_set_fieldOfView_hook)*>(Unity_set_fieldOfView_orig)(_this, single);
 	}
 
@@ -1886,7 +1896,7 @@ namespace
 	}
 
 	void* get_camera_pos2_orig;  // 暂时没用
-	Vector3_t* get_camera_pos2_hook(void* _this, Il2CppObject* timelineControl, void* type) {
+	Vector3_t* get_camera_pos2_hook(void* _this, Il2CppObject* timelineControl, int type) {
 		auto pos = reinterpret_cast<decltype(get_camera_pos2_hook)*>(get_camera_pos2_orig)(_this, timelineControl, type);
 		printf("pos2: %f, %f, %f\n", pos->x, pos->y, pos->z);
 		if (!g_live_free_camera) {
@@ -1901,7 +1911,7 @@ namespace
 	}
 
 	void* GetCharacterWorldPos_orig;
-	Vector3_t* GetCharacterWorldPos_hook(void* _this, void* timelineControl, int posFlag, int charaParts, Vector3_t* charaPos, Vector3_t* offset) {
+	Vector3_t* GetCharacterWorldPos_hook(void* retstr, void* timelineControl, int posFlag, int charaParts, Vector3_t* charaPos, Vector3_t* offset) {
 		const bool isFollowUma = (UmaCamera::GetLiveCameraType() == LiveCamera_FOLLOW_UMA) && g_live_free_camera;
 
 		if (isFollowUma) {
@@ -1915,7 +1925,7 @@ namespace
 			charaPos->z = 0;
 		}
 
-		auto ret = reinterpret_cast<decltype(GetCharacterWorldPos_hook)*>(GetCharacterWorldPos_orig)(_this, timelineControl, posFlag, charaParts, charaPos, offset);
+		auto ret = reinterpret_cast<decltype(GetCharacterWorldPos_hook)*>(GetCharacterWorldPos_orig)(retstr, timelineControl, posFlag, charaParts, charaPos, offset);
 		
 		if (isFollowUma) {
 			// printf("GetCharacterWorldPos: %d (%f, %f, %f)\n", posFlag, ret->x, ret->y, ret->z);
@@ -1965,11 +1975,18 @@ namespace
 	void*(*GetCharacterObjectFromPositionId)(void*, int);
 	void*(*get_CharacterObjectList)(void*);
 	void*(*get_LiveModelControllerArray)(void*);
+	void*(*get_ClothAsset)(void*);
+	void*(*ClothAsset_get_BustClothAsset)(void*);
 	void*(*get_HeadTransform)(void*);
 	void(*getTransformPosition)(void*, Vector3_t*);
 	void(*getTransformRotation)(void*, Quaternion_t*);
 	void(*getTransformLocalRotation)(void*, Quaternion_t*);
 	void* (*get_OwnerObject)(void*);
+	void* (*get_BodyObject)(void*);
+	void* (*GameObject_Find)(Il2CppString*);
+	Il2CppString* (*GameObject_get_tag)(void*);
+	void* (*GameObject_FindGameObjectsWithTag)(Il2CppString*);
+	void* (*Transform_GetParent)(void* _this);
 	void* (*get_ObjectTransform)(void*);
 	Il2CppString* (*get_ObjectName)(void*);
 	int (*get_TransformChildCount)(void*);
@@ -1997,9 +2014,12 @@ namespace
 		convertPtrType(&getTransformRotation, il2cpp_resolve_icall("UnityEngine.Transform::get_rotation_Injected(UnityEngine.Quaternion&)"));
 		convertPtrType(&getTransformLocalRotation, il2cpp_resolve_icall("UnityEngine.Transform::get_localRotation_Injected(UnityEngine.Quaternion&)"));
 		convertPtrType(&get_LiveModelControllerArray, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop.Live", "CharacterObject", "get_LiveModelControllerArray", 0));
+		convertPtrType(&get_ClothAsset, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "ModelController", "get_ClothAsset", 0));
+		convertPtrType(&ClothAsset_get_BustClothAsset, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "ClothAsset", "get_BustClothAsset", 0));
 		convertPtrType(&get_liveCharaHeadPosition, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop.Live", "CharacterObject", "get_liveCharaHeadPosition", 0));
 		convertPtrType(&get_HeadTransform, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "LiveModelController", "get_HeadTransform", 0));
 		convertPtrType(&get_OwnerObject, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "ModelController", "get_OwnerObject", 0));
+		convertPtrType(&get_BodyObject, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "ModelController", "get_BodyObject", 0));
 		
 		convertPtrType(&get_ObjectTransform, il2cpp_resolve_icall("UnityEngine.GameObject::get_transform()"));
 		convertPtrType(&get_TransformChildCount, il2cpp_resolve_icall("UnityEngine.Transform::get_childCount()"));
@@ -2007,6 +2027,10 @@ namespace
 		convertPtrType(&get_TransformGameObject, il2cpp_resolve_icall("UnityEngine.Component::get_gameObject()"));
 		convertPtrType(&get_ObjectName, il2cpp_resolve_icall("UnityEngine.Object::GetName(UnityEngine.Object)"));
 		convertPtrType(&SetActive, il2cpp_resolve_icall("UnityEngine.GameObject::SetActive(System.Boolean)"));
+		convertPtrType(&GameObject_Find, il2cpp_resolve_icall("UnityEngine.GameObject::Find(System.String)"));
+		convertPtrType(&GameObject_get_tag, il2cpp_resolve_icall("UnityEngine.GameObject::get_tag()"));
+		convertPtrType(&GameObject_FindGameObjectsWithTag, il2cpp_resolve_icall("UnityEngine.GameObject::FindGameObjectsWithTag(System.String)"));
+		convertPtrType(&Transform_GetParent, il2cpp_resolve_icall("UnityEngine.Transform::GetParent()"));
 		CharacterObject_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop.Live", "CharacterObject");
 		CharaObject_liveModelControllerArray = il2cpp_class_get_field_from_name(CharacterObject_klass, "_liveModelControllerArray");
 		CharaObject_activeModelIndex = il2cpp_class_get_field_from_name(CharacterObject_klass, "_activeModelIndex");
@@ -2015,6 +2039,64 @@ namespace
 		LiveModelController_HeadTransform = il2cpp_class_get_field_from_name(LiveModelController_klass, "<HeadTransform>k__BackingField");
 		Quaternion_klass = il2cpp_symbols::get_class("UnityEngine.CoreModule.dll", "UnityEngine", "Quaternion");
 		Vector3_klass = il2cpp_symbols::get_class("UnityEngine.CoreModule.dll", "UnityEngine", "Vector3");
+	}
+
+	/*
+	void printAllParents(void* gameObj) {
+		auto objName = get_ObjectName(gameObj);
+		auto objTransform = get_ObjectTransform(gameObj);  // UnityEngine.Transform
+		printf("Target %ls (%p):\n", objName->start_char, gameObj);
+
+		auto parent = Transform_GetParent(objTransform);  // UnityEngine.Transform
+		if (parent == objTransform) {
+			return;
+		}
+		else {
+			auto parentObj = get_TransformGameObject(parent);  // UnityEngine.GameObject
+			printAllParents(parentObj);
+		}
+	}
+
+	void* findChildGameObject(void* gameObject, std::wstring name) {
+		if (!gameObject) return NULL;
+
+		auto objTransform = get_ObjectTransform(gameObject);  // UnityEngine.Transform
+		auto childTransformCount = get_TransformChildCount(objTransform);
+		for (int i = 0; i < childTransformCount; i++) {
+			auto child = get_TransformChild(objTransform, i);  // UnityEngine.Transform
+			auto gameObj = get_TransformGameObject(child);  // UnityEngine.GameObject
+			if (gameObj) {
+				std::wstring_view childObjName = get_ObjectName(gameObj)->start_char;
+				if (childObjName.compare(name) == 0) {
+					return gameObj;
+				}
+			}
+		}
+		return NULL;
+	}
+	*/
+
+	void hideHead(std::unordered_map<int, std::set<void*>>& disabledObj, void* modelController, int currentFlag) {
+		initLiveChara();
+
+		auto ownerObj = get_OwnerObject(modelController);  // UnityEngine.GameObject
+		auto objTransform = get_ObjectTransform(ownerObj);  // UnityEngine.Transform
+		auto childTransformCount = get_TransformChildCount(objTransform);
+		for (int i = 0; i < childTransformCount; i++) {
+			auto child = get_TransformChild(objTransform, i);  // UnityEngine.Transform
+			auto gameObj = get_TransformGameObject(child);  // UnityEngine.GameObject
+			if (gameObj) {
+				std::wstring_view objName = get_ObjectName(gameObj)->start_char;
+				if (objName.compare(L"M_Hair") == 0) {
+					emplaceIntoDisabledObj(disabledObj, currentFlag, gameObj);
+					SetActive(gameObj, false);
+				}
+				else if (objName.compare(L"M_Face") == 0) {
+					emplaceIntoDisabledObj(disabledObj, currentFlag, gameObj);
+					SetActive(gameObj, false);
+				}
+			}
+		}
 	}
 
 	void* Director_AlterUpdate_orig;
@@ -2061,30 +2143,162 @@ namespace
 				UmaCamera::updatePosAndLookatByRotation(*pos, *rot);
 
 				// 隐藏头部
-				auto ownerObj = get_OwnerObject(modelController);  // UnityEngine.GameObject
-				auto objTransform = get_ObjectTransform(ownerObj);  // UnityEngine.Transform
-				auto childTransformCount = get_TransformChildCount(objTransform);
-				for (int i = 0; i < childTransformCount; i++) {
-					auto child = get_TransformChild(objTransform, i);  // UnityEngine.Transform
-					auto gameObj = get_TransformGameObject(child);  // UnityEngine.GameObject
-					if (gameObj) {
-						std::wstring_view objName = get_ObjectName(gameObj)->start_char;
-						if (objName.compare(L"M_Hair") == 0) {
-							emplaceIntoDisabledObj(liveDisabledObj, currentFlag, gameObj);
-							SetActive(gameObj, false);
-						}
-						else if (objName.compare(L"M_Face") == 0) {
-							emplaceIntoDisabledObj(liveDisabledObj, currentFlag, gameObj);
-							SetActive(gameObj, false);
-						}
-					}
-				}
-
+				hideHead(liveDisabledObj, modelController, currentFlag);
 			}
 			currIndex++;
 			});
 		restoreDisableObj(liveDisabledObj, currentFlag, false);
 
+	}
+
+	bool isCySpringInit = false;
+	void* CySpringParamDataElement_klass;
+	FieldInfo* CySpringParamDataElement_boneName;
+	FieldInfo* CySpringParamDataElement_stiffnessForce;
+	FieldInfo* CySpringParamDataElement_dragForce;
+	FieldInfo* CySpringParamDataElement_gravity;
+	FieldInfo* CySpringParamDataElement_childElements;
+	FieldInfo* CySpringParamDataElement_verticalWindRateSlow;
+	FieldInfo* CySpringParamDataElement_collisionRadius;
+	FieldInfo* CySpringParamDataElement_needEnvCollision;
+	FieldInfo* CySpringParamDataElement_horizontalWindRateSlow;
+	FieldInfo* CySpringParamDataElement_verticalWindRateFast;
+	FieldInfo* CySpringParamDataElement_horizontalWindRateFast;
+	FieldInfo* CySpringParamDataElement_isLimit;
+	FieldInfo* CySpringParamDataElement_MoveSpringApplyRate;
+	void* CySpringParamDataChildElement_klass;
+	FieldInfo* CySpringParamDataChildElement_boneName;
+	FieldInfo* CySpringParamDataChildElement_stiffnessForce;
+	FieldInfo* CySpringParamDataChildElement_dragForce;
+	FieldInfo* CySpringParamDataChildElement_gravity;
+	FieldInfo* CySpringParamDataChildElement_verticalWindRateSlow;
+	FieldInfo* CySpringParamDataChildElement_collisionRadius;
+	FieldInfo* CySpringParamDataChildElement_needEnvCollision;
+	FieldInfo* CySpringParamDataChildElement_horizontalWindRateSlow;
+	FieldInfo* CySpringParamDataChildElement_verticalWindRateFast;
+	FieldInfo* CySpringParamDataChildElement_horizontalWindRateFast;
+	FieldInfo* CySpringParamDataChildElement_isLimit;
+	FieldInfo* CySpringParamDataChildElement_MoveSpringApplyRate;
+
+	int getListCount(void* list);
+
+	void initCySpring() {
+		if (isCySpringInit) return;
+		isCySpringInit = true;
+
+		CySpringParamDataElement_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop", "CySpringParamDataElement");
+		CySpringParamDataElement_boneName = il2cpp_class_get_field_from_name(CySpringParamDataElement_klass, "_boneName");
+		CySpringParamDataElement_stiffnessForce = il2cpp_class_get_field_from_name(CySpringParamDataElement_klass, "_stiffnessForce");
+		CySpringParamDataElement_dragForce = il2cpp_class_get_field_from_name(CySpringParamDataElement_klass, "_dragForce");
+		CySpringParamDataElement_gravity = il2cpp_class_get_field_from_name(CySpringParamDataElement_klass, "_gravity");
+		CySpringParamDataElement_childElements = il2cpp_class_get_field_from_name(CySpringParamDataElement_klass, "_childElements");
+		
+		CySpringParamDataElement_verticalWindRateSlow = il2cpp_class_get_field_from_name(CySpringParamDataElement_klass, "_verticalWindRateSlow");
+		CySpringParamDataElement_collisionRadius = il2cpp_class_get_field_from_name(CySpringParamDataElement_klass, "_collisionRadius");
+		CySpringParamDataElement_needEnvCollision = il2cpp_class_get_field_from_name(CySpringParamDataElement_klass, "_needEnvCollision");
+		CySpringParamDataElement_horizontalWindRateSlow = il2cpp_class_get_field_from_name(CySpringParamDataElement_klass, "_horizontalWindRateSlow");
+		CySpringParamDataElement_verticalWindRateFast = il2cpp_class_get_field_from_name(CySpringParamDataElement_klass, "_verticalWindRateFast");
+		CySpringParamDataElement_horizontalWindRateFast = il2cpp_class_get_field_from_name(CySpringParamDataElement_klass, "_horizontalWindRateFast");
+		CySpringParamDataElement_isLimit = il2cpp_class_get_field_from_name(CySpringParamDataElement_klass, "_isLimit");
+		CySpringParamDataElement_MoveSpringApplyRate = il2cpp_class_get_field_from_name(CySpringParamDataElement_klass, "_MoveSpringApplyRate");
+
+		CySpringParamDataChildElement_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop", "CySpringParamDataChildElement");
+		CySpringParamDataChildElement_boneName = il2cpp_class_get_field_from_name(CySpringParamDataChildElement_klass, "_boneName");
+		CySpringParamDataChildElement_stiffnessForce = il2cpp_class_get_field_from_name(CySpringParamDataChildElement_klass, "_stiffnessForce");
+		CySpringParamDataChildElement_dragForce = il2cpp_class_get_field_from_name(CySpringParamDataChildElement_klass, "_dragForce");
+		CySpringParamDataChildElement_gravity = il2cpp_class_get_field_from_name(CySpringParamDataChildElement_klass, "_gravity");
+		
+		CySpringParamDataChildElement_verticalWindRateSlow = il2cpp_class_get_field_from_name(CySpringParamDataChildElement_klass, "_verticalWindRateSlow");
+		CySpringParamDataChildElement_collisionRadius = il2cpp_class_get_field_from_name(CySpringParamDataChildElement_klass, "_collisionRadius");
+		CySpringParamDataChildElement_needEnvCollision = il2cpp_class_get_field_from_name(CySpringParamDataChildElement_klass, "_needEnvCollision");
+		CySpringParamDataChildElement_horizontalWindRateSlow = il2cpp_class_get_field_from_name(CySpringParamDataChildElement_klass, "_horizontalWindRateSlow");
+		CySpringParamDataChildElement_verticalWindRateFast = il2cpp_class_get_field_from_name(CySpringParamDataChildElement_klass, "_verticalWindRateFast");
+		CySpringParamDataChildElement_horizontalWindRateFast = il2cpp_class_get_field_from_name(CySpringParamDataChildElement_klass, "_horizontalWindRateFast");
+		CySpringParamDataChildElement_isLimit = il2cpp_class_get_field_from_name(CySpringParamDataChildElement_klass, "_isLimit");
+		CySpringParamDataChildElement_MoveSpringApplyRate = il2cpp_class_get_field_from_name(CySpringParamDataChildElement_klass, "_MoveSpringApplyRate");
+
+	}
+
+	void* CySpring_CreateBone_orig;
+	void CySpring_CreateBone_hook(void* _this, void* boneList, void* element, float legacyScale, float windPhaseShift, bool isAdd) {
+
+		if (UmaGUiShowData::isEnableUmaBone) {
+			initCySpring();
+
+			auto boneNameStr = il2cpp_symbols::read_field<Il2CppString*>(element, CySpringParamDataElement_boneName);
+			std::wstring boneName = boneNameStr->start_char;
+
+			for (const auto& i : UmaGUiShowData::umaBoneData) {
+				if (!i.enabled) continue;
+				const boost::wregex expr(utility::conversions::to_string_t(i.reg), boost::regex_constants::icase);
+
+				if (boost::regex_search(boneName, expr)) {
+
+					auto stiffnessForce = il2cpp_symbols::read_field<float>(element, CySpringParamDataElement_stiffnessForce);
+					auto dragForce = il2cpp_symbols::read_field<float>(element, CySpringParamDataElement_dragForce);
+					auto gravity = il2cpp_symbols::read_field<float>(element, CySpringParamDataElement_gravity);
+
+					if (i.replace_stiffnessForce) il2cpp_symbols::write_field(element, CySpringParamDataElement_stiffnessForce, i.stiffnessForce);
+					if (i.replace_dragForce) il2cpp_symbols::write_field(element, CySpringParamDataElement_dragForce, i.dragForce);
+					if (i.replace_gravity) il2cpp_symbols::write_field(element, CySpringParamDataElement_gravity, i.gravity);
+					if (i.replace_verticalWindRateSlow) il2cpp_symbols::write_field(element, CySpringParamDataElement_verticalWindRateSlow, i.verticalWindRateSlow);
+					if (i.replace_collisionRadius) il2cpp_symbols::write_field(element, CySpringParamDataElement_collisionRadius, i.collisionRadius);
+					if (i.replace_needEnvCollision) il2cpp_symbols::write_field(element, CySpringParamDataElement_needEnvCollision, i.needEnvCollision);
+					if (i.replace_horizontalWindRateSlow) il2cpp_symbols::write_field(element, CySpringParamDataElement_horizontalWindRateSlow, i.horizontalWindRateSlow);
+					if (i.replace_verticalWindRateFast) il2cpp_symbols::write_field(element, CySpringParamDataElement_verticalWindRateFast, i.verticalWindRateFast);
+					if (i.replace_horizontalWindRateFast) il2cpp_symbols::write_field(element, CySpringParamDataElement_horizontalWindRateFast, i.horizontalWindRateFast);
+					if (i.replace_isLimit) il2cpp_symbols::write_field(element, CySpringParamDataElement_isLimit, i.isLimit);
+					if (i.replace_MoveSpringApplyRate) il2cpp_symbols::write_field(element, CySpringParamDataElement_MoveSpringApplyRate, i.MoveSpringApplyRate);
+
+					auto childElements = il2cpp_symbols::read_field(element, CySpringParamDataElement_childElements);
+
+					printf("%ls: orig stiffnessForce=%f, dragForce=%f, gravity=%f, childCount=%d\n", boneName.data(), stiffnessForce, dragForce, gravity, getListCount(childElements));
+
+					il2cpp_symbols::iterate_list(childElements, [&](size_t index, void* chaildElement) {
+						auto boneNameStr = il2cpp_symbols::read_field<Il2CppString*>(chaildElement, CySpringParamDataChildElement_boneName);
+						std::wstring boneName = boneNameStr->start_char;
+						if (boost::regex_search(boneName, expr)) {
+							/*
+							auto stiffnessForce = il2cpp_symbols::read_field<float>(chaildElement, CySpringParamDataChildElement_stiffnessForce);
+							auto dragForce = il2cpp_symbols::read_field<float>(chaildElement, CySpringParamDataChildElement_dragForce);
+							auto gravity = il2cpp_symbols::read_field<float>(chaildElement, CySpringParamDataChildElement_gravity);
+							printf("child - %ls: orig stiffnessForce=%f, dragForce=%f, gravity=%f\n", boneName.data(), stiffnessForce, dragForce, gravity);
+							*/
+
+							if (i.replace_stiffnessForce) il2cpp_symbols::write_field(chaildElement, CySpringParamDataChildElement_stiffnessForce, i.stiffnessForce);
+							if (i.replace_dragForce) il2cpp_symbols::write_field(chaildElement, CySpringParamDataChildElement_dragForce, i.dragForce);
+							if (i.replace_gravity) il2cpp_symbols::write_field(chaildElement, CySpringParamDataChildElement_gravity, i.gravity);
+							if (i.replace_verticalWindRateSlow) il2cpp_symbols::write_field(chaildElement, CySpringParamDataChildElement_verticalWindRateSlow, i.verticalWindRateSlow);
+							if (i.replace_collisionRadius) il2cpp_symbols::write_field(chaildElement, CySpringParamDataChildElement_collisionRadius, i.collisionRadius);
+							if (i.replace_needEnvCollision) il2cpp_symbols::write_field(chaildElement, CySpringParamDataChildElement_needEnvCollision, i.needEnvCollision);
+							if (i.replace_horizontalWindRateSlow) il2cpp_symbols::write_field(chaildElement, CySpringParamDataChildElement_horizontalWindRateSlow, i.horizontalWindRateSlow);
+							if (i.replace_verticalWindRateFast) il2cpp_symbols::write_field(chaildElement, CySpringParamDataChildElement_verticalWindRateFast, i.verticalWindRateFast);
+							if (i.replace_horizontalWindRateFast) il2cpp_symbols::write_field(chaildElement, CySpringParamDataChildElement_horizontalWindRateFast, i.horizontalWindRateFast);
+							if (i.replace_isLimit) il2cpp_symbols::write_field(chaildElement, CySpringParamDataChildElement_isLimit, i.isLimit);
+							if (i.replace_MoveSpringApplyRate) il2cpp_symbols::write_field(chaildElement, CySpringParamDataChildElement_MoveSpringApplyRate, i.MoveSpringApplyRate);
+						}
+						});
+				}
+			}
+		}
+
+		reinterpret_cast<decltype(CySpring_CreateBone_hook)*>(CySpring_CreateBone_orig)(_this, boneList, element, legacyScale, windPhaseShift, isAdd);
+	}
+
+	void* CySpringController_UpdateSpringThread_orig;
+	void CySpringController_UpdateSpringThread_hook(void* _this) {
+		if (g_enable_better60fps) {
+			static auto klass = il2cpp_symbols::get_class_from_instance(_this);
+			static auto set_UpdateMode = il2cpp_class_get_method_from_name(klass, "set_UpdateMode", 1);
+			if (set_UpdateMode) {
+				reinterpret_cast<void(*)(void*, int)>(set_UpdateMode->methodPointer)(_this, 1);
+			}
+			else {
+				static FieldInfo* updateModeField = il2cpp_class_get_field_from_name(klass, "<UpdateMode>k__BackingField");
+				il2cpp_symbols::write_field(_this, updateModeField, 1);
+			}
+		}
+		reinterpret_cast<decltype(CySpringController_UpdateSpringThread_hook)*>(CySpringController_UpdateSpringThread_orig)(_this);
 	}
 
 
@@ -2585,25 +2799,7 @@ namespace
 				// auto headObject = get_HeadObject(modelController);  // UnityEngine.GameObject
 				// SetActive(headObject, false);
 
-				auto ownerObj = get_OwnerObject(modelController);  // UnityEngine.GameObject
-				auto objTransform = get_ObjectTransform(ownerObj);  // UnityEngine.Transform
-				auto childTransformCount = get_TransformChildCount(objTransform);
-				for (int i = 0; i < childTransformCount; i++) {
-					auto child = get_TransformChild(objTransform, i);  // UnityEngine.Transform
-					auto gameObj = get_TransformGameObject(child);  // UnityEngine.GameObject
-					if (gameObj) {
-						std::wstring_view objName = get_ObjectName(gameObj)->start_char;
-						if (objName.compare(L"M_Hair") == 0) {
-							emplaceIntoDisabledObj(raceDisabledObj, currentIndex, gameObj);
-							SetActive(gameObj, false);
-						}
-						else if (objName.compare(L"M_Face") == 0) {
-							emplaceIntoDisabledObj(raceDisabledObj, currentIndex, gameObj);
-							SetActive(gameObj, false);
-						}
-					}
-
-				}
+				hideHead(raceDisabledObj, modelController, currentIndex);
 
 				Quaternion_t* rot = reinterpret_cast<Quaternion_t*>(il2cpp_object_new(Quaternion_klass));
 				Vector3_t* pos = reinterpret_cast<Vector3_t*>(il2cpp_object_new(Vector3_klass));
@@ -3141,6 +3337,126 @@ namespace
 		const auto url = reinterpret_cast<decltype(get_ApplicationServerUrl_hook)*>(get_ApplicationServerUrl_orig)();
 		const string new_url(g_self_server_url.begin(), g_self_server_url.end());
 		return g_enable_self_server ? il2cpp_string_new(new_url.c_str()) : url;
+	}
+
+	void* (*CutIn_get_MotionCamera)(void* _this);
+	void* (*CutIn_Camera_get_targetTransform)(void* _this);
+	void* (*CutIn_Camera_get_targetCamera)(void* _this);
+	void* (*CutIn_Camera_get_transformObject)(void* _this);
+	void (*Internal_LookAt_Injected)(void* _this, Vector3_t* pos, Vector3_t* up);
+	void* (*CutIn_GetCharacterModelController)(void* _this, int chraIndex, bool isCheckListCount);
+	void* (*CutIn_GetCharacters)(void* _this, bool isCheckListCount);
+	void* (*GetHeadTransform)(void* _this);
+	void* (*Transform_SetParent)(void* _this, void*, bool);
+	void* (*Unity_Transform_get_localScale_Injected)(void* _this, Vector3_t*);
+	void* (*Unity_Transform_set_localScale_Injected)(void* _this, Vector3_t*);
+
+	bool is_cutin_inited = false;
+
+	void init_cutin() {
+		if (is_cutin_inited) return;
+		convertPtrType(&CutIn_get_MotionCamera, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop.CutIn.Cutt",
+			"CutInTimelineController", "get_MotionCamera", 0));
+		convertPtrType(&CutIn_Camera_get_targetTransform, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop.CutIn.Cutt",
+			"CutInTimelineMotionCamera", "get_targetTransform", 0));
+		convertPtrType(&CutIn_Camera_get_targetCamera, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop.CutIn.Cutt",
+			"CutInTimelineMotionCamera", "get_targetCamera", 0));
+		convertPtrType(&CutIn_Camera_get_transformObject, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop.CutIn.Cutt",
+			"CutInTimelineMotionCamera", "get_transformObject", 0));
+		convertPtrType(&CutIn_GetCharacterModelController, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop.CutIn.Cutt",
+			"CutInTimelineController", "GetCharacterModelController", 2));
+		convertPtrType(&CutIn_GetCharacters, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop.CutIn.Cutt",
+			"CutInTimelineController", "GetCharacters", 1));
+		convertPtrType(&GetHeadTransform, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop",
+			"ModelController", "GetHeadTransform", 0));
+		convertPtrType(&Internal_LookAt_Injected, il2cpp_resolve_icall("UnityEngine.Transform::Internal_LookAt_Injected(UnityEngine.Vector3&,UnityEngine.Vector3&)"));
+		convertPtrType(&getTransformPosition, il2cpp_resolve_icall("UnityEngine.Transform::get_position_Injected(UnityEngine.Vector3&)"));
+		convertPtrType(&getTransformRotation, il2cpp_resolve_icall("UnityEngine.Transform::get_rotation_Injected(UnityEngine.Quaternion&)"));
+		convertPtrType(&getTransformLocalPosition, il2cpp_resolve_icall("UnityEngine.Transform::get_localPosition_Injected(UnityEngine.Vector3&)"));
+		convertPtrType(&getTransformLocalRotation, il2cpp_resolve_icall("UnityEngine.Transform::get_localRotation_Injected(UnityEngine.Quaternion&)"));
+		convertPtrType(&Transform_GetParent, il2cpp_resolve_icall("UnityEngine.Transform::GetParent()"));
+		convertPtrType(&Transform_SetParent, il2cpp_resolve_icall("UnityEngine.Transform::SetParent(UnityEngine.Transform,System.Boolean)"));
+		convertPtrType(&Unity_Transform_get_localScale_Injected, il2cpp_resolve_icall("UnityEngine.Transform::get_localScale_Injected(UnityEngine.Vector3&)"));
+		convertPtrType(&Unity_Transform_set_localScale_Injected, il2cpp_resolve_icall("UnityEngine.Transform::set_localScale_Injected(UnityEngine.Vector3&)"));
+
+		Quaternion_klass = il2cpp_symbols::get_class("UnityEngine.CoreModule.dll", "UnityEngine", "Quaternion");
+		Vector3_klass = il2cpp_symbols::get_class("UnityEngine.CoreModule.dll", "UnityEngine", "Vector3");
+
+		is_cutin_inited = true;
+	}
+
+	int getListCount(void* list) {
+		static auto listClass = il2cpp_symbols::get_class_from_instance(list);
+		static auto getCountMethod = reinterpret_cast<int32_t(*)(const void*)>(il2cpp_class_get_method_from_name(listClass, "get_Count", 0)->methodPointer);
+		return getCountMethod(list);
+	}
+
+	std::unordered_map<int, std::set<void*>> cutInDisabledObj{};
+
+	void* CutInTimelineController_AlterLateUpdate_orig;
+	bool CutInTimelineController_AlterLateUpdate_hook(void* _this) {
+		UmaCamera::setUmaCameraType(CAMERA_CUTIN);
+		auto ret = reinterpret_cast<decltype(CutInTimelineController_AlterLateUpdate_hook)*>(CutInTimelineController_AlterLateUpdate_orig)(_this);
+		if (!g_cutin_first_persion) {
+			return ret;
+		}
+		init_cutin();
+
+		auto charaIndex = UmaCamera::get_cutIn_target_index();
+		auto charas = CutIn_GetCharacters(_this, false);
+		auto charaCount = getListCount(charas);
+		if (charaIndex >= charaCount) {
+			if (charaCount <= 0) return ret;
+			charaIndex = 0;
+		}
+
+		auto modelController = CutIn_GetCharacterModelController(_this, charaIndex, false);
+		if (modelController) {
+			auto headTransform = GetHeadTransform(modelController);
+
+			auto headrot = reinterpret_cast<Quaternion_t*>(il2cpp_object_new(Quaternion_klass));
+			auto headpos = reinterpret_cast<Vector3_t*>(il2cpp_object_new(Vector3_klass));
+			getTransformPosition(headTransform, headpos);
+			getTransformRotation(headTransform, headrot);
+
+			auto motionCamera = CutIn_get_MotionCamera(_this);  // CutInTimelineMotionCamera
+			if (motionCamera) {
+				auto camera = CutIn_Camera_get_targetCamera(motionCamera);  // UnityEngine.Camera
+				Unity_set_nearClipPlane_hook(camera, 0.001f);
+				Unity_set_fieldOfView_hook(camera, UmaCamera::getLiveCamFov());
+
+				auto cameraTransform = CutIn_Camera_get_targetTransform(motionCamera);
+				auto headParent = Transform_GetParent(headTransform);
+				
+				// Transform_SetParent(cameraTransform, headParent, true);
+				auto cameraParent = Transform_GetParent(cameraTransform);
+				auto cameraheadrot = reinterpret_cast<Quaternion_t*>(il2cpp_object_new(Quaternion_klass));
+				auto cameraheadpos = reinterpret_cast<Vector3_t*>(il2cpp_object_new(Vector3_klass));
+				auto cameralocalscale = reinterpret_cast<Vector3_t*>(il2cpp_object_new(Vector3_klass));
+				getTransformPosition(headParent, cameraheadpos);
+				getTransformRotation(headParent, cameraheadrot);
+				Unity_Transform_get_localScale_Injected(headParent, cameralocalscale);
+				Unity_set_rotation_Injected_hook(cameraParent, cameraheadrot);
+				Unity_set_pos_injected_hook(cameraParent, cameraheadpos);
+				Unity_Transform_set_localScale_Injected(cameraParent, cameralocalscale);
+
+				Unity_set_rotation_Injected_hook(cameraTransform, headrot);
+				headpos->y += 0.07;
+				Unity_set_pos_injected_hook(cameraTransform, headpos);
+				
+				hideHead(cutInDisabledObj, modelController, charaIndex);
+			}
+			restoreDisableObj(cutInDisabledObj, charaIndex, false);
+		}
+		return ret;
+	}
+
+	void* CutInTimelineController_OnDestroy_orig;
+	void CutInTimelineController_OnDestroy_hook(void* _this) {
+		if (g_cutin_first_persion) {
+			cutInDisabledObj.clear();
+		}
+		return reinterpret_cast<decltype(CutInTimelineController_OnDestroy_hook)*>(CutInTimelineController_OnDestroy_orig)(_this);
 	}
 
 	std::string currentTime()
@@ -3732,6 +4048,16 @@ namespace
 			"Director", "AlterUpdate", 0
 		);
 
+		auto CySpring_CreateBone_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"CySpring", "CreateBone", 5
+		);
+
+		auto CySpringController_UpdateSpringThread_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"CySpringController", "UpdateSpringThread", 0
+		);
+
 		auto get_RunMotionSpeed_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"HorseRaceInfoReplay", "get_RunMotionSpeed", 0
@@ -3990,6 +4316,15 @@ namespace
 			"GameDefine", "get_ApplicationServerUrl", 0
 		);
 
+		auto CutInTimelineController_AlterLateUpdate_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.CutIn.Cutt",
+			"CutInTimelineController", "AlterLateUpdate", 0
+		);
+		auto CutInTimelineController_OnDestroy_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop.CutIn.Cutt",
+			"CutInTimelineController", "OnDestroy", 0
+		);
+
 		auto StorySceneController_LoadCharacter_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"StorySceneController", "LoadCharacter", 2
@@ -4093,6 +4428,8 @@ namespace
 		ADD_HOOK(get_camera_pos2, "get_camera_pos2 at %p\n");
 		ADD_HOOK(GetCharacterWorldPos, "GetCharacterWorldPos at %p\n");
 		ADD_HOOK(Director_AlterUpdate, "Director_AlterUpdate at %p\n");
+		ADD_HOOK(CySpring_CreateBone, "CySpring_CreateBone at %p\n");
+		ADD_HOOK(CySpringController_UpdateSpringThread, "CySpringController_UpdateSpringThread at %p\n");
 		ADD_HOOK(get_RunMotionSpeed, "get_RunMotionSpeed at %p\n");
 		ADD_HOOK(HorseRaceInfoReplay_ctor, "HorseRaceInfoReplay_ctor at %p\n");
 		ADD_HOOK(AddUsedSkillId, "AddUsedSkillId at %p\n");
@@ -4194,6 +4531,8 @@ namespace
 
 		ADD_HOOK(set_resolution, "UnityEngine.Screen.SetResolution(int, int, bool) at %p\n");
 		ADD_HOOK(GallopUtil_GetModifiedString, "GallopUtil_GetModifiedString at %p\n");
+		ADD_HOOK(CutInTimelineController_AlterLateUpdate, "CutInTimelineController_AlterLateUpdate at %p\n");
+		ADD_HOOK(CutInTimelineController_OnDestroy, "CutInTimelineController_OnDestroy at %p\n");
 		UmaLiveHook::regHookMain();
 		if (g_auto_fullscreen)
 		{

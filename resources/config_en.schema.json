@@ -20,6 +20,11 @@
             "type": "integer",
             "minimum": -1
         },
+        "better60FPS": {
+            "description": "60 Fps optimization",
+            "type": "boolean",
+            "default": false
+        },
         "highQuality": {
             "description": "High quality mode (FullQuality, MSAA x8)",
             "type": "boolean"

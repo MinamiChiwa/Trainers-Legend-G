@@ -354,6 +354,7 @@ namespace UmaCamera {
 		bool mouseLockThreadStart = false;
 		bool lookVertRunning, lookHoriRunning = false;
 		bool rMousePressFlg = false;
+		int cutIn_target_index = 0;
 
 		typedef struct Point
 		{
@@ -582,6 +583,10 @@ namespace UmaCamera {
 
 	Vector3_t getCameraLookat() {
 		return cameraLookAt;
+	}
+
+	int get_cutIn_target_index() {
+		return cutIn_target_index;
 	}
 
 	void set_lon_move(float vertangle, LonMoveHState moveState=LonMoveLeftAndRight) {  // «∞∫Û“∆∂Ø
@@ -936,7 +941,7 @@ namespace UmaCamera {
 		else {
 			preStep = moveStep / smoothLevel;
 		}
-
+		
 		homeCameraPos.y += moveStep;
 		for (int i = 0; i < smoothLevel; i++) {
 			cameraPos.y += preStep;
@@ -1046,6 +1051,12 @@ namespace UmaCamera {
 				printf("Look at No.%d\n", g_race_freecam_follow_umamusume_index + 1);
 			}
 		}
+		if (cameraType == CAMERA_CUTIN) {
+			if (cutIn_target_index > 0) {
+				cutIn_target_index--;
+			}
+			printf("Look at index (CutIn): %d\n", cutIn_target_index);
+		}
 	}
 
 	void singleRightClick() {
@@ -1053,12 +1064,23 @@ namespace UmaCamera {
 			g_race_freecam_follow_umamusume_index++;
 			printf("Look at No.%d\n", g_race_freecam_follow_umamusume_index + 1);
 		}
+		if (cameraType == CAMERA_CUTIN) {
+			cutIn_target_index++;
+			if (cutIn_target_index > 16) {
+				cutIn_target_index = 0;
+			}
+			printf("Look at index (CutIn): %d\n", cutIn_target_index);
+		}
 	}
 
 	void changeCameraFOV(float value) {
 		if (cameraType == CAMERA_RACE) {
 			raceDefaultFOV += value;
 			printf("Race camera FOV has been changed to %f\n", raceDefaultFOV);
+		}
+		else if (cameraType == CAMERA_CUTIN) {
+			liveDefaultFOV += value;
+			printf("Camera FOV has been changed to %f\n", liveDefaultFOV);
 		}
 		else {
 			if (!isLiveStart) return;
@@ -1095,6 +1117,10 @@ namespace UmaCamera {
 				liveCameraType = LiveCamera_FREE;
 				printf("LIVE Free Camera\n");
 			}
+		}
+		else if (cameraType == CAMERA_CUTIN) {
+			g_cutin_first_persion = !g_cutin_first_persion;
+			printf("CutIn camera first person %s.\n", g_cutin_first_persion ? "enabled" : "disabled");
 		}
 
 	}
