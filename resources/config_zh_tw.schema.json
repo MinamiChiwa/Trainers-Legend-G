@@ -21,7 +21,7 @@
             "minimum": -1
         },
         "better60FPS": {
-            "description": "開啟60幀優化",
+            "description": "開啟60幀最佳化",
             "type": "boolean",
             "default": false
         },
@@ -30,15 +30,15 @@
             "type": "boolean"
         },
         "enableVSync": {
-            "description": "開啟垂直同步 (開啟後 maxFps 設定將會失效)",
+            "description": "開啟垂直同步 (開啟後 maxFps[幀率限制] 設定將會失效)",
             "type": "boolean"
         },
         "unlockSize": {
-            "description": "允許遊戲使用`1080p`以上的解析度",
+            "description": "允許遊戲使用`1080P`以上的解析度",
             "type": "boolean"
         },
         "aspect_ratio_new": {
-            "description": "設定UI比例，默認16:9\n若將值設為-1，遊戲UI比例將會自我調整您的螢幕比例\n若UI顯示不全，可以在下麵設定\"自定義UI縮放\"\n修改後需要重啓遊戲",
+            "description": "設定UI比例，默認16:9\n若將值設為-1，遊戲UI比例將會自我調整您的螢幕比例\n若UI顯示不全，可以在下面設定\"自定義UI縮放\"\n修改後需要重啓遊戲",
             "type": "object",
             "properties": {
                 "w": {
@@ -132,7 +132,7 @@
                     "type": "number"
                 },
                 "enableLiveDofController": {
-                    "description": "啟用景深控制（點擊LIVE設定按鈕開啟）",
+                    "description": "啟用 Live 參數控制台 (點擊Live設定按鈕開啟)",
                     "type": "boolean",
                     "default": false
                 },
@@ -193,7 +193,7 @@
                     "type": "number"
                 },
                 "defaultFOV": {
-                    "description": "默認FOV",
+                    "description": "預設FOV",
                     "type": "number"
                 },
                 "freecam_lookat_target": {
@@ -289,7 +289,7 @@
             "type": "object",
             "properties": {
                 "source": {
-                    "description": "自動更新的倉庫源",
+                    "description": "自動更新的專案來源",
                     "type": "string"
                 },
                 "path": {
@@ -393,7 +393,7 @@
             }
         },
         "loadDll": {
-            "description": "加載其它DLL挿件",
+            "description": "加載其他DLL插件",
             "type": "array",
             "items": {
                 "type": "string"

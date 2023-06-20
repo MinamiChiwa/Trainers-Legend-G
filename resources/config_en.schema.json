@@ -132,7 +132,7 @@
                     "type": "number"
                 },
                 "enableLiveDofController": {
-                    "description": "Enable DOF control (click LIVE setting button)",
+                    "description": "Enable Live control pannel (click LIVE setting button)",
                     "type": "boolean",
                     "default": false
                 },
