@@ -136,7 +136,7 @@
                     "type": "boolean"
                 },
                 "enableLiveDofController": {
-                    "description": "启用景深控制（点击 LIVE 设置按钮开启）",
+                    "description": "启用 Live 参数控制台（点击 LIVE 设置按钮开启）",
                     "type": "boolean",
                     "default": false
                 },

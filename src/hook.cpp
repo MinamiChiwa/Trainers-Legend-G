@@ -2254,28 +2254,28 @@ namespace
 
 					printf("%ls: orig stiffnessForce=%f, dragForce=%f, gravity=%f, childCount=%d\n", boneName.data(), stiffnessForce, dragForce, gravity, getListCount(childElements));
 
-					il2cpp_symbols::iterate_list(childElements, [&](size_t index, void* chaildElement) {
-						auto boneNameStr = il2cpp_symbols::read_field<Il2CppString*>(chaildElement, CySpringParamDataChildElement_boneName);
+					il2cpp_symbols::iterate_list(childElements, [&](size_t index, void* childElement) {
+						auto boneNameStr = il2cpp_symbols::read_field<Il2CppString*>(childElement, CySpringParamDataChildElement_boneName);
 						std::wstring boneName = boneNameStr->start_char;
 						if (boost::regex_search(boneName, expr)) {
 							/*
-							auto stiffnessForce = il2cpp_symbols::read_field<float>(chaildElement, CySpringParamDataChildElement_stiffnessForce);
-							auto dragForce = il2cpp_symbols::read_field<float>(chaildElement, CySpringParamDataChildElement_dragForce);
-							auto gravity = il2cpp_symbols::read_field<float>(chaildElement, CySpringParamDataChildElement_gravity);
+							auto stiffnessForce = il2cpp_symbols::read_field<float>(childElement, CySpringParamDataChildElement_stiffnessForce);
+							auto dragForce = il2cpp_symbols::read_field<float>(childElement, CySpringParamDataChildElement_dragForce);
+							auto gravity = il2cpp_symbols::read_field<float>(childElement, CySpringParamDataChildElement_gravity);
 							printf("child - %ls: orig stiffnessForce=%f, dragForce=%f, gravity=%f\n", boneName.data(), stiffnessForce, dragForce, gravity);
 							*/
 
-							if (i.replace_stiffnessForce) il2cpp_symbols::write_field(chaildElement, CySpringParamDataChildElement_stiffnessForce, i.stiffnessForce);
-							if (i.replace_dragForce) il2cpp_symbols::write_field(chaildElement, CySpringParamDataChildElement_dragForce, i.dragForce);
-							if (i.replace_gravity) il2cpp_symbols::write_field(chaildElement, CySpringParamDataChildElement_gravity, i.gravity);
-							if (i.replace_verticalWindRateSlow) il2cpp_symbols::write_field(chaildElement, CySpringParamDataChildElement_verticalWindRateSlow, i.verticalWindRateSlow);
-							if (i.replace_collisionRadius) il2cpp_symbols::write_field(chaildElement, CySpringParamDataChildElement_collisionRadius, i.collisionRadius);
-							if (i.replace_needEnvCollision) il2cpp_symbols::write_field(chaildElement, CySpringParamDataChildElement_needEnvCollision, i.needEnvCollision);
-							if (i.replace_horizontalWindRateSlow) il2cpp_symbols::write_field(chaildElement, CySpringParamDataChildElement_horizontalWindRateSlow, i.horizontalWindRateSlow);
-							if (i.replace_verticalWindRateFast) il2cpp_symbols::write_field(chaildElement, CySpringParamDataChildElement_verticalWindRateFast, i.verticalWindRateFast);
-							if (i.replace_horizontalWindRateFast) il2cpp_symbols::write_field(chaildElement, CySpringParamDataChildElement_horizontalWindRateFast, i.horizontalWindRateFast);
-							if (i.replace_isLimit) il2cpp_symbols::write_field(chaildElement, CySpringParamDataChildElement_isLimit, i.isLimit);
-							if (i.replace_MoveSpringApplyRate) il2cpp_symbols::write_field(chaildElement, CySpringParamDataChildElement_MoveSpringApplyRate, i.MoveSpringApplyRate);
+							if (i.replace_stiffnessForce) il2cpp_symbols::write_field(childElement, CySpringParamDataChildElement_stiffnessForce, i.stiffnessForce);
+							if (i.replace_dragForce) il2cpp_symbols::write_field(childElement, CySpringParamDataChildElement_dragForce, i.dragForce);
+							if (i.replace_gravity) il2cpp_symbols::write_field(childElement, CySpringParamDataChildElement_gravity, i.gravity);
+							if (i.replace_verticalWindRateSlow) il2cpp_symbols::write_field(childElement, CySpringParamDataChildElement_verticalWindRateSlow, i.verticalWindRateSlow);
+							if (i.replace_collisionRadius) il2cpp_symbols::write_field(childElement, CySpringParamDataChildElement_collisionRadius, i.collisionRadius);
+							if (i.replace_needEnvCollision) il2cpp_symbols::write_field(childElement, CySpringParamDataChildElement_needEnvCollision, i.needEnvCollision);
+							if (i.replace_horizontalWindRateSlow) il2cpp_symbols::write_field(childElement, CySpringParamDataChildElement_horizontalWindRateSlow, i.horizontalWindRateSlow);
+							if (i.replace_verticalWindRateFast) il2cpp_symbols::write_field(childElement, CySpringParamDataChildElement_verticalWindRateFast, i.verticalWindRateFast);
+							if (i.replace_horizontalWindRateFast) il2cpp_symbols::write_field(childElement, CySpringParamDataChildElement_horizontalWindRateFast, i.horizontalWindRateFast);
+							if (i.replace_isLimit) il2cpp_symbols::write_field(childElement, CySpringParamDataChildElement_isLimit, i.isLimit);
+							if (i.replace_MoveSpringApplyRate) il2cpp_symbols::write_field(childElement, CySpringParamDataChildElement_MoveSpringApplyRate, i.MoveSpringApplyRate);
 						}
 						});
 				}
