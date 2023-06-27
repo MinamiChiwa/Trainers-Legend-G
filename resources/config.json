@@ -48,6 +48,7 @@
             "z": 0
         }
     },
+    "cutin_first_persion": false,
     "externalPlugin": {
         "hotkey": "u",
         "path": "legend_g_plugin.exe",

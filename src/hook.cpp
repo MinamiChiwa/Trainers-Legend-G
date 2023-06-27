@@ -3397,7 +3397,7 @@ namespace
 	bool CutInTimelineController_AlterLateUpdate_hook(void* _this) {
 		UmaCamera::setUmaCameraType(CAMERA_CUTIN);
 		auto ret = reinterpret_cast<decltype(CutInTimelineController_AlterLateUpdate_hook)*>(CutInTimelineController_AlterLateUpdate_orig)(_this);
-		if (!g_cutin_first_persion) {
+		if (!(g_cutin_first_persion && g_enable_cutin_first_persion)) {
 			return ret;
 		}
 		init_cutin();
