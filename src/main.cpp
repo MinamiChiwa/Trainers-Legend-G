@@ -83,6 +83,7 @@ std::wstring g_convert_url;
 bool g_enable_self_server = false;
 std::wstring g_self_server_url;
 
+bool g_enable_cutin_first_persion = false;
 bool g_cutin_first_persion = false;
 
 std::string g_text_data_dict_path;
@@ -590,6 +591,10 @@ namespace
 				g_race_freecam_follow_umamusume_offset.y = follow_offset["y"].GetFloat();
 				g_race_freecam_follow_umamusume_offset.z = follow_offset["z"].GetFloat();
 				UmaCamera::loadGlobalData();
+			}
+
+			if (document.HasMember("cutin_first_persion")) {
+				g_enable_cutin_first_persion = document["cutin_first_persion"].GetBool();
 			}
 
 			if (document.HasMember("aspect_ratio_new")) {

@@ -229,6 +229,11 @@
             },
             "additionalProperties": false
         },
+        "cutin_first_persion": {
+            "description": "CutIn first persion (perss F to switch).",
+            "type": "boolean",
+            "default": false
+        },
         "externalPlugin": {
             "description": "Set external plugin.",
             "type": "object",

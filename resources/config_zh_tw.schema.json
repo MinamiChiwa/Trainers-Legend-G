@@ -229,6 +229,11 @@
             },
             "additionalProperties": false
         },
+        "cutin_first_persion": {
+            "description": "CutIn 第一人稱（F 鍵切換）",
+            "type": "boolean",
+            "default": false
+        },
         "externalPlugin": {
             "description": "外部插件配置",
             "type": "object",

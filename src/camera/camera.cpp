@@ -1119,8 +1119,10 @@ namespace UmaCamera {
 			}
 		}
 		else if (cameraType == CAMERA_CUTIN) {
-			g_cutin_first_persion = !g_cutin_first_persion;
-			printf("CutIn camera first person %s.\n", g_cutin_first_persion ? "enabled" : "disabled");
+			if (g_enable_cutin_first_persion) {
+				g_cutin_first_persion = !g_cutin_first_persion;
+				printf("CutIn camera first person %s.\n", g_cutin_first_persion ? "enabled" : "disabled");
+			}
 		}
 
 	}
