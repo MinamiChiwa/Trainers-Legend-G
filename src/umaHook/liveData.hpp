@@ -203,8 +203,6 @@ namespace LiveData {
 		void updateData() {
 			init_LiveFieldData();
 			if (!updateInfo) generateUpdateInfo();
-
-
 			changeValueByType(&localData->dofQuality, &updateInfo->dofQuality, condition);
 			auto cDt_t = reinterpret_cast<CsEnum_t*>(
 				static_cast<std::byte*>(reinterpret_cast<void*>(updateInfo)) + PostEffectUpdateInfo_DOF_dofBlurType->offset

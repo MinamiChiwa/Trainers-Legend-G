@@ -403,6 +403,42 @@ namespace UmaGUiShowData {
 
 	};
 
+	template <typename T>
+	void changeValueByCondition(T* p1, T* p2, bool condition) {
+		if (condition) {
+			*p1 = *p2;
+		}
+		else {
+			*p2 = *p1;
+		}
+	}
+
+	struct CameraData {
+		Vector3_t position;
+		Quaternion_t rotation;
+		Vector3_t forward;
+		bool followGame = true;
+
+		void updatePos(Vector3_t* pos) {
+			changeValueByCondition(&position.x, &pos->x, followGame);
+			changeValueByCondition(&position.y, &pos->y, followGame);
+			changeValueByCondition(&position.z, &pos->z, followGame);
+		}
+
+		void updateRot(Quaternion_t* rot) {
+			changeValueByCondition(&rotation.w, &rot->w, followGame);
+			changeValueByCondition(&rotation.x, &rot->x, followGame);
+			changeValueByCondition(&rotation.y, &rot->y, followGame);
+			changeValueByCondition(&rotation.z, &rot->z, followGame);
+		}
+
+		void updateForward(Vector3_t* pos) {
+			changeValueByCondition(&forward.x, &pos->x, true);
+			changeValueByCondition(&forward.y, &pos->y, true);
+			changeValueByCondition(&forward.z, &pos->z, true);
+		}
+	};
+
 
 	// PostEffectUpdateInfo_DOF
 	extern Vector3_t liveDOFForcalPosition;
@@ -448,6 +484,8 @@ namespace UmaGUiShowData {
 
 	extern std::list<UmaGUiShowData::UmaBoneData> umaBoneData;
 	extern bool isEnableUmaBone;
+
+	extern CameraData cameraData;
 
 	void initGuiGlobalData();
 }

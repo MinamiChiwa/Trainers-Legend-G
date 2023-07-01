@@ -50,6 +50,8 @@ std::vector<int32_t>{ 0x1, 0x2, 0x4, 0x8, 0x10, 0x20, 0x40, 0x80, 0x100, 0x200, 
 std::list<UmaGUiShowData::UmaBoneData> UmaGUiShowData::umaBoneData{ UmaGUiShowData::UmaBoneData{ ".*Bust.*" }};
 bool UmaGUiShowData::isEnableUmaBone = false;
 
+UmaGUiShowData::CameraData UmaGUiShowData::cameraData{};
+
 UmaGUiShowData::UmaRaceMotionData::UmaRaceMotionData(int gateNo, std::wstring charaName, std::wstring trainerName) {
 	this->gateNo = gateNo;
 	this->charaName = utility::conversions::to_utf8string(charaName);

@@ -10,8 +10,8 @@
 using namespace std;
 std::function<void()> g_on_hook_ready;
 bool liveFirstPersonEnableRoll = false;
-bool raceFollowUmaFirstPersion = false;
-bool raceFollowUmaFirstPersionEnableRoll = false;
+bool raceFollowUmaFirstPerson = false;
+bool raceFollowUmaFirstPersonEnableRoll = false;
 std::function<void(Il2CppString* title, Il2CppString* content, int buttonCount, int button1Text, int button2Text, int button3Text, int btn_type)> showDialog = nullptr;
 bool guiStarting = false;
 
@@ -591,13 +591,13 @@ namespace
 	}
 
 	bool setWindowPosOffset(HWND hWnd, HWND hWndInsertAfter, int X, int Y, int cx, int cy, UINT uFlags) {
-		std::shared_ptr<RECT> windowR = std::make_shared<RECT>();
-		std::shared_ptr<RECT> clientR = std::make_shared<RECT>();
-		GetWindowRect(hWnd, windowR.get());
-		GetClientRect(hWnd, clientR.get());
+		RECT windowR{};
+		RECT clientR{};
+		GetWindowRect(hWnd, &windowR);
+		GetClientRect(hWnd, &clientR);
 
-		return SetWindowPos(hWnd, hWndInsertAfter, X, Y, cx + windowR->right - windowR->left - clientR->right,
-			cy + windowR->bottom - windowR->top - clientR->bottom, uFlags);;
+		return SetWindowPos(hWnd, hWndInsertAfter, X, Y, cx + windowR.right - windowR.left - clientR.right,
+			cy + windowR.bottom - windowR.top - clientR.bottom, uFlags);
 	}
 
 	bool (*is_virt_o)() = nullptr;
@@ -667,14 +667,14 @@ namespace
 		return reinterpret_cast<decltype(UpdateCoroutine_hook)*>(UpdateCoroutine_orig)(_this);
 	}
 
-	RECT* updateWindowRatio(HWND hWnd, RECT* modifiedR, WPARAM wParam, bool resize_now) {
-		std::shared_ptr<RECT> windowR = std::make_shared<RECT>();
-		std::shared_ptr<RECT> clientR = std::make_shared<RECT>();
-		GetWindowRect(hWnd, windowR.get());
-		GetClientRect(hWnd, clientR.get());
+	RECT updateWindowRatio(HWND hWnd, RECT* modifiedR, WPARAM wParam, bool resize_now) {
+		RECT windowR{};
+		RECT clientR{};
+		GetWindowRect(hWnd, &windowR);
+		GetClientRect(hWnd, &clientR);
 
-		float add_w = modifiedR->right - modifiedR->left - (windowR->right - windowR->left);
-		float add_h = modifiedR->bottom - modifiedR->top - (windowR->bottom - windowR->top);
+		float add_w = modifiedR->right - modifiedR->left - (windowR.right - windowR.left);
+		float add_h = modifiedR->bottom - modifiedR->top - (windowR.bottom - windowR.top);
 
 		if (add_h != 0.f) {
 			add_w = add_h * g_aspect_ratio;
@@ -683,12 +683,12 @@ namespace
 			add_h = add_w / g_aspect_ratio;
 		}
 
-		// printf("windowR: left: %ld, right: %ld, top: %ld, bottom: %ld\n", windowR->left, windowR->right, windowR->top, windowR->bottom);
+		// printf("windowR: left: %ld, right: %ld, top: %ld, bottom: %ld\n", windowR.left, windowR.right, windowR.top, windowR.bottom);
 		// printf("modifiR: left: %ld, right: %ld, top: %ld, bottom: %ld\n", modifiedR->left, modifiedR->right, modifiedR->top, modifiedR->bottom);
 
-		int X = windowR->left;
-		int Y = windowR->top;
-		int cx = clientR->right;
+		int X = windowR.left;
+		int Y = windowR.top;
+		int cx = clientR.right;
 		int cy;
 
 		bool isVert = is_virt();
@@ -700,22 +700,22 @@ namespace
 		cx += add_w;
 		cy += add_h;
 
-		float new_width = cx + windowR->right - windowR->left - clientR->right;
-		float new_height = cy + windowR->bottom - windowR->top - clientR->bottom;
+		float new_width = cx + windowR.right - windowR.left - clientR.right;
+		float new_height = cy + windowR.bottom - windowR.top - clientR.bottom;
 
-		RECT* newWindowR = new RECT();
-		newWindowR->left = X;
-		newWindowR->top = Y;
-		newWindowR->right = X + new_width;
-		newWindowR->bottom = Y + new_height;
+		RECT newWindowR{};
+		newWindowR.left = X;
+		newWindowR.top = Y;
+		newWindowR.right = X + new_width;
+		newWindowR.bottom = Y + new_height;
 
 		switch (wParam)
 		{
 		case WMSZ_TOP:
 		case WMSZ_TOPLEFT:
 		case WMSZ_TOPRIGHT:
-			newWindowR->top -= add_h;
-			newWindowR->bottom -= add_h;
+			newWindowR.top -= add_h;
+			newWindowR.bottom -= add_h;
 			break;
 		default:
 			break;
@@ -726,23 +726,23 @@ namespace
 		case WMSZ_LEFT:
 		case WMSZ_TOPLEFT:
 		case WMSZ_BOTTOMLEFT: {
-			newWindowR->left -= add_w;
-			newWindowR->right -= add_w;
+			newWindowR.left -= add_w;
+			newWindowR.right -= add_w;
 		}; break;
 		default:
 			break;
 		}
 
 		if (resize_now) {
-			SetWindowPos(hWnd, HWND_NOTOPMOST, newWindowR->left, newWindowR->top, 
-				newWindowR->right - newWindowR->left, newWindowR->bottom - newWindowR->top, SWP_DEFERERASE);
+			SetWindowPos(hWnd, HWND_NOTOPMOST, newWindowR.left, newWindowR.top, 
+				newWindowR.right - newWindowR.left, newWindowR.bottom - newWindowR.top, SWP_DEFERERASE);
 			// printf("resizeNow: left: %ld, right: %ld, top: %ld, bottom: %ld\n", newWindowR->left, newWindowR->right, newWindowR->top, newWindowR->bottom);
 		}
 		return newWindowR;
 	}
 
-	RECT* land_cache_rect = new RECT();
-	RECT* vert_cache_rect = new RECT();
+	RECT land_cache_rect{};
+	RECT vert_cache_rect{};
 	bool land_cache_rect_cache = false;
 	bool vert_cache_rect_cache = false;
 
@@ -755,21 +755,21 @@ namespace
 
 		if (use_cache) {
 			bool isVert = is_virt();
-			RECT* newWindowR = isVert ? vert_cache_rect : land_cache_rect;
+			RECT newWindowR = isVert ? vert_cache_rect : land_cache_rect;
 			bool is_cache = isVert ? vert_cache_rect_cache : land_cache_rect_cache;
 
 			if (is_cache) {
-				printf("resizeCache: left: %ld, right: %ld, top: %ld, bottom: %ld\n", newWindowR->left, newWindowR->right, newWindowR->top, newWindowR->bottom);
-				SetWindowPos(window, HWND_NOTOPMOST, newWindowR->left, newWindowR->top,
-					newWindowR->right - newWindowR->left, newWindowR->bottom - newWindowR->top, SWP_DEFERERASE);
+				printf("resizeCache: left: %ld, right: %ld, top: %ld, bottom: %ld\n", newWindowR.left, newWindowR.right, newWindowR.top, newWindowR.bottom);
+				SetWindowPos(window, HWND_NOTOPMOST, newWindowR.left, newWindowR.top,
+					newWindowR.right - newWindowR.left, newWindowR.bottom - newWindowR.top, SWP_DEFERERASE);
 				// return;
 			}
 		}
 
-		std::shared_ptr<RECT> windowR = std::make_shared<RECT>();
-		GetWindowRect(window, windowR.get());
-		windowR->right += 1;
-		updateWindowRatio(window, windowR.get(), WMSZ_RIGHT, true);
+		RECT windowR{};
+		GetWindowRect(window, &windowR);
+		windowR.right += 1;
+		updateWindowRatio(window, &windowR, WMSZ_RIGHT, true);
 	}
 
 	void recheck_ratio_later(int latertimeMills, bool use_cache = false) {
@@ -833,11 +833,10 @@ namespace
 				if ((!isVert) || (wParam == WMSZ_LEFT) || (wParam == WMSZ_RIGHT)) {  // 可优化, 但是能用了!
 					RECT* rect = reinterpret_cast<RECT*>(lParam);
 					auto ret = updateWindowRatio(hWnd, rect, wParam, false);
-					rect->left = ret->left;
-					rect->right = ret->right;
-					rect->top = ret->top;
-					rect->bottom = ret->bottom;
-					delete ret;
+					rect->left = ret.left;
+					rect->right = ret.right;
+					rect->top = ret.top;
+					rect->bottom = ret.bottom;
 					return TRUE;
 				}
 
@@ -1432,9 +1431,9 @@ namespace
 		// MessageBoxA(NULL, std::format("window: {}, {}", width, height).c_str(), "TEST", MB_OK);
 		auto hWnd = FindWindowW(L"UnityWndClass", L"umamusume");
 		if (hWnd != NULL) {
-			RECT* now_rect = new RECT();
-			if (GetWindowRect(hWnd, now_rect)) {
-				if ((now_rect->right - now_rect->left) < (now_rect->bottom - now_rect->top)) {
+			RECT now_rect{};
+			if (GetWindowRect(hWnd, &now_rect)) {
+				if ((now_rect.right - now_rect.left) < (now_rect.bottom - now_rect.top)) {
 					vert_cache_rect = now_rect;
 					vert_cache_rect_cache = true;
 				}
@@ -1685,7 +1684,7 @@ namespace
 	void* Unity_LookAt_Injected_orig;
 	void Unity_LookAt_Injected_hook(void* _this, Vector3_t* worldPosition, Vector3_t* worldUp) {
 		if (updateRaceCame) {
-			if (g_race_free_camera && g_race_freecam_follow_umamusume && raceFollowUmaFirstPersion) {
+			if (g_race_free_camera && g_race_freecam_follow_umamusume && raceFollowUmaFirstPerson) {
 				if (raceCacheTransform != nullptr) {
 					Unity_set_rotation_Injected_hook(_this, raceCacheTransform);
 					return;
@@ -1701,7 +1700,7 @@ namespace
 
 		if (updateLiveCameraPos && liveFirstPersonEnableRoll) {
 			if (liveCacheTransform != nullptr) {
-				if (g_live_free_camera && (UmaCamera::GetLiveCameraType() == LiveCamera_FIRST_PERSION)) {
+				if (g_live_free_camera && (UmaCamera::GetLiveCameraType() == LiveCamera_FIRST_PERSON)) {
 					// Unity_set_rotation_Injected_hook(_this, liveCacheTransform);
 					liveLookCameraCachePtr = _this;
 				}
@@ -1722,7 +1721,7 @@ namespace
 
 	void* Unity_set_nearClipPlane_orig;
 	void Unity_set_nearClipPlane_hook(void* _this, float single) {
-		if ((g_live_free_camera && isLiveStart && UmaCamera::GetLiveCameraType() == LiveCamera_FIRST_PERSION) ||
+		if ((g_live_free_camera && isLiveStart && UmaCamera::GetLiveCameraType() == LiveCamera_FIRST_PERSON) ||
 			(g_race_free_camera && raceStart)) {
 			single = 0.001f;
 		}
@@ -1820,7 +1819,7 @@ namespace
 				_this, sheet, currentFrame, currentTime, outLookAt);
 		}
 
-		if (g_live_free_camera && (UmaCamera::GetLiveCameraType() == LiveCamera_FIRST_PERSION) && liveFirstPersonEnableRoll) return;
+		if (g_live_free_camera && (UmaCamera::GetLiveCameraType() == LiveCamera_FIRST_PERSON) && liveFirstPersonEnableRoll) return;
 
 		auto setLookat = UmaCamera::getCameraLookat();
 		UmaCamera::setUmaCameraType(CAMERA_LIVE);
@@ -1997,8 +1996,8 @@ namespace
 
 	void* CharacterObject_klass;
 	void* LiveModelController_klass;
-	void* Quaternion_klass;
-	void* Vector3_klass;
+	void* Quaternion_klass = nullptr;
+	void* Vector3_klass = nullptr;
 	FieldInfo* CharaObject_liveModelControllerArray;
 	FieldInfo* CharaObject_activeModelIndex;
 	FieldInfo* CharaObject_liveCharaInitialPosition;
@@ -2101,14 +2100,14 @@ namespace
 
 	void* Director_AlterUpdate_orig;
 	void Director_AlterUpdate_hook(void* _this) {
-		const bool isFirstPersion = (UmaCamera::GetLiveCameraType() == LiveCamera_FIRST_PERSION) && g_live_free_camera;
+		const bool isFirstPerson = (UmaCamera::GetLiveCameraType() == LiveCamera_FIRST_PERSON) && g_live_free_camera;
 		reinterpret_cast<decltype(Director_AlterUpdate_hook)*>(Director_AlterUpdate_orig)(_this);
 
 		if (!liveDisabledObj.empty()) {
 			restoreDisableObj(liveDisabledObj, 0, true);
 		}
 
-		if (!isFirstPersion) return;
+		if (!isFirstPerson) return;
 
 		initLiveChara();
 		int objCount = 0;
@@ -2644,14 +2643,54 @@ namespace
 		return true;
 	}
 
+	Vector3_t* (*UnityEngine_Transform__get_forward)(Vector3_t* retstr, void* _this) = NULL;
+
+	Vector3_t* getTransformForward(void* transform) {
+		if (!UnityEngine_Transform__get_forward) {
+			convertPtrType(&UnityEngine_Transform__get_forward, il2cpp_symbols::get_method_pointer("UnityEngine.CoreModule.dll", "UnityEngine", "Transform", "get_forward", 0));
+		}
+		auto pos = reinterpret_cast<Vector3_t*>(il2cpp_object_new(Vector3_klass));
+		if (UnityEngine_Transform__get_forward != NULL) {
+			UnityEngine_Transform__get_forward(pos, transform);
+		}
+		return pos;
+	}
+
 	void* LiveTimelineControl_AlterLateUpdate_orig;
 	void LiveTimelineControl_AlterLateUpdate_hook(void* _this) {
 		updateLiveCameraPos = true;
 		reinterpret_cast<decltype(LiveTimelineControl_AlterLateUpdate_hook)*>(LiveTimelineControl_AlterLateUpdate_orig)(_this);
 		updateLiveCameraPos = false;
-		if (g_live_free_camera && liveFirstPersonEnableRoll && (UmaCamera::GetLiveCameraType() == LiveCamera_FIRST_PERSION)) {
+		if (g_live_free_camera && liveFirstPersonEnableRoll && (UmaCamera::GetLiveCameraType() == LiveCamera_FIRST_PERSON)) {
 			if ((liveLookCameraCachePtr != nullptr) && (liveCacheTransform != nullptr)) {
 				Unity_set_rotation_Injected_hook(liveLookCameraCachePtr, liveCacheTransform);
+			}
+		}
+		if (GetShowLiveWnd()) {
+			static auto liveTimelineControl_klass = il2cpp_symbols::get_class_from_instance(_this);
+			static FieldInfo* targetCacheCamera_field = il2cpp_class_get_field_from_name(liveTimelineControl_klass, "_targetCacheCamera");
+
+			auto targetCacheCamera = il2cpp_symbols::read_field(_this, targetCacheCamera_field);
+			static auto cacheCamera_klass = il2cpp_symbols::get_class_from_instance(targetCacheCamera);
+			static FieldInfo* _cacheTransform_field = il2cpp_class_get_field_from_name(cacheCamera_klass, "_cacheTransform");
+
+			auto cameraTransform = il2cpp_symbols::read_field(targetCacheCamera, _cacheTransform_field);  // UnityEngine.Transform
+
+			if ((Quaternion_klass == nullptr) || (Vector3_klass == nullptr)) {
+				Quaternion_klass = il2cpp_symbols::get_class("UnityEngine.CoreModule.dll", "UnityEngine", "Quaternion");
+				Vector3_klass = il2cpp_symbols::get_class("UnityEngine.CoreModule.dll", "UnityEngine", "Vector3");
+			}
+			auto rot = reinterpret_cast<Quaternion_t*>(il2cpp_object_new(Quaternion_klass));
+			auto pos = reinterpret_cast<Vector3_t*>(il2cpp_object_new(Vector3_klass));
+			Unity_get_pos_injected_hook(cameraTransform, pos);
+			Unity_get_rotation_Injected_hook(cameraTransform, rot);
+			auto forward = getTransformForward(cameraTransform);
+			UmaGUiShowData::cameraData.updatePos(pos);
+			UmaGUiShowData::cameraData.updateRot(rot);
+			UmaGUiShowData::cameraData.updateForward(forward);
+			if (!UmaGUiShowData::cameraData.followGame) {
+				Unity_set_pos_injected_hook(cameraTransform, pos);
+				Unity_set_rotation_Injected_hook(cameraTransform, rot);
 			}
 		}
 	}
@@ -2701,7 +2740,7 @@ namespace
 	void race_get_CameraPosition(void* _this, Vector3_t* data) {
 		UmaCamera::setUmaCameraType(CAMERA_RACE);
 
-		if (g_race_freecam_follow_umamusume && !raceFollowUmaFirstPersion) {
+		if (g_race_freecam_follow_umamusume && !raceFollowUmaFirstPerson) {
 			UmaCamera::updateFollowUmaPos(targetPosLastCache, targetPosCache, currentQuat, data);
 			return;
 		}
@@ -2786,7 +2825,7 @@ namespace
 	void RaceViewBase_LateUpdateView_hook(void* _this) {
 		int currentIndex = g_race_freecam_follow_umamusume_index;
 
-		if (g_race_free_camera && g_race_freecam_follow_umamusume && raceFollowUmaFirstPersion) {
+		if (g_race_free_camera && g_race_freecam_follow_umamusume && raceFollowUmaFirstPerson) {
 			initRaceView();
 			auto modelController = RaceViewBase_GetModelController(_this, currentIndex);
 			if (modelController) {
@@ -2820,7 +2859,7 @@ namespace
 				rot->z = newSRot.z;
 
 				Quaternion_t newRot;
-				if (raceFollowUmaFirstPersionEnableRoll) {
+				if (raceFollowUmaFirstPersonEnableRoll) {
 					newRot = UmaCamera::updatePosAndLookatByRotation(*pos, *rot);
 				}
 				else {
@@ -2836,7 +2875,7 @@ namespace
 				// UmaCamera::SetCameraPos(pos->x, pos->y, pos->z);
 			}
 		}
-		restoreDisableObj(raceDisabledObj, currentIndex, !raceFollowUmaFirstPersion);
+		restoreDisableObj(raceDisabledObj, currentIndex, !raceFollowUmaFirstPerson);
 		reinterpret_cast<decltype(RaceViewBase_LateUpdateView_hook)*>(RaceViewBase_LateUpdateView_orig)(_this);
 	}
 
@@ -3397,7 +3436,7 @@ namespace
 	bool CutInTimelineController_AlterLateUpdate_hook(void* _this) {
 		UmaCamera::setUmaCameraType(CAMERA_CUTIN);
 		auto ret = reinterpret_cast<decltype(CutInTimelineController_AlterLateUpdate_hook)*>(CutInTimelineController_AlterLateUpdate_orig)(_this);
-		if (!(g_cutin_first_persion && g_enable_cutin_first_persion)) {
+		if (!(g_cutin_first_person && g_enable_cutin_first_person)) {
 			return ret;
 		}
 		init_cutin();
@@ -3453,7 +3492,7 @@ namespace
 
 	void* CutInTimelineController_OnDestroy_orig;
 	void CutInTimelineController_OnDestroy_hook(void* _this) {
-		if (g_cutin_first_persion) {
+		if (g_cutin_first_person) {
 			cutInDisabledObj.clear();
 		}
 		return reinterpret_cast<decltype(CutInTimelineController_OnDestroy_hook)*>(CutInTimelineController_OnDestroy_orig)(_this);
@@ -4569,10 +4608,10 @@ namespace
 
 			auto window = FindWindowW(L"UnityWndClass", L"umamusume");
 			if (window == NULL) return;
-			std::shared_ptr<RECT> windowR = std::make_shared<RECT>();
+			RECT windowR{};
 
-			GetWindowRect(window, windowR.get());
-			setWindowPosOffset(window, HWND_NOTOPMOST, windowR->left, windowR->top, new_w, new_h, SWP_DEFERERASE);
+			GetWindowRect(window, &windowR);
+			setWindowPosOffset(window, HWND_NOTOPMOST, windowR.left, windowR.top, new_w, new_h, SWP_DEFERERASE);
 			}).detach();
 	}
 }

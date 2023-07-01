@@ -19,6 +19,7 @@ namespace UmaCamera {
 	Quaternion_t updatePosAndLookatByRotation(Vector3_t pos, Quaternion_t rot);
 	Quaternion_t updatePosAndLookatByRotationStable(Vector3_t pos, Quaternion_t rot, Quaternion_t nowRot);
 
+	void setliveCameraType(int type);
 	int GetLiveCharaPositionFlag();
 	int GetLiveCameraCharaParts();
 	int GetLiveCharaPositionIndex();
