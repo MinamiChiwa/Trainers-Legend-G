@@ -2,6 +2,8 @@
 #include "stdinclude.hpp"
 
 namespace UmaCamera {
+	extern Vector3_t cameraLookAt;
+
 	Vector3_t getCameraPos();
 	Vector3_t getHomeCameraPos();
 	Vector3_t getCameraLookat();

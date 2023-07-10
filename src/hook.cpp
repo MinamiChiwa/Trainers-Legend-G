@@ -1594,7 +1594,7 @@ namespace
 
 	void* Unity_get_fieldOfView_orig;
 	float Unity_get_fieldOfView_hook(void* _this) {
-		if (g_set_live_fov_as_global || (isLiveStart && g_live_free_camera)) {
+		if (g_set_live_fov_as_global || (isLiveStart && (g_live_free_camera || !UmaGUiShowData::cameraData.followGame))) {
 			return UmaCamera::getLiveCamFov();
 		}
 
@@ -1812,20 +1812,27 @@ namespace
 
 	void* alterupdate_camera_lookat_orig;
 	void alterupdate_camera_lookat_hook(void* _this, Il2CppObject* sheet, int currentFrame, float currentTime, Vector3_t* outLookAt) {
+		reinterpret_cast<decltype(alterupdate_camera_lookat_hook)*>(alterupdate_camera_lookat_orig)(
+			_this, sheet, currentFrame, currentTime, outLookAt);
+
 		isLiveStart = true;
 		UmaCamera::setLiveStart(true);
 		if (!g_live_free_camera) {
-			 return reinterpret_cast<decltype(alterupdate_camera_lookat_hook)*>(alterupdate_camera_lookat_orig)(
-				_this, sheet, currentFrame, currentTime, outLookAt);
+			UmaGUiShowData::cameraData.updateGameLookat(outLookAt);
+			return;
 		}
 
-		if (g_live_free_camera && (UmaCamera::GetLiveCameraType() == LiveCamera_FIRST_PERSON) && liveFirstPersonEnableRoll) return;
-
-		auto setLookat = UmaCamera::getCameraLookat();
+		if (g_live_free_camera && (UmaCamera::GetLiveCameraType() == LiveCamera_FIRST_PERSON) && liveFirstPersonEnableRoll) {
+			UmaGUiShowData::cameraData.updateGameLookat(outLookAt);
+			return;
+		}
+		
+		auto& setLookat = UmaCamera::cameraLookAt;
 		UmaCamera::setUmaCameraType(CAMERA_LIVE);
 		outLookAt->x = setLookat.x;
 		outLookAt->y = setLookat.y;
 		outLookAt->z = setLookat.z;
+		UmaGUiShowData::cameraData.updateGameLookat(outLookAt);
 		// printf("frame: %d, look: %f, %f, %f\n", currentFrame, outLookAt->x, outLookAt->y, outLookAt->z);
 	}
 
@@ -2670,10 +2677,12 @@ namespace
 			static auto liveTimelineControl_klass = il2cpp_symbols::get_class_from_instance(_this);
 			static FieldInfo* targetCacheCamera_field = il2cpp_class_get_field_from_name(liveTimelineControl_klass, "_targetCacheCamera");
 
-			auto targetCacheCamera = il2cpp_symbols::read_field(_this, targetCacheCamera_field);
+			auto targetCacheCamera = il2cpp_symbols::read_field(_this, targetCacheCamera_field);  // Gallop.CacheCamera
 			static auto cacheCamera_klass = il2cpp_symbols::get_class_from_instance(targetCacheCamera);
 			static FieldInfo* _cacheTransform_field = il2cpp_class_get_field_from_name(cacheCamera_klass, "_cacheTransform");
+			static FieldInfo* _camera_field = il2cpp_class_get_field_from_name(cacheCamera_klass, "_camera");
 
+			auto camera = il2cpp_symbols::read_field(targetCacheCamera, _camera_field);  // UnityEngine.Camera
 			auto cameraTransform = il2cpp_symbols::read_field(targetCacheCamera, _cacheTransform_field);  // UnityEngine.Transform
 
 			if ((Quaternion_klass == nullptr) || (Vector3_klass == nullptr)) {

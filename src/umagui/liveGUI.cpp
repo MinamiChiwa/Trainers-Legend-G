@@ -388,14 +388,24 @@ namespace LiveGUILoops {
                 }
             }
 
-            // ImGui::Checkbox("Live Camera Follow Game", &UmaGUiShowData::cameraData.followGame);
+            ImGui::NewLine();
+            ImGui::Checkbox("Use Game Data", &UmaGUiShowData::cameraData.followGame);
+            static int editType = 0;
+            if (!UmaGUiShowData::cameraData.followGame) {
+                static const char* editTypeS[] = { "Position & LookAt (Game)", "Position & Rotation"};
+                ImGui::Combo("EditType", &editType, editTypeS, 2);
+            }
+            UmaGUiShowData::cameraData.isUpdateLookat = editType == 0;
+
             auto& pos = UmaGUiShowData::cameraData.position;
             auto& forward = UmaGUiShowData::cameraData.forward;
+            auto& gameLookat = UmaGUiShowData::cameraData.gameLookat;
             Vector3_t lookat{ pos.x + forward.x, pos.y + forward.y, pos.z + forward.z };
             
             ImGui::InputFloat3("Position (x, y, z)", &pos.x);
             // ImGui::Text("LookAt x: %f y: %f z: %f", lookat.x, lookat.y, lookat.z);
-            ImGui::InputFloat3("LookAt (calc) (x, y, z)", &lookat.x, "%.3f", ImGuiInputTextFlags_ReadOnly);
+            ImGui::InputFloat3("LookAt (Game) (x, y, z)", &gameLookat.x);
+            ImGui::InputFloat3("LookAt (Engine) (x, y, z)", &lookat.x);
             // ImGui::Text("Forward x: %f y: %f z: %f", cameraData.forward.x, cameraData.forward.y, cameraData.forward.z);
             // ImGui::InputFloat3("Forward (x, y, z)", &UmaGUiShowData::cameraData.forward.x, "%.3f", ImGuiInputTextFlags_ReadOnly);
             ImGui::InputFloat4("Rotation (w, x, y, z)", &UmaGUiShowData::cameraData.rotation.w);

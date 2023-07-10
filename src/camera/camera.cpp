@@ -334,7 +334,7 @@ namespace UmaCamera {
 		unsigned long sleepTime = 0;
 		Vector3_t cameraPos{ 0.093706, 0.467159, 9.588791 };
 		Vector3_t homeCameraPos{ 0.0, 1.047159, -4.811181 };
-		Vector3_t cameraLookAt{ cameraPos.x, cameraPos.y, cameraPos.z - look_radius };
+		
 		bool orig_lookat_target = g_race_freecam_lookat_umamusume;
 		float orig_g_race_freecam_follow_umamusume_distance = g_race_freecam_follow_umamusume_distance;
 		Vector3_t orig_g_race_freecam_follow_umamusume_offset{
@@ -399,6 +399,7 @@ namespace UmaCamera {
 		);
 
 	}
+	Vector3_t cameraLookAt{ cameraPos.x, cameraPos.y, cameraPos.z - look_radius };
 
 	void setliveCameraType(int type) {
 		liveCameraType = type;

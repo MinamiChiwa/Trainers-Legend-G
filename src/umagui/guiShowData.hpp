@@ -417,7 +417,9 @@ namespace UmaGUiShowData {
 		Vector3_t position;
 		Quaternion_t rotation;
 		Vector3_t forward;
+		Vector3_t gameLookat;
 		bool followGame = true;
+		bool isUpdateLookat = true;
 
 		void updatePos(Vector3_t* pos) {
 			changeValueByCondition(&position.x, &pos->x, followGame);
@@ -426,12 +428,18 @@ namespace UmaGUiShowData {
 		}
 
 		void updateRot(Quaternion_t* rot) {
-			changeValueByCondition(&rotation.w, &rot->w, followGame);
-			changeValueByCondition(&rotation.x, &rot->x, followGame);
-			changeValueByCondition(&rotation.y, &rot->y, followGame);
-			changeValueByCondition(&rotation.z, &rot->z, followGame);
-		}
+			changeValueByCondition(&rotation.w, &rot->w, followGame || isUpdateLookat);
+			changeValueByCondition(&rotation.x, &rot->x, followGame || isUpdateLookat);
+			changeValueByCondition(&rotation.y, &rot->y, followGame || isUpdateLookat);
+			changeValueByCondition(&rotation.z, &rot->z, followGame || isUpdateLookat);
+		}		
 
+		void updateGameLookat(Vector3_t* pos) {
+			changeValueByCondition(&gameLookat.x, &pos->x, followGame || !isUpdateLookat);
+			changeValueByCondition(&gameLookat.y, &pos->y, followGame || !isUpdateLookat);
+			changeValueByCondition(&gameLookat.z, &pos->z, followGame || !isUpdateLookat);
+		}
+		
 		void updateForward(Vector3_t* pos) {
 			changeValueByCondition(&forward.x, &pos->x, true);
 			changeValueByCondition(&forward.y, &pos->y, true);
