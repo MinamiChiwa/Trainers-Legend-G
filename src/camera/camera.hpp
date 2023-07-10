@@ -2,6 +2,8 @@
 #include "stdinclude.hpp"
 
 namespace UmaCamera {
+	extern Vector3_t cameraLookAt;
+
 	Vector3_t getCameraPos();
 	Vector3_t getHomeCameraPos();
 	Vector3_t getCameraLookat();
@@ -19,6 +21,7 @@ namespace UmaCamera {
 	Quaternion_t updatePosAndLookatByRotation(Vector3_t pos, Quaternion_t rot);
 	Quaternion_t updatePosAndLookatByRotationStable(Vector3_t pos, Quaternion_t rot, Quaternion_t nowRot);
 
+	void setliveCameraType(int type);
 	int GetLiveCharaPositionFlag();
 	int GetLiveCameraCharaParts();
 	int GetLiveCharaPositionIndex();

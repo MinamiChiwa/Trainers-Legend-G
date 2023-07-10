@@ -367,6 +367,52 @@ namespace LiveGUILoops {
         ImGui::End();
     }
 
+    void cameraInfoLoop() {
+        if (!showLiveWnd) return;
+        if (ImGui::Begin("Live Camera")) {
+            ImGui::Checkbox("Live Free Camera", &g_live_free_camera);
+            ImGui::Checkbox("Live Disable All Blur", &g_live_close_all_blur);
+            ImGui::Checkbox("Live Can't Change Character Visibility", &g_live_force_changeVisibility_false);
+
+            if (g_live_free_camera) {
+                static const char* liveFreecamTypes[] = { "Free", "Follow", "First Person" };
+                static int liveFreecamType = 0;
+                ImGui::Combo("Live Free Camera Type", &liveFreecamType, liveFreecamTypes, IM_ARRAYSIZE(liveFreecamTypes));
+                switch (liveFreecamType) {
+                case 0: UmaCamera::setliveCameraType(LiveCamera_FREE); break;
+                case 1: UmaCamera::setliveCameraType(LiveCamera_FOLLOW_UMA); break;
+                case 2: {
+                    UmaCamera::setliveCameraType(LiveCamera_FIRST_PERSON);
+                    ImGui::Checkbox("Live Camera First Person Enable Roll.", &liveFirstPersonEnableRoll);
+                }; break;
+                }
+            }
+
+            ImGui::NewLine();
+            ImGui::Checkbox("Use Game Data", &UmaGUiShowData::cameraData.followGame);
+            static int editType = 0;
+            if (!UmaGUiShowData::cameraData.followGame) {
+                static const char* editTypeS[] = { "Position & LookAt (Game)", "Position & Rotation"};
+                ImGui::Combo("EditType", &editType, editTypeS, 2);
+            }
+            UmaGUiShowData::cameraData.isUpdateLookat = editType == 0;
+
+            auto& pos = UmaGUiShowData::cameraData.position;
+            auto& forward = UmaGUiShowData::cameraData.forward;
+            auto& gameLookat = UmaGUiShowData::cameraData.gameLookat;
+            Vector3_t lookat{ pos.x + forward.x, pos.y + forward.y, pos.z + forward.z };
+            
+            ImGui::InputFloat3("Position (x, y, z)", &pos.x);
+            // ImGui::Text("LookAt x: %f y: %f z: %f", lookat.x, lookat.y, lookat.z);
+            ImGui::InputFloat3("LookAt (Game) (x, y, z)", &gameLookat.x);
+            ImGui::InputFloat3("LookAt (Engine) (x, y, z)", &lookat.x);
+            // ImGui::Text("Forward x: %f y: %f z: %f", cameraData.forward.x, cameraData.forward.y, cameraData.forward.z);
+            // ImGui::InputFloat3("Forward (x, y, z)", &UmaGUiShowData::cameraData.forward.x, "%.3f", ImGuiInputTextFlags_ReadOnly);
+            ImGui::InputFloat4("Rotation (w, x, y, z)", &UmaGUiShowData::cameraData.rotation.w);
+        }
+        ImGui::End();
+    }
+
     void AllLoop() {
         static bool DOF = true;
         static bool others = true;
@@ -376,6 +422,7 @@ namespace LiveGUILoops {
         static bool charaFootLight = false;
         static bool charaBone = false;
         static bool globalLight = false;
+        static bool cameraInfo = false;
 
         if (!showLiveWnd) return;
         UmaGUiShowData::initGuiGlobalData();
@@ -388,6 +435,7 @@ namespace LiveGUILoops {
             ImGui::Checkbox("LightProjection", &lightProjection);
             ImGui::Checkbox("CharaFootLight", &charaFootLight);
             ImGui::Checkbox("Chara Bone (Global)", &charaBone);
+            ImGui::Checkbox("Camera Info", &cameraInfo);
         }
         ImGui::End();
 
@@ -399,6 +447,7 @@ namespace LiveGUILoops {
         if (globalLight) globalLightMainLoop();
         if (others) othersMainLoop();
         if (charaBone) umaBoneLoop();
+        if (cameraInfo) cameraInfoLoop();
     }
 
 }

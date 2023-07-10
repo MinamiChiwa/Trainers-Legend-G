@@ -334,7 +334,7 @@ namespace UmaCamera {
 		unsigned long sleepTime = 0;
 		Vector3_t cameraPos{ 0.093706, 0.467159, 9.588791 };
 		Vector3_t homeCameraPos{ 0.0, 1.047159, -4.811181 };
-		Vector3_t cameraLookAt{ cameraPos.x, cameraPos.y, cameraPos.z - look_radius };
+		
 		bool orig_lookat_target = g_race_freecam_lookat_umamusume;
 		float orig_g_race_freecam_follow_umamusume_distance = g_race_freecam_follow_umamusume_distance;
 		Vector3_t orig_g_race_freecam_follow_umamusume_offset{
@@ -398,6 +398,11 @@ namespace UmaCamera {
 			}
 		);
 
+	}
+	Vector3_t cameraLookAt{ cameraPos.x, cameraPos.y, cameraPos.z - look_radius };
+
+	void setliveCameraType(int type) {
+		liveCameraType = type;
 	}
 
 	void loadGlobalData() {
@@ -643,7 +648,7 @@ namespace UmaCamera {
 	}
 
 	Quaternion_t updateLookatByRotation(Quaternion_t rot) {
-		if (g_race_freecam_follow_umamusume && raceFollowUmaFirstPersion) {
+		if (g_race_freecam_follow_umamusume && raceFollowUmaFirstPerson) {
 			auto newRot = CameraCalc::RotateQuaternion(rot, raceFirstPersonLookAtOffset.y, CameraCalc::Vector3(1, 0, 0));
 			rot = CameraCalc::RotateQuaternion(newRot, raceFirstPersonLookAtOffset.x, CameraCalc::Vector3(0, 1, 0));
 		}
@@ -656,7 +661,7 @@ namespace UmaCamera {
 	}
 
 	Quaternion_t updatePosAndLookatByRotation(Vector3_t pos, Quaternion_t rot) {
-		if ((liveCameraType == LiveCamera_FIRST_PERSION) || raceFollowUmaFirstPersion) {
+		if ((liveCameraType == LiveCamera_FIRST_PERSON) || raceFollowUmaFirstPerson) {
 			pos = CameraCalc::GetFrontPos(pos, rot, liveFirstPersonOffset.z);
 			pos.y += liveFirstPersonOffset.y;
 		}
@@ -759,34 +764,34 @@ namespace UmaCamera {
 			switch (raceFollowStat) {
 			case 0: {
 				lookAtUmaReverse = !lookAtUmaReverse;
-				raceFollowUmaFirstPersion = false;
-				raceFollowUmaFirstPersionEnableRoll = false;
+				raceFollowUmaFirstPerson = false;
+				raceFollowUmaFirstPersonEnableRoll = false;
 				printf(lookAtUmaReverse ? "Race camera ahead.\n" : "Race camera behind.\n");
 				raceFollowStat++;
 			}; break;
 			case 1: {
 				lookAtUmaReverse = !lookAtUmaReverse;
-				raceFollowUmaFirstPersion = false;
-				raceFollowUmaFirstPersionEnableRoll = false;
+				raceFollowUmaFirstPerson = false;
+				raceFollowUmaFirstPersonEnableRoll = false;
 				printf(lookAtUmaReverse ? "Race camera ahead.\n" : "Race camera behind.\n");
 				raceFollowStat++;
 			}; break;
 			case 2: {
-				raceFollowUmaFirstPersion = true;
-				raceFollowUmaFirstPersionEnableRoll = true;
-				printf("Race first persion. Enable roll.\n");
+				raceFollowUmaFirstPerson = true;
+				raceFollowUmaFirstPersonEnableRoll = true;
+				printf("Race first person. Enable roll.\n");
 				raceFollowStat++;
 			}; break;
 			
 			case 3: {
-				raceFollowUmaFirstPersion = true;
-				raceFollowUmaFirstPersionEnableRoll = false;
-				printf("Race first persion. Disable roll.\n");
+				raceFollowUmaFirstPerson = true;
+				raceFollowUmaFirstPersonEnableRoll = false;
+				printf("Race first person. Disable roll.\n");
 				raceFollowStat = 0;
 			}; break;
 			
 			default: {
-				raceFollowUmaFirstPersion = false;
+				raceFollowUmaFirstPerson = false;
 				raceFollowStat = 0;
 			}; break;
 			}
@@ -797,7 +802,7 @@ namespace UmaCamera {
 
 	void camera_forward() {  // 向前
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume){
-			if (raceFollowUmaFirstPersion) {
+			if (raceFollowUmaFirstPerson) {
 				liveFirstPersonOffset.z += 0.005;
 			}
 			else {
@@ -811,7 +816,7 @@ namespace UmaCamera {
 			return;
 		}		
 		
-		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FIRST_PERSION) {
+		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FIRST_PERSON) {
 			liveFirstPersonOffset.z += 0.005;
 			return;
 		}
@@ -822,7 +827,7 @@ namespace UmaCamera {
 
 	void camera_back() {  // 后退
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
-			if (raceFollowUmaFirstPersion) {
+			if (raceFollowUmaFirstPerson) {
 				liveFirstPersonOffset.z -= 0.005;
 			}
 			else {
@@ -835,7 +840,7 @@ namespace UmaCamera {
 			liveFollowCameraOffset.z += moveStep / 2;
 			return;
 		}
-		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FIRST_PERSION) {
+		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FIRST_PERSON) {
 			liveFirstPersonOffset.z -= 0.005;
 			return;
 		}
@@ -880,7 +885,7 @@ namespace UmaCamera {
 
 	void camera_down() {  // 向下
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
-			if (raceFollowUmaFirstPersion) {
+			if (raceFollowUmaFirstPerson) {
 				liveFirstPersonOffset.y -= 0.005;
 			}
 			else {
@@ -893,7 +898,7 @@ namespace UmaCamera {
 			// liveFollowCameraOffset.y -= moveStep / 2;
 			return;
 		}
-		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FIRST_PERSION) {
+		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FIRST_PERSON) {
 			liveFirstPersonOffset.y -= 0.005;
 			return;
 		}
@@ -916,7 +921,7 @@ namespace UmaCamera {
 	
 	void camera_up() {  // 向上
 		if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
-			if (raceFollowUmaFirstPersion) {
+			if (raceFollowUmaFirstPerson) {
 				liveFirstPersonOffset.y += 0.005;
 			}
 			else {
@@ -929,7 +934,7 @@ namespace UmaCamera {
 			// liveFollowCameraOffset.y += moveStep / 2;
 			return;
 		}
-		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FIRST_PERSION) {
+		if ((cameraType == CAMERA_LIVE) && liveCameraType == LiveCamera_FIRST_PERSON) {
 			liveFirstPersonOffset.y += 0.005;
 			return;
 		}
@@ -1110,8 +1115,8 @@ namespace UmaCamera {
 				printf("LIVE Follow Umamusume\n");
 			}
 			else if (liveCameraType == LiveCamera_FOLLOW_UMA) {
-				liveCameraType = LiveCamera_FIRST_PERSION;
-				printf("LIVE First Persion\n");
+				liveCameraType = LiveCamera_FIRST_PERSON;
+				printf("LIVE First Person\n");
 			}
 			else {
 				liveCameraType = LiveCamera_FREE;
@@ -1119,9 +1124,9 @@ namespace UmaCamera {
 			}
 		}
 		else if (cameraType == CAMERA_CUTIN) {
-			if (g_enable_cutin_first_persion) {
-				g_cutin_first_persion = !g_cutin_first_persion;
-				printf("CutIn camera first person %s.\n", g_cutin_first_persion ? "enabled" : "disabled");
+			if (g_enable_cutin_first_person) {
+				g_cutin_first_person = !g_cutin_first_person;
+				printf("CutIn camera first person %s.\n", g_cutin_first_person ? "enabled" : "disabled");
 			}
 		}
 
@@ -1141,7 +1146,7 @@ namespace UmaCamera {
 
 	void changeLiveCameraLockChara(int changeIndex) {
 		if (cameraType != CAMERA_LIVE) return;
-		if ((liveCameraType != LiveCamera_FOLLOW_UMA) && (liveCameraType != LiveCamera_FIRST_PERSION)) return;
+		if ((liveCameraType != LiveCamera_FOLLOW_UMA) && (liveCameraType != LiveCamera_FIRST_PERSON)) return;
 
 		const auto changedData = changeIndex > 0 ? liveCharaPositionFlag.Next() : liveCharaPositionFlag.Last();
 		printf("Live look position flag: %s (0x%x)\n", changedData.first.c_str(), changedData.second);
@@ -1161,7 +1166,7 @@ namespace UmaCamera {
 		}
 		if (cameraType == CAMERA_RACE) {
 			if (g_race_freecam_follow_umamusume) {
-				if (raceFollowUmaFirstPersion) {
+				if (raceFollowUmaFirstPerson) {
 					if (mouse)
 						raceFirstPersonLookAtOffset.x -= value;
 					else
@@ -1180,7 +1185,7 @@ namespace UmaCamera {
 		}
 		if (cameraType == CAMERA_RACE) {
 			if (g_race_freecam_follow_umamusume) {
-				if (raceFollowUmaFirstPersion) {
+				if (raceFollowUmaFirstPerson) {
 					if (mouse)
 						raceFirstPersonLookAtOffset.y -= value * 16;
 					else
@@ -1197,7 +1202,7 @@ namespace UmaCamera {
 	void onMouseScroll(LONG value) {
 		if (value > 0) {  // up
 			if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
-				if (!raceFollowUmaFirstPersionEnableRoll && raceFollowUmaFirstPersion) {
+				if (!raceFollowUmaFirstPersonEnableRoll && raceFollowUmaFirstPerson) {
 					if (raceFirstShakeStrength >= 1.0f) return;
 					raceFirstShakeStrength += 0.05;
 					printf("raceFirstShakeStrength: %.2f\n", raceFirstShakeStrength);
@@ -1206,7 +1211,7 @@ namespace UmaCamera {
 		}
 		else {  // down
 			if ((cameraType == CAMERA_RACE) && g_race_freecam_follow_umamusume) {
-				if (!raceFollowUmaFirstPersionEnableRoll && raceFollowUmaFirstPersion) {
+				if (!raceFollowUmaFirstPersonEnableRoll && raceFollowUmaFirstPerson) {
 					if (raceFirstShakeStrength <= -1.0f) return;
 					raceFirstShakeStrength -= 0.05;
 					printf("raceFirstShakeStrength: %.2f\n", raceFirstShakeStrength);
