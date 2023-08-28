@@ -96,5 +96,9 @@
     "raceInfoTab": {
         "enableRaceInfoTab": false,
         "raceInfoTabAttachToGame": false
+    },
+    "customPath": {
+        "enableCustomPersistentDataPath": false,
+        "customPersistentDataPath": ""
     }
 }

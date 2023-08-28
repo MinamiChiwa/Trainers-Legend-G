@@ -403,6 +403,21 @@
             "items": {
                 "type": "string"
             }
+        },
+        "customPath": {
+            "description": "自定义路径",
+            "type": "object",
+            "properties": {
+                "enableCustomPersistentDataPath": {
+                    "description": "启用自定义数据路径",
+                    "type": "boolean",
+                    "default": false
+                },
+                "customPersistentDataPath": {
+                    "description": "自定义数据路径\n（游戏默认位置为 C:/Users/{用户名}/AppData/LocalLow/Cygames/umamusume）",
+                    "type": "string"
+                }
+            }
         }
     },
     "additionalProperties": false,

@@ -14,6 +14,7 @@ bool raceFollowUmaFirstPerson = false;
 bool raceFollowUmaFirstPersonEnableRoll = false;
 std::function<void(Il2CppString* title, Il2CppString* content, int buttonCount, int button1Text, int button2Text, int button3Text, int btn_type)> showDialog = nullptr;
 bool guiStarting = false;
+void (*testFunction)() = nullptr;
 
 void _set_u_stat(bool s) {
 	if (autoChangeLineBreakMode) {
@@ -588,6 +589,47 @@ namespace
 		// printf("ReshapeAspectRatio_hook\n");
 		if (g_unlock_size) return;
 		return reinterpret_cast<decltype(ReshapeAspectRatio_hook)*>(ReshapeAspectRatio_orig)();
+	}
+
+	void* GameSystem_instance_cache = nullptr;
+
+	void* GameSystem_SoftwareReset_orig;
+	void GameSystem_SoftwareReset_hook(void* _this) {
+		return reinterpret_cast<decltype(GameSystem_SoftwareReset_hook)*>(GameSystem_SoftwareReset_orig)(_this);
+	}
+
+	bool isFirstSystemUpdate = true;
+
+	void* GameSystem_Update_orig;
+	void GameSystem_Update_hook(void* _this) {
+		GameSystem_instance_cache = _this;
+		reinterpret_cast<decltype(GameSystem_Update_hook)*>(GameSystem_Update_orig)(_this);
+		if (isFirstSystemUpdate) {
+			isFirstSystemUpdate = false;
+			if (g_enable_custom_PersistentDataPath) {
+				GameSystem_SoftwareReset_hook(_this);
+			}
+		}
+	}
+
+	void* get_persistentDataPath_orig;
+	Il2CppString* get_persistentDataPath_hook() {
+		if (g_enable_custom_PersistentDataPath) {
+			return il2cpp_string_new(g_custom_PersistentDataPath.c_str());
+		}
+		return reinterpret_cast<decltype(get_persistentDataPath_hook)*>(get_persistentDataPath_orig)();
+	}
+
+	void* GetPersistentDataPath_orig;
+	Il2CppString* GetPersistentDataPath_hook() {
+		if (g_enable_custom_PersistentDataPath) {
+			return il2cpp_string_new(g_custom_PersistentDataPath.c_str());
+		}
+		return reinterpret_cast<decltype(GetPersistentDataPath_hook)*>(GetPersistentDataPath_orig)();
+	}
+
+	void testInnerAB() {
+		// test function. click ctrl+shift+t
 	}
 
 	bool setWindowPosOffset(HWND hWnd, HWND hWndInsertAfter, int X, int Y, int cx, int cy, UINT uFlags) {
@@ -4046,6 +4088,23 @@ namespace
 			"StandaloneWindowResize", "ReshapeAspectRatio", 0
 		);
 
+		auto get_persistentDataPath_addr = il2cpp_resolve_icall("UnityEngine.Application::get_persistentDataPath()");
+
+		auto GetPersistentDataPath_addr = il2cpp_symbols::get_method_pointer(
+			"Cute.Core.Assembly.dll", "Cute.Core",
+			"Device", "GetPersistentDataPath", 0
+		);
+
+		auto GameSystem_Update_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"GameSystem", "Update", 0
+		);
+
+		auto GameSystem_SoftwareReset_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"GameSystem", "SoftwareReset", 0
+		);
+
 		auto on_exit_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"GameSystem", "OnApplicationQuit", 0
@@ -4501,6 +4560,10 @@ namespace
 		ADD_HOOK(Get3DAntiAliasingLevel, "Get3DAntiAliasingLevel at %p\n");
 		ADD_HOOK(KeepAspectRatio, "KeepAspectRatio at %p\n");
 		ADD_HOOK(ReshapeAspectRatio, "ReshapeAspectRatio at %p\n");
+		ADD_HOOK(get_persistentDataPath, "get_persistentDataPath at %p\n");
+		ADD_HOOK(GetPersistentDataPath, "GetPersistentDataPath at %p\n");
+		ADD_HOOK(GameSystem_Update, "GameSystem_Update at %p\n");
+		ADD_HOOK(GameSystem_SoftwareReset, "GameSystem_SoftwareReset at %p\n");
 		ADD_HOOK(set_shadows, "set_shadows at %p\n");
 		ADD_HOOK(RaceCameraManager_AlterLateUpdate, "RaceCameraManager_AlterLateUpdate at %p\n");
 		// ADD_HOOK(RaceCameraManager_UpdateMultiCamera, "RaceCameraManager_UpdateMultiCamera at %p\n");
@@ -4586,6 +4649,9 @@ namespace
 		{
 			adjust_size();
 		}
+		testFunction = []() {
+			testInnerAB();
+		};
 
 		if (g_dump_entries)
 			dump_all_entries();

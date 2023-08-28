@@ -8,6 +8,8 @@
 #include <format>
 #include <functional>
 
+extern void (*testFunction)();
+
 namespace MHotkey{
     namespace {
         HHOOK hKeyboardHook;
@@ -196,6 +198,12 @@ namespace MHotkey{
                     if (CTRL_key != 0 && key == hotk)
                     {
                         fopenExternalPlugin(tlgport);
+                    }
+
+                    if (CTRL_key != 0 && key == 'T') {
+                        if (testFunction != nullptr) {
+                            testFunction();
+                        }
                     }
 
                     SHIFT_key = 0;

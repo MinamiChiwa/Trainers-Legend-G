@@ -403,6 +403,21 @@
             "items": {
                 "type": "string"
             }
+        },
+        "customPath": {
+            "description": "Custom path",
+            "type": "object",
+            "properties": {
+                "enableCustomPersistentDataPath": {
+                    "description": "Enable custom persistent data path.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "customPersistentDataPath": {
+                    "description": "Custom persistent data path.\n(Game default path is C:/Users/{userName}/AppData/LocalLow/Cygames/umamusume)",
+                    "type": "string"
+                }
+            }
         }
     },
     "additionalProperties": false,

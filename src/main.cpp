@@ -91,6 +91,8 @@ std::string g_character_system_text_dict_path;
 std::string g_race_jikkyo_comment_dict_path;
 std::string g_race_jikkyo_message_dict_path;
 std::list<std::function<void(void)>> onPluginReload{};
+bool g_enable_custom_PersistentDataPath = false;
+std::string g_custom_PersistentDataPath = "";
 bool enableRaceInfoTab = false;
 bool raceInfoTabAttachToGame = false;
 bool g_enable_live_dof_controller = false;
@@ -765,6 +767,12 @@ namespace
 			}
 			else {
 				g_enable_replaceBuiltInAssets = false;
+			}
+
+			if (document.HasMember("customPath")) {
+				g_enable_custom_PersistentDataPath = document["customPath"]["enableCustomPersistentDataPath"].GetBool();
+				g_custom_PersistentDataPath = document["customPath"]["customPersistentDataPath"].GetString();
+				if (g_custom_PersistentDataPath.empty()) g_enable_custom_PersistentDataPath = false;
 			}
 
 			if (document.HasMember("dumpGameAssemblyPath"))
