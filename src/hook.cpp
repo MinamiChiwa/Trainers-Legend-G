@@ -14,6 +14,7 @@ bool raceFollowUmaFirstPerson = false;
 bool raceFollowUmaFirstPersonEnableRoll = false;
 std::function<void(Il2CppString* title, Il2CppString* content, int buttonCount, int button1Text, int button2Text, int button3Text, int btn_type)> showDialog = nullptr;
 bool guiStarting = false;
+void (*testFunction)() = nullptr;
 
 void _set_u_stat(bool s) {
 	if (autoChangeLineBreakMode) {
@@ -588,6 +589,47 @@ namespace
 		// printf("ReshapeAspectRatio_hook\n");
 		if (g_unlock_size) return;
 		return reinterpret_cast<decltype(ReshapeAspectRatio_hook)*>(ReshapeAspectRatio_orig)();
+	}
+
+	void* GameSystem_instance_cache = nullptr;
+
+	void* GameSystem_SoftwareReset_orig;
+	void GameSystem_SoftwareReset_hook(void* _this) {
+		return reinterpret_cast<decltype(GameSystem_SoftwareReset_hook)*>(GameSystem_SoftwareReset_orig)(_this);
+	}
+
+	bool isFirstSystemUpdate = true;
+
+	void* GameSystem_Update_orig;
+	void GameSystem_Update_hook(void* _this) {
+		GameSystem_instance_cache = _this;
+		reinterpret_cast<decltype(GameSystem_Update_hook)*>(GameSystem_Update_orig)(_this);
+		if (isFirstSystemUpdate) {
+			isFirstSystemUpdate = false;
+			if (g_enable_custom_PersistentDataPath) {
+				GameSystem_SoftwareReset_hook(_this);
+			}
+		}
+	}
+
+	void* get_persistentDataPath_orig;
+	Il2CppString* get_persistentDataPath_hook() {
+		if (g_enable_custom_PersistentDataPath) {
+			return il2cpp_string_new(g_custom_PersistentDataPath.c_str());
+		}
+		return reinterpret_cast<decltype(get_persistentDataPath_hook)*>(get_persistentDataPath_orig)();
+	}
+
+	void* GetPersistentDataPath_orig;
+	Il2CppString* GetPersistentDataPath_hook() {
+		if (g_enable_custom_PersistentDataPath) {
+			return il2cpp_string_new(g_custom_PersistentDataPath.c_str());
+		}
+		return reinterpret_cast<decltype(GetPersistentDataPath_hook)*>(GetPersistentDataPath_orig)();
+	}
+
+	void testInnerAB() {
+		// test function. click ctrl+shift+t
 	}
 
 	bool setWindowPosOffset(HWND hWnd, HWND hWndInsertAfter, int X, int Y, int cx, int cy, UINT uFlags) {
@@ -1415,6 +1457,16 @@ namespace
 		text_set_linespacing(_this, g_custom_font_linespacing);
 	}
 
+	bool get_need_fullscreen(Resolution_t& r) {
+		bool need_fullscreen = false;
+		auto screen_ratio = r.width / static_cast<double>(r.height);
+		if (is_virt() && abs(screen_ratio - (1.f / g_aspect_ratio)) <= 0.001 && g_auto_fullscreen)
+			need_fullscreen = true;
+		else if (!is_virt() && abs(screen_ratio - g_aspect_ratio) <= 0.001 && g_auto_fullscreen)
+			need_fullscreen = true;
+		return need_fullscreen;
+	}
+
 	void* set_resolution_orig;
 	void set_resolution_hook(int width, int height, bool fullscreen)
 	{
@@ -1456,8 +1508,7 @@ namespace
 			// std::wprintf(L"to virt: %d * %d\n", width, height);
 		}
 
-		bool need_fullscreen = false;
-		auto screen_ratio = r.width / static_cast<double>(r.height);
+		bool need_fullscreen = get_need_fullscreen(r);
 
 		if (g_auto_fullscreen)
 		{
@@ -1473,15 +1524,31 @@ namespace
 			g_aspect_ratio = aspect_ratio;
 		}
 
-		if (is_virt() && abs(screen_ratio - (1.f / g_aspect_ratio)) <= 0.001 && g_auto_fullscreen)
-			need_fullscreen = true;
-		else if (!is_virt() && abs(screen_ratio - g_aspect_ratio) <= 0.001 && g_auto_fullscreen)
-			need_fullscreen = true;
-
 		reinterpret_cast<decltype(set_resolution_hook)*>(set_resolution_orig)(
 			need_fullscreen ? r.width : width, need_fullscreen ? r.height : height, need_fullscreen
 			);
-		if(!need_fullscreen) recheck_ratio_later(150, true);
+		if (!need_fullscreen) {
+			recheck_ratio_later(150, true);
+		}
+	}
+
+	LRESULT CALLBACK CBTProc(int nCode, WPARAM wParam, LPARAM lParam);
+	HHOOK g_hCBTHook = SetWindowsHookEx(WH_CBT, CBTProc, nullptr, GetCurrentThreadId());
+
+	LRESULT CALLBACK CBTProc(int nCode, WPARAM wParam, LPARAM lParam)
+	{
+		if (nCode == HCBT_MINMAX)
+		{
+			if ((lParam != SW_RESTORE) && (g_fullscreen_block_minimization)) {
+				Resolution_t r;
+				r = *get_resolution(&r);
+				if (get_need_fullscreen(r)) {
+					return 1;
+				}
+			}
+		}
+
+		return CallNextHookEx(g_hCBTHook, nCode, wParam, lParam);
 	}
 
 	void* set_shadows_orig;
@@ -4046,6 +4113,23 @@ namespace
 			"StandaloneWindowResize", "ReshapeAspectRatio", 0
 		);
 
+		auto get_persistentDataPath_addr = il2cpp_resolve_icall("UnityEngine.Application::get_persistentDataPath()");
+
+		auto GetPersistentDataPath_addr = il2cpp_symbols::get_method_pointer(
+			"Cute.Core.Assembly.dll", "Cute.Core",
+			"Device", "GetPersistentDataPath", 0
+		);
+
+		auto GameSystem_Update_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"GameSystem", "Update", 0
+		);
+
+		auto GameSystem_SoftwareReset_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"GameSystem", "SoftwareReset", 0
+		);
+
 		auto on_exit_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"GameSystem", "OnApplicationQuit", 0
@@ -4501,6 +4585,10 @@ namespace
 		ADD_HOOK(Get3DAntiAliasingLevel, "Get3DAntiAliasingLevel at %p\n");
 		ADD_HOOK(KeepAspectRatio, "KeepAspectRatio at %p\n");
 		ADD_HOOK(ReshapeAspectRatio, "ReshapeAspectRatio at %p\n");
+		ADD_HOOK(get_persistentDataPath, "get_persistentDataPath at %p\n");
+		ADD_HOOK(GetPersistentDataPath, "GetPersistentDataPath at %p\n");
+		ADD_HOOK(GameSystem_Update, "GameSystem_Update at %p\n");
+		ADD_HOOK(GameSystem_SoftwareReset, "GameSystem_SoftwareReset at %p\n");
 		ADD_HOOK(set_shadows, "set_shadows at %p\n");
 		ADD_HOOK(RaceCameraManager_AlterLateUpdate, "RaceCameraManager_AlterLateUpdate at %p\n");
 		// ADD_HOOK(RaceCameraManager_UpdateMultiCamera, "RaceCameraManager_UpdateMultiCamera at %p\n");
@@ -4586,6 +4674,9 @@ namespace
 		{
 			adjust_size();
 		}
+		testFunction = []() {
+			testInnerAB();
+		};
 
 		if (g_dump_entries)
 			dump_all_entries();

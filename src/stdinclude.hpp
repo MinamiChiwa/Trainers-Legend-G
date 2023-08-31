@@ -132,6 +132,7 @@ extern bool g_replace_assets;
 extern bool g_asset_load_log;
 
 extern bool g_auto_fullscreen;
+extern bool g_fullscreen_block_minimization;
 extern std::unique_ptr<AutoUpdate::IAutoUpdateService> g_auto_update_service;
 extern std::string g_static_dict_path;
 extern bool autoChangeLineBreakMode;
@@ -189,3 +190,5 @@ extern bool guiStarting;
 extern bool g_cutin_first_person;
 extern bool g_enable_cutin_first_person;
 extern bool g_enable_better60fps;
+extern bool g_enable_custom_PersistentDataPath;
+extern std::string g_custom_PersistentDataPath;

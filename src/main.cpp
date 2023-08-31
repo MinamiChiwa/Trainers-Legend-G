@@ -36,6 +36,7 @@ float g_custom_font_linespacing;
 bool g_replace_assets;
 bool g_asset_load_log;
 bool g_auto_fullscreen = true;
+bool g_fullscreen_block_minimization = true;
 std::unique_ptr<AutoUpdate::IAutoUpdateService> g_auto_update_service{};
 std::string g_autoupdateUrl;
 std::string g_static_dict_path;
@@ -91,6 +92,8 @@ std::string g_character_system_text_dict_path;
 std::string g_race_jikkyo_comment_dict_path;
 std::string g_race_jikkyo_message_dict_path;
 std::list<std::function<void(void)>> onPluginReload{};
+bool g_enable_custom_PersistentDataPath = false;
+std::string g_custom_PersistentDataPath = "";
 bool enableRaceInfoTab = false;
 bool raceInfoTabAttachToGame = false;
 bool g_enable_live_dof_controller = false;
@@ -498,6 +501,9 @@ namespace
 			g_asset_load_log = document["assetLoadLog"].GetBool();
 
 			g_auto_fullscreen = document["autoFullscreen"].GetBool();
+			if (document.HasMember("fullscreenBlockMinimization")) {
+				g_fullscreen_block_minimization = document["fullscreenBlockMinimization"].GetBool();
+			}
 
 			autoChangeLineBreakMode = document["autoChangeLineBreakMode"].GetBool();
 
@@ -765,6 +771,12 @@ namespace
 			}
 			else {
 				g_enable_replaceBuiltInAssets = false;
+			}
+
+			if (document.HasMember("customPath")) {
+				g_enable_custom_PersistentDataPath = document["customPath"]["enableCustomPersistentDataPath"].GetBool();
+				g_custom_PersistentDataPath = document["customPath"]["customPersistentDataPath"].GetString();
+				if (g_custom_PersistentDataPath.empty()) g_enable_custom_PersistentDataPath = false;
 			}
 
 			if (document.HasMember("dumpGameAssemblyPath"))

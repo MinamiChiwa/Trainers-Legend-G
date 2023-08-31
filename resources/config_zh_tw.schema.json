@@ -66,6 +66,11 @@
             "description": "在螢幕比例對應時自動設定為全螢幕",
             "type": "boolean"
         },
+        "fullscreenBlockMinimization": {
+            "description": "全螢幕时，阻止最小化",
+            "type": "boolean",
+            "default": true
+        },
         "readRequestPack": {
             "description": "是否讀取用戶端發包訊息，開啟此功能可在命令行中輸入reboot快速重啟遊戲",
             "type": "boolean"
@@ -402,6 +407,21 @@
             "type": "array",
             "items": {
                 "type": "string"
+            }
+        },
+        "customPath": {
+            "description": "自定義路徑",
+            "type": "object",
+            "properties": {
+                "enableCustomPersistentDataPath": {
+                    "description": "啟用自定義數據路徑",
+                    "type": "boolean",
+                    "default": false
+                },
+                "customPersistentDataPath": {
+                    "description": "自定義數據路徑\n（遊戲默認位置為 C:/Users/{用戶名}/AppData/LocalLow/Cygames/umamusume）",
+                    "type": "string"
+                }
             }
         }
     },

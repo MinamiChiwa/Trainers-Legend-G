@@ -14,6 +14,7 @@
         "forceLandscape": false
     },
     "autoFullscreen": false,
+    "fullscreenBlockMinimization": true,
     "readRequestPack": false,
     "extraAssetBundlePaths": ["localized_data/umamusumelocalify"],
     "replaceFont": true,
@@ -96,5 +97,9 @@
     "raceInfoTab": {
         "enableRaceInfoTab": false,
         "raceInfoTabAttachToGame": false
+    },
+    "customPath": {
+        "enableCustomPersistentDataPath": false,
+        "customPersistentDataPath": ""
     }
 }

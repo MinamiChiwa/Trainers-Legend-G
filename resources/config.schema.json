@@ -62,6 +62,11 @@
             "description": "在屏幕比例对应时自动设置为全屏",
             "type": "boolean"
         },
+        "fullscreenBlockMinimization": {
+            "description": "屏幕全屏时，阻止最小化",
+            "type": "boolean",
+            "default": true
+        },
         "uiScale": {
             "description": "自定义UI缩放",
             "type": "number"
@@ -402,6 +407,21 @@
             "type": "array",
             "items": {
                 "type": "string"
+            }
+        },
+        "customPath": {
+            "description": "自定义路径",
+            "type": "object",
+            "properties": {
+                "enableCustomPersistentDataPath": {
+                    "description": "启用自定义数据路径",
+                    "type": "boolean",
+                    "default": false
+                },
+                "customPersistentDataPath": {
+                    "description": "自定义数据路径\n（游戏默认位置为 C:/Users/{用户名}/AppData/LocalLow/Cygames/umamusume）",
+                    "type": "string"
+                }
             }
         }
     },

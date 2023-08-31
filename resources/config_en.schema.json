@@ -66,6 +66,11 @@
             "description": "Full screen the game automaticlly",
             "type": "boolean"
         },
+        "fullscreenBlockMinimization": {
+            "description": "Block window minimization while fullscreen",
+            "type": "boolean",
+            "default": true
+        },
         "readRequestPack": {
             "description": "Read the msgpack sent by game, you can reboot the game quicker by typing 'reboot' in the console if you enable it.",
             "type": "boolean"
@@ -402,6 +407,21 @@
             "type": "array",
             "items": {
                 "type": "string"
+            }
+        },
+        "customPath": {
+            "description": "Custom path",
+            "type": "object",
+            "properties": {
+                "enableCustomPersistentDataPath": {
+                    "description": "Enable custom persistent data path.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "customPersistentDataPath": {
+                    "description": "Custom persistent data path.\n(Game default path is C:/Users/{userName}/AppData/LocalLow/Cygames/umamusume)",
+                    "type": "string"
+                }
             }
         }
     },
