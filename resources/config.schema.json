@@ -62,6 +62,11 @@
             "description": "在屏幕比例对应时自动设置为全屏",
             "type": "boolean"
         },
+        "fullscreenBlockMinimization": {
+            "description": "屏幕全屏时，阻止最小化",
+            "type": "boolean",
+            "default": true
+        },
         "uiScale": {
             "description": "自定义UI缩放",
             "type": "number"

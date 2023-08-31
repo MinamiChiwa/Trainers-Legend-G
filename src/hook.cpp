@@ -1457,6 +1457,16 @@ namespace
 		text_set_linespacing(_this, g_custom_font_linespacing);
 	}
 
+	bool get_need_fullscreen(Resolution_t& r) {
+		bool need_fullscreen = false;
+		auto screen_ratio = r.width / static_cast<double>(r.height);
+		if (is_virt() && abs(screen_ratio - (1.f / g_aspect_ratio)) <= 0.001 && g_auto_fullscreen)
+			need_fullscreen = true;
+		else if (!is_virt() && abs(screen_ratio - g_aspect_ratio) <= 0.001 && g_auto_fullscreen)
+			need_fullscreen = true;
+		return need_fullscreen;
+	}
+
 	void* set_resolution_orig;
 	void set_resolution_hook(int width, int height, bool fullscreen)
 	{
@@ -1498,8 +1508,7 @@ namespace
 			// std::wprintf(L"to virt: %d * %d\n", width, height);
 		}
 
-		bool need_fullscreen = false;
-		auto screen_ratio = r.width / static_cast<double>(r.height);
+		bool need_fullscreen = get_need_fullscreen(r);
 
 		if (g_auto_fullscreen)
 		{
@@ -1515,15 +1524,31 @@ namespace
 			g_aspect_ratio = aspect_ratio;
 		}
 
-		if (is_virt() && abs(screen_ratio - (1.f / g_aspect_ratio)) <= 0.001 && g_auto_fullscreen)
-			need_fullscreen = true;
-		else if (!is_virt() && abs(screen_ratio - g_aspect_ratio) <= 0.001 && g_auto_fullscreen)
-			need_fullscreen = true;
-
 		reinterpret_cast<decltype(set_resolution_hook)*>(set_resolution_orig)(
 			need_fullscreen ? r.width : width, need_fullscreen ? r.height : height, need_fullscreen
 			);
-		if(!need_fullscreen) recheck_ratio_later(150, true);
+		if (!need_fullscreen) {
+			recheck_ratio_later(150, true);
+		}
+	}
+
+	LRESULT CALLBACK CBTProc(int nCode, WPARAM wParam, LPARAM lParam);
+	HHOOK g_hCBTHook = SetWindowsHookEx(WH_CBT, CBTProc, nullptr, GetCurrentThreadId());
+
+	LRESULT CALLBACK CBTProc(int nCode, WPARAM wParam, LPARAM lParam)
+	{
+		if (nCode == HCBT_MINMAX)
+		{
+			if ((lParam != SW_RESTORE) && (g_fullscreen_block_minimization)) {
+				Resolution_t r;
+				r = *get_resolution(&r);
+				if (get_need_fullscreen(r)) {
+					return 1;
+				}
+			}
+		}
+
+		return CallNextHookEx(g_hCBTHook, nCode, wParam, lParam);
 	}
 
 	void* set_shadows_orig;

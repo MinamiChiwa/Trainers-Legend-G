@@ -66,6 +66,11 @@
             "description": "在螢幕比例對應時自動設定為全螢幕",
             "type": "boolean"
         },
+        "fullscreenBlockMinimization": {
+            "description": "全螢幕时，阻止最小化",
+            "type": "boolean",
+            "default": true
+        },
         "readRequestPack": {
             "description": "是否讀取用戶端發包訊息，開啟此功能可在命令行中輸入reboot快速重啟遊戲",
             "type": "boolean"

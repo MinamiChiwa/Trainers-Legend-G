@@ -66,6 +66,11 @@
             "description": "Full screen the game automaticlly",
             "type": "boolean"
         },
+        "fullscreenBlockMinimization": {
+            "description": "Block window minimization while fullscreen",
+            "type": "boolean",
+            "default": true
+        },
         "readRequestPack": {
             "description": "Read the msgpack sent by game, you can reboot the game quicker by typing 'reboot' in the console if you enable it.",
             "type": "boolean"
