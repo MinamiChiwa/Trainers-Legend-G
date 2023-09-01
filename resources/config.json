@@ -18,7 +18,7 @@
     "readRequestPack": false,
     "extraAssetBundlePaths": ["localized_data/umamusumelocalify"],
     "replaceFont": true,
-    "customFontPath": "assets/bundledassets/umamusumelocalify/fonts/msyh.ttc",
+    "customFontPath": "assets/bundledassets/umamusumelocalify/fonts/msyh.ttf",
     "customFontSizeOffset": -4,
     "customFontStyle": 1,
     "customFontLinespacing": 0.9,
