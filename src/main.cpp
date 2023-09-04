@@ -98,6 +98,7 @@ bool enableRaceInfoTab = false;
 bool raceInfoTabAttachToGame = false;
 bool g_enable_live_dof_controller = false;
 bool g_enable_better60fps = false;
+bool g_upload_gacha_history = false;
 
 constexpr const char LocalizedDataPath[] = "localized_data";
 constexpr const char OldLocalizedDataPath[] = "old_localized_data";
@@ -777,6 +778,10 @@ namespace
 				g_enable_custom_PersistentDataPath = document["customPath"]["enableCustomPersistentDataPath"].GetBool();
 				g_custom_PersistentDataPath = document["customPath"]["customPersistentDataPath"].GetString();
 				if (g_custom_PersistentDataPath.empty()) g_enable_custom_PersistentDataPath = false;
+			}
+
+			if (document.HasMember("uploadGachaHistory")) {
+				g_upload_gacha_history = document["uploadGachaHistory"].GetBool();
 			}
 
 			if (document.HasMember("dumpGameAssemblyPath"))

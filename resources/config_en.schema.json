@@ -423,6 +423,11 @@
                     "type": "string"
                 }
             }
+        },
+        "uploadGachaHistory": {
+            "description": "Upload your gacha history\nClick on the \"Gacha history\" button to upload\nYou can go to uma.gacha.chinosk6.cn to view the gacha history",
+            "type": "boolean",
+            "default": false
         }
     },
     "additionalProperties": false,

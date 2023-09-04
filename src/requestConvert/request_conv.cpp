@@ -103,21 +103,61 @@ namespace request_convert
 		return false;
 	}
 
+	std::string Get_autoupdateUrl() {
+		std::regex pattern("(http|https)://[^/]+");
+		std::string autoupdateUrl = "";
+		std::smatch match;
+		if (std::regex_search(g_autoupdateUrl, match, pattern)) {
+			autoupdateUrl = match[0];
+		}
+		return autoupdateUrl;
+	}
+
+	void check_and_upload_gacha_history(const std::string& pack) {
+		bool isHistory = false;
+		try {
+			auto jsonPack = nlohmann::json::from_msgpack(pack);
+			if (jsonPack.contains("data")) {
+				isHistory = true;
+				auto& data = jsonPack["data"];
+				if (data.contains("gacha_exec_history_array") && data.contains("gacha_reward_history_array")) {
+					static auto autoupdateUrl = Get_autoupdateUrl();
+					if (autoupdateUrl.empty()) return;
+
+					static auto get_UserName = reinterpret_cast<Il2CppString * (*)()>(il2cpp_symbols::get_method_pointer(
+						"umamusume.dll", "Gallop", "GallopUtil", "GetUserName", 0));
+					static auto get_dmmViewerId = reinterpret_cast<Il2CppString * (*)()>(il2cpp_symbols::get_method_pointer(
+						"umamusume.dll", "Gallop", "Certification", "get_dmmViewerId", 0));
+					auto userName = get_UserName();
+					auto dmmViewerId = get_dmmViewerId();
+
+					jsonPack["user_name"] = utility::conversions::to_utf8string(userName->start_char);
+					jsonPack["dmm_viewer_id"] = utility::conversions::to_utf8string(dmmViewerId->start_char);
+					auto resp = send_post(L"https://uma.gacha.chinosk6.cn", "/api/upload/usergacha", jsonPack.dump());
+					if (resp.status_code() == web::http::status_codes::OK) {
+						const auto userId = resp.extract_utf8string().get();
+						printf("Upload gacha history success. Your id is: %s\nGo to https://uma.gacha.chinosk6.cn?uid=%s to view.\n", userId.c_str(), userId.c_str());
+					}
+				}
+			}
+		}
+		catch (nlohmann::json::exception& ex) {
+			if (ex.id != 113) printf("ParseGHError: %s\n", ex.what());
+		}
+		catch (std::exception& ex) {
+			if (isHistory) printf("Upload gacha history failed: %s\n", ex.what());
+		}
+
+	}
+
 	void updateNotice() {
 		try
 		{
 			if (!isNoticeUrlRight) return;
 			if (showDialog == nullptr) return;
 
-			std::regex pattern("(http|https)://[^/]+");
-			std::string autoupdateUrl;
-			std::smatch match;
-			if (std::regex_search(g_autoupdateUrl, match, pattern)) {
-				autoupdateUrl = match[0];
-			}
-			else {
-				return;
-			}
+			static std::string autoupdateUrl = Get_autoupdateUrl();
+			if (autoupdateUrl.empty()) return;
 			if (!pinged) {
 				auto pingResult = send_post(utility::conversions::to_string_t(autoupdateUrl).c_str(), L"/api/notice/ping", L"");
 				if (pingResult.status_code() != 200) {

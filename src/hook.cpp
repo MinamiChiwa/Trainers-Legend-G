@@ -3574,6 +3574,18 @@ namespace
 		return reinterpret_cast<decltype(CutInTimelineController_OnDestroy_hook)*>(CutInTimelineController_OnDestroy_orig)(_this);
 	}
 
+	void* DialogGachaHistory_Setup_orig;
+	void DialogGachaHistory_Setup_hook(void* _this, void* data, void* data2, void* v) {
+		// printf("DialogGachaHistory_Setup:\n%ls\n\n", environment_get_stacktrace()->start_char);
+		return reinterpret_cast<decltype(DialogGachaHistory_Setup_hook)*>(DialogGachaHistory_Setup_orig)(_this, data, data2, v);
+	}
+
+	void* GachaHistoryExecData_ctor_orig;
+	void GachaHistoryExecData_ctor_hook(void* _this, void* d1, void* d2) {
+		// printf("GachaHistoryExecData_ctor:\n%ls\n\n", environment_get_stacktrace()->start_char);
+		return reinterpret_cast<decltype(GachaHistoryExecData_ctor_hook)*>(GachaHistoryExecData_ctor_orig)(_this, d1, d2);
+	}
+
 	std::string currentTime()
 	{
 		auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(
@@ -3713,6 +3725,10 @@ namespace
 					memcpy(dst, new_dst, new_buffer.size());
 					ret = new_buffer.size();
 				}
+			}
+
+			if (g_upload_gacha_history) {
+				request_convert::check_and_upload_gacha_history(uma_data);
 			}
 
 		}
@@ -4457,6 +4473,15 @@ namespace
 			"CutInTimelineController", "OnDestroy", 0
 		);
 
+		auto DialogGachaHistory_Setup_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"DialogGachaHistory", "Setup", 3
+		);
+		auto GachaHistoryExecData_ctor_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"GachaHistoryExecData", ".ctor", 2
+		);
+
 		auto StorySceneController_LoadCharacter_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"StorySceneController", "LoadCharacter", 2
@@ -4669,6 +4694,8 @@ namespace
 		ADD_HOOK(GallopUtil_GetModifiedString, "GallopUtil_GetModifiedString at %p\n");
 		ADD_HOOK(CutInTimelineController_AlterLateUpdate, "CutInTimelineController_AlterLateUpdate at %p\n");
 		ADD_HOOK(CutInTimelineController_OnDestroy, "CutInTimelineController_OnDestroy at %p\n");
+		ADD_HOOK(DialogGachaHistory_Setup, "DialogGachaHistory_Setup at %p\n");
+		ADD_HOOK(GachaHistoryExecData_ctor, "GachaHistoryExecData_ctor at %p\n");
 		UmaLiveHook::regHookMain();
 		if (g_auto_fullscreen)
 		{
