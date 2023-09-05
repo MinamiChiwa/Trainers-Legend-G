@@ -4523,7 +4523,7 @@ namespace
 
 		const auto GallopUtil_GetModifiedString_addr = il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "GallopUtil", "GetModifiedString", -1);
 
-		if (g_read_request_pack || g_bypass_live_205)
+		if (g_read_request_pack || g_bypass_live_205 || g_upload_gacha_history)
 		{
 			auto libnative_module = GetModuleHandleW(L"libnative.dll");
 			auto response_pack_ptr = GetProcAddress(libnative_module, "LZ4_decompress_safe_ext");
