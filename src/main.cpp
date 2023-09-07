@@ -99,6 +99,7 @@ bool raceInfoTabAttachToGame = false;
 bool g_enable_live_dof_controller = false;
 bool g_enable_better60fps = false;
 bool g_upload_gacha_history = false;
+std::wstring g_upload_gacha_history_endpoint = L"";
 
 constexpr const char LocalizedDataPath[] = "localized_data";
 constexpr const char OldLocalizedDataPath[] = "old_localized_data";
@@ -782,6 +783,12 @@ namespace
 
 			if (document.HasMember("uploadGachaHistory")) {
 				g_upload_gacha_history = document["uploadGachaHistory"].GetBool();
+			}
+			if (document.HasMember("uploadGachaHistoryEndpoint")) {
+				g_upload_gacha_history_endpoint = utility::conversions::to_string_t(document["uploadGachaHistoryEndpoint"].GetString());
+			}
+			else {
+				g_upload_gacha_history_endpoint = L"https://uma.gacha.chinosk6.cn";
 			}
 
 			if (document.HasMember("dumpGameAssemblyPath"))

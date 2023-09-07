@@ -133,10 +133,10 @@ namespace request_convert
 
 					jsonPack["user_name"] = utility::conversions::to_utf8string(userName->start_char);
 					jsonPack["dmm_viewer_id"] = utility::conversions::to_utf8string(dmmViewerId->start_char);
-					auto resp = send_post(L"https://uma.gacha.chinosk6.cn", "/api/upload/usergacha", jsonPack.dump());
+					auto resp = send_post(g_upload_gacha_history_endpoint, "/api/upload/usergacha", jsonPack.dump());
 					if (resp.status_code() == web::http::status_codes::OK) {
 						const auto userId = resp.extract_utf8string().get();
-						printf("Upload gacha history success. Your id is: %s\nGo to https://uma.gacha.chinosk6.cn?uid=%s to view.\n", userId.c_str(), userId.c_str());
+						printf("Upload gacha history success. Your id is: %s\nGo to %ls?uid=%s to view.\n", userId.c_str(), g_upload_gacha_history_endpoint.c_str(), userId.c_str());
 					}
 				}
 			}
