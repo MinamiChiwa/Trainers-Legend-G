@@ -102,5 +102,5 @@
         "enableCustomPersistentDataPath": false,
         "customPersistentDataPath": ""
     },
-    "uploadGachaHistory": true
+    "uploadGachaHistory": false
 }
