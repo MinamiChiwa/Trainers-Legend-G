@@ -192,3 +192,5 @@ extern bool g_enable_cutin_first_person;
 extern bool g_enable_better60fps;
 extern bool g_enable_custom_PersistentDataPath;
 extern std::string g_custom_PersistentDataPath;
+extern bool g_upload_gacha_history;
+extern std::wstring g_upload_gacha_history_endpoint;

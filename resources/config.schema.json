@@ -423,6 +423,11 @@
                     "type": "string"
                 }
             }
+        },
+        "uploadGachaHistory": {
+            "description": "上传您的抽卡记录\n点击\"抽奖记录\"按钮上传\n您可以前往 uma.gacha.chinosk6.cn 查看抽卡记录",
+            "type": "boolean",
+            "default": false
         }
     },
     "additionalProperties": false,
