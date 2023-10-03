@@ -1877,6 +1877,13 @@ namespace
 			_this, updateInfo);
 	}
 
+	void* CheckSwapChara_orig;
+	void CheckSwapChara_hook(void* _this, int index, int oldCharaId, int oldDressId, int oldDressColorId, int oldDressId2, int oldDressColorId2, int newCharaId) {
+		if (g_bypass_live_205) return;
+		return reinterpret_cast<decltype(CheckSwapChara_hook)*>(CheckSwapChara_orig)(
+			_this, index, oldCharaId, oldDressId, oldDressColorId, oldDressId2, oldDressColorId2, newCharaId);
+	}
+
 	void* alterupdate_camera_lookat_orig;
 	void alterupdate_camera_lookat_hook(void* _this, Il2CppObject* sheet, int currentFrame, float currentTime, Vector3_t* outLookAt) {
 		reinterpret_cast<decltype(alterupdate_camera_lookat_hook)*>(alterupdate_camera_lookat_orig)(
@@ -4288,6 +4295,11 @@ namespace
 			"StageController", "UpdateEnvironemntStageFovShift", 1
 		);
 		
+		auto CheckSwapChara_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"LiveTheaterCharaSelect", "CheckSwapChara", 7
+		);
+
 		auto Unity_get_fieldOfView_addr = il2cpp_resolve_icall("UnityEngine.Camera::get_fieldOfView()");
 		auto Unity_set_fieldOfView_addr = il2cpp_resolve_icall("UnityEngine.Camera::set_fieldOfView(System.Single)");
 		auto Unity_set_pos_injected_addr = il2cpp_resolve_icall("UnityEngine.Transform::set_position_Injected(UnityEngine.Vector3&)");
@@ -4566,6 +4578,7 @@ namespace
 		ADD_HOOK(AlterUpdate_CameraPos, "AlterUpdate_CameraPos at %p\n");
 		ADD_HOOK(alterupdate_camera_lookat, "alterupdate_camera_lookat at %p\n");
 		// ADD_HOOK(UpdateEnvironemntStageFovShift, "UpdateEnvironemntStageFovShift at %p\n");
+		ADD_HOOK(CheckSwapChara, "CheckSwapChara at %p\n");
 		ADD_HOOK(Unity_get_fieldOfView, "Unity_get_fieldOfView at %p\n");
 		ADD_HOOK(Unity_set_fieldOfView, "Unity_set_fieldOfView at %p\n");
 		ADD_HOOK(Unity_set_pos_injected, "Unity_set_pos_injected at %p\n");
