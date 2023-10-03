@@ -114,40 +114,38 @@ namespace request_convert
 	}
 
 	void check_and_upload_gacha_history(const std::string& pack) {
-		bool isHistory = false;
-		try {
-			auto jsonPack = nlohmann::json::from_msgpack(pack);
-			if (jsonPack.contains("data")) {
-				isHistory = true;
-				auto& data = jsonPack["data"];
-				if (data.contains("gacha_exec_history_array") && data.contains("gacha_reward_history_array")) {
-					static auto autoupdateUrl = Get_autoupdateUrl();
-					if (autoupdateUrl.empty()) return;
+		static auto get_UserName = reinterpret_cast<Il2CppString * (*)()>(il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop", "GallopUtil", "GetUserName", 0));
+		static auto get_dmmViewerId = reinterpret_cast<Il2CppString * (*)()>(il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop", "Certification", "get_dmmViewerId", 0));
 
-					static auto get_UserName = reinterpret_cast<Il2CppString * (*)()>(il2cpp_symbols::get_method_pointer(
-						"umamusume.dll", "Gallop", "GallopUtil", "GetUserName", 0));
-					static auto get_dmmViewerId = reinterpret_cast<Il2CppString * (*)()>(il2cpp_symbols::get_method_pointer(
-						"umamusume.dll", "Gallop", "Certification", "get_dmmViewerId", 0));
-					auto userName = get_UserName();
-					auto dmmViewerId = get_dmmViewerId();
-
-					jsonPack["user_name"] = utility::conversions::to_utf8string(userName->start_char);
-					jsonPack["dmm_viewer_id"] = utility::conversions::to_utf8string(dmmViewerId->start_char);
-					auto resp = send_post(g_upload_gacha_history_endpoint, "/api/upload/usergacha", jsonPack.dump());
-					if (resp.status_code() == web::http::status_codes::OK) {
-						const auto userId = resp.extract_utf8string().get();
-						printf("Upload gacha history success. Your id is: %s\nGo to %ls?uid=%s to view.\n", userId.c_str(), g_upload_gacha_history_endpoint.c_str(), userId.c_str());
+		std::thread([pack]() {
+			bool isHistory = false;
+			try {
+				auto jsonPack = nlohmann::json::from_msgpack(pack);
+				if (jsonPack.contains("data")) {
+					isHistory = true;
+					auto& data = jsonPack["data"];
+					if (data.contains("gacha_exec_history_array") && data.contains("gacha_reward_history_array")) {
+						auto userName = get_UserName();
+						auto dmmViewerId = get_dmmViewerId();
+						jsonPack["user_name"] = utility::conversions::to_utf8string(userName->start_char);
+						jsonPack["dmm_viewer_id"] = utility::conversions::to_utf8string(dmmViewerId->start_char);
+						auto resp = send_post(g_upload_gacha_history_endpoint, "/api/upload/usergacha", jsonPack.dump());
+						if (resp.status_code() == web::http::status_codes::OK) {
+							const auto userId = resp.extract_utf8string().get();
+							printf("Upload gacha history success. Your id is: %s\nGo to %ls?uid=%s to view.\n", userId.c_str(), g_upload_gacha_history_endpoint.c_str(), userId.c_str());
+						}
 					}
 				}
 			}
-		}
-		catch (nlohmann::json::exception& ex) {
-			if (ex.id != 113) printf("ParseGHError: %s\n", ex.what());
-		}
-		catch (std::exception& ex) {
-			if (isHistory) printf("Upload gacha history failed: %s\n", ex.what());
-		}
-
+			catch (nlohmann::json::exception& ex) {
+				if (ex.id != 113) printf("ParseGHError: %s\n", ex.what());
+			}
+			catch (std::exception& ex) {
+				if (isHistory) printf("Upload gacha history failed: %s\n", ex.what());
+			}
+			}).detach();
 	}
 
 	void updateNotice() {
