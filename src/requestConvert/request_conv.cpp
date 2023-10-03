@@ -16,6 +16,7 @@ namespace request_convert
 				std::wstring(L"https://api-umamusume.cygames.jp/umamusume/card/get_release_card_array"),
 				std::wstring(L"https://api-umamusume.cygames.jp/umamusume/note/get_new_chara_data")
 			} };
+		std::unordered_map<int, nlohmann::json> musicMemberInfoArr{};
 	}
 
 	web::http::http_response send_post(std::wstring url, std::wstring path, std::wstring data, int timeout) {
@@ -60,7 +61,7 @@ namespace request_convert
 		return v.substr(4 + offset);
 	}
 
-	void setLastRequestUrl(const std::wstring& url) {
+	void setLastRequestUrl(const std::wstring url) {
 		lastRequestUrl = url;
 	}
 
@@ -70,8 +71,7 @@ namespace request_convert
 		{
 			if (beforeGetNewCharaDataUrl.contains(lastRequestUrl)) {
 				auto json_data = nlohmann::json::from_msgpack(parse_request_pack(pack), false);
-				if (json_data.contains("chara_id"))
-				{
+				if (json_data.contains("chara_id")) {
 					if (json_data["chara_id"] < 3000) {
 						json_data["chara_id"] = 1001;
 						const auto new_buf = nlohmann::json::to_msgpack(json_data);
@@ -96,10 +96,22 @@ namespace request_convert
 			if (json_data.contains("live_theater_save_info"))
 			{
 				printf("Catch live_theater_save_info\n");
+
+				int musicId = json_data["live_theater_save_info"]["music_id"];
+				nlohmann::json memberInfoArray;
+				if (auto it = musicMemberInfoArr.find(musicId); it != musicMemberInfoArr.end()) {
+					memberInfoArray = it->second;
+				}
+				
 				for (int i = 0; i < json_data["live_theater_save_info"]["member_info_array"].size(); i++) {
-					json_data["live_theater_save_info"]["member_info_array"][i]["chara_id"] = 0;
-					json_data["live_theater_save_info"]["member_info_array"][i]["mob_id"] = 8590 + i;
-					json_data["live_theater_save_info"]["member_info_array"][i]["dress_id"] = 7;
+					if (!memberInfoArray.is_array() || i >= memberInfoArray.size()) {
+						json_data["live_theater_save_info"]["member_info_array"][i]["chara_id"] = 0;
+						json_data["live_theater_save_info"]["member_info_array"][i]["mob_id"] = 8590 + i;
+						json_data["live_theater_save_info"]["member_info_array"][i]["dress_id"] = 7;
+					}
+					else {
+						json_data["live_theater_save_info"]["member_info_array"][i] = memberInfoArray[i];
+					}
 				}
 				const auto new_buf = nlohmann::json::to_msgpack(json_data);
 				*new_buffer = new_buf;
@@ -117,6 +129,21 @@ namespace request_convert
 	{
 		try
 		{
+			try {
+				auto json_data = nlohmann::json::from_msgpack(pack, false);
+				if (json_data.contains("data") && json_data["data"].contains("live_theater_save_info_array")) {
+					printf("Save live_theater_save_info_array cache.\n");
+					for (auto& i : json_data["data"]["live_theater_save_info_array"]) {
+						int musicId = i["music_id"];
+						nlohmann::json memberInfoArray = i["member_info_array"];
+						musicMemberInfoArr.emplace(musicId, memberInfoArray);
+					}
+					return false;
+				}
+			}
+			catch (nlohmann::json::parse_error& e) {
+			}
+			
 			if (!MHotkey::get_is_plugin_open()) return false;
 
 			const auto data = send_msgpack_unparse_post(std::format(L"http://127.0.0.1:{}", http_start_port + 1),
