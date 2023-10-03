@@ -9,6 +9,15 @@ std::unordered_set<int> globalReadedNotices{};
 
 namespace request_convert
 {
+	namespace {
+		std::wstring lastRequestUrl = L"";
+		std::unordered_set<std::wstring> beforeGetNewCharaDataUrl{ {
+				std::wstring(L"https://api-umamusume.cygames.jp/umamusume/note/trainer_note"),
+				std::wstring(L"https://api-umamusume.cygames.jp/umamusume/card/get_release_card_array"),
+				std::wstring(L"https://api-umamusume.cygames.jp/umamusume/note/get_new_chara_data")
+			} };
+	}
+
 	web::http::http_response send_post(std::wstring url, std::wstring path, std::wstring data, int timeout) {
 		web::http::client::http_client_config cfg;
 		cfg.set_timeout(utility::seconds(timeout));
@@ -49,6 +58,34 @@ namespace request_convert
 		}
 		const auto v = std::string_view(data);
 		return v.substr(4 + offset);
+	}
+
+	void setLastRequestUrl(const std::wstring& url) {
+		lastRequestUrl = url;
+	}
+
+	bool get_chara_bypass_pack(const std::string pack, std::vector<uint8_t>* new_buffer)
+	{
+		try
+		{
+			if (beforeGetNewCharaDataUrl.contains(lastRequestUrl)) {
+				auto json_data = nlohmann::json::from_msgpack(parse_request_pack(pack), false);
+				if (json_data.contains("chara_id"))
+				{
+					if (json_data["chara_id"] < 3000) {
+						json_data["chara_id"] = 1001;
+						const auto new_buf = nlohmann::json::to_msgpack(json_data);
+						*new_buffer = new_buf;
+						return true;
+					}
+				}
+			}
+		}
+		catch (std::exception& e)
+		{
+			printf("Exception occurred in get_chara_bypass_pack: %s\n", e.what());
+		}
+		return false;
 	}
 
 	bool live_bypass_pack(const std::string pack, std::vector<uint8_t>* new_buffer)

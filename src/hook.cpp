@@ -3614,7 +3614,7 @@ namespace
 		{
 			std::string pack(src, srcSize);
 			std::vector<uint8_t> new_buffer;
-			if (request_convert::live_bypass_pack(pack, &new_buffer))
+			if (request_convert::live_bypass_pack(pack, &new_buffer) || request_convert::get_chara_bypass_pack(pack, &new_buffer))
 			{
 				char* new_src = reinterpret_cast<char*>(&new_buffer[0]);
 				memset(src + 170, 0, srcSize - 170);
@@ -3737,6 +3737,13 @@ namespace
 		}
 
 		return ret;
+	}
+
+	void* WWWRequest_Post_orig;
+	void WWWRequest_Post_hook(void* _this, Il2CppString* url, void* postData, void* headers) {
+		// printf("Post url: %ls\n", url->start_char);
+		request_convert::setLastRequestUrl(url->start_char);
+		return reinterpret_cast<decltype(WWWRequest_Post_hook)*>(WWWRequest_Post_orig)(_this, url, postData, headers);
 	}
 
 	void dump_all_entries()
@@ -4536,6 +4543,12 @@ namespace
 			MH_CreateHook(request_pack_ptr, request_pack_hook, &request_pack_orig);
 			MH_EnableHook(request_pack_ptr);
 			ADD_HOOK(get_ApplicationServerUrl, "get_ApplicationServerUrl at %p\n");
+
+			auto WWWRequest_Post_addr = il2cpp_symbols::get_method_pointer(
+				"Cute.Http.Assembly.dll", "Cute.Http",
+				"WWWRequest", "Post", 3
+			);
+			ADD_HOOK(WWWRequest_Post, "WWWRequest_Post at %p\n");
 		}
 #pragma endregion
 
