@@ -49,7 +49,7 @@
             "z": 0
         }
     },
-    "cutin_first_persion": false,
+    "cutin_first_person": false,
     "externalPlugin": {
         "hotkey": "u",
         "path": "legend_g_plugin.exe",

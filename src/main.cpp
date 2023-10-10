@@ -604,6 +604,9 @@ namespace
 			if (document.HasMember("cutin_first_person")) {
 				g_enable_cutin_first_person = document["cutin_first_person"].GetBool();
 			}
+			if (document.HasMember("cutin_first_persion")) {
+				printf("[WARNING] \"cutin_first_persion\" is an invalid configuration item. The correct one should be \"cutin_first_person\".\n");
+			}
 
 			if (document.HasMember("aspect_ratio_new")) {
 				auto& asp = document["aspect_ratio_new"];

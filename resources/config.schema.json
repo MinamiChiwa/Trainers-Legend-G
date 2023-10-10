@@ -234,7 +234,7 @@
             },
             "additionalProperties": false
         },
-        "cutin_first_persion": {
+        "cutin_first_person": {
             "description": "CutIn 第一人称（使用 F 键切换）",
             "type": "boolean",
             "default": false

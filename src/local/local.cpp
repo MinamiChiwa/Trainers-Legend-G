@@ -104,14 +104,6 @@ namespace local
 		std::unique_lock lock(db_lock);
 		if (const auto it = text_db.find(hash); it != text_db.end()) {
 			*result = &it->second;
-			/*
-			if (text_db[hash].compare("已解锁上限至最大") == 0) {
-				static auto environment_get_stacktrace = 
-					reinterpret_cast<Il2CppString* (*)()>(il2cpp_symbols::get_method_pointer("mscorlib.dll", "System", "Environment", "get_StackTrace", 0));
-
-				printf("catchText\n%ls\n\n", environment_get_stacktrace()->start_char);
-			}
-			*/
 			return true;
 		}
 
