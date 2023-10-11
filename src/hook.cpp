@@ -1575,6 +1575,8 @@ namespace
 		}
 	}
 
+	std::unordered_set<void*> updatedAnText{};
+
 	void* AnText_UpdateText_orig;
 	void AnText_UpdateText_hook(void* _this) {
 		static auto AnText_klass = il2cpp_symbols::get_class_from_instance(_this);
@@ -1583,10 +1585,19 @@ namespace
 		static FieldInfo* lineSpace_field = il2cpp_class_get_field_from_name(AnText_klass, "_lineSpace");
 
 		il2cpp_symbols::write_field(_this, fontStyle_field, g_custom_font_style);
-		il2cpp_symbols::write_field(_this, fontSize_field, il2cpp_symbols::read_field<int>(_this, fontSize_field) + g_custom_font_size_offset);
 		il2cpp_symbols::write_field(_this, lineSpace_field, g_custom_font_linespacing);
-
+		if (!updatedAnText.contains(_this)) {
+			il2cpp_symbols::write_field(_this, fontSize_field, il2cpp_symbols::read_field<int>(_this, fontSize_field) + g_custom_font_size_offset);
+			updatedAnText.emplace(_this);
+		}
+		
 		reinterpret_cast<decltype(AnText_UpdateText_hook)*>(AnText_UpdateText_orig)(_this);
+	}
+
+	void* AnText_Destroy_orig;
+	void AnText_Destroy_hook(void* _this) {
+		updatedAnText.erase(_this);
+		reinterpret_cast<decltype(AnText_Destroy_hook)*>(AnText_Destroy_orig)(_this);
 	}
 
 	void* AnRootManager_GetFont_orig;
@@ -4217,6 +4228,10 @@ namespace
 			"Plugins.dll", "AnimateToUnity",
 			"AnText", "_UpdateText", 0
 		);
+		auto AnText_Destroy_addr = il2cpp_symbols::get_method_pointer(
+			"Plugins.dll", "AnimateToUnity",
+			"AnText", "_Destroy", 0
+		);
 		auto AnRootManager_GetFont_addr = il2cpp_symbols::get_method_pointer(
 			"Plugins.dll", "AnimateToUnity",
 			"AnRootManager", "_GetFont", 2
@@ -4866,6 +4881,7 @@ namespace
 			ADD_HOOK(TextCommon_Awake, "Gallop.TextCommon::Awake at %p\n");
 			ADD_HOOK(TextMeshProUguiCommon_Awake, "TextMeshProUguiCommon_Awake at %p\n");
 			ADD_HOOK(AnText_UpdateText, "AnText_UpdateText at %p\n");
+			ADD_HOOK(AnText_Destroy, "AnText_Destroy at %p\n");
 			ADD_HOOK(AnRootManager_GetFont, "AnRootManager_GetFont at %p\n");
 			ADD_HOOK(AnGlobalData_GetFont, "AnGlobalData_GetFont at %p\n");
 			ADD_HOOK(AnGlobalData_GetFontFromCommon, "AnGlobalData_GetFontFromCommon at %p\n");
