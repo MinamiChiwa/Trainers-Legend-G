@@ -1553,7 +1553,6 @@ namespace
 		auto origOutLineWidth = get_outlineWidth(_this);
 		auto origOutLineColor = get_outlineColor(_this);
 		auto origFontSize = get_fontSize(_this);
-
 		auto u_OrigColor = u_get_OutlineColor(_this);
 		auto u_OrigSize = u_get_OutlineSize(_this);
 
