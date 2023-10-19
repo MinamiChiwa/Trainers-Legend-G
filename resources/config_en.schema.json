@@ -234,8 +234,8 @@
             },
             "additionalProperties": false
         },
-        "cutin_first_persion": {
-            "description": "CutIn first persion (perss F to switch).",
+        "cutin_first_person": {
+            "description": "CutIn first person (perss F to switch).",
             "type": "boolean",
             "default": false
         },

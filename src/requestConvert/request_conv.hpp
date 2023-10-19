@@ -13,6 +13,8 @@ namespace request_convert
 	void check_and_upload_gacha_history(const std::string& pack);
 	bool live_bypass_pack(std::string pack, std::vector<uint8_t>* new_buffer);
 	bool live_unlock_dress(std::string pack, std::vector<uint8_t>* new_buffer);
+	void setLastRequestUrl(const std::wstring url);
+	bool get_chara_bypass_pack(const std::string pack, std::vector<uint8_t>* new_buffer);
 
 	void updateNotice();
 	void startUpdateNotice();

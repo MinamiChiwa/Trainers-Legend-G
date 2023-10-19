@@ -102,9 +102,8 @@ namespace local
 		}
 
 		std::unique_lock lock(db_lock);
-		if (text_db.contains(hash))
-		{
-			*result = &text_db[hash];
+		if (const auto it = text_db.find(hash); it != text_db.end()) {
+			*result = &it->second;
 			return true;
 		}
 

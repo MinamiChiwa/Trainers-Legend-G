@@ -9,6 +9,16 @@ std::unordered_set<int> globalReadedNotices{};
 
 namespace request_convert
 {
+	namespace {
+		std::wstring lastRequestUrl = L"";
+		std::unordered_set<std::wstring> beforeGetNewCharaDataUrl{ {
+				std::wstring(L"https://api-umamusume.cygames.jp/umamusume/note/trainer_note"),
+				std::wstring(L"https://api-umamusume.cygames.jp/umamusume/card/get_release_card_array"),
+				std::wstring(L"https://api-umamusume.cygames.jp/umamusume/note/get_new_chara_data")
+			} };
+		std::unordered_map<int, nlohmann::json> musicMemberInfoArr{};
+	}
+
 	web::http::http_response send_post(std::wstring url, std::wstring path, std::wstring data, int timeout) {
 		web::http::client::http_client_config cfg;
 		cfg.set_timeout(utility::seconds(timeout));
@@ -51,6 +61,33 @@ namespace request_convert
 		return v.substr(4 + offset);
 	}
 
+	void setLastRequestUrl(const std::wstring url) {
+		lastRequestUrl = url;
+	}
+
+	bool get_chara_bypass_pack(const std::string pack, std::vector<uint8_t>* new_buffer)
+	{
+		try
+		{
+			if (beforeGetNewCharaDataUrl.contains(lastRequestUrl)) {
+				auto json_data = nlohmann::json::from_msgpack(parse_request_pack(pack), false);
+				if (json_data.contains("chara_id")) {
+					if (json_data["chara_id"] < 3000) {
+						json_data["chara_id"] = 1001;
+						const auto new_buf = nlohmann::json::to_msgpack(json_data);
+						*new_buffer = new_buf;
+						return true;
+					}
+				}
+			}
+		}
+		catch (std::exception& e)
+		{
+			printf("Exception occurred in get_chara_bypass_pack: %s\n", e.what());
+		}
+		return false;
+	}
+
 	bool live_bypass_pack(const std::string pack, std::vector<uint8_t>* new_buffer)
 	{
 		try
@@ -59,10 +96,22 @@ namespace request_convert
 			if (json_data.contains("live_theater_save_info"))
 			{
 				printf("Catch live_theater_save_info\n");
+
+				int musicId = json_data["live_theater_save_info"]["music_id"];
+				nlohmann::json memberInfoArray;
+				if (auto it = musicMemberInfoArr.find(musicId); it != musicMemberInfoArr.end()) {
+					memberInfoArray = it->second;
+				}
+				
 				for (int i = 0; i < json_data["live_theater_save_info"]["member_info_array"].size(); i++) {
-					json_data["live_theater_save_info"]["member_info_array"][i]["chara_id"] = 0;
-					json_data["live_theater_save_info"]["member_info_array"][i]["mob_id"] = 8590 + i;
-					json_data["live_theater_save_info"]["member_info_array"][i]["dress_id"] = 7;
+					if (!memberInfoArray.is_array() || i >= memberInfoArray.size()) {
+						json_data["live_theater_save_info"]["member_info_array"][i]["chara_id"] = 0;
+						json_data["live_theater_save_info"]["member_info_array"][i]["mob_id"] = 8590 + i;
+						json_data["live_theater_save_info"]["member_info_array"][i]["dress_id"] = 7;
+					}
+					else {
+						json_data["live_theater_save_info"]["member_info_array"][i] = memberInfoArray[i];
+					}
 				}
 				const auto new_buf = nlohmann::json::to_msgpack(json_data);
 				*new_buffer = new_buf;
@@ -80,6 +129,21 @@ namespace request_convert
 	{
 		try
 		{
+			try {
+				auto json_data = nlohmann::json::from_msgpack(pack, false);
+				if (json_data.contains("data") && json_data["data"].contains("live_theater_save_info_array")) {
+					printf("Save live_theater_save_info_array cache.\n");
+					for (auto& i : json_data["data"]["live_theater_save_info_array"]) {
+						int musicId = i["music_id"];
+						nlohmann::json memberInfoArray = i["member_info_array"];
+						musicMemberInfoArr.emplace(musicId, memberInfoArray);
+					}
+					return false;
+				}
+			}
+			catch (nlohmann::json::parse_error& e) {
+			}
+			
 			if (!MHotkey::get_is_plugin_open()) return false;
 
 			const auto data = send_msgpack_unparse_post(std::format(L"http://127.0.0.1:{}", http_start_port + 1),
@@ -114,40 +178,38 @@ namespace request_convert
 	}
 
 	void check_and_upload_gacha_history(const std::string& pack) {
-		bool isHistory = false;
-		try {
-			auto jsonPack = nlohmann::json::from_msgpack(pack);
-			if (jsonPack.contains("data")) {
-				isHistory = true;
-				auto& data = jsonPack["data"];
-				if (data.contains("gacha_exec_history_array") && data.contains("gacha_reward_history_array")) {
-					static auto autoupdateUrl = Get_autoupdateUrl();
-					if (autoupdateUrl.empty()) return;
+		static auto get_UserName = reinterpret_cast<Il2CppString * (*)()>(il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop", "GallopUtil", "GetUserName", 0));
+		static auto get_dmmViewerId = reinterpret_cast<Il2CppString * (*)()>(il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop", "Certification", "get_dmmViewerId", 0));
 
-					static auto get_UserName = reinterpret_cast<Il2CppString * (*)()>(il2cpp_symbols::get_method_pointer(
-						"umamusume.dll", "Gallop", "GallopUtil", "GetUserName", 0));
-					static auto get_dmmViewerId = reinterpret_cast<Il2CppString * (*)()>(il2cpp_symbols::get_method_pointer(
-						"umamusume.dll", "Gallop", "Certification", "get_dmmViewerId", 0));
-					auto userName = get_UserName();
-					auto dmmViewerId = get_dmmViewerId();
-
-					jsonPack["user_name"] = utility::conversions::to_utf8string(userName->start_char);
-					jsonPack["dmm_viewer_id"] = utility::conversions::to_utf8string(dmmViewerId->start_char);
-					auto resp = send_post(g_upload_gacha_history_endpoint, "/api/upload/usergacha", jsonPack.dump());
-					if (resp.status_code() == web::http::status_codes::OK) {
-						const auto userId = resp.extract_utf8string().get();
-						printf("Upload gacha history success. Your id is: %s\nGo to %ls?uid=%s to view.\n", userId.c_str(), g_upload_gacha_history_endpoint.c_str(), userId.c_str());
+		std::thread([pack]() {
+			bool isHistory = false;
+			try {
+				auto jsonPack = nlohmann::json::from_msgpack(pack);
+				if (jsonPack.contains("data")) {
+					isHistory = true;
+					auto& data = jsonPack["data"];
+					if (data.contains("gacha_exec_history_array") && data.contains("gacha_reward_history_array")) {
+						auto userName = get_UserName();
+						auto dmmViewerId = get_dmmViewerId();
+						jsonPack["user_name"] = utility::conversions::to_utf8string(userName->start_char);
+						jsonPack["dmm_viewer_id"] = utility::conversions::to_utf8string(dmmViewerId->start_char);
+						auto resp = send_post(g_upload_gacha_history_endpoint, "/api/upload/usergacha", jsonPack.dump());
+						if (resp.status_code() == web::http::status_codes::OK) {
+							const auto userId = resp.extract_utf8string().get();
+							printf("Upload gacha history success. Your id is: %s\nGo to %ls?uid=%s to view.\n", userId.c_str(), g_upload_gacha_history_endpoint.c_str(), userId.c_str());
+						}
 					}
 				}
 			}
-		}
-		catch (nlohmann::json::exception& ex) {
-			if (ex.id != 113) printf("ParseGHError: %s\n", ex.what());
-		}
-		catch (std::exception& ex) {
-			if (isHistory) printf("Upload gacha history failed: %s\n", ex.what());
-		}
-
+			catch (nlohmann::json::exception& ex) {
+				if (ex.id != 113) printf("ParseGHError: %s\n", ex.what());
+			}
+			catch (std::exception& ex) {
+				if (isHistory) printf("Upload gacha history failed: %s\n", ex.what());
+			}
+			}).detach();
 	}
 
 	void updateNotice() {

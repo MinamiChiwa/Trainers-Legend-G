@@ -1399,11 +1399,7 @@ namespace
 
 	bool (*Object_IsNativeObjectAlive)(void*);
 
-	void* TextCommon_Awake_orig;
-	void TextCommon_Awake_hook(void* _this)
-	{
-		reinterpret_cast<decltype(TextCommon_Awake_hook)*>(TextCommon_Awake_orig)(_this);
-
+	void* getReplaceFont() {
 		void* replaceFont{};
 		const auto& bundleHandle = GetBundleHandleByAssetName(std::get<UseCustomFont>(g_replace_font).FontPath);
 		if (std::holds_alternative<UseCustomFont>(g_replace_font) && bundleHandle)
@@ -1416,7 +1412,7 @@ namespace
 				// AssetBundle 不会被干掉
 				if (Object_IsNativeObjectAlive(replaceFont))
 				{
-					goto FontAlive;
+					return replaceFont;
 				}
 				else
 				{
@@ -1435,8 +1431,16 @@ namespace
 				std::wprintf(L"Cannot load asset font\n");
 			}
 		}
+		return replaceFont;
+	}
 
-	FontAlive:
+	void* TextCommon_Awake_orig;
+	void TextCommon_Awake_hook(void* _this)
+	{
+		reinterpret_cast<decltype(TextCommon_Awake_hook)*>(TextCommon_Awake_orig)(_this);
+
+		auto replaceFont = getReplaceFont();
+
 		if (replaceFont)
 		{
 			Text_set_font(_this, replaceFont);
@@ -1455,6 +1459,170 @@ namespace
 		text_set_style(_this, g_custom_font_style);
 		reinterpret_cast<decltype(text_set_size_hook)*>(text_set_size_orig)(_this, text_get_size(_this) + g_custom_font_size_offset);
 		text_set_linespacing(_this, g_custom_font_linespacing);
+	}
+
+	void* (*TMP_FontAsset_CreateFontAsset)(void* font);
+	void (*TMP_Text_set_font)(void* _this, void* fontAsset);
+
+	void* TextMeshProUguiCommon_Awake_orig;
+	void TextMeshProUguiCommon_Awake_hook(void* _this)
+	{
+		static auto get_outlineWidth = reinterpret_cast<float (*)(void*)>(
+			il2cpp_symbols::get_method_pointer(
+				"Unity.TextMeshPro.dll", "TMPro",
+				"TMP_Text", "get_outlineWidth", 0
+			)
+			);
+		static auto set_outlineWidth = reinterpret_cast<void (*)(void*, float)>(
+			il2cpp_symbols::get_method_pointer(
+				"Unity.TextMeshPro.dll", "TMPro",
+				"TMP_Text", "set_outlineWidth", 1
+			)
+			);
+		static auto get_outlineColor = reinterpret_cast<void* (*)(void*)>(
+			il2cpp_symbols::get_method_pointer(
+				"Unity.TextMeshPro.dll", "TMPro",
+				"TMP_Text", "get_outlineColor", 0
+			)
+			);
+		static auto set_outlineColor = reinterpret_cast<void (*)(void*, void*)>(
+			il2cpp_symbols::get_method_pointer(
+				"Unity.TextMeshPro.dll", "TMPro",
+				"TMP_Text", "set_outlineColor", 1
+			)
+			);
+
+		static auto SetOutlineThickness = reinterpret_cast<void (*)(void*, float)>(
+			il2cpp_symbols::get_method_pointer(
+				"Unity.TextMeshPro.dll", "TMPro",
+				"TMP_Text", "SetOutlineThickness", 1
+			)
+			);
+		static auto set_fontSize = reinterpret_cast<void (*)(void*, float)>(
+			il2cpp_symbols::get_method_pointer(
+				"Unity.TextMeshPro.dll", "TMPro",
+				"TMP_Text", "set_fontSize", 1
+			)
+			);
+		static auto get_fontSize = reinterpret_cast<float (*)(void*)>(
+			il2cpp_symbols::get_method_pointer(
+				"Unity.TextMeshPro.dll", "TMPro",
+				"TMP_Text", "get_fontSize", 0
+			)
+			);
+
+		static auto u_get_OutlineColor = reinterpret_cast<int (*)(void*)>(
+			il2cpp_symbols::get_method_pointer(
+				"umamusume.dll", "Gallop",
+				"TextMeshProUguiCommon", "get_OutlineColor", 0
+			)
+			);
+		static auto u_set_OutlineColor = reinterpret_cast<void (*)(void*, int)>(
+			il2cpp_symbols::get_method_pointer(
+				"umamusume.dll", "Gallop",
+				"TextMeshProUguiCommon", "set_OutlineColor", 1
+			)
+			);
+		static auto u_get_OutlineSize = reinterpret_cast<int (*)(void*)>(
+			il2cpp_symbols::get_method_pointer(
+				"umamusume.dll", "Gallop",
+				"TextMeshProUguiCommon", "get_OutlineSize", 0
+			)
+			);
+		static auto u_set_OutlineSize = reinterpret_cast<void (*)(void*, int)>(
+			il2cpp_symbols::get_method_pointer(
+				"umamusume.dll", "Gallop",
+				"TextMeshProUguiCommon", "set_OutlineSize", 1
+			)
+			);
+		static auto UpdateOutline = reinterpret_cast<void (*)(void*)>(
+			il2cpp_symbols::get_method_pointer(
+				"umamusume.dll", "Gallop",
+				"TextMeshProUguiCommon", "UpdateOutline", 0
+			)
+			);
+
+		static auto set_sourceFontFile = reinterpret_cast<void (*)(void*, void*)>(
+			il2cpp_symbols::get_method_pointer(
+				"Unity.TextMeshPro.dll", "TMPro",
+				"TMP_FontAsset", "set_sourceFontFile", 1
+			)
+			);
+
+
+		auto origOutLineWidth = get_outlineWidth(_this);
+		auto origOutLineColor = get_outlineColor(_this);
+		auto origFontSize = get_fontSize(_this);
+		auto u_OrigColor = u_get_OutlineColor(_this);
+		auto u_OrigSize = u_get_OutlineSize(_this);
+
+		// printf("TextMeshProUguiCommon_Awake: \n");
+		reinterpret_cast<decltype(TextMeshProUguiCommon_Awake_hook)*>(TextMeshProUguiCommon_Awake_orig)(_this);
+		
+		auto replaceFont = getReplaceFont();
+		if (replaceFont) {
+			auto newFont = TMP_FontAsset_CreateFontAsset(replaceFont);
+			TMP_Text_set_font(_this, newFont);
+
+			SetOutlineThickness(_this, 0.5f);
+			set_fontSize(_this, origFontSize + g_custom_font_size_offset);
+			set_outlineWidth(_this, origOutLineWidth);
+			set_outlineColor(_this, origOutLineColor);
+			u_set_OutlineColor(_this, u_OrigColor);
+			u_set_OutlineSize(_this, u_OrigSize);
+			UpdateOutline(_this);
+		}
+	}
+
+	std::unordered_set<void*> updatedAnText{};
+
+	void* AnText_UpdateText_orig;
+	void AnText_UpdateText_hook(void* _this) {
+		static auto AnText_klass = il2cpp_symbols::get_class_from_instance(_this);
+		static FieldInfo* fontStyle_field = il2cpp_class_get_field_from_name(AnText_klass, "_fontStyle");
+		static FieldInfo* fontSize_field = il2cpp_class_get_field_from_name(AnText_klass, "_fontSize");
+		static FieldInfo* lineSpace_field = il2cpp_class_get_field_from_name(AnText_klass, "_lineSpace");
+
+		il2cpp_symbols::write_field(_this, fontStyle_field, g_custom_font_style);
+		il2cpp_symbols::write_field(_this, lineSpace_field, g_custom_font_linespacing);
+		if (!updatedAnText.contains(_this)) {
+			il2cpp_symbols::write_field(_this, fontSize_field, il2cpp_symbols::read_field<int>(_this, fontSize_field) + g_custom_font_size_offset);
+			updatedAnText.emplace(_this);
+		}
+		
+		reinterpret_cast<decltype(AnText_UpdateText_hook)*>(AnText_UpdateText_orig)(_this);
+	}
+
+	void* AnText_Destroy_orig;
+	void AnText_Destroy_hook(void* _this) {
+		updatedAnText.erase(_this);
+		reinterpret_cast<decltype(AnText_Destroy_hook)*>(AnText_Destroy_orig)(_this);
+	}
+
+	void* AnRootManager_GetFont_orig;
+	void* AnRootManager_GetFont_hook(void* _this, Il2CppString* fontName, bool fromCommon) {
+		// wprintf(L"AnRootManager_GetFont: %ls, fromCommon: %d\n", fontName->start_char, fromCommon);
+		// return getReplaceFont();
+		return reinterpret_cast<decltype(AnRootManager_GetFont_hook)*>(AnRootManager_GetFont_orig)(_this, fontName, fromCommon);
+	}
+
+	void* AnGlobalData_GetFont_orig;
+	void* AnGlobalData_GetFont_hook(void* _this, Il2CppString* fontName) {
+		// fontTable_key: FOT-Humming Std D
+		// fontTable_key: FOT-RodinWanpaku Pro EB
+		// fontTable_key: FOT-Yuruka Std UB
+		// commonFontTable 啥都没有
+
+		auto replaceFont = getReplaceFont();
+		// wprintf(L"AnGlobalData_GetFont: %ls\n", fontName->start_char);
+		return replaceFont ? replaceFont : reinterpret_cast<decltype(AnGlobalData_GetFont_hook)*>(AnGlobalData_GetFont_orig)(_this, fontName);
+		// return reinterpret_cast<decltype(AnGlobalData_GetFont_hook)*>(AnGlobalData_GetFont_orig)(_this, il2cpp_string_new("FOT-Humming Std D0"));
+	}
+	void* AnGlobalData_GetFontFromCommon_orig;
+	void* AnGlobalData_GetFontFromCommon_hook(void* _this, Il2CppString* fontName) {
+		// wprintf(L"AnGlobalData_GetFontFromCommon: %ls\n", fontName->start_char);
+		auto replaceFont = getReplaceFont();
+		return replaceFont ? replaceFont : reinterpret_cast<decltype(AnGlobalData_GetFontFromCommon_hook)*>(AnGlobalData_GetFontFromCommon_orig)(_this, fontName);
 	}
 
 	bool get_need_fullscreen(Resolution_t& r) {
@@ -1875,6 +2043,13 @@ namespace
 	void UpdateEnvironemntStageFovShift_hook(void* _this, void* updateInfo) {
 		return reinterpret_cast<decltype(UpdateEnvironemntStageFovShift_hook)*>(UpdateEnvironemntStageFovShift_orig)(
 			_this, updateInfo);
+	}
+
+	void* CheckSwapChara_orig;
+	void CheckSwapChara_hook(void* _this, int index, int oldCharaId, int oldDressId, int oldDressColorId, int oldDressId2, int oldDressColorId2, int newCharaId) {
+		if (g_bypass_live_205) return;
+		return reinterpret_cast<decltype(CheckSwapChara_hook)*>(CheckSwapChara_orig)(
+			_this, index, oldCharaId, oldDressId, oldDressColorId, oldDressId2, oldDressColorId2, newCharaId);
 	}
 
 	void* alterupdate_camera_lookat_orig;
@@ -3614,7 +3789,7 @@ namespace
 		{
 			std::string pack(src, srcSize);
 			std::vector<uint8_t> new_buffer;
-			if (request_convert::live_bypass_pack(pack, &new_buffer))
+			if (request_convert::live_bypass_pack(pack, &new_buffer) || request_convert::get_chara_bypass_pack(pack, &new_buffer))
 			{
 				char* new_src = reinterpret_cast<char*>(&new_buffer[0]);
 				memset(src + 170, 0, srcSize - 170);
@@ -3737,6 +3912,13 @@ namespace
 		}
 
 		return ret;
+	}
+
+	void* WWWRequest_Post_orig;
+	void WWWRequest_Post_hook(void* _this, Il2CppString* url, void* postData, void* headers) {
+		// printf("Post url: %ls\n", url->start_char);
+		request_convert::setLastRequestUrl(url->start_char);
+		return reinterpret_cast<decltype(WWWRequest_Post_hook)*>(WWWRequest_Post_orig)(_this, url, postData, headers);
 	}
 
 	void dump_all_entries()
@@ -3953,8 +4135,20 @@ namespace
 			"umamusume.dll", "Gallop",
 			"TextCommon", "Awake", 0
 		);
+		const auto TextMeshProUguiCommon_Awake_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"TextMeshProUguiCommon", "Awake", 0
+		);
+		TMP_FontAsset_CreateFontAsset = reinterpret_cast<decltype(TMP_FontAsset_CreateFontAsset)>(il2cpp_symbols::get_method_pointer(
+			"Unity.TextMeshPro.dll", "TMPro",
+			"TMP_FontAsset", "CreateFontAsset", 1
+		));
+		TMP_Text_set_font = reinterpret_cast<decltype(TMP_Text_set_font)>(il2cpp_symbols::get_method_pointer(
+			"Unity.TextMeshPro.dll", "TMPro",
+			"TMP_Text", "set_font", 1
+		));
 
-		
+
 		TextRubyDataClass = il2cpp_symbols::get_class("umamusume.dll", "", "TextRubyData");
 		TextRubyDataClass_DataArray = il2cpp_class_get_field_from_name(TextRubyDataClass, "DataArray");
 
@@ -4024,11 +4218,36 @@ namespace
 			)
 			);
 
+		//auto Unity_Text_set_font_addr = il2cpp_symbols::get_method_pointer(
+		//	"UnityEngine.UI.dll", "UnityEngine.UI",
+		//	"Text", "set_font", 1
+		//);
+
+		auto AnText_UpdateText_addr = il2cpp_symbols::get_method_pointer(
+			"Plugins.dll", "AnimateToUnity",
+			"AnText", "_UpdateText", 0
+		);
+		auto AnText_Destroy_addr = il2cpp_symbols::get_method_pointer(
+			"Plugins.dll", "AnimateToUnity",
+			"AnText", "_Destroy", 0
+		);
+		auto AnRootManager_GetFont_addr = il2cpp_symbols::get_method_pointer(
+			"Plugins.dll", "AnimateToUnity",
+			"AnRootManager", "_GetFont", 2
+		);
+		auto AnGlobalData_GetFont_addr = il2cpp_symbols::get_method_pointer(
+			"Plugins.dll", "AnimateToUnity",
+			"AnGlobalData", "_GetFont", 1
+		);
+		auto AnGlobalData_GetFontFromCommon_addr = il2cpp_symbols::get_method_pointer(
+			"Plugins.dll", "AnimateToUnity",
+			"AnGlobalData", "_GetFontFromCommon", 1
+		);
+
 		Text_set_font = reinterpret_cast<void(*)(void*, void*)>(
 			il2cpp_symbols::get_method_pointer(
 				"UnityEngine.UI.dll", "UnityEngine.UI",
-				"Text", "set_font", 1
-			)
+				"Text", "set_font", 1)
 			);
 
 		Text_set_horizontalOverflow = reinterpret_cast<void(*)(void*, int)>(
@@ -4281,6 +4500,11 @@ namespace
 			"StageController", "UpdateEnvironemntStageFovShift", 1
 		);
 		
+		auto CheckSwapChara_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"LiveTheaterCharaSelect", "CheckSwapChara", 7
+		);
+
 		auto Unity_get_fieldOfView_addr = il2cpp_resolve_icall("UnityEngine.Camera::get_fieldOfView()");
 		auto Unity_set_fieldOfView_addr = il2cpp_resolve_icall("UnityEngine.Camera::set_fieldOfView(System.Single)");
 		auto Unity_set_pos_injected_addr = il2cpp_resolve_icall("UnityEngine.Transform::set_position_Injected(UnityEngine.Vector3&)");
@@ -4536,6 +4760,12 @@ namespace
 			MH_CreateHook(request_pack_ptr, request_pack_hook, &request_pack_orig);
 			MH_EnableHook(request_pack_ptr);
 			ADD_HOOK(get_ApplicationServerUrl, "get_ApplicationServerUrl at %p\n");
+
+			auto WWWRequest_Post_addr = il2cpp_symbols::get_method_pointer(
+				"Cute.Http.Assembly.dll", "Cute.Http",
+				"WWWRequest", "Post", 3
+			);
+			ADD_HOOK(WWWRequest_Post, "WWWRequest_Post at %p\n");
 		}
 #pragma endregion
 
@@ -4553,6 +4783,7 @@ namespace
 		ADD_HOOK(AlterUpdate_CameraPos, "AlterUpdate_CameraPos at %p\n");
 		ADD_HOOK(alterupdate_camera_lookat, "alterupdate_camera_lookat at %p\n");
 		// ADD_HOOK(UpdateEnvironemntStageFovShift, "UpdateEnvironemntStageFovShift at %p\n");
+		ADD_HOOK(CheckSwapChara, "CheckSwapChara at %p\n");
 		ADD_HOOK(Unity_get_fieldOfView, "Unity_get_fieldOfView at %p\n");
 		ADD_HOOK(Unity_set_fieldOfView, "Unity_set_fieldOfView at %p\n");
 		ADD_HOOK(Unity_set_pos_injected, "Unity_set_pos_injected at %p\n");
@@ -4647,6 +4878,12 @@ namespace
 		if (!std::holds_alternative<UseOriginalFont>(g_replace_font))
 		{
 			ADD_HOOK(TextCommon_Awake, "Gallop.TextCommon::Awake at %p\n");
+			ADD_HOOK(TextMeshProUguiCommon_Awake, "TextMeshProUguiCommon_Awake at %p\n");
+			ADD_HOOK(AnText_UpdateText, "AnText_UpdateText at %p\n");
+			ADD_HOOK(AnText_Destroy, "AnText_Destroy at %p\n");
+			ADD_HOOK(AnRootManager_GetFont, "AnRootManager_GetFont at %p\n");
+			ADD_HOOK(AnGlobalData_GetFont, "AnGlobalData_GetFont at %p\n");
+			ADD_HOOK(AnGlobalData_GetFontFromCommon, "AnGlobalData_GetFontFromCommon at %p\n");
 			ADD_HOOK(text_set_size, "Text.set_size at %p\n");
 			if (!g_replace_assets)
 			{
