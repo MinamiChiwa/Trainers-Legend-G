@@ -74,6 +74,9 @@ namespace GuiTrans {
 		{"TargetLane", "切换跑道"},
 		{"ActivateRandomNormalAndRareSkill", "随机激活普通技能和稀有技能"},
 		{"ActivateRandomRareSkill", "随机激活稀有技能"},
+		{"DebuffCancel", "消除 Debuff"},
+		{"DebuffAbilityValueMultiply", "Debuff 数值加倍"},
+		{"DebuffAbilityValueMultiplyOtherActivate", "DebuffAbilityValueMultiplyOtherActivate"},  // 不会翻(
 	};
 
 	const std::unordered_map<std::string_view, std::string> guiTChineseTrans{
@@ -137,6 +140,9 @@ namespace GuiTrans {
 		{"TargetLane", "切換跑道"},
 		{"ActivateRandomNormalAndRareSkill", "隨機啟動普通技能和稀有技能"},
 		{"ActivateRandomRareSkill", "隨機啟動稀有技能"},
+		{"DebuffCancel", "消除 Debuff"},
+		{"DebuffAbilityValueMultiply", "Debuff 數值加倍"},
+		{"DebuffAbilityValueMultiplyOtherActivate", "DebuffAbilityValueMultiplyOtherActivate"},  // 不會翻(
 	};
 
 	const char* GetTrans(const char* text) {
