@@ -550,14 +550,14 @@ namespace
 
 	void* set_antialiasing_orig = nullptr;
 	void set_antialiasing_hook(int value) {
-		// printf("setAntialiasing: %d -> %d\n", value, g_antialiasing);
+		// printf("setAntialiasing: %d\n", value);
 		set_vsync_count_hook(1);
 		return reinterpret_cast<decltype(set_antialiasing_hook)*>(set_antialiasing_orig)(g_antialiasing == -1 ? value : g_antialiasing);
 	}
 
 	void* graphics_quality_orig = nullptr;
 	void graphics_quality_hook(Il2CppObject* thisObj, int quality, bool force) {
-		// printf("setGraphicsQuality: %d -> %d\n", quality, g_graphics_quality);
+		// printf("setGraphicsQuality: %d (%d)\n", quality, force);
 		return reinterpret_cast<decltype(graphics_quality_hook)*>(graphics_quality_orig)(thisObj,
 			g_graphics_quality == -1 ? quality : g_graphics_quality,
 			true);
@@ -565,8 +565,31 @@ namespace
 
 	void* set_RenderTextureAntiAliasing_orig;
 	void set_RenderTextureAntiAliasing_hook(void* _this, int value) {
+		// printf("set_RenderTextureAntiAliasing: %d\n", value);
 		return reinterpret_cast<decltype(set_RenderTextureAntiAliasing_hook)*>(set_RenderTextureAntiAliasing_orig)(_this, 
 			g_antialiasing == -1 ? value : g_antialiasing);
+	}
+
+	void* GraphicSettings_GetVirtualResolution3D_orig;
+	Vector2_Int_t GraphicSettings_GetVirtualResolution3D_hook(void* _this, bool isForcedWideAspect) {
+		auto ret = reinterpret_cast<decltype(GraphicSettings_GetVirtualResolution3D_hook)*>(GraphicSettings_GetVirtualResolution3D_orig)(_this, isForcedWideAspect);
+		//printf("GraphicSettings_GetVirtualResolution3D: %d, %d\n%ls\n", ret.m_X, ret.m_Y, environment_get_stacktrace()->start_char);
+		if (g_virtual_resolution_multiple != 1.0f) {
+			ret.m_X *= g_virtual_resolution_multiple;
+			ret.m_Y *= g_virtual_resolution_multiple;
+		}
+		return ret;
+	}
+
+	void* GraphicSettings_GetVirtualResolution_orig;
+	Vector2_Int_t GraphicSettings_GetVirtualResolution_hook(void* _this) {
+		auto ret = reinterpret_cast<decltype(GraphicSettings_GetVirtualResolution_hook)*>(GraphicSettings_GetVirtualResolution_orig)(_this);
+		// printf("GraphicSettings_GetVirtualResolution: %d, %d\n%ls\n\n", ret.m_X, ret.m_Y, environment_get_stacktrace()->start_char);
+		if (g_virtual_resolution_multiple != 1.0f) {
+			ret.m_X *= g_virtual_resolution_multiple;
+			ret.m_Y *= g_virtual_resolution_multiple;
+		}
+		return ret;
 	}
 
 	void* Get3DAntiAliasingLevel_orig;
@@ -2845,11 +2868,10 @@ namespace
 	}
 
 	void* AlterUpdate_CameraLayer_orig;
-	void AlterUpdate_CameraLayer_hook(void* _this, void* sheet, int currentFrame, Vector3_t* offsetMaxPosition, Vector3_t* offsetMinPosition) {
+	void AlterUpdate_CameraLayer_hook(void* _this, void* sheet, int currentFrame) {
 		if (g_live_free_camera) return;
 		return reinterpret_cast<decltype(AlterUpdate_CameraLayer_hook)*>(AlterUpdate_CameraLayer_orig)(
-			_this, sheet, currentFrame, offsetMaxPosition, offsetMinPosition
-		);
+			_this, sheet, currentFrame);
 	}
 
 	void* AlterUpdate_TiltShift_orig;
@@ -4333,6 +4355,12 @@ namespace
 			"RenderTexture", "set_antiAliasing", 1
 		);
 
+		auto GraphicSettings_GetVirtualResolution3D_addr = il2cpp_symbols::get_method_pointer("umamusume.dll",
+			"Gallop", "GraphicSettings", "GetVirtualResolution3D", 1);
+		auto GraphicSettings_GetVirtualResolution_addr = il2cpp_symbols::get_method_pointer("umamusume.dll",
+			"Gallop", "GraphicSettings", "GetVirtualResolution", 0);
+
+
 		auto Get3DAntiAliasingLevel_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"GraphicSettings", "Get3DAntiAliasingLevel", 1
@@ -4462,7 +4490,7 @@ namespace
 
 		auto AlterUpdate_CameraLayer_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop.Live.Cutt",
-			"LiveTimelineControl", "AlterUpdate_CameraLayer", 4
+			"LiveTimelineControl", "AlterUpdate_CameraLayer", 2
 		);
 
 		auto AlterLateUpdate_CameraMotion_addr = il2cpp_symbols::get_method_pointer(
@@ -4838,6 +4866,8 @@ namespace
 		ADD_HOOK(AlterUpdate_MultiCamera, "AlterUpdate_MultiCamera at %p\n");
 		ADD_HOOK(set_shadow_resolution, "set_shadow_resolution at %p\n");
 		ADD_HOOK(set_RenderTextureAntiAliasing, "set_RenderTextureAntiAliasing at %p\n");
+		ADD_HOOK(GraphicSettings_GetVirtualResolution3D, "GraphicSettings_GetVirtualResolution3D at %p\n");
+		ADD_HOOK(GraphicSettings_GetVirtualResolution, "GraphicSettings_GetVirtualResolution at %p\n");
 		ADD_HOOK(Get3DAntiAliasingLevel, "Get3DAntiAliasingLevel at %p\n");
 		ADD_HOOK(KeepAspectRatio, "KeepAspectRatio at %p\n");
 		ADD_HOOK(ReshapeAspectRatio, "ReshapeAspectRatio at %p\n");

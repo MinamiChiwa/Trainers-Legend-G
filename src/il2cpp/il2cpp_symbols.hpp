@@ -63,6 +63,11 @@ public:
 	int herz;
 };
 
+struct Vector2_Int_t {
+	int m_X;
+	int m_Y;
+};
+
 struct CsEnum_t {
 public:
 	int value__;
