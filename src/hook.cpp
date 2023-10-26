@@ -570,11 +570,13 @@ namespace
 			g_antialiasing == -1 ? value : g_antialiasing);
 	}
 
+	bool settingUpImageEffect = false;
+
 	void* GraphicSettings_GetVirtualResolution3D_orig;
 	Vector2_Int_t GraphicSettings_GetVirtualResolution3D_hook(void* _this, bool isForcedWideAspect) {
 		auto ret = reinterpret_cast<decltype(GraphicSettings_GetVirtualResolution3D_hook)*>(GraphicSettings_GetVirtualResolution3D_orig)(_this, isForcedWideAspect);
-		//printf("GraphicSettings_GetVirtualResolution3D: %d, %d\n%ls\n", ret.m_X, ret.m_Y, environment_get_stacktrace()->start_char);
-		if (g_virtual_resolution_multiple != 1.0f) {
+		// printf("GraphicSettings_GetVirtualResolution3D: %d, %d\n%ls\n\n", ret.m_X, ret.m_Y, environment_get_stacktrace()->start_char);
+		if (!settingUpImageEffect && (g_virtual_resolution_multiple != 1.0f)) {
 			ret.m_X *= g_virtual_resolution_multiple;
 			ret.m_Y *= g_virtual_resolution_multiple;
 		}
@@ -590,6 +592,35 @@ namespace
 			ret.m_Y *= g_virtual_resolution_multiple;
 		}
 		return ret;
+	}
+
+	void* GraphicSettings_GetVirtualResolutionWidth3D_orig;
+	int GraphicSettings_GetVirtualResolutionWidth3D_hook(void* _this) {
+		auto ret = reinterpret_cast<decltype(GraphicSettings_GetVirtualResolutionWidth3D_hook)*>(GraphicSettings_GetVirtualResolutionWidth3D_orig)(_this);
+		// printf("GraphicSettings_GetVirtualResolutionWidth3D: %d\n%ls\n\n", ret, environment_get_stacktrace()->start_char);
+		if (g_virtual_resolution_multiple != 1.0f) {
+			ret *= g_virtual_resolution_multiple;
+		}
+		return ret;
+	}
+
+	void* CameraController_GetCanvasSize_orig;
+	Vector2_t CameraController_GetCanvasSize_hook(void* _this) {
+		auto ret = reinterpret_cast<decltype(CameraController_GetCanvasSize_hook)*>(CameraController_GetCanvasSize_orig)(_this);
+		// printf("CameraController_GetCanvasSize: %f, %f\n", ret.x, ret.y);
+		if (g_virtual_resolution_multiple != 1.0f) {
+			ret.x /= g_virtual_resolution_multiple;
+			ret.y /= g_virtual_resolution_multiple;
+		}
+		return ret;
+	}
+
+	void* SingleModeStart_SetupImageEffect_orig;
+	void SingleModeStart_SetupImageEffect_hook(void* _this) {
+		// printf("SingleModeStart_SetupImageEffect\n");
+		settingUpImageEffect = true;
+		reinterpret_cast<decltype(SingleModeStart_SetupImageEffect_hook)*>(SingleModeStart_SetupImageEffect_orig)(_this);
+		settingUpImageEffect = false;
 	}
 
 	void* Get3DAntiAliasingLevel_orig;
@@ -4359,7 +4390,12 @@ namespace
 			"Gallop", "GraphicSettings", "GetVirtualResolution3D", 1);
 		auto GraphicSettings_GetVirtualResolution_addr = il2cpp_symbols::get_method_pointer("umamusume.dll",
 			"Gallop", "GraphicSettings", "GetVirtualResolution", 0);
-
+		auto GraphicSettings_GetVirtualResolutionWidth3D_addr = il2cpp_symbols::get_method_pointer("umamusume.dll",
+			"Gallop", "GraphicSettings", "GetVirtualResolutionWidth3D", 0);
+		auto CameraController_GetCanvasSize_addr = il2cpp_symbols::get_method_pointer("umamusume.dll",
+			"Gallop", "CameraController", "GetCanvasSize", 0);
+		auto SingleModeStart_SetupImageEffect_addr = il2cpp_symbols::get_method_pointer("umamusume.dll",
+			"Gallop", "SingleModeStartResultCharaViewer", "SetupImageEffect", 0);
 
 		auto Get3DAntiAliasingLevel_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
@@ -4868,6 +4904,9 @@ namespace
 		ADD_HOOK(set_RenderTextureAntiAliasing, "set_RenderTextureAntiAliasing at %p\n");
 		ADD_HOOK(GraphicSettings_GetVirtualResolution3D, "GraphicSettings_GetVirtualResolution3D at %p\n");
 		ADD_HOOK(GraphicSettings_GetVirtualResolution, "GraphicSettings_GetVirtualResolution at %p\n");
+		ADD_HOOK(GraphicSettings_GetVirtualResolutionWidth3D, "GraphicSettings_GetVirtualResolutionWidth3D at %p\n");
+		ADD_HOOK(CameraController_GetCanvasSize, "CameraController_GetCanvasSize at %p\n");
+		ADD_HOOK(SingleModeStart_SetupImageEffect, "SingleModeStart_SetupImageEffect at %p\n");
 		ADD_HOOK(Get3DAntiAliasingLevel, "Get3DAntiAliasingLevel at %p\n");
 		ADD_HOOK(KeepAspectRatio, "KeepAspectRatio at %p\n");
 		ADD_HOOK(ReshapeAspectRatio, "ReshapeAspectRatio at %p\n");
