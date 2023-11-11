@@ -3067,7 +3067,7 @@ namespace
 	void race_ChangeCameraMode_hook(void* _this, int mode, bool isSkip) {
 		// printf("ChangeCameraMode: %d, %d\n", mode, isSkip);
 		if (g_race_free_camera) return;
-		return reinterpret_cast<decltype(race_ChangeCameraMode_hook)*>(race_ChangeCameraMode_orig)(_this, 0, true);
+		return reinterpret_cast<decltype(race_ChangeCameraMode_hook)*>(race_ChangeCameraMode_orig)(_this, mode, isSkip);
 	}
 
 	void* race_get_CameraFov_orig;
@@ -3186,7 +3186,8 @@ namespace
 	void* race_get_CameraShakeTargetOffset_orig;
 	Vector3_t* race_get_CameraShakeTargetOffset_hook(void* _this) {
 		auto data = reinterpret_cast<decltype(race_get_CameraShakeTargetOffset_hook)*>(race_get_CameraShakeTargetOffset_orig)(_this);
-		// printf("shake: %d, %d, %d\n", data->x, data->y, data->z);
+		//printf("shake: %d, %d, %d\n", data->x, data->y, data->z);
+		return data;  // 2023.11.07 issue #161 fixed.
 		if (!g_race_free_camera) return data;
 		data->x = 0;
 		data->y = 0;
@@ -3535,7 +3536,7 @@ namespace
 
 	void* StoryCharacter3D_LoadModel_orig;
 	void StoryCharacter3D_LoadModel_hook(int charaId, int cardId, int clothId, int zekkenNumber, int headId, bool isWet, 
-		bool isDirt, int mobId, int dressColorId, Il2CppString* zekkenName, int zekkenFontStyle, int color, int fontColor, 
+		bool isDirt, int mobId, int dressColorId, int charaDressColorSetId, Il2CppString* zekkenName, int zekkenFontStyle, int color, int fontColor,
 		int suitColor, bool isUseDressDataHeadModelSubId, bool useCircleShadow) {
 
 		if (enableLoadCharLog) printf("StoryCharacter3D_LoadModel CardId: %d charaId: %d DressId: %d DressColorId: %d HeadId: %d MobId: %d ZekkenNumber: %d\n",
@@ -3545,7 +3546,7 @@ namespace
 
 		return reinterpret_cast<decltype(StoryCharacter3D_LoadModel_hook)*>(StoryCharacter3D_LoadModel_orig)(
 			charaId, cardId, clothId, zekkenNumber, headId, isWet,
-			isDirt, mobId, dressColorId, zekkenName, zekkenFontStyle, color, fontColor,
+			isDirt, mobId, dressColorId, charaDressColorSetId, zekkenName, zekkenFontStyle, color, fontColor,
 			suitColor, isUseDressDataHeadModelSubId, useCircleShadow);
 	}
 
@@ -3569,11 +3570,11 @@ namespace
 	void* CharacterBuildInfo_ctor_1_orig;
 	void CharacterBuildInfo_ctor_1_hook(void* _this, int cardId, int charaId, int dressId, int controllerType,
 		int headId, int zekken, int mobId, int backDancerColorId, int overrideClothCategory,
-		bool isUseDressDataHeadModelSubId, int audienceId, int motionDressId, bool isEnableModelCache)
+		bool isUseDressDataHeadModelSubId, int audienceId, int motionDressId, bool isEnableModelCache, int charaDressColorSetId)
 	{
 		if (enableLoadCharLog) printf("CharacterBuildInfo_ctor_1 cardId: %d, charaId: %d, dressId: %d, headId: %d, audienceId: %d, motionDressId: %d, controllerType: 0x%x\n", cardId, charaId, dressId, headId, audienceId, motionDressId, controllerType);
 		replaceCharController(&charaId, &dressId, &headId, (UmaControllerType)controllerType);
-		return reinterpret_cast<decltype(CharacterBuildInfo_ctor_1_hook)*>(CharacterBuildInfo_ctor_1_orig)(_this, cardId, charaId, dressId, controllerType, headId, zekken, mobId, backDancerColorId, overrideClothCategory, isUseDressDataHeadModelSubId, audienceId, motionDressId, isEnableModelCache);
+		return reinterpret_cast<decltype(CharacterBuildInfo_ctor_1_hook)*>(CharacterBuildInfo_ctor_1_orig)(_this, cardId, charaId, dressId, controllerType, headId, zekken, mobId, backDancerColorId, overrideClothCategory, isUseDressDataHeadModelSubId, audienceId, motionDressId, isEnableModelCache, charaDressColorSetId);
 	}
 
 	void* CharacterBuildInfo_Rebuild_orig;
@@ -3669,10 +3670,10 @@ namespace
 	}
 
 	void* EditableCharacterBuildInfo_ctor_orig;
-	void EditableCharacterBuildInfo_ctor_hook(void* _this, int cardId, int charaId, int dressId, int controllerType, int zekken, int mobId, int backDancerColorId, int headId, bool isUseDressDataHeadModelSubId, bool isEnableModelCache) {
+	void EditableCharacterBuildInfo_ctor_hook(void* _this, int cardId, int charaId, int dressId, int controllerType, int zekken, int mobId, int backDancerColorId, int headId, bool isUseDressDataHeadModelSubId, bool isEnableModelCache, int chara_dress_color_set_id) {
 		if (enableLoadCharLog) printf("EditableCharacterBuildInfo_ctor cardId: %d, charaId: %d, dressId: %d, headId: %d, controllerType: 0x%x\n", cardId, charaId, dressId, headId, controllerType);
 		replaceCharController(&cardId, &charaId, &dressId, &headId, (UmaControllerType)controllerType);
-		return reinterpret_cast<decltype(EditableCharacterBuildInfo_ctor_hook)*>(EditableCharacterBuildInfo_ctor_orig)(_this, cardId, charaId, dressId, controllerType, zekken, mobId, backDancerColorId, headId, isUseDressDataHeadModelSubId, isEnableModelCache);
+		return reinterpret_cast<decltype(EditableCharacterBuildInfo_ctor_hook)*>(EditableCharacterBuildInfo_ctor_orig)(_this, cardId, charaId, dressId, controllerType, zekken, mobId, backDancerColorId, headId, isUseDressDataHeadModelSubId, isEnableModelCache, chara_dress_color_set_id);
 	}
 
 	void* get_ApplicationServerUrl_orig;
@@ -4714,7 +4715,7 @@ namespace
 		auto CharacterBuildInfo_ctor_1_addr =
 			il2cpp_symbols::get_method_pointer(
 				"umamusume.dll", "Gallop",
-				"CharacterBuildInfo", ".ctor", 13
+				"CharacterBuildInfo", ".ctor", 14
 			);
 
 		auto CharacterBuildInfo_Rebuild_addr =
@@ -4744,7 +4745,7 @@ namespace
 		auto EditableCharacterBuildInfo_ctor_addr =
 			il2cpp_symbols::get_method_pointer(
 				"umamusume.dll", "Gallop",
-				"EditableCharacterBuildInfo", ".ctor", 10
+				"EditableCharacterBuildInfo", ".ctor", 11
 			);
 
 		auto get_ApplicationServerUrl_addr = il2cpp_symbols::get_method_pointer(
@@ -4793,7 +4794,7 @@ namespace
 
 		auto StoryCharacter3D_LoadModel_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
-			"StoryCharacter3D", "LoadModel", 16
+			"StoryCharacter3D", "LoadModel", 17
 		);
 
 		auto SingleModeSceneController_CreateModel_addr = il2cpp_symbols::get_method_pointer(
