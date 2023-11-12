@@ -29,6 +29,11 @@
             "description": "高畫質模式 (抗鋸齒 MSAA x8, 鎖定圖形品質等級到最高)",
             "type": "boolean"
         },
+        "virtual_resolution_multiple": {
+            "description": "3D渲染解析度倍率。1.0為原版。\n  可大幅減輕1080P解析度下鋸齒感的問題。\n  可能會導致部分場景的2D圖片背景過小。\n  建議值4k以下：2.0；4k及以上：1.5",
+            "type": "number",
+            "default": 1.0
+        },
         "enableVSync": {
             "description": "開啟垂直同步 (開啟後 maxFps[幀率限制] 設定將會失效)",
             "type": "boolean"

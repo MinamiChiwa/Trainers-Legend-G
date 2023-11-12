@@ -538,13 +538,15 @@ namespace
 					g_antialiasing = 8;
 					int screenWidth = GetSystemMetrics(SM_CXSCREEN);
 					int screenHeight = GetSystemMetrics(SM_CYSCREEN);
-					g_virtual_resolution_multiple = (screenWidth >= 3840 && screenHeight >= 2160) ? 1.5f : 2.0f;
 				}
 				else {
 					g_graphics_quality = -1;
 					g_antialiasing = -1;
-					g_virtual_resolution_multiple = 1.0f;
 				}
+			}
+
+			if (document.HasMember("virtual_resolution_multiple")) {
+				g_virtual_resolution_multiple = document["virtual_resolution_multiple"].GetFloat();
 			}
 
 			if (document.HasMember("enableVSync")) {
@@ -564,9 +566,6 @@ namespace
 			}
 			if (document.HasMember("vSync_count")) {  // 自定义配置, 不包含到schema
 				g_vsync_count = document["vSync_count"].GetInt();
-			}
-			if (document.HasMember("virtual_resolution_multiple")) {  // 自定义配置, 不包含到schema
-				g_virtual_resolution_multiple = document["virtual_resolution_multiple"].GetFloat();
 			}
 
 			if (document.HasMember("live")) {

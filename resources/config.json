@@ -5,6 +5,7 @@
     "maxFps": 60,
     "better60FPS": false,
     "highQuality": true,
+    "virtual_resolution_multiple": 1.0,
     "enableVSync": false,
     "unlockSize": true,
     "uiScale": 1.0,
