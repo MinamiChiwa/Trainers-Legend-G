@@ -29,6 +29,11 @@
             "description": "High quality mode (FullQuality, MSAA x8)",
             "type": "boolean"
         },
+        "virtual_resolution_multiple": {
+            "description": "3D rendering resolution multiple. 1.0 is the original version.\n Can greatly reduce the problem of aliasing at 1080P resolution.\n May cause the background of some 2D images to be too small.\n Recommended values: below 4k: 2.0; 4k and above: 1.5.",
+            "type": "number",
+            "default": 1.0
+        },
         "enableVSync": {
             "description": "Enable vertical synchronization",
             "type": "boolean"

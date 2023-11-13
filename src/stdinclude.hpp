@@ -142,6 +142,7 @@ extern bool openExternalPluginOnLoad;
 extern int http_start_port;
 extern int g_antialiasing;
 extern int g_graphics_quality;
+extern float g_virtual_resolution_multiple;
 extern int g_vsync_count;
 extern bool g_live_free_camera;
 extern bool g_live_force_changeVisibility_false;

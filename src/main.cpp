@@ -46,6 +46,7 @@ bool g_read_request_pack = true;
 int http_start_port = 43215;
 int g_antialiasing = -1;
 int g_graphics_quality = -1;
+float g_virtual_resolution_multiple = 1.0f;
 int g_vsync_count = 0;
 
 bool g_live_free_camera = false;
@@ -533,13 +534,19 @@ namespace
 
 			if (document.HasMember("highQuality")) {
 				if (document["highQuality"].GetBool()) {
-					g_graphics_quality = 3;
+					g_graphics_quality = 2;
 					g_antialiasing = 8;
+					int screenWidth = GetSystemMetrics(SM_CXSCREEN);
+					int screenHeight = GetSystemMetrics(SM_CYSCREEN);
 				}
 				else {
 					g_graphics_quality = -1;
 					g_antialiasing = -1;
 				}
+			}
+
+			if (document.HasMember("virtual_resolution_multiple")) {
+				g_virtual_resolution_multiple = document["virtual_resolution_multiple"].GetFloat();
 			}
 
 			if (document.HasMember("enableVSync")) {

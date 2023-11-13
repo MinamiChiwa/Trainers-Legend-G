@@ -550,14 +550,14 @@ namespace
 
 	void* set_antialiasing_orig = nullptr;
 	void set_antialiasing_hook(int value) {
-		// printf("setAntialiasing: %d -> %d\n", value, g_antialiasing);
+		// printf("setAntialiasing: %d\n", value);
 		set_vsync_count_hook(1);
 		return reinterpret_cast<decltype(set_antialiasing_hook)*>(set_antialiasing_orig)(g_antialiasing == -1 ? value : g_antialiasing);
 	}
 
 	void* graphics_quality_orig = nullptr;
 	void graphics_quality_hook(Il2CppObject* thisObj, int quality, bool force) {
-		// printf("setGraphicsQuality: %d -> %d\n", quality, g_graphics_quality);
+		// printf("setGraphicsQuality: %d (%d)\n", quality, force);
 		return reinterpret_cast<decltype(graphics_quality_hook)*>(graphics_quality_orig)(thisObj,
 			g_graphics_quality == -1 ? quality : g_graphics_quality,
 			true);
@@ -565,8 +565,62 @@ namespace
 
 	void* set_RenderTextureAntiAliasing_orig;
 	void set_RenderTextureAntiAliasing_hook(void* _this, int value) {
+		// printf("set_RenderTextureAntiAliasing: %d\n", value);
 		return reinterpret_cast<decltype(set_RenderTextureAntiAliasing_hook)*>(set_RenderTextureAntiAliasing_orig)(_this, 
 			g_antialiasing == -1 ? value : g_antialiasing);
+	}
+
+	bool settingUpImageEffect = false;
+
+	void* GraphicSettings_GetVirtualResolution3D_orig;
+	Vector2_Int_t GraphicSettings_GetVirtualResolution3D_hook(void* _this, bool isForcedWideAspect) {
+		auto ret = reinterpret_cast<decltype(GraphicSettings_GetVirtualResolution3D_hook)*>(GraphicSettings_GetVirtualResolution3D_orig)(_this, isForcedWideAspect);
+		// printf("GraphicSettings_GetVirtualResolution3D: %d, %d\n%ls\n\n", ret.m_X, ret.m_Y, environment_get_stacktrace()->start_char);
+		if (!settingUpImageEffect && (g_virtual_resolution_multiple != 1.0f)) {
+			ret.m_X *= g_virtual_resolution_multiple;
+			ret.m_Y *= g_virtual_resolution_multiple;
+		}
+		return ret;
+	}
+
+	void* GraphicSettings_GetVirtualResolution_orig;
+	Vector2_Int_t GraphicSettings_GetVirtualResolution_hook(void* _this) {
+		auto ret = reinterpret_cast<decltype(GraphicSettings_GetVirtualResolution_hook)*>(GraphicSettings_GetVirtualResolution_orig)(_this);
+		// printf("GraphicSettings_GetVirtualResolution: %d, %d\n%ls\n\n", ret.m_X, ret.m_Y, environment_get_stacktrace()->start_char);
+		if (g_virtual_resolution_multiple != 1.0f) {
+			ret.m_X *= g_virtual_resolution_multiple;
+			ret.m_Y *= g_virtual_resolution_multiple;
+		}
+		return ret;
+	}
+
+	void* GraphicSettings_GetVirtualResolutionWidth3D_orig;
+	int GraphicSettings_GetVirtualResolutionWidth3D_hook(void* _this) {
+		auto ret = reinterpret_cast<decltype(GraphicSettings_GetVirtualResolutionWidth3D_hook)*>(GraphicSettings_GetVirtualResolutionWidth3D_orig)(_this);
+		// printf("GraphicSettings_GetVirtualResolutionWidth3D: %d\n%ls\n\n", ret, environment_get_stacktrace()->start_char);
+		if (g_virtual_resolution_multiple != 1.0f) {
+			ret *= g_virtual_resolution_multiple;
+		}
+		return ret;
+	}
+
+	void* CameraController_GetCanvasSize_orig;
+	Vector2_t CameraController_GetCanvasSize_hook(void* _this) {
+		auto ret = reinterpret_cast<decltype(CameraController_GetCanvasSize_hook)*>(CameraController_GetCanvasSize_orig)(_this);
+		// printf("CameraController_GetCanvasSize: %f, %f\n", ret.x, ret.y);
+		if (g_virtual_resolution_multiple != 1.0f) {
+			ret.x /= g_virtual_resolution_multiple;
+			ret.y /= g_virtual_resolution_multiple;
+		}
+		return ret;
+	}
+
+	void* SingleModeStart_SetupImageEffect_orig;
+	void SingleModeStart_SetupImageEffect_hook(void* _this) {
+		// printf("SingleModeStart_SetupImageEffect\n");
+		settingUpImageEffect = true;
+		reinterpret_cast<decltype(SingleModeStart_SetupImageEffect_hook)*>(SingleModeStart_SetupImageEffect_orig)(_this);
+		settingUpImageEffect = false;
 	}
 
 	void* Get3DAntiAliasingLevel_orig;
@@ -2845,11 +2899,10 @@ namespace
 	}
 
 	void* AlterUpdate_CameraLayer_orig;
-	void AlterUpdate_CameraLayer_hook(void* _this, void* sheet, int currentFrame, Vector3_t* offsetMaxPosition, Vector3_t* offsetMinPosition) {
+	void AlterUpdate_CameraLayer_hook(void* _this, void* sheet, int currentFrame) {
 		if (g_live_free_camera) return;
 		return reinterpret_cast<decltype(AlterUpdate_CameraLayer_hook)*>(AlterUpdate_CameraLayer_orig)(
-			_this, sheet, currentFrame, offsetMaxPosition, offsetMinPosition
-		);
+			_this, sheet, currentFrame);
 	}
 
 	void* AlterUpdate_TiltShift_orig;
@@ -3014,7 +3067,7 @@ namespace
 	void race_ChangeCameraMode_hook(void* _this, int mode, bool isSkip) {
 		// printf("ChangeCameraMode: %d, %d\n", mode, isSkip);
 		if (g_race_free_camera) return;
-		return reinterpret_cast<decltype(race_ChangeCameraMode_hook)*>(race_ChangeCameraMode_orig)(_this, 0, true);
+		return reinterpret_cast<decltype(race_ChangeCameraMode_hook)*>(race_ChangeCameraMode_orig)(_this, mode, isSkip);
 	}
 
 	void* race_get_CameraFov_orig;
@@ -3133,7 +3186,8 @@ namespace
 	void* race_get_CameraShakeTargetOffset_orig;
 	Vector3_t* race_get_CameraShakeTargetOffset_hook(void* _this) {
 		auto data = reinterpret_cast<decltype(race_get_CameraShakeTargetOffset_hook)*>(race_get_CameraShakeTargetOffset_orig)(_this);
-		// printf("shake: %d, %d, %d\n", data->x, data->y, data->z);
+		//printf("shake: %d, %d, %d\n", data->x, data->y, data->z);
+		return data;  // 2023.11.07 issue #161 fixed.
 		if (!g_race_free_camera) return data;
 		data->x = 0;
 		data->y = 0;
@@ -3482,7 +3536,7 @@ namespace
 
 	void* StoryCharacter3D_LoadModel_orig;
 	void StoryCharacter3D_LoadModel_hook(int charaId, int cardId, int clothId, int zekkenNumber, int headId, bool isWet, 
-		bool isDirt, int mobId, int dressColorId, Il2CppString* zekkenName, int zekkenFontStyle, int color, int fontColor, 
+		bool isDirt, int mobId, int dressColorId, int charaDressColorSetId, Il2CppString* zekkenName, int zekkenFontStyle, int color, int fontColor,
 		int suitColor, bool isUseDressDataHeadModelSubId, bool useCircleShadow) {
 
 		if (enableLoadCharLog) printf("StoryCharacter3D_LoadModel CardId: %d charaId: %d DressId: %d DressColorId: %d HeadId: %d MobId: %d ZekkenNumber: %d\n",
@@ -3492,7 +3546,7 @@ namespace
 
 		return reinterpret_cast<decltype(StoryCharacter3D_LoadModel_hook)*>(StoryCharacter3D_LoadModel_orig)(
 			charaId, cardId, clothId, zekkenNumber, headId, isWet,
-			isDirt, mobId, dressColorId, zekkenName, zekkenFontStyle, color, fontColor,
+			isDirt, mobId, dressColorId, charaDressColorSetId, zekkenName, zekkenFontStyle, color, fontColor,
 			suitColor, isUseDressDataHeadModelSubId, useCircleShadow);
 	}
 
@@ -3516,11 +3570,11 @@ namespace
 	void* CharacterBuildInfo_ctor_1_orig;
 	void CharacterBuildInfo_ctor_1_hook(void* _this, int cardId, int charaId, int dressId, int controllerType,
 		int headId, int zekken, int mobId, int backDancerColorId, int overrideClothCategory,
-		bool isUseDressDataHeadModelSubId, int audienceId, int motionDressId, bool isEnableModelCache)
+		bool isUseDressDataHeadModelSubId, int audienceId, int motionDressId, bool isEnableModelCache, int charaDressColorSetId)
 	{
 		if (enableLoadCharLog) printf("CharacterBuildInfo_ctor_1 cardId: %d, charaId: %d, dressId: %d, headId: %d, audienceId: %d, motionDressId: %d, controllerType: 0x%x\n", cardId, charaId, dressId, headId, audienceId, motionDressId, controllerType);
 		replaceCharController(&charaId, &dressId, &headId, (UmaControllerType)controllerType);
-		return reinterpret_cast<decltype(CharacterBuildInfo_ctor_1_hook)*>(CharacterBuildInfo_ctor_1_orig)(_this, cardId, charaId, dressId, controllerType, headId, zekken, mobId, backDancerColorId, overrideClothCategory, isUseDressDataHeadModelSubId, audienceId, motionDressId, isEnableModelCache);
+		return reinterpret_cast<decltype(CharacterBuildInfo_ctor_1_hook)*>(CharacterBuildInfo_ctor_1_orig)(_this, cardId, charaId, dressId, controllerType, headId, zekken, mobId, backDancerColorId, overrideClothCategory, isUseDressDataHeadModelSubId, audienceId, motionDressId, isEnableModelCache, charaDressColorSetId);
 	}
 
 	void* CharacterBuildInfo_Rebuild_orig;
@@ -3616,10 +3670,10 @@ namespace
 	}
 
 	void* EditableCharacterBuildInfo_ctor_orig;
-	void EditableCharacterBuildInfo_ctor_hook(void* _this, int cardId, int charaId, int dressId, int controllerType, int zekken, int mobId, int backDancerColorId, int headId, bool isUseDressDataHeadModelSubId, bool isEnableModelCache) {
+	void EditableCharacterBuildInfo_ctor_hook(void* _this, int cardId, int charaId, int dressId, int controllerType, int zekken, int mobId, int backDancerColorId, int headId, bool isUseDressDataHeadModelSubId, bool isEnableModelCache, int chara_dress_color_set_id) {
 		if (enableLoadCharLog) printf("EditableCharacterBuildInfo_ctor cardId: %d, charaId: %d, dressId: %d, headId: %d, controllerType: 0x%x\n", cardId, charaId, dressId, headId, controllerType);
 		replaceCharController(&cardId, &charaId, &dressId, &headId, (UmaControllerType)controllerType);
-		return reinterpret_cast<decltype(EditableCharacterBuildInfo_ctor_hook)*>(EditableCharacterBuildInfo_ctor_orig)(_this, cardId, charaId, dressId, controllerType, zekken, mobId, backDancerColorId, headId, isUseDressDataHeadModelSubId, isEnableModelCache);
+		return reinterpret_cast<decltype(EditableCharacterBuildInfo_ctor_hook)*>(EditableCharacterBuildInfo_ctor_orig)(_this, cardId, charaId, dressId, controllerType, zekken, mobId, backDancerColorId, headId, isUseDressDataHeadModelSubId, isEnableModelCache, chara_dress_color_set_id);
 	}
 
 	void* get_ApplicationServerUrl_orig;
@@ -4333,6 +4387,17 @@ namespace
 			"RenderTexture", "set_antiAliasing", 1
 		);
 
+		auto GraphicSettings_GetVirtualResolution3D_addr = il2cpp_symbols::get_method_pointer("umamusume.dll",
+			"Gallop", "GraphicSettings", "GetVirtualResolution3D", 1);
+		auto GraphicSettings_GetVirtualResolution_addr = il2cpp_symbols::get_method_pointer("umamusume.dll",
+			"Gallop", "GraphicSettings", "GetVirtualResolution", 0);
+		auto GraphicSettings_GetVirtualResolutionWidth3D_addr = il2cpp_symbols::get_method_pointer("umamusume.dll",
+			"Gallop", "GraphicSettings", "GetVirtualResolutionWidth3D", 0);
+		auto CameraController_GetCanvasSize_addr = il2cpp_symbols::get_method_pointer("umamusume.dll",
+			"Gallop", "CameraController", "GetCanvasSize", 0);
+		auto SingleModeStart_SetupImageEffect_addr = il2cpp_symbols::get_method_pointer("umamusume.dll",
+			"Gallop", "SingleModeStartResultCharaViewer", "SetupImageEffect", 0);
+
 		auto Get3DAntiAliasingLevel_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
 			"GraphicSettings", "Get3DAntiAliasingLevel", 1
@@ -4462,7 +4527,7 @@ namespace
 
 		auto AlterUpdate_CameraLayer_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop.Live.Cutt",
-			"LiveTimelineControl", "AlterUpdate_CameraLayer", 4
+			"LiveTimelineControl", "AlterUpdate_CameraLayer", 2
 		);
 
 		auto AlterLateUpdate_CameraMotion_addr = il2cpp_symbols::get_method_pointer(
@@ -4650,7 +4715,7 @@ namespace
 		auto CharacterBuildInfo_ctor_1_addr =
 			il2cpp_symbols::get_method_pointer(
 				"umamusume.dll", "Gallop",
-				"CharacterBuildInfo", ".ctor", 13
+				"CharacterBuildInfo", ".ctor", 14
 			);
 
 		auto CharacterBuildInfo_Rebuild_addr =
@@ -4680,7 +4745,7 @@ namespace
 		auto EditableCharacterBuildInfo_ctor_addr =
 			il2cpp_symbols::get_method_pointer(
 				"umamusume.dll", "Gallop",
-				"EditableCharacterBuildInfo", ".ctor", 10
+				"EditableCharacterBuildInfo", ".ctor", 11
 			);
 
 		auto get_ApplicationServerUrl_addr = il2cpp_symbols::get_method_pointer(
@@ -4729,7 +4794,7 @@ namespace
 
 		auto StoryCharacter3D_LoadModel_addr = il2cpp_symbols::get_method_pointer(
 			"umamusume.dll", "Gallop",
-			"StoryCharacter3D", "LoadModel", 16
+			"StoryCharacter3D", "LoadModel", 17
 		);
 
 		auto SingleModeSceneController_CreateModel_addr = il2cpp_symbols::get_method_pointer(
@@ -4838,6 +4903,11 @@ namespace
 		ADD_HOOK(AlterUpdate_MultiCamera, "AlterUpdate_MultiCamera at %p\n");
 		ADD_HOOK(set_shadow_resolution, "set_shadow_resolution at %p\n");
 		ADD_HOOK(set_RenderTextureAntiAliasing, "set_RenderTextureAntiAliasing at %p\n");
+		ADD_HOOK(GraphicSettings_GetVirtualResolution3D, "GraphicSettings_GetVirtualResolution3D at %p\n");
+		ADD_HOOK(GraphicSettings_GetVirtualResolution, "GraphicSettings_GetVirtualResolution at %p\n");
+		ADD_HOOK(GraphicSettings_GetVirtualResolutionWidth3D, "GraphicSettings_GetVirtualResolutionWidth3D at %p\n");
+		ADD_HOOK(CameraController_GetCanvasSize, "CameraController_GetCanvasSize at %p\n");
+		ADD_HOOK(SingleModeStart_SetupImageEffect, "SingleModeStart_SetupImageEffect at %p\n");
 		ADD_HOOK(Get3DAntiAliasingLevel, "Get3DAntiAliasingLevel at %p\n");
 		ADD_HOOK(KeepAspectRatio, "KeepAspectRatio at %p\n");
 		ADD_HOOK(ReshapeAspectRatio, "ReshapeAspectRatio at %p\n");
