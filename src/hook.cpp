@@ -2637,7 +2637,6 @@ namespace
 	float(*get_Wiz)(void*);
 	float(*get_DeltaTime)();
 	bool(*get_IsStartDash)(void*);
-	int(*GetActivateSkillCount)(void*);
 	int(*get_FinishOrder)(void*);
 	// int(*CalcChallengeMatchPointTotal)(void*);
 	float(*get_MoveDistance)(void*);
@@ -2681,8 +2680,8 @@ namespace
 		convertPtrType(&GetHp, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "GetHp", 0));
 		convertPtrType(&GetMaxHp, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "GetMaxHp", 0));
 		convertPtrType(&GetHpPer, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "GetHpPer", 0));
-		convertPtrType(&get_NearHorseCount, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_NearHorseCount", 0));
-		convertPtrType(&get_CongestionTime, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_CongestionTime", 0));
+		// convertPtrType(&get_NearHorseCount, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_NearHorseCount", 0));
+		// convertPtrType(&get_CongestionTime, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_CongestionTime", 0));
 		convertPtrType(&get_RawSpeed, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_RawSpeed", 0));
 		convertPtrType(&get_BaseSpeed, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_BaseSpeed", 0));
 		convertPtrType(&get_Speed, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_Speed", 0));
@@ -2699,7 +2698,6 @@ namespace
 		convertPtrType(&get_BaseWiz, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_BaseWiz", 0));
 		convertPtrType(&get_Wiz, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_Wiz", 0));
 		convertPtrType(&get_IsStartDash, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_IsStartDash", 0));
-		convertPtrType(&GetActivateSkillCount, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "GetActivateSkillCount", 0));
 		convertPtrType(&get_MoveDistance, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "HorseRaceInfo", "get_MoveDistance", 0));
 		convertPtrType(&get_DeltaTime, il2cpp_resolve_icall("UnityEngine.Time::get_unscaledDeltaTime()"));
 
@@ -2717,6 +2715,7 @@ namespace
 
 	void* get_RunMotionSpeed_orig;
 	float get_RunMotionSpeed_hook(void* _this) {
+		// handle: 00007FF9C71B0000
 		raceStart = true;
 		auto ret = reinterpret_cast<decltype(get_RunMotionSpeed_hook)*>(get_RunMotionSpeed_orig)(_this);
 		if (enableRaceInfoTab || (g_race_free_camera && g_race_freecam_follow_umamusume)) {
@@ -2726,20 +2725,32 @@ namespace
 				bool isFinished = get_IsOverRun(_this);
 				iter->second.UpdateMotionData(ret, get_RunMotionRate(_this), get_RaceBaseSpeed(_this), get_MinSpeed(_this),
 					get_StartDashSpeedThreshold(_this), isFinished, GetHp(_this), GetMaxHp(_this), GetHpPer(_this),
-					get_NearHorseCount(_this), get_CongestionTime(_this), get_RawSpeed(_this),
+					0, //get_NearHorseCount(_this),
+					0, //get_CongestionTime(_this), 
+
+					get_RawSpeed(_this),
 					il2cpp_symbols::read_field<float>(_this, HorseRaceInfo_baseSpeedAdjusted),
 					get_Speed(_this),
-					get_RawStamina(_this), il2cpp_symbols::read_field<float>(_this, HorseRaceInfo_baseStaminaAdjusted),
-					get_Stamina(_this), get_RawPow(_this),
+					get_RawStamina(_this), 
+					il2cpp_symbols::read_field<float>(_this, HorseRaceInfo_baseStaminaAdjusted),
+					get_Stamina(_this), 
+					get_RawPow(_this),
 					il2cpp_symbols::read_field<float>(_this, HorseRaceInfo_basePowAdjusted),
-					get_Pow(_this), get_RawGuts(_this),
+					get_Pow(_this), 
+					get_RawGuts(_this),
 					il2cpp_symbols::read_field<float>(_this, HorseRaceInfo_baseGutsAdjusted),
-					get_Guts(_this), get_RawWiz(_this),
+					get_Guts(_this), 
+					get_RawWiz(_this),
 					il2cpp_symbols::read_field<float>(_this, HorseRaceInfo_baseWizAdjusted),
-					get_Wiz(_this), get_IsStartDash(_this), GetActivateSkillCount(_this),
+					get_Wiz(_this), 
+					get_IsStartDash(_this), 
 					il2cpp_symbols::read_field<float>(_this, HorseRaceInfo_lastSpeed),
-					get_MoveDistance(_this), il2cpp_symbols::read_field<float>(_this, HorseRaceInfo_distance),
-					get_DeltaTime(), get_LastSpurtStartDistance(_this), get_IsLastSpurt(_this));
+					get_MoveDistance(_this), 
+					il2cpp_symbols::read_field<float>(_this, HorseRaceInfo_distance),
+					get_DeltaTime(), 
+					get_LastSpurtStartDistance(_this), 
+					get_IsLastSpurt(_this)
+				);
 				if (isFinished) iter->second.setFinallyRank(get_FinishOrder(_this) + 1);
 
 				if (g_race_free_camera && g_race_freecam_follow_umamusume) {
@@ -2806,7 +2817,7 @@ namespace
 	bool isSkillManaInited = false;
 
 	void initSkillManager() {
-		if (isSkillManaInited)return;
+		if (isSkillManaInited) return;
 		isSkillManaInited = true;
 
 		skillManager_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop", "SkillManager");
@@ -2815,16 +2826,52 @@ namespace
 		convertPtrType(&GetSkillLevel, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "SkillBase", "get_Level", 0));
 		convertPtrType(&GetSkilDetails, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "SkillBase", "get_Details", 0));
 		convertPtrType(&get_SkillMaster, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "SkillBase", "get_SkillMaster", 0));
-		convertPtrType(&getSkill_Abilities, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "SkillDetail", "get_Abilities", 0));
-		convertPtrType(&get_SkillEffectName, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "SkillDetail", "get_SkillEffectName", 0));
-		convertPtrType(&SkillActivate, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "SkillDetail", "Activate", 0));
-		convertPtrType(&get_DefaultCoolDownTime, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "SkillDetail", "get_DefaultCoolDownTime", 0));
+		convertPtrType(&getSkill_Abilities, il2cpp_symbols::get_method_pointer("umamusume.dll", "StandaloneSimulator", "SkillDetail", "get_Abilities", 0));
+		convertPtrType(&get_SkillEffectName, il2cpp_symbols::get_method_pointer("umamusume.dll", "StandaloneSimulator", "SkillDetail", "get_SkillEffectName", 0));
+		// convertPtrType(&SkillActivate, il2cpp_symbols::get_method_pointer("umamusume.dll", "StandaloneSimulator", "SkillDetail", "Activate", 0));
+		// convertPtrType(&get_DefaultCoolDownTime, il2cpp_symbols::get_method_pointer("umamusume.dll", "StandaloneSimulator", "SkillDetail", "get_DefaultCoolDownTime", 0));
+	}
+	
+	struct MSkillAbility {
+		int AbilityType;
+		float AbilityValue;
+		int targetType;
+		float CooldownTime;
+	};
+
+	std::vector<MSkillAbility> getMSkillAbilitiesByMasterData(int skillId) {
+		static std::vector<std::string> abilityEnds = { "1_1", "1_2", "1_3", "2_1", "2_2", "2_3" };
+		std::vector<MSkillAbility> ret{};
+
+		if (auto iter = UmaDatabase::umaSkillInfo.find(skillId); iter != UmaDatabase::umaSkillInfo.end()) {
+			for (const auto& i : abilityEnds) {
+				const std::string AbilityTypeName = std::format("ability_type_{}", i);
+				const std::string AbilityValueName = std::format("float_ability_value_{}", i);
+				const std::string FloatCooldownTimeName = std::format("float_cooldown_time_{}", i[0]);
+				const std::string TargetTypeName = std::format("target_type_{}", i);
+
+				const auto AbilityType = iter->second[AbilityTypeName];
+				if (AbilityType <= 0) continue;
+				const auto AbilityValue = iter->second[AbilityValueName];
+				const auto FloatCooldownTime = iter->second[FloatCooldownTimeName];
+				const auto TargetType = iter->second[TargetTypeName];
+
+				MSkillAbility currRet{};
+				currRet.AbilityType = AbilityType;
+				currRet.AbilityValue = (float)AbilityValue / 10000.0f;
+				currRet.targetType = TargetType;
+				currRet.CooldownTime = (float)FloatCooldownTime / 10000.0f;
+				// printf("AbilityType: %d, AbilityValue: %f, CooldownTime: %f, TargetType: %d\n", currRet.AbilityType, currRet.AbilityValue, currRet.CooldownTime, TargetType);
+				ret.push_back(currRet);
+			}
+		}
+		// printf("\n");
+		return ret;
 	}
 
 	void* AddUsedSkillId_orig;
 	void AddUsedSkillId_hook(void* _this, int skillId) {
 		reinterpret_cast<decltype(AddUsedSkillId_hook)*>(AddUsedSkillId_orig)(_this, skillId);
-
 		if (enableRaceInfoTab) {
 			initSkillManager();
 			// Gallop.IHorseRaceInfo
@@ -2855,13 +2902,29 @@ namespace
 					skillData.SetSkillName(utility::conversions::to_utf8string(skillName->start_char));
 				}
 
+				bool updatedCool = false;
+				const auto mAbilities = getMSkillAbilitiesByMasterData(skillId);
+				for (const auto& skillAbility : mAbilities) {
+					const auto abilityType = skillAbility.AbilityType;
+					const auto effValue = skillAbility.AbilityValue;
+					if (!updatedCool) {
+						updatedCool = true;
+						skillData.updateCoolDownTime(skillAbility.CooldownTime);
+					}
+					UmaGUiShowData::SkillAbility mSkillability(abilityType, effValue);
+					mSkillability.setTargetType(skillAbility.targetType);
+					skillData.addSkillAbilities(mSkillability);
+				}
+
+				/*
 				il2cpp_symbols::iterate_list(skilDetails, [&](int32_t index, void* skillDetail) {
-					SkillActivate(skillDetail);
+					// SkillActivate(skillDetail);
 
 					auto abilities = getSkill_Abilities(skillDetail);  // List`1<class Gallop.ISkillAbility>
-					auto defCooldownTime = get_DefaultCoolDownTime(skillDetail);
+					// auto defCooldownTime = get_DefaultCoolDownTime(skillDetail);
+					auto defCooldownTime = 1200.0f;
 					skillData.updateCoolDownTime(defCooldownTime);
-
+					
 					il2cpp_symbols::iterate_list(abilities, [&](int32_t cIndex, void* skillAbility) {
 						int (*get_AbilityType)(void*);
 						float (*get_AbilityValueOnActivate)(void*);
@@ -2889,13 +2952,11 @@ namespace
 						// printf("abilityType: 0x%x, effValue: %f\n", abilityType, effValue);
 						skillData.addSkillAbilities(mSkillability);
 						});
-
 					});
-
+					*/
 				umaUsedSkillList.emplace_back(skillData);
 			}
 		}
-		
 	}
 
 	void* AlterUpdate_CameraLayer_orig;
@@ -4833,7 +4894,6 @@ namespace
 			ADD_HOOK(WWWRequest_Post, "WWWRequest_Post at %p\n");
 		}
 #pragma endregion
-
 		// hook UnityEngine.TextGenerator::PopulateWithErrors to modify text
 		ADD_HOOK(populate_with_errors, "UnityEngine.TextGenerator::PopulateWithErrors at %p\n");
 

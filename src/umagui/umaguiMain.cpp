@@ -584,7 +584,33 @@ std::unordered_map<int, std::string> abilityTypes{
     {0x28, "DebuffAbilityValueMultiplyOtherActivate"},
     {0x1f5, "ChallengeMatchBonus_Old"},
     {0x1f6, "ChallengeMatchBonusStatus"},
-    {0x1f7, "ChallengeMatchBonusMotivation"}
+    {0x1f7, "ChallengeMatchBonusMotivation"},
+};
+
+std::unordered_map<int, std::string> skillTargetType {
+    {0x1, "Self"},
+    {0x2, "All"},
+    {0x3, "AllOtherSelf"},
+    {0x4, "Visible"},
+    {0x5, "RandomOtherSelf"},
+    {0x6, "Order"},
+    {0x7, "OrderInfront"},
+    {0x8, "OrderBehind"},
+    {0x9, "SelfInfront"},
+    {0xa, "SelfBehind"},
+    {0xb, "TeamMember"},
+    {0xc, "Near"},
+    {0xd, "SelfAndBlockFront"},
+    {0xe, "BlockSide"},
+    {0xf, "NearInfront"},
+    {0x10, "NearBehind"},
+    {0x11, "RunningStyle"},
+    {0x12, "RunningStyleOtherSelf"},
+    {0x13, "SelfInfrontTemptation"},
+    {0x14, "SelfBehindTemptation"},
+    {0x15, "RunningStyleTemptationOtherSelf"},
+    {0x16, "CharaId"},
+    {0x17, "ActivateHealSkill"},
 };
 
 std::string transSkillAbilityType(int abilityType) {
@@ -592,6 +618,12 @@ std::string transSkillAbilityType(int abilityType) {
         return GetTrans(iter->second.c_str());
     }
     return std::format("0x{:x}", abilityType);
+}
+std::string transSkillTargetType(int targetType) {
+    if (const auto iter = skillTargetType.find(targetType); iter != skillTargetType.end()) {
+        return GetTrans(iter->second.c_str());
+    }
+    return std::format("0x{:x}", targetType);
 }
 
 void imGuiRaceSkillInfoMainLoop() {
@@ -643,7 +675,7 @@ void imGuiRaceSkillInfoMainLoop() {
                     ImGui::Text("%.6f", ability.effValue);
 
                     ImGui::TableSetColumnIndex(2);
-                    
+                    /*
                     std::stringstream ss;
                     int fCount = 0;
                     for (const auto& target : ability.targets) {
@@ -655,7 +687,9 @@ void imGuiRaceSkillInfoMainLoop() {
                             ss << "\n";
                         }
                     }
-                    ImGui::Text("%s", ss.str().c_str());
+                    ImGui::Text("%s", ss.str().c_str());*/
+                    ImGui::Text("%s", transSkillTargetType(ability.targetType).c_str());
+
                 }
 
                 ImGui::EndTable();
@@ -703,10 +737,12 @@ void imGuiRaceSkillInfoMainLoop() {
 
             ImGui::TableSetColumnIndex(4);
             for (const auto& iab : it.skillAbilities) {
+                ss << transSkillTargetType(iab.targetType);
+                /*
                 for (const auto& target : iab.targets) {
                     ss << std::format("{}. {}{} ", target.gateNo, target.charaName,
                         target.trainerName.empty() ? "" : std::format(" ({})", target.trainerName));
-                }
+                }*/
                 ss << "\n";
             }
             ImGui::Text(ss.str().c_str());

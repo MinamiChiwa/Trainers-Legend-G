@@ -131,7 +131,6 @@ namespace UmaGUiShowData {
 		int RawWiz = 0;
 		float BaseWiz = 0;
 		float Wiz = 0;
-		int ActivateSkillCount = 0;
 		bool IsStartDash = false;
 		float lastSpeed = 0;
 		float MoveDistance = 0.0f;
@@ -150,7 +149,7 @@ namespace UmaGUiShowData {
 		void UpdateMotionData(float speed, float rate, float RaceBaseSpeed, float MinSpeed, float StartDashSpeedThreshold,
 			bool IsOverRun, float Hp, float MaxHp, float HpPer, int NearHorseCount, float CongestionTime, int RawSpeed,
 			float BaseSpeed, float Speed, int RawStamina, float BaseStamina, float Stamina, int RawPow, float BasePow, float Pow,
-			int RawGuts, float BaseGuts, float Guts, int RawWiz, float BaseWiz, float Wiz, bool IsStartDash, int ActivateSkillCount,
+			int RawGuts, float BaseGuts, float Guts, int RawWiz, float BaseWiz, float Wiz, bool IsStartDash,
 			float lastSpeed, float MoveDistance, float distance, float deltatime, float LastSpurtStartDistance, bool isLastSpurt);
 
 		void setRank(int rank);
@@ -163,10 +162,12 @@ namespace UmaGUiShowData {
 	public:
 		int abilityType;
 		float effValue;
-		std::vector<UmaRaceMotionData> targets;
+		// std::vector<UmaRaceMotionData> targets;
+		int targetType;
 
 		SkillAbility(int abilityType, float effValue);
-		void addTargets(UmaRaceMotionData target);
+		// void addTargets(UmaRaceMotionData target);
+		void setTargetType(int targetType);
 
 	};
 

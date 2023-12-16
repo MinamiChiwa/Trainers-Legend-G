@@ -61,7 +61,7 @@ UmaGUiShowData::UmaRaceMotionData::UmaRaceMotionData(int gateNo, std::wstring ch
 void UmaGUiShowData::UmaRaceMotionData::UpdateMotionData(float speed, float rate, float RaceBaseSpeed, float MinSpeed, float StartDashSpeedThreshold,
 	bool IsOverRun, float Hp, float MaxHp, float HpPer, int NearHorseCount, float CongestionTime, int RawSpeed,
 	float BaseSpeed, float Speed, int RawStamina, float BaseStamina, float Stamina, int RawPow, float BasePow, float Pow,
-	int RawGuts, float BaseGuts, float Guts, int RawWiz, float BaseWiz, float Wiz, bool IsStartDash, int ActivateSkillCount,
+	int RawGuts, float BaseGuts, float Guts, int RawWiz, float BaseWiz, float Wiz, bool IsStartDash,
 	float lastSpeed, float MoveDistance, float distance, float deltatime, float LastSpurtStartDistance, bool isLastSpurt)
 {
 	this->speed = speed;
@@ -91,7 +91,6 @@ void UmaGUiShowData::UmaRaceMotionData::UpdateMotionData(float speed, float rate
 	this->BaseWiz = BaseWiz;
 	this->Wiz = Wiz;
 	this->IsStartDash = IsStartDash;
-	this->ActivateSkillCount = ActivateSkillCount;
 	this->lastSpeed = lastSpeed;
 	if (!(ignoreNegativeSpeed && (MoveDistance < 0))) {
 		this->MoveDistance = MoveDistance;
@@ -148,8 +147,12 @@ UmaGUiShowData::SkillAbility::SkillAbility(int abilityType, float effValue) {
 	this->effValue = effValue;
 }
 
-void UmaGUiShowData::SkillAbility::addTargets(UmaRaceMotionData target) {
-	this->targets.emplace_back(target);
+// void UmaGUiShowData::SkillAbility::addTargets(UmaRaceMotionData target) {
+//	this->targets.emplace_back(target);
+// }
+
+void UmaGUiShowData::SkillAbility::setTargetType(int targetType) {
+	this->targetType = targetType;
 }
 
 void UmaGUiShowData::initGuiGlobalData() {
