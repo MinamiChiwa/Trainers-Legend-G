@@ -1490,13 +1490,44 @@ namespace
 
 	void* Text_set_font_orig;
 	void Text_set_font_hook(void* _this, void* font) {
-		if (font) {
-			auto replaceFont = getReplaceFont();
-			if (replaceFont) {
-				font = replaceFont;
+		return reinterpret_cast<decltype(Text_set_font_hook)*>(Text_set_font_orig)(_this, font);
+	}
+
+	bool settingSubText = false;
+
+	void* SubTextCommon_Setup_orig;
+	void SubTextCommon_Setup_hook(void* _this, int fontType, bool isChangeLine) {
+		settingSubText = true;
+		reinterpret_cast<decltype(SubTextCommon_Setup_hook)*>(SubTextCommon_Setup_orig)(_this, fontType, isChangeLine);
+		settingSubText = false;
+	}
+
+	void* TextCommon_UpdateBaseText_orig;
+	void TextCommon_UpdateBaseText_hook(void* _this, Il2CppString* value) {
+		settingSubText = true;
+		reinterpret_cast<decltype(TextCommon_UpdateBaseText_hook)*>(TextCommon_UpdateBaseText_orig)(_this, value);
+		settingSubText = false;
+	}
+
+	void* GetChineseFont_orig;
+	void* GetChineseFont_hook(void* _this) {
+		auto ret = getReplaceFont();
+		if (ret) return ret;
+		return reinterpret_cast<decltype(GetChineseFont_hook)*>(GetChineseFont_orig)(_this);
+	}
+
+	void* LoadResourcesFolderFont_orig;
+	void* LoadResourcesFolderFont_hook(void* _this, int fontType) {
+		if (settingSubText) {
+			switch (fontType) {
+			case 0x0:  // Dynamic01
+			case 0x3: {  // Chinese_Font01
+				auto ret = getReplaceFont();
+				if (ret) return ret;
+			}; break;
 			}
 		}
-		return reinterpret_cast<decltype(Text_set_font_hook)*>(Text_set_font_orig)(_this, font);
+		return reinterpret_cast<decltype(LoadResourcesFolderFont_hook)*>(LoadResourcesFolderFont_orig)(_this, fontType);
 	}
 
 	void* TextCommon_Awake_orig;
@@ -4374,6 +4405,26 @@ namespace
 				"UnityEngine.UI.dll", "UnityEngine.UI",
 				"Text", "set_font", 1);
 
+		auto GetChineseFont_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"TextFontManager", "GetChineseFont", 0);
+
+		auto SubTextCommon_Setup_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"SubTextCommon", "Setup", 2);
+		auto TextCommon_UpdateBaseText_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"TextCommon", "UpdateBaseText", 1);
+
+		auto LoadResourcesFolderFont_addr = il2cpp_symbols::find_method("umamusume.dll", "Gallop", "TextFontManager", [](const MethodInfo* method) {
+			if (strcmp(method->name, "LoadResourcesFolderFont") == 0) {
+				if (method->parameters->parameter_type->type == Il2CppTypeEnum::IL2CPP_TYPE_VALUETYPE) {
+					return true;
+				}
+			}
+			return false;
+			});
+
 		Text_set_horizontalOverflow = reinterpret_cast<void(*)(void*, int)>(
 			il2cpp_symbols::get_method_pointer(
 				"UnityEngine.UI.dll", "UnityEngine.UI",
@@ -5018,6 +5069,10 @@ namespace
 		{
 			ADD_HOOK(TextCommon_Awake, "Gallop.TextCommon::Awake at %p\n");
 			ADD_HOOK(Text_set_font, "Text_set_font at %p\n");
+			ADD_HOOK(GetChineseFont, "GetChineseFont at %p\n");
+			ADD_HOOK(SubTextCommon_Setup, "SubTextCommon_Setup at %p\n");
+			ADD_HOOK(TextCommon_UpdateBaseText, "TextCommon_UpdateBaseText at %p\n");
+			ADD_HOOK(LoadResourcesFolderFont, "LoadResourcesFolderFont at %p\n");
 			Text_set_font = reinterpret_cast<void(*)(void*, void*)>(Text_set_font_orig);
 			ADD_HOOK(TextMeshProUguiCommon_Awake, "TextMeshProUguiCommon_Awake at %p\n");
 			ADD_HOOK(AnText_UpdateText, "AnText_UpdateText at %p\n");
