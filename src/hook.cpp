@@ -1488,6 +1488,17 @@ namespace
 		return replaceFont;
 	}
 
+	void* Text_set_font_orig;
+	void Text_set_font_hook(void* _this, void* font) {
+		if (font) {
+			auto replaceFont = getReplaceFont();
+			if (replaceFont) {
+				font = replaceFont;
+			}
+		}
+		return reinterpret_cast<decltype(Text_set_font_hook)*>(Text_set_font_orig)(_this, font);
+	}
+
 	void* TextCommon_Awake_orig;
 	void TextCommon_Awake_hook(void* _this)
 	{
@@ -4359,11 +4370,9 @@ namespace
 			"AnGlobalData", "_GetFontFromCommon", 1
 		);
 
-		Text_set_font = reinterpret_cast<void(*)(void*, void*)>(
-			il2cpp_symbols::get_method_pointer(
+		auto Text_set_font_addr = il2cpp_symbols::get_method_pointer(
 				"UnityEngine.UI.dll", "UnityEngine.UI",
-				"Text", "set_font", 1)
-			);
+				"Text", "set_font", 1);
 
 		Text_set_horizontalOverflow = reinterpret_cast<void(*)(void*, int)>(
 			il2cpp_symbols::get_method_pointer(
@@ -5008,6 +5017,8 @@ namespace
 		if (!std::holds_alternative<UseOriginalFont>(g_replace_font))
 		{
 			ADD_HOOK(TextCommon_Awake, "Gallop.TextCommon::Awake at %p\n");
+			ADD_HOOK(Text_set_font, "Text_set_font at %p\n");
+			Text_set_font = reinterpret_cast<void(*)(void*, void*)>(Text_set_font_orig);
 			ADD_HOOK(TextMeshProUguiCommon_Awake, "TextMeshProUguiCommon_Awake at %p\n");
 			ADD_HOOK(AnText_UpdateText, "AnText_UpdateText at %p\n");
 			ADD_HOOK(AnText_Destroy, "AnText_Destroy at %p\n");
@@ -5019,6 +5030,12 @@ namespace
 			{
 				AssetBundle_LoadAsset_orig = reinterpret_cast<void*>(AssetBundle_LoadAsset_addr);
 			}
+		}
+		else 
+		{
+			Text_set_font = reinterpret_cast<void(*)(void*, void*)>(il2cpp_symbols::get_method_pointer(
+				"UnityEngine.UI.dll", "UnityEngine.UI",
+				"Text", "set_font", 1));
 		}
 
 		if (g_replace_assets)
