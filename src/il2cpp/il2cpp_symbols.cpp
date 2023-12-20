@@ -81,8 +81,16 @@ namespace il2cpp_symbols
 								 const char* klassName, const char* name, int argsCount)
 	{
 		auto assembly = il2cpp_domain_assembly_open(il2cpp_domain, assemblyName);
+		if (!assembly) {
+			printf("assembly: %s not found!\n", assemblyName);
+			return NULL;
+		}
 		auto image = il2cpp_assembly_get_image(assembly);
 		auto klass = il2cpp_class_from_name(image, namespaze, klassName);
+		if (!klass) {
+			printf("class %s::%s not found!\n", namespaze, klassName);
+			return NULL;
+		}
 		auto ret = il2cpp_class_get_method_from_name(klass, name, argsCount);
 		if (ret) {
 			return ret->methodPointer;

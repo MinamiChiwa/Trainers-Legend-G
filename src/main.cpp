@@ -1828,6 +1828,7 @@ int __stdcall DllMain(HINSTANCE dllModule, DWORD reason, LPVOID)
 		}
 
 		auto dicts = read_config();
+		UmaDatabase::executeQuerySkillData();
 
 		if (g_enable_console)
 			create_debug_console();

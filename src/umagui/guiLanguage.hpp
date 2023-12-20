@@ -77,6 +77,30 @@ namespace GuiTrans {
 		{"DebuffCancel", "消除 Debuff"},
 		{"DebuffAbilityValueMultiply", "Debuff 数值加倍"},
 		{"DebuffAbilityValueMultiplyOtherActivate", "DebuffAbilityValueMultiplyOtherActivate"},  // 不会翻(
+
+		{"Self", "自身"},
+		{"All", "所有角色"},
+		{"AllOtherSelf", "所有除自身以外的"},
+		{"Visible", "可见的"},
+		{"RandomOtherSelf", "随机除自身以外的"},
+		{"Order", "指定排名"},
+		{"OrderInfront", "排名在自身之前的"},
+		{"OrderBehind", "排名在自身之后的"},
+		{"SelfInfront", "在自身前面的"},
+		{"SelfBehind", "在自身后面的"},
+		{"TeamMember", "队友"},
+		{"Near", "附近的"},
+		{"SelfAndBlockFront", "自身和在前方阻挡的"},
+		{"BlockSide", "侧方阻挡的"},
+		{"NearInfront", "靠近自身前面的"},
+		{"NearBehind", "靠近自身后面的俄"},
+		{"RunningStyle", "指定跑法的"},
+		{"RunningStyleOtherSelf", "其他角色指定跑法的"},
+		{"SelfInfrontTemptation", "SelfInfrontTemptation"},
+		{"SelfBehindTemptation", "SelfBehindTemptation"},
+		{"RunningStyleTemptationOtherSelf", "RunningStyleTemptationOtherSelf"},
+		{"CharaId", "指定角色 ID"},
+		{"ActivateHealSkill", "激活治疗技能"},
 	};
 
 	const std::unordered_map<std::string_view, std::string> guiTChineseTrans{
@@ -143,6 +167,30 @@ namespace GuiTrans {
 		{"DebuffCancel", "消除 Debuff"},
 		{"DebuffAbilityValueMultiply", "Debuff 數值加倍"},
 		{"DebuffAbilityValueMultiplyOtherActivate", "DebuffAbilityValueMultiplyOtherActivate"},  // 不會翻(
+
+		{"Self", "自身"},
+		{"All", "所有角色"},
+		{"AllOtherSelf", "所有除自身以外的"},
+		{"Visible", "可見的"},
+		{"RandomOtherSelf", "隨機除自身以外的"},
+		{"Order", "指定排名"},
+		{"OrderInfront", "排名在自身之前的"},
+		{"OrderBehind", "排名在自身之後的"},
+		{"SelfInfront", "在自身前面的"},
+		{"SelfBehind", "在自身後面的"},
+		{"TeamMember", "隊友"},
+		{"Near", "附近的"},
+		{"SelfAndBlockFront", "自身和在前方阻擋的"},
+		{"BlockSide", "側方阻擋的"},
+		{"NearInfront", "靠近自身前面的"},
+		{"NearBehind", "靠近自身後面的"},
+		{"RunningStyle", "指定跑法的"},
+		{"RunningStyleOtherSelf", "其他角色指定跑法的"},
+		{"SelfInfrontTemptation", "SelfInfrontTemptation"},
+		{"SelfBehindTemptation", "SelfBehindTemptation"},
+		{"RunningStyleTemptationOtherSelf", "RunningStyleTemptationOtherSelf"},
+		{"CharaId", "指定角色 ID"},
+		{"ActivateHealSkill", "激活治療技能"},
 	};
 
 	const char* GetTrans(const char* text) {

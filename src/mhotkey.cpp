@@ -7,6 +7,7 @@
 #include <thread>
 #include <format>
 #include <functional>
+#include <filesystem>
 
 extern void (*testFunction)();
 
@@ -39,11 +40,6 @@ namespace MHotkey{
     void SetKeyCallBack(std::function<void(int, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD)> callbackfun) {
         mKeyBoardCallBack = callbackfun;
     }
-
-    bool check_file_exist(const std::string& name) {
-        struct stat buffer;
-        return (stat(name.c_str(), &buffer) == 0);
-    }
     
     void fopenExternalPlugin(int tlgPort) {
         std::thread([tlgPort](){
@@ -59,13 +55,15 @@ namespace MHotkey{
                 printf("\"externalPlugin\" not found\n");
                 return;
             }
-
-            if (check_file_exist(file_check_name)) {
-                if (check_file_exist(extPluginPath)) {
-                    remove(extPluginPath.c_str());
+            if (std::filesystem::exists(file_check_name)) {
+                try {
+                    if (std::filesystem::exists(extPluginPath)) {
+                        std::filesystem::remove(extPluginPath);
+                    }
+                    std::filesystem::rename(file_check_name, extPluginPath);
                 }
-                if (rename(file_check_name.c_str(), extPluginPath.c_str()) != 0) {
-                    printf("update external plugin failed\n");
+                catch (std::exception& e) {
+                    printf("update external plugin failed: %s\n", e.what());
                 }
             }
 
@@ -94,8 +92,8 @@ namespace MHotkey{
     }
 
     void closeExternalPlugin() {
-        if (check_file_exist("dontcloseext.lock")) {
-            remove("dontcloseext.lock");
+        if (std::filesystem::exists("dontcloseext.lock")) {
+            std::filesystem::remove("dontcloseext.lock");
             return;
         }
         if (openPluginSuccess && pluginPID != -1) {
