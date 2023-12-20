@@ -67,6 +67,39 @@ namespace UmaCamera {
 					a.z * b.x - a.x * b.z,
 					a.x * b.y - a.y * b.x);
 			}
+
+			static float calculateDistance(const Vector3& v1, const Vector3& v2) {
+				float dx = v2.x - v1.x;
+				float dy = v2.y - v1.y;
+				float dz = v2.z - v1.z;
+
+				return std::sqrt(dx * dx + dy * dy + dz * dz);
+			}
+
+			float calculateDistance(const Vector3& v1) {
+				return calculateDistance(*this, v1);
+			}
+
+			// 向指定点移动指定距离
+			void moveAlongVector(const Vector3& b, float distanceToMove) {
+				if (distanceToMove == 0.0f) return;
+				const auto direction = (b - *this).normalized();
+				const auto newPos = *this + (direction * distanceToMove);
+				this->x = newPos.x;
+				this->y = newPos.y;
+				this->z = newPos.z;
+			}
+
+			void moveAlongVectorByPercentage(const CameraCalc::Vector3& targetPoint, float percentage, float maxDistance = 0.2f) {
+				const auto distance = calculateDistance(targetPoint);
+
+				if (distance != 0) {
+					if (distance >= maxDistance) {
+						percentage *= distance / maxDistance * 2.5;
+					}
+					moveAlongVector(targetPoint, distance * percentage);
+				}
+			}
 		};
 
 
@@ -486,13 +519,16 @@ namespace UmaCamera {
 		cameraPos.z = z;
 	}
 
+	void updateFollowCameraPosByTargetPosAndOffset(const Vector3_t& target) {
+		const auto nowAngel = liveFollowCameraOffset.x * M_PI / 180;
+
+		cameraPos.x = target.x - sin(nowAngel) * liveFollowCameraOffset.z;
+		cameraPos.z = target.z - cos(nowAngel) * liveFollowCameraOffset.z;
+		cameraPos.y = target.y + liveFollowCameraOffset.y;
+	}
+	
 	void updateFollowCameraPosByLookatAndOffset() {
-		auto nowAngel = liveFollowCameraOffset.x * M_PI / 180;
-
-		cameraPos.x = cameraLookAt.x - sin(nowAngel) * liveFollowCameraOffset.z;
-		cameraPos.z = cameraLookAt.z - cos(nowAngel) * liveFollowCameraOffset.z;
-		cameraPos.y = cameraLookAt.y + liveFollowCameraOffset.y;
-
+		updateFollowCameraPosByTargetPosAndOffset(cameraLookAt);
 	}
 
 	void SetCameraLookat(float x, float y, float z) {
@@ -504,7 +540,25 @@ namespace UmaCamera {
 		cameraLookAt.x = x;
 		cameraLookAt.y = y;
 		cameraLookAt.z = z;
+	}
 
+	void SetCameraLookatAndPosSmooth(float x, float y, float z) {
+		if (isLiveStart && (liveCameraType == LiveCamera_FOLLOW_UMA)) {
+			x += liveFollowCameraLookatOffset.x;
+			y += liveFollowCameraLookatOffset.y;
+			z += liveFollowCameraLookatOffset.z;
+		}
+
+		CameraCalc::Vector3 newLookAt(cameraLookAt);
+		CameraCalc::Vector3 newPosLookAt(cameraLookAt);
+		const CameraCalc::Vector3 targetPos(x, y, z);
+		newLookAt.moveAlongVectorByPercentage(targetPos, g_live_follow_uma_smooth_lookat_step, 0.6f);
+		newPosLookAt.moveAlongVectorByPercentage(targetPos, g_live_follow_uma_smooth_pos_step, 0.6f);
+		
+		cameraLookAt.x = newLookAt.x;
+		cameraLookAt.y = newLookAt.y;
+		cameraLookAt.z = newLookAt.z;
+		updateFollowCameraPosByTargetPosAndOffset({newPosLookAt.x, newPosLookAt.y, newPosLookAt.z});
 	}
 
 	int GetLiveCameraType() {

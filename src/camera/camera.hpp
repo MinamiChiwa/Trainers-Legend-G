@@ -9,6 +9,8 @@ namespace UmaCamera {
 	Vector3_t getCameraLookat();
 	void SetCameraPos(float x, float y, float z);
 	void SetCameraLookat(float x, float y, float z);
+	void SetCameraLookatAndPosSmooth(float x, float y, float z);
+	void updateFollowCameraPosByTargetPosAndOffset(const Vector3_t& target);
 	void updateFollowCameraPosByLookatAndOffset();
 	void loadGlobalData();
 	void setMoveStep(float value);

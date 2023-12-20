@@ -154,6 +154,27 @@
                     "description": "將 Live 的 FOV 應用到遊戲全域",
                     "type": "boolean",
                     "default": false
+                },
+                "followUmaSmoothCamera": {
+                    "description": "角色追跡模式下平滑移動視角",
+                    "type": "object",
+                    "properties": {
+                        "enable": {
+                            "description": "是否啟用",
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "lookatStep": {
+                            "description": "LookAt 移動步幅",
+                            "type": "number",
+                            "default": 0.01
+                        },
+                        "positionStep": {
+                            "description": "Position 移動步幅",
+                            "type": "number",
+                            "default": 0.001
+                        }
+                    }
                 }
             },
             "additionalProperties": false

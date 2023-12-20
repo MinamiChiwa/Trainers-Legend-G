@@ -32,7 +32,12 @@
         "moveStep": 0.1,
         "enableLiveDofController": false,
         "close_all_blur": false,
-        "setLiveFovAsGlobal": false
+        "setLiveFovAsGlobal": false,
+        "followUmaSmoothCamera": {
+            "enable": false,
+            "lookatStep": 0.01,
+            "positionStep": 0.001
+        }
     },
     "homeSettings": {
         "free_camera": false

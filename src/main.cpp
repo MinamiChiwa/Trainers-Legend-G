@@ -50,6 +50,9 @@ float g_virtual_resolution_multiple = 1.0f;
 int g_vsync_count = 0;
 
 bool g_live_free_camera = false;
+bool g_enable_live_follow_uma_smooth = false;
+float g_live_follow_uma_smooth_lookat_step = 0.01f;
+float g_live_follow_uma_smooth_pos_step = 0.001f;
 bool g_live_force_changeVisibility_false = false;
 bool g_live_close_all_blur = false;
 float g_live_move_step = 0.2;
@@ -590,6 +593,13 @@ namespace
 				if (document["live"].HasMember("setLiveFovAsGlobal")) {
 					g_set_live_fov_as_global = document["live"]["setLiveFovAsGlobal"].GetBool();
 					UmaCamera::setLiveStart(g_set_live_fov_as_global);
+				}
+
+				if (document["live"].HasMember("followUmaSmoothCamera")) {
+					auto& followUmaSmoothCamera = document["live"]["followUmaSmoothCamera"];
+					g_enable_live_follow_uma_smooth = followUmaSmoothCamera["enable"].GetBool();
+					g_live_follow_uma_smooth_lookat_step = followUmaSmoothCamera["lookatStep"].GetFloat();
+					g_live_follow_uma_smooth_pos_step = followUmaSmoothCamera["positionStep"].GetFloat();
 				}
 			}
 
