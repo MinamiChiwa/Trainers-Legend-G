@@ -2273,9 +2273,14 @@ namespace
 		
 		if (isFollowUma) {
 			// printf("GetCharacterWorldPos: %d (%f, %f, %f)\n", posFlag, ret->x, ret->y, ret->z);
-			UmaCamera::SetCameraLookat(ret->x, ret->y, ret->z);
-			// UmaCamera::SetCameraPos(ret->x, ret->y, ret->z + 2.0f, true);
-			UmaCamera::updateFollowCameraPosByLookatAndOffset();
+			if (g_enable_live_follow_uma_smooth) {
+				UmaCamera::SetCameraLookatAndPosSmooth(ret->x, ret->y, ret->z);
+			}
+			else {
+				UmaCamera::SetCameraLookat(ret->x, ret->y, ret->z);
+				UmaCamera::updateFollowCameraPosByLookatAndOffset();
+			}
+
 		}
 
 		return ret;

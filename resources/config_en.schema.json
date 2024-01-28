@@ -154,6 +154,27 @@
                     "description": "Set live FOV to global",
                     "type": "boolean",
                     "default": false
+                },
+                "followUmaSmoothCamera": {
+                    "description": "Smooth move camera in follow umamusume mode",
+                    "type": "object",
+                    "properties": {
+                        "enable": {
+                            "description": "Enable",
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "lookatStep": {
+                            "description": "LookAt step",
+                            "type": "number",
+                            "default": 0.01
+                        },
+                        "positionStep": {
+                            "description": "Position step",
+                            "type": "number",
+                            "default": 0.001
+                        }
+                    }
                 }
             },
             "additionalProperties": false
