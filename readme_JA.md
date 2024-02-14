@@ -13,7 +13,7 @@
 
 # 始めに
 
-- このプラグインは、ウマ娘 プリティーダービー(DMM版)を中国のトレーナーにより良い体験を提供する事ができます。[繁体字中国語](https://github.com/yotv2000tw/Trainers-Legend-G-TRANS-zh-tw)のフォークもあります。
+- このプラグインは、ウマ娘 プリティーダービー(DMM版)を中国や様々の国のトレーナー達により良いエクスペリエンスで提供します。[繁体字中国語](https://github.com/yotv2000tw/Trainers-Legend-G-TRANS-zh-tw)のフォークもあります。
 - このプラグインは、@GEEKiDoS氏の[`umamusume-localify`](https://github.com/GEEKiDoS/umamusume-localify)からフォークをしています。
 
 # お知らせ
