@@ -398,9 +398,7 @@
                 "replaceUniversal": {
                     "description": "共通な衣装も置換します。",
                     "type": "boolean",
-                    "default
-
-": true
+                    "default": true
                 },
                 "data": {
                     "description": "一般的なウマ娘の置換設定",
