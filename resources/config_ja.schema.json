@@ -1,6 +1,6 @@
 {
     "title": "Trainers-Legend-G Config",
-    "description": "ウマ娘 プリティーダービー翻訳プラグインの構成",
+    "description": "ウマ娘 プリティーダービー翻訳プラグインの設定",
     "type": "object",
     "properties": {
         "enableConsole": {
@@ -35,7 +35,7 @@
             "default": 1.0
         },
         "enableVSync": {
-            "description": "垂直同期を有効化します (maxFpsの設定が上書きされます)",
+            "description": "垂直同期を有効化します。 (maxFpsの設定が上書きされます)",
             "type": "boolean"
         },
         "unlockSize": {
@@ -43,7 +43,7 @@
             "type": "boolean"
         },
         "aspect_ratio_new": {
-            "description": "UIのアスペクト比を設定します。既定は16:9。\n 値を-1に設定すると、ウマ娘のUIが画面のアスペクト比に適用されます。\n UIが完全に表示されない場合は、以下の'カスタムUIの大きさ'で調整ができます。\n 変更後はウマ娘の再起動が必要です。",
+            "description": "UIのアスペクト比を設定します。既定のアスペクト比は、16:9です。\n 値を-1に設定すると、ウマ娘のUIが画面のアスペクト比に適用されます。\n UIが完全に表示されない場合は、以下の'カスタムUIの大きさ'で調整ができます。\n 変更後はウマ娘の再起動が必要です。",
             "type": "object",
             "properties": {
                 "w": {
@@ -57,14 +57,14 @@
                     "default": 9.0
                 },
                 "forceLandscape": {
-                    "description": "強制横画面モード",
+                    "description": "強制的に横画面にします。",
                     "type": "boolean",
                     "default": false
                 }
             }
         },
         "autoFullscreen": {
-            "description": "画面の比率が対応する場合、自動的にフルスクリーンに設定されます",
+            "description": "画面の比率が対応する場合、自動的にフルスクリーンに設定されます。",
             "type": "boolean"
         },
         "fullscreenBlockMinimization": {
@@ -103,7 +103,7 @@
             "type": "integer"
         },
         "customFontStyle": {
-            "description": "フォントのスタイル、0は通常、1は太字、2は斜体、3は太字斜体。",
+            "description": "フォントのスタイル、0は通常、1は太字、2は斜体、3は太字斜体になります。",
             "type": "integer",
             "minimum": 0,
             "maximum": 3
@@ -146,7 +146,7 @@
                     "type": "boolean"
                 },
                 "enableLiveDofController": {
-                    "description": "ライブパラメーターコンソールを有効化します。 (ライブ設定ボタンをクリックで有効化)",
+                    "description": "ライブパラメーターコンソールを有効化します。 (ライブ設定ボタンをクリックで有効化します)",
                     "type": "boolean",
                     "default": false
                 },
@@ -189,7 +189,7 @@
                     "default": false
                 },
                 "homeWalkMotionCharaId": {
-                    "description": "ホームの歩行モーションの変更。\n (4桁の文字IDを入力します、-1は未設定を意味します)",
+                    "description": "ホームの歩行モーションの変更をします。\n (4桁のウマ娘のIDを入力します、-1は未設定を意味します)",
                     "type": "integer",
                     "default": -1
                 }
@@ -240,7 +240,7 @@
                     "type": "object",
                     "properties": {
                         "distance": {
-                            "description": "ターゲットのウマ娘からの距離",
+                            "description": "ターゲット先となるウマ娘からの距離",
                             "type": "数値"
                         },
                         "x": {
@@ -274,7 +274,7 @@
                     "type": "string"
                 },
                 "path": {
-                    "description": "プラグインのパス",
+                    "description": "プラグインのパスを指定します。",
                     "type": "string"
                 },
                 "openExternalPluginOnLoad": {
@@ -285,7 +285,7 @@
             "additionalProperties": false
         },
         "httpServerPort": {
-            "description": "External Pluginとのやり取りに使用されるHTTPサーバーポートを設定します。",
+            "description": "External Pluginとのやり取りに使用するHTTPサーバーポートを設定します。",
             "type": "integer"
         },
         "autoChangeLineBreakMode": {
@@ -365,21 +365,21 @@
                     "type": "boolean"
                 },
                 "data": {
-                    "description": "ホームのウマ娘の置換の設定",
+                    "description": "ホームのウマ娘の置換設定",
                     "type": "array",
                     "items": {
                         "type": "object",
                         "properties": {
                             "origCharId": {
-                                "description": "オリジナルのウマ娘のID、例:1046",
+                                "description": "置換先となるウマ娘のID、例:1046と入力でスマートファルコン。",
                                 "type": "integer"
                             },
                             "newChrId": {
-                                "description": "新しいウマ娘のID、例:1046",
+                                "description": "置換をするウマ娘のID、例:1046と入力でスマートファルコン。",
                                 "type": "integer"
                             },
                             "newClothId": {
-                                "description": "新しいウマ娘の衣装ID、例:104601",
+                                "description": "置換をするウマ娘の衣装のID、例:104601と入力でスマートファルコンの勝負服。",
                                 "type": "integer"
                             }
                         }
@@ -388,11 +388,11 @@
             }
         },
         "replaceGlobalChar": {
-            "description": "一般的なウマ娘の置換をします。",
+            "description": "全般的なウマ娘の置換をします。",
             "type": "object",
             "properties": {
                 "enable": {
-                    "description": "一般的なウマ娘の置換を有効化します。",
+                    "description": "全般的なウマ娘の置換を有効化します。",
                     "type": "boolean"
                 },
                 "replaceUniversal": {
@@ -401,21 +401,21 @@
                     "default": true
                 },
                 "data": {
-                    "description": "一般的なウマ娘の置換設定をします。",
+                    "description": "全般的なウマ娘の置換設定をします。",
                     "type": "array",
                     "items": {
                         "type": "object",
                         "properties": {
                             "origCharId": {
-                                "description": "オリジナルなウマ娘のID、例:1046",
+                                "description": "置換先となるウマ娘のID、例:1046と入力でスマートファルコン。",
                                 "type": "integer"
                             },
                             "newChrId": {
-                                "description": "新しいウマ娘のID、例:1046",
+                                "description": "置換をするウマ娘のID、例:1046と入力でスマートファルコン。",
                                 "type": "integer"
                             },
                             "newClothId": {
-                                "description": "新しいウマ娘の衣装ID、例:104601",
+                                "description": "置換をするウマ娘の衣装のID、例:104601と入力でスマートファルコンの勝負服。",
                                 "type": "integer"
                             },
                             "replaceMini": {
@@ -445,7 +445,7 @@
                     "default": false
                 },
                 "customPersistentDataPath": {
-                    "description": "カスタムデータパスを指定します。\n(既定は C:/Users/{username}/AppData/LocalLow/Cygames/umamusume)",
+                    "description": "カスタムデータパスを指定します。\n(既定は、C:/Users/{ユーザー名}/AppData/LocalLow/Cygames/umamusume に配置)",
                     "type": "string"
                 }
             }
