@@ -4,7 +4,7 @@
     "type": "object",
     "properties": {
         "enableConsole": {
-            "description": "デバッグ出力用のコンソールを有効化",
+            "description": "デバッグ出力用のコンソールを有効化します。",
             "type": "boolean"
         },
         "enableLogger": {
@@ -68,12 +68,12 @@
             "type": "boolean"
         },
         "fullscreenBlockMinimization": {
-            "description": "フルスクリーンモードの最小化を防止",
+            "description": "フルスクリーンモードの最小化を防止します。",
             "type": "boolean",
             "default": true
         },
         "uiScale": {
-            "description": "カスタムUIの大きさ",
+            "description": "カスタムUIの大きさを変更します。",
             "type": "数値"
         },
         "readRequestPack": {
@@ -129,7 +129,7 @@
                     "type": "boolean"
                 },
                 "mouseSpeed": {
-                    "description": "マウスカメラの移動速度",
+                    "description": "マウスカメラの移動速度を変更します。",
                     "type": "数値",
                     "default": 100.0
                 },
@@ -138,7 +138,7 @@
                     "type": "boolean"
                 },
                 "moveStep": {
-                    "description": "カメラの移動ステップ",
+                    "description": "カメラの移動ステップを変更します。",
                     "type": "数値"
                 },
                 "close_all_blur": {
@@ -146,7 +146,7 @@
                     "type": "boolean"
                 },
                 "enableLiveDofController": {
-                    "description": "ライブパラメーターコンソールを有効化します (ライブ設定ボタンをクリックで有効化)",
+                    "description": "ライブパラメーターコンソールを有効化します。 (ライブ設定ボタンをクリックで有効化)",
                     "type": "boolean",
                     "default": false
                 },
@@ -160,17 +160,17 @@
                     "type": "object",
                     "properties": {
                         "enable": {
-                            "description": "有効化させるか否や",
+                            "description": "有効化させるか否やを設定します。",
                             "type": "boolean",
                             "default": false
                         },
                         "lookatStep": {
-                            "description": "ルックアットの移動ステップ",
+                            "description": "ルックアットの移動ステップを設定します。",
                             "type": "数値",
                             "default": 0.01
                         },
                         "positionStep": {
-                            "description": "位置の移動ステップ",
+                            "description": "位置の移動ステップを設定します。",
                             "type": "数値",
                             "default": 0.001
                         }
@@ -184,7 +184,7 @@
             "type": "object",
             "properties": {
                 "free_camera": {
-                    "description": "ホームでのフリーカメラを有効化をします。",
+                    "description": "ホームでのフリーカメラを有効化します。",
                     "type": "boolean",
                     "default": false
                 },
@@ -196,7 +196,7 @@
             }
         },
         "raceInfoTab": {
-            "description": "リアルタイムのレース情報の表示",
+            "description": "リアルタイムのレース情報を表示します。",
             "type": "object",
             "properties": {
                 "enableRaceInfoTab": {
@@ -220,7 +220,7 @@
                     "type": "boolean"
                 },
                 "moveStep": {
-                    "description": "カメラの移動ステップ",
+                    "description": "カメラの移動ステップを設定します。",
                     "type": "数値"
                 },
                 "defaultFOV": {
@@ -261,7 +261,7 @@
             "additionalProperties": false
         },
         "cutin_first_person": {
-            "description": "カットインを一人称視点 (Fキーで切り替え)",
+            "description": "カットインを一人称視点に変更します。 (Fキーで切り替え)",
             "type": "boolean",
             "default": false
         },
@@ -270,30 +270,30 @@
             "type": "object",
             "properties": {
                 "hotkey": {
-                    "description": "スタートアップホットキー",
+                    "description": "External Pluginを開くホットキーの設定をします。",
                     "type": "string"
                 },
                 "path": {
-                    "description": "Plugin path",
+                    "description": "プラグインのパス",
                     "type": "string"
                 },
                 "openExternalPluginOnLoad": {
-                    "description": "ウマ娘の開始時にExternal Pluginを自動で開きます。",
+                    "description": "ウマ娘の開始時にExternal Pluginを自動で開くようにします。",
                     "type": "boolean"
                 }
             },
             "additionalProperties": false
         },
         "httpServerPort": {
-            "description": "External Pluginとのやり取りに使用されるHTTPサーバーポート",
+            "description": "External Pluginとのやり取りに使用されるHTTPサーバーポートを設定します。",
             "type": "integer"
         },
         "autoChangeLineBreakMode": {
-            "description": "画面の方向に応じて'Ignore Line Breaks'モードを自動的に切り替えます。",
+            "description": "画面の方向に応じて'Ignore Line Break'モードを自動的に切り替えます。",
             "type": "boolean"
         },
         "static_dict": {
-            "description": "静的辞書ファイルのパス",
+            "description": "静的辞書ファイルのパスを指定します。",
             "type": "string"
         },
         "no_static_dict_cache": {
@@ -301,23 +301,23 @@
             "type": "boolean"
         },
         "stories_path": {
-            "description": "ストーリーファイルのパス",
+            "description": "ストーリーファイルのパスを指定します。",
             "type": "string"
         },
         "text_data_dict": {
-            "description": "テキストデータ辞書のファイルパス",
+            "description": "テキストデータ辞書のファイルパスを指定します。",
             "type": "string"
         },
         "character_system_text_dict": {
-            "description": "キャラクターシステムテキスト辞書のファイルパス",
+            "description": "キャラクターシステムテキスト辞書のファイルパスを指定します。",
             "type": "string"
         },
         "race_jikkyo_comment_dict": {
-            "description": "レース実況、解説辞書のファイルパス",
+            "description": "レース実況、解説辞書のファイルパスを指定します。",
             "type": "string"
         },
         "race_jikkyo_message_dict": {
-            "description": "レース実況情報辞書のファイルパス",
+            "description": "レース実況情報辞書のファイルパスを指定します。",
             "type": "string"
         },
         "autoUpdate": {
@@ -329,18 +329,18 @@
                     "type": "string"
                 },
                 "path": {
-                    "description": "自動アップデート用アドレスの取得先",
+                    "description": "自動アップデート用アドレスの取得先を設定します。",
                     "type": "string"
                 }
             },
             "additionalProperties": false
         },
         "enableBuiltinAutoUpdate": {
-            "description": "内蔵の自動アップデート機能を有効化します (バグがあるかもしれません)",
+            "description": "内蔵の自動アップデート機能を有効化します。 (バグがあるかもしれません)",
             "type": "boolean"
         },
         "resolution_start": {
-            "description": "起動時に解像度を設定します",
+            "description": "起動時に解像度を変更します。",
             "type": "array",
             "items": {
                 "type": "integer",
@@ -357,7 +357,7 @@
             }
         },
         "replaceHomeStandChar": {
-            "description": "ホームのウマ娘を置換",
+            "description": "ホームのウマ娘を置換をします。",
             "type": "object",
             "properties": {
                 "enable": {
@@ -388,7 +388,7 @@
             }
         },
         "replaceGlobalChar": {
-            "description": "一般的なウマ娘の置換",
+            "description": "一般的なウマ娘の置換をします。",
             "type": "object",
             "properties": {
                 "enable": {
@@ -401,7 +401,7 @@
                     "default": true
                 },
                 "data": {
-                    "description": "一般的なウマ娘の置換設定",
+                    "description": "一般的なウマ娘の置換設定をします。",
                     "type": "array",
                     "items": {
                         "type": "object",
@@ -419,7 +419,7 @@
                                 "type": "integer"
                             },
                             "replaceMini": {
-                                "description": "ミニキャラを置換",
+                                "description": "ミニキャラを置換します。",
                                 "type": "boolean",
                                 "default": false
                             }
@@ -429,14 +429,14 @@
             }
         },
         "loadDll": {
-            "description": "その他のDLLプラグインを読み込み",
+            "description": "その他のDLLプラグインを読み込みます。",
             "type": "array",
             "items": {
                 "type": "string"
             }
         },
         "customPath": {
-            "description": "Custom paths",
+            "description": "カスタムデータパスを設定します。",
             "type": "object",
             "properties": {
                 "enableCustomPersistentDataPath": {
@@ -445,19 +445,19 @@
                     "default": false
                 },
                 "customPersistentDataPath": {
-                    "description": "カスタムデータパス\n(既定は C:/Users/{username}/AppData/LocalLow/Cygames/umamusume)",
+                    "description": "カスタムデータパスを指定します。\n(既定は C:/Users/{username}/AppData/LocalLow/Cygames/umamusume)",
                     "type": "string"
                 }
             }
         },
         "uploadGachaHistory": {
-            "description": "ガチャの履歴のアップロード。\n 'Gacha Records'ボタンをクリックでアップロードします。\n ガチャの履歴は、uma.gacha.chinosk6.cnから確認ができます。",
+            "description": "ガチャの履歴の情報をアップロードします。\n 'Gacha Records'ボタンをクリックでアップロードします。\n ガチャの履歴は、uma.gacha.chinosk6.cnから確認ができます。",
             "type": "boolean",
             "default": false
         }
     },
     "additionalProperties": false,
-    "required": [
+    "必須項目の一覧": [
         "enableConsole",
         "enableLogger",
         "dumpStaticEntries",
