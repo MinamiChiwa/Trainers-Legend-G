@@ -357,7 +357,7 @@
             }
         },
         "replaceHomeStandChar": {
-            "description": "ホームのウマ娘を置換をします。",
+            "description": "ホームのウマ娘を置換します。",
             "type": "object",
             "properties": {
                 "enable": {
@@ -375,11 +375,11 @@
                                 "type": "integer"
                             },
                             "newChrId": {
-                                "description": "置換をするウマ娘のID、例:1046と入力でスマートファルコン。",
+                                "description": "置換するウマ娘のID、例:1046と入力でスマートファルコン。",
                                 "type": "integer"
                             },
                             "newClothId": {
-                                "description": "置換をするウマ娘の衣装のID、例:104601と入力でスマートファルコンの勝負服。",
+                                "description": "置換するウマ娘の衣装のID、例:104601と入力でスマートファルコンの勝負服。",
                                 "type": "integer"
                             }
                         }
@@ -411,11 +411,11 @@
                                 "type": "integer"
                             },
                             "newChrId": {
-                                "description": "置換をするウマ娘のID、例:1046と入力でスマートファルコン。",
+                                "description": "置換するウマ娘のID、例:1046と入力でスマートファルコン。",
                                 "type": "integer"
                             },
                             "newClothId": {
-                                "description": "置換をするウマ娘の衣装のID、例:104601と入力でスマートファルコンの勝負服。",
+                                "description": "置換するウマ娘の衣装のID、例:104601と入力でスマートファルコンの勝負服。",
                                 "type": "integer"
                             },
                             "replaceMini": {
