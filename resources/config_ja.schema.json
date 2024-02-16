@@ -388,11 +388,11 @@
             }
         },
         "replaceGlobalChar": {
-            "description": "全般的なウマ娘の置換をします。",
+            "description": "一般的なウマ娘の置換をします。",
             "type": "object",
             "properties": {
                 "enable": {
-                    "description": "全般的なウマ娘の置換を有効化します。",
+                    "description": "一般的なウマ娘の置換を有効化します。",
                     "type": "boolean"
                 },
                 "replaceUniversal": {
@@ -401,7 +401,7 @@
                     "default": true
                 },
                 "data": {
-                    "description": "全般的なウマ娘の置換設定をします。",
+                    "description": "一般的なウマ娘の置換設定をします。",
                     "type": "array",
                     "items": {
                         "type": "object",
