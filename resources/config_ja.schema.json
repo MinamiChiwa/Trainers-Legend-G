@@ -1,0 +1,482 @@
+{
+    "title": "Trainers-Legend-G Config",
+    "description": "ウマ娘 プリティーダービー翻訳プラグインの設定",
+    "type": "object",
+    "properties": {
+        "enableConsole": {
+            "description": "デバッグ出力用のコンソールを有効化します。",
+            "type": "boolean"
+        },
+        "enableLogger": {
+            "description": "カバーされていないテキストを`dump.txt`で出力します。",
+            "type": "boolean"
+        },
+        "dumpStaticEntries": {
+            "description": "上記のオプションが有効化されている必要があります。起動時に`dump.txt`にハードコードされたテキストエントリを出力します。",
+            "type": "boolean"
+        },
+        "maxFps": {
+            "description": "フレームレートの制限 (-1 = オリジナル/0 = 無制限/>0 = 特定のフレームレートでロック)",
+            "type": "integer",
+            "minimum": -1
+        },
+        "better60FPS": {
+            "description": "60 FPSの最適化を有効化します。",
+            "type": "boolean",
+            "default": false
+        },
+        "highQuality": {
+            "description": "高品質モード (MSAA x8 アンチエイリアシング、グラフィック品質レベルを最大にロック)",
+            "type": "boolean"
+        },
+        "virtual_resolution_multiple": {
+            "description": "3Dレンダリングの解像度倍率、オリジナルは1.0で1080pの解像度でのエイリアシングの問題を大幅に軽減させます。\n 2D画像を使用した一部のシーンの背景が小さく表示される場合があります。\n 推奨値:4K未満:2.0、4K以上:1.5",
+            "type": "数値",
+            "default": 1.0
+        },
+        "enableVSync": {
+            "description": "垂直同期を有効化します。 (maxFpsの設定が上書きされます)",
+            "type": "boolean"
+        },
+        "unlockSize": {
+            "description": "`1080p`以上の解像度を使用できるようにします。",
+            "type": "boolean"
+        },
+        "aspect_ratio_new": {
+            "description": "UIのアスペクト比を設定します。既定のアスペクト比は、16:9です。\n 値を-1に設定すると、ウマ娘のUIが画面のアスペクト比に適用されます。\n UIが完全に表示されない場合は、以下の'カスタムUIの大きさ'で調整ができます。\n 変更後はウマ娘の再起動が必要です。",
+            "type": "object",
+            "properties": {
+                "w": {
+                    "description": "長辺",
+                    "type": "数値",
+                    "default": 16.0
+                },
+                "h": {
+                    "description": "短辺",
+                    "type": "数値",
+                    "default": 9.0
+                },
+                "forceLandscape": {
+                    "description": "強制的に横画面にします。",
+                    "type": "boolean",
+                    "default": false
+                }
+            }
+        },
+        "autoFullscreen": {
+            "description": "画面の比率が対応する場合、自動的にフルスクリーンに設定されます。",
+            "type": "boolean"
+        },
+        "fullscreenBlockMinimization": {
+            "description": "フルスクリーンモードの最小化を防止します。",
+            "type": "boolean",
+            "default": true
+        },
+        "uiScale": {
+            "description": "カスタムUIの大きさを変更します。",
+            "type": "数値"
+        },
+        "readRequestPack": {
+            "description": "クライアントから送信されたパッケージ情報を読み込みます。この機能を有効化するとコマンドライン上で'reboot'と入力でウマ娘を高速で再起動できます。",
+            "type": "boolean"
+        },
+        "extraAssetBundlePaths": {
+            "description": "画像やその他リソースを置換するパッケージのパス (Unityのパッケージ、通常はこの項目を変更しないでください)",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "replaceFont": {
+            "description": "フォントを置換します。`true`はシステムの既定のフォントまたはカスタムフォントに置換、`false`は、通常のウマ娘のフォントを使用します。",
+            "type": "boolean"
+        },
+        "customFontPath": {
+            "description": "`extraAssetBundlePath`で設定されているリソースパッケージ内のカスタムフォントのパスを指定します。",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "customFontSizeOffset": {
+            "description": "フォントのサイズ、-4で4減少する事を意味します",
+            "type": "integer"
+        },
+        "customFontStyle": {
+            "description": "フォントのスタイル、0は通常、1は太字、2は斜体、3は太字斜体になります。",
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 3
+        },
+        "customFontLinespacing": {
+            "description": "テキストの行間、基準値は1.0です。",
+            "type": "number"
+        },
+        "replaceAssets": {
+            "description": "画像やその他のリソースの置換を有効化します。",
+            "type": "boolean"
+        },
+        "assetLoadLog": {
+            "description": "デバッグ時にゲームリソースの呼び出し状況を出力します。",
+            "type": "boolean"
+        },
+        "live": {
+            "description": "ライブの設定",
+            "type": "object",
+            "properties": {
+                "free_camera": {
+                    "description": "フリーカメラを有効化します。",
+                    "type": "boolean"
+                },
+                "mouseSpeed": {
+                    "description": "マウスカメラの移動速度を変更します。",
+                    "type": "数値",
+                    "default": 100.0
+                },
+                "force_changeVisibility_false": {
+                    "description": "文字の表示を変更できないようにします。",
+                    "type": "boolean"
+                },
+                "moveStep": {
+                    "description": "カメラの移動ステップを変更します。",
+                    "type": "数値"
+                },
+                "close_all_blur": {
+                    "description": "すべてのぼかしレンズをオフにします。",
+                    "type": "boolean"
+                },
+                "enableLiveDofController": {
+                    "description": "ライブパラメーターコンソールを有効化します。 (ライブ設定ボタンをクリックで有効化します)",
+                    "type": "boolean",
+                    "default": false
+                },
+                "setLiveFovAsGlobal": {
+                    "description": "ライブFOVをグローバルでゲームに適用します。",
+                    "type": "boolean",
+                    "default": false
+                },
+                "followUmaSmoothCamera": {
+                    "description": "キャラクタートラッキングモードでカメラをスムーズに動かします。",
+                    "type": "object",
+                    "properties": {
+                        "enable": {
+                            "description": "有効化させるか否やを設定します。",
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "lookatStep": {
+                            "description": "ルックアットの移動ステップを設定します。",
+                            "type": "数値",
+                            "default": 0.01
+                        },
+                        "positionStep": {
+                            "description": "位置の移動ステップを設定します。",
+                            "type": "数値",
+                            "default": 0.001
+                        }
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "homeSettings": {
+            "description": "ホームの設定",
+            "type": "object",
+            "properties": {
+                "free_camera": {
+                    "description": "ホームでのフリーカメラを有効化します。",
+                    "type": "boolean",
+                    "default": false
+                },
+                "homeWalkMotionCharaId": {
+                    "description": "ホームの歩行モーションの変更をします。\n (4桁のウマ娘のIDを入力します、-1は未設定を意味します)",
+                    "type": "integer",
+                    "default": -1
+                }
+            }
+        },
+        "raceInfoTab": {
+            "description": "リアルタイムのレース情報を表示します。",
+            "type": "object",
+            "properties": {
+                "enableRaceInfoTab": {
+                    "description": "リアルタイムのレース情報表示ウィンドウを有効化します。",
+                    "type": "boolean",
+                    "default": false
+                },
+                "raceInfoTabAttachToGame": {
+                    "description": "個別のポップアップからウマ娘のウィンドウをアタッチさせます。",
+                    "type": "boolean",
+                    "default": false
+                }
+            }
+        },
+        "race_camera": {
+            "description": "レースカメラの設定",
+            "type": "object",
+            "properties": {
+                "free_camera": {
+                    "description": "フリーカメラを有効化します。",
+                    "type": "boolean"
+                },
+                "moveStep": {
+                    "description": "カメラの移動ステップを設定します。",
+                    "type": "数値"
+                },
+                "defaultFOV": {
+                    "description": "既定のFOV",
+                    "type": "数値"
+                },
+                "freecam_lookat_target": {
+                    "description": "カメラでウマ娘の動きを追跡させます。",
+                    "type": "boolean"
+                },
+                "freecam_follow_target": {
+                    "description": "ウマ娘と共にカメラを動かします。",
+                    "type": "boolean"
+                },
+                "follow_offset": {
+                    "description": "ウマ娘のパラメーターでカメラを動かします。",
+                    "type": "object",
+                    "properties": {
+                        "distance": {
+                            "description": "ターゲット先となるウマ娘からの距離",
+                            "type": "数値"
+                        },
+                        "x": {
+                            "description": "X軸のオフセット",
+                            "type": "数値"
+                        },
+                        "y": {
+                            "description": "Y軸のオフセット",
+                            "type": "数値"
+                        },
+                        "z": {
+                            "description": "Z軸のオフセット",
+                            "type": "数値"
+                        }
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "cutin_first_person": {
+            "description": "カットインを一人称視点に変更します。 (Fキーで切り替え)",
+            "type": "boolean",
+            "default": false
+        },
+        "externalPlugin": {
+            "description": "External Pluginの設定",
+            "type": "object",
+            "properties": {
+                "hotkey": {
+                    "description": "External Pluginを開くホットキーの設定をします。",
+                    "type": "string"
+                },
+                "path": {
+                    "description": "プラグインのパスを指定します。",
+                    "type": "string"
+                },
+                "openExternalPluginOnLoad": {
+                    "description": "ウマ娘の開始時にExternal Pluginを自動で開くようにします。",
+                    "type": "boolean"
+                }
+            },
+            "additionalProperties": false
+        },
+        "httpServerPort": {
+            "description": "External Pluginとのやり取りに使用するHTTPサーバーポートを設定します。",
+            "type": "integer"
+        },
+        "autoChangeLineBreakMode": {
+            "description": "画面の方向に応じて'Ignore Line Break'モードを自動的に切り替えます。",
+            "type": "boolean"
+        },
+        "static_dict": {
+            "description": "静的辞書ファイルのパスを指定します。",
+            "type": "string"
+        },
+        "no_static_dict_cache": {
+            "description": "静的辞書ファイルのキャッシュを無効化します",
+            "type": "boolean"
+        },
+        "stories_path": {
+            "description": "ストーリーファイルのパスを指定します。",
+            "type": "string"
+        },
+        "text_data_dict": {
+            "description": "テキストデータ辞書のファイルパスを指定します。",
+            "type": "string"
+        },
+        "character_system_text_dict": {
+            "description": "キャラクターシステムテキスト辞書のファイルパスを指定します。",
+            "type": "string"
+        },
+        "race_jikkyo_comment_dict": {
+            "description": "レース実況、解説辞書のファイルパスを指定します。",
+            "type": "string"
+        },
+        "race_jikkyo_message_dict": {
+            "description": "レース実況情報辞書のファイルパスを指定します。",
+            "type": "string"
+        },
+        "autoUpdate": {
+            "description": "自動アップデート",
+            "type": "object",
+            "properties": {
+                "source": {
+                    "description": "リポジトリソースから自動アップデートをします。",
+                    "type": "string"
+                },
+                "path": {
+                    "description": "自動アップデート用アドレスの取得先を設定します。",
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false
+        },
+        "enableBuiltinAutoUpdate": {
+            "description": "内蔵の自動アップデート機能を有効化します。 (バグがあるかもしれません)",
+            "type": "boolean"
+        },
+        "resolution_start": {
+            "description": "起動時に解像度を変更します。",
+            "type": "array",
+            "items": {
+                "type": "integer",
+                "minimum": -1
+            },
+            "minItems": 2,
+            "maxItems": 2
+        },
+        "dicts": {
+            "description": "読み込む辞書のリスト(相対/絶対パス)の該当する辞書抽出コマンドを削除する事ができます。例えば、他の翻訳に影響を与えずにゲーム内のキャラクター名を日本語で表示する場合は、「localized_data/Umaname.json」を削除します。",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "replaceHomeStandChar": {
+            "description": "ホームのウマ娘を置換します。",
+            "type": "object",
+            "properties": {
+                "enable": {
+                    "description": "ホームのウマ娘の置換を有効化します。",
+                    "type": "boolean"
+                },
+                "data": {
+                    "description": "ホームのウマ娘の置換設定",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "origCharId": {
+                                "description": "置換先となるウマ娘のID、例:1046と入力でスマートファルコン。",
+                                "type": "integer"
+                            },
+                            "newChrId": {
+                                "description": "置換するウマ娘のID、例:1046と入力でスマートファルコン。",
+                                "type": "integer"
+                            },
+                            "newClothId": {
+                                "description": "置換するウマ娘の衣装のID、例:104601と入力でスマートファルコンの勝負服。",
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "replaceGlobalChar": {
+            "description": "一般的なウマ娘の置換をします。",
+            "type": "object",
+            "properties": {
+                "enable": {
+                    "description": "一般的なウマ娘の置換を有効化します。",
+                    "type": "boolean"
+                },
+                "replaceUniversal": {
+                    "description": "共通な衣装も置換します。",
+                    "type": "boolean",
+                    "default": true
+                },
+                "data": {
+                    "description": "一般的なウマ娘の置換設定をします。",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "origCharId": {
+                                "description": "置換先となるウマ娘のID、例:1046と入力でスマートファルコン。",
+                                "type": "integer"
+                            },
+                            "newChrId": {
+                                "description": "置換するウマ娘のID、例:1046と入力でスマートファルコン。",
+                                "type": "integer"
+                            },
+                            "newClothId": {
+                                "description": "置換するウマ娘の衣装のID、例:104601と入力でスマートファルコンの勝負服。",
+                                "type": "integer"
+                            },
+                            "replaceMini": {
+                                "description": "ミニキャラを置換します。",
+                                "type": "boolean",
+                                "default": false
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "loadDll": {
+            "description": "その他のDLLプラグインを読み込みます。",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "customPath": {
+            "description": "カスタムデータパスを設定します。",
+            "type": "object",
+            "properties": {
+                "enableCustomPersistentDataPath": {
+                    "description": "カスタムデータパスを有効化します。",
+                    "type": "boolean",
+                    "default": false
+                },
+                "customPersistentDataPath": {
+                    "description": "カスタムデータパスを指定します。\n(既定は、C:/Users/{ユーザー名}/AppData/LocalLow/Cygames/umamusume に配置)",
+                    "type": "string"
+                }
+            }
+        },
+        "uploadGachaHistory": {
+            "description": "ガチャの履歴の情報をアップロードします。\n 'Gacha Records'ボタンをクリックでアップロードします。\n ガチャの履歴は、uma.gacha.chinosk6.cnから確認ができます。",
+            "type": "boolean",
+            "default": false
+        }
+    },
+    "additionalProperties": false,
+    "必須項目の一覧": [
+        "enableConsole",
+        "enableLogger",
+        "dumpStaticEntries",
+        "maxFps",
+        "unlockSize",
+        "uiScale",
+        "extraAssetBundlePaths",
+        "replaceFont",
+        "customFontPath",
+        "customFontSizeOffset",
+        "customFontStyle",
+        "customFontLinespacing",
+        "replaceAssets",
+        "assetLoadLog",
+        "autoFullscreen",
+        "autoChangeLineBreakMode",
+        "resolution_start",
+        "aspect_ratio_new",
+        "dicts",
+        "static_dict"
+    ]
+}
