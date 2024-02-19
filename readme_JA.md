@@ -121,7 +121,7 @@
             }
         ]
     },
-    "loadDll": []  /*Load other dll plugins. (path string array)*/
+    "loadDll": []  /*他のDLLプラグインを読み込み。 (string配列パス)*/
 }
 ```
 
