@@ -6,7 +6,7 @@
 [![Download](https://img.shields.io/github/v/release/MinamiChiwa/umamusume-localify-zh-CN?color=orange&logoColor=red&label=Download&logo=DocuSign)](https://github.com/MinamiChiwa/Trainers-Legend-G/releases/latest)
 [![Discord](https://img.shields.io/discord/973208860217200653?color=orange&label=Discord&logo=Discord&logoColor=red)](https://discord.com/invite/TBCSv5hU69)
 
-[Simplified Chinese](https://github.com/MinamiChiwa/Trainers-Legend-G) | [Traditional Chinese](https://github.com/yotv2000tw/Trainers-Legend-G-TRANS-zh-tw/) | English | [日本語](https://github.com/MinamiChiwa/Trainers-Legend-G/blob/main/readme_JA.md)
+[Simplified Chinese](https://github.com/MinamiChiwa/Trainers-Legend-G) | [Traditional Chinese](https://github.com/yotv2000tw/Trainers-Legend-G-TRANS-zh-tw/) | English | [日本語](readme_JA.md)
 
 </div>
 
