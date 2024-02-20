@@ -7,7 +7,7 @@
 [![Chat](https://img.shields.io/badge/Join-QQ%E9%A2%91%E9%81%93-blue?logo=tencent-qq&logoColor=white)](https://qun.qq.com/qqweb/qunpro/share?_wv=3&_wwv=128&inviteCode=1olqdK&from=246610&biz=ka)
 [![Discord](https://img.shields.io/discord/973208860217200653?color=blue&label=Discord&logo=Discord&logoColor=white)](https://discord.com/invite/TBCSv5hU69)
 
-简体中文 | [繁體中文](https://github.com/yotv2000tw/Trainers-Legend-G-TRANS-zh-tw/) | [English](readme_EN.md)
+简体中文 | [繁體中文](https://github.com/yotv2000tw/Trainers-Legend-G-TRANS-zh-tw/) | [English](readme_EN.md) | [日本語](readme_JA.md)
 
 </div>
  
