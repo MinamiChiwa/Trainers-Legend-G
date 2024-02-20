@@ -31,7 +31,7 @@
         },
         "virtual_resolution_multiple": {
             "description": "3Dレンダリングの解像度倍率、オリジナルは1.0で1080pの解像度でのエイリアシングの問題を大幅に軽減させます。\n 2D画像を使用した一部のシーンの背景が小さく表示される場合があります。\n 推奨値:4K未満:2.0、4K以上:1.5",
-            "type": "数値",
+            "type": "number",
             "default": 1.0
         },
         "enableVSync": {
@@ -48,12 +48,12 @@
             "properties": {
                 "w": {
                     "description": "長辺",
-                    "type": "数値",
+                    "type": "number",
                     "default": 16.0
                 },
                 "h": {
                     "description": "短辺",
-                    "type": "数値",
+                    "type": "number",
                     "default": 9.0
                 },
                 "forceLandscape": {
@@ -74,7 +74,7 @@
         },
         "uiScale": {
             "description": "カスタムUIの大きさを変更します。",
-            "type": "数値"
+            "type": "number"
         },
         "readRequestPack": {
             "description": "クライアントから送信されたパッケージ情報を読み込みます。この機能を有効化するとコマンドライン上で'reboot'と入力でウマ娘を高速で再起動できます。",
@@ -130,7 +130,7 @@
                 },
                 "mouseSpeed": {
                     "description": "マウスカメラの移動速度を変更します。",
-                    "type": "数値",
+                    "type": "number",
                     "default": 100.0
                 },
                 "force_changeVisibility_false": {
@@ -139,7 +139,7 @@
                 },
                 "moveStep": {
                     "description": "カメラの移動ステップを変更します。",
-                    "type": "数値"
+                    "type": "number"
                 },
                 "close_all_blur": {
                     "description": "すべてのぼかしレンズをオフにします。",
@@ -166,12 +166,12 @@
                         },
                         "lookatStep": {
                             "description": "ルックアットの移動ステップを設定します。",
-                            "type": "数値",
+                            "type": "number",
                             "default": 0.01
                         },
                         "positionStep": {
                             "description": "位置の移動ステップを設定します。",
-                            "type": "数値",
+                            "type": "number",
                             "default": 0.001
                         }
                     }
@@ -221,11 +221,11 @@
                 },
                 "moveStep": {
                     "description": "カメラの移動ステップを設定します。",
-                    "type": "数値"
+                    "type": "number"
                 },
                 "defaultFOV": {
                     "description": "既定のFOV",
-                    "type": "数値"
+                    "type": "number"
                 },
                 "freecam_lookat_target": {
                     "description": "カメラでウマ娘の動きを追跡させます。",
@@ -241,19 +241,19 @@
                     "properties": {
                         "distance": {
                             "description": "ターゲット先となるウマ娘からの距離",
-                            "type": "数値"
+                            "type": "number"
                         },
                         "x": {
                             "description": "X軸のオフセット",
-                            "type": "数値"
+                            "type": "number"
                         },
                         "y": {
                             "description": "Y軸のオフセット",
-                            "type": "数値"
+                            "type": "number"
                         },
                         "z": {
                             "description": "Z軸のオフセット",
-                            "type": "数値"
+                            "type": "number"
                         }
                     }
                 }
