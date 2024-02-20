@@ -1,5 +1,6 @@
 name: ci
 on: 
+  workflow_dispatch:
   push: 
     paths:
       - '**.lua'
@@ -59,9 +60,11 @@ jobs:
           cp resources/config.schema.json package/localized_data/config_schema/config.schema.json
           cp resources/config_en.schema.json package/localized_data/config_schema/config_en.schema.json
           cp resources/config_zh_tw.schema.json package/localized_data/config_schema/config_zh_tw.schema.json
+          cp resources/config_ja.schema.json package/localized_data/config_schema/config_ja.schema.json
           cp resources/text_data_info.json package/localized_data/config_schema/text_data_info.json
           cp resources/text_data_info_i18n_zh.json package/localized_data/config_schema/text_data_info_i18n_zh.json
           cp resources/text_data_info_i18n_zh_tw.json package/localized_data/config_schema/text_data_info_i18n_zh_tw.json
+          cp resources/text_data_info_i18n_ja.json package/localized_data/config_schema/text_data_info_i18n_ja.json
           cp resources/legend_g_plugin.exe package/legend_g_plugin.exe.autoupdate
       - uses: actions/upload-artifact@v2
         with:
