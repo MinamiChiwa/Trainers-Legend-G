@@ -22,6 +22,18 @@ void _set_u_stat(bool s) {
 	}
 }
 
+// copy-pasted from https://stackoverflow.com/questions/3418231/replace-part-of-a-string-with-another-string
+void replaceAll(std::string& str, const std::string& from, const std::string& to) {
+	if (from.empty())
+		return;
+	size_t start_pos = 0;
+	while ((start_pos = str.find(from, start_pos)) != std::string::npos)
+	{
+		str.replace(start_pos, from.length(), to);
+		start_pos += to.length(); // In case 'to' contains 'from', like replacing 'x' with 'yx'
+	}
+}
+
 void LoadExtraAssetBundle();
 
 namespace
@@ -1115,6 +1127,7 @@ namespace
 	FieldInfo* RubyDataClass_CharX;
 	FieldInfo* RubyDataClass_CharY;
 	FieldInfo* RubyDataClass_RubyText;
+	void* Texture2DClass;
 
 	uint32_t GetBundleHandleByAssetName(wstring assetName) {
 		for (const auto& i : CustomAssetBundleAssetPaths) {
@@ -1277,7 +1290,10 @@ namespace
 			});
 	}
 
-	void LocalizeAssets(void* result, Il2CppString* name) {
+	void* getLocalT2D(const std::filesystem::path& path);
+	void DumpTexture2D(Il2CppObject* texture, const std::filesystem::path& savePath);
+
+	void LocalizeAssets(void*& result, Il2CppString* name) {
 		const auto cls = il2cpp_symbols::get_class_from_instance(result);
 		if (cls == StoryTimelineDataClass)
 		{
@@ -1305,6 +1321,23 @@ namespace
 		}
 		else if (cls == TextRubyDataClass) {
 			LocalizeStoryTextRubyData(result);
+		}
+		else if (cls == Texture2DClass) {
+			static const std::filesystem::path textureBasePath = "localized_data/res/texture2d/fromBundle";
+			const std::filesystem::path texturePath = name->start_char;
+			const auto localPath = textureBasePath / name->start_char;
+			if (g_dump_bundle_tex) {
+				DumpTexture2D((Il2CppObject*)result, texturePath.parent_path());
+			}
+
+			if (g_replace_assets) {
+				if (std::filesystem::exists(localPath)) {
+					auto replaceT2D = getLocalT2D(localPath);
+					if (replaceT2D) {
+						result = replaceT2D;
+					}
+				}
+			}
 		}
 	}
 
@@ -1413,22 +1446,10 @@ namespace
 		return result;
 	}
 
-	void replaceAll(std::string& str, const std::string& from, const std::string& to)
-	{
-		if (from.empty())
-			return;
-		size_t start_pos = 0;
-		while ((start_pos = str.find(from, start_pos)) != std::string::npos)
-		{
-			str.replace(start_pos, from.length(), to);
-			start_pos += to.length(); // In case 'to' contains 'from', like replacing 'x' with 'yx'
-		}
-	}
-
 	bool (*Object_IsNativeObjectAlive)(void*);
 
-	void DumpTexture2D(Il2CppObject* texture, string type)
-	{
+	// steps from github @Kimjio
+	void DumpTexture2D(Il2CppObject* texture, const std::filesystem::path& savePath) {
 		static auto get_ObjectName = reinterpret_cast<Il2CppString * (*)(void*)>(
 			il2cpp_resolve_icall("UnityEngine.Object::GetName(UnityEngine.Object)"));
 		static auto T2D_get_width = reinterpret_cast<int (*)(void*)>(il2cpp_class_get_method_from_name(texture->klass, "get_width", 0)->methodPointer);
@@ -1441,7 +1462,6 @@ namespace
 			"UnityEngine.CoreModule.dll", "UnityEngine", "RenderTexture", "get_active", -1));
 		static auto RenderTexture_set_active = reinterpret_cast<void (*)(Il2CppObject*)>(il2cpp_symbols::get_method_pointer(
 			"UnityEngine.CoreModule.dll", "UnityEngine", "RenderTexture", "set_active", 1));
-		static auto Texture2D_klass = il2cpp_symbols::get_class("UnityEngine.CoreModule.dll", "UnityEngine", "Texture2D");
 		static auto Texture2D_ctor = reinterpret_cast<void(*)(void*, int, int)>(
 			il2cpp_symbols::get_method_pointer("UnityEngine.CoreModule.dll", "UnityEngine", "Texture2D", ".ctor", 2));
 		static auto Texture2D_ReadPixels = reinterpret_cast<void (*)(void*, Rect_t, int, int)>(
@@ -1452,11 +1472,14 @@ namespace
 			"UnityEngine.CoreModule.dll", "UnityEngine", "RenderTexture", "ReleaseTemporary", 1));
 		static auto File_WriteAllBytes = reinterpret_cast<void (*)(Il2CppString*, Il2CppArraySize_t<uint8_t>*)>(
 			il2cpp_symbols::get_method_pointer("mscorlib.dll", "System.IO", "File", "WriteAllBytes", 2));
+		static auto ImageConversion_EncodeToPNG_mtd = il2cpp_symbols::get_method(
+			"UnityEngine.ImageConversionModule.dll", "UnityEngine", "ImageConversion", "EncodeToPNG", 1);
 
+		const std::filesystem::path baseDumpPath = "localized_data/TextureDump";
 
 		std::string textureName = utility::conversions::to_utf8string(get_ObjectName(texture)->start_char);
 		replaceAll(textureName, "|", "_");
-		const auto saveName = "localized_data/TextureDump/" + type + "/" + textureName + ".png";
+		const auto saveName = baseDumpPath / savePath / (textureName + ".png");
 		if (std::filesystem::exists(saveName)) {
 			return;
 		}
@@ -1465,50 +1488,32 @@ namespace
 		const auto height = T2D_get_height(texture);
 		auto renderTexture = RenderTexture_GetTemporary(width, height, 0, 0);
 		Graphics_Blit(texture, renderTexture);
-
 		auto previous = RenderTexture_get_active();
 		RenderTexture_set_active(renderTexture);
-
-		auto readableTexture = il2cpp_object_new(Texture2D_klass);
+		auto readableTexture = il2cpp_object_new(Texture2DClass);
 		Texture2D_ctor(readableTexture, width, height);
-
-
 		Texture2D_ReadPixels(readableTexture, Rect_t{ 0, 0, static_cast<float>(width), static_cast<float>(height) }, 0, 0);
 		Texture2D_Apply(readableTexture);
-
 		RenderTexture_set_active(previous);
-
 		RenderTexture_ReleaseTemporary(renderTexture);
-
-		auto method = il2cpp_symbols::get_method("UnityEngine.ImageConversionModule.dll", "UnityEngine", "ImageConversion", "EncodeToPNG", 1);
 
 		void** params = new void* [1];
 		params[0] = readableTexture;
-
 		Il2CppObject* exception;
+		auto pngData = reinterpret_cast<Il2CppArraySize_t<uint8_t>*>(il2cpp_runtime_invoke(ImageConversion_EncodeToPNG_mtd, nullptr, params, &exception));
+		delete[] params;
 
-		auto pngData = reinterpret_cast<Il2CppArraySize_t<uint8_t>*>(il2cpp_runtime_invoke(method, nullptr, params, &exception));
-
-		if (exception)
-		{
-			printf("dump error: %s\n", saveName.c_str());
-			// il2cpp_raise_exception(exception);
+		if (exception) {
+			printf("dump error: %ls\n", saveName.c_str());
 			return;
 		}
 
-
-		if (!filesystem::exists("localized_data/TextureDump"))
-		{
-			filesystem::create_directories("localized_data/TextureDump");
+		if (!filesystem::exists(baseDumpPath / savePath)) {
+			filesystem::create_directories(baseDumpPath / savePath);
 		}
 
-		if (!filesystem::exists("localized_data/TextureDump/" + type))
-		{
-			filesystem::create_directory("localized_data/TextureDump/" + type);
-		}
-
-		printf("dumpFile: %s\n", saveName.c_str());
-		File_WriteAllBytes(il2cpp_string_new(saveName.c_str()), pngData);
+		printf("dumpFile: %ls\n", saveName.c_str());
+		File_WriteAllBytes(il2cpp_symbols::NewWStr(saveName.c_str()), pngData);
 	}
 
 	std::unordered_map<const wchar_t*, void*> loadedT2D{};
@@ -1527,7 +1532,6 @@ namespace
 				}
 			}
 			
-			static auto Texture2D_klass = il2cpp_symbols::get_class("UnityEngine.CoreModule.dll", "UnityEngine", "Texture2D");
 			static auto Texture2D_ctor = reinterpret_cast<void(*)(void*, int, int)>(
 				il2cpp_symbols::get_method_pointer("UnityEngine.CoreModule.dll", "UnityEngine", "Texture2D", ".ctor", 2));
 			static auto loadImage = reinterpret_cast<bool (*)(void* tex, void* data, bool markNonReadable)>(
@@ -1538,7 +1542,7 @@ namespace
 				);
 
 			auto fileBytes = ReadAllBytes(il2cpp_symbols::NewWStr(path.c_str()));
-			auto ret = il2cpp_object_new(Texture2D_klass);
+			auto ret = il2cpp_object_new(Texture2DClass);
 			Texture2D_ctor(ret, 2, 2);
 			if (loadImage(ret, fileBytes, false)) {
 				loadedT2D.emplace(path.c_str(), ret);
@@ -4494,7 +4498,7 @@ namespace
 			"TMP_Text", "set_font", 1
 		));
 
-
+		Texture2DClass = il2cpp_symbols::get_class("UnityEngine.CoreModule.dll", "UnityEngine", "Texture2D");
 		TextRubyDataClass = il2cpp_symbols::get_class("umamusume.dll", "", "TextRubyData");
 		TextRubyDataClass_DataArray = il2cpp_class_get_field_from_name(TextRubyDataClass, "DataArray");
 

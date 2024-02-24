@@ -121,6 +121,11 @@
             "type": "boolean",
             "default": false
         },
+        "dumpRuntimeTexture": {
+            "description": "Dump Runtime 图像资源",
+            "type": "boolean",
+            "default": false
+        },
         "assetLoadLog": {
             "description": "是否在debug输出游戏资源调用情况",
             "type": "boolean"

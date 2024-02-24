@@ -121,6 +121,11 @@
             "type": "boolean",
             "default": false
         },
+        "dumpRuntimeTexture": {
+            "description": "Dump Runtime Texture",
+            "type": "boolean",
+            "default": false
+        },
         "assetLoadLog": {
             "description": "デバッグ時にゲームリソースの呼び出し状況を出力します。",
             "type": "boolean"

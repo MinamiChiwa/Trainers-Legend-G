@@ -121,6 +121,11 @@
             "type": "boolean",
             "default": false
         },
+        "dumpRuntimeTexture": {
+            "description": "Dump Runtime 素材",
+            "type": "boolean",
+            "default": false
+        },
         "assetLoadLog": {
             "description": "是否在debug輸出遊戲素材調用情況",
             "type": "boolean"
