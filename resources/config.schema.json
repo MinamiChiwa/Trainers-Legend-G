@@ -116,6 +116,11 @@
             "description": "是否开启图片等资源替换",
             "type": "boolean"
         },
+        "dumpSpriteTexture": {
+            "description": "Dump Sprite 图像资源",
+            "type": "boolean",
+            "default": false
+        },
         "assetLoadLog": {
             "description": "是否在debug输出游戏资源调用情况",
             "type": "boolean"
