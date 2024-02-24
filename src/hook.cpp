@@ -1409,9 +1409,95 @@ namespace
 
 			LocalizeAssets(result, name);
 		}
-		
+
 		return result;
 	}
+
+	bool (*Object_IsNativeObjectAlive)(void*);
+
+	std::unordered_map<const wchar_t*, void*> loadedT2D{};
+	void* getLocalT2D(const std::filesystem::path& path) {
+		if (g_asset_load_log) {
+			wprintf(L"getLocalTexture2D: %ls\n", path.c_str());
+		}
+
+		if (std::filesystem::exists(path)) {
+			if (auto it = loadedT2D.find(path.c_str()); it != loadedT2D.end()) {
+				if (Object_IsNativeObjectAlive(it->second)) {
+					return it->second;
+				}
+				else {
+					loadedT2D.erase(path.c_str());
+				}
+			}
+			
+			static auto Texture2D_klass = il2cpp_symbols::get_class("UnityEngine.CoreModule.dll", "UnityEngine", "Texture2D");
+			static auto Texture2D_ctor = reinterpret_cast<void(*)(void*, int, int)>(
+				il2cpp_symbols::get_method_pointer("UnityEngine.CoreModule.dll", "UnityEngine", "Texture2D", ".ctor", 2));
+			static auto loadImage = reinterpret_cast<bool (*)(void* tex, void* data, bool markNonReadable)>(
+				il2cpp_resolve_icall("UnityEngine.ImageConversion::LoadImage(UnityEngine.Texture2D,System.Byte[],System.Boolean)")
+				);
+			static auto ReadAllBytes = reinterpret_cast<void* (*)(Il2CppString*)>(
+				il2cpp_symbols::get_method_pointer("mscorlib.dll", "System.IO", "File", "ReadAllBytes", 1)
+				);
+
+			auto fileBytes = ReadAllBytes(il2cpp_symbols::NewWStr(path.c_str()));
+			auto ret = il2cpp_object_new(Texture2D_klass);
+			Texture2D_ctor(ret, 2, 2);
+			if (loadImage(ret, fileBytes, false)) {
+				loadedT2D.emplace(path.c_str(), ret);
+				return ret;
+			}
+		}
+		return NULL;
+	}
+	
+	void* Sprite_get_texture_orig = nullptr;
+	void* Sprite_get_texture_hook(void* _this)
+	{
+		static auto get_ObjectName = reinterpret_cast<Il2CppString * (*)(void*)>(
+			il2cpp_resolve_icall("UnityEngine.Object::GetName(UnityEngine.Object)"));
+
+		auto texture2D = reinterpret_cast<decltype(Sprite_get_texture_hook)*>(Sprite_get_texture_orig)(_this);
+		if (g_replace_assets) {
+			auto object_name = get_ObjectName(texture2D);
+			static std::filesystem::path baseSearchPath = "localized_data/res";
+
+			if (object_name) {
+				const std::wstring objName(object_name->start_char);
+
+				const std::wstring loadName = (baseSearchPath / objName).c_str();
+				const auto& localT2D = getLocalT2D(loadName + L".png");
+				if (localT2D) {
+					reinterpret_cast<void (*)(void*, int)>(
+						il2cpp_symbols::get_method_pointer("UnityEngine.CoreModule.dll", "UnityEngine", "Object", "set_hideFlags", 1)
+						)(localT2D, 32);
+					return localT2D;
+				}
+
+				/*  // 下方也可在 Assetbundle 中加载
+				const auto& bundleHandle = GetBundleHandleByAssetName(loadName + L".png");
+				if (bundleHandle)
+				{
+					const auto extraAssetBundle = il2cpp_gchandle_get_target(bundleHandle);
+					const auto cls = il2cpp_symbols::get_class_from_instance(texture2D);
+					auto ret = reinterpret_cast<decltype(AssetBundle_LoadAsset_hook)*>(AssetBundle_LoadAsset_orig)(extraAssetBundle,
+						il2cpp_string_new(loadName), il2cpp_type_get_object(il2cpp_class_get_type(cls)));
+
+					if (ret)
+					{
+						reinterpret_cast<void (*)(void*, int)>(
+							il2cpp_symbols::get_method_pointer("UnityEngine.CoreModule.dll", "UnityEngine", "Object", "set_hideFlags", 1)
+							)(ret, 32);
+					}
+					return ret;
+				}*/
+
+			}
+		}
+		return texture2D;
+	}
+
 
 	void* AssetBundleRequest_get_allAssets_orig;
 	void* AssetBundleRequest_get_allAssets_hook(void* _this) {
@@ -1450,8 +1536,6 @@ namespace
 	Il2CppString* (*TextCommon_get_text)(void*);
 
 	uint32_t ReplaceFontHandle;
-
-	bool (*Object_IsNativeObjectAlive)(void*);
 
 	void* getReplaceFont() {
 		void* replaceFont{};
@@ -4352,6 +4436,7 @@ namespace
 			il2cpp_resolve_icall("UnityEngine.AssetBundleRequest::get_allAssets()");
 		const auto AssetBundleRequest_GetResult_addr = 
 			il2cpp_resolve_icall("UnityEngine.AssetBundleRequest::GetResult()");
+		auto Sprite_get_texture_addr = il2cpp_resolve_icall("UnityEngine.Sprite::get_texture(UnityEngine.Sprite)");
 		
 		auto AssetLoader_LoadAssetHandle_addr =
 			il2cpp_symbols::get_method_pointer(
@@ -5104,6 +5189,7 @@ namespace
 			ADD_HOOK(AssetBundle_LoadAssetAsync, "AssetBundle.LoadAsset at %p\n");
 			ADD_HOOK(AssetBundleRequest_get_allAssets, "AssetBundleRequest_get_allAssets at %p\n");
 			ADD_HOOK(AssetBundleRequest_GetResult, "AssetBundleRequest_GetResult at %p\n");
+			ADD_HOOK(Sprite_get_texture, "Sprite_get_texture at %p\n");
 		}
 
 		if (g_max_fps > -1)
