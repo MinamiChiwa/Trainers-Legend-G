@@ -1461,7 +1461,7 @@ namespace
 		auto texture2D = reinterpret_cast<decltype(Sprite_get_texture_hook)*>(Sprite_get_texture_orig)(_this);
 		if (g_replace_assets) {
 			auto object_name = get_ObjectName(texture2D);
-			static std::filesystem::path baseSearchPath = "localized_data/res";
+			static std::filesystem::path baseSearchPath = "localized_data/res/texture2d";
 
 			if (object_name) {
 				const std::wstring objName(object_name->start_char);
