@@ -90,6 +90,8 @@ std::wstring g_self_server_url;
 
 bool g_enable_cutin_first_person = false;
 bool g_cutin_first_person = false;
+bool g_dump_sprite_tex = false;
+bool g_dump_bundle_tex = false;
 
 std::string g_text_data_dict_path;
 std::string g_character_system_text_dict_path;
@@ -745,6 +747,13 @@ namespace
 			if (document.HasMember("raceInfoTab")) {
 				enableRaceInfoTab = document["raceInfoTab"]["enableRaceInfoTab"].GetBool();
 				raceInfoTabAttachToGame = document["raceInfoTab"]["raceInfoTabAttachToGame"].GetBool();
+			}
+
+			if (document.HasMember("dumpSpriteTexture")) {
+				g_dump_sprite_tex = document["dumpSpriteTexture"].GetBool();
+			}
+			if (document.HasMember("dumpRuntimeTexture")) {
+				g_dump_bundle_tex = document["dumpRuntimeTexture"].GetBool();
 			}
 
 			// Looks like not working for now

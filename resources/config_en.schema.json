@@ -116,6 +116,16 @@
             "description": "Replacing the game picture/texture with resource in extraAssetBundlePath if exist",
             "type": "boolean"
         },
+        "dumpSpriteTexture": {
+            "description": "Dump Sprite Texture",
+            "type": "boolean",
+            "default": false
+        },
+        "dumpRuntimeTexture": {
+            "description": "Dump Runtime Texture",
+            "type": "boolean",
+            "default": false
+        },
         "assetLoadLog": {
             "description": "Print the asset bundle path of game resource that the game is using",
             "type": "boolean"

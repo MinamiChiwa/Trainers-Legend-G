@@ -244,6 +244,36 @@ typedef struct Il2CppArraySize
 	void* vector[0];
 } Il2CppArraySize;
 
+typedef struct Il2CppException
+{
+	Il2CppObject object;
+	Il2CppString* className;
+	Il2CppString* message;
+	Il2CppObject* _data;
+	Il2CppException* inner_ex;
+	Il2CppString* _helpURL;
+	Il2CppArraySize* trace_ips;
+	Il2CppString* stack_trace;
+	Il2CppString* remote_stack_trace;
+	int remote_stack_index;
+	Il2CppObject* _dynamicMethods;
+	int32_t hresult;
+	Il2CppString* source;
+	Il2CppObject* safeSerializationManager;
+	Il2CppArraySize* captured_traces;
+	Il2CppArraySize* native_trace_ips;
+} Il2CppException;
+
+template<typename T>
+struct Il2CppArraySize_t
+{
+	Il2CppObject obj;
+	void* bounds;
+	uintptr_t max_length;
+	alignas(8)
+		T vector[0];
+};
+
 struct Il2CppClassHead
 {
 	const void* image;
@@ -256,6 +286,15 @@ struct Il2CppReflectionType
 {
 	Il2CppObject object;
 	const Il2CppType* type;
+};
+
+struct Rect_t
+{
+public:
+	float x;
+	float y;
+	float width;
+	float height;
 };
 
 static const size_t kIl2CppSizeOfArray = (offsetof(Il2CppArraySize, vector));

@@ -116,6 +116,16 @@
             "description": "画像やその他のリソースの置換を有効化します。",
             "type": "boolean"
         },
+        "dumpSpriteTexture": {
+            "description": "Dump Sprite Texture",
+            "type": "boolean",
+            "default": false
+        },
+        "dumpRuntimeTexture": {
+            "description": "Dump Runtime Texture",
+            "type": "boolean",
+            "default": false
+        },
         "assetLoadLog": {
             "description": "デバッグ時にゲームリソースの呼び出し状況を出力します。",
             "type": "boolean"
