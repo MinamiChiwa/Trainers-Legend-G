@@ -88,7 +88,7 @@
             }
         },
         "replaceFont": {
-            "description": "フォントを置換 (trueはシステムの既定のフォントまたはカスタムフォントに置換、falseは、通常のウマ娘のフォントを使用)",
+            "description": "フォントを置換 (trueはシステムの既定のフォントまたはカスタムフォントに置換、falseは通常のウマ娘のフォントを使用)",
             "type": "boolean"
         },
         "customFontPath": {
