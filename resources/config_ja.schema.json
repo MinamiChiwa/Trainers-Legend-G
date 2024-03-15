@@ -467,7 +467,7 @@
         }
     },
     "additionalProperties": false,
-    "必須項目の一覧": [
+    "required": [
         "enableConsole",
         "enableLogger",
         "dumpStaticEntries",

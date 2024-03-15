@@ -24,6 +24,8 @@
     "customFontStyle": 0,
     "customFontLinespacing": 0.6,
     "replaceAssets": true,
+    "dumpSpriteTexture": false,
+    "dumpRuntimeTexture": false,
     "assetLoadLog": false,
     "live": {
         "free_camera": false,
