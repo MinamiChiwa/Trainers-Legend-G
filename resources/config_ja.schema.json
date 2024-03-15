@@ -464,6 +464,11 @@
             "description": "ガチャの履歴の情報をアップロード\n「Gacha Records」ボタンをクリックでアップロードします。\nガチャの履歴は、uma.gacha.chinosk6.cnから確認ができます。",
             "type": "boolean",
             "default": false
+        },
+        "enableEventHelper": {
+            "description": "Enable Events Helper",
+            "type": "boolean",
+            "default": false
         }
     },
     "additionalProperties": false,
