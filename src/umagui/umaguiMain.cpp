@@ -942,7 +942,7 @@ void guimain()
     builder.AddRanges(io.Fonts->GetGlyphRangesChineseFull());
     builder.AddRanges(io.Fonts->GetGlyphRangesKorean());
     builder.AddRanges(io.Fonts->GetGlyphRangesDefault());
-    builder.AddText("○◯◎△×☆");
+    builder.AddText("○◯◎△×☆+−");
     ImVector<ImWchar> glyphRanges;
     builder.BuildRanges(&glyphRanges);
     config.GlyphRanges = glyphRanges.Data;
