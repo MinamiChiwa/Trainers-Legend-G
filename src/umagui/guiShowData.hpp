@@ -498,3 +498,15 @@ namespace UmaGUiShowData {
 
 	void initGuiGlobalData();
 }
+
+
+struct EventInfoDisplay {
+	EventHelper::EventInfo eventInfo;
+	std::vector<std::string> gameChoicesText;
+	bool hasInfo = false;
+
+	std::string currentGameStoryName;
+	long currentGameStoryId = -1;
+};
+
+extern EventInfoDisplay eventInfoDisplay;

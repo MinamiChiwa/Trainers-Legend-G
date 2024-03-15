@@ -66,6 +66,7 @@ jobs:
           cp resources/text_data_info_i18n_zh_tw.json package/localized_data/config_schema/text_data_info_i18n_zh_tw.json
           cp resources/text_data_info_i18n_ja.json package/localized_data/config_schema/text_data_info_i18n_ja.json
           cp resources/legend_g_plugin.exe package/legend_g_plugin.exe.autoupdate
+          cp resources/eventHelper package/localized_data/eventHelper
       - uses: actions/upload-artifact@v2
         with:
           name: trainers-legend-g

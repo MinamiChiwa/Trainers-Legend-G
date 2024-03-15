@@ -4271,6 +4271,75 @@ namespace
 		return reinterpret_cast<decltype(WWWRequest_Post_hook)*>(WWWRequest_Post_orig)(_this, url, postData, headers);
 	}
 
+	long getStoryId() {
+
+		static auto StoryManager_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop", "StoryManager");
+		static auto StoryManager_get_Instance_method = il2cpp_class_get_method_from_name(StoryManager_klass, "get_Instance", 0);
+		static auto StoryManager_get_Instance = reinterpret_cast<void* (*)(MethodInfo*)>(
+			StoryManager_get_Instance_method->methodPointer
+			);
+		static auto get_StoryId = reinterpret_cast<int (*)(void*)>(
+			il2cpp_class_get_method_from_name(StoryManager_klass, "get_StoryId", 0)->methodPointer
+			);
+
+		auto storyManager = StoryManager_get_Instance(StoryManager_get_Instance_method);
+		if (!storyManager) return -1;
+		return get_StoryId(storyManager);
+	}
+
+	void* StoryViewController_OpenChoiceButton_orig;
+	void StoryViewController_OpenChoiceButton_hook(void* _this, void* textClip) {
+		reinterpret_cast<decltype(StoryViewController_OpenChoiceButton_hook)*>(StoryViewController_OpenChoiceButton_orig)(_this, textClip);
+		if (!g_enable_event_helper) return;
+		if (!guiStarting) {
+			startUmaGui();
+		}
+
+		static auto StoryViewController_klass = il2cpp_symbols::get_class_from_instance(_this);
+		static auto GetTitleText = reinterpret_cast<Il2CppString * (*)(void*, int)>(
+			il2cpp_class_get_method_from_name(StoryViewController_klass, "GetTitleText", 1)->methodPointer
+			);
+
+		const auto storyId = getStoryId();
+
+		eventInfoDisplay.currentGameStoryId = storyId;
+
+		auto titleText = GetTitleText(_this, storyId);
+		if (titleText) {
+			eventInfoDisplay.currentGameStoryName = utility::conversions::to_utf8string(std::wstring(titleText->start_char));
+		}
+
+		EventHelper::EventInfo eventInfo;
+		if (EventHelper::getEventInfo(storyId, &eventInfo)) {
+			eventInfoDisplay.eventInfo = eventInfo;
+			eventInfoDisplay.hasInfo = true;
+		}
+		else {
+			eventInfoDisplay.hasInfo = false;
+		}
+		
+		static auto textClip_klass = il2cpp_symbols::get_class_from_instance(textClip);
+		static auto ChoiceDataList_field = il2cpp_class_get_field_from_name(textClip_klass, "ChoiceDataList");
+		auto ChoiceDataList = il2cpp_symbols::read_field(textClip, ChoiceDataList_field);
+
+		eventInfoDisplay.gameChoicesText.clear();
+		il2cpp_symbols::iterate_list(ChoiceDataList, [&](size_t index, void* choice) {
+			static auto choiceData_klass = il2cpp_symbols::get_class_from_instance(choice);
+			static auto Text_field = il2cpp_class_get_field_from_name(choiceData_klass, "Text");
+			static auto Index_field = il2cpp_class_get_field_from_name(choiceData_klass, "<Index>k__BackingField");
+
+			auto text = il2cpp_symbols::read_field<Il2CppString*>(choice, Text_field);
+			auto choicecIndex = il2cpp_symbols::read_field<int>(choice, Index_field);
+			// wprintf(L"[%d]text: %ls\n", choicecIndex, text->start_char);
+			const auto pushStr = utility::conversions::to_utf8string(std::wstring(text->start_char));
+			if (auto it = std::find(eventInfoDisplay.gameChoicesText.begin(), eventInfoDisplay.gameChoicesText.end(), pushStr); it == eventInfoDisplay.gameChoicesText.end()) {
+				eventInfoDisplay.gameChoicesText.push_back(pushStr);
+			}
+
+			});
+			
+	}
+
 	void dump_all_entries()
 	{
 		// 0 is None
@@ -5117,6 +5186,11 @@ namespace
 			"SingleModeSceneController", "CreateModel", 3
 		);
 
+		auto StoryViewController_OpenChoiceButton_addr = il2cpp_symbols::get_method_pointer(
+			"umamusume.dll", "Gallop",
+			"StoryViewController", "OpenChoiceButton", 1
+		);
+
 		// auto HomeCharacterCreator_klass = il2cpp_symbols::get_class("umamusume.dll", "Gallop", "HomeCharacterCreator");
 		// auto CreateInfo_klass = il2cpp_symbols::find_nested_class_from_name(HomeCharacterCreator_klass, "CreateInfo");
 		// auto CreateInfo_ctor_addr = il2cpp_class_get_method_from_name(CreateInfo_klass, ".ctor", 2)->methodPointer;
@@ -5254,6 +5328,7 @@ namespace
 		ADD_HOOK(SetSimpleTwoButtonMessagef, "SetSimpleTwoButtonMessagef at %p\n");
 		ADD_HOOK(StoryCharacter3D_LoadModel, "StoryCharacter3D_LoadModel at %p\n");
 		ADD_HOOK(SingleModeSceneController_CreateModel, "SingleModeSceneController_CreateModel at %p\n");
+		ADD_HOOK(StoryViewController_OpenChoiceButton, "StoryViewController_OpenChoiceButton at %p\n");
 
 		//ADD_HOOK(camera_reset, "UnityEngine.Camera.Reset() at %p\n");
 

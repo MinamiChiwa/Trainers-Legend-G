@@ -1,6 +1,10 @@
 #pragma once
 #include <unordered_map>
 
+std::unordered_set<USHORT> sChineseLangIds{ 0x0004, 0x0804, 0x1004 };  // zh-Hans, zh-CN, zh-SG
+std::unordered_set<USHORT> tChineseLangIds{ 0x0404, 0x0c04, 0x1404, 0x048E };  // zh-TW, zh-HK, zh-MO, zh-yue-HK
+std::unordered_set<USHORT> japaneseLangIds{ 0x0011, 0x0411 };  // ja, ja-JP
+
 namespace GuiTrans {
 	enum class GUILangType
 	{
@@ -10,8 +14,6 @@ namespace GuiTrans {
 	};
 
 	extern auto GuiLanguage = GUILangType::ENGLISH;
-	std::unordered_set<USHORT> sChineseLangIds { 0x0004, 0x0804, 0x1004 };  // zh-Hans, zh-CN, zh-SG
-	std::unordered_set<USHORT> tChineseLangIds { 0x0404, 0x0c04, 0x1404, 0x048E };  // zh-TW, zh-HK, zh-MO, zh-yue-HK
 
 	const std::unordered_map<std::string_view, std::string> guiSChineseTrans{
 		{"GateNo/CharaName", "闸号/角色名"},
@@ -101,6 +103,11 @@ namespace GuiTrans {
 		{"RunningStyleTemptationOtherSelf", "RunningStyleTemptationOtherSelf"},
 		{"CharaId", "指定角色 ID"},
 		{"ActivateHealSkill", "激活治疗技能"},
+
+		{"Option", "选项"},
+		{"Effects", "效果"},
+		{"On Success:", "成功时:"},
+		{"On Failed:", "失败时:"},
 	};
 
 	const std::unordered_map<std::string_view, std::string> guiTChineseTrans{
@@ -191,6 +198,11 @@ namespace GuiTrans {
 		{"RunningStyleTemptationOtherSelf", "RunningStyleTemptationOtherSelf"},
 		{"CharaId", "指定角色 ID"},
 		{"ActivateHealSkill", "激活治療技能"},
+
+		{"Option", "選項"},
+		{"Effects", "效果"},
+		{"On Success:", "成功時:"},
+		{"On Failed:", "失敗時:"},
 	};
 
 	const char* GetTrans(const char* text) {

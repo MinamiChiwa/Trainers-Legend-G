@@ -466,6 +466,11 @@
             "default": false
         }
     },
+    "enableEventHelper": {
+        "description": "Enable Events Helper",
+        "type": "boolean",
+        "default": false
+    },
     "additionalProperties": false,
     "required": [
         "enableConsole",

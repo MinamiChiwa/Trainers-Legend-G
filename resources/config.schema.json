@@ -466,6 +466,11 @@
             "default": false
         }
     },
+    "enableEventHelper": {
+        "description": "启用事件簿",
+        "type": "boolean",
+        "default": false
+    },
     "additionalProperties": false,
     "required": [
         "enableConsole",

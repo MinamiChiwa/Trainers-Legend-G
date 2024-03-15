@@ -43,6 +43,7 @@
 #include "umadb/umadb.hpp"
 #include "pluginLoader/pluginLoader.hpp"
 #include <nlohmann/json.hpp>
+#include "eventHelper/eventHelper.hpp"
 #include "umagui/guiShowData.hpp"
 #include "umagui/umaguiMain.hpp"
 
@@ -200,3 +201,4 @@ extern bool g_upload_gacha_history;
 extern std::wstring g_upload_gacha_history_endpoint;
 extern bool g_dump_sprite_tex;
 extern bool g_dump_bundle_tex;
+extern bool g_enable_event_helper;

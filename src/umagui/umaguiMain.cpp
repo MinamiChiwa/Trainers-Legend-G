@@ -763,6 +763,81 @@ void imGuiRaceSkillInfoMainLoop() {
     
 }
 
+bool guiLangInited = false;
+void imGuiEventHelperLoop() {
+    if (!guiLangInited) {
+        guiLangInited = true;
+        GuiTrans::GuiLanguage = (GuiTrans::GUILangType)GuiTrans::checkDefaultLang();
+    }
+    if (!g_enable_event_helper) return;
+
+    if (ImGui::Begin("Event Helper")) {
+        ImGui::Text("Current Game Story: %s (%ld)", eventInfoDisplay.currentGameStoryName.c_str(), eventInfoDisplay.currentGameStoryId);
+
+        if (eventInfoDisplay.hasInfo) {
+            ImGui::BeginChild("EventInfo", ImVec2(0, 0), true);
+
+            ImGui::Text("Event ID: %ld", eventInfoDisplay.eventInfo.Id);
+            ImGui::Text("Event Name: %s", eventInfoDisplay.eventInfo.Name.c_str());
+
+            ImGui::Separator();
+
+            ImGui::BeginTable("EventInfoTable", 2, ImGuiTableFlags_Resizable | ImGuiTableFlags_Borders);
+            ImGui::TableSetupColumn(GuiTrans::GetTrans("Option"));
+            ImGui::TableSetupColumn(GuiTrans::GetTrans("Effects"));
+            ImGui::TableHeadersRow();
+
+            const bool displayLocalOption = eventInfoDisplay.eventInfo.Choices.size() == eventInfoDisplay.gameChoicesText.size();
+
+            int choiceIndex = 0;
+            for (const auto& choice : eventInfoDisplay.eventInfo.Choices) {
+                ImGui::TableNextRow();
+                ImGui::TableSetColumnIndex(0);
+                if (displayLocalOption && (choice.Option.compare(eventInfoDisplay.gameChoicesText[choiceIndex]) != 0)) {
+                    ImGui::Text("%s\n%s", choice.Option.c_str(), eventInfoDisplay.gameChoicesText[choiceIndex].c_str());
+                }
+                else {
+                    ImGui::Text("%s", choice.Option.c_str());
+                }
+                
+                ImGui::TableSetColumnIndex(1);
+
+                if (choice.FailedEffect.empty()) {
+                    ImGui::Text("%s", choice.SuccessEffect.c_str());
+                    if (ImGui::IsItemHovered()) {
+                        ImGui::BeginTooltip();
+                        ImGui::Text("%s", choice.SuccessEffect.c_str());
+                        ImGui::EndTooltip();
+                    }
+                }
+                else {
+                    ImGui::Text(GuiTrans::GetTrans("On Success:"));
+                    ImGui::Text("%s", choice.SuccessEffect.c_str());
+                    if (ImGui::IsItemHovered()) {
+                        ImGui::BeginTooltip();
+                        ImGui::Text("%s", choice.SuccessEffect.c_str());
+                        ImGui::EndTooltip();
+                    }
+                    ImGui::Separator();
+                    ImGui::Text(GuiTrans::GetTrans("On Failed:"));
+                    ImGui::Text("%s", choice.FailedEffect.c_str());
+                    if (ImGui::IsItemHovered()) {
+                        ImGui::BeginTooltip();
+                        ImGui::Text("%s", choice.FailedEffect.c_str());
+                        ImGui::EndTooltip();
+                    }
+                }
+                
+                choiceIndex++;
+            }
+            ImGui::EndTable();
+
+            ImGui::EndChild();
+        }
+    }
+    ImGui::End();
+}
+
 
 // Main code
 void guimain()
@@ -867,7 +942,7 @@ void guimain()
     builder.AddRanges(io.Fonts->GetGlyphRangesChineseFull());
     builder.AddRanges(io.Fonts->GetGlyphRangesKorean());
     builder.AddRanges(io.Fonts->GetGlyphRangesDefault());
-    builder.AddText("○◎△×☆");
+    builder.AddText("○◯◎△×☆");
     ImVector<ImWchar> glyphRanges;
     builder.BuildRanges(&glyphRanges);
     config.GlyphRanges = glyphRanges.Data;
@@ -922,6 +997,7 @@ void guimain()
         imguiRaceMainLoop(io);
         imGuiRaceSkillInfoMainLoop();
         LiveGUILoops::AllLoop();
+        imGuiEventHelperLoop();
 
         ImGui::Render();
         const float clear_color_with_alpha[4] = { clear_color.x * clear_color.w, clear_color.y * clear_color.w, clear_color.z * clear_color.w, clear_color.w };
