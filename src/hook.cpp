@@ -4308,15 +4308,6 @@ namespace
 		if (titleText) {
 			eventInfoDisplay.currentGameStoryName = utility::conversions::to_utf8string(std::wstring(titleText->start_char));
 		}
-
-		EventHelper::EventInfo eventInfo;
-		if (EventHelper::getEventInfo(storyId, &eventInfo)) {
-			eventInfoDisplay.eventInfo = eventInfo;
-			eventInfoDisplay.hasInfo = true;
-		}
-		else {
-			eventInfoDisplay.hasInfo = false;
-		}
 		
 		static auto textClip_klass = il2cpp_symbols::get_class_from_instance(textClip);
 		static auto ChoiceDataList_field = il2cpp_class_get_field_from_name(textClip_klass, "ChoiceDataList");
@@ -4337,7 +4328,18 @@ namespace
 			}
 
 			});
-			
+
+		std::thread([storyId]() {
+			eventInfoDisplay.hasInfo = false;
+			eventInfoDisplay.isLoading = true;
+			if (EventHelper::getEventInfo(storyId, &eventInfoDisplay.eventInfo)) {
+				eventInfoDisplay.hasInfo = true;
+			}
+			else {
+				eventInfoDisplay.hasInfo = false;
+			}
+			eventInfoDisplay.isLoading = false;
+			}).detach();
 	}
 
 	void dump_all_entries()

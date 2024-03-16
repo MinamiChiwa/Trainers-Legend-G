@@ -507,6 +507,7 @@ struct EventInfoDisplay {
 
 	std::string currentGameStoryName;
 	long currentGameStoryId = -1;
+	bool isLoading = false;
 };
 
 extern EventInfoDisplay eventInfoDisplay;

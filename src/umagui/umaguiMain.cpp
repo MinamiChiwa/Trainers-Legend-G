@@ -773,6 +773,10 @@ void imGuiEventHelperLoop() {
 
     if (ImGui::Begin("Event Helper")) {
         ImGui::Text("Current Game Story: %s (%ld)", eventInfoDisplay.currentGameStoryName.c_str(), eventInfoDisplay.currentGameStoryId);
+        if (eventInfoDisplay.isLoading) {
+            ImGui::SameLine();
+            ImGui::Text(" (Loading...)");
+        }
 
         if (eventInfoDisplay.hasInfo) {
             ImGui::BeginChild("EventInfo", ImVec2(0, 0), true);
