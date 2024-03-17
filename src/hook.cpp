@@ -514,7 +514,7 @@ namespace
 	}
 
 	void* PreparedQuery_BindInt_orig = nullptr;
-	void PreparedQuery_BindInt_hook(void* _this, int32_t idx, int32_t value)
+	bool PreparedQuery_BindInt_hook(void* _this, int32_t idx, int32_t value)
 	{
 		if (const auto iter = text_queries.find(_this); iter != text_queries.end())
 		{
