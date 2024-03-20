@@ -30,6 +30,14 @@ bool closeWhenRaceEnd = false;
 HWND hwnd;
 RECT cacheRect{ 100, 100, 1250, 1000 };
 
+ImFont* japaneseFont = NULL;
+ImFont* chineseFont = NULL;
+ImFont* defaultUIFont = NULL;
+
+extern std::unordered_set<USHORT> sChineseLangIds;
+extern std::unordered_set<USHORT> tChineseLangIds;
+extern std::unordered_set<USHORT> japaneseLangIds;
+
 std::map<void*, UmaGUiShowData::UmaRaceMotionData> umaRaceData{};
 std::vector<UmaGUiShowData::SkillEventData> umaUsedSkillList{};
 using namespace GuiTrans;
@@ -521,7 +529,7 @@ umaData.BaseWiz, umaData.RawWiz
     ImGui::SameLine();
     ImGui::Checkbox("###ignoreNegativeSpeed", &ignoreNegativeSpeed);
 
-    static const char* items[] = { "English", "简体中文", "繁體中文" };
+    static const char* items[] = { "English", "简体中文", "繁體中文", "日本語"};
     static int current_item = checkDefaultLang();
 
     ImGui::Text("Language");
@@ -534,6 +542,8 @@ umaData.BaseWiz, umaData.RawWiz
         GuiLanguage = GUILangType::SCHINESE; break;    
     case 2:
         GuiLanguage = GUILangType::TCHINESE; break;
+    case 3:
+        GuiLanguage = GUILangType::JPN; break;
     }
 
     changeTopState();
@@ -951,11 +961,27 @@ void guimain()
     builder.BuildRanges(&glyphRanges);
     config.GlyphRanges = glyphRanges.Data;
 
-    if (std::filesystem::exists("c:\\Windows\\Fonts\\msyh.ttc")) {
-        io.Fonts->AddFontFromFileTTF("c:\\Windows\\Fonts\\msyh.ttc", 18.0f, &config);
+    const char* chineseFontPath = "c:/Windows/Fonts/msyhbd.ttc";
+    const char* japaneseFontPath = "c:/Windows/Fonts/YuGothB.ttc";
+    const char* defaultUIFontPath = "c:/Windows/Fonts/segoeui.ttf";
+    
+    if (std::filesystem::exists(defaultUIFontPath)) {
+        defaultUIFont = io.Fonts->AddFontFromFileTTF(defaultUIFontPath, 18.0f, &config);
     }
-    else
-        io.Fonts->AddFontFromFileTTF("c:\\Windows\\Fonts\\segoeui.ttf", 18.0f, &config);
+
+    if (std::filesystem::exists(chineseFontPath)) {
+        chineseFont = io.Fonts->AddFontFromFileTTF(chineseFontPath, 18.0f, &config);
+    }
+    else if (defaultUIFont != NULL) {
+        chineseFont = defaultUIFont;
+    }
+
+    if (std::filesystem::exists(japaneseFontPath)) {
+        japaneseFont = io.Fonts->AddFontFromFileTTF(japaneseFontPath, 16.0f, &config);
+    }
+    else if (defaultUIFont != NULL) {
+        japaneseFont = defaultUIFont;
+    }
 
     ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 0.00f);
 
@@ -998,11 +1024,26 @@ void guimain()
         ImGui_ImplWin32_NewFrame();
 
         ImGui::NewFrame();
+
+        switch (GuiLanguage) {
+        case GuiTrans::GUILangType::SCHINESE:
+        case GuiTrans::GUILangType::TCHINESE: {
+            ImGui::PushFont(chineseFont);
+        }; break;
+        case GuiTrans::GUILangType::JPN: {
+            ImGui::PushFont(japaneseFont);
+        }; break;
+        default: {
+            ImGui::PushFont(chineseFont);
+        }
+        }
+
         imguiRaceMainLoop(io);
         imGuiRaceSkillInfoMainLoop();
         LiveGUILoops::AllLoop();
         imGuiEventHelperLoop();
 
+        ImGui::PopFont();
         ImGui::Render();
         const float clear_color_with_alpha[4] = { clear_color.x * clear_color.w, clear_color.y * clear_color.w, clear_color.z * clear_color.w, clear_color.w };
         g_pd3dDeviceContext->OMSetRenderTargets(1, &g_mainRenderTargetView, NULL);

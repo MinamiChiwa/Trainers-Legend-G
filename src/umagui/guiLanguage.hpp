@@ -10,7 +10,8 @@ namespace GuiTrans {
 	{
 		ENGLISH,
 		SCHINESE,
-		TCHINESE
+		TCHINESE,
+		JPN
 	};
 
 	extern auto GuiLanguage = GUILangType::ENGLISH;
@@ -205,6 +206,102 @@ namespace GuiTrans {
 		{"On Failed:", "失敗時:"},
 	};
 
+
+	const std::unordered_map<std::string_view, std::string> guiJPNTrans{
+		{"GateNo/CharaName", "ゲート番号/ウマ娘の名前"},
+		{"Rank/Distance", "順位/移動距離"},
+		{"DistanceFrom Front/First", "先頭/1位からの距離"},
+		{"InstantSpeed", "瞬間速度"},
+		{"Rate", "スピードのレート"},
+		{"HP Left", "残りのHP"},
+		{"IsLastSpurt/Start Distance", "ラストスパート/スタートの距離"},
+		{"LastSpeed", "直前のスピード"},
+		{"Speed", "スピード"},
+		{"Stamina", "スタミナ"},
+		{"Pow", "パワー"},
+		{"Power", "パワー"},
+		{"Guts", "根性"},
+		{"Wiz", "賢さ"},
+		{"MinSpeed", "最小の速度"},
+		{"RaceBaseSpeed", "レースの基本速度"},
+		{"StartDashSpeedThreshold", "スタートダッシュ速度のしきい値"},
+		{"BaseSpeed", "基本のスピード"},
+		{"RawSpeed", "元のスピード"},
+		{"BaseStamina", "基本のスタミナ"},
+		{"RawStamina", "元のスタミナ"},
+		{"BasePow", "基本のパワー"},
+		{"RawPow", "元のパワー"},
+		{"BaseGuts", "基本の根性"},
+		{"RawGuts", "元の根性"},
+		{"BaseWiz", "基本の賢さ"},
+		{"RawWiz", "元の賢さ"},
+		{"MoveDistance", "移動距離 (フレーム)"},
+		{"RunMotionSpeed", "RunMotionSpeed"},
+		{"RaceBaseSpeed", "レースの基本速度"},
+		{"Keep Top", "ウィンドウを常に手前に表示"},
+		{"Auto Close Window", "ウィンドウを自動で閉じる"},
+		{"Show km/h", "速度をkm/hで表示"},
+		{"Ignore Negative Speed", "ネガティブ移動速度を無視"},
+		{"Gate/Name", "ゲート/名前"},
+		{"Skill", "スキル"},
+		{"AbilityType", "効果の種類"},
+		{"Value", "値"},
+		{"Targets", "ターゲット"},
+		{"CoolDownTime", "クールダウンタイム"},
+		{"RunningStyleExOonige", "RunningStyleExOonige"},
+		{"HpDecRate", "HP減少率 (%)"},
+		{"VisibleDistance", "距離の可視"},
+		{"HpRate", "HPのパーセンテージ"},
+		{"StartDash", "スタートダッシュ"},
+		{"ForceOvertakeIn", "ForceOvertakeIn"},
+		{"ForceOvertakeOut", "ForceOvertakeOut"},
+		{"TemptationEndTime", "TemptationEndTime"},
+		{"StartDelayFix", "StartDelayFix"},
+		{"CurrentSpeed", "現在の速度"},
+		{"CurrentSpeedWithNaturalDeceleration", "現在のスピードを上昇、徐々に降下"},
+		{"TargetSpeed", "ターゲットの速度"},
+		{"LaneMoveSpeed", "レーン変更速度"},
+		{"TemptationPer", "TemptationPer"},
+		{"PushPer", "PushPer"},
+		{"Accel", "加速度"},
+		{"AllStatus", "すべてのステータス向上"},
+		{"TargetLane", "ターゲットのレーンを変更"},
+		{"ActivateRandomNormalAndRareSkill", "ランダムで通常とレアスキルを発動"},
+		{"ActivateRandomRareSkill", "ランダムでレアスキルを発動"},
+		{"DebuffCancel", "デバフのキャンセル"},
+		{"DebuffAbilityValueMultiply", "デバフ能力値倍増"},
+		{"DebuffAbilityValueMultiplyOtherActivate", "DebuffAbilityValueMultiplyOtherActivate"},
+
+		{"Self", "自分"},
+		{"All", "すべてのウマ娘"},
+		{"AllOtherSelf", "自分以外のすべて"},
+		{"Visible", "可視"},
+		{"RandomOtherSelf", "自分以外ランダム"},
+		{"Order", "指定の順位"},
+		{"OrderInfront", "自分の前の順位"},
+		{"OrderBehind", "自分の後の順位"},
+		{"SelfInfront", "自分の前"},
+		{"SelfBehind", "自分の後ろ"},
+		{"TeamMember", "チームメンバー"},
+		{"Near", "近く"},
+		{"SelfAndBlockFront", "自分と前方をブロック"},
+		{"BlockSide", "横方向にブロック"},
+		{"NearInfront", "自分の前方付近"},
+		{"NearBehind", "自分の後方付近"},
+		{"RunningStyle", "指定された走行スタイル"},
+		{"RunningStyleOtherSelf", "他の指定されたウマ娘の走法"},
+		{"SelfInfrontTemptation", "SelfInfrontTemptation"},
+		{"SelfBehindTemptation", "SelfBehindTemptation"},
+		{"RunningStyleTemptationOtherSelf", "RunningStyleTemptationOtherSelf"},
+		{"CharaId", "指定されたウマ娘のID"},
+		{"ActivateHealSkill", "回復スキルの発動"},
+
+		{"Option", "選択肢"},
+		{"Effects", "結果"},
+		{"On Success:", "成功:"},
+		{"On Failed:", "失敗:"},
+	};
+
 	const char* GetTrans(const char* text) {
 		switch (GuiLanguage)
 		{
@@ -217,6 +314,11 @@ namespace GuiTrans {
 		}; break;
 		case GuiTrans::GUILangType::TCHINESE: {
 			if (const auto iter = guiTChineseTrans.find(std::string_view(text)); iter != guiTChineseTrans.end()) {
+				return iter->second.c_str();
+			}
+		}; break;
+		case GuiTrans::GUILangType::JPN: {
+			if (const auto iter = guiJPNTrans.find(std::string_view(text)); iter != guiTChineseTrans.end()) {
 				return iter->second.c_str();
 			}
 		}; break;
@@ -234,9 +336,10 @@ namespace GuiTrans {
 		else if (tChineseLangIds.contains(localLang)) {
 			return 2;
 		}
+		else if (japaneseLangIds.contains(localLang)) {
+			return 3;
+		}
 		return 0;
 	}
 
 }
-
-
