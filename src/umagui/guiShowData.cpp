@@ -163,3 +163,5 @@ void UmaGUiShowData::initGuiGlobalData() {
 		}
 	}
 }
+
+EventInfoDisplay eventInfoDisplay{ .eventInfo = EventHelper::EventInfo{.Choices = std::list<EventHelper::EventChoice>{}} };

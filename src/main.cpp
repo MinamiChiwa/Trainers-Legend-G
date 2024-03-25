@@ -106,6 +106,7 @@ bool g_enable_live_dof_controller = false;
 bool g_enable_better60fps = false;
 bool g_upload_gacha_history = false;
 std::wstring g_upload_gacha_history_endpoint = L"";
+bool g_enable_event_helper = false;
 
 constexpr const char LocalizedDataPath[] = "localized_data";
 constexpr const char OldLocalizedDataPath[] = "old_localized_data";
@@ -827,6 +828,10 @@ namespace
 					dumpGameAssemblyPath = document["dumpGameAssemblyPath"].GetString();
 				}
 			}
+
+			if (document.HasMember("enableEventHelper")) {
+				g_enable_event_helper = document["enableEventHelper"].GetBool();
+			}
 		}
 
 		config_stream.close();
@@ -1063,6 +1068,9 @@ namespace {
 				UmaDatabase::executeQueryRes();
 			}
 		}
+		std::thread([]() {
+			EventHelper::loadData();
+			}).detach();
 	}
 
 	// 返回新的 static dict 路径
@@ -1898,6 +1906,7 @@ int __stdcall DllMain(HINSTANCE dllModule, DWORD reason, LPVOID)
 				PluginLoader::loadDll(dllName);
 			}
 			SetConsoleTitleW(CONSOLE_TITLE);  // 保持控制台标题
+			EventHelper::loadData();
 			auto_update();
 			});
 		init_thread.detach();

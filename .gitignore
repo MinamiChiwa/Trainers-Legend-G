@@ -156,3 +156,4 @@ resources/text_dumper/bin
 .cache/
 .vscode/
 /backend
+/utils/events.br

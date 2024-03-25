@@ -110,5 +110,6 @@
         "enableCustomPersistentDataPath": false,
         "customPersistentDataPath": ""
     },
-    "uploadGachaHistory": false
+    "uploadGachaHistory": false,
+    "enableEventHelper": false
 }

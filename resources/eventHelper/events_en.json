@@ -1,0 +1,42 @@
+[
+    {
+        "Id": 400001017,
+        "Name": "二人三脚",
+        "Choices": [
+            [
+                {
+                    "Option": "桐生院葵編成有り",
+                    "SuccessEffect": "Wisdom +20、Skill Pt +20、「鋼の意志」 Hint Lv +3",
+                    "FailedEffect": ""
+                }
+            ],
+            [
+                {
+                    "Option": "桐生院葵編成無し",
+                    "SuccessEffect": "Wisdom +20、Skill Pt +20、「鋼の意志」 Hint Lv +1",
+                    "FailedEffect": ""
+                }
+            ]
+        ]
+    },
+    {
+        "Id": 400001029,
+        "Name": "ハッピーな靴選び",
+        "Choices": [
+            [
+                {
+                    "Option": "桐生院葵編成有り",
+                    "SuccessEffect": "Power +20",
+                    "FailedEffect": ""
+                }
+            ],
+            [
+                {
+                    "Option": "桐生院葵編成無し",
+                    "SuccessEffect": "Power +10",
+                    "FailedEffect": ""
+                }
+            ]
+        ]
+    }
+]
