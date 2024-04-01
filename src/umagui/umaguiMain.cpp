@@ -212,299 +212,299 @@ void imguiRaceMainLoop(ImGuiIO& io) {
         const int num_rows = sortedData.size();
         const int num_columns = tableTitle.size();  // 列数
 
-        ImGui::BeginTable("UmaRaceInfo", num_columns, ImGuiTableFlags_Sortable | ImGuiTableFlags_Resizable | ImGuiTableFlags_SizingFixedFit);
+        if (ImGui::BeginTable("UmaRaceInfo", num_columns, ImGuiTableFlags_Sortable | ImGuiTableFlags_Resizable | ImGuiTableFlags_SizingFixedFit)) {
 
-        std::sort(sortedData.begin(), sortedData.end(), cmp_func);
+            std::sort(sortedData.begin(), sortedData.end(), cmp_func);
 
-        // 绘制表头
-        auto headLine = 0;
-        for (const auto& i : tableTitle) {
-            if (headLine == 0)
-                ImGui::TableSetupColumn(i, ImGuiTableColumnFlags_DefaultSort | ImGuiTableColumnFlags_WidthStretch);
-            else
-                ImGui::TableSetupColumn(i, ImGuiTableColumnFlags_WidthStretch);
-            headLine++;
-        }
-        ImGui::TableHeadersRow();
-
-        static std::map<int, std::pair<int, ImVec4>> highlightGates{};
-        static std::vector<ImVec4> colors{ 
-            rgbaToImVec4(0xff, 0x6f, 0x00, 255),  // 橙
-            rgbaToImVec4(0x14, 0xd1, 0x00, 255),  // 绿
-            rgbaToImVec4(0x11, 0x44, 0xaa, 255),
-            rgbaToImVec4(0x5d, 0xce, 0xc6, 255),
-            rgbaToImVec4(0x9f, 0x3e, 0xd5, 255),
-            rgbaToImVec4(0x71, 0x09, 0xaa, 255),
-            rgbaToImVec4(0xcd, 0x00, 0x74, 255),
-            rgbaToImVec4(0xff, 0x07, 0x00, 255),
-            rgbaToImVec4(0x84, 0xb2, 0x2d, 255),
-            rgbaToImVec4(0xff, 0x5c, 0x00, 255),
-            rgbaToImVec4(0xff, 0x9c, 0x00, 255),
-            rgbaToImVec4(0xed, 0x00, 0x2f, 255),
-            rgbaToImVec4(0x00, 0xa7, 0x70, 255),
-            rgbaToImVec4(0x00, 0xc1, 0x2b, 255),
-            rgbaToImVec4(0xDE, 0x00, 0x52, 255),
-            rgbaToImVec4(0xFF, 0x0D, 0x00, 255),
-            rgbaToImVec4(0x07, 0x76, 0xA0, 255),
-            rgbaToImVec4(0x00, 0xA6, 0x7C, 255),
-            rgbaToImVec4(0x00, 0xBF, 0x32, 255),
-        };
-        static int lastColorIndex = colors.size() - 1;
-        static auto selectNextColor = []() {
-            if (highlightGates.size() >= colors.size()) return -1;
-
-            lastColorIndex++;
-            if (lastColorIndex >= colors.size()) {
-                lastColorIndex = 0;
+            // 绘制表头
+            auto headLine = 0;
+            for (const auto& i : tableTitle) {
+                if (headLine == 0)
+                    ImGui::TableSetupColumn(i, ImGuiTableColumnFlags_DefaultSort | ImGuiTableColumnFlags_WidthStretch);
+                else
+                    ImGui::TableSetupColumn(i, ImGuiTableColumnFlags_WidthStretch);
+                headLine++;
             }
-            while (highlightGates.contains(lastColorIndex)) {
-                if (lastColorIndex >= colors.size()) {
-                    lastColorIndex = -1;
-                }
+            ImGui::TableHeadersRow();
+
+            static std::map<int, std::pair<int, ImVec4>> highlightGates{};
+            static std::vector<ImVec4> colors{
+                rgbaToImVec4(0xff, 0x6f, 0x00, 255),  // 橙
+                rgbaToImVec4(0x14, 0xd1, 0x00, 255),  // 绿
+                rgbaToImVec4(0x11, 0x44, 0xaa, 255),
+                rgbaToImVec4(0x5d, 0xce, 0xc6, 255),
+                rgbaToImVec4(0x9f, 0x3e, 0xd5, 255),
+                rgbaToImVec4(0x71, 0x09, 0xaa, 255),
+                rgbaToImVec4(0xcd, 0x00, 0x74, 255),
+                rgbaToImVec4(0xff, 0x07, 0x00, 255),
+                rgbaToImVec4(0x84, 0xb2, 0x2d, 255),
+                rgbaToImVec4(0xff, 0x5c, 0x00, 255),
+                rgbaToImVec4(0xff, 0x9c, 0x00, 255),
+                rgbaToImVec4(0xed, 0x00, 0x2f, 255),
+                rgbaToImVec4(0x00, 0xa7, 0x70, 255),
+                rgbaToImVec4(0x00, 0xc1, 0x2b, 255),
+                rgbaToImVec4(0xDE, 0x00, 0x52, 255),
+                rgbaToImVec4(0xFF, 0x0D, 0x00, 255),
+                rgbaToImVec4(0x07, 0x76, 0xA0, 255),
+                rgbaToImVec4(0x00, 0xA6, 0x7C, 255),
+                rgbaToImVec4(0x00, 0xBF, 0x32, 255),
+            };
+            static int lastColorIndex = colors.size() - 1;
+            static auto selectNextColor = []() {
+                if (highlightGates.size() >= colors.size()) return -1;
+
                 lastColorIndex++;
-            }
-            return lastColorIndex;
-        };
-
-        // 绘制表格内容
-        for (const auto& i : sortedData) {
-            ImGui::TableNextRow();
-            ImGui::TableSetColumnIndex(0);
-            const auto& umaData = i.second;
-
-            auto fColor = ImVec4(1.0f, 1.0f, 1.0f, 1.0f);
-
-            if (const auto iter = highlightGates.find(umaData.gateNo); iter != highlightGates.end()) {
-                fColor = iter->second.second;
-            }
-            ImGui::PushStyleColor(ImGuiCol_Text, fColor);
-
-            ImGui::Text("%d. %s%s", umaData.gateNo, umaData.charaName.c_str(), umaData.trainerName.empty() ? "" : std::format(" ({})", umaData.trainerName).c_str());
-            
-            if (ImGui::IsItemClicked()) {
-                if (highlightGates.contains(umaData.gateNo)) {
-                    highlightGates.erase(umaData.gateNo);
+                if (lastColorIndex >= colors.size()) {
+                    lastColorIndex = 0;
                 }
-                else {
-                    auto nextColorIndex = selectNextColor();
-                    if (nextColorIndex != -1) {
-                        highlightGates.emplace(umaData.gateNo, std::make_pair(nextColorIndex, colors[nextColorIndex]));
+                while (highlightGates.contains(lastColorIndex)) {
+                    if (lastColorIndex >= colors.size()) {
+                        lastColorIndex = -1;
+                    }
+                    lastColorIndex++;
+                }
+                return lastColorIndex;
+                };
+
+            // 绘制表格内容
+            for (const auto& i : sortedData) {
+                ImGui::TableNextRow();
+                ImGui::TableSetColumnIndex(0);
+                const auto& umaData = i.second;
+
+                auto fColor = ImVec4(1.0f, 1.0f, 1.0f, 1.0f);
+
+                if (const auto iter = highlightGates.find(umaData.gateNo); iter != highlightGates.end()) {
+                    fColor = iter->second.second;
+                }
+                ImGui::PushStyleColor(ImGuiCol_Text, fColor);
+
+                ImGui::Text("%d. %s%s", umaData.gateNo, umaData.charaName.c_str(), umaData.trainerName.empty() ? "" : std::format(" ({})", umaData.trainerName).c_str());
+
+                if (ImGui::IsItemClicked()) {
+                    if (highlightGates.contains(umaData.gateNo)) {
+                        highlightGates.erase(umaData.gateNo);
+                    }
+                    else {
+                        auto nextColorIndex = selectNextColor();
+                        if (nextColorIndex != -1) {
+                            highlightGates.emplace(umaData.gateNo, std::make_pair(nextColorIndex, colors[nextColorIndex]));
+                        }
                     }
                 }
-            }
-            
-            if (ImGui::IsItemHovered()) {
-                ImGui::BeginTooltip();
-                ImGui::Text(
-                    std::format("{}: %f\n{}: %f\n{}: %f\n{}/{}: %.4f / %d\n{}/{}: %.4f / %d\n{}/{}: %.4f / %d\n{}/{}: %.4f / %d\n\
+
+                if (ImGui::IsItemHovered()) {
+                    ImGui::BeginTooltip();
+                    ImGui::Text(
+                        std::format("{}: %f\n{}: %f\n{}: %f\n{}/{}: %.4f / %d\n{}/{}: %.4f / %d\n{}/{}: %.4f / %d\n{}/{}: %.4f / %d\n\
 {}/{}: %.4f / %d\n", GetTrans("MinSpeed"), GetTrans("RaceBaseSpeed"), GetTrans("StartDashSpeedThreshold"),
-GetTrans("BaseSpeed"), GetTrans("RawSpeed"), GetTrans("BaseStamina"), GetTrans("RawStamina"), 
+GetTrans("BaseSpeed"), GetTrans("RawSpeed"), GetTrans("BaseStamina"), GetTrans("RawStamina"),
 GetTrans("BasePow"), GetTrans("RawPow"), GetTrans("BaseGuts"), GetTrans("RawGuts"),
 GetTrans("BaseWiz"), GetTrans("RawWiz")).c_str(),
 umaData.MinSpeed, umaData.RaceBaseSpeed, umaData.StartDashSpeedThreshold, umaData.BaseSpeed, umaData.RawSpeed,
 umaData.BaseStamina, umaData.RawStamina, umaData.BasePow, umaData.RawPow, umaData.BaseGuts, umaData.RawGuts,
 umaData.BaseWiz, umaData.RawWiz
 );
-                ImGui::EndTooltip();
-            }
+                    ImGui::EndTooltip();
+                }
 
-            ImGui::TableSetColumnIndex(1);
-            ImGui::Text("%d / %.4f", umaData.rank, umaData.distance);
-            if (ImGui::IsItemHovered())
-            {
-                ImGui::BeginTooltip();
-                ImGui::Text(
-                    std::format("{}: %.4f", GetTrans("MoveDistance")).c_str(),
-                    umaData.MoveDistance
-                );
-                ImGui::EndTooltip();
-            }
+                ImGui::TableSetColumnIndex(1);
+                ImGui::Text("%d / %.4f", umaData.rank, umaData.distance);
+                if (ImGui::IsItemHovered())
+                {
+                    ImGui::BeginTooltip();
+                    ImGui::Text(
+                        std::format("{}: %.4f", GetTrans("MoveDistance")).c_str(),
+                        umaData.MoveDistance
+                    );
+                    ImGui::EndTooltip();
+                }
 
-            ImGui::TableSetColumnIndex(2);
-            if (umaData.rank == 1) {
-                ImGui::PushStyleColor(ImGuiCol_Text, fColor);
-            }
-            else {
-                if (umaData.distanceFront < 0.5)
-                    ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xfe, 0x36, 0x01, 255));
-                else if (umaData.distanceFront < 1.0)
-                    ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xFF, 0xc5, 0x45, 255));
+                ImGui::TableSetColumnIndex(2);
+                if (umaData.rank == 1) {
+                    ImGui::PushStyleColor(ImGuiCol_Text, fColor);
+                }
+                else {
+                    if (umaData.distanceFront < 0.5)
+                        ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xfe, 0x36, 0x01, 255));
+                    else if (umaData.distanceFront < 1.0)
+                        ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xFF, 0xc5, 0x45, 255));
+                    else
+                        ImGui::PushStyleColor(ImGuiCol_Text, fColor);
+                }
+                ImGui::Text("%.2f / %.2f", umaData.distanceFront, umaData.distanceFirst);
+
+                ImGui::PopStyleColor();
+
+                ImGui::TableSetColumnIndex(3);
+                const auto speedMpers = umaData.MoveDistance / umaData.deltatime;
+
+                if (speedMpers <= 16.67)
+                    ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0x00, 0xb9, 0x45, 255));
+                else if (speedMpers <= 19.44)
+                    ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0x64, 0xb4, 0xcf, 255));
+                else if (speedMpers <= 22.22)
+                    ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xb7, 0x6f, 0xea, 255));
+                else if (speedMpers <= 23.61)
+                    ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xc9, 0x37, 0xd3, 255));
+                else if (speedMpers <= 25)
+                    ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xf3, 0x6b, 0xb3, 255));
+                else if (speedMpers <= 26.38)
+                    ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xf3, 0x3f, 0x6e, 255));
+                else
+                    ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xff, 0x31, 0x00, 255));
+
+                if (showKmH) {
+                    ImGui::Text("%.2f km/h", speedMpers * 3.6);
+                }
+                else {
+                    ImGui::Text("%.2f m/s", speedMpers);
+                }
+                ImGui::PopStyleColor();
+
+                if (ImGui::IsItemHovered())
+                {
+                    ImGui::BeginTooltip();
+                    ImGui::Text(
+                        std::format("{}: %.4f\n{}: %.4f", GetTrans("RunMotionSpeed"), GetTrans("MoveDistance")).c_str(),
+                        umaData.speed, umaData.MoveDistance
+                    );
+                    ImGui::EndTooltip();
+                }
+
+                ImGui::TableSetColumnIndex(4);
+                if (umaData.rate < 1.0)
+                    ImGui::PushStyleColor(ImGuiCol_Text, fColor);
+                else if (umaData.rate <= 1.2)
+                    ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0x64, 0xb4, 0xcf, 255));
+                else if (umaData.rate <= 1.35)
+                    ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0x92, 0x40, 0xd5, 255));
+                else if (umaData.rate <= 1.4)
+                    ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xc9, 0x37, 0xd3, 255));
+                else if (umaData.rate <= 1.5)
+                    ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xe7, 0x00, 0x3e, 255));
+                else
+                    ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xff, 0x31, 0x00, 255));
+
+                ImGui::Text("%f", umaData.rate);
+
+                ImGui::PopStyleColor();
+
+                ImGui::TableSetColumnIndex(5);
+                if (umaData.HpPer <= 0.001)
+                    ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xea, 0x00, 0x37, 255));
+                else if (umaData.HpPer <= 0.06)
+                    ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xff, 0x35, 0x00, 255));
+                else if (umaData.HpPer <= 0.12)
+                    ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xff, 0xe8, 0x00, 255));
                 else
                     ImGui::PushStyleColor(ImGuiCol_Text, fColor);
-            }
-            ImGui::Text("%.2f / %.2f", umaData.distanceFront, umaData.distanceFirst);
 
-            ImGui::PopStyleColor();
+                ImGui::Text("%.1f (%.2f%s) / %.4f", umaData.Hp, umaData.HpPer * 100, "%", umaData.MaxHp);
+                ImGui::PopStyleColor();
 
-            ImGui::TableSetColumnIndex(3);
-            const auto speedMpers = umaData.MoveDistance / umaData.deltatime;
+                ImGui::TableSetColumnIndex(6);
+                if (umaData.isLastSpurt)
+                    ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xfe, 0x95, 0x9a, 255));
+                else
+                    ImGui::PushStyleColor(ImGuiCol_Text, fColor);
 
-            if (speedMpers <= 16.67)
-                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0x00, 0xb9, 0x45, 255));
-            else if (speedMpers <= 19.44)
-                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0x64, 0xb4, 0xcf, 255));
-            else if (speedMpers <= 22.22)
-                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xb7, 0x6f, 0xea, 255));
-            else if (speedMpers <= 23.61)
-                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xc9, 0x37, 0xd3, 255));
-            else if (speedMpers <= 25)
-                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xf3, 0x6b, 0xb3, 255));
-            else if (speedMpers <= 26.38)
-                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xf3, 0x3f, 0x6e, 255));
-            else
-                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xff, 0x31, 0x00, 255));
+                ImGui::Text("%s", umaData.isLastSpurt ? "Yes" : "No");
+                ImGui::PopStyleColor();
+                ImGui::SameLine();
+                ImGui::Text("/ %.4f", umaData.LastSpurtStartDistance);
 
-            if (showKmH) {
-                ImGui::Text("%.2f km/h", speedMpers * 3.6);
-            }
-            else {
-                ImGui::Text("%.2f m/s", speedMpers);
-            }
-            ImGui::PopStyleColor();
-            
-            if (ImGui::IsItemHovered())
-            {
-                ImGui::BeginTooltip();
-                ImGui::Text(
-                    std::format("{}: %.4f\n{}: %.4f", GetTrans("RunMotionSpeed"), GetTrans("MoveDistance")).c_str(),
-                    umaData.speed, umaData.MoveDistance
-                );
-                ImGui::EndTooltip();
-            }
+                ImGui::TableSetColumnIndex(7);
+                ImGui::Text("%.4f", umaData.lastSpeed);
 
-            ImGui::TableSetColumnIndex(4);
-            if (umaData.rate < 1.0)
-                ImGui::PushStyleColor(ImGuiCol_Text, fColor);
-            else if (umaData.rate <= 1.2)
-                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0x64, 0xb4, 0xcf, 255));
-            else if (umaData.rate <= 1.35)
-                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0x92, 0x40, 0xd5, 255));
-            else if (umaData.rate <= 1.4)
-                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xc9, 0x37, 0xd3, 255));
-            else if (umaData.rate <= 1.5)
-                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xe7, 0x00, 0x3e, 255));
-            else
-                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xff, 0x31, 0x00, 255));
+                ImGui::TableSetColumnIndex(8);
+                ImGui::Text("%.4f", umaData.Speed);
+                if (ImGui::IsItemHovered())
+                {
+                    ImGui::BeginTooltip();
+                    ImGui::Text(
+                        std::format("{}: %f\n{}: %f\n{}: %.4f\n{}: %d",
+                            GetTrans("MinSpeed"), GetTrans("RaceBaseSpeed"), GetTrans("BaseSpeed"), GetTrans("RawSpeed")).c_str(),
+                        umaData.MinSpeed, umaData.RaceBaseSpeed, umaData.BaseSpeed, umaData.RawSpeed
+                    );
+                    ImGui::EndTooltip();
+                }
 
-            ImGui::Text("%f", umaData.rate);
+                ImGui::TableSetColumnIndex(9);
+                ImGui::Text("%.4f", umaData.Stamina);
+                if (ImGui::IsItemHovered())
+                {
+                    ImGui::BeginTooltip();
+                    ImGui::Text(
+                        std::format("{}:%.4f\n{}: %d", GetTrans("BaseStamina"), GetTrans("RawStamina")).c_str(),
+                        umaData.BaseStamina, umaData.RawStamina
+                    );
+                    ImGui::EndTooltip();
+                }
 
-            ImGui::PopStyleColor();
+                ImGui::TableSetColumnIndex(10);
+                ImGui::Text("%.4f", umaData.Pow);
+                if (ImGui::IsItemHovered())
+                {
+                    ImGui::BeginTooltip();
+                    ImGui::Text(
+                        std::format("{}:%.4f\n{}: %d", GetTrans("BasePow"), GetTrans("RawPow")).c_str(),
+                        umaData.BasePow, umaData.RawPow
+                    );
+                    ImGui::EndTooltip();
+                }
 
-            ImGui::TableSetColumnIndex(5);
-            if (umaData.HpPer <= 0.001)
-                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xea, 0x00, 0x37, 255));
-            else if (umaData.HpPer <= 0.06)
-                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xff, 0x35, 0x00, 255));
-            else if (umaData.HpPer <= 0.12)
-                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xff, 0xe8, 0x00, 255));
-            else
-                ImGui::PushStyleColor(ImGuiCol_Text, fColor);
+                ImGui::TableSetColumnIndex(11);
+                ImGui::Text("%.4f", umaData.Guts);
+                if (ImGui::IsItemHovered())
+                {
+                    ImGui::BeginTooltip();
+                    ImGui::Text(
+                        std::format("{}:%.4f\n{}: %d", GetTrans("BaseGuts"), GetTrans("RawGuts")).c_str(),
+                        umaData.BaseGuts, umaData.RawGuts
+                    );
+                    ImGui::EndTooltip();
+                }
 
-            ImGui::Text("%.1f (%.2f%s) / %.4f", umaData.Hp, umaData.HpPer * 100, "%", umaData.MaxHp);
-            ImGui::PopStyleColor();
-
-            ImGui::TableSetColumnIndex(6);
-            if (umaData.isLastSpurt)
-                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xfe, 0x95, 0x9a, 255));
-            else
-                ImGui::PushStyleColor(ImGuiCol_Text, fColor);
-
-            ImGui::Text("%s", umaData.isLastSpurt ? "Yes" : "No");
-            ImGui::PopStyleColor();
-            ImGui::SameLine();
-            ImGui::Text("/ %.4f", umaData.LastSpurtStartDistance);
-
-            ImGui::TableSetColumnIndex(7);
-            ImGui::Text("%.4f", umaData.lastSpeed);
-
-            ImGui::TableSetColumnIndex(8);
-            ImGui::Text("%.4f", umaData.Speed);
-            if (ImGui::IsItemHovered())
-            {
-                ImGui::BeginTooltip();
-                ImGui::Text(
-                    std::format("{}: %f\n{}: %f\n{}: %.4f\n{}: %d",
-                        GetTrans("MinSpeed"), GetTrans("RaceBaseSpeed"), GetTrans("BaseSpeed"), GetTrans("RawSpeed")).c_str(),
-                    umaData.MinSpeed, umaData.RaceBaseSpeed, umaData.BaseSpeed, umaData.RawSpeed
-                );
-                ImGui::EndTooltip();
+                ImGui::TableSetColumnIndex(12);
+                ImGui::Text("%.4f", umaData.Wiz);
+                if (ImGui::IsItemHovered())
+                {
+                    ImGui::BeginTooltip();
+                    ImGui::Text(
+                        std::format("{}: %.4f\n{}: %d", GetTrans("BaseWiz"), GetTrans("RawWiz")).c_str(),
+                        umaData.BaseWiz, umaData.RawWiz
+                    );
+                    ImGui::EndTooltip();
+                }
+                // ImGui::NextColumn();
+                ImGui::PopStyleColor();
             }
 
-            ImGui::TableSetColumnIndex(9);
-            ImGui::Text("%.4f", umaData.Stamina);
-            if (ImGui::IsItemHovered())
-            {
-                ImGui::BeginTooltip();
-                ImGui::Text(
-                    std::format("{}:%.4f\n{}: %d", GetTrans("BaseStamina"), GetTrans("RawStamina")).c_str(),
-                    umaData.BaseStamina, umaData.RawStamina
-                );
-                ImGui::EndTooltip();
-            }
-
-            ImGui::TableSetColumnIndex(10);
-            ImGui::Text("%.4f", umaData.Pow);
-            if (ImGui::IsItemHovered())
-            {
-                ImGui::BeginTooltip();
-                ImGui::Text(
-                    std::format("{}:%.4f\n{}: %d", GetTrans("BasePow"), GetTrans("RawPow")).c_str(),
-                    umaData.BasePow, umaData.RawPow
-                );
-                ImGui::EndTooltip();
-            }
-
-            ImGui::TableSetColumnIndex(11);
-            ImGui::Text("%.4f", umaData.Guts);
-            if (ImGui::IsItemHovered())
-            {
-                ImGui::BeginTooltip();
-                ImGui::Text(
-                    std::format("{}:%.4f\n{}: %d", GetTrans("BaseGuts"), GetTrans("RawGuts")).c_str(),
-                    umaData.BaseGuts, umaData.RawGuts
-                );
-                ImGui::EndTooltip();
-            }
-
-            ImGui::TableSetColumnIndex(12);
-            ImGui::Text("%.4f", umaData.Wiz);
-            if (ImGui::IsItemHovered())
-            {
-                ImGui::BeginTooltip();
-                ImGui::Text(
-                    std::format("{}: %.4f\n{}: %d", GetTrans("BaseWiz"), GetTrans("RawWiz")).c_str(),
-                    umaData.BaseWiz, umaData.RawWiz
-                );
-                ImGui::EndTooltip();
-            }
-            // ImGui::NextColumn();
-            ImGui::PopStyleColor();
-        }
-
-        // 指定排序规则
-        ImGuiTableSortSpecs* sorts_specs = ImGui::TableGetSortSpecs();
-        if (sorts_specs) {
-            if (sorts_specs->SpecsCount > 0) {
-                sortDirection = sorts_specs->Specs->SortDirection;
-                switch (sorts_specs->Specs[0].ColumnIndex) {
-                case 0: cmp_func = UmaCmp::compareGateNo; break;
-                case 1: cmp_func = UmaCmp::compareDistance; break;
-                case 2: cmp_func = UmaCmp::compareDistFront; break;
-                case 3: cmp_func = UmaCmp::compareRSpeed; break;
-                case 4: cmp_func = UmaCmp::compareRate; break;
-                case 5: cmp_func = UmaCmp::compareHp; break;
-                case 6: cmp_func = UmaCmp::compareLastSpurtStartDistance; break;
-                case 7: cmp_func = UmaCmp::compareLastspeed; break;
-                case 8: cmp_func = UmaCmp::compareSpeed; break;
-                case 9: cmp_func = UmaCmp::compareStamina; break;
-                case 10: cmp_func = UmaCmp::comparePow; break;
-                case 11: cmp_func = UmaCmp::compareGuts; break;
-                case 12: cmp_func = UmaCmp::compareWiz; break;
+            // 指定排序规则
+            ImGuiTableSortSpecs* sorts_specs = ImGui::TableGetSortSpecs();
+            if (sorts_specs) {
+                if (sorts_specs->SpecsCount > 0) {
+                    sortDirection = sorts_specs->Specs->SortDirection;
+                    switch (sorts_specs->Specs[0].ColumnIndex) {
+                    case 0: cmp_func = UmaCmp::compareGateNo; break;
+                    case 1: cmp_func = UmaCmp::compareDistance; break;
+                    case 2: cmp_func = UmaCmp::compareDistFront; break;
+                    case 3: cmp_func = UmaCmp::compareRSpeed; break;
+                    case 4: cmp_func = UmaCmp::compareRate; break;
+                    case 5: cmp_func = UmaCmp::compareHp; break;
+                    case 6: cmp_func = UmaCmp::compareLastSpurtStartDistance; break;
+                    case 7: cmp_func = UmaCmp::compareLastspeed; break;
+                    case 8: cmp_func = UmaCmp::compareSpeed; break;
+                    case 9: cmp_func = UmaCmp::compareStamina; break;
+                    case 10: cmp_func = UmaCmp::comparePow; break;
+                    case 11: cmp_func = UmaCmp::compareGuts; break;
+                    case 12: cmp_func = UmaCmp::compareWiz; break;
+                    }
                 }
             }
+            ImGui::EndTable();
         }
-
-        ImGui::EndTable();
     }
 
     ImGui::Text(GetTrans("Keep Top"));
@@ -650,123 +650,124 @@ void imGuiRaceSkillInfoMainLoop() {
         const std::vector thisLoopList(umaUsedSkillList.rbegin(), umaUsedSkillList.rend());
 
         ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(2, 18));
-        ImGui::BeginTable("UmaRaceSkills", num_columns, ImGuiTableFlags_Resizable | ImGuiTableFlags_SizingFixedFit);
+        if (ImGui::BeginTable("UmaRaceSkills", num_columns, ImGuiTableFlags_Resizable | ImGuiTableFlags_SizingFixedFit)) {
 
-        for (const auto& i : tableTitle) {
-            ImGui::TableSetupColumn(i, ImGuiTableColumnFlags_WidthFixed);
-        }
-        ImGui::TableHeadersRow();
+            for (const auto& i : tableTitle) {
+                ImGui::TableSetupColumn(i, ImGuiTableColumnFlags_WidthFixed);
+            }
+            ImGui::TableHeadersRow();
 
 
-        for (auto& it : thisLoopList) {
-            static auto showSkillInfo = [](UmaGUiShowData::SkillEventData it) {
-                ImGui::BeginTooltip();
-                ImGui::Text(std::format("{} (Rarity: {} Lv.{})", it.skillName, it.rarity, it.skillLevel).c_str());
+            for (auto& it : thisLoopList) {
+                static auto showSkillInfo = [](UmaGUiShowData::SkillEventData it) {
+                    ImGui::BeginTooltip();
+                    ImGui::Text(std::format("{} (Rarity: {} Lv.{})", it.skillName, it.rarity, it.skillLevel).c_str());
 
-                std::vector<const char*> skillTableTitle{
-                    GetTrans("AbilityType"), GetTrans("Value"), GetTrans("Targets")
-                };
+                    std::vector<const char*> skillTableTitle{
+                        GetTrans("AbilityType"), GetTrans("Value"), GetTrans("Targets")
+                    };
 
-                const int numRows = it.skillAbilities.size();
-                const int numColumns = skillTableTitle.size();  // 列数
+                    const int numRows = it.skillAbilities.size();
+                    const int numColumns = skillTableTitle.size();  // 列数
 
-                ImGui::BeginTable("UmaRaceSkillInfo", numColumns);
-                for (const auto& iTitle : skillTableTitle) {
-                    ImGui::TableSetupColumn(iTitle, ImGuiTableColumnFlags_WidthFixed);
-                }
-                ImGui::TableHeadersRow();
-
-                for (const auto& ability : it.skillAbilities) {
-                    ImGui::TableNextRow();
-                    ImGui::TableSetColumnIndex(0);
-                    ImGui::Text("%s", transSkillAbilityType(ability.abilityType).c_str());
-
-                    ImGui::TableSetColumnIndex(1);
-                    ImGui::Text("%.6f", ability.effValue);
-
-                    ImGui::TableSetColumnIndex(2);
-                    /*
-                    std::stringstream ss;
-                    int fCount = 0;
-                    for (const auto& target : ability.targets) {
-                        ss << std::format("{}. {}{} ", target.gateNo, target.charaName, 
-                            target.trainerName.empty() ? "" : std::format(" ({})", target.trainerName));
-                        fCount++;
-                        if (fCount >= 3) {
-                            fCount = 0;
-                            ss << "\n";
+                    if (ImGui::BeginTable("UmaRaceSkillInfo", numColumns)) {
+                        for (const auto& iTitle : skillTableTitle) {
+                            ImGui::TableSetupColumn(iTitle, ImGuiTableColumnFlags_WidthFixed);
                         }
+                        ImGui::TableHeadersRow();
+
+                        for (const auto& ability : it.skillAbilities) {
+                            ImGui::TableNextRow();
+                            ImGui::TableSetColumnIndex(0);
+                            ImGui::Text("%s", transSkillAbilityType(ability.abilityType).c_str());
+
+                            ImGui::TableSetColumnIndex(1);
+                            ImGui::Text("%.6f", ability.effValue);
+
+                            ImGui::TableSetColumnIndex(2);
+                            /*
+                            std::stringstream ss;
+                            int fCount = 0;
+                            for (const auto& target : ability.targets) {
+                                ss << std::format("{}. {}{} ", target.gateNo, target.charaName,
+                                    target.trainerName.empty() ? "" : std::format(" ({})", target.trainerName));
+                                fCount++;
+                                if (fCount >= 3) {
+                                    fCount = 0;
+                                    ss << "\n";
+                                }
+                            }
+                            ImGui::Text("%s", ss.str().c_str());*/
+                            ImGui::Text("%s", transSkillTargetType(ability.targetType).c_str());
+
+                        }
+                        ImGui::EndTable();
                     }
-                    ImGui::Text("%s", ss.str().c_str());*/
-                    ImGui::Text("%s", transSkillTargetType(ability.targetType).c_str());
 
+                    ImGui::EndTooltip();
+                    };
+
+                ImGui::TableNextRow();
+
+                if (it.rarity == 1)  // 白
+                    ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xff, 0xff, 0xff, 255));
+                else if (it.rarity == 2)  // 金
+                    ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xff, 0xee, 0x40, 255));
+                else if (it.rarity == 5 || it.rarity == 4)  // 固有
+                    ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xf0, 0x6c, 0x98, 255));
+                else if (it.rarity == 6)  // 金技能升级
+                    ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xfd, 0x95, 0x9c, 255));
+                else
+                    ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xff, 0xff, 0xff, 255));
+
+                ImGui::TableSetColumnIndex(0);
+                ImGui::Text(std::format("{}. {}{}", it.currGateNo, it.horseName, it.tName).c_str());
+                if (ImGui::IsItemHovered()) showSkillInfo(it);
+
+                ImGui::TableSetColumnIndex(1);
+                ImGui::Text("%s (Rarity: %d Lv.%d)", it.skillName.c_str(), it.rarity, it.skillLevel);
+                if (ImGui::IsItemHovered()) showSkillInfo(it);
+
+                ImGui::TableSetColumnIndex(2);
+                std::stringstream ss;
+                for (const auto& iab : it.skillAbilities) {
+                    ss << transSkillAbilityType(iab.abilityType) << "\n";
                 }
+                ImGui::Text(ss.str().c_str());
+                ss.str("");
+                if (ImGui::IsItemHovered()) showSkillInfo(it);
 
-                ImGui::EndTable();
+                ImGui::TableSetColumnIndex(3);
+                for (const auto& iab : it.skillAbilities) {
+                    ss << iab.effValue << "\n";
+                }
+                ImGui::Text(ss.str().c_str());
+                ss.str("");
+                if (ImGui::IsItemHovered()) showSkillInfo(it);
 
-                ImGui::EndTooltip();
-            };
+                ImGui::TableSetColumnIndex(4);
+                for (const auto& iab : it.skillAbilities) {
+                    ss << transSkillTargetType(iab.targetType);
+                    /*
+                    for (const auto& target : iab.targets) {
+                        ss << std::format("{}. {}{} ", target.gateNo, target.charaName,
+                            target.trainerName.empty() ? "" : std::format(" ({})", target.trainerName));
+                    }*/
+                    ss << "\n";
+                }
+                ImGui::Text(ss.str().c_str());
+                ss.str("");
+                if (ImGui::IsItemHovered()) showSkillInfo(it);
 
-            ImGui::TableNextRow();
+                ImGui::TableSetColumnIndex(5);
+                ImGui::Text("%f", it.cooldownTime);
+                if (ImGui::IsItemHovered()) showSkillInfo(it);
 
-            if (it.rarity == 1)  // 白
-                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xff, 0xff, 0xff, 255));
-            else if (it.rarity == 2)  // 金
-                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xff, 0xee, 0x40, 255));
-            else if (it.rarity == 5 || it.rarity == 4)  // 固有
-                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xf0, 0x6c, 0x98, 255));
-            else if (it.rarity == 6)  // 金技能升级
-                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xfd, 0x95, 0x9c, 255));
-            else
-                ImGui::PushStyleColor(ImGuiCol_Text, rgbaToImVec4(0xff, 0xff, 0xff, 255));
-
-            ImGui::TableSetColumnIndex(0);
-            ImGui::Text(std::format("{}. {}{}", it.currGateNo, it.horseName, it.tName).c_str());
-            if (ImGui::IsItemHovered()) showSkillInfo(it);
-
-            ImGui::TableSetColumnIndex(1);
-            ImGui::Text("%s (Rarity: %d Lv.%d)", it.skillName.c_str(), it.rarity, it.skillLevel);
-            if (ImGui::IsItemHovered()) showSkillInfo(it);
-
-            ImGui::TableSetColumnIndex(2);
-            std::stringstream ss;
-            for (const auto& iab : it.skillAbilities) {
-                ss << transSkillAbilityType(iab.abilityType) << "\n";
+                ImGui::PopStyleColor();
             }
-            ImGui::Text(ss.str().c_str());
-            ss.str("");
-            if (ImGui::IsItemHovered()) showSkillInfo(it);
-
-            ImGui::TableSetColumnIndex(3);
-            for (const auto& iab : it.skillAbilities) {
-                ss << iab.effValue << "\n";
-            }
-            ImGui::Text(ss.str().c_str());
-            ss.str("");
-            if (ImGui::IsItemHovered()) showSkillInfo(it);
-
-            ImGui::TableSetColumnIndex(4);
-            for (const auto& iab : it.skillAbilities) {
-                ss << transSkillTargetType(iab.targetType);
-                /*
-                for (const auto& target : iab.targets) {
-                    ss << std::format("{}. {}{} ", target.gateNo, target.charaName,
-                        target.trainerName.empty() ? "" : std::format(" ({})", target.trainerName));
-                }*/
-                ss << "\n";
-            }
-            ImGui::Text(ss.str().c_str());
-            ss.str("");
-            if (ImGui::IsItemHovered()) showSkillInfo(it);
-
-            ImGui::TableSetColumnIndex(5);
-            ImGui::Text("%f", it.cooldownTime);
-            if (ImGui::IsItemHovered()) showSkillInfo(it);
-
-            ImGui::PopStyleColor();
+            ImGui::EndTable();
         }
 
-        ImGui::EndTable();
         ImGui::PopStyleVar();
     }
     ImGui::End();
@@ -796,55 +797,56 @@ void imGuiEventHelperLoop() {
 
             ImGui::Separator();
 
-            ImGui::BeginTable("EventInfoTable", 2, ImGuiTableFlags_Resizable | ImGuiTableFlags_Borders);
-            ImGui::TableSetupColumn(GuiTrans::GetTrans("Option"));
-            ImGui::TableSetupColumn(GuiTrans::GetTrans("Effects"));
-            ImGui::TableHeadersRow();
+            if (ImGui::BeginTable("EventInfoTable", 2, ImGuiTableFlags_Resizable | ImGuiTableFlags_Borders)) {
+                ImGui::TableSetupColumn(GuiTrans::GetTrans("Option"));
+                ImGui::TableSetupColumn(GuiTrans::GetTrans("Effects"));
+                ImGui::TableHeadersRow();
 
-            const bool displayLocalOption = eventInfoDisplay.eventInfo.Choices.size() == eventInfoDisplay.gameChoicesText.size();
+                const bool displayLocalOption = eventInfoDisplay.eventInfo.Choices.size() == eventInfoDisplay.gameChoicesText.size();
 
-            int choiceIndex = 0;
-            for (const auto& choice : eventInfoDisplay.eventInfo.Choices) {
-                ImGui::TableNextRow();
-                ImGui::TableSetColumnIndex(0);
-                if (displayLocalOption && (choice.Option.compare(eventInfoDisplay.gameChoicesText[choiceIndex]) != 0)) {
-                    ImGui::Text("%s\n%s", choice.Option.c_str(), eventInfoDisplay.gameChoicesText[choiceIndex].c_str());
-                }
-                else {
-                    ImGui::Text("%s", choice.Option.c_str());
-                }
-                
-                ImGui::TableSetColumnIndex(1);
-
-                if (choice.FailedEffect.empty()) {
-                    ImGui::Text("%s", choice.SuccessEffect.c_str());
-                    if (ImGui::IsItemHovered()) {
-                        ImGui::BeginTooltip();
-                        ImGui::Text("%s", choice.SuccessEffect.c_str());
-                        ImGui::EndTooltip();
+                int choiceIndex = 0;
+                for (const auto& choice : eventInfoDisplay.eventInfo.Choices) {
+                    ImGui::TableNextRow();
+                    ImGui::TableSetColumnIndex(0);
+                    if (displayLocalOption && (choice.Option.compare(eventInfoDisplay.gameChoicesText[choiceIndex]) != 0)) {
+                        ImGui::Text("%s\n%s", choice.Option.c_str(), eventInfoDisplay.gameChoicesText[choiceIndex].c_str());
                     }
-                }
-                else {
-                    ImGui::Text(GuiTrans::GetTrans("On Success:"));
-                    ImGui::Text("%s", choice.SuccessEffect.c_str());
-                    if (ImGui::IsItemHovered()) {
-                        ImGui::BeginTooltip();
-                        ImGui::Text("%s", choice.SuccessEffect.c_str());
-                        ImGui::EndTooltip();
+                    else {
+                        ImGui::Text("%s", choice.Option.c_str());
                     }
-                    ImGui::Separator();
-                    ImGui::Text(GuiTrans::GetTrans("On Failed:"));
-                    ImGui::Text("%s", choice.FailedEffect.c_str());
-                    if (ImGui::IsItemHovered()) {
-                        ImGui::BeginTooltip();
+
+                    ImGui::TableSetColumnIndex(1);
+
+                    if (choice.FailedEffect.empty()) {
+                        ImGui::Text("%s", choice.SuccessEffect.c_str());
+                        if (ImGui::IsItemHovered()) {
+                            ImGui::BeginTooltip();
+                            ImGui::Text("%s", choice.SuccessEffect.c_str());
+                            ImGui::EndTooltip();
+                        }
+                    }
+                    else {
+                        ImGui::Text(GuiTrans::GetTrans("On Success:"));
+                        ImGui::Text("%s", choice.SuccessEffect.c_str());
+                        if (ImGui::IsItemHovered()) {
+                            ImGui::BeginTooltip();
+                            ImGui::Text("%s", choice.SuccessEffect.c_str());
+                            ImGui::EndTooltip();
+                        }
+                        ImGui::Separator();
+                        ImGui::Text(GuiTrans::GetTrans("On Failed:"));
                         ImGui::Text("%s", choice.FailedEffect.c_str());
-                        ImGui::EndTooltip();
+                        if (ImGui::IsItemHovered()) {
+                            ImGui::BeginTooltip();
+                            ImGui::Text("%s", choice.FailedEffect.c_str());
+                            ImGui::EndTooltip();
+                        }
                     }
+
+                    choiceIndex++;
                 }
-                
-                choiceIndex++;
+                ImGui::EndTable();
             }
-            ImGui::EndTable();
 
             ImGui::EndChild();
         }
