@@ -296,10 +296,10 @@ namespace GuiTrans {
 		{"CharaId", "指定されたウマ娘のID"},
 		{"ActivateHealSkill", "回復スキルの発動"},
 
-		{"Option", "選択肢"},
-		{"Effects", "結果"},
-		{"On Success:", "成功:"},
-		{"On Failed:", "失敗:"},
+		{"Option", "オプション"},
+		{"Effects", "効果"},
+		{"On Success:", "成功時:"},
+		{"On Failed:", "失敗時:"},
 	};
 
 	const char* GetTrans(const char* text) {
