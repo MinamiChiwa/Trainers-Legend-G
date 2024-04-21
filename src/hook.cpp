@@ -1218,7 +1218,7 @@ namespace
 				StoryTimelineClipDataClass = il2cpp_symbols::get_class_from_instance(clipData);
 				if (StoryTimelineTextClipDataClass == StoryTimelineClipDataClass)
 				{
-					assert(clipIndex > 0);
+					assert(clipIndex >= 0);
 					const auto& curClip = clipIndex == 0 ? *clip : (*clip->Siblings)[clipIndex - 1];
 					il2cpp_symbols::write_field(clipData, StoryTimelineTextClipDataClass_NameField, il2cpp_symbols::NewWStr(curClip.Name));
 					il2cpp_symbols::write_field(clipData, StoryTimelineTextClipDataClass_TextField, il2cpp_symbols::NewWStr(curClip.Text));
