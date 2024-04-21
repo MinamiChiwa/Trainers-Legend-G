@@ -1214,13 +1214,14 @@ namespace
 			}
 
 			const auto clipList = il2cpp_symbols::read_field(textTrack, StoryTimelineTrackDataClass_ClipListField);
-			il2cpp_symbols::iterate_list(clipList, [&](int32_t dummy, void* clipData) {
-				assert(dummy == 0);
+			il2cpp_symbols::iterate_list(clipList, [&](int32_t clipIndex, void* clipData) {
 				StoryTimelineClipDataClass = il2cpp_symbols::get_class_from_instance(clipData);
 				if (StoryTimelineTextClipDataClass == StoryTimelineClipDataClass)
 				{
-					il2cpp_symbols::write_field(clipData, StoryTimelineTextClipDataClass_NameField, il2cpp_symbols::NewWStr(clip->Name));
-					il2cpp_symbols::write_field(clipData, StoryTimelineTextClipDataClass_TextField, il2cpp_symbols::NewWStr(clip->Text));
+					assert(clipIndex > 0);
+					const auto& curClip = clipIndex == 0 ? *clip : (*clip->Siblings)[clipIndex - 1];
+					il2cpp_symbols::write_field(clipData, StoryTimelineTextClipDataClass_NameField, il2cpp_symbols::NewWStr(curClip.Name));
+					il2cpp_symbols::write_field(clipData, StoryTimelineTextClipDataClass_TextField, il2cpp_symbols::NewWStr(curClip.Text));
 					const auto choiceDataList = il2cpp_symbols::read_field(clipData, StoryTimelineTextClipDataClass_ChoiceDataList);
 					if (choiceDataList)
 					{
@@ -1231,8 +1232,8 @@ namespace
 								StoryTimelineTextClipDataClass_ChoiceDataClass_TextField = il2cpp_class_get_field_from_name(StoryTimelineTextClipDataClass_ChoiceDataClass, "Text");
 							}
 
-							if (j < clip->ChoiceDataList.size()) {
-								il2cpp_symbols::write_field(choiceData, StoryTimelineTextClipDataClass_ChoiceDataClass_TextField, il2cpp_symbols::NewWStr(clip->ChoiceDataList[j]));
+							if (j < curClip.ChoiceDataList.size()) {
+								il2cpp_symbols::write_field(choiceData, StoryTimelineTextClipDataClass_ChoiceDataClass_TextField, il2cpp_symbols::NewWStr(curClip.ChoiceDataList[j]));
 							}
 							else {
 								printf("[ERROR] Exception occurred while loading story text in ChoiceDataList. storyId: %llu, block: %d, listIndex: %d\n", storyId, i, j);
@@ -1250,8 +1251,8 @@ namespace
 								StoryTimelineTextClipDataClass_ColorTextInfoClass_TextField = il2cpp_class_get_field_from_name(StoryTimelineTextClipDataClass_ColorTextInfoClass, "Text");
 							}
 
-							if (j < clip->ColorTextInfoList.size()) {
-								il2cpp_symbols::write_field(colorTextInfo, StoryTimelineTextClipDataClass_ColorTextInfoClass_TextField, il2cpp_symbols::NewWStr(clip->ColorTextInfoList[j]));
+							if (j < curClip.ColorTextInfoList.size()) {
+								il2cpp_symbols::write_field(colorTextInfo, StoryTimelineTextClipDataClass_ColorTextInfoClass_TextField, il2cpp_symbols::NewWStr(curClip.ColorTextInfoList[j]));
 							}
 							else {
 								printf("[ERROR] Exception occurred while loading story text in ChoiceDataList. storyId: %llu, block: %d, listIndex: %d\n", storyId, i, j);
