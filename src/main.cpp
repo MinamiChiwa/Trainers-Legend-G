@@ -885,20 +885,34 @@ std::pair<std::unordered_map<std::size_t, local::StoryTextData>, std::unordered_
 					}
 					else
 					{
-						local::StoryTextBlock textBlock;
-						textBlock.Name = utility::conversions::to_string_t(block["Name"].GetString());
-						textBlock.Text = utility::conversions::to_string_t(block["Text"].GetString());
-						const auto& choiceDataList = block["ChoiceDataList"].GetArray();
-						for (const auto& choiceData : choiceDataList)
+						const auto readTextBlock = [&](this auto&& self, const rapidjson::Value& block) -> local::StoryTextBlock
 						{
-							textBlock.ChoiceDataList.emplace_back(utility::conversions::to_string_t(choiceData.GetString()));
-						}
-						const auto& colorTextInfoList = block["ColorTextInfoList"].GetArray();
-						for (const auto& colorTextInfo : colorTextInfoList)
-						{
-							textBlock.ColorTextInfoList.emplace_back(utility::conversions::to_string_t(colorTextInfo.GetString()));
-						}
-						data.TextBlockList.emplace_back(std::move(textBlock));
+							local::StoryTextBlock textBlock;
+							textBlock.Name = utility::conversions::to_string_t(block["Name"].GetString());
+							textBlock.Text = utility::conversions::to_string_t(block["Text"].GetString());
+							const auto& choiceDataList = block["ChoiceDataList"].GetArray();
+							for (const auto& choiceData : choiceDataList)
+							{
+								textBlock.ChoiceDataList.emplace_back(utility::conversions::to_string_t(choiceData.GetString()));
+							}
+							const auto& colorTextInfoList = block["ColorTextInfoList"].GetArray();
+							for (const auto& colorTextInfo : colorTextInfoList)
+							{
+								textBlock.ColorTextInfoList.emplace_back(utility::conversions::to_string_t(colorTextInfo.GetString()));
+							}
+							if (const auto iter = block.FindMember("Siblings"); iter != block.MemberEnd())
+							{
+								textBlock.Siblings.emplace();
+								const auto siblings = iter->value.GetArray();
+								textBlock.Siblings->reserve(siblings.Size());
+								for (const auto& sibling : siblings)
+								{
+									textBlock.Siblings->emplace_back(self(sibling));
+								}
+							}
+							return textBlock;
+						};
+						data.TextBlockList.emplace_back(readTextBlock(block));
 					}
 				}
 

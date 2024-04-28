@@ -9,6 +9,7 @@ namespace local
 		std::wstring Text;
 		std::vector<std::wstring> ChoiceDataList;
 		std::vector<std::wstring> ColorTextInfoList;
+		std::optional<std::vector<StoryTextBlock>> Siblings;
 	};
 
 	struct StoryTextData
