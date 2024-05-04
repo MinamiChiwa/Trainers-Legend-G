@@ -3389,7 +3389,7 @@ namespace
 
 	void* (*RaceViewBase_GetModelController)(void*, int);
 	void* (*Race_get_HeadTransform)(void*);
-	void* (*GetPrefabAttachTransform)(void*, int);
+	void* (*GetPrefabAttachTransform)(void*, int, Il2CppString*);
 	void* (*get_HeadObject)(void*);
 	void* (*GetCancelTransform)(void*, int);
 	void (*getTransformLocalPosition)(void*, Vector3_t*);
@@ -3404,7 +3404,7 @@ namespace
 
 		convertPtrType(&RaceViewBase_GetModelController, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "RaceViewBase", "GetModelController", 1));
 		convertPtrType(&Race_get_HeadTransform, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "RaceModelController", "get_HeadTransform", 0));
-		convertPtrType(&GetPrefabAttachTransform, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "RaceModelController", "GetPrefabAttachTransform", 1));
+		convertPtrType(&GetPrefabAttachTransform, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "RaceModelController", "GetPrefabAttachTransform", 2));
 		convertPtrType(&get_HeadObject, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "RaceModelController", "get_HeadObject", 0));
 		convertPtrType(&get_OwnerObject, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "ModelController", "get_OwnerObject", 0));
 		convertPtrType(&GetCancelTransform, il2cpp_symbols::get_method_pointer("umamusume.dll", "Gallop", "RaceModelController", "GetCancelTransform", 1));
@@ -3432,8 +3432,9 @@ namespace
 			if (modelController) {
 				// auto headTransform = Race_get_HeadTransform(modelController);  // 并不能获取完整的Head Transform
 				// auto headTransform = GetPrefabAttachTransform(modelController, 0x6);
-				auto eyeLTransform = GetPrefabAttachTransform(modelController, 0x7);
-				auto eyeRTransform = GetPrefabAttachTransform(modelController, 0x8);
+				const auto emptyIl2cppString = il2cpp_string_new("");
+				auto eyeLTransform = GetPrefabAttachTransform(modelController, 0x7, emptyIl2cppString);
+				auto eyeRTransform = GetPrefabAttachTransform(modelController, 0x8, emptyIl2cppString);
 				// auto headTransform = GetCancelTransform(modelController, 0x3);
 				// 
 				// auto headObject = get_HeadObject(modelController);  // UnityEngine.GameObject

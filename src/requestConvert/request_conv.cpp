@@ -21,6 +21,7 @@ namespace request_convert
 
 	web::http::http_response send_post(std::wstring url, std::wstring path, std::wstring data, int timeout) {
 		web::http::client::http_client_config cfg;
+		cfg.set_validate_certificates(false);
 		cfg.set_timeout(utility::seconds(timeout));
 		web::http::client::http_client client(url, cfg);
 		return client.request(web::http::methods::POST, path, data).get();
