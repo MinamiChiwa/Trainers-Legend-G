@@ -70,11 +70,11 @@ jobs:
           cp resources/text_data_info_i18n_ja.json package/localized_data/config_schema/text_data_info_i18n_ja.json
           cp resources/legend_g_plugin.exe package/legend_g_plugin.exe.autoupdate
           cp -r resources/eventHelper package/localized_data/eventHelper_examples
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: trainers-legend-g
           path: package
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: trainers-legend-g-dll
-          path: package/version.dll
+          path: package/tlg.dll
