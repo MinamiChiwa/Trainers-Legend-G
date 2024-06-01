@@ -8,6 +8,7 @@ on:
       - '**.c'
       - '**.hpp'
       - '**.h'
+      - '**.yml'
       - '.gitmodules'
       - '.gitignore'
       - '.gitattributes'
@@ -22,6 +23,7 @@ on:
       - '**.c'
       - '**.hpp'
       - '**.h'
+      - '**.yml'
       - '.gitmodules'
       - '.gitignore'
       - '.gitattributes'
@@ -53,7 +55,8 @@ jobs:
       - name: prepare-package
         run: |
           mkdir package
-          cp build/bin/x64/Release/version.dll package/version.dll
+          cp build/bin/x64/Release/version.dll package/tlg.dll
+          cp version/version.dll package/version.dll
           cp -r resources/schinese/localized_data package/localized_data
           cp resources/config.json package/config.json
           mkdir package/localized_data/config_schema
