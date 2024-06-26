@@ -930,6 +930,10 @@ namespace
 				}
 			}
 		}
+		if (uMsg == WM_CLOSE) {
+			const int result = MessageBoxW(hWnd, L"Are you sure to exit?", L"Exit Game", MB_ICONQUESTION | MB_YESNO);
+			if (result != IDYES) return FALSE;
+		}
 
 		if (g_unlock_size) {
 			if (uMsg == WM_SIZING)
