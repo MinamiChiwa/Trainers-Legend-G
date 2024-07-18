@@ -891,7 +891,7 @@ namespace
 	void* wndproc_orig = nullptr;
 
 	bool raceStart = false;
-
+	bool gameClosing = false;
 	LRESULT wndproc_hook(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	{
 		if (uMsg == WM_INPUT)
@@ -931,7 +931,11 @@ namespace
 			}
 		}
 		if (uMsg == WM_CLOSE) {
+			if (gameClosing) return reinterpret_cast<decltype(wndproc_hook)*>(wndproc_orig)(hWnd, uMsg, wParam, lParam);
+
+			gameClosing = true;
 			const int result = MessageBoxW(hWnd, L"Are you sure to exit?", L"Exit Game", MB_ICONQUESTION | MB_YESNO);
+			gameClosing = false;
 			if (result != IDYES) return FALSE;
 		}
 
