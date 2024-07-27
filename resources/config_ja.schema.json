@@ -466,7 +466,7 @@
             "default": false
         },
         "enableEventHelper": {
-            "description": "Enable Events Helper",
+            "description": "イベントヘルパーを有効化",
             "type": "boolean",
             "default": false
         }
