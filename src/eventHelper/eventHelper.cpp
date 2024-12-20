@@ -48,7 +48,7 @@ namespace EventHelper {
 
 			const auto localLang = GetUserDefaultUILanguage();
 
-			std::filesystem::path dataPath = "localized_data/eventHelper";
+			std::filesystem::path dataPath = DLL_DIR / "localized_data/eventHelper";
 			if (sChineseLangIds.contains(localLang)) {
 				systemLang = L"scn";
 				dataPath /= "events_scn.json";

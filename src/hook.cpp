@@ -15,6 +15,7 @@ bool raceFollowUmaFirstPersonEnableRoll = false;
 std::function<void(Il2CppString* title, Il2CppString* content, int buttonCount, int button1Text, int button2Text, int button3Text, int btn_type)> showDialog = nullptr;
 bool guiStarting = false;
 void (*testFunction)() = nullptr;
+bool gameClosing = false;
 
 void _set_u_stat(bool s) {
 	if (autoChangeLineBreakMode) {
@@ -69,7 +70,7 @@ namespace
 	{
 		// GameAssembly.dll code must be loaded and decrypted while loading criware library
 		if (path == L"cri_ware_unity.dll"sv)
-		{
+		{	
 			path_game_assembly();
 			if (g_on_hook_ready)
 			{
@@ -78,7 +79,7 @@ namespace
 
 			MH_DisableHook(LoadLibraryW);
 			MH_RemoveHook(LoadLibraryW);
-
+			
 			// use original function beacuse we have unhooked that
 			return LoadLibraryW(path);
 		}
@@ -422,9 +423,7 @@ namespace
 
 	std::unordered_map<void*, std::unique_ptr<ILocalizationQuery>> text_queries;
 
-	void* query_setup_orig = nullptr;
-	void* query_setup_hook(void* _this, void* conn, Il2CppString* sql)
-	{
+	void parseQuery(void* queryInstance, Il2CppString* sql) {
 		static const std::wregex statementPattern(LR"(SELECT (.+?) FROM `(.+?)`(?: WHERE (.+))?;)");
 		static const std::wregex columnPattern(LR"(,?`(\w+)`)");
 		static const std::wregex whereClausePattern(LR"((?:AND )?`(\w+)=?`)");
@@ -456,7 +455,8 @@ namespace
 			}
 			else
 			{
-				goto NormalPath;
+				// goto NormalPath;
+				return;
 			}
 
 			auto columnsPtr = columns.c_str();
@@ -483,11 +483,35 @@ namespace
 				}
 			}
 
-			text_queries.emplace(_this, std::move(query));
+			text_queries.emplace(queryInstance, std::move(query));
 		}
+	}
 
-	NormalPath:
+	void* query_setup_orig = nullptr;
+	void* query_setup_hook(void* _this, void* conn, Il2CppString* sql)
+	{
+		parseQuery(_this, sql);
 		return reinterpret_cast<decltype(query_setup_hook)*>(query_setup_orig)(_this, conn, sql);
+	}
+
+	void* Connection_Query_orig;
+	void* Connection_Query_hook(void* _this, Il2CppString* sql) {
+		if (sql) {
+			// wprintf(L"Connection_Query_hook: %ls\n", sql->start_char);
+		}
+		auto ret = reinterpret_cast<decltype(Connection_Query_hook)*>(Connection_Query_orig)(_this, sql);
+		parseQuery(ret, sql);
+		return ret;
+	}
+
+	void* Connection_PreparedQuery_orig;
+	void* Connection_PreparedQuery_hook(void* _this, Il2CppString* sql) {
+		if (sql) {
+			// wprintf(L"Connection_PreparedQuery_hook: %ls\n", sql->start_char);
+		}
+		auto ret = reinterpret_cast<decltype(Connection_PreparedQuery_hook)*>(Connection_PreparedQuery_orig)(_this, sql);
+		parseQuery(ret, sql);
+		return ret;
 	}
 
 	void* query_dispose_orig = nullptr;
@@ -509,7 +533,17 @@ namespace
 				return localizedStr;
 			}
 		}
+		/*
+		auto ret = reinterpret_cast<decltype(query_getstr_hook)*>(query_getstr_orig)(_this, idx);
+		std::wstring target = L"もうすぐイベントだよ！\r\nワクワク…！ワクワク…！";
+		if (ret) {
+			std::wstring origRet(ret->start_char);
+			if (origRet == target) {
+				wprintf(L"query_getstr_hook: %d - %ls\n%ls\n\n", idx, origRet.c_str(), environment_get_stacktrace()->start_char);
+			}
+		}
 
+		return ret;*/
 		return reinterpret_cast<decltype(query_getstr_hook)*>(query_getstr_orig)(_this, idx);
 	}
 
@@ -637,7 +671,7 @@ namespace
 
 	void* Get3DAntiAliasingLevel_orig;
 	int Get3DAntiAliasingLevel_hook(void* _this, bool allowMSAA) {
-		if (g_antialiasing != -1) allowMSAA = true;
+		// if (g_antialiasing != -1) allowMSAA = true;
 		auto data = reinterpret_cast<decltype(Get3DAntiAliasingLevel_hook)*>(Get3DAntiAliasingLevel_orig)(_this, allowMSAA);
 		// printf("Get3DAntiAliasingLevel: %d %d\n", allowMSAA, data);
 		return data;
@@ -891,7 +925,6 @@ namespace
 	void* wndproc_orig = nullptr;
 
 	bool raceStart = false;
-	bool gameClosing = false;
 	LRESULT wndproc_hook(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	{
 		if (uMsg == WM_INPUT)
@@ -1484,7 +1517,7 @@ namespace
 		static auto ImageConversion_EncodeToPNG_mtd = il2cpp_symbols::get_method(
 			"UnityEngine.ImageConversionModule.dll", "UnityEngine", "ImageConversion", "EncodeToPNG", 1);
 
-		const std::filesystem::path baseDumpPath = "localized_data/TextureDump";
+		const std::filesystem::path baseDumpPath = DLL_DIR / "localized_data/TextureDump";
 
 		std::string textureName = utility::conversions::to_utf8string(get_ObjectName(texture)->start_char);
 		replaceAll(textureName, "|", "_");
@@ -4175,7 +4208,7 @@ namespace
 		if (g_read_request_pack && g_save_msgpack)
 		{
 			const auto outPath = std::format("MsgPack/{}Q.msgpack", currentTime());
-			writeFile(outPath, src, srcSize);
+			writeFile((DLL_DIR / outPath).string(), src, srcSize);
 			printf("Save request to %s\n", outPath.c_str());
 		}
 
@@ -4200,7 +4233,7 @@ namespace
 		if (g_read_request_pack && g_save_msgpack)
 		{
 			const string outPath = std::format("MsgPack/{}R.msgpack", currentTime());
-			writeFile(outPath, dst, ret);
+			writeFile((DLL_DIR / outPath).string(), dst, ret);
 			printf("Save response to %s\n", outPath.c_str());
 		}
 
@@ -4424,7 +4457,7 @@ namespace
 	/*dump_bytes(_name_##_offset); */ \
  	\
 	MH_CreateHook(_name_##_offset, _name_##_hook, &_name_##_orig); \
-	MH_EnableHook(_name_##_offset); 
+	MH_EnableHook(_name_##_offset);
 #pragma endregion
 #pragma region HOOK_ADDRESSES
 		auto populate_with_errors_addr = il2cpp_symbols::get_method_pointer(
@@ -4445,6 +4478,16 @@ namespace
 		auto query_setup_addr = il2cpp_symbols::get_method_pointer(
 			"LibNative.Runtime.dll", "LibNative.Sqlite3",
 			"Query", "_Setup", 2
+		);
+
+		auto Connection_Query_addr = il2cpp_symbols::get_method_pointer(
+			"LibNative.Runtime.dll", "LibNative.Sqlite3",
+			"Connection", "Query", 1
+		);
+
+		auto Connection_PreparedQuery_addr = il2cpp_symbols::get_method_pointer(
+			"LibNative.Runtime.dll", "LibNative.Sqlite3",
+			"Connection", "PreparedQuery", 1
 		);
 
 		auto query_getstr_addr = il2cpp_symbols::get_method_pointer(
@@ -5241,6 +5284,8 @@ namespace
 		ADD_HOOK(localize_jp_get, "Gallop.Localize.JP.Get(TextId) at %p\n");
 		ADD_HOOK(on_exit, "Gallop.GameSystem.onApplicationQuit at %p\n");
 		ADD_HOOK(query_setup, "Query::_Setup at %p\n");
+		ADD_HOOK(Connection_Query, "Connection_Query at %p\n");
+		ADD_HOOK(Connection_PreparedQuery, "Connection_PreparedQuery at %p\n");
 		ADD_HOOK(query_getstr, "Query::GetString at %p\n");
 		ADD_HOOK(query_dispose, "Query::Dispose at %p\n");
 		ADD_HOOK(PreparedQuery_BindInt, "PreparedQuery::BindInt at %p\n");
@@ -5534,8 +5579,17 @@ bool init_hook()
 	mh_inited = true;
 	onPluginReload.push_back(reloadAssetBundle);
 
-	MH_CreateHook(LoadLibraryW, load_library_w_hook, &load_library_w_orig);
-	MH_EnableHook(LoadLibraryW);
+	auto cri_ware_handle = GetModuleHandleW(L"cri_ware_unity.dll");
+	if (cri_ware_handle) {
+		std::thread([]() {
+			load_library_w_hook(L"cri_ware_unity.dll");
+			}).detach();
+	}
+	else {
+		MH_CreateHook(LoadLibraryW, load_library_w_hook, &load_library_w_orig);
+		MH_EnableHook(LoadLibraryW);
+	}
+
 	return true;
 }
 

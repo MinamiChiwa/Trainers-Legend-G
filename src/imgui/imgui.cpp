@@ -974,6 +974,8 @@ CODE
 #pragma GCC diagnostic ignored "-Wclass-memaccess"          // [__GNUC__ >= 8] warning: 'memset/memcpy' clearing/writing an object of type 'xxxx' with no trivial copy-assignment; use assignment or value-initialization instead
 #endif
 
+#include <stdinclude.hpp>
+
 // Debug options
 #define IMGUI_DEBUG_NAV_SCORING     0   // Display navigation scoring preview when hovering items. Display last moving direction matches when holding CTRL
 #define IMGUI_DEBUG_NAV_RECTS       0   // Display the reference navigation rectangle for each window
@@ -1189,6 +1191,11 @@ void ImGuiStyle::ScaleAllSizes(float scale_factor)
     MouseCursorScale = ImFloor(MouseCursorScale * scale_factor);
 }
 
+ImGuiIO::~ImGuiIO() {
+    free((void*)IniFilename);
+    free((void*)LogFilename);
+}
+
 ImGuiIO::ImGuiIO()
 {
     // Most fields are initialized with zero
@@ -1201,8 +1208,8 @@ ImGuiIO::ImGuiIO()
     DisplaySize = ImVec2(-1.0f, -1.0f);
     DeltaTime = 1.0f / 60.0f;
     IniSavingRate = 5.0f;
-    IniFilename = "imgui.ini"; // Important: "imgui.ini" is relative to current working dir, most apps will want to lock this to an absolute path (e.g. same path as executables).
-    LogFilename = "imgui_log.txt";
+    IniFilename = strdup((DLL_DIR / "imgui.ini").string().c_str()); // Important: "imgui.ini" is relative to current working dir, most apps will want to lock this to an absolute path (e.g. same path as executables).
+    LogFilename = strdup((DLL_DIR / "imgui_log.txt").string().c_str());
     MouseDoubleClickTime = 0.30f;
     MouseDoubleClickMaxDist = 6.0f;
 #ifndef IMGUI_DISABLE_OBSOLETE_KEYIO
