@@ -496,9 +496,6 @@ namespace
 
 	void* Connection_Query_orig;
 	void* Connection_Query_hook(void* _this, Il2CppString* sql) {
-		if (sql) {
-			// wprintf(L"Connection_Query_hook: %ls\n", sql->start_char);
-		}
 		auto ret = reinterpret_cast<decltype(Connection_Query_hook)*>(Connection_Query_orig)(_this, sql);
 		parseQuery(ret, sql);
 		return ret;
@@ -506,9 +503,6 @@ namespace
 
 	void* Connection_PreparedQuery_orig;
 	void* Connection_PreparedQuery_hook(void* _this, Il2CppString* sql) {
-		if (sql) {
-			// wprintf(L"Connection_PreparedQuery_hook: %ls\n", sql->start_char);
-		}
 		auto ret = reinterpret_cast<decltype(Connection_PreparedQuery_hook)*>(Connection_PreparedQuery_orig)(_this, sql);
 		parseQuery(ret, sql);
 		return ret;

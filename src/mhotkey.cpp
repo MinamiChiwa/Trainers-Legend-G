@@ -197,6 +197,7 @@ namespace MHotkey{
                 }
                 else {
                     std::cerr << "Read pipe failed. Error: " << GetLastError() << std::endl;
+                    printf("Run this command to open manually: %s\n", cmdLine.c_str());
                     openPluginSuccess = false;
                     break;
                 }
