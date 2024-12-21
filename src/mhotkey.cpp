@@ -160,6 +160,7 @@ namespace MHotkey{
 
             if (hPipe == INVALID_HANDLE_VALUE) {
                 std::cerr << "Failed to connect to named pipe. Error: " << GetLastError() << std::endl;
+                printf("Run this command to open manually: %s\n", cmdLine.c_str());
                 return;
             }
 
