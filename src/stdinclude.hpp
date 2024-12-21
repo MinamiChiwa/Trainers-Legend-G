@@ -131,6 +131,7 @@ extern int g_custom_font_style;
 extern float g_custom_font_linespacing;
 extern bool g_replace_assets;
 extern bool g_asset_load_log;
+extern std::filesystem::path DLL_DIR;
 
 extern bool g_auto_fullscreen;
 extern bool g_fullscreen_block_minimization;

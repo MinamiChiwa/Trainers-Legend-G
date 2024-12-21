@@ -56,7 +56,6 @@ jobs:
         run: |
           mkdir package
           cp build/bin/x64/Release/version.dll package/tlg.dll
-          cp version/version.dll package/version.dll
           cp -r resources/schinese/localized_data package/localized_data
           cp resources/config.json package/config.json
           mkdir package/localized_data/config_schema
@@ -69,6 +68,8 @@ jobs:
           cp resources/text_data_info_i18n_zh_tw.json package/localized_data/config_schema/text_data_info_i18n_zh_tw.json
           cp resources/text_data_info_i18n_ja.json package/localized_data/config_schema/text_data_info_i18n_ja.json
           cp resources/legend_g_plugin.exe package/legend_g_plugin.exe.autoupdate
+          cp resources/loader.dll package/loader.dll
+          cp resources/tlg_starter.exe package/tlg_starter.exe
           cp -r resources/eventHelper package/localized_data/eventHelper_examples
       - uses: actions/upload-artifact@v4
         with:

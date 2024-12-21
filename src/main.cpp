@@ -108,15 +108,17 @@ bool g_upload_gacha_history = false;
 std::wstring g_upload_gacha_history_endpoint = L"";
 bool g_enable_event_helper = false;
 
-constexpr const char LocalizedDataPath[] = "localized_data";
-constexpr const char OldLocalizedDataPath[] = "old_localized_data";
-constexpr const char ConfigJson[] = "config.json";
-constexpr const char VersionDll[] = "version.dll";
-constexpr const char VersionDllTmp[] = "version.dll.tmp";
-constexpr const char StaticDictCache[] = "static_cache.json";
-constexpr const char StaticDictCachePath[] = "localized_data/static_cache.json";
-constexpr const char StaticDictStamp[] = "static_cache.stamp";
-constexpr const char StaticDictStampPath[] = "localized_data/static_cache.stamp";
+std::filesystem::path DLL_DIR = ".";
+
+char LocalizedDataPath[MAX_PATH] = "localized_data";
+char OldLocalizedDataPath[MAX_PATH] = "old_localized_data";
+char ConfigJson[MAX_PATH] = "config.json";
+char VersionDll[MAX_PATH] = "version.dll";
+char VersionDllTmp[MAX_PATH] = "version.dll.tmp";
+char StaticDictCache[MAX_PATH] = "static_cache.json";
+char StaticDictCachePath[MAX_PATH] = "localized_data/static_cache.json";
+char StaticDictStamp[MAX_PATH] = "static_cache.stamp";
+char StaticDictStampPath[MAX_PATH] = "localized_data/static_cache.stamp";
 
 char open_plugin_hotkey = 'u';
 bool openExternalPluginOnLoad = false;
@@ -129,6 +131,7 @@ CloseTrans closeTrans{false};
 std::unordered_set<std::size_t> trans_off_textData{};
 
 std::string dumpGameAssemblyPath;
+extern bool gameClosing;
 
 // #pragma comment(lib, "cpprest_2_10_18.lib")
 // #pragma comment(lib, "bcrypt.lib")
@@ -343,7 +346,7 @@ namespace
 
 	void dump_static_dict(const std::filesystem::path& outputPath, const std::map<std::size_t, std::string>& currentStaticCache)
 	{
-		std::ofstream output(outputPath);
+		std::ofstream output(DLL_DIR / outputPath);
 		if (!output.is_open())
 		{
 			return;
@@ -430,7 +433,7 @@ namespace
 	std::vector<std::string> read_config()
 	{
 		MHotkey::setUmaCommandLine(GetCommandLineA());
-		std::ifstream config_stream{ ConfigJson };
+		std::ifstream config_stream{ DLL_DIR / ConfigJson };
 		std::vector<std::string> dicts{};
 
 		if (!config_stream.is_open())
@@ -468,7 +471,7 @@ namespace
 				const auto& extraAssetBundlePath = document["extraAssetBundlePath"];
 				if (extraAssetBundlePath.IsString())
 				{
-					g_extra_assetbundle_paths.push_back(extraAssetBundlePath.GetString());
+					g_extra_assetbundle_paths.push_back((DLL_DIR / extraAssetBundlePath.GetString()).string());
 				}
 			}
 
@@ -477,7 +480,7 @@ namespace
 				if (extraAssetBundlePaths.IsArray())
 				{
 					for (const auto& i : document["extraAssetBundlePaths"].GetArray()) {
-						g_extra_assetbundle_paths.push_back(i.GetString());
+						g_extra_assetbundle_paths.push_back((DLL_DIR / i.GetString()).string());
 					}
 				}
 			}
@@ -519,6 +522,9 @@ namespace
 			if (document.HasMember("externalPlugin")) {
 				open_plugin_hotkey = document["externalPlugin"]["hotkey"].GetString()[0];
 				externalPluginPath = document["externalPlugin"]["path"].GetString();
+				if (!externalPluginPath.contains(' ')) {
+					externalPluginPath = (DLL_DIR / document["externalPlugin"]["path"].GetString()).string();
+				}
 				MHotkey::setExtPluginPath(externalPluginPath);
 				MHotkey::start_hotkey(open_plugin_hotkey);  // 启动热键监听进程
 
@@ -730,7 +736,7 @@ namespace
 					loadDllList.clear();
 					for (const auto& fr : document["loadDll"].GetArray()) {
 						if (fr.IsString()) {
-							loadDllList.push_back(fr.GetString());
+							loadDllList.push_back((DLL_DIR / fr.GetString()).string());
 						}
 					}
 				}
@@ -767,18 +773,18 @@ namespace
 			{
 				auto dict = dicts_arr[i].GetString();
 
-				dicts.push_back(dict);
+				dicts.push_back((DLL_DIR / dict).string());
 			}
 
-			g_static_dict_path = document["static_dict"].GetString();
+			g_static_dict_path = (DLL_DIR / document["static_dict"].GetString()).string();
 			g_no_static_dict_cache = document["no_static_dict_cache"].GetBool();
 
-			g_stories_path = document["stories_path"].GetString();
+			g_stories_path = (DLL_DIR / document["stories_path"].GetString()).string();
 
-			g_text_data_dict_path = document["text_data_dict"].GetString();
-			g_character_system_text_dict_path = document["character_system_text_dict"].GetString();
-			g_race_jikkyo_comment_dict_path = document["race_jikkyo_comment_dict"].GetString();
-			g_race_jikkyo_message_dict_path = document["race_jikkyo_message_dict"].GetString();
+			g_text_data_dict_path = (DLL_DIR / document["text_data_dict"].GetString()).string();
+			g_character_system_text_dict_path = (DLL_DIR / document["character_system_text_dict"].GetString()).string();
+			g_race_jikkyo_comment_dict_path = (DLL_DIR / document["race_jikkyo_comment_dict"].GetString()).string();
+			g_race_jikkyo_message_dict_path = (DLL_DIR / document["race_jikkyo_message_dict"].GetString()).string();
 
 			if (document.HasMember("enableBuiltinAutoUpdate")) {
 				if (document.HasMember("autoUpdate"))
@@ -1050,7 +1056,7 @@ std::tuple<local::TextData, local::CharacterSystemTextData, local::RaceJikkyoCom
 namespace {
 	void reload_config()
 	{
-		std::ifstream config_stream{ "config.json" };
+		std::ifstream config_stream{ DLL_DIR / "config.json" };
 
 		rapidjson::IStreamWrapper wrapper{ config_stream };
 		rapidjson::Document document;
@@ -1061,7 +1067,7 @@ namespace {
 		{
 			std::vector<std::string> dicts{};
 
-			const std::string staticDictPath = document["static_dict"].GetString();
+			const std::string staticDictPath = (DLL_DIR / document["static_dict"].GetString()).string();
 			g_static_dict_path = staticDictPath;
 			auto staticDictCache = ensure_latest_static_cache(staticDictPath);
 
@@ -1072,7 +1078,7 @@ namespace {
 			{
 				auto dict = dicts_arr[i].GetString();
 
-				dicts.push_back(dict);
+				dicts.push_back((DLL_DIR/ dict).string());
 			}
 
 			auto&& [storyDict, raceDict] = LoadStories();
@@ -1320,7 +1326,7 @@ namespace {
 
 		return true;
 	}
-
+	
 	void auto_update()
 	{
 		constexpr const char AutoUpdateTmpPath[] = "UpdateTemp";
@@ -1768,6 +1774,37 @@ namespace HttpServer {
 
 			}
 
+			if (path == L"/fast_reboot") {
+				gameClosing = true;
+				auto rebootScript = message.extract_utf8string(true).get();
+
+				std::ofstream rebootFile("reboot.bat");
+				if (rebootFile.is_open()) {
+					rebootFile.write(rebootScript.c_str(), rebootScript.size());
+					rebootFile.close();
+
+					wchar_t commandLine[] = L"cmd.exe /c reboot.bat";
+					STARTUPINFOW startupInfo{ .cb = sizeof(STARTUPINFOW) };
+					PROCESS_INFORMATION processInfo{};
+					if (CreateProcessW(NULL, commandLine, NULL, NULL, FALSE, 0, NULL, NULL, &startupInfo, &processInfo)) {
+						message.reply(status_codes::OK, "OK(〃'▽'〃)");
+
+						CloseHandle(processInfo.hThread);
+						WaitForSingleObject(processInfo.hProcess, INFINITE);
+						CloseHandle(processInfo.hProcess);
+
+						TerminateProcess(GetCurrentProcess(), 0);
+					}
+					else {
+						message.reply(status_codes::InternalError, "QWQ");
+					}
+				}
+				else {
+					message.reply(status_codes::InternalError, "open rebootFile failed.");
+				}
+				return;
+			}
+
 			message.reply(status_codes::OK, "OK(〃'▽'〃)");
 		}
 		catch (std::exception& ex)
@@ -1793,7 +1830,10 @@ namespace HttpServer {
 				MHotkey::setTlgPort(port);
 
 				if (openExternalPlugin && openExternalPluginOnLoad) {  // 打开外部插件
-					MHotkey::fopenExternalPlugin(http_start_port);
+					std::thread([]() {
+						Sleep(5000);
+						MHotkey::fopenExternalPlugin(http_start_port);
+						}).detach();
 				}
 
 				ucout << utility::string_t(U("Server Start at: ")) << addr << std::endl;
@@ -1807,7 +1847,10 @@ namespace HttpServer {
 						printf("HTTP Server start failed.\n");
 
 						if (openExternalPlugin && openExternalPluginOnLoad) {  // 打开外部插件
-							MHotkey::fopenExternalPlugin(http_start_port);
+							std::thread([]() {
+								Sleep(5000);
+								MHotkey::fopenExternalPlugin(http_start_port);
+								}).detach();
 						}
 					}
 					else {
@@ -1839,6 +1882,32 @@ namespace HttpServer {
 
 }
 
+void updatePaths() {
+	strcpy(LocalizedDataPath, (DLL_DIR / LocalizedDataPath).string().c_str());
+	strcpy(OldLocalizedDataPath, (DLL_DIR / OldLocalizedDataPath).string().c_str());
+	strcpy(ConfigJson, (DLL_DIR / ConfigJson).string().c_str());
+	strcpy(VersionDll, (DLL_DIR / VersionDll).string().c_str());
+	strcpy(VersionDllTmp, (DLL_DIR / VersionDllTmp).string().c_str());
+	strcpy(StaticDictCache, (DLL_DIR / StaticDictCache).string().c_str());
+	strcpy(StaticDictCachePath, (DLL_DIR / StaticDictCachePath).string().c_str());
+	strcpy(StaticDictStamp, (DLL_DIR / StaticDictStamp).string().c_str());
+	strcpy(StaticDictStampPath, (DLL_DIR / StaticDictStampPath).string().c_str());
+}
+
+std::string GetDllPath(HMODULE hModule)
+{
+	char path[MAX_PATH] = { 0 };
+	GetModuleFileName(hModule, path, MAX_PATH);
+	return std::string(path);
+}
+
+std::string GetDllDirectory(HMODULE hModule)
+{
+	std::string dllPath = GetDllPath(hModule);
+	std::string::size_type pos = dllPath.find_last_of("\\/");
+	return (std::string::npos == pos) ? "" : dllPath.substr(0, pos);
+}
+
 int __stdcall DllMain(HINSTANCE dllModule, DWORD reason, LPVOID)
 {
 	if (reason == DLL_PROCESS_ATTACH)
@@ -1853,6 +1922,9 @@ int __stdcall DllMain(HINSTANCE dllModule, DWORD reason, LPVOID)
 		// check name
 		if (module_path.filename() != "umamusume.exe")
 			return 1;
+
+		DLL_DIR = GetDllDirectory(dllModule);
+		updatePaths();
 
 		std::filesystem::current_path(
 			module_path.parent_path()

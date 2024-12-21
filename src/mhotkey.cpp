@@ -8,8 +8,12 @@
 #include <format>
 #include <functional>
 #include <filesystem>
+#include <TlHelp32.h>
+#include "cpprest/details/basic_types.h"
+#include "cpprest/details/http_helpers.h"
 
 extern void (*testFunction)();
+extern std::filesystem::path DLL_DIR;
 
 namespace MHotkey{
     namespace {
@@ -41,7 +45,7 @@ namespace MHotkey{
         mKeyBoardCallBack = callbackfun;
     }
     
-    void fopenExternalPlugin(int tlgPort) {
+    void fopenExternalPlugin_Legacy(int tlgPort) {
         std::thread([tlgPort](){
             if (openPluginSuccess) {
                 printf("External plugin is already open.\n");
@@ -67,7 +71,7 @@ namespace MHotkey{
                 }
             }
 
-            std::string cmdLine = std::format("{} {} --tlgport={}", extPluginPath, MHotkey::umaArgs, tlgPort);
+            std::string cmdLine = std::format("{} {} --tlgport={} --resource_path=\"{}\"", extPluginPath, MHotkey::umaArgs, tlgPort, DLL_DIR.string());
             char* commandLine = new char[255];
             strcpy(commandLine, cmdLine.c_str());
 
@@ -90,10 +94,128 @@ namespace MHotkey{
             ext_server_start = false;
         }).detach();
     }
+       
+    DWORD GetProcessIdByName(const std::wstring& processName)
+    {
+        DWORD pid = 0;
+        HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+        if (hSnapshot == INVALID_HANDLE_VALUE) return 0;
+
+        PROCESSENTRY32W pe = { 0 };
+        pe.dwSize = sizeof(pe);
+        if (Process32FirstW(hSnapshot, &pe)) {
+            do {
+                if (_wcsicmp(pe.szExeFile, processName.c_str()) == 0) {
+                    pid = pe.th32ProcessID;
+                    break;
+                }
+            } while (Process32NextW(hSnapshot, &pe));
+        }
+        CloseHandle(hSnapshot);
+        return pid;
+    }
+
+
+    void fopenExternalPlugin(int tlgPort) {
+        std::thread([tlgPort]() {
+            if (openPluginSuccess) {
+                printf("External plugin is already open.\n");
+                return;
+            }
+            openPluginSuccess = true;
+
+            std::string file_check_name = std::format("{}.autoupdate", extPluginPath);
+
+            if (MHotkey::extPluginPath == "") {
+                printf("\"externalPlugin\" not found\n");
+                return;
+            }
+            if (std::filesystem::exists(file_check_name)) {
+                try {
+                    if (std::filesystem::exists(extPluginPath)) {
+                        std::filesystem::remove(extPluginPath);
+                    }
+                    std::filesystem::rename(file_check_name, extPluginPath);
+                }
+                catch (std::exception& e) {
+                    printf("update external plugin failed: %s\n", e.what());
+                }
+            }
+
+            std::string cmdLine = std::format("{} {} --tlgport={} --resource_path=\"{}\"", extPluginPath, MHotkey::umaArgs, tlgPort, DLL_DIR.string());
+
+            const std::string PIPE_NAME = R"(\\.\pipe\TlgExtPluginPipe)";
+
+            std::cout << "Connecting to starter pipe..." << std::endl;
+
+            HANDLE hPipe = CreateFile(
+                PIPE_NAME.c_str(),
+                GENERIC_READ | GENERIC_WRITE,
+                0,                                // 不共享
+                nullptr,                          // 默认安全属性
+                OPEN_EXISTING,
+                0,
+                nullptr
+            );
+
+            if (hPipe == INVALID_HANDLE_VALUE) {
+                std::cerr << "Failed to connect to named pipe. Error: " << GetLastError() << std::endl;
+                printf("Run this command to open manually: %s\n", cmdLine.c_str());
+                return;
+            }
+
+            std::cout << "Connected to starter pipe." << std::endl;
+
+            DWORD bytesWritten;
+            WriteFile(hPipe, cmdLine.c_str(), cmdLine.size(), &bytesWritten, nullptr);
+
+            while (true) {
+                char buffer[1024];
+                DWORD bytesRead;
+                if (ReadFile(hPipe, buffer, sizeof(buffer) - 1, &bytesRead, nullptr)) {
+                    buffer[bytesRead] = '\0';
+                    // std::cout << "Received from server: " << buffer << std::endl;
+
+                    try {
+                        int getPid = std::stoi(buffer);
+                        if (getPid > 0) {
+                            pluginPID = getPid;
+                            printf("open external plugin: %s (%lu)\n", cmdLine.c_str(), pluginPID);
+                        }
+                        else {
+                            printf("Open external plugin failed.\n");
+                            openPluginSuccess = false;
+                        }
+                    }
+                    catch (std::exception& e) {
+                        std::cerr << "Get pid failed" << std::endl;
+                        openPluginSuccess = false;
+                    }
+
+                    const std::string requestExitCmd = "exit";
+                    WriteFile(hPipe, requestExitCmd.c_str(), requestExitCmd.size(), &bytesWritten, nullptr);
+                    break;
+                }
+                else {
+                    std::cerr << "Read pipe failed. Error: " << GetLastError() << std::endl;
+                    printf("Run this command to open manually: %s\n", cmdLine.c_str());
+                    openPluginSuccess = false;
+                    break;
+                }
+            }
+
+            CloseHandle(hPipe);
+
+            // openPluginSuccess = false;
+            // ext_server_start = false;
+            }).detach();
+
+        // return fopenExternalPlugin_Legacy(tlgPort);
+    }
 
     void closeExternalPlugin() {
-        if (std::filesystem::exists("dontcloseext.lock")) {
-            std::filesystem::remove("dontcloseext.lock");
+        if (std::filesystem::exists(DLL_DIR / "dontcloseext.lock")) {
+            std::filesystem::remove(DLL_DIR / "dontcloseext.lock");
             return;
         }
         if (openPluginSuccess && pluginPID != -1) {

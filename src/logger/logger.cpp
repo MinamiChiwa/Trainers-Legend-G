@@ -47,7 +47,7 @@ namespace logger
 
 	void open_test_log_file() {
 		test_log_opened = true;
-		test_log_file.open("legendtest.log", ios::app | ios::out);
+		test_log_file.open(DLL_DIR / "legendtest.log", ios::app | ios::out);
 	}
 
 	void write_test_log(wstring text) {
@@ -73,7 +73,7 @@ namespace logger
 		if (g_enable_logger)
 		{
 			enabled = true;
-			log_file.open("dump.txt", ios::app | ios::out);
+			log_file.open(DLL_DIR / "dump.txt", ios::app | ios::out);
 
 			thread t([]() {
 				while (!request_exit)
