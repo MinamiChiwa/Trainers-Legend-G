@@ -1367,8 +1367,9 @@ namespace
 			}
 
 			if (g_replace_assets) {
-				if (std::filesystem::exists(localPath)) {
-					auto replaceT2D = getLocalT2D(localPath);
+				const auto localReadPath = DLL_DIR / localPath;
+				if (std::filesystem::exists(localReadPath)) {
+					auto replaceT2D = getLocalT2D(localReadPath);
 					if (replaceT2D) {
 						result = replaceT2D;
 					}
@@ -1601,7 +1602,7 @@ namespace
 
 		if (g_replace_assets) {
 			auto object_name = get_ObjectName(texture2D);
-			static std::filesystem::path baseSearchPath = "localized_data/res/texture2d";
+			static std::filesystem::path baseSearchPath = DLL_DIR / "localized_data/res/texture2d";
 
 			if (object_name) {
 				const std::wstring objName(object_name->start_char);
